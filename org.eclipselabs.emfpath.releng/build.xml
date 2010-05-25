@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ Copyright (c) 2009, 2010 Obeo.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+     Obeo - initial API and implementation
+-->
+<project default="javadoc">
+	<property environment="env"/>
+
+    <target name="javadoc">
+    	<delete dir="../org.eclipselabs.emfpath.doc/reference/api"/>
+    	<mkdir dir="../org.eclipselabs.emfpath.doc/reference/api"/>
+    	
+    	<javadoc packagenames="
+    		org.eclipselabs.emfpath.base,
+    		org.eclipselabs.emfpath.exception,
+    		org.eclipselabs.emfpath.function,
+    		org.eclipselabs.emfpath.operation,
+    		org.eclipselabs.emfpath.predicate,
+    		org.eclipselabs.emfpath.util,
+    		org.eclipselabs.emfpath.indie.collect,
+    		org.eclipselabs.emfpath.indie.function,
+    		org.eclipselabs.emfpath.indie.predicate,
+    		org.eclipselabs.emfpath.indie.util"
+    					access="public" 
+    		        	additionalparam="-J-Xmx1024m " 
+    		        	author="true" 
+    		        	destdir="../org.eclipselabs.emfpath.doc/reference/api" 
+    		        	doctitle="EMFPath: Google Guava Libraries Extension for EMF"
+    		        	charset="UTF-8"
+    		        	nodeprecated="false" 
+    		        	nodeprecatedlist="false" 
+    		        	noindex="false" 
+    		        	nonavbar="false"
+    		        	docencoding="UTF-8"
+    		        	maxmemory="1024m"
+    		        	windowtitle="EMFPath: Google Guava Libraries Extension for EMF"
+    		        	notree="false" 
+    		        	source="1.5" 
+    		        	splitindex="true" 
+    		        	use="true" 
+    		        	version="true"
+    		        	encoding="UTF-8">
+    	      <sourcepath>
+    	        <pathelement location="../org.eclipselabs.emfpath/api"/>
+    	      	<pathelement location="../org.eclipselabs.emfpath/emf-indie"/>
+    	      	<pathelement location="../org.eclipselabs.emfpath/internal"/>
+    	      </sourcepath>
+    	      <classpath>
+    	      	<pathelement location="../.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.emf.ecore_2.5.0.v200906151043.jar"/>
+    	      	<pathelement location="../.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.emf.common_2.5.0.v200906151043.jar"/>
+    	      	<pathelement location="../.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.emf.ecore.xmi_2.5.0.v200906151043.jar"/>
+    	      	<pathelement location="../com.google.collect"/>
+			  </classpath>
+    	      <link href="http://google-collections.googlecode.com/svn/trunk/javadoc"/>
+    		  <link href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.5.0"/>
+    	      <link href="http://java.sun.com/j2se/1.5.0/docs/api"/>
+    	    </javadoc>
+    </target>
+</project>
