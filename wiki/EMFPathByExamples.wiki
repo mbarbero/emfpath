@@ -34,3 +34,29 @@ Now, descendantsByEClass.get() will return elements of type b and its supertypes
 EClass a, b; // b inherits from a
 descendantsByEClass.get(b); // will return elements of type b and a
 }}}
+
+An equivalent without EMFPath nor Google Collections would be:
+
+{{{
+TreeIterator<EObject> it = eResource.getAllContents();
+Map<EClass, List<EObject>> index = new HashMap<EClass, List<EObject>>();
+while(it.hasNext()) {
+	EObject current = it.next();
+	EClass eClass = current.eClass();
+	addValueToMap(index, eClass, current);
+	for (EClass supertype : eClass.getEAllSuperTypes()) {
+		addValueToMap(index, supertype, current);
+	}
+}
+
+public static void addValueToMap(Map<EClass, List<EObject>> index, EClass k, EObject v) {
+	List<EObject> values = index.get(k);
+	if (values == null) {
+		values = new ArrayList<EObject>();
+		index.put(k, values);
+	}
+	values.add(v);
+}
+}}}
+
+No comment ;)
