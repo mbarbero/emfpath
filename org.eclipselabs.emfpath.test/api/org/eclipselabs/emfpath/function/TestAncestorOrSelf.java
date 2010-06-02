@@ -10,7 +10,7 @@
  *******************************************************************************/
 package org.eclipselabs.emfpath.function;
 
-import static org.eclipselabs.emfpath.function.EObjects.ancestorOrSelf;
+import static org.eclipselabs.emfpath.base.EObjects.ancestorOrSelf;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 

@@ -8,18 +8,18 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.base;
+package org.eclipselabs.emfpath.util;
 
-import static org.eclipselabs.emfpath.function.EObjects.ancestor;
-import static org.eclipselabs.emfpath.function.EObjects.ancestorOrSelf;
-import static org.eclipselabs.emfpath.function.EObjects.child;
-import static org.eclipselabs.emfpath.function.EObjects.descendant;
-import static org.eclipselabs.emfpath.function.EObjects.descendantOrSelf;
-import static org.eclipselabs.emfpath.function.EObjects.following;
-import static org.eclipselabs.emfpath.function.EObjects.followingSibling;
-import static org.eclipselabs.emfpath.function.EObjects.parent;
-import static org.eclipselabs.emfpath.function.EObjects.preceding;
-import static org.eclipselabs.emfpath.function.EObjects.precedingSibling;
+import static org.eclipselabs.emfpath.base.EObjects.ancestor;
+import static org.eclipselabs.emfpath.base.EObjects.ancestorOrSelf;
+import static org.eclipselabs.emfpath.base.EObjects.child;
+import static org.eclipselabs.emfpath.base.EObjects.descendant;
+import static org.eclipselabs.emfpath.base.EObjects.descendantOrSelf;
+import static org.eclipselabs.emfpath.base.EObjects.following;
+import static org.eclipselabs.emfpath.base.EObjects.followingSibling;
+import static org.eclipselabs.emfpath.base.EObjects.parent;
+import static org.eclipselabs.emfpath.base.EObjects.preceding;
+import static org.eclipselabs.emfpath.base.EObjects.precedingSibling;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;

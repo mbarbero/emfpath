@@ -10,7 +10,7 @@
  *******************************************************************************/
 package org.eclipselabs.emfpath.function;
 
-import static org.eclipselabs.emfpath.function.EObjects.following;
+import static org.eclipselabs.emfpath.base.EObjects.following;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 

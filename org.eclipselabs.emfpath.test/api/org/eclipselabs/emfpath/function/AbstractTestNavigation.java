@@ -15,19 +15,19 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipselabs.emfpath.base.Resources;
 import org.eclipselabs.emfpath.test.Constants;
-import org.eclipselabs.emfpath.util.Resources;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
 
 /**
  * 
- * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a> 
+ * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
  *
  */
 public class AbstractTestNavigation {
-	
+
 	static EObject theTree;
 	static Resource metamodel;
 
@@ -37,19 +37,19 @@ public class AbstractTestNavigation {
 
 		Resources.initResourceSet(resourceSet);
 		metamodel = resourceSet.getResource(URI
-				.createURI(TestFollowingSibling.class.getClassLoader()
-						.getResource(Constants.TREE_ECORE_FILE).toString()),
+			.createURI(TestFollowingSibling.class.getClassLoader()
+				.getResource(Constants.TREE_ECORE_FILE).toString()),
 				true);
 		Resources.registerEPackagesFrom(metamodel);
 
 		Resource sampleTree = resourceSet.getResource(
-				URI
-						.createURI(TestFollowingSibling.class.getClassLoader()
-								.getResource(Constants.SAMPLE_TREE_XMI_FILE)
-								.toString()), true);
+			URI
+			.createURI(TestFollowingSibling.class.getClassLoader()
+				.getResource(Constants.SAMPLE_TREE_XMI_FILE)
+				.toString()), true);
 		theTree = sampleTree.getContents().get(0);
 	}
-	
+
 	@AfterClass
 	public static void afterClass() {
 		Resources.unregisterEPackagesFrom(metamodel);

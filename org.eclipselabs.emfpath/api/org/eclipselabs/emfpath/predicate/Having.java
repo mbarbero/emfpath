@@ -12,10 +12,10 @@ package org.eclipselabs.emfpath.predicate;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipselabs.emfpath.base.EStructuralFeatures;
 import org.eclipselabs.emfpath.exception.NoSuchFeatureException;
 import org.eclipselabs.emfpath.indie.util.ComposablePredicate;
 import org.eclipselabs.emfpath.internal.CommonCheck;
-import org.eclipselabs.emfpath.util.EStructuralFeatures;
 
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;

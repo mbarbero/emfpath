@@ -8,10 +8,10 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.util;
+package org.eclipselabs.emfpath.base;
 
-import static org.eclipselabs.emfpath.function.EObjects.ancestorOrSelf;
-import static org.eclipselabs.emfpath.function.EObjects.descendant;
+import static org.eclipselabs.emfpath.base.EObjects.ancestorOrSelf;
+import static org.eclipselabs.emfpath.base.EObjects.descendant;
 
 import java.util.Collection;
 import java.util.NoSuchElementException;

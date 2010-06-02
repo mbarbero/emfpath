@@ -19,13 +19,10 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipselabs.emfpath.base.Resources;
 import org.eclipselabs.emfpath.function.TestFollowingSibling;
-import org.eclipselabs.emfpath.operation.EAdd;
-import org.eclipselabs.emfpath.operation.ESet;
-import org.eclipselabs.emfpath.operation.EUnset;
 import org.eclipselabs.emfpath.predicate.EIsSet;
 import org.eclipselabs.emfpath.test.Constants;
-import org.eclipselabs.emfpath.util.Resources;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -33,7 +30,7 @@ import org.junit.Test;
 
 /**
  * 
- * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a> 
+ * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
  *
  */
 public class TestEUnset {
@@ -47,16 +44,16 @@ public class TestEUnset {
 
 		Resources.initResourceSet(resourceSet);
 		metamodel = resourceSet.getResource(URI
-				.createURI(TestFollowingSibling.class.getClassLoader()
-						.getResource(Constants.TREE_ECORE_FILE).toString()),
+			.createURI(TestFollowingSibling.class.getClassLoader()
+				.getResource(Constants.TREE_ECORE_FILE).toString()),
 				true);
 		Resources.registerEPackagesFrom(metamodel);
 
 		Resource sampleTree = resourceSet.getResource(
-				URI
-						.createURI(TestFollowingSibling.class.getClassLoader()
-								.getResource(Constants.SAMPLE_TREE_XMI_FILE)
-								.toString()), true);
+			URI
+			.createURI(TestFollowingSibling.class.getClassLoader()
+				.getResource(Constants.SAMPLE_TREE_XMI_FILE)
+				.toString()), true);
 		theTree = sampleTree.getContents().get(0);
 	}
 
@@ -81,7 +78,7 @@ public class TestEUnset {
 		assertFalse(EIsSet.feature("anAttribute3").of(node));
 		assertFalse(EIsSet.feature("anAttribute4").of(node));
 	}
-	
+
 	@Test
 	public void testEUnset1() {
 		EObject node = theTree.eContents().get(0);
@@ -90,7 +87,7 @@ public class TestEUnset {
 		EUnset.feature("aReference").of(node);
 		assertFalse(EIsSet.feature("aReference").of(node));
 	}
-	
+
 	@Test
 	public void testEUnset2() {
 		EPackage ePackage = (EPackage) metamodel.getContents().get(0);

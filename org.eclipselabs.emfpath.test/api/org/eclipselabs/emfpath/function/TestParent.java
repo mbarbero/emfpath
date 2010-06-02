@@ -10,7 +10,7 @@
  *******************************************************************************/
 package org.eclipselabs.emfpath.function;
 
-import static org.eclipselabs.emfpath.function.EObjects.parent;
+import static org.eclipselabs.emfpath.base.EObjects.parent;
 import static org.junit.Assert.assertEquals;
 
 import org.eclipse.emf.ecore.EObject;

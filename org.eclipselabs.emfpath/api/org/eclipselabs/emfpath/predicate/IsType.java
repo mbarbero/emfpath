@@ -12,9 +12,9 @@ package org.eclipselabs.emfpath.predicate;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipselabs.emfpath.base.EClasses;
 import org.eclipselabs.emfpath.exception.NotFoundException;
 import org.eclipselabs.emfpath.indie.util.ComposablePredicate;
-import org.eclipselabs.emfpath.util.EClasses;
 
 
 /**

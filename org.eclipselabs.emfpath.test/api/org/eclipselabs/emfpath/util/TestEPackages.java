@@ -18,35 +18,35 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.examples.extlibrary.EXTLibraryPackage;
+import org.eclipselabs.emfpath.base.EPackages;
+import org.eclipselabs.emfpath.base.Resources;
 import org.eclipselabs.emfpath.exception.NotFoundException;
 import org.eclipselabs.emfpath.test.Constants;
-import org.eclipselabs.emfpath.util.EPackages;
-import org.eclipselabs.emfpath.util.Resources;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 
 /**
  * 
- * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a> 
+ * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
  *
  */
 public class TestEPackages {
 
 	private static ResourceSet resourceSet;
-	
+
 	@BeforeClass
 	public static void beforeClass() {
 		resourceSet = new ResourceSetImpl();
 		Resource resource;
-		
+
 		Resources.initResourceSet(resourceSet);
 		resource = resourceSet.getResource(URI.createURI(TestResources.class.getClassLoader().getResource(Constants.EXTLIBRARY_ECORE_FILE).toString()), true);
 		Resources.registerEPackagesFrom(resource);
 		resource = resourceSet.getResource(URI.createURI(TestResources.class.getClassLoader().getResource(Constants.SUB_PKG_ECORE_FILE).toString()), true);
 		Resources.registerEPackagesFrom(resource);
 	}
-	
+
 	@Test
 	public void testWithNSUri() {
 		try {
@@ -78,7 +78,7 @@ public class TestEPackages {
 			fail(e.getMessage());
 		}
 	}
-	
+
 	@Test
 	public void testWithFullName2() {
 		try {
@@ -97,7 +97,7 @@ public class TestEPackages {
 			fail(e.getMessage());
 		}
 	}
-	
+
 	@Test
 	public void testWithFullName3() {
 		try {
