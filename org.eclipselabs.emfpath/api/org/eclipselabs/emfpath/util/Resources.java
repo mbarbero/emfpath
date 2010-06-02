@@ -37,7 +37,6 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipselabs.emfpath.internal.i18n.Messages;
 import org.eclipselabs.emfpath.predicate.IsType;
 
-import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Iterators;
 
@@ -490,6 +489,11 @@ public final class Resources {
 			};
 		}
 	};
+
+	/**
+	 * 
+	 */
+	public static Function<Iterable<EObject>> eAllContents = descendant;
 
 	/**
 	 * 
