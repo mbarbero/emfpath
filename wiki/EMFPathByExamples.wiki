@@ -3,7 +3,7 @@
 
 = Index all EObjects in an Resource by their EClass =
 
-We use the [http://guava-libraries.googlecode.com/svn/trunk/javadoc/com/google/common/collect/Multimap.html Multimap] class of Google Collections (basically, it is an abstraction of `Map<K, Collection<V>>`).
+Our index will be an instance of the [http://guava-libraries.googlecode.com/svn/trunk/javadoc/com/google/common/collect/Multimap.html Multimap] class of Google Collections (basically, it is an abstraction of `Map<K, Collection<V>>`).
 
 Let's say we have an EMF [http://download.eclipse.org/modeling/emf/emf/javadoc/2.5.0/org/eclipse/emf/ecore/resource/Resource.html Resource] named `eResource`.
 
