@@ -13,7 +13,6 @@ package org.eclipselabs.emfpath.base;
 import static org.eclipselabs.emfpath.base.EObjects.ancestorOrSelf;
 import static org.eclipselabs.emfpath.base.EObjects.descendant;
 
-import java.util.Collection;
 import java.util.NoSuchElementException;
 
 import org.eclipse.emf.common.util.EList;
@@ -26,8 +25,6 @@ import org.eclipselabs.emfpath.exception.NotFoundException;
 import org.eclipselabs.emfpath.indie.predicate.Equals;
 import org.eclipselabs.emfpath.operation.EGet;
 import org.eclipselabs.emfpath.predicate.Having;
-import org.eclipselabs.emfpath.predicate.IsType;
-
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
@@ -209,9 +206,8 @@ public abstract class EClasses {
 			Preconditions.checkArgument(fullName != null, "fullName cannot be null");
 			Preconditions.checkArgument(fullName.length() >= 0);
 
-			Iterable<? extends EClass> allEClasses = (Iterable<? extends EClass>) Iterables.filter(Iterables.concat(Iterables.transform(
-				(Collection<? extends EPackage>) this.ePackageRegistry.values(), descendant)), IsType
-				.of(EcorePackage.Literals.ECLASS));
+			Iterable<? extends EClass> allEClasses = Iterables.filter(Iterables.concat(Iterables.transform(
+				EPackages.allEPackages(this.ePackageRegistry), descendant)), EClass.class);
 
 			try {
 				EClass eClass = Iterables.find(allEClasses, new Predicate<EClass>() {
