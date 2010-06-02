@@ -10,7 +10,7 @@
  *******************************************************************************/
 package org.eclipselabs.emfpath.function;
 
-import static org.eclipselabs.emfpath.function.EObjects.preceding;
+import static org.eclipselabs.emfpath.base.EObjects.preceding;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 

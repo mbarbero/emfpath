@@ -16,36 +16,36 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipselabs.emfpath.base.EClasses;
+import org.eclipselabs.emfpath.base.EPackages;
+import org.eclipselabs.emfpath.base.Resources;
 import org.eclipselabs.emfpath.exception.NotFoundException;
 import org.eclipselabs.emfpath.test.Constants;
-import org.eclipselabs.emfpath.util.EClasses;
-import org.eclipselabs.emfpath.util.EPackages;
-import org.eclipselabs.emfpath.util.Resources;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 
 /**
  * 
- * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a> 
+ * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
  *
  */
 public class TestEClasses {
 
 	private static ResourceSet resourceSet;
-	
+
 	@BeforeClass
 	public static void beforeClass() {
 		resourceSet = new ResourceSetImpl();
 		Resource resource;
-		
+
 		Resources.initResourceSet(resourceSet);
 		resource = resourceSet.getResource(URI.createURI(TestEClasses.class.getClassLoader().getResource(Constants.EXTLIBRARY_ECORE_FILE).toString()), true);
 		Resources.registerEPackagesFrom(resource);
 		resource = resourceSet.getResource(URI.createURI(TestEClasses.class.getClassLoader().getResource(Constants.SUB_PKG_ECORE_FILE).toString()), true);
 		Resources.registerEPackagesFrom(resource);
-	}	
-	
+	}
+
 	@Test
 	public void testFromEPackage() throws NotFoundException {
 		assertEquals("cd1", EClasses.from(EPackages.from(resourceSet).withFullyQualifiedName("a.b.d")).forName("cd1").getName());
@@ -56,8 +56,8 @@ public class TestEClasses {
 	public void testFromEPackage2() throws NotFoundException {
 		assertEquals("cd1", EClasses.from(EPackages.from(resourceSet).withFullyQualifiedName("a")).forName("cd1").getName());
 	}
-	
-	
+
+
 	@Test(expected=NotFoundException.class)
 	public void testFromEPackage3() throws NotFoundException {
 		assertEquals("ce2", EClasses.from(EPackages.from(resourceSet).withFullyQualifiedName("a.b")).forName("ce2").getName());

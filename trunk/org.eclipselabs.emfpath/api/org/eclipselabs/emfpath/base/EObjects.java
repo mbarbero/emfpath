@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.function;
+package org.eclipselabs.emfpath.base;
 
 import java.util.Collections;
 import java.util.Iterator;

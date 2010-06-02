@@ -15,16 +15,16 @@ import static org.junit.Assert.assertEquals;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.examples.extlibrary.EXTLibraryPackage;
+import org.eclipselabs.emfpath.base.EAttributes;
+import org.eclipselabs.emfpath.base.Resources;
 import org.eclipselabs.emfpath.exception.NoSuchFeatureException;
-import org.eclipselabs.emfpath.util.EAttributes;
-import org.eclipselabs.emfpath.util.Resources;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 
 /**
  * 
- * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a> 
+ * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
  *
  */
 public class TestEAttributes {
@@ -36,25 +36,25 @@ public class TestEAttributes {
 		resourceSet = new ResourceSetImpl();
 		Resources.initResourceSet(resourceSet);
 		resourceSet.getPackageRegistry().put(EXTLibraryPackage.eNS_URI,
-				EXTLibraryPackage.eINSTANCE);
+			EXTLibraryPackage.eINSTANCE);
 	}
 
 	@Test
 	public void testFromEClass() throws NoSuchFeatureException {
 		assertEquals(EXTLibraryPackage.Literals.PERSON__FIRST_NAME, EAttributes
-				.from(EXTLibraryPackage.Literals.EMPLOYEE)
-				.named("firstName"));
+			.from(EXTLibraryPackage.Literals.EMPLOYEE)
+			.named("firstName"));
 	}
 
 	@Test(expected=ClassCastException.class)
 	public void testAttributeFromEClass() throws NoSuchFeatureException {
 		EAttributes.from(EXTLibraryPackage.Literals.EMPLOYEE).named(
-				"manager");
+		"manager");
 	}
 
 	@Test(expected=NoSuchFeatureException.class)
 	public void testIllegalFromEClass() throws NoSuchFeatureException {
 		EAttributes.from(EXTLibraryPackage.Literals.EMPLOYEE).named(
-				"firstName_");
+		"firstName_");
 	}
 }
