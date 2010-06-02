@@ -16,6 +16,7 @@ import static org.eclipselabs.emfpath.function.EObjects.descendant;
 import java.util.Collection;
 import java.util.NoSuchElementException;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
@@ -78,6 +79,44 @@ public abstract class EClasses {
 	 * 
 	 */
 	String separator = EClasses.DEFAULT_FULL_NAME_SEPARATOR;
+
+	/**
+	 * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
+	 * @param <T>
+	 * @since 0.3.0
+	 */
+	public static abstract class Function<T> implements com.google.common.base.Function<EClass, T> {
+
+		/**
+		 * A synonym of apply
+		 * 
+		 * @param from
+		 * @return
+		 */
+		public T of(EClass from) {
+			return this.apply(from);
+		}
+	}
+
+	/**
+	 * @see EClass#getEAllSuperTypes()
+	 */
+	public static final Function<EList<EClass>> eAllSuperTypes = new Function<EList<EClass>>() {
+		public EList<EClass> apply(EClass from) {
+			Preconditions.checkNotNull(from);
+			return from.getEAllSuperTypes();
+		}
+	};
+
+	/**
+	 * @see EClass#getEAllSuperTypes()
+	 */
+	public static final Function<ImmutableList<EClass>> eAllSuperTypesAndSelf = new Function<ImmutableList<EClass>>() {
+		public ImmutableList<EClass> apply(EClass from) {
+			Preconditions.checkNotNull(from);
+			return ImmutableList.<EClass> builder().add(from).addAll(from.getEAllSuperTypes()).build();
+		}
+	};
 
 	/**
 	 * @param sep
