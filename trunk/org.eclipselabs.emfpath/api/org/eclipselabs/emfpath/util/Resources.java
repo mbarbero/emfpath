@@ -491,7 +491,9 @@ public final class Resources {
 	};
 
 	/**
+	 * Synonym of {@link #descendant}.
 	 * 
+	 * @since 0.3.0
 	 */
 	public static Function<Iterable<EObject>> eAllContents = descendant;
 
