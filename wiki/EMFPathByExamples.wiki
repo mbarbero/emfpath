@@ -1,7 +1,7 @@
 #summary Simple to complex thing you may want to do with EMFPath.
 #labels Featured
 
-= Index all EObjects in an Resource by their EClass =
+= Index all EObjects in a Resource by their EClass =
 
 Our index will be an instance of the [http://guava-libraries.googlecode.com/svn/trunk/javadoc/com/google/common/collect/Multimap.html Multimap] class of Google Collections (basically, it is an abstraction of `Map<K, Collection<V>>`). 
 
