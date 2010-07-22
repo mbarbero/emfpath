@@ -10,12 +10,16 @@
  *******************************************************************************/
 package org.eclipselabs.emfpath.util;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -101,6 +105,38 @@ public abstract class ForwardingEObject extends ForwardingObject implements EObj
 
 	public void eSetDeliver(boolean deliver) {
 		this.delegate().eSetDeliver(deliver);
+	}
+
+	private static final String E_INVOKE = "eInvoke"; //$NON-NLS-1$
+
+	public Object eInvoke(EOperation operation, EList<?> arguments) throws InvocationTargetException {
+		Method method;
+		try {
+			method = this.delegate().getClass().getMethod(ForwardingEObject.E_INVOKE, EOperation.class, EList.class);
+		} catch (SecurityException e) {
+			throw new InvocationTargetException(e,
+			"You can not use a ForwardingEObject (or subclass) with your VM security setting. You should check you enables reflection authorization");
+		} catch (NoSuchMethodException e) {
+			throw new InvocationTargetException(e,
+			"The eInvoke is available only since EMF 2.6. You should check the version of the EMF runtime you are executing this code on");
+		}
+
+		try {
+			if (method == null) {
+				throw new InvocationTargetException(
+					new NullPointerException(
+					"This is a bug in ForwardingEObject#eInvoke(EOperation, EList<?>) implementation. You may want to tell it to the authors by filling a bug @ http://code.google.com/a/eclipselabs.org/p/emfpath/issues/entry"));
+			}
+			return method.invoke(this.delegate(), operation, arguments);
+		} catch (IllegalArgumentException e) {
+			throw new InvocationTargetException(
+				e,
+			"This is a bug in ForwardingEObject#eInvoke(EOperation, EList<?>) implementation. You may want to tell it to the authors by filling a bug @ http://code.google.com/a/eclipselabs.org/p/emfpath/issues/entry");
+		} catch (IllegalAccessException e) {
+			throw new InvocationTargetException(
+				e,
+			"This is a bug in ForwardingEObject#eInvoke(EOperation, EList<?>) implementation. You may want to tell it to the authors by filling a bug @ http://code.google.com/a/eclipselabs.org/p/emfpath/issues/entry");
+		}
 	}
 
 	@Override
