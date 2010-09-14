@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ASCII"?>
+<tree:Tree xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tree="http://tree" xsi:schemaLocation="http://tree tree.ecore" name="myTree">
+  <root name="root">
+    <child name="n1">
+      <child name="n11">
+        <child name="n111"/>
+        <child name="n112"/>
+        <child name="n113"/>
+      </child>
+      <child name="n12">
+        <child name="n121"/>
+        <child name="n122"/>
+        <child name="n123"/>
+      </child>
+      <child name="n13">
+        <child name="n131"/>
+        <child name="n132"/>
+        <child name="n133"/>
+      </child>
+    </child>
+    <child name="n2">
+      <child name="n21">
+        <child name="n211"/>
+        <child name="n212"/>
+        <child name="n213"/>
+      </child>
+      <child name="n22">
+        <child name="n221"/>
+        <child name="n222"/>
+        <child name="n223"/>
+      </child>
+      <child name="n23">
+        <child name="n231"/>
+        <child name="n232"/>
+        <child name="n233"/>
+      </child>
+    </child>
+    <child name="n3">
+      <child name="n31">
+        <child name="n311"/>
+        <child name="n312"/>
+        <child name="n313"/>
+      </child>
+      <child name="n32">
+        <child name="n321"/>
+        <child name="n322"/>
+        <child name="n323"/>
+      </child>
+      <child name="n33">
+        <child name="n331"/>
+        <child name="n332"/>
+        <child name="n333"/>
+      </child>
+    </child>
+  </root>
+</tree:Tree>
