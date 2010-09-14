@@ -109,6 +109,13 @@ public abstract class ForwardingEObject extends ForwardingObject implements EObj
 
 	private static final String E_INVOKE = "eInvoke"; //$NON-NLS-1$
 
+	/**
+	 * @param operation
+	 * @param arguments
+	 * @return
+	 * @throws InvocationTargetException
+	 * @see EObject#eInvoke(EOperation, EList<?> )
+	 */
 	public Object eInvoke(EOperation operation, EList<?> arguments) throws InvocationTargetException {
 		Method method;
 		try {
