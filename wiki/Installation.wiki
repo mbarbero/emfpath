@@ -1,0 +1,11 @@
+#summary How to install EMFPath library on Eclipse
+
+= Introduction =
+
+http://img245.imageshack.us/img245/3627/install1x.jpg
+
+http://img444.imageshack.us/img444/1918/install3l.jpg
+
+http://img412.imageshack.us/img412/3429/install2k.jpg
+
+http://img16.imageshack.us/img16/6026/install4.jpg
