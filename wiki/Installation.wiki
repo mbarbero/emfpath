@@ -1,13 +1,29 @@
-#summary How to install EMFPath library on Eclipse
+#summary How to install EMFPath library
 
-= Introduction =
+= Eclipse Installation =
+
+== Open the Install New Software ==
+
+It is available from the help menu.
 
 http://img409.imageshack.us/img409/6371/install0.jpg
 
+It shows a 
+
 http://img245.imageshack.us/img245/3627/install1x.jpg
+
+== Adding Guava update site (EMFPath dependency)  ==
 
 http://img444.imageshack.us/img444/1918/install3l.jpg
 
+== Adding EMFPath update site  ==
+
 http://img412.imageshack.us/img412/3429/install2k.jpg
 
+== Install the EMFPath library) ==
+
+You will have to choose between Runtime or SDK. The difference is that the SDK includes source and Javadoc.
+
 http://img16.imageshack.us/img16/6026/install4.jpg
+
+If you want Guava sources, you have to install the Guava SDK by selecting the Guava update site in the first combo box. 
