@@ -26,8 +26,8 @@ http://img412.imageshack.us/img412/3429/install2k.jpg
 
 == Install the EMFPath library ==
 
-You will have to choose between Runtime or SDK. The difference is that the SDK includes source and Javadoc.
+You will have to choose between Runtime or SDK. The difference is that the SDK includes source and Javadoc. Dependencies will be automatically installed.
 
 http://img16.imageshack.us/img16/6026/install4.jpg
 
-If you want Guava sources, you have to install the Guava SDK by selecting the Guava update site in the first combo box. 
+If you want Guava sources, you have to come back to the install window and install the Guava SDK by selecting the Guava update site in the first combo box. 
