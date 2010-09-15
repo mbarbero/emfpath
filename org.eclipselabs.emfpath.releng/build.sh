@@ -2,7 +2,7 @@
 
 function usage {
 	echo "build.sh VERSION"
-	echo "Example: build.sh 0.5.1"
+	echo "Example: build.sh 0.5.1 201004070800"
 }
 
 function replace {
@@ -12,12 +12,13 @@ function replace {
 	sed -i "s/$FROM/$TO/g" $FILE
 }
 
-if [ $# -lt 1 ]; then
+if [ $# -lt 2 ]; then
 	usage
 	exit 5
 fi
 
-VERSION=$1
+VERSION=$1.$2
+QUALIFIER=$2
 RELEASE_NAME=emfpath-r$1
 RELEASE_TAG=release$1
 ZIP_FILE=build/$RELEASE_NAME.zip
@@ -41,17 +42,13 @@ cp -Rf /tmp/$RELEASE_NAME/bin/OSGI-INF $RELEASE_NAME/org.eclipselabs.emfpath/
 cp -Rf /tmp/$RELEASE_NAME/src/api/* $RELEASE_NAME/org.eclipselabs.emfpath.source/
 cp -Rf /tmp/$RELEASE_NAME/src/emf-indie/* $RELEASE_NAME/org.eclipselabs.emfpath.source/
 cp -Rf /tmp/$RELEASE_NAME/src/internal/* $RELEASE_NAME/org.eclipselabs.emfpath.source/
-cp -Rf /tmp/$RELEASE_NAME/bin/META-INF $RELEASE_NAME/org.eclipselabs.emfpath.source/
-cp -Rf /tmp/$RELEASE_NAME/bin/OSGI-INF $RELEASE_NAME/org.eclipselabs.emfpath.source/
 
 cp -Rf /tmp/$RELEASE_NAME/javadoc $RELEASE_NAME/org.eclipselabs.emfpath.source/
 
 cp /tmp/$RELEASE_NAME/about.html $RELEASE_NAME/org.eclipselabs.emfpath.source/about_files
 
-replace $RELEASE_NAME/org.eclipselabs.emfpath.source/META-INF/MANIFEST.MF "Bundle-SymbolicName: org.eclipselabs.emfpath" "Bundle-SymbolicName: org.eclipselabs.emfpath.source"
-sed -i '/^\s*$/d' $RELEASE_NAME/org.eclipselabs.emfpath.source/META-INF/MANIFEST.MF
-echo "Eclipse-SourceBundle: org.eclipselabs.emfpath;version=$VERSION" >> $RELEASE_NAME/org.eclipselabs.emfpath.source/META-INF/MANIFEST.MF
-echo "" >> $RELEASE_NAME/org.eclipselabs.emfpath.source/META-INF/MANIFEST.MF
+replace $RELEASE_NAME/org.eclipselabs.emfpath/META-INF/MANIFEST.MF ".qualifier" ".$QUALIFIER"
+replace $RELEASE_NAME/org.eclipselabs.emfpath.source/META-INF/MANIFEST.MF "#VERSION#" $VERSION
 
 replace $RELEASE_NAME/org.eclipselabs.emfpath.runtime.feature/feature.xml "#VERSION#" $VERSION
 replace $RELEASE_NAME/org.eclipselabs.emfpath.runtime.feature/feature.xml "#RELEASE_TAG#" $RELEASE_TAG

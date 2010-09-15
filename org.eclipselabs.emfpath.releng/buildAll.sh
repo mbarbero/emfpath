@@ -1,12 +1,11 @@
 #!/bin/bash
 
 rm -rf repository/*.jar
-rm -rf repository/plugins/*.jar
-rm -rf repository/features/*.jar
+
 mkdir -p build/repository/features
 mkdir -p build/repository/plugins
 
-./build.sh 0.3.0
+./build.sh 0.3.0 `date +%Y%m%d%H%M`
 
 EQUINOX_LAUNCHER=eclipse-SDK-3.6-linux-gtk-x86_64/plugins/org.eclipse.equinox.launcher_1.1.0.v20100507.jar
 REPOSITORY_LOCATION=file:`pwd`/../org.eclipselabs.emfpath.repositorycontainer/repository
