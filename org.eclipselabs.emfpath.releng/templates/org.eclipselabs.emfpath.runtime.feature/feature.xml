@@ -102,7 +102,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <discovery label="EMFPath homepage" url="http://code.google.com/a/eclipselabs.org/p/emfpath/"/>
       <discovery label="Ask a question (use &quot;emfpath&quot; tag)" url="http://stackoverflow.com/questions/ask"/>
       <discovery label="Discussion group" url="http://groups.google.com/group/emfpath-discuss"/>
-      <discovery label="This revision API documentation" url="http://svn.codespot.com/a/eclipselabs.org/emfpath/tags/#RELEASE_TAG#/javadoc/index.html"/>
+      <discovery label="This revision API documentation" url="http://svn.codespot.com/a/eclipselabs.org/emfpath/tags/#RELEASE_TAG#/org.eclipselabs.emfpath.doc/reference/api/index.html"/>
       <discovery label="Latest API documentation" url="http://svn.codespot.com/a/eclipselabs.org/emfpath/trunk/org.eclipselabs.emfpath.doc/reference/api/index.html"/>
    </url>
 
@@ -110,7 +110,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
          id="org.eclipselabs.emfpath"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="#VERSION#"
          unpack="false"/>
 
 </feature>
