@@ -1,6 +1,6 @@
 #summary How to install EMFPath library
 
-= Eclipse Installation =
+= Eclipse (3.4, 3.5 and 3.6) Installation =
 
 == Open the Install New Software ==
 
