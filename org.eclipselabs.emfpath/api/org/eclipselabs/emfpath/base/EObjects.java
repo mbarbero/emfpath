@@ -79,6 +79,11 @@ public abstract class EObjects<T> {
 	/**
 	 * 
 	 */
+	public static final Function<EObject> eContainer = EObjects.parent;
+
+	/**
+	 * 
+	 */
 	public static final Function<EStructuralFeature> eContainingFeature = new Function<EStructuralFeature>() {
 		public EStructuralFeature apply(EObject from) {
 			Preconditions.checkNotNull(from);
@@ -95,21 +100,6 @@ public abstract class EObjects<T> {
 			return from.eContainmentFeature();
 		}
 	};
-
-	/**
-	 * 
-	 */
-	public static final Function<Iterable<EObject>> eAllContents = EObjects.descendant;
-
-	/**
-	 * 
-	 */
-	public static final Function<Iterable<EObject>> eContents = EObjects.child;
-
-	/**
-	 * 
-	 */
-	public static final Function<EObject> eContainer = EObjects.parent;
 
 	/**
 	 * 
@@ -185,6 +175,11 @@ public abstract class EObjects<T> {
 	/**
 	 * 
 	 */
+	public static final Function<Iterable<EObject>> eContents = EObjects.child;
+
+	/**
+	 * 
+	 */
 	public static final Function<Iterable<EObject>> descendant = new Function<Iterable<EObject>>() {
 		public Iterable<EObject> apply(final EObject from) {
 			Preconditions.checkNotNull(from);
@@ -195,6 +190,11 @@ public abstract class EObjects<T> {
 			};
 		}
 	};
+
+	/**
+	 * 
+	 */
+	public static final Function<Iterable<EObject>> eAllContents = EObjects.descendant;
 
 	/**
 	 * 
