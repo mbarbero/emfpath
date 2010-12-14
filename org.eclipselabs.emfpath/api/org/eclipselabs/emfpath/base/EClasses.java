@@ -31,9 +31,30 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 
-
 /**
  * Set of utility methods to handle {@link EClass EClasses}.
+ * <p>
+ * It provides an static utility method to compute the fully qualified name of an {@link EClass} within its owner
+ * {@link EPackage}s and functions wrapping common {@link EClass} methods.
+ * <p>
+ * It also provides an internal DSL to search for an {@link EClass} by fully qualified in a scope. The scope can be:
+ * <ul>
+ * <li> {@link EPackage}</li>
+ * <li> {@link ResourceSet}</li>
+ * <li> {@link EPackage.Registry}</li>
+ * </ul>
+ * <p>
+ * The qualified name is a set of String fragments separated by another String. This separator can be configured by
+ * calling the method {@link #separator(String)}.
+ * <p>
+ * Usage:
+ * <p>
+ * <code>
+ * EClasses.from(anEPackage).forName("p1.p2.myEClassName");
+ * EClasses.from(aResourceSet).separator("::").forName("p1::p2::myEClassName");
+ * EClasses.from(EPackage.Registry.INSTANCE).separator("!").forName("ecore!EModelElement");
+ * </code>
+ * <p>
  * 
  * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël barbero</a>
  * @since 0.1.0
@@ -44,6 +65,18 @@ public abstract class EClasses {
 	 * 
 	 */
 	public static final String DEFAULT_FULL_NAME_SEPARATOR = EPackages.DEFAULT_FULL_NAME_SEPARATOR;
+
+	/**
+	 * 
+	 */
+	String separator;
+
+	/**
+	 * Default visibility to prevent external instantiation (use static constructor method instead).
+	 */
+	EClasses() {
+		this.separator = EClasses.DEFAULT_FULL_NAME_SEPARATOR;
+	}
 
 	/**
 	 * @param ePackage
@@ -71,11 +104,6 @@ public abstract class EClasses {
 		Preconditions.checkArgument(ePackageRegistry != null, "ePackageRegistry cannot be null");
 		return new FromEPackageRegistry(ePackageRegistry);
 	}
-
-	/**
-	 * 
-	 */
-	String separator = EClasses.DEFAULT_FULL_NAME_SEPARATOR;
 
 	/**
 	 * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
