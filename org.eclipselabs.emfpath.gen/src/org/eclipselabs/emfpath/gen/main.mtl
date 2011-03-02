@@ -10,4 +10,5 @@
 
 [template public gen(e : GenPackage)]
 [genClasses.gen()/]
+[nestedGenPackages.gen()/]
 [/template]

@@ -1,10 +1,14 @@
 [comment encoding = UTF-8 /]
-[module naming('http://www.eclipse.org/emf/2002/GenModel')/]
+[module naming('http://www.eclipse.org/emf/2002/GenModel', 'http://www.eclipse.org/emf/2002/Ecore')/]
 
 [import org::eclipselabs::emfpath::gen::typing /]
 
 [template public generatedFullFilename(e : GenClass) post (trim())]
-	[generatedQualifiedClassName().replaceAll('\\.', '/')/].java
+	[modelDirectory()/][generatedQualifiedClassName().replaceAll('\\.', '/')/].java
+[/template]
+
+[template private modelDirectory(e : GenClass) post(trim())]
+	[genPackage.genModel.modelDirectory.substring(1)/][if (not genPackage.genModel.modelDirectory.endsWith('/'))]/[/if]
 [/template]
 
 [template public generatedClassName(e : GenClass) post (trim())]
@@ -31,7 +35,7 @@
 	[ecoreClass.name/]
 [/template]
 
-[template public javaName(e : GenPackage) post(trim())]
+[template public javaName(e : GenPackage) post(trim().escapeJavaKeyword())]
 	[ecorePackage.name/]
 [/template]
 

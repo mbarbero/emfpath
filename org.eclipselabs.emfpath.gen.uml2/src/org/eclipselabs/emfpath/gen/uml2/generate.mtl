@@ -8,4 +8,4 @@
 [import org::eclipselabs::emfpath::gen::uml2::naming /]
 [import org::eclipselabs::emfpath::gen::uml2::common /]
 
-[template public gen(e : GenOperation) overrides gen ? (isContainedByUML2Package() and willGeneratePredicate() and genParameters->size() = 0 and genClass.genFeatures.predicateName()->includes(predicateName())) post(trim())/]
+[template public gen(e : GenOperation, c : GenClass) overrides gen ? (isContainedByUML2Package() and willGeneratePredicate() and genParameters->size() = 0 and genClass.genFeatures.predicateName()->includes(predicateName())) post(trim())/]
