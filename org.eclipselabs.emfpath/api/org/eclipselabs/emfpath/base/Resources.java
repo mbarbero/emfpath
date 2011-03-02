@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -39,6 +40,7 @@ import org.eclipselabs.emfpath.predicate.IsType;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Iterators;
+import com.google.common.collect.Maps;
 
 
 /**
@@ -455,9 +457,33 @@ public final class Resources {
 		final XMLResource resource = (XMLResource) Resources.attachResource(URI.createFileURI("resource.xml"), copyRoot); //$NON-NLS-1$
 
 		final StringWriter writer = new StringWriter();
-		final Map<String, String> options = new HashMap<String, String>();
+		final Map<String, String> options = Maps.newHashMap();
 		options.put(XMLResource.OPTION_ENCODING, System.getProperty(Resources.FILE_ENCODING));
 		resource.save(writer, options);
+		final String result = writer.toString();
+		writer.flush();
+		return result;
+	}
+
+	/**
+	 * @param resource
+	 * @return
+	 * @throws IOException
+	 */
+	public static String serializeContent(Resource resource) throws IOException {
+		Preconditions.checkArgument(resource != null, "Must not be null"); //$NON-NLS-1$
+
+		// Should not throw ClassCast since uri calls for an xml resource
+		final XMLResource xmlResource = (XMLResource) Resources.createResource(URI.createFileURI("resource.xml")); //$NON-NLS-1$
+
+		final Collection<EObject> eObjectsCopy = EcoreUtil.copyAll(resource.getContents());
+		xmlResource.getContents().addAll(eObjectsCopy);
+
+		final StringWriter writer = new StringWriter();
+		final Map<String, String> options = Maps.newHashMap();
+		options.put(XMLResource.OPTION_ENCODING, System.getProperty(Resources.FILE_ENCODING));
+		options.put(XMLResource.OPTION_PROCESS_DANGLING_HREF, XMLResource.OPTION_PROCESS_DANGLING_HREF_DISCARD);
+		xmlResource.save(writer, options);
 		final String result = writer.toString();
 		writer.flush();
 		return result;
