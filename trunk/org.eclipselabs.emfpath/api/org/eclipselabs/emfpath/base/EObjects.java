@@ -28,9 +28,8 @@ import com.google.common.collect.Iterators;
 
 /**
  * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
- * @param <T>
  */
-public abstract class EObjects<T> {
+public abstract class EObjects {
 
 	/**
 	 * 
