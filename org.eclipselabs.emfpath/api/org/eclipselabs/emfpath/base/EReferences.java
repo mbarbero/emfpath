@@ -53,7 +53,7 @@ public final class EReferences extends EStructuralFeatures {
 	 * @throws IllegalArgumentException if <code>featureName</code> is null or empty
 	 * @throws ClassCastException if the {@link EStructuralFeature} named <code>featureName</code> is an
 	 *         {@link EAttribute} and not an {@link EReference}
-	 * @see org.eclipselabs.emfpath.internal.i18n.utils.EStructuralFeatures#named(java.lang.String)
+	 * @see org.eclipselabs.emfpath.base.EStructuralFeatures#named(java.lang.String)
 	 */
 	@Override
 	public EReference named(String featureName) throws NoSuchFeatureException {
