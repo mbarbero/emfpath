@@ -5,6 +5,7 @@
 [import org::eclipselabs::emfpath::gen::typing /]
 [import org::eclipselabs::emfpath::gen::imports /]
 [import org::eclipselabs::emfpath::gen::primitives /]
+[import org::eclipselabs::emfpath::gen::utils /]
 
 [template public gen(e : GenClass) ? (ecoreClass.instanceTypeName.oclIsUndefined() or ecoreClass.instanceTypeName.trim() = '')]
 [file (generatedFullFilename(), false, 'UTF-8')]
@@ -14,64 +15,92 @@ package [genPackage.generatedQualifiedJavaName()/];
 
 public class [generatedClassName()/] {
 
-	[genFeatures->select(not ecoreFeature.eType.oclIsUndefined()).gen()->excluding('')->sep('\n\n\t')/]
+	[allGenFeatures()->select(not ecoreFeature.eType.oclIsUndefined()).gen(e)->excluding('')->sep('\n\n\t')/]
 	
-	[genOperations->select(not ecoreOperation.eType.oclIsUndefined()).gen()->excluding('')->sep('\n\n\t')/]
+	[allGenOperations()->select(not ecoreOperation.eType.oclIsUndefined()).gen(e)->excluding('')->sep('\n\n\t')/]
 
 }
 [/file]
 [/template]
 
-[template public gen(e : GenFeature) ? (willGeneratePredicate()) post (trim())]
-	public static final Predicate<[genClass.javaName()/]> [predicateName()/] = new Predicate<[genClass.javaName()/]>() {
-		public boolean apply([genClass.javaName()/] s) {
-			return s.[getterName()/]();
-		}
-	};
-[/template]
-
-[template public gen(e : GenFeature) ? (not willGeneratePredicate()) post (trim())]
-	public static final Function<[genClass.javaName()/], [typeName().wrap()/]> [functionName()/] = new Function<[genClass.javaName()/], [typeName().wrap()/]>() {
-		public [typeName().wrap()/] apply([genClass.javaName()/] s) {
-			return s.[getterName()/]();
-		}
-	};
-[/template]
-
-[template public gen(e : GenOperation) ? (willGeneratePredicate() and genParameters->size() = 0) post (trim())]
-	public static Predicate<[genClass.javaName()/]> [predicateName()/] = new Predicate<[genClass.javaName()/]>() {
-		public boolean apply([genClass.javaName()/] s) {
-			return s.[operationName()/]();
-		}
-	};
-[/template]
-
-[template public gen(e : GenOperation) ? (not willGeneratePredicate() and genParameters->size() = 0) post (trim())]
-	public static Function<[genClass.javaName()/], [typeName().wrap()/]> [functionName()/] = new Function<[genClass.javaName()/], [typeName().wrap()/]>() {
-		public [typeName().wrap()/] apply([genClass.javaName()/] s) {
-			return s.[operationName()/]();
-		}
-	};
-[/template]
-
-[template public gen(e : GenOperation) ? (willGeneratePredicate() and genParameters->size() > 0) post (trim())]
-	public static Predicate<[genClass.javaName()/]> [predicateName()/]([genParameters.declaration()->sep(', ')/]) {
-		return new Predicate<[genClass.javaName()/]>() {
-			public boolean apply([genClass.javaName()/] s) {
-				return s.[operationName()/]([genParameters.gen()->sep(', ')/]);
-			}
-		};
+[template public gen(e : GenFeature, c : GenClass) ? (genClass = c and willGeneratePredicate()) post (trim())]
+public static final Predicate<[genClass.javaName()/]> [predicateName()/] = new Predicate<[genClass.javaName()/]>() {
+	public boolean apply([genClass.javaName()/] s) {
+		return s.[getterName()/]();
 	}
+};
 [/template]
 
-[template public gen(e : GenOperation) ? (not willGeneratePredicate() and genParameters->size() > 0) post (trim())]
-	public static Function<[genClass.javaName()/], [typeName().wrap()/]> [functionName()/]([genParameters.declaration()->sep(', ')/]) {
-		return new Function<[genClass.javaName()/], [typeName().wrap()/]>() {
-			public [typeName().wrap()/] apply([genClass.javaName()/] s) {
-				return s.[operationName()/]([genParameters.gen()->sep(', ')/]);
-			}
-		};
+[template public gen(e : GenFeature, c : GenClass) ? (genClass = c and not willGeneratePredicate()) post (trim())]
+public static final Function<[genClass.javaName()/], [typeName().wrap()/]> [functionName()/] = new Function<[genClass.javaName()/], [typeName().wrap()/]>() {
+	public [typeName().wrap()/] apply([genClass.javaName()/] s) {
+		return s.[getterName()/]();
 	}
+};
+[/template]
+
+[template public gen(e : GenOperation, c : GenClass) ? (genClass = c and willGeneratePredicate() and genParameters->size() = 0) post (trim())]
+public static final Predicate<[genClass.javaName()/]> [predicateName()/] = new Predicate<[genClass.javaName()/]>() {
+	public boolean apply([genClass.javaName()/] s) {
+		return s.[operationName()/]();
+	}
+};
+[/template]
+
+[template public gen(e : GenOperation, c : GenClass) ? (genClass = c and not willGeneratePredicate() and genParameters->size() = 0) post (trim())]
+public static final Function<[genClass.javaName()/], [typeName().wrap()/]> [functionName()/] = new Function<[genClass.javaName()/], [typeName().wrap()/]>() {
+	public [typeName().wrap()/] apply([genClass.javaName()/] s) {
+		return s.[operationName()/]();
+	}
+};
+[/template]
+
+[template public gen(e : GenOperation, c : GenClass) ? (genClass = c and willGeneratePredicate() and genParameters->size() > 0) post (trim())]
+public static Predicate<[genClass.javaName()/]> [predicateName()/]([genParameters.declaration()->sep(', ')/]) {
+	return new Predicate<[genClass.javaName()/]>() {
+		public boolean apply([genClass.javaName()/] s) {
+			return s.[operationName()/]([genParameters.gen()->sep(', ')/]);
+		}
+	};
+}
+[/template]
+
+[template public gen(e : GenOperation, c : GenClass) ? (genClass = c and not willGeneratePredicate() and genParameters->size() > 0) post (trim())]
+public static Function<[genClass.javaName()/], [typeName().wrap()/]> [functionName()/]([genParameters.declaration()->sep(', ')/]) {
+	return new Function<[genClass.javaName()/], [typeName().wrap()/]>() {
+		public [typeName().wrap()/] apply([genClass.javaName()/] s) {
+			return s.[operationName()/]([genParameters.gen()->sep(', ')/]);
+		}
+	};
+}
+[/template]
+
+[template public gen(e : GenFeature, c : GenClass) ? (genClass <> c and willGeneratePredicate()) post (trim())]
+public static final Predicate<[genClass.javaName()/]> [predicateName()/] = [genClass.generatedClassName()/].[predicateName()/];
+[/template]
+
+[template public gen(e : GenFeature, c : GenClass) ? (genClass <> c and not willGeneratePredicate()) post (trim())]
+public static final Function<[genClass.javaName()/], [typeName().wrap()/]> [functionName()/] = [genClass.generatedClassName()/].[functionName()/];
+[/template]
+
+[template public gen(e : GenOperation, c : GenClass) ? (genClass <> c and willGeneratePredicate() and genParameters->size() = 0) post (trim())]
+public static final Predicate<[genClass.javaName()/]> [predicateName()/] = [genClass.generatedClassName()/].[predicateName()/];
+[/template]
+
+[template public gen(e : GenOperation, c : GenClass) ? (genClass <> c and not willGeneratePredicate() and genParameters->size() = 0) post (trim())]
+public static final Function<[genClass.javaName()/], [typeName().wrap()/]> [functionName()/] = [genClass.generatedClassName()/].[functionName()/];
+[/template]
+
+[template public gen(e : GenOperation, c : GenClass) ? (genClass <> c and willGeneratePredicate() and genParameters->size() > 0) post (trim())]
+public static Predicate<[genClass.javaName()/]> [predicateName()/]([genParameters.declaration()->sep(', ')/]) {
+	return [genClass.generatedClassName()/].[predicateName()/]([genParameters.gen()->sep(', ')/]);
+}
+[/template]
+
+[template public gen(e : GenOperation, c : GenClass) ? (genClass <> c and not willGeneratePredicate() and genParameters->size() > 0) post (trim())]
+public static Function<[genClass.javaName()/], [typeName().wrap()/]> [functionName()/]([genParameters.declaration()->sep(', ')/]) {
+	return [genClass.generatedClassName()/].[operationName()/]([genParameters.gen()->sep(', ')/]);
+}
 [/template]
 
 [template public declaration(e : GenParameter) post(trim())]

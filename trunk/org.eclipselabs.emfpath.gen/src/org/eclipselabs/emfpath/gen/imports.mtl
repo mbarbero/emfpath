@@ -3,16 +3,16 @@
 
 [import org::eclipselabs::emfpath::gen::naming /]
 [import org::eclipselabs::emfpath::gen::typing /]
-
+[import org::eclipselabs::emfpath::gen::utils /]
 
 [template public genImports(e : GenClass) post(trim())]
-[if (not (genFeatures->select(not willGeneratePredicate())->isEmpty() and genOperations->select(not willGeneratePredicate())->isEmpty()))]
+[if (not (allGenFeatures()->select(not willGeneratePredicate())->isEmpty() and allGenOperations()->select(not willGeneratePredicate())->isEmpty()))]
 import com.google.common.base.Function;	
 [/if]
-[if (not (genFeatures->select(willGeneratePredicate())->isEmpty() and genOperations->select(willGeneratePredicate())->isEmpty()))]
+[if (not (allGenFeatures()->select(willGeneratePredicate())->isEmpty() and allGenOperations()->select(willGeneratePredicate())->isEmpty()))]
 import com.google.common.base.Predicate;	
 [/if]
-[if (not (genFeatures.ecoreFeature->select(many)->isEmpty() and genOperations.ecoreOperation->select(many)->isEmpty()))]
+[if (not (allGenFeatures().ecoreFeature->select(many)->isEmpty() and allGenOperations().ecoreOperation->select(many)->isEmpty()))]
 	[if (genPackage.genModel.suppressEMFTypes)]
 import java.util.List;
 	[else]
@@ -20,9 +20,12 @@ import org.eclipse.emf.common.util.EList;
 	[/if]
 [/if]
 
-	[for (eClassifier : EClassifier | ecoreClass.eAllContents(ETypedElement)->select(not eType.oclIsUndefined()).eType->including(ecoreClass)->asOrderedSet()->select(oclIsKindOf(EClass) or oclIsKindOf(EEnum)))]
+[for (eClassifier : EClassifier | 
+	eAllSuperTypesAndSelfWithAtLeastOneFeature().eAllContents(ETypedElement)->select(not eType.oclIsUndefined()).eType
+	->union(eAllSuperTypesAndSelfWithAtLeastOneFeature())
+	->asOrderedSet()->select(oclIsKindOf(EClass) or oclIsKindOf(EEnum)))]
 [eClassifier.genImport(eClassifier.getGenPackage(e.eContainer(GenModel)))/]
-	[/for]
+[/for]
 [/template]
 
 [template public genImport(e : EClassifier, basePackage : GenPackage) ? (not e.instanceTypeName.oclIsUndefined() and e.instanceTypeName = 'java.util.Map$Entry' ) post(trim())]
@@ -37,7 +40,7 @@ import org.eclipse.emf.common.util.EList;
 import [basePackage.qualifiedJavaName()/].[name/];
 [/template]
 
-[query public getGenPackage(toFind : EClassifier, genModel : GenModel) : GenPackage =  
+[query private getGenPackage(toFind : EClassifier, genModel : GenModel) : GenPackage =  
 	if (not genModel.eAllContents(GenClass)->select(ecoreClass = toFind)->isEmpty()) then
 		genModel.eAllContents(GenClass)->any(ecoreClass = toFind).genPackage
 	else 

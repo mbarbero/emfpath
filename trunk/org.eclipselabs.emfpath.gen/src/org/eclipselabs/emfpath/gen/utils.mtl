@@ -1,0 +1,20 @@
+[comment encoding = UTF-8 /]
+[module utils('http://www.eclipse.org/emf/2002/GenModel', 'http://www.eclipse.org/emf/2002/Ecore')/]
+
+[query public allGenFeatures(e : GenClass) : Sequence(GenFeature) = 
+	e.genPackage.genClasses.genFeatures
+		->select(ecoreClass.eAllSuperTypes.eAllStructuralFeatures->flatten()->includes(ecoreFeature))
+		->union(genFeatures->asSequence())
+/]
+
+[query public allGenOperations(e : GenClass) : Sequence(GenOperation) = 
+	e.genPackage.genClasses.genOperations
+		->select(ecoreClass.eAllSuperTypes.eAllOperations->flatten()->includes(ecoreOperation))
+		->union(genOperations->asSequence())
+/]
+
+[query public eAllSuperTypesAndSelfWithAtLeastOneFeature(e : GenClass) : Sequence(EClass) = 
+	ecoreClass.eAllSuperTypes->including(ecoreClass)
+		->select(not eStructuralFeatures->isEmpty() or not eOperations->isEmpty())
+		->select(ePackage = e.ecoreClass.ePackage)
+/]
