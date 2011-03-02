@@ -40,13 +40,19 @@ public abstract class ComposablePredicate<T> implements Predicate<T> {
 		return tmp;
 	}
 
+	private List<Predicate<? super T>> concat(Predicate<? super T> other) {
+		Preconditions.checkNotNull(other);
+		List<Predicate<? super T>> tmp = Lists.newArrayListWithCapacity(2);
+		tmp.add(this);
+		tmp.add(other);
+		return tmp;
+	}
+
 	/**
 	 * Returns a new {@link ComposablePredicate} evaluating to {@code true} if each of its components evaluates to
 	 * {@code true}. The components are evaluated in order, and evaluation will be "short-circuited" as soon as a false
 	 * predicate is found.
 	 * <p>
-	 * If you want to and-compose {@link Predicate}s that do not extends {@link ComposablePredicate}, you should have a
-	 * look on {@link Predicates#and(Predicate...)}.
 	 * 
 	 * @param other the other component to and-compose.
 	 * @return a new {@link ComposablePredicate} evaluating to {@code true} if {@code this} and {@code other} evaluates
@@ -54,6 +60,20 @@ public abstract class ComposablePredicate<T> implements Predicate<T> {
 	 */
 	public ComposablePredicate<T> and(ComposablePredicate<? super T> other) {
 		return new And<T>(this.concat(Preconditions.checkNotNull(other)));
+	}
+
+	/**
+	 * Returns a new {@link Predicate} evaluating to {@code true} if each of its components evaluates to {@code true}.
+	 * The components are evaluated in order, and evaluation will be "short-circuited" as soon as a false predicate is
+	 * found.
+	 * <p>
+	 * 
+	 * @param other the other component to and-compose.
+	 * @return a new {@link ComposablePredicate} evaluating to {@code true} if {@code this} and {@code other} evaluates
+	 *         to {@code true}.
+	 */
+	public Predicate<T> and(Predicate<? super T> other) {
+		return new NotComposableAnd<T>(this.concat(Preconditions.checkNotNull(other)));
 	}
 
 	private static class And<T> extends ComposablePredicate<T> {
@@ -77,6 +97,23 @@ public abstract class ComposablePredicate<T> implements Predicate<T> {
 			List<ComposablePredicate<? super T>> newComponents = Lists.newArrayList(this.components);
 			newComponents.add(Preconditions.checkNotNull(other));
 			return new And<T>(newComponents);
+		}
+	}
+
+	private static class NotComposableAnd<T> implements Predicate<T> {
+		List<Predicate<? super T>> components;
+
+		NotComposableAnd(List<Predicate<? super T>> list) {
+			this.components = list; // Skip defensive copy (private)
+		}
+
+		public boolean apply(T c) {
+			for (Predicate<? super T> predicate : this.components) {
+				if (!predicate.apply(c)) {
+					return false;
+				}
+			}
+			return true;
 		}
 	}
 
