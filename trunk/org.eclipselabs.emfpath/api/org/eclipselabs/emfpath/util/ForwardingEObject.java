@@ -122,7 +122,10 @@ public abstract class ForwardingEObject extends ForwardingObject implements EObj
 			method = this.delegate().getClass().getMethod(ForwardingEObject.E_INVOKE, EOperation.class, EList.class);
 		} catch (SecurityException e) {
 			throw new InvocationTargetException(e,
-			"You can not use a ForwardingEObject (or subclass) with your VM security setting. You should check you enables reflection authorization");
+				"You can not call ForwardingEObject#eInvoke(EOperation, EList<?>). The caller's class loader ("
+					+ this.getClass().getClassLoader() + ") is not the same as or an ancestor of the class loader ("
+					+ this.delegate().getClass().getClassLoader()
+					+ ") for the current class and invocation of s.checkPackageAccess() denies access to the package of this class ");
 		} catch (NoSuchMethodException e) {
 			throw new InvocationTargetException(e,
 			"The eInvoke is available only since EMF 2.6. You should check the version of the EMF runtime you are executing this code on");
