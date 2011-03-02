@@ -16,27 +16,29 @@ import org.eclipselabs.emfpath.base.EClasses;
 import org.eclipselabs.emfpath.exception.NotFoundException;
 import org.eclipselabs.emfpath.indie.util.ComposablePredicate;
 
-
 /**
  * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
+ * @param <T>
  * @since 0.1.0
  */
-public abstract class IsKind extends ComposablePredicate<EObject> {
+public abstract class IsKind<T extends EObject> extends ComposablePredicate<T> {
 
 	/**
+	 * @param <T>
 	 * @param eClass
 	 * @return
 	 */
-	public static IsKind of(EClass eClass) {
-		return new IsKindOfWithEClass(eClass);
+	public static <T extends EObject> IsKind<T> of(EClass eClass) {
+		return new IsKindOfWithEClass<T>(eClass);
 	}
 
 	/**
+	 * @param <T>
 	 * @param eClassName
 	 * @return
 	 */
-	public static IsKind of(String eClassName) {
-		return new IsKindOfWithEClassName(eClassName);
+	public static <T extends EObject> IsKind<T> of(String eClassName) {
+		return new IsKindOfWithEClassName<T>(eClassName);
 	}
 
 	/**
@@ -46,7 +48,7 @@ public abstract class IsKind extends ComposablePredicate<EObject> {
 		// prevent instantiation
 	}
 
-	private static final class IsKindOfWithEClass extends IsKind {
+	private static final class IsKindOfWithEClass<T extends EObject> extends IsKind<T> {
 
 		private final EClass eClass;
 
@@ -54,13 +56,13 @@ public abstract class IsKind extends ComposablePredicate<EObject> {
 			this.eClass = eClass;
 		}
 
-		public boolean apply(EObject input) {
+		public boolean apply(T input) {
 			EClass inputEClass = input.eClass();
 			return ((inputEClass == this.eClass) || inputEClass.getEAllSuperTypes().contains(this.eClass));
 		}
 	}
 
-	private static final class IsKindOfWithEClassName extends IsKind {
+	private static final class IsKindOfWithEClassName<T extends EObject> extends IsKind<T> {
 
 		private final String eClassName;
 
@@ -68,7 +70,7 @@ public abstract class IsKind extends ComposablePredicate<EObject> {
 			this.eClassName = eClassName;
 		}
 
-		public boolean apply(EObject input) {
+		public boolean apply(T input) {
 			EClass of;
 			try {
 				of = EClasses.from(input.eClass().getEPackage()).forName(this.eClassName);
