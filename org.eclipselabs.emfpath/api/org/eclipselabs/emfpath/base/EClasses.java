@@ -187,12 +187,13 @@ public abstract class EClasses {
 
 			EPackage currentEPackage = this.ePackage;
 			String[] nameFragments = name.split(this.separator);
-			for (int i = 0; i < nameFragments.length - 1; i++) {
+
+			for (String nameFragment : nameFragments) {
 				try {
 					currentEPackage = Iterables.find(currentEPackage.getESubpackages(), Having.feature(
-						EcorePackage.Literals.ENAMED_ELEMENT__NAME, Equals.to(nameFragments[i])));
+						EcorePackage.Literals.ENAMED_ELEMENT__NAME, Equals.to(nameFragment)));
 				} catch (NoSuchElementException e) {
-					throw new NotFoundException("Cannot find EPackage named " + nameFragments[i] + " as sub package of "
+					throw new NotFoundException("Cannot find EPackage named " + nameFragment + " as sub package of "
 						+ EPackages.fullyQualifiedName(this.ePackage, this.separator));
 				}
 			}
