@@ -76,7 +76,11 @@
 [/template]
 
 [template public javaTypeName(e : EDataType) ? (not instanceTypeName.oclIsUndefined() and instanceTypeName <> '') post(trim())]
+[if (instanceTypeName.lastIndex('.') > -1)]
+[instanceTypeName.substring(instanceTypeName.lastIndex('.') + 1).replaceAll('\\$', '.')/]
+[else]
 [instanceTypeName.replaceAll('\\$', '.')/]
+[/if]
 [/template]
 
 [template public javaTypeName(e : EClassifier) ? (not instanceTypeName.oclIsUndefined()) post(trim())]
