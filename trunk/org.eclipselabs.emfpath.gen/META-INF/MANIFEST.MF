@@ -4,7 +4,7 @@ Bundle-Name: Acceleo Gen Module Runtime Plug-in
 Bundle-SymbolicName: org.eclipselabs.emfpath.gen;singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Bundle-Activator: org.eclipselabs.emfpath.gen.Activator
-Bundle-Vendor: Eclipse.org
+Bundle-Vendor: Eclipselabs.org
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipselabs.emfpath.gen;version="0.4.0"
