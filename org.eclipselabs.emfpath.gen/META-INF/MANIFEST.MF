@@ -2,12 +2,12 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Gen Module Runtime Plug-in
 Bundle-SymbolicName: org.eclipselabs.emfpath.gen;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.4.0.qualifier
 Bundle-Activator: org.eclipselabs.emfpath.gen.Activator
 Bundle-Vendor: Eclipse.org
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
-Export-Package: org.eclipselabs.emfpath.gen
+Export-Package: org.eclipselabs.emfpath.gen;version="0.4.0"
 Import-Package: org.eclipse.acceleo.engine.event,
  org.eclipse.acceleo.engine.generation.strategy,
  org.eclipse.acceleo.engine.service,
