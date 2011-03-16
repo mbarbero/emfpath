@@ -7,16 +7,16 @@
             objectClass="org.eclipse.core.resources.IFile"
             nameFilter="*.genmodel"
             id="org.eclipselabs.emfpath.gen.ui.popupMenus.contribution.IFile">
-         <menu id="org.eclipse.acceleo.module.menu" label="Acceleo Model to Text" path="additionsAcceleo">
-               <groupMarker name="acceleo"/> 
+         <menu id="org.eclipselabs.emfpath.menu" label="EMFPath" path="additionsEMFPath">
+               <groupMarker name="emfpath"/> 
          </menu>
          <action
-               class="org.eclipselabs.emfpath.gen.ui.popupMenus.AcceleoGenerateGenerateEMFPathAction"
+               class="org.eclipselabs.emfpath.gen.ui.popupMenus.GenerateEMFPathAction"
                enablesFor="+"
-               id="org.eclipselabs.emfpath.gen.ui.popupMenus.acceleoGenerateGenerateEMFPathAction"
+               id="org.eclipselabs.emfpath.gen.ui.popupMenus.generateEMFPathAction"
                icon="icons/default.gif"
-               label="Generate Generate EMFPath"
-               menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
+               label="Generate"
+               menubarPath="org.eclipselabs.emfpath.menu/emfpath"/>
       </objectContribution>
    </extension>
 </plugin>
