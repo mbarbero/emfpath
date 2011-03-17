@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: org.eclipselabs.emfpath.gen;singleton:=true
+Bundle-Version: 0.4.0.qualifier
+Bundle-Vendor: %Bundle-Vendor
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipselabs.emfpath.gen;version="0.4.0"
+Import-Package: org.eclipse.acceleo.engine.event,
+ org.eclipse.acceleo.engine.generation.strategy,
+ org.eclipse.acceleo.engine.service,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.codegen.ecore.genmodel,
+ org.eclipse.emf.common.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.resource

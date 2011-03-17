@@ -1,0 +1,10 @@
+org.eclipselabs.emfpath.base
+org.eclipselabs.emfpath.exception
+org.eclipselabs.emfpath.function
+org.eclipselabs.emfpath.indie.collect
+org.eclipselabs.emfpath.indie.function
+org.eclipselabs.emfpath.indie.predicate
+org.eclipselabs.emfpath.indie.util
+org.eclipselabs.emfpath.operation
+org.eclipselabs.emfpath.predicate
+org.eclipselabs.emfpath.util

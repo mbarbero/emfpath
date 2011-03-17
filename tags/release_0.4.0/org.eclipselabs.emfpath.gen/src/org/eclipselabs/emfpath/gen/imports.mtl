@@ -1,0 +1,77 @@
+[comment encoding = UTF-8 /]
+[module imports('http://www.eclipse.org/emf/2002/GenModel', 'http://www.eclipse.org/emf/2002/Ecore')/]
+
+[import org::eclipselabs::emfpath::gen::naming /]
+[import org::eclipselabs::emfpath::gen::typing /]
+[import org::eclipselabs::emfpath::gen::utils /]
+[import org::eclipselabs::emfpath::gen::primitives /]
+
+
+[template public genImports(e : GenClass) post(trim())]
+[if (not (allGenFeatures()->select(not willGeneratePredicate())->isEmpty() and allGenOperations()->select(not willGeneratePredicate())->isEmpty()))]
+import com.google.common.base.Function;	
+[/if]
+[if (not (allGenFeatures()->select(willGeneratePredicate())->isEmpty() and allGenOperations()->select(willGeneratePredicate())->isEmpty()))]
+import com.google.common.base.Predicate;	
+[/if]
+[if (not (allGenFeatures().ecoreFeature->select(many)->isEmpty() and allGenOperations().ecoreOperation->select(many)->isEmpty()))]
+	[if (genPackage.genModel.suppressEMFTypes)]
+import java.util.List;
+	[elseif (not allEClassifierToImport()->exists(instanceTypeName = 'org.eclipse.emf.common.util.EList'))]
+import org.eclipse.emf.common.util.EList;
+	[/if]
+[/if]
+
+[for (eClassifier : EClassifier | allEClassifierToImport())]
+[eClassifier.genImport(eClassifier.getGenPackage(e.eContainer(GenModel)))/]
+[/for]
+[/template]
+
+[query private allEClassifierToImport(e : GenClass) : Sequence(EClassifier) = 
+	eAllSuperTypesAndSelfWithAtLeastOneFeature().eAllContents(ETypedElement)->select(not eType.oclIsUndefined()).eType
+	->union(eAllSuperTypesAndSelfWithAtLeastOneFeature())
+	->asOrderedSet()
+		->select(not isPrimitiveOrNonJavaLangClassifier())
+/]
+
+
+[query private isPrimitiveOrNonJavaLangClassifier(e : EClassifier) : Boolean = 
+if (instanceTypeName.oclIsUndefined()) then
+	false
+else
+	instanceTypeName.startsWith('java.lang') or instanceTypeName.isPrimitiveType()
+endif
+/]
+
+
+[template public genImport(e : EClassifier, basePackage : GenPackage) ? (not e.instanceTypeName.oclIsUndefined() and e.instanceTypeName = 'java.util.Map$Entry' ) post(trim())]
+	[if (basePackage.eContainer(GenModel).suppressEMFTypes)]
+		import java.util.Map;
+	[else]
+		import org.eclipse.emf.common.util.EMap;
+	[/if]
+[/template]
+
+[template public genImport(e : EClassifier, basePackage : GenPackage) ? (not e.instanceTypeName.oclIsUndefined() and e.instanceTypeName <> '' ) post(trim())]
+import [instanceTypeName/];
+[/template]
+
+[template public genImport(e : EClassifier, basePackage : GenPackage) post(trim())]
+import [basePackage.qualifiedJavaName()/].[name/];
+[/template]
+
+[query private getGenPackage(toFind : EClassifier, genModel : GenModel) : GenPackage =  
+	if (not genModel.eAllContents(GenClass)->select(ecoreClass = toFind)->isEmpty()) then
+		genModel.eAllContents(GenClass)->any(ecoreClass = toFind).genPackage
+	else 
+		if (not genModel.eAllContents(GenEnum)->select(ecoreEnum = toFind)->isEmpty()) then
+			genModel.eAllContents(GenEnum)->any(ecoreEnum = toFind).genPackage
+		else
+			if (not genModel.usedGenPackages->isEmpty()) then
+				genModel.usedGenPackages.eAllContents(GenClass)->any(ecoreClass = toFind).genPackage
+			else
+				genModel.genPackages->first()
+			endif
+		endif
+	endif
+/]
