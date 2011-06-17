@@ -13,11 +13,21 @@ package [genPackage.generatedQualifiedJavaName()/];
 
 [genImports()/]
 
-public class [generatedClassName()/] {
+/**
+ * @generated
+ */
+public final class [generatedClassName()/] {
 
-	[allGenFeatures()->select(not ecoreFeature.eType.oclIsUndefined()).gen(e)->excluding('')->sep('\n\n\t')/]
+	/**
+	 * @generated
+	 */
+	private [generatedClassName()/]() {
+		// prevent instantiation
+	}
+
+	[allGenFeatures()->select(f : GenFeature | not f.ecoreFeature.eType.oclIsUndefined()).gen(e)->excluding('')->sep('\n\n\t')/]
 	
-	[allGenOperations()->select(not ecoreOperation.eType.oclIsUndefined()).gen(e)->excluding('')->sep('\n\n\t')/]
+	[allGenOperations()->select(o : GenOperation | not o.ecoreOperation.eType.oclIsUndefined()).gen(e)->excluding('')->sep('\n\n\t')/]
 
 }
 [/file]
@@ -56,13 +66,29 @@ public static final Predicate<[genClass.javaName()/]> [predicateName()/] = new P
 };
 [/template]
 
+[template private genBody(e : GenOperation) ? (ecoreOperation.eExceptions->isEmpty()) post (trim())]
+	return s.[operationName()/]([genParameters.gen()->sep(', ')/]);
+[/template]
+
+[template private genBody(e : GenOperation) ? (not ecoreOperation.eExceptions->isEmpty())]
+try {
+	return s.[operationName()/]([genParameters.gen()->sep(', ')/]);
+} [e.ecoreOperation.eExceptions.exceptionCatch(e)->sep('\n')/]
+[/template]
+
+[template private exceptionCatch(e : EClassifier, go : GenOperation)]
+catch ([javaName()/] e[go.ecoreOperation.eExceptions->indexOf(e)/]) {
+	throw new WrappedException(e[go.ecoreOperation.eExceptions->indexOf(e)/]);
+}
+[/template]
+
 [template public gen(e : GenOperation, c : GenClass) ? (genClass = c and not willGeneratePredicate() and genParameters->size() = 0) post (trim())]
 /**
  * @generated
  */
 public static final Function<[genClass.javaName()/], [typeName().wrap()/]> [functionName()/] = new Function<[genClass.javaName()/], [typeName().wrap()/]>() {
 	public [typeName().wrap()/] apply([genClass.javaName()/] s) {
-		return s.[operationName()/]();
+		[e.genBody()/]
 	}
 };
 [/template]
@@ -74,7 +100,7 @@ public static final Function<[genClass.javaName()/], [typeName().wrap()/]> [func
 public static Predicate<[genClass.javaName()/]> [predicateName()/]([genParameters.declaration()->sep(', ')/]) {
 	return new Predicate<[genClass.javaName()/]>() {
 		public boolean apply([genClass.javaName()/] s) {
-			return s.[operationName()/]([genParameters.gen()->sep(', ')/]);
+			[e.genBody()/]
 		}
 	};
 }
@@ -87,7 +113,7 @@ public static Predicate<[genClass.javaName()/]> [predicateName()/]([genParameter
 public static Function<[genClass.javaName()/], [typeName().wrap()/]> [functionName()/]([genParameters.declaration()->sep(', ')/]) {
 	return new Function<[genClass.javaName()/], [typeName().wrap()/]>() {
 		public [typeName().wrap()/] apply([genClass.javaName()/] s) {
-			return s.[operationName()/]([genParameters.gen()->sep(', ')/]);
+			[e.genBody()/]
 		}
 	};
 }
@@ -140,7 +166,7 @@ public static Function<[genClass.javaName()/], [typeName().wrap()/]> [functionNa
 [/template]
 
 [template public declaration(e : GenParameter) post(trim())]
-final [typeName()/] [ecoreParameter.name/]
+final [typeName()/] [gen()/]
 [/template]
 
 [template public gen(e : GenParameter)]

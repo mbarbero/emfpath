@@ -3,18 +3,19 @@
 
 [query public allGenFeatures(e : GenClass) : Sequence(GenFeature) = 
 	e.genPackage.genClasses.genFeatures
-		->select(ecoreClass.eAllSuperTypes.eAllStructuralFeatures->flatten()->includes(ecoreFeature))
+		->select(gf : GenFeature | e.ecoreClass.eAllSuperTypes.eAllStructuralFeatures->flatten()->includes(gf.ecoreFeature))
 		->union(genFeatures->asSequence())
 /]
 
 [query public allGenOperations(e : GenClass) : Sequence(GenOperation) = 
 	e.genPackage.genClasses.genOperations
-		->select(ecoreClass.eAllSuperTypes.eAllOperations->flatten()->includes(ecoreOperation))
+		->select(go : GenOperation | e.ecoreClass.eAllSuperTypes.eAllOperations->flatten()->includes(go.ecoreOperation))
 		->union(genOperations->asSequence())
 /]
 
 [query public eAllSuperTypesAndSelfWithAtLeastOneFeature(e : GenClass) : Sequence(EClass) = 
-	ecoreClass.eAllSuperTypes->including(ecoreClass)
-		->select(not eStructuralFeatures->isEmpty() or not eOperations->isEmpty())
-		->select(ePackage = e.ecoreClass.ePackage)
+	e.ecoreClass.eAllSuperTypes->including(e.ecoreClass)
+		->select(eClass : EClass | not eClass.eStructuralFeatures->isEmpty() or not eClass.eOperations->isEmpty())
+		->select(eClass : EClass | eClass.ePackage = e.ecoreClass.ePackage)
+		->asSequence()
 /]

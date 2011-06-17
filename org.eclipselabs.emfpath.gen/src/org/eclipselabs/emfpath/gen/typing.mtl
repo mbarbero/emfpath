@@ -43,7 +43,15 @@
 	[/if]
 [/template]
 
-[template public typeName(e : GenOperation) ? (ecoreOperation.many and not ecoreOperation.eType.instanceTypeName.oclIsUndefined() and ecoreOperation.eType.instanceTypeName = 'java.util.Map$Entry') post(trim())]
+[template public typeName(e : GenOperation) ? (ecoreOperation.eType.oclIsUndefined()) post(trim())]
+	[if (ecoreOperation.eParameters->isEmpty())]
+		Void
+	[else]
+		[ecoreOperation.eParameters->first().eType.javaTypeName()/]
+	[/if]
+[/template]
+
+[template public typeName(e : GenOperation) ? (not ecoreOperation.eType.oclIsUndefined() and ecoreOperation.many and not ecoreOperation.eType.instanceTypeName.oclIsUndefined() and ecoreOperation.eType.instanceTypeName = 'java.util.Map$Entry') post(trim())]
 	[if (eContainer(GenModel).suppressEMFTypes)]
 		Map<String, String>
 	[else]
@@ -51,11 +59,11 @@
 	[/if]
 [/template]
 
-[template public typeName(e : GenOperation) ? (ecoreOperation.many) post(trim())]
+[template public typeName(e : GenOperation) ? (not ecoreOperation.eType.oclIsUndefined() and ecoreOperation.many) post(trim())]
 [listInterfaceName()/]<[ecoreOperation.eType.javaTypeName().wrap()/]>	
 [/template]
 
-[template public typeName(e : GenOperation) ? (not ecoreOperation.many) post(trim())]
+[template public typeName(e : GenOperation) ? (not ecoreOperation.eType.oclIsUndefined() and not ecoreOperation.many) post(trim())]
 [ecoreOperation.eType.javaTypeName().unwrap()/][ecoreOperation.generics()/]
 [/template]
 
@@ -96,16 +104,16 @@ FIXME: implements javaTypeName() for [eClass().name/] (seen as EClassifier)
 [/template]
 
 [query public willGeneratePredicate(e : GenFeature) : Boolean =
-	if not ecoreFeature.eType.oclIsUndefined() then
-		ecoreFeature.eType.isBooleanType() and not ecoreFeature.many
+	if not e.ecoreFeature.eType.oclIsUndefined() then
+		e.ecoreFeature.eType.isBooleanType() and not e.ecoreFeature.many
 	else
 		false
 	endif 
 /]
 
 [query public willGeneratePredicate(e : GenOperation) : Boolean = 
-	if not ecoreOperation.eType.oclIsUndefined() then
-		ecoreOperation.eType.isBooleanType() and not ecoreOperation.many
+	if not e.ecoreOperation.eType.oclIsUndefined() then
+		e.ecoreOperation.eType.isBooleanType() and not e.ecoreOperation.many
 	else
 		false
 	endif 
