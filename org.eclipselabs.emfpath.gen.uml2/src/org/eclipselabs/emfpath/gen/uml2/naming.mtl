@@ -7,6 +7,30 @@
 [import org::eclipselabs::emfpath::gen::uml2::common /]
 [import org::eclipselabs::emfpath::gen::uml2::caseformat/]
 
+[template public functionName(e : GenOperation) overrides functionName post(trim().escapeJavaKeyword())]
+[if (isConflictingOperation())]
+	[ecoreOperation.name/]_
+[else]
+	[ecoreOperation.name/] /*[isConflictingOperation()/]*/
+[/if]
+[/template]
+
+[query private isConflictingOperation(e : GenOperation) : Boolean = 
+not	e.genClass.ecoreClass.eAllSubClassesAndSelf()->
+	select(eClass : EClass | not eClass.eAllAttributesAndReferences()->
+		select(eSF : EStructuralFeature | eSF.name = e.ecoreOperation.name)->isEmpty()
+	)->isEmpty()
+/]
+
+[query private eAllSubClassesAndSelf(e : EClass) : Set(EClass) = 
+	e.ePackage.eClassifiers->filter(EClass)->
+		select(subclass : EClass | subclass.eAllSuperTypes->includes(e))->including(e)
+/]
+
+[query private eAllAttributesAndReferences(e : EClass) : Sequence(EStructuralFeature) = 
+	e.eAllStructuralFeatures->select(oclIsKindOf(EAttribute) or oclIsKindOf(EReference))->asSequence()
+/]
+
 [template public getterName(e : GenFeature) overrides getterName ? (isContainedByUML2Package() and not willGeneratePredicate() and ecoreFeature.many) post(trim().avoidObjectMethodsNameClash())]
 	get[pluralize().toUpperFirst()/]
 [/template]
