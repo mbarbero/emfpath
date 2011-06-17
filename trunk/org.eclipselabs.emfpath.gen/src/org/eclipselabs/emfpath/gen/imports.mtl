@@ -8,11 +8,14 @@
 
 
 [template public genImports(e : GenClass) post(trim())]
-[if (not (allGenFeatures()->select(not willGeneratePredicate())->isEmpty() and allGenOperations()->select(not willGeneratePredicate())->isEmpty()))]
+[if (not (allGenFeatures()->select(gf : GenFeature | not gf.willGeneratePredicate())->isEmpty() and allGenOperations()->select(go : GenOperation | not go.willGeneratePredicate())->isEmpty()))]
 import com.google.common.base.Function;	
 [/if]
-[if (not (allGenFeatures()->select(willGeneratePredicate())->isEmpty() and allGenOperations()->select(willGeneratePredicate())->isEmpty()))]
+[if (not (allGenFeatures()->select(gf : GenFeature | gf.willGeneratePredicate())->isEmpty() and allGenOperations()->select(go : GenOperation | go.willGeneratePredicate())->isEmpty()))]
 import com.google.common.base.Predicate;	
+[/if]
+[if (not allGenOperations()->select(go : GenOperation | not go.ecoreOperation.eExceptions->isEmpty())->isEmpty())]
+import org.eclipse.emf.common.util.WrappedException;
 [/if]
 [if (not (allGenFeatures().ecoreFeature->select(many)->isEmpty() and allGenOperations().ecoreOperation->select(many)->isEmpty()))]
 	[if (genPackage.genModel.suppressEMFTypes)]
@@ -22,18 +25,18 @@ import org.eclipse.emf.common.util.EList;
 	[/if]
 [/if]
 
-[for (eClassifier : EClassifier | allEClassifierToImport())]
-[eClassifier.genImport(eClassifier.getGenPackage(e.eContainer(GenModel)))/]
-[/for]
+[allEClassifierToImport().genImport(e.eContainer(GenModel))->asOrderedSet()->sortedBy(toString())->sep('\n')/]
+
 [/template]
 
-[query private allEClassifierToImport(e : GenClass) : Sequence(EClassifier) = 
-	eAllSuperTypesAndSelfWithAtLeastOneFeature().eAllContents(ETypedElement)->select(not eType.oclIsUndefined()).eType
+[query private allEClassifierToImport(e : GenClass) : OrderedSet(EClassifier) = 
+	eAllSuperTypesAndSelfWithAtLeastOneFeature().eAllContents(ETypedElement)
+	->select(eTypedElement : ETypedElement | not eTypedElement.eContainer().oclIsKindOf(EAnnotation))
+	->select(not eType.oclIsUndefined()).eType
 	->union(eAllSuperTypesAndSelfWithAtLeastOneFeature())
 	->asOrderedSet()
 		->select(not isPrimitiveOrNonJavaLangClassifier())
 /]
-
 
 [query private isPrimitiveOrNonJavaLangClassifier(e : EClassifier) : Boolean = 
 if (instanceTypeName.oclIsUndefined()) then
@@ -43,24 +46,23 @@ else
 endif
 /]
 
-
-[template public genImport(e : EClassifier, basePackage : GenPackage) ? (not e.instanceTypeName.oclIsUndefined() and e.instanceTypeName = 'java.util.Map$Entry' ) post(trim())]
-	[if (basePackage.eContainer(GenModel).suppressEMFTypes)]
+[template private genImport(e : EClassifier, genModel : GenModel) ? (not e.instanceTypeName.oclIsUndefined() and e.instanceTypeName = 'java.util.Map$Entry' ) post(trim())]
+	[if (genModel.basePackage(e).eContainer(GenModel).suppressEMFTypes)]
 		import java.util.Map;
 	[else]
 		import org.eclipse.emf.common.util.EMap;
 	[/if]
 [/template]
 
-[template public genImport(e : EClassifier, basePackage : GenPackage) ? (not e.instanceTypeName.oclIsUndefined() and e.instanceTypeName <> '' ) post(trim())]
+[template private genImport(e : EClassifier, genModel : GenModel) ? (not e.instanceTypeName.oclIsUndefined() and e.instanceTypeName <> '' ) post(trim())]
 import [instanceTypeName/];
 [/template]
 
-[template public genImport(e : EClassifier, basePackage : GenPackage) post(trim())]
-import [basePackage.qualifiedJavaName()/].[name/];
+[template private genImport(e : EClassifier, genModel : GenModel) post(trim())]
+import [genModel.basePackage(e).qualifiedJavaName()/].[name/];
 [/template]
 
-[query private getGenPackage(toFind : EClassifier, genModel : GenModel) : GenPackage =  
+[query private basePackage(genModel : GenModel, toFind : EClassifier) : GenPackage =  
 	if (not genModel.eAllContents(GenClass)->select(ecoreClass = toFind)->isEmpty()) then
 		genModel.eAllContents(GenClass)->any(ecoreClass = toFind).genPackage
 	else 
