@@ -339,6 +339,11 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
+	public static final Function<Element, Element> destroy = ElementPath.destroy;
+
+	/**
+	 * @generated
+	 */
 	public static Predicate<Element> hasKeyword(final String keyword) {
 		return ElementPath.hasKeyword(keyword);
 	}
@@ -346,7 +351,7 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<String>> getKeywords /*false*/ = ElementPath.getKeywords /*false*/;
+	public static final Function<Element, EList<String>> getKeywords = ElementPath.getKeywords;
 
 	/**
 	 * @generated
@@ -365,12 +370,12 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, Package> getNearestPackage /*false*/ = ElementPath.getNearestPackage /*false*/;
+	public static final Function<Element, Package> getNearestPackage = ElementPath.getNearestPackage;
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, Model> getModel /*false*/ = ElementPath.getModel /*false*/;
+	public static final Function<Element, Model> getModel = ElementPath.getModel;
 
 	/**
 	 * @generated
@@ -396,76 +401,76 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EObject> applyStereotype /*false*/(final Stereotype stereotype) {
+	public static Function<Element, EObject> applyStereotype(final Stereotype stereotype) {
 		return ElementPath.applyStereotype(stereotype);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EObject> unapplyStereotype /*false*/(final Stereotype stereotype) {
+	public static Function<Element, EObject> unapplyStereotype(final Stereotype stereotype) {
 		return ElementPath.unapplyStereotype(stereotype);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<Stereotype>> getApplicableStereotypes /*false*/ = ElementPath.getApplicableStereotypes /*false*/;
+	public static final Function<Element, EList<Stereotype>> getApplicableStereotypes = ElementPath.getApplicableStereotypes;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, Stereotype> getApplicableStereotype /*false*/(final String qualifiedName) {
+	public static Function<Element, Stereotype> getApplicableStereotype(final String qualifiedName) {
 		return ElementPath.getApplicableStereotype(qualifiedName);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<EObject>> getStereotypeApplications /*false*/ = ElementPath.getStereotypeApplications /*false*/;
+	public static final Function<Element, EList<EObject>> getStereotypeApplications = ElementPath.getStereotypeApplications;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EObject> getStereotypeApplication /*false*/(final Stereotype stereotype) {
+	public static Function<Element, EObject> getStereotypeApplication(final Stereotype stereotype) {
 		return ElementPath.getStereotypeApplication(stereotype);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<Stereotype>> getRequiredStereotypes /*false*/ = ElementPath.getRequiredStereotypes /*false*/;
+	public static final Function<Element, EList<Stereotype>> getRequiredStereotypes = ElementPath.getRequiredStereotypes;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, Stereotype> getRequiredStereotype /*false*/(final String qualifiedName) {
+	public static Function<Element, Stereotype> getRequiredStereotype(final String qualifiedName) {
 		return ElementPath.getRequiredStereotype(qualifiedName);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<Stereotype>> getAppliedStereotypes /*false*/ = ElementPath.getAppliedStereotypes /*false*/;
+	public static final Function<Element, EList<Stereotype>> getAppliedStereotypes = ElementPath.getAppliedStereotypes;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, Stereotype> getAppliedStereotype /*false*/(final String qualifiedName) {
+	public static Function<Element, Stereotype> getAppliedStereotype(final String qualifiedName) {
 		return ElementPath.getAppliedStereotype(qualifiedName);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EList<Stereotype>> getAppliedSubstereotypes /*false*/(final Stereotype stereotype) {
+	public static Function<Element, EList<Stereotype>> getAppliedSubstereotypes(final Stereotype stereotype) {
 		return ElementPath.getAppliedSubstereotypes(stereotype);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, Stereotype> getAppliedSubstereotype /*false*/(final Stereotype stereotype, final String qualifiedName) {
+	public static Function<Element, Stereotype> getAppliedSubstereotype(final Stereotype stereotype, final String qualifiedName) {
 		return ElementPath.getAppliedSubstereotype(stereotype, qualifiedName);
 	}
 
@@ -479,57 +484,64 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
-	public static Function<Element, Object> getValue /*false*/(final Stereotype stereotype, final String propertyName) {
+	public static Function<Element, Object> getValue(final Stereotype stereotype, final String propertyName) {
 		return ElementPath.getValue(stereotype, propertyName);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EAnnotation> createEAnnotation /*false*/(final String source) {
+	public static Function<Element, Element> setValue(final Stereotype stereotype, final String propertyName, final Object newValue) {
+		return ElementPath.setValue(stereotype, propertyName, newValue);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static Function<Element, EAnnotation> createEAnnotation(final String source) {
 		return ElementPath.createEAnnotation(source);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<Relationship>> getRelationships /*false*/ = ElementPath.getRelationships /*false*/;
+	public static final Function<Element, EList<Relationship>> getRelationships = ElementPath.getRelationships;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EList<Relationship>> getRelationships /*false*/(final EClass eClass) {
+	public static Function<Element, EList<Relationship>> getRelationships(final EClass eClass) {
 		return ElementPath.getRelationships(eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships /*false*/ = ElementPath.getSourceDirectedRelationships /*false*/;
+	public static final Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships = ElementPath.getSourceDirectedRelationships;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships /*false*/(final EClass eClass) {
+	public static Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships(final EClass eClass) {
 		return ElementPath.getSourceDirectedRelationships(eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships /*false*/ = ElementPath.getTargetDirectedRelationships /*false*/;
+	public static final Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships = ElementPath.getTargetDirectedRelationships;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships /*false*/(final EClass eClass) {
+	public static Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships(final EClass eClass) {
 		return ElementPath.getTargetDirectedRelationships(eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<Element>> allOwnedElements /*false*/ = ElementPath.allOwnedElements /*false*/;
+	public static final Function<Element, EList<Element>> allOwnedElements = ElementPath.allOwnedElements;
 
 	/**
 	 * @generated
@@ -560,38 +572,38 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
-	public static Function<NamedElement, Dependency> createDependency /*false*/(final NamedElement supplier) {
+	public static Function<NamedElement, Dependency> createDependency(final NamedElement supplier) {
 		return NamedElementPath.createDependency(supplier);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<NamedElement, String> getLabel /*false*/ = NamedElementPath.getLabel /*false*/;
+	public static final Function<NamedElement, String> getLabel = NamedElementPath.getLabel;
 
 	/**
 	 * @generated
 	 */
-	public static Function<NamedElement, String> getLabel /*false*/(final boolean localize) {
+	public static Function<NamedElement, String> getLabel(final boolean localize) {
 		return NamedElementPath.getLabel(localize);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<NamedElement, Usage> createUsage /*false*/(final NamedElement supplier) {
+	public static Function<NamedElement, Usage> createUsage(final NamedElement supplier) {
 		return NamedElementPath.createUsage(supplier);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<NamedElement, String> getQualifiedName /*false*/ = NamedElementPath.getQualifiedName /*false*/;
+	public static final Function<NamedElement, String> getQualifiedName = NamedElementPath.getQualifiedName;
 
 	/**
 	 * @generated
 	 */
-	public static final Function<NamedElement, EList<Namespace>> allNamespaces /*false*/ = NamedElementPath.allNamespaces /*false*/;
+	public static final Function<NamedElement, EList<Namespace>> allNamespaces = NamedElementPath.allNamespaces;
 
 	/**
 	 * @generated
@@ -603,12 +615,12 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
-	public static final Function<NamedElement, String> separator /*false*/ = NamedElementPath.separator /*false*/;
+	public static final Function<NamedElement, String> separator = NamedElementPath.separator;
 
 	/**
 	 * @generated
 	 */
-	public static final Function<NamedElement, EList<Package>> allOwningPackages /*false*/ = NamedElementPath.allOwningPackages /*false*/;
+	public static final Function<NamedElement, EList<Package>> allOwningPackages = NamedElementPath.allOwningPackages;
 
 	/**
 	 * @generated
@@ -676,12 +688,26 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
-	public static final Function<MultiplicityElement, java.lang.Integer> getLower /*false*/ = MultiplicityElementPath.getLower /*false*/;
+	public static Function<MultiplicityElement, MultiplicityElement> setLower(final int newLower) {
+		return MultiplicityElementPath.setLower(newLower);
+	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<MultiplicityElement, java.lang.Integer> getUpper /*false*/ = MultiplicityElementPath.getUpper /*false*/;
+	public static Function<MultiplicityElement, MultiplicityElement> setUpper(final int newUpper) {
+		return MultiplicityElementPath.setUpper(newUpper);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static final Function<MultiplicityElement, java.lang.Integer> getLower = MultiplicityElementPath.getLower;
+
+	/**
+	 * @generated
+	 */
+	public static final Function<MultiplicityElement, java.lang.Integer> getUpper = MultiplicityElementPath.getUpper;
 
 	/**
 	 * @generated
@@ -705,7 +731,7 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
-	public static final Function<MultiplicityElement, java.lang.Integer> lowerBound /*false*/ = MultiplicityElementPath.lowerBound /*false*/;
+	public static final Function<MultiplicityElement, java.lang.Integer> lowerBound = MultiplicityElementPath.lowerBound;
 
 	/**
 	 * @generated
@@ -729,7 +755,7 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
-	public static final Function<ConnectableElement, EList<ConnectorEnd>> getEnds /*false*/ = ConnectableElementPath.getEnds /*false*/;
+	public static final Function<ConnectableElement, EList<ConnectorEnd>> getEnds = ConnectableElementPath.getEnds;
 
 	/**
 	 * @generated
@@ -804,7 +830,7 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Property, String> getDefault /*false*/ = PropertyPath.getDefault /*false*/;
+	public static final Function<Property, String> getDefault = PropertyPath.getDefault;
 
 	/**
 	 * @generated
@@ -814,7 +840,73 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Property, Property> getOtherEnd /*false*/ = PropertyPath.getOtherEnd /*false*/;
+	public static Function<Property, Property> setDefault(final String newDefault) {
+		return PropertyPath.setDefault(newDefault);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static Function<Property, Property> setIsComposite(final boolean newIsComposite) {
+		return PropertyPath.setIsComposite(newIsComposite);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static Function<Property, Property> setOpposite(final Property newOpposite) {
+		return PropertyPath.setOpposite(newOpposite);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static final Function<Property, Property> unsetDefault = PropertyPath.unsetDefault;
+
+	/**
+	 * @generated
+	 */
+	public static Function<Property, Property> setIsNavigable(final boolean isNavigable) {
+		return PropertyPath.setIsNavigable(isNavigable);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static final Function<Property, Property> getOtherEnd = PropertyPath.getOtherEnd;
+
+	/**
+	 * @generated
+	 */
+	public static Function<Property, Property> setBooleanDefaultValue(final boolean value) {
+		return PropertyPath.setBooleanDefaultValue(value);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static Function<Property, Property> setIntegerDefaultValue(final int value) {
+		return PropertyPath.setIntegerDefaultValue(value);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static Function<Property, Property> setStringDefaultValue(final String value) {
+		return PropertyPath.setStringDefaultValue(value);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static Function<Property, Property> setUnlimitedNaturalDefaultValue(final int value) {
+		return PropertyPath.setUnlimitedNaturalDefaultValue(value);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static final Function<Property, Property> setNullDefaultValue = PropertyPath.setNullDefaultValue;
 
 	/**
 	 * @generated
@@ -826,12 +918,12 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Property, Property> getOpposite /*false*/ = PropertyPath.getOpposite /*false*/;
+	public static final Function<Property, Property> getOpposite = PropertyPath.getOpposite;
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Property, EList<Type>> subsettingContext /*false*/ = PropertyPath.subsettingContext /*false*/;
+	public static final Function<Property, EList<Type>> subsettingContext = PropertyPath.subsettingContext;
 
 	/**
 	 * @generated
@@ -841,7 +933,7 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
-	public static final Function<DeploymentTarget, EList<PackageableElement>> getDeployedElements /*false*/ = DeploymentTargetPath.getDeployedElements /*false*/;
+	public static final Function<DeploymentTarget, EList<PackageableElement>> getDeployedElements = DeploymentTargetPath.getDeployedElements;
 
 	/**
 	 * @generated
@@ -890,7 +982,7 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Port, EList<Interface>> getProvideds /*false*/ = new Function<Port, EList<Interface>>() {
+	public static final Function<Port, EList<Interface>> getProvideds = new Function<Port, EList<Interface>>() {
 		public EList<Interface> apply(Port s) {
 			return s.getProvideds();
 		}
@@ -899,7 +991,7 @@ public final class PortPath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Port, EList<Interface>> getRequireds /*false*/ = new Function<Port, EList<Interface>>() {
+	public static final Function<Port, EList<Interface>> getRequireds = new Function<Port, EList<Interface>>() {
 		public EList<Interface> apply(Port s) {
 			return s.getRequireds();
 		}
