@@ -11,7 +11,7 @@
 [if (isConflictingOperation())]
 	[ecoreOperation.name/]_
 [else]
-	[ecoreOperation.name/] /*[isConflictingOperation()/]*/
+	[ecoreOperation.name/]
 [/if]
 [/template]
 

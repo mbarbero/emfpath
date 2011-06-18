@@ -25,9 +25,9 @@ public final class [generatedClassName()/] {
 		// prevent instantiation
 	}
 
-	[allGenFeatures()->select(f : GenFeature | not f.ecoreFeature.eType.oclIsUndefined()).gen(e)->excluding('')->sep('\n\n\t')/]
+	[allGenFeatures().gen(e)->excluding('')->sep('\n\n\t')/]
 	
-	[allGenOperations()->select(o : GenOperation | not o.ecoreOperation.eType.oclIsUndefined()).gen(e)->excluding('')->sep('\n\n\t')/]
+	[allGenOperations().gen(e)->excluding('')->sep('\n\n\t')/]
 
 }
 [/file]
@@ -66,13 +66,25 @@ public static final Predicate<[genClass.javaName()/]> [predicateName()/] = new P
 };
 [/template]
 
-[template private genBody(e : GenOperation) ? (ecoreOperation.eExceptions->isEmpty()) post (trim())]
+[template private genBody(e : GenOperation) ? (ecoreOperation.eExceptions->isEmpty() and not ecoreOperation.eType.oclIsUndefined()) post (trim())]
 	return s.[operationName()/]([genParameters.gen()->sep(', ')/]);
 [/template]
 
-[template private genBody(e : GenOperation) ? (not ecoreOperation.eExceptions->isEmpty())]
+[template private genBody(e : GenOperation) ? (not ecoreOperation.eExceptions->isEmpty() and  not ecoreOperation.eType.oclIsUndefined())]
 try {
 	return s.[operationName()/]([genParameters.gen()->sep(', ')/]);
+} [e.ecoreOperation.eExceptions.exceptionCatch(e)->sep('\n')/]
+[/template]
+
+[template private genBody(e : GenOperation) ? (ecoreOperation.eExceptions->isEmpty() and ecoreOperation.eType.oclIsUndefined())]
+s.[operationName()/]([genParameters.gen()->sep(', ')/]);
+return s;
+[/template]
+
+[template private genBody(e : GenOperation) ? (not ecoreOperation.eExceptions->isEmpty() and ecoreOperation.eType.oclIsUndefined())]
+try {
+	s.[operationName()/]([genParameters.gen()->sep(', ')/]);
+	return s;
 } [e.ecoreOperation.eExceptions.exceptionCatch(e)->sep('\n')/]
 [/template]
 
@@ -165,10 +177,10 @@ public static Function<[genClass.javaName()/], [typeName().wrap()/]> [functionNa
 }
 [/template]
 
-[template public declaration(e : GenParameter) post(trim())]
+[template private declaration(e : GenParameter) post(trim())]
 final [typeName()/] [gen()/]
 [/template]
 
-[template public gen(e : GenParameter)]
+[template private gen(e : GenParameter)]
 [ecoreParameter.name/]
 [/template]

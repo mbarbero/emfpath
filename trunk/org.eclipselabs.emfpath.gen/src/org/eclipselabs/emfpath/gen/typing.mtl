@@ -11,10 +11,6 @@
 	[/if]
 [/template]
 
-[template public typeName(e : GenTypedElement) post(trim())]
-// FIXME: implements typeName template for [e.eClass().name/]	
-[/template]
-
 [template public typeName(e : GenFeature) ? (ecoreFeature.many and not ecoreFeature.eType.instanceTypeName.oclIsUndefined() and ecoreFeature.eType.instanceTypeName = 'java.util.Map$Entry') post(trim())]
 	[if (eContainer(GenModel).suppressEMFTypes)]
 		Map<String, String>
@@ -44,11 +40,7 @@
 [/template]
 
 [template public typeName(e : GenOperation) ? (ecoreOperation.eType.oclIsUndefined()) post(trim())]
-	[if (ecoreOperation.eParameters->isEmpty())]
-		Void
-	[else]
-		[ecoreOperation.eParameters->first().eType.javaTypeName()/]
-	[/if]
+	[genClass.ecoreClass.javaTypeName()/]
 [/template]
 
 [template public typeName(e : GenOperation) ? (not ecoreOperation.eType.oclIsUndefined() and ecoreOperation.many and not ecoreOperation.eType.instanceTypeName.oclIsUndefined() and ecoreOperation.eType.instanceTypeName = 'java.util.Map$Entry') post(trim())]
