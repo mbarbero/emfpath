@@ -225,6 +225,11 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
+	public static final Function<Element, Element> destroy = ElementPath.destroy;
+
+	/**
+	 * @generated
+	 */
 	public static Predicate<Element> hasKeyword(final String keyword) {
 		return ElementPath.hasKeyword(keyword);
 	}
@@ -232,7 +237,7 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<String>> getKeywords /*false*/ = ElementPath.getKeywords /*false*/;
+	public static final Function<Element, EList<String>> getKeywords = ElementPath.getKeywords;
 
 	/**
 	 * @generated
@@ -251,12 +256,12 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, Package> getNearestPackage /*false*/ = ElementPath.getNearestPackage /*false*/;
+	public static final Function<Element, Package> getNearestPackage = ElementPath.getNearestPackage;
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, Model> getModel /*false*/ = ElementPath.getModel /*false*/;
+	public static final Function<Element, Model> getModel = ElementPath.getModel;
 
 	/**
 	 * @generated
@@ -282,76 +287,76 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EObject> applyStereotype /*false*/(final Stereotype stereotype) {
+	public static Function<Element, EObject> applyStereotype(final Stereotype stereotype) {
 		return ElementPath.applyStereotype(stereotype);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EObject> unapplyStereotype /*false*/(final Stereotype stereotype) {
+	public static Function<Element, EObject> unapplyStereotype(final Stereotype stereotype) {
 		return ElementPath.unapplyStereotype(stereotype);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<Stereotype>> getApplicableStereotypes /*false*/ = ElementPath.getApplicableStereotypes /*false*/;
+	public static final Function<Element, EList<Stereotype>> getApplicableStereotypes = ElementPath.getApplicableStereotypes;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, Stereotype> getApplicableStereotype /*false*/(final String qualifiedName) {
+	public static Function<Element, Stereotype> getApplicableStereotype(final String qualifiedName) {
 		return ElementPath.getApplicableStereotype(qualifiedName);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<EObject>> getStereotypeApplications /*false*/ = ElementPath.getStereotypeApplications /*false*/;
+	public static final Function<Element, EList<EObject>> getStereotypeApplications = ElementPath.getStereotypeApplications;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EObject> getStereotypeApplication /*false*/(final Stereotype stereotype) {
+	public static Function<Element, EObject> getStereotypeApplication(final Stereotype stereotype) {
 		return ElementPath.getStereotypeApplication(stereotype);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<Stereotype>> getRequiredStereotypes /*false*/ = ElementPath.getRequiredStereotypes /*false*/;
+	public static final Function<Element, EList<Stereotype>> getRequiredStereotypes = ElementPath.getRequiredStereotypes;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, Stereotype> getRequiredStereotype /*false*/(final String qualifiedName) {
+	public static Function<Element, Stereotype> getRequiredStereotype(final String qualifiedName) {
 		return ElementPath.getRequiredStereotype(qualifiedName);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<Stereotype>> getAppliedStereotypes /*false*/ = ElementPath.getAppliedStereotypes /*false*/;
+	public static final Function<Element, EList<Stereotype>> getAppliedStereotypes = ElementPath.getAppliedStereotypes;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, Stereotype> getAppliedStereotype /*false*/(final String qualifiedName) {
+	public static Function<Element, Stereotype> getAppliedStereotype(final String qualifiedName) {
 		return ElementPath.getAppliedStereotype(qualifiedName);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EList<Stereotype>> getAppliedSubstereotypes /*false*/(final Stereotype stereotype) {
+	public static Function<Element, EList<Stereotype>> getAppliedSubstereotypes(final Stereotype stereotype) {
 		return ElementPath.getAppliedSubstereotypes(stereotype);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, Stereotype> getAppliedSubstereotype /*false*/(final Stereotype stereotype, final String qualifiedName) {
+	public static Function<Element, Stereotype> getAppliedSubstereotype(final Stereotype stereotype, final String qualifiedName) {
 		return ElementPath.getAppliedSubstereotype(stereotype, qualifiedName);
 	}
 
@@ -365,57 +370,64 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static Function<Element, Object> getValue /*false*/(final Stereotype stereotype, final String propertyName) {
+	public static Function<Element, Object> getValue(final Stereotype stereotype, final String propertyName) {
 		return ElementPath.getValue(stereotype, propertyName);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EAnnotation> createEAnnotation /*false*/(final String source) {
+	public static Function<Element, Element> setValue(final Stereotype stereotype, final String propertyName, final Object newValue) {
+		return ElementPath.setValue(stereotype, propertyName, newValue);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static Function<Element, EAnnotation> createEAnnotation(final String source) {
 		return ElementPath.createEAnnotation(source);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<Relationship>> getRelationships /*false*/ = ElementPath.getRelationships /*false*/;
+	public static final Function<Element, EList<Relationship>> getRelationships = ElementPath.getRelationships;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EList<Relationship>> getRelationships /*false*/(final EClass eClass) {
+	public static Function<Element, EList<Relationship>> getRelationships(final EClass eClass) {
 		return ElementPath.getRelationships(eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships /*false*/ = ElementPath.getSourceDirectedRelationships /*false*/;
+	public static final Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships = ElementPath.getSourceDirectedRelationships;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships /*false*/(final EClass eClass) {
+	public static Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships(final EClass eClass) {
 		return ElementPath.getSourceDirectedRelationships(eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships /*false*/ = ElementPath.getTargetDirectedRelationships /*false*/;
+	public static final Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships = ElementPath.getTargetDirectedRelationships;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships /*false*/(final EClass eClass) {
+	public static Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships(final EClass eClass) {
 		return ElementPath.getTargetDirectedRelationships(eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<Element>> allOwnedElements /*false*/ = ElementPath.allOwnedElements /*false*/;
+	public static final Function<Element, EList<Element>> allOwnedElements = ElementPath.allOwnedElements;
 
 	/**
 	 * @generated
@@ -432,28 +444,28 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static Function<Package, Class> createOwnedClass /*false*/(final String name, final boolean isAbstract) {
+	public static Function<Package, Class> createOwnedClass(final String name, final boolean isAbstract) {
 		return PackagePath.createOwnedClass(name, isAbstract);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Package, Enumeration> createOwnedEnumeration /*false*/(final String name) {
+	public static Function<Package, Enumeration> createOwnedEnumeration(final String name) {
 		return PackagePath.createOwnedEnumeration(name);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Package, PrimitiveType> createOwnedPrimitiveType /*false*/(final String name) {
+	public static Function<Package, PrimitiveType> createOwnedPrimitiveType(final String name) {
 		return PackagePath.createOwnedPrimitiveType(name);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Package, Interface> createOwnedInterface /*false*/(final String name) {
+	public static Function<Package, Interface> createOwnedInterface(final String name) {
 		return PackagePath.createOwnedInterface(name);
 	}
 
@@ -467,57 +479,57 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static Function<Package, EList<EObject>> applyProfile /*false*/(final Profile profile) {
+	public static Function<Package, EList<EObject>> applyProfile(final Profile profile) {
 		return PackagePath.applyProfile(profile);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Package, EList<EObject>> unapplyProfile /*false*/(final Profile profile) {
+	public static Function<Package, EList<EObject>> unapplyProfile(final Profile profile) {
 		return PackagePath.unapplyProfile(profile);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Package, EList<Profile>> getAppliedProfiles /*false*/ = PackagePath.getAppliedProfiles /*false*/;
+	public static final Function<Package, EList<Profile>> getAppliedProfiles = PackagePath.getAppliedProfiles;
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Package, EList<Profile>> getAllAppliedProfiles /*false*/ = PackagePath.getAllAppliedProfiles /*false*/;
+	public static final Function<Package, EList<Profile>> getAllAppliedProfiles = PackagePath.getAllAppliedProfiles;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Package, Profile> getAppliedProfile /*false*/(final String qualifiedName) {
+	public static Function<Package, Profile> getAppliedProfile(final String qualifiedName) {
 		return PackagePath.getAppliedProfile(qualifiedName);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Package, Profile> getAppliedProfile /*false*/(final String qualifiedName, final boolean recurse) {
+	public static Function<Package, Profile> getAppliedProfile(final String qualifiedName, final boolean recurse) {
 		return PackagePath.getAppliedProfile(qualifiedName, recurse);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Package, EList<ProfileApplication>> getAllProfileApplications /*false*/ = PackagePath.getAllProfileApplications /*false*/;
+	public static final Function<Package, EList<ProfileApplication>> getAllProfileApplications = PackagePath.getAllProfileApplications;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Package, ProfileApplication> getProfileApplication /*false*/(final Profile profile) {
+	public static Function<Package, ProfileApplication> getProfileApplication(final Profile profile) {
 		return PackagePath.getProfileApplication(profile);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Package, ProfileApplication> getProfileApplication /*false*/(final Profile profile, final boolean recurse) {
+	public static Function<Package, ProfileApplication> getProfileApplication(final Profile profile, final boolean recurse) {
 		return PackagePath.getProfileApplication(profile, recurse);
 	}
 
@@ -529,7 +541,7 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Package, EList<PackageableElement>> visibleMembers /*false*/ = PackagePath.visibleMembers /*false*/;
+	public static final Function<Package, EList<PackageableElement>> visibleMembers = PackagePath.visibleMembers;
 
 	/**
 	 * @generated
@@ -562,38 +574,38 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static Function<NamedElement, Dependency> createDependency /*false*/(final NamedElement supplier) {
+	public static Function<NamedElement, Dependency> createDependency(final NamedElement supplier) {
 		return NamedElementPath.createDependency(supplier);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<NamedElement, String> getLabel /*false*/ = NamedElementPath.getLabel /*false*/;
+	public static final Function<NamedElement, String> getLabel = NamedElementPath.getLabel;
 
 	/**
 	 * @generated
 	 */
-	public static Function<NamedElement, String> getLabel /*false*/(final boolean localize) {
+	public static Function<NamedElement, String> getLabel(final boolean localize) {
 		return NamedElementPath.getLabel(localize);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<NamedElement, Usage> createUsage /*false*/(final NamedElement supplier) {
+	public static Function<NamedElement, Usage> createUsage(final NamedElement supplier) {
 		return NamedElementPath.createUsage(supplier);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<NamedElement, String> getQualifiedName /*false*/ = NamedElementPath.getQualifiedName /*false*/;
+	public static final Function<NamedElement, String> getQualifiedName = NamedElementPath.getQualifiedName;
 
 	/**
 	 * @generated
 	 */
-	public static final Function<NamedElement, EList<Namespace>> allNamespaces /*false*/ = NamedElementPath.allNamespaces /*false*/;
+	public static final Function<NamedElement, EList<Namespace>> allNamespaces = NamedElementPath.allNamespaces;
 
 	/**
 	 * @generated
@@ -605,12 +617,12 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static final Function<NamedElement, String> separator /*false*/ = NamedElementPath.separator /*false*/;
+	public static final Function<NamedElement, String> separator = NamedElementPath.separator;
 
 	/**
 	 * @generated
 	 */
-	public static final Function<NamedElement, EList<Package>> allOwningPackages /*false*/ = NamedElementPath.allOwningPackages /*false*/;
+	public static final Function<NamedElement, EList<Package>> allOwningPackages = NamedElementPath.allOwningPackages;
 
 	/**
 	 * @generated
@@ -622,36 +634,36 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static Function<Namespace, ElementImport> createElementImport /*false*/(final PackageableElement element, final VisibilityKind visibility) {
+	public static Function<Namespace, ElementImport> createElementImport(final PackageableElement element, final VisibilityKind visibility) {
 		return NamespacePath.createElementImport(element, visibility);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Namespace, PackageImport> createPackageImport /*false*/(final Package package_, final VisibilityKind visibility) {
+	public static Function<Namespace, PackageImport> createPackageImport(final Package package_, final VisibilityKind visibility) {
 		return NamespacePath.createPackageImport(package_, visibility);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Namespace, EList<PackageableElement>> getImportedElements /*false*/ = NamespacePath.getImportedElements /*false*/;
+	public static final Function<Namespace, EList<PackageableElement>> getImportedElements = NamespacePath.getImportedElements;
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Namespace, EList<Package>> getImportedPackages /*false*/ = NamespacePath.getImportedPackages /*false*/;
+	public static final Function<Namespace, EList<Package>> getImportedPackages = NamespacePath.getImportedPackages;
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Namespace, EList<PackageableElement>> getImportedMembers /*false*/ = NamespacePath.getImportedMembers /*false*/;
+	public static final Function<Namespace, EList<PackageableElement>> getImportedMembers = NamespacePath.getImportedMembers;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Namespace, EList<String>> getNamesOfMember /*false*/(final NamedElement element) {
+	public static Function<Namespace, EList<String>> getNamesOfMember(final NamedElement element) {
 		return NamespacePath.getNamesOfMember(element);
 	}
 
@@ -663,21 +675,21 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static Function<Namespace, EList<PackageableElement>> importMembers /*false*/(final EList<PackageableElement> imps) {
+	public static Function<Namespace, EList<PackageableElement>> importMembers(final EList<PackageableElement> imps) {
 		return NamespacePath.importMembers(imps);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Namespace, EList<PackageableElement>> excludeCollisions /*false*/(final EList<PackageableElement> imps) {
+	public static Function<Namespace, EList<PackageableElement>> excludeCollisions(final EList<PackageableElement> imps) {
 		return NamespacePath.excludeCollisions(imps);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<TemplateableElement, EList<ParameterableElement>> parameterableElements /*false*/ = TemplateableElementPath.parameterableElements /*false*/;
+	public static final Function<TemplateableElement, EList<ParameterableElement>> parameterableElements = TemplateableElementPath.parameterableElements;
 
 	/**
 	 * @generated
@@ -716,7 +728,7 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static Function<Profile, EObject> create /*false*/(final Classifier classifier) {
+	public static Function<Profile, EObject> create(final Classifier classifier) {
 		return new Function<Profile, EObject>() {
 			public EObject apply(Profile s) {
 				return s.create(classifier);
@@ -727,7 +739,7 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static Function<Profile, Stereotype> createOwnedStereotype /*false*/(final String name, final boolean isAbstract) {
+	public static Function<Profile, Stereotype> createOwnedStereotype(final String name, final boolean isAbstract) {
 		return new Function<Profile, Stereotype>() {
 			public Stereotype apply(Profile s) {
 				return s.createOwnedStereotype(name, isAbstract);
@@ -747,7 +759,7 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Profile, EPackage> define /*false*/ = new Function<Profile, EPackage>() {
+	public static final Function<Profile, EPackage> define = new Function<Profile, EPackage>() {
 		public EPackage apply(Profile s) {
 			return s.define();
 		}
@@ -756,7 +768,7 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static Function<Profile, EPackage> define /*false*/(final Map<String, String> options, final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+	public static Function<Profile, EPackage> define(final Map<String, String> options, final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		return new Function<Profile, EPackage>() {
 			public EPackage apply(Profile s) {
 				return s.define(options, diagnostics, context);
@@ -767,7 +779,7 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Profile, EPackage> getDefinition /*false*/ = new Function<Profile, EPackage>() {
+	public static final Function<Profile, EPackage> getDefinition = new Function<Profile, EPackage>() {
 		public EPackage apply(Profile s) {
 			return s.getDefinition();
 		}
@@ -776,7 +788,7 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static Function<Profile, ENamedElement> getDefinition /*false*/(final NamedElement namedElement) {
+	public static Function<Profile, ENamedElement> getDefinition(final NamedElement namedElement) {
 		return new Function<Profile, ENamedElement>() {
 			public ENamedElement apply(Profile s) {
 				return s.getDefinition(namedElement);
@@ -787,7 +799,7 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Profile, EList<Class>> getReferencedMetaclasses /*false*/ = new Function<Profile, EList<Class>>() {
+	public static final Function<Profile, EList<Class>> getReferencedMetaclasses = new Function<Profile, EList<Class>>() {
 		public EList<Class> apply(Profile s) {
 			return s.getReferencedMetaclasses();
 		}
@@ -796,7 +808,7 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Profile, EList<Model>> getReferencedMetamodels /*false*/ = new Function<Profile, EList<Model>>() {
+	public static final Function<Profile, EList<Model>> getReferencedMetamodels = new Function<Profile, EList<Model>>() {
 		public EList<Model> apply(Profile s) {
 			return s.getReferencedMetamodels();
 		}
@@ -805,7 +817,7 @@ public final class ProfilePath {
 	/**
 	 * @generated
 	 */
-	public static Function<Profile, EList<Extension>> getOwnedExtensions /*false*/(final boolean requiredOnly) {
+	public static Function<Profile, EList<Extension>> getOwnedExtensions(final boolean requiredOnly) {
 		return new Function<Profile, EList<Extension>>() {
 			public EList<Extension> apply(Profile s) {
 				return s.getOwnedExtensions(requiredOnly);

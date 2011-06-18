@@ -84,6 +84,11 @@ public final class DirectedRelationshipPath {
 	/**
 	 * @generated
 	 */
+	public static final Function<Element, Element> destroy = ElementPath.destroy;
+
+	/**
+	 * @generated
+	 */
 	public static Predicate<Element> hasKeyword(final String keyword) {
 		return ElementPath.hasKeyword(keyword);
 	}
@@ -91,7 +96,7 @@ public final class DirectedRelationshipPath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<String>> getKeywords /*false*/ = ElementPath.getKeywords /*false*/;
+	public static final Function<Element, EList<String>> getKeywords = ElementPath.getKeywords;
 
 	/**
 	 * @generated
@@ -110,12 +115,12 @@ public final class DirectedRelationshipPath {
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, Package> getNearestPackage /*false*/ = ElementPath.getNearestPackage /*false*/;
+	public static final Function<Element, Package> getNearestPackage = ElementPath.getNearestPackage;
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, Model> getModel /*false*/ = ElementPath.getModel /*false*/;
+	public static final Function<Element, Model> getModel = ElementPath.getModel;
 
 	/**
 	 * @generated
@@ -141,76 +146,76 @@ public final class DirectedRelationshipPath {
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EObject> applyStereotype /*false*/(final Stereotype stereotype) {
+	public static Function<Element, EObject> applyStereotype(final Stereotype stereotype) {
 		return ElementPath.applyStereotype(stereotype);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EObject> unapplyStereotype /*false*/(final Stereotype stereotype) {
+	public static Function<Element, EObject> unapplyStereotype(final Stereotype stereotype) {
 		return ElementPath.unapplyStereotype(stereotype);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<Stereotype>> getApplicableStereotypes /*false*/ = ElementPath.getApplicableStereotypes /*false*/;
+	public static final Function<Element, EList<Stereotype>> getApplicableStereotypes = ElementPath.getApplicableStereotypes;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, Stereotype> getApplicableStereotype /*false*/(final String qualifiedName) {
+	public static Function<Element, Stereotype> getApplicableStereotype(final String qualifiedName) {
 		return ElementPath.getApplicableStereotype(qualifiedName);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<EObject>> getStereotypeApplications /*false*/ = ElementPath.getStereotypeApplications /*false*/;
+	public static final Function<Element, EList<EObject>> getStereotypeApplications = ElementPath.getStereotypeApplications;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EObject> getStereotypeApplication /*false*/(final Stereotype stereotype) {
+	public static Function<Element, EObject> getStereotypeApplication(final Stereotype stereotype) {
 		return ElementPath.getStereotypeApplication(stereotype);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<Stereotype>> getRequiredStereotypes /*false*/ = ElementPath.getRequiredStereotypes /*false*/;
+	public static final Function<Element, EList<Stereotype>> getRequiredStereotypes = ElementPath.getRequiredStereotypes;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, Stereotype> getRequiredStereotype /*false*/(final String qualifiedName) {
+	public static Function<Element, Stereotype> getRequiredStereotype(final String qualifiedName) {
 		return ElementPath.getRequiredStereotype(qualifiedName);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<Stereotype>> getAppliedStereotypes /*false*/ = ElementPath.getAppliedStereotypes /*false*/;
+	public static final Function<Element, EList<Stereotype>> getAppliedStereotypes = ElementPath.getAppliedStereotypes;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, Stereotype> getAppliedStereotype /*false*/(final String qualifiedName) {
+	public static Function<Element, Stereotype> getAppliedStereotype(final String qualifiedName) {
 		return ElementPath.getAppliedStereotype(qualifiedName);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EList<Stereotype>> getAppliedSubstereotypes /*false*/(final Stereotype stereotype) {
+	public static Function<Element, EList<Stereotype>> getAppliedSubstereotypes(final Stereotype stereotype) {
 		return ElementPath.getAppliedSubstereotypes(stereotype);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, Stereotype> getAppliedSubstereotype /*false*/(final Stereotype stereotype, final String qualifiedName) {
+	public static Function<Element, Stereotype> getAppliedSubstereotype(final Stereotype stereotype, final String qualifiedName) {
 		return ElementPath.getAppliedSubstereotype(stereotype, qualifiedName);
 	}
 
@@ -224,57 +229,64 @@ public final class DirectedRelationshipPath {
 	/**
 	 * @generated
 	 */
-	public static Function<Element, Object> getValue /*false*/(final Stereotype stereotype, final String propertyName) {
+	public static Function<Element, Object> getValue(final Stereotype stereotype, final String propertyName) {
 		return ElementPath.getValue(stereotype, propertyName);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EAnnotation> createEAnnotation /*false*/(final String source) {
+	public static Function<Element, Element> setValue(final Stereotype stereotype, final String propertyName, final Object newValue) {
+		return ElementPath.setValue(stereotype, propertyName, newValue);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static Function<Element, EAnnotation> createEAnnotation(final String source) {
 		return ElementPath.createEAnnotation(source);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<Relationship>> getRelationships /*false*/ = ElementPath.getRelationships /*false*/;
+	public static final Function<Element, EList<Relationship>> getRelationships = ElementPath.getRelationships;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EList<Relationship>> getRelationships /*false*/(final EClass eClass) {
+	public static Function<Element, EList<Relationship>> getRelationships(final EClass eClass) {
 		return ElementPath.getRelationships(eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships /*false*/ = ElementPath.getSourceDirectedRelationships /*false*/;
+	public static final Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships = ElementPath.getSourceDirectedRelationships;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships /*false*/(final EClass eClass) {
+	public static Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships(final EClass eClass) {
 		return ElementPath.getSourceDirectedRelationships(eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships /*false*/ = ElementPath.getTargetDirectedRelationships /*false*/;
+	public static final Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships = ElementPath.getTargetDirectedRelationships;
 
 	/**
 	 * @generated
 	 */
-	public static Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships /*false*/(final EClass eClass) {
+	public static Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships(final EClass eClass) {
 		return ElementPath.getTargetDirectedRelationships(eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public static final Function<Element, EList<Element>> allOwnedElements /*false*/ = ElementPath.allOwnedElements /*false*/;
+	public static final Function<Element, EList<Element>> allOwnedElements = ElementPath.allOwnedElements;
 
 	/**
 	 * @generated
