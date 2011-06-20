@@ -29,14 +29,4 @@ public abstract class ForwardingIterable<T> extends ForwardingObject implements 
 	public Iterator<T> iterator() {
 		return this.delegate().iterator();
 	}
-
-	@Override
-	public boolean equals(Object object) {
-		return (object == this) || this.delegate().equals(object);
-	}
-
-	@Override
-	public int hashCode() {
-		return this.delegate().hashCode();
-	}
 }
