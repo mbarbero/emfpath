@@ -8,24 +8,27 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.indie.predicate;
+package org.eclipselabs.emfpath.indie.collect;
 
 import java.util.Iterator;
 
-import org.eclipselabs.emfpath.indie.util.ComposablePredicate;
-
+import com.google.common.base.Predicate;
 
 /**
- * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
- * @since 0.3
+ * @author mbarbero
+ *
  */
-public abstract class Contains extends ComposablePredicate<Iterable<?>> {
+public final class Iterables2 {
+
+	private Iterables2() {
+		// prevents instantiation
+	}
 
 	/**
 	 * @param n
 	 * @return
 	 */
-	public static Contains atMost(int n) {
+	public static Contains containsAtMost(int n) {
 		return new ContainsAtMost(n);
 	}
 
@@ -33,22 +36,28 @@ public abstract class Contains extends ComposablePredicate<Iterable<?>> {
 	 * @param n
 	 * @return
 	 */
-	public static Contains atLeast(int n) {
+	public static Contains containsAtLeast(int n) {
 		return new ContainsAtLeast(n);
 	}
 
 	/**
-	 * @param input
-	 * @return
+	 * @author mbarbero
 	 */
-	public boolean elementsIn(Iterable<?> input) {
-		return this.apply(input);
+	public static abstract class Contains implements Predicate<Iterable<?>> {
+		/**
+		 * @param input
+		 * @return
+		 * @see com.google.common.base.Predicate#apply(java.lang.Object)
+		 */
+		public boolean elementsIn(Iterable<?> input) {
+			return this.apply(input);
+		}
 	}
 
 	private static final class ContainsAtMost extends Contains {
-		int n;
+		private final int n;
 
-		public ContainsAtMost(int n2) {
+		ContainsAtMost(int n2) {
 			this.n = n2;
 		}
 
@@ -68,9 +77,9 @@ public abstract class Contains extends ComposablePredicate<Iterable<?>> {
 	}
 
 	private static final class ContainsAtLeast extends Contains {
-		int n;
+		private final int n;
 
-		public ContainsAtLeast(int n) {
+		ContainsAtLeast(int n) {
 			this.n = n;
 		}
 
@@ -88,5 +97,4 @@ public abstract class Contains extends ComposablePredicate<Iterable<?>> {
 			return false;
 		}
 	}
-
 }

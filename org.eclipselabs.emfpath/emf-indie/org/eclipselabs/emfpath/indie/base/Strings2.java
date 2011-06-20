@@ -8,22 +8,20 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.indie.function;
+package org.eclipselabs.emfpath.indie.base;
 
 import java.util.regex.Pattern;
 
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Predicate;
+import com.google.common.base.Strings;
 
 /**
- * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
- * @since 0.3
+ * @author mbarbero
+ *
  */
-public final class StringFunctions {
-
-	private StringFunctions() {
-		// prevent instantiation
-	}
+public final class Strings2 {
 
 	/**
 	 * 
@@ -98,6 +96,59 @@ public final class StringFunctions {
 	};
 
 	/**
+	 * 
+	 */
+	public static final Function<String, String> nullToEmpty = new Function<String, String>() {
+		public String apply(String input) {
+			return Strings.nullToEmpty(input);
+		}
+	};
+
+	/**
+	 * 
+	 */
+	public static final Function<String, String> emptyToNull = new Function<String, String>() {
+		public String apply(String input) {
+			return Strings.emptyToNull(input);
+		}
+	};
+
+	/**
+	 * 
+	 */
+	public static final Predicate<String> isNullOrEmpty = new Predicate<String>() {
+		public boolean apply(String input) {
+			return Strings.isNullOrEmpty(input);
+		}
+	};
+
+	/**
+	 * @param minLength
+	 * @param padChar
+	 * @return
+	 */
+	public static Function<String, String> padStart(final int minLength, final char padChar) {
+		return new Function<String, String>() {
+			public String apply(String input) {
+				return Strings.padStart(input, minLength, padChar);
+			}
+		};
+	}
+
+	/**
+	 * @param minLength
+	 * @param padChar
+	 * @return
+	 */
+	public static Function<String, String> padEnd(final int minLength, final char padChar) {
+		return new Function<String, String>() {
+			public String apply(String input) {
+				return Strings.padEnd(input, minLength, padChar);
+			}
+		};
+	}
+
+	/**
 	 * @param pattern
 	 * @param replacement
 	 * @return
@@ -105,7 +156,7 @@ public final class StringFunctions {
 	public static Function<String, String> replaceAll(final String pattern, final String replacement) {
 		Preconditions.checkArgument(pattern != null);
 		Preconditions.checkArgument(replacement != null);
-		return StringFunctions.replaceAll(Pattern.compile(pattern), replacement);
+		return replaceAll(Pattern.compile(pattern), replacement);
 	}
 
 	/**
@@ -132,7 +183,30 @@ public final class StringFunctions {
 	public static Function<String, String> replaceFirst(final String pattern, final String replacement) {
 		Preconditions.checkArgument(pattern != null);
 		Preconditions.checkArgument(replacement != null);
-		return StringFunctions.replaceFirst(Pattern.compile(pattern), replacement);
+		return replaceFirst(Pattern.compile(pattern), replacement);
+	}
+
+	/**
+	 * @param pattern
+	 * @return
+	 */
+	public static Predicate<String> matches(final String pattern) {
+		Preconditions.checkArgument(pattern != null);
+		return matches(Pattern.compile(pattern));
+	}
+
+	/**
+	 * @param pattern
+	 * @return
+	 */
+	public static Predicate<String> matches(final Pattern pattern) {
+		Preconditions.checkArgument(pattern != null);
+		return new Predicate<String>() {
+			public boolean apply(String input) {
+				Preconditions.checkNotNull(input);
+				return pattern.matcher(input).matches();
+			}
+		};
 	}
 
 	/**
@@ -183,4 +257,5 @@ public final class StringFunctions {
 			}
 		};
 	}
+
 }
