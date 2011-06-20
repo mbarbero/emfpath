@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipselabs.emfpath.ecore.path.internal.i18n.Messages;
 import org.eclipselabs.emfpath.exception.NotFoundException;
-import org.eclipselabs.emfpath.operation.EGet;
 
 /**
  * @generated
@@ -144,8 +143,7 @@ public final class EPackages {
 	 * @return the fully qualified name
 	 */
 	public static String fullyQualifiedName(EPackage ePackage, String separator) {
-		List<String> ancestorsOrSelf = ImmutableList.copyOf(Iterables.transform(EObjects.ancestorOrSelf.of(ePackage), EGet
-			.<String> feature(EcorePackage.Literals.ENAMED_ELEMENT__NAME)));
+		List<String> ancestorsOrSelf = ImmutableList.copyOf(Iterables.filter(Iterables.transform(EObjects.ancestorOrSelf.of(ePackage), EObjects.eGet(EcorePackage.Literals.ENAMED_ELEMENT__NAME)), String.class));
 
 		return Joiner.on(separator).join(Lists.reverse(ancestorsOrSelf));
 	}
