@@ -28,9 +28,7 @@ import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipselabs.emfpath.exception.NotFoundException;
-import org.eclipselabs.emfpath.indie.predicate.Equals;
-import org.eclipselabs.emfpath.operation.EGet;
-import org.eclipselabs.emfpath.predicate.Having;
+import org.eclipselabs.emfpath.indie.base.Equivalences2;
 
 /**
  * @generated
@@ -462,8 +460,8 @@ public final class EClasses {
 
 			for (String nameFragment : nameFragments) {
 				try {
-					currentEPackage = Iterables.find(currentEPackage.getESubpackages(), Having.feature(
-						EcorePackage.Literals.ENAMED_ELEMENT__NAME, Equals.to(nameFragment)));
+					currentEPackage = Iterables.find(currentEPackage.getESubpackages(), EObjects.having(
+						EcorePackage.Literals.ENAMED_ELEMENT__NAME, Equivalences2.equalsTo(nameFragment)));
 				} catch (NoSuchElementException e) {
 					throw new NotFoundException("Cannot find EPackage named " + nameFragment + " as sub package of "
 						+ EPackages.fullyQualifiedName(this.ePackage, this.separator));
@@ -512,8 +510,7 @@ public final class EClasses {
 			try {
 				EClass eClass = Iterables.find(allEClasses, new Predicate<EClass>() {
 					public boolean apply(EClass input) {
-						Iterable<String> ancestorOrSelfName = Iterables.transform(EObjects.ancestorOrSelf.of(input), EGet
-							.<String> feature(EcorePackage.Literals.ENAMED_ELEMENT__NAME));
+						Iterable<String> ancestorOrSelfName = Iterables.filter(Iterables.transform(EObjects.ancestorOrSelf.of(input), EObjects.eGet(EcorePackage.Literals.ENAMED_ELEMENT__NAME)), String.class);
 						String currentFullName = Joiner.on(FromEPackageRegistry.this.separator).join(
 							Lists.reverse(ImmutableList.copyOf(ancestorOrSelfName)));
 						return fullName.equals(currentFullName);
