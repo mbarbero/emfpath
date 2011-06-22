@@ -3,6 +3,7 @@
 
 [import org::eclipselabs::emfpath::gen::typing /]
 [import org::eclipselabs::emfpath::gen::naming /]
+[import org::eclipselabs::emfpath::gen::utils /]
 [import org::eclipselabs::emfpath::gen::primitives /]
 [import org::eclipselabs::emfpath::gen::uml2::common /]
 [import org::eclipselabs::emfpath::gen::uml2::caseformat/]
@@ -20,11 +21,6 @@ not	e.genClass.ecoreClass.eAllSubClassesAndSelf()->
 	select(eClass : EClass | not eClass.eAllAttributesAndReferences()->
 		select(eSF : EStructuralFeature | eSF.name = e.ecoreOperation.name)->isEmpty()
 	)->isEmpty()
-/]
-
-[query private eAllSubClassesAndSelf(e : EClass) : Set(EClass) = 
-	e.ePackage.eClassifiers->filter(EClass)->
-		select(subclass : EClass | subclass.eAllSuperTypes->includes(e))->including(e)
 /]
 
 [query private eAllAttributesAndReferences(e : EClass) : Sequence(EStructuralFeature) = 
