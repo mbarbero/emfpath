@@ -6,144 +6,64 @@ import org.eclipse.emf.common.util.EList;
 
 import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.uml2.uml.Comment;
-import org.eclipse.uml2.uml.ConnectableElement;
-import org.eclipse.uml2.uml.ConnectorEnd;
-import org.eclipse.uml2.uml.Dependency;
-import org.eclipse.uml2.uml.DirectedRelationship;
-import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.MultiplicityElement;
-import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.Operation;
-import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterDirectionKind;
 import org.eclipse.uml2.uml.ParameterEffectKind;
 import org.eclipse.uml2.uml.ParameterSet;
-import org.eclipse.uml2.uml.ParameterableElement;
-import org.eclipse.uml2.uml.Relationship;
-import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.uml2.uml.StringExpression;
-import org.eclipse.uml2.uml.TemplateParameter;
-import org.eclipse.uml2.uml.Type;
-import org.eclipse.uml2.uml.TypedElement;
-import org.eclipse.uml2.uml.Usage;
 import org.eclipse.uml2.uml.ValueSpecification;
-import org.eclipse.uml2.uml.VisibilityKind;
 
 /**
  * @generated
  */
-public final class ParameterPath {
+public class ParameterPath extends ConnectableElementPath {
 
 	/**
 	 * @generated
 	 */
 	private ParameterPath() {
-		// prevent instantiation
+		super();
 	}
 
 	/**
-	 * @generated
-	 */
-	public static final Function<Element, EList<Element>> ownedElement = ElementPath.ownedElement;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<Element, Element> owner = ElementPath.owner;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<Element, EList<Comment>> ownedComment = ElementPath.ownedComment;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<NamedElement, String> name = NamedElementPath.name;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<NamedElement, VisibilityKind> visibility = NamedElementPath.visibility;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<NamedElement, String> qualifiedName = NamedElementPath.qualifiedName;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<NamedElement, EList<Dependency>> clientDependency = NamedElementPath.clientDependency;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<NamedElement, Namespace> namespace = NamedElementPath.namespace;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<NamedElement, StringExpression> nameExpression = NamedElementPath.nameExpression;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<TypedElement, Type> type = TypedElementPath.type;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<ParameterableElement, TemplateParameter> owningTemplateParameter = ParameterableElementPath.owningTemplateParameter;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<ParameterableElement, TemplateParameter> templateParameter = ParameterableElementPath.templateParameter;
-
-	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#isOrdered()
 	 * @generated
 	 */
 	public static final Predicate<MultiplicityElement> isOrdered = MultiplicityElementPath.isOrdered;
 
 	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#isUnique()
 	 * @generated
 	 */
 	public static final Predicate<MultiplicityElement> isUnique = MultiplicityElementPath.isUnique;
 
 	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#getUpper()
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, java.lang.Integer> upper = MultiplicityElementPath.upper;
 
 	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#getLower()
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, java.lang.Integer> lower = MultiplicityElementPath.lower;
 
 	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#getUpperValue()
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, ValueSpecification> upperValue = MultiplicityElementPath.upperValue;
 
 	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#getLowerValue()
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, ValueSpecification> lowerValue = MultiplicityElementPath.lowerValue;
 
 	/**
-	 * @generated
-	 */
-	public static final Function<ConnectableElement, EList<ConnectorEnd>> end = ConnectableElementPath.end;
-
-	/**
+	 * @see org.eclipse.uml2.uml.Parameter#getParameterSets()
 	 * @generated
 	 */
 	public static final Function<Parameter, EList<ParameterSet>> parameterSet = new Function<Parameter, EList<ParameterSet>>() {
@@ -153,6 +73,7 @@ public final class ParameterPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#getOperation()
 	 * @generated
 	 */
 	public static final Function<Parameter, Operation> operation = new Function<Parameter, Operation>() {
@@ -162,6 +83,7 @@ public final class ParameterPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#getDirection()
 	 * @generated
 	 */
 	public static final Function<Parameter, ParameterDirectionKind> direction = new Function<Parameter, ParameterDirectionKind>() {
@@ -171,6 +93,7 @@ public final class ParameterPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#getDefault()
 	 * @generated
 	 */
 	public static final Function<Parameter, String> default_ = new Function<Parameter, String>() {
@@ -180,6 +103,7 @@ public final class ParameterPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#getDefaultValue()
 	 * @generated
 	 */
 	public static final Function<Parameter, ValueSpecification> defaultValue = new Function<Parameter, ValueSpecification>() {
@@ -189,6 +113,7 @@ public final class ParameterPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#isException()
 	 * @generated
 	 */
 	public static final Predicate<Parameter> isException = new Predicate<Parameter>() {
@@ -198,6 +123,7 @@ public final class ParameterPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#isStream()
 	 * @generated
 	 */
 	public static final Predicate<Parameter> isStream = new Predicate<Parameter>() {
@@ -207,6 +133,7 @@ public final class ParameterPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#getEffect()
 	 * @generated
 	 */
 	public static final Function<Parameter, ParameterEffectKind> effect = new Function<Parameter, ParameterEffectKind>() {
@@ -216,313 +143,7 @@ public final class ParameterPath {
 	};
 	
 	/**
-	 * @generated
-	 */
-	public static Predicate<Element> validateNotOwnSelf(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return ElementPath.validateNotOwnSelf(diagnostics, context);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Predicate<Element> validateHasOwner(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return ElementPath.validateHasOwner(diagnostics, context);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static final Function<Element, Element> destroy = ElementPath.destroy;
-
-	/**
-	 * @generated
-	 */
-	public static Predicate<Element> hasKeyword(final String keyword) {
-		return ElementPath.hasKeyword(keyword);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static final Function<Element, EList<String>> getKeywords = ElementPath.getKeywords;
-
-	/**
-	 * @generated
-	 */
-	public static Predicate<Element> addKeyword(final String keyword) {
-		return ElementPath.addKeyword(keyword);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Predicate<Element> removeKeyword(final String keyword) {
-		return ElementPath.removeKeyword(keyword);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static final Function<Element, Package> getNearestPackage = ElementPath.getNearestPackage;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<Element, Model> getModel = ElementPath.getModel;
-
-	/**
-	 * @generated
-	 */
-	public static Predicate<Element> isStereotypeApplicable(final Stereotype stereotype) {
-		return ElementPath.isStereotypeApplicable(stereotype);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Predicate<Element> isStereotypeRequired(final Stereotype stereotype) {
-		return ElementPath.isStereotypeRequired(stereotype);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Predicate<Element> isStereotypeApplied(final Stereotype stereotype) {
-		return ElementPath.isStereotypeApplied(stereotype);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Function<Element, EObject> applyStereotype(final Stereotype stereotype) {
-		return ElementPath.applyStereotype(stereotype);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Function<Element, EObject> unapplyStereotype(final Stereotype stereotype) {
-		return ElementPath.unapplyStereotype(stereotype);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static final Function<Element, EList<Stereotype>> getApplicableStereotypes = ElementPath.getApplicableStereotypes;
-
-	/**
-	 * @generated
-	 */
-	public static Function<Element, Stereotype> getApplicableStereotype(final String qualifiedName) {
-		return ElementPath.getApplicableStereotype(qualifiedName);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static final Function<Element, EList<EObject>> getStereotypeApplications = ElementPath.getStereotypeApplications;
-
-	/**
-	 * @generated
-	 */
-	public static Function<Element, EObject> getStereotypeApplication(final Stereotype stereotype) {
-		return ElementPath.getStereotypeApplication(stereotype);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static final Function<Element, EList<Stereotype>> getRequiredStereotypes = ElementPath.getRequiredStereotypes;
-
-	/**
-	 * @generated
-	 */
-	public static Function<Element, Stereotype> getRequiredStereotype(final String qualifiedName) {
-		return ElementPath.getRequiredStereotype(qualifiedName);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static final Function<Element, EList<Stereotype>> getAppliedStereotypes = ElementPath.getAppliedStereotypes;
-
-	/**
-	 * @generated
-	 */
-	public static Function<Element, Stereotype> getAppliedStereotype(final String qualifiedName) {
-		return ElementPath.getAppliedStereotype(qualifiedName);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Function<Element, EList<Stereotype>> getAppliedSubstereotypes(final Stereotype stereotype) {
-		return ElementPath.getAppliedSubstereotypes(stereotype);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Function<Element, Stereotype> getAppliedSubstereotype(final Stereotype stereotype, final String qualifiedName) {
-		return ElementPath.getAppliedSubstereotype(stereotype, qualifiedName);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Predicate<Element> hasValue(final Stereotype stereotype, final String propertyName) {
-		return ElementPath.hasValue(stereotype, propertyName);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Function<Element, Object> getValue(final Stereotype stereotype, final String propertyName) {
-		return ElementPath.getValue(stereotype, propertyName);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Function<Element, Element> setValue(final Stereotype stereotype, final String propertyName, final Object newValue) {
-		return ElementPath.setValue(stereotype, propertyName, newValue);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Function<Element, EAnnotation> createEAnnotation(final String source) {
-		return ElementPath.createEAnnotation(source);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static final Function<Element, EList<Relationship>> getRelationships = ElementPath.getRelationships;
-
-	/**
-	 * @generated
-	 */
-	public static Function<Element, EList<Relationship>> getRelationships(final EClass eClass) {
-		return ElementPath.getRelationships(eClass);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static final Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships = ElementPath.getSourceDirectedRelationships;
-
-	/**
-	 * @generated
-	 */
-	public static Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships(final EClass eClass) {
-		return ElementPath.getSourceDirectedRelationships(eClass);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static final Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships = ElementPath.getTargetDirectedRelationships;
-
-	/**
-	 * @generated
-	 */
-	public static Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships(final EClass eClass) {
-		return ElementPath.getTargetDirectedRelationships(eClass);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static final Function<Element, EList<Element>> allOwnedElements = ElementPath.allOwnedElements;
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<Element> mustBeOwned = ElementPath.mustBeOwned;
-
-	/**
-	 * @generated
-	 */
-	public static Predicate<NamedElement> validateHasNoQualifiedName(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return NamedElementPath.validateHasNoQualifiedName(diagnostics, context);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Predicate<NamedElement> validateHasQualifiedName(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return NamedElementPath.validateHasQualifiedName(diagnostics, context);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Predicate<NamedElement> validateVisibilityNeedsOwnership(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return NamedElementPath.validateVisibilityNeedsOwnership(diagnostics, context);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Function<NamedElement, Dependency> createDependency(final NamedElement supplier) {
-		return NamedElementPath.createDependency(supplier);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static final Function<NamedElement, String> getLabel = NamedElementPath.getLabel;
-
-	/**
-	 * @generated
-	 */
-	public static Function<NamedElement, String> getLabel(final boolean localize) {
-		return NamedElementPath.getLabel(localize);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Function<NamedElement, Usage> createUsage(final NamedElement supplier) {
-		return NamedElementPath.createUsage(supplier);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static final Function<NamedElement, String> getQualifiedName = NamedElementPath.getQualifiedName;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<NamedElement, EList<Namespace>> allNamespaces = NamedElementPath.allNamespaces;
-
-	/**
-	 * @generated
-	 */
-	public static Predicate<NamedElement> isDistinguishableFrom(final NamedElement n, final Namespace ns) {
-		return NamedElementPath.isDistinguishableFrom(n, ns);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static final Function<NamedElement, String> separator = NamedElementPath.separator;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<NamedElement, EList<Package>> allOwningPackages = NamedElementPath.allOwningPackages;
-
-	/**
-	 * @generated
-	 */
-	public static Predicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
-		return ParameterableElementPath.isCompatibleWith(p);
-	}
-
-	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateLowerGe0()
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> validateLowerGe0(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -530,6 +151,7 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateUpperGeLower()
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> validateUpperGeLower(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -537,6 +159,7 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationNoSideEffects()
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> validateValueSpecificationNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -544,6 +167,7 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationConstant()
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> validateValueSpecificationConstant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -551,35 +175,13 @@ public final class ParameterPath {
 	}
 
 	/**
-	 * @generated
-	 */
-	public static Function<MultiplicityElement, MultiplicityElement> setLower(final int newLower) {
-		return MultiplicityElementPath.setLower(newLower);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static Function<MultiplicityElement, MultiplicityElement> setUpper(final int newUpper) {
-		return MultiplicityElementPath.setUpper(newUpper);
-	}
-
-	/**
-	 * @generated
-	 */
-	public static final Function<MultiplicityElement, java.lang.Integer> getLower = MultiplicityElementPath.getLower;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<MultiplicityElement, java.lang.Integer> getUpper = MultiplicityElementPath.getUpper;
-
-	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#isMultivalued()
 	 * @generated
 	 */
 	public static final Predicate<MultiplicityElement> isMultivalued = MultiplicityElementPath.isMultivalued;
 
 	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesCardinality()
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> includesCardinality(final int C) {
@@ -587,6 +189,7 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesMultiplicity()
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> includesMultiplicity(final MultiplicityElement M) {
@@ -594,16 +197,19 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#lowerBound()
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, java.lang.Integer> lowerBound = MultiplicityElementPath.lowerBound;
 
 	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#upperBound()
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, java.lang.Integer> upperBound_ = MultiplicityElementPath.upperBound_;
 
 	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#compatibleWith()
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> compatibleWith(final MultiplicityElement other) {
@@ -611,6 +217,7 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#is()
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> is(final int lowerbound, final int upperbound) {
@@ -618,11 +225,7 @@ public final class ParameterPath {
 	}
 
 	/**
-	 * @generated
-	 */
-	public static final Function<ConnectableElement, EList<ConnectorEnd>> getEnds = ConnectableElementPath.getEnds;
-
-	/**
+	 * @see org.eclipse.uml2.uml.Parameter#validateConnectorEnd()
 	 * @generated
 	 */
 	public static Predicate<Parameter> validateConnectorEnd(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -634,6 +237,7 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#validateStreamAndException()
 	 * @generated
 	 */
 	public static Predicate<Parameter> validateStreamAndException(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -645,6 +249,7 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#validateNotException()
 	 * @generated
 	 */
 	public static Predicate<Parameter> validateNotException(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -656,6 +261,7 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#validateReentrantBehaviors()
 	 * @generated
 	 */
 	public static Predicate<Parameter> validateReentrantBehaviors(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -667,6 +273,7 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#validateInAndOut()
 	 * @generated
 	 */
 	public static Predicate<Parameter> validateInAndOut(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -678,6 +285,7 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#getDefault()
 	 * @generated
 	 */
 	public static final Function<Parameter, String> getDefault = new Function<Parameter, String>() {
@@ -687,6 +295,7 @@ public final class ParameterPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#isSetDefault()
 	 * @generated
 	 */
 	public static final Predicate<Parameter> isSetDefault = new Predicate<Parameter>() {
@@ -696,6 +305,7 @@ public final class ParameterPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#setDefault()
 	 * @generated
 	 */
 	public static Function<Parameter, Parameter> setDefault(final String newDefault) {
@@ -708,6 +318,7 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#unsetDefault()
 	 * @generated
 	 */
 	public static final Function<Parameter, Parameter> unsetDefault = new Function<Parameter, Parameter>() {
@@ -718,6 +329,7 @@ public final class ParameterPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#setBooleanDefaultValue()
 	 * @generated
 	 */
 	public static Function<Parameter, Parameter> setBooleanDefaultValue(final boolean value) {
@@ -730,6 +342,7 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#setIntegerDefaultValue()
 	 * @generated
 	 */
 	public static Function<Parameter, Parameter> setIntegerDefaultValue(final int value) {
@@ -742,6 +355,7 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#setStringDefaultValue()
 	 * @generated
 	 */
 	public static Function<Parameter, Parameter> setStringDefaultValue(final String value) {
@@ -754,6 +368,7 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#setUnlimitedNaturalDefaultValue()
 	 * @generated
 	 */
 	public static Function<Parameter, Parameter> setUnlimitedNaturalDefaultValue(final int value) {
@@ -766,6 +381,7 @@ public final class ParameterPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Parameter#setNullDefaultValue()
 	 * @generated
 	 */
 	public static final Function<Parameter, Parameter> setNullDefaultValue = new Function<Parameter, Parameter>() {
