@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipselabs.emfpath.ecore.path.EClasses;
 import org.eclipselabs.emfpath.ecore.path.EObjects;
 import org.eclipselabs.emfpath.indie.collect.FluentCollections;
+import org.eclipselabs.emfpath.indie.collect.FluentIterableImpl;
 import org.eclipselabs.emfpath.indie.collect.FluentIterable;
-import org.eclipselabs.emfpath.indie.collect.IFluentIterable;
 
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
@@ -18,7 +18,7 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 
-abstract class AbstractMProperties extends FluentIterable<FProperty> implements FProperties {
+abstract class AbstractMProperties extends FluentIterableImpl<FProperty> implements FProperties {
 
 	public static FProperties create(Iterable<? extends EObject> iterable, EStructuralFeature eStructuralFeature) {
 		return new EPropertyIterableWithEStructuralFeature(iterable, eStructuralFeature);
@@ -51,11 +51,11 @@ abstract class AbstractMProperties extends FluentIterable<FProperty> implements 
 			return Iterables.filter(simpleValues(), elementType);
 		}
 		
-		public IFluentIterable<?> values() {
+		public FluentIterable<?> values() {
 			return FluentCollections.newFluentIterable(simpleValues());
 		}
 	
-		public <T> IFluentIterable<T> values(Class<T> clazz) {
+		public <T> FluentIterable<T> values(Class<T> clazz) {
 			return FluentCollections.newFluentIterable(simpleValues(clazz));
 		}
 		
@@ -69,7 +69,7 @@ abstract class AbstractMProperties extends FluentIterable<FProperty> implements 
 			}
 	
 			@SuppressWarnings("rawtypes")
-			IFluentIterable<Iterable> newFluentIterable = FluentCollections.newFluentIterable(Iterables.filter(simpleValues(), Iterable.class));
+			FluentIterable<Iterable> newFluentIterable = FluentCollections.newFluentIterable(Iterables.filter(simpleValues(), Iterable.class));
 			return Iterables.transform(newFluentIterable, toCheckedIterableOfIterable(elementType));
 		}
 		
@@ -103,11 +103,11 @@ abstract class AbstractMProperties extends FluentIterable<FProperty> implements 
 			return Iterables.filter(simpleValues(), elementType);
 		}
 		
-		public IFluentIterable<?> values() {
+		public FluentIterable<?> values() {
 			return FluentCollections.newFluentIterable(simpleValues());
 		}
 	
-		public <T> IFluentIterable<T> values(Class<T> clazz) {
+		public <T> FluentIterable<T> values(Class<T> clazz) {
 			return FluentCollections.newFluentIterable(simpleValues(clazz));
 		}
 		
@@ -117,7 +117,7 @@ abstract class AbstractMProperties extends FluentIterable<FProperty> implements 
 					+ this.fEStructuralFeature.getName() + " is not of List<" + elementType.getSimpleName() + "> type. Type was [List<"
 					+ this.fEStructuralFeature.getEType().getInstanceClass().getSimpleName() + ">] and value was [" + Joiner.on(", ").join(Iterables.limit(simpleValues(), 3)) + "...]");
 			@SuppressWarnings("rawtypes")
-			IFluentIterable<Iterable> newFluentIterable = FluentCollections.newFluentIterable(Iterables.filter(simpleValues(), Iterable.class));
+			FluentIterable<Iterable> newFluentIterable = FluentCollections.newFluentIterable(Iterables.filter(simpleValues(), Iterable.class));
 			return Iterables.transform(newFluentIterable, toCheckedIterableOfIterable(elementType));
 		}
 		
@@ -136,35 +136,35 @@ abstract class AbstractMProperties extends FluentIterable<FProperty> implements 
 	protected abstract Iterable<?> simpleValues();
 	protected abstract <T> Iterable<T> simpleValues(Class<T> elementType);
 
-	public IFluentIterable<String> asStrings() {
+	public FluentIterable<String> asStrings() {
 		return values(String.class);
 	}
 
-	public IFluentIterable<Integer> asIntegers() {
+	public FluentIterable<Integer> asIntegers() {
 		return values(Integer.class);
 	}
 
-	public IFluentIterable<Boolean> asBooleans() {
+	public FluentIterable<Boolean> asBooleans() {
 		return values(Boolean.class);
 	}
 
-	public IFluentIterable<Long> asLongs() {
+	public FluentIterable<Long> asLongs() {
 		return values(Long.class);
 	}
 
-	public IFluentIterable<Double> asDoubles() {
+	public FluentIterable<Double> asDoubles() {
 		return values(Double.class);
 	}
 
-	public IFluentIterable<Float> asFloats() {
+	public FluentIterable<Float> asFloats() {
 		return values(Float.class);
 	}
 
-	public IFluentIterable<Short> asShorts() {
+	public FluentIterable<Short> asShorts() {
 		return values(Short.class);
 	}
 
-	public IFluentIterable<Character> asCharacters() {
+	public FluentIterable<Character> asCharacters() {
 		return values(Character.class);
 	}
 
@@ -202,19 +202,19 @@ abstract class AbstractMProperties extends FluentIterable<FProperty> implements 
 	
 	protected abstract <T> Iterable<Iterable<T>> asSimpleIterable(Class<T> elementType);
 
-	public IFluentIterable<Iterable<?>> asIterables() {
+	public FluentIterable<Iterable<?>> asIterables() {
 		return FluentCollections.newFluentIterable(asSimpleIterable());
 	}
 
-	public <T> IFluentIterable<Iterable<T>> asIterables(Class<T> elementType) {
+	public <T> FluentIterable<Iterable<T>> asIterables(Class<T> elementType) {
 		return FluentCollections.newFluentIterable(asSimpleIterable(elementType));
 	}
 	
-	public IFluentIterable<FIterable<EObject>> asFIterables() {
+	public FluentIterable<FIterable<EObject>> asFIterables() {
 		return asFIterables(EObject.class);
 	}
 
-	public <T extends EObject> IFluentIterable<FIterable<T>> asFIterables(Class<T> elementType) {
+	public <T extends EObject> FluentIterable<FIterable<T>> asFIterables(Class<T> elementType) {
 		return FluentCollections.newFluentIterable(Iterables.transform(asSimpleIterable(elementType), FIterableImpl.<T>wrapFunction2()));
 	}
 
@@ -230,11 +230,11 @@ abstract class AbstractMProperties extends FluentIterable<FProperty> implements 
 		return fEObjects;
 	}
 
-	public IFluentIterable<?> asIterable() {
+	public FluentIterable<?> asIterable() {
 		return FluentCollections.newFluentIterable(Iterables.concat(asSimpleIterable()));
 	}
 
-	public <T> IFluentIterable<T> asIterable(Class<T> elementType) {
+	public <T> FluentIterable<T> asIterable(Class<T> elementType) {
 		return FluentCollections.newFluentIterable(Iterables.concat(asSimpleIterable(elementType)));
 	}
 

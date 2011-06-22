@@ -42,7 +42,7 @@ class FluentSetImpl<T> extends FluentCollectionImpl<T> implements FluentSet<T> {
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.IFluentIterable#asFluentList()
+	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentList()
 	 */
 	@Override
 	public FluentList<T> asFluentList() {
@@ -50,7 +50,7 @@ class FluentSetImpl<T> extends FluentCollectionImpl<T> implements FluentSet<T> {
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.IFluentIterable#asFluentSet()
+	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentSet()
 	 */
 	@Override
 	public FluentSet<T> asFluentSet() {
@@ -58,7 +58,7 @@ class FluentSetImpl<T> extends FluentCollectionImpl<T> implements FluentSet<T> {
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.IFluentIterable#asFluentMultiset()
+	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentMultiset()
 	 */
 	@Override
 	public FluentMultiset<T> asFluentMultiset() {

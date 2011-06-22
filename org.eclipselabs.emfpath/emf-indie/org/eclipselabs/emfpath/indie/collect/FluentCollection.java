@@ -19,12 +19,12 @@ import com.google.common.base.Predicate;
  * @author mbarbero
  * @param <T>
  */
-public interface FluentCollection<T> extends IFluentIterable<T>, Collection<T> {
+public interface FluentCollection<T> extends FluentIterable<T>, Collection<T> {
 
 	/**
 	 * @param function
 	 * @return
-	 * @see org.eclipselabs.emfpath.indie.collect.IFluentIterable#transform(com.google.common.base.Function)
+	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#transform(com.google.common.base.Function)
 	 */
 	<X> FluentCollection<X> transform(Function<? super T, ? extends X> function);
 

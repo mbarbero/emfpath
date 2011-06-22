@@ -19,7 +19,7 @@ import com.google.common.base.Predicate;
  * @author mbarbero
  * @param <T>
  */
-abstract class FluentCollectionImpl<T> extends FluentIterable<T> implements FluentCollection<T> {
+abstract class FluentCollectionImpl<T> extends FluentIterableImpl<T> implements FluentCollection<T> {
 
 	/**
 	 * @param delegator
@@ -92,7 +92,7 @@ abstract class FluentCollectionImpl<T> extends FluentIterable<T> implements Flue
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#delegate()
+	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterableImpl#delegate()
 	 */
 	@Override
 	protected Collection<T> delegate() {
@@ -100,13 +100,13 @@ abstract class FluentCollectionImpl<T> extends FluentIterable<T> implements Flue
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#filter(com.google.common.base.Predicate)
+	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterableImpl#filter(com.google.common.base.Predicate)
 	 */
 	@Override
 	public abstract FluentCollection<T> filter(Predicate<? super T> predicate);
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#transform(com.google.common.base.Function)
+	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterableImpl#transform(com.google.common.base.Function)
 	 */
 	@Override
 	public abstract <X> FluentCollection<X> transform(Function<? super T, ? extends X> function);

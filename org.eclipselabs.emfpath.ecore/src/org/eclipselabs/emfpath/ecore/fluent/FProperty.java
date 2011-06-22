@@ -12,7 +12,7 @@ package org.eclipselabs.emfpath.ecore.fluent;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipselabs.emfpath.indie.collect.IFluentIterable;
+import org.eclipselabs.emfpath.indie.collect.FluentIterable;
 
 /**
  * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
@@ -82,9 +82,9 @@ public interface FProperty {
 	/**
 	 * @return
 	 */
-	IFluentIterable<?> asIterable();
+	FluentIterable<?> asIterable();
 
-	<T> IFluentIterable<T> asIterable(Class<T> elementType);
+	<T> FluentIterable<T> asIterable(Class<T> elementType);
 
 	/**
 	 * @return

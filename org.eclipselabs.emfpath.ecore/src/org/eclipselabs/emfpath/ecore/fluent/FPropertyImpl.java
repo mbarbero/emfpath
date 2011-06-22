@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipselabs.emfpath.ecore.path.EStructuralFeatures;
 import org.eclipselabs.emfpath.exception.NoSuchFeatureException;
 import org.eclipselabs.emfpath.indie.collect.FluentCollections;
-import org.eclipselabs.emfpath.indie.collect.IFluentIterable;
+import org.eclipselabs.emfpath.indie.collect.FluentIterable;
 
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
@@ -181,11 +181,11 @@ class FPropertyImpl implements FProperty {
 	/**
 	 * @return
 	 */
-	public IFluentIterable<?> asIterable() {
+	public FluentIterable<?> asIterable() {
 		return FluentCollections.newFluentIterable(asSimpleList());
 	}
 	
-	public <T> IFluentIterable<T> asIterable(Class<T> elementType) {
+	public <T> FluentIterable<T> asIterable(Class<T> elementType) {
 		return FluentCollections.newFluentIterable(asSimpleList(elementType));
 	}
 

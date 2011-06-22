@@ -13,7 +13,7 @@ package org.eclipselabs.emfpath.ecore.fluent;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipselabs.emfpath.indie.collect.FluentCollections;
-import org.eclipselabs.emfpath.indie.collect.IFluentIterable;
+import org.eclipselabs.emfpath.indie.collect.FluentIterable;
 
 import com.google.common.base.Function;
 
@@ -69,7 +69,7 @@ final class FObjectImpl<E extends EObject> extends ForwardingEObject implements 
 		return FObjects.create(function.apply(delegate()));
 	}
 	
-	public <F, T extends Iterable<F>> IFluentIterable<F> fGetIterable(Function<? super E, T> function) {
+	public <F, T extends Iterable<F>> FluentIterable<F> fGetIterable(Function<? super E, T> function) {
 		return FluentCollections.newFluentIterable(function.apply(delegate()));
 	}
 	
