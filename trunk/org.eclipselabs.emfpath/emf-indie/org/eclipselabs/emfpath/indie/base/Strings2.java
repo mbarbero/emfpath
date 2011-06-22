@@ -88,8 +88,8 @@ public final class Strings2 {
 	/**
 	 * 
 	 */
-	public static final Function<String, Integer> length = new Function<String, Integer>() {
-		public Integer apply(String from) {
+	public static final Function<CharSequence, Integer> length = new Function<CharSequence, Integer>() {
+		public Integer apply(CharSequence from) {
 			Preconditions.checkNotNull(from);
 			return Integer.valueOf(from.length());
 		}
@@ -153,7 +153,7 @@ public final class Strings2 {
 	 * @param replacement
 	 * @return
 	 */
-	public static Function<String, String> replaceAll(final String pattern, final String replacement) {
+	public static Function<CharSequence, String> replaceAll(final String pattern, final String replacement) {
 		Preconditions.checkArgument(pattern != null);
 		Preconditions.checkArgument(replacement != null);
 		return replaceAll(Pattern.compile(pattern), replacement);
@@ -164,11 +164,11 @@ public final class Strings2 {
 	 * @param replacement
 	 * @return
 	 */
-	public static Function<String, String> replaceAll(final Pattern pattern, final String replacement) {
+	public static Function<CharSequence, String> replaceAll(final Pattern pattern, final String replacement) {
 		Preconditions.checkArgument(pattern != null);
 		Preconditions.checkArgument(replacement != null);
-		return new Function<String, String>() {
-			public String apply(String from) {
+		return new Function<CharSequence, String>() {
+			public String apply(CharSequence from) {
 				Preconditions.checkNotNull(from);
 				return pattern.matcher(from).replaceAll(replacement);
 			}
@@ -180,7 +180,7 @@ public final class Strings2 {
 	 * @param replacement
 	 * @return
 	 */
-	public static Function<String, String> replaceFirst(final String pattern, final String replacement) {
+	public static Function<CharSequence, String> replaceFirst(final String pattern, final String replacement) {
 		Preconditions.checkArgument(pattern != null);
 		Preconditions.checkArgument(replacement != null);
 		return replaceFirst(Pattern.compile(pattern), replacement);
@@ -190,7 +190,7 @@ public final class Strings2 {
 	 * @param pattern
 	 * @return
 	 */
-	public static Predicate<String> matches(final String pattern) {
+	public static Predicate<CharSequence> matches(final String pattern) {
 		Preconditions.checkArgument(pattern != null);
 		return matches(Pattern.compile(pattern));
 	}
@@ -199,10 +199,10 @@ public final class Strings2 {
 	 * @param pattern
 	 * @return
 	 */
-	public static Predicate<String> matches(final Pattern pattern) {
+	public static Predicate<CharSequence> matches(final Pattern pattern) {
 		Preconditions.checkArgument(pattern != null);
-		return new Predicate<String>() {
-			public boolean apply(String input) {
+		return new Predicate<CharSequence>() {
+			public boolean apply(CharSequence input) {
 				Preconditions.checkNotNull(input);
 				return pattern.matcher(input).matches();
 			}
@@ -214,11 +214,11 @@ public final class Strings2 {
 	 * @param replacement
 	 * @return
 	 */
-	public static Function<String, String> replaceFirst(final Pattern pattern, final String replacement) {
+	public static Function<CharSequence, String> replaceFirst(final Pattern pattern, final String replacement) {
 		Preconditions.checkArgument(pattern != null);
 		Preconditions.checkArgument(replacement != null);
-		return new Function<String, String>() {
-			public String apply(String from) {
+		return new Function<CharSequence, String>() {
+			public String apply(CharSequence from) {
 				Preconditions.checkNotNull(from);
 				return pattern.matcher(from).replaceFirst(replacement);
 			}

@@ -29,7 +29,7 @@ public final class Equivalences2 {
 	 * @param to
 	 * @return
 	 */
-	public static <T> Predicate<T> equivalencePredicate(final Equivalence<T> equivalenceStrategy, final T to) {
+	public static <T> Predicate<T> equivalencePredicate(final Equivalence<? super T> equivalenceStrategy, final T to) {
 		return new Predicate<T>() {
 			public boolean apply(T input) {
 				return equivalenceStrategy.equivalent(to, input);

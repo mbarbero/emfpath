@@ -15,9 +15,7 @@ import java.util.List;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
 import com.google.common.collect.Sets;
 
@@ -25,7 +23,7 @@ import com.google.common.collect.Sets;
  * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
  * @param <T>
  */
-public class FluentIterable<T> extends ForwardingIterable<T> {
+public class FluentIterable<T> extends ForwardingIterable<T> implements IFluentIterable<T> {
 
 	private final Iterable<T> delegator;
 
@@ -33,28 +31,12 @@ public class FluentIterable<T> extends ForwardingIterable<T> {
 	 * @param <X>
 	 * @return
 	 */
-	public static <X> Function<Iterable<X>, FluentIterable<X>> iterableToEIterable() {
-		return new Function<Iterable<X>, FluentIterable<X>>() {
-			public FluentIterable<X> apply(Iterable<X> from) {
-				return FluentIterable.adapt(from);
+	public static <X> Function<Iterable<X>, IFluentIterable<X>> wrapFunction() {
+		return new Function<Iterable<X>, IFluentIterable<X>>() {
+			public IFluentIterable<X> apply(Iterable<X> from) {
+				return FluentCollections.newFluentIterable(from);
 			}
 		};
-	}
-
-	/**
-	 * @param <X>
-	 * @param delegator
-	 * @return
-	 */
-	public static <X> FluentIterable<X> adapt(Iterable<X> delegator) {
-		FluentIterable<X> ret = null;
-		if (delegator instanceof FluentIterable<?>) {
-			ret = (FluentIterable<X>) delegator;
-		} else {
-			ret = new FluentIterable<X>(delegator);
-		}
-
-		return ret;
 	}
 
 	/**
@@ -93,24 +75,24 @@ public class FluentIterable<T> extends ForwardingIterable<T> {
 	 * @param size
 	 * @return
 	 */
-	public FluentIterable<List<T>> partition(final int size) {
-		return FluentIterable.adapt(Iterables.partition(this.delegate(), size));
+	public IFluentIterable<List<T>> partition(final int size) {
+		return FluentCollections.newFluentIterable(Iterables.partition(this.delegate(), size));
 	}
 
 	/**
 	 * @param size
 	 * @return
 	 */
-	public FluentIterable<List<T>> paddedPartition(final int size) {
-		return FluentIterable.adapt(Iterables.paddedPartition(this.delegate(), size));
+	public IFluentIterable<List<T>> paddedPartition(final int size) {
+		return FluentCollections.newFluentIterable(Iterables.paddedPartition(this.delegate(), size));
 	}
 
 	/**
 	 * @param predicate
 	 * @return
 	 */
-	public FluentIterable<T> filter(Predicate<? super T> predicate) {
-		return FluentIterable.adapt(Iterables.filter(this.delegate(), predicate));
+	public IFluentIterable<T> filter(Predicate<? super T> predicate) {
+		return FluentCollections.newFluentIterable(Iterables.filter(this.delegate(), predicate));
 	}
 
 	/**
@@ -118,8 +100,8 @@ public class FluentIterable<T> extends ForwardingIterable<T> {
 	 * @param type
 	 * @return
 	 */
-	public <X> FluentIterable<X> filter(final Class<X> type) {
-		return FluentIterable.adapt(Iterables.filter(this.delegate(), type));
+	public <X> IFluentIterable<X> filter(final Class<X> type) {
+		return FluentCollections.newFluentIterable(Iterables.filter(this.delegate(), type));
 	}
 
 	/**
@@ -127,8 +109,8 @@ public class FluentIterable<T> extends ForwardingIterable<T> {
 	 * @param function
 	 * @return
 	 */
-	public <X> FluentIterable<X> transform(Function<? super T, ? extends X> function) {
-		return FluentIterable.adapt(Iterables.transform(this.delegate(), function));
+	public <X> IFluentIterable<X> transform(Function<? super T, ? extends X> function) {
+		return FluentCollections.newFluentIterable(Iterables.transform(this.delegate(), function));
 	}
 
 	/**
@@ -173,21 +155,6 @@ public class FluentIterable<T> extends ForwardingIterable<T> {
 	/**
 	 * @return
 	 */
-	public FluentIterable<T> reverse() {
-		FluentIterable<T> ret = null;
-
-		if (this.delegate() instanceof List<?>) {
-			ret = FluentIterable.adapt(Lists.reverse((List<T>) this.delegate()));
-		} else {
-			ret = FluentIterable.adapt(Lists.reverse(ImmutableList.copyOf(this.delegate())));
-		}
-
-		return ret;
-	}
-
-	/**
-	 * @return
-	 */
 	public T first() {
 		return Iterables.get(this.delegate(), 0);
 	}
@@ -218,17 +185,17 @@ public class FluentIterable<T> extends ForwardingIterable<T> {
 	/**
 	 * @return
 	 */
-	public FluentIterable<T> removeDuplicates() {
-		return FluentIterable.adapt(Sets.newLinkedHashSet(this.delegate()));
+	public FluentSet<T> removeDuplicates() {
+		return FluentCollections.newFluentSet(Sets.newLinkedHashSet(this.delegate()));
 	}
 
 	/**
 	 * @param ordering
 	 * @return
 	 */
-	public FluentIterable<T> sort(Ordering<T> ordering) {
-		Iterable<T> it = ordering.sortedCopy(this.delegate());
-		return FluentIterable.adapt(it);
+	public FluentList<T> sort(Ordering<T> ordering) {
+		List<T> it = ordering.sortedCopy(this.delegate());
+		return FluentCollections.newFluentList(it);
 	}
 
 	/**
@@ -255,6 +222,27 @@ public class FluentIterable<T> extends ForwardingIterable<T> {
 	@Override
 	protected Iterable<T> delegate() {
 		return this.delegator;
+	}
+
+	/**
+	 * @see org.eclipselabs.emfpath.indie.collect.IFluentIterable#asFluentList()
+	 */
+	public FluentList<T> asFluentList() {
+		return FluentCollections.newFluentList(this.delegate());
+	}
+
+	/**
+	 * @see org.eclipselabs.emfpath.indie.collect.IFluentIterable#asFluentSet()
+	 */
+	public FluentSet<T> asFluentSet() {
+		return FluentCollections.newFluentSet(this.delegate());
+	}
+
+	/**
+	 * @see org.eclipselabs.emfpath.indie.collect.IFluentIterable#asFluentMultiset()
+	 */
+	public FluentMultiset<T> asFluentMultiset() {
+		return FluentCollections.newFluentMultiset(this.delegate());
 	}
 
 }
