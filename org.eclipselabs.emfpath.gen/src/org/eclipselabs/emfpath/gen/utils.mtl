@@ -1,21 +1,42 @@
 [comment encoding = UTF-8 /]
 [module utils('http://www.eclipse.org/emf/2002/GenModel', 'http://www.eclipse.org/emf/2002/Ecore')/]
 
+[import org::eclipselabs::emfpath::gen::genClasses /]
+
 [query public allGenFeatures(e : GenClass) : Sequence(GenFeature) = 
-	e.genPackage.genClasses.genFeatures
-		->select(gf : GenFeature | e.ecoreClass.eAllSuperTypes.eAllStructuralFeatures->flatten()->includes(gf.ecoreFeature))
-		->union(genFeatures->asSequence())
+	e.getMixinGenFeatures()
+	->union(genFeatures->asSequence())
 /]
 
 [query public allGenOperations(e : GenClass) : Sequence(GenOperation) = 
-	e.genPackage.genClasses.genOperations
-		->select(go : GenOperation | e.ecoreClass.eAllSuperTypes.eAllOperations->flatten()->includes(go.ecoreOperation))
-		->union(genOperations->asSequence())
+	e.getMixinGenOperations()
+	->union(genOperations->asSequence())
 /]
 
-[query public eAllSuperTypesAndSelfWithAtLeastOneFeature(e : GenClass) : Sequence(EClass) = 
-	e.ecoreClass.eAllSuperTypes->including(e.ecoreClass)
-		->select(eClass : EClass | not eClass.eStructuralFeatures->isEmpty() or not eClass.eOperations->isEmpty())
-		->select(eClass : EClass | eClass.ePackage = e.ecoreClass.ePackage)
-		->asSequence()
+[query public getAllMixinEClasses(e : GenClass) : Sequence(EClass) = 
+	e.getMixinGenClasses()->including(e).ecoreClass
+	->select(eClass : EClass | not eClass.eStructuralFeatures->isEmpty() or not eClass.eOperations->isEmpty())
+	->asSequence()
+/]
+
+[query public getAllMixinGenFeatures(e : GenClass) : Sequence(GenFeature) = 
+	allGenFeatures()->select(gf : GenFeature | not gf.ecoreFeature.eType.oclIsUndefined())
+	
+/]
+
+[query public getAllMixinGenOperations(e : GenClass) : Sequence(GenOperation) = 
+	allGenOperations()->select(gf : GenOperation | not gf.ecoreOperation.eType.oclIsUndefined())
+/]
+
+[query public getAllMixinGenParameters(e : GenClass) : Sequence(GenParameter) = 
+	allGenOperations().genParameters->select(gp : GenParameter | not gp.ecoreParameter.eType.oclIsUndefined())
+/]
+
+[query public eAllSubClasses(e : EClass) : Set(EClass) = 
+	e.ePackage.eClassifiers->filter(EClass)->
+		select(subclass : EClass | subclass.eAllSuperTypes->includes(e))
+/]
+
+[query public eAllSubClassesAndSelf(e : EClass) : Set(EClass) = 
+	eAllSubClasses()->including(e)
 /]
