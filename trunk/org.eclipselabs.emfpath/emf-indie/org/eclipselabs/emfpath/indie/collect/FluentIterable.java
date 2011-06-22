@@ -10,239 +10,157 @@
  *******************************************************************************/
 package org.eclipselabs.emfpath.indie.collect;
 
-import java.util.Iterator;
 import java.util.List;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Ordering;
-import com.google.common.collect.Sets;
 
 /**
- * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
+ * @author mbarbero
+ *
  * @param <T>
  */
-public class FluentIterable<T> extends ForwardingIterable<T> implements IFluentIterable<T> {
-
-	private final Iterable<T> delegator;
-
-	/**
-	 * @param <X>
-	 * @return
-	 */
-	public static <X> Function<Iterable<X>, IFluentIterable<X>> wrapFunction() {
-		return new Function<Iterable<X>, IFluentIterable<X>>() {
-			public IFluentIterable<X> apply(Iterable<X> from) {
-				return FluentCollections.newFluentIterable(from);
-			}
-		};
-	}
-
-	/**
-	 * @param delegator
-	 */
-	protected FluentIterable(Iterable<T> delegator) {
-		this.delegator = delegator;
-	}
+public interface FluentIterable<T> extends Iterable<T> {
 
 	/**
 	 * @see Iterables#size(Iterable)
 	 * @return Returns the number of elements in this {@link Iterable}.
 	 */
-	public int size() {
-		return Iterables.size(this.delegate());
-	}
+	int size();
 
 	/**
 	 * @see Iterables#contains(Iterable, Object)
 	 * @param element
 	 * @return
 	 */
-	public boolean contains(Object element) {
-		return Iterables.contains(this.delegate(), element);
-	}
+	boolean contains(Object element);
 
 	/**
 	 * @param type
 	 * @return
 	 */
-	public T[] toArray(Class<T> type) {
-		return Iterables.toArray(this.delegate(), type);
-	}
+	T[] toArray(Class<T> type);
 
 	/**
 	 * @param size
 	 * @return
 	 */
-	public IFluentIterable<List<T>> partition(final int size) {
-		return FluentCollections.newFluentIterable(Iterables.partition(this.delegate(), size));
-	}
+	FluentIterable<List<T>> partition(final int size);
 
 	/**
 	 * @param size
 	 * @return
 	 */
-	public IFluentIterable<List<T>> paddedPartition(final int size) {
-		return FluentCollections.newFluentIterable(Iterables.paddedPartition(this.delegate(), size));
-	}
+	FluentIterable<List<T>> paddedPartition(final int size);
 
 	/**
 	 * @param predicate
 	 * @return
 	 */
-	public IFluentIterable<T> filter(Predicate<? super T> predicate) {
-		return FluentCollections.newFluentIterable(Iterables.filter(this.delegate(), predicate));
-	}
+	FluentIterable<T> filter(Predicate<? super T> predicate);
 
 	/**
 	 * @param <X>
 	 * @param type
 	 * @return
 	 */
-	public <X> IFluentIterable<X> filter(final Class<X> type) {
-		return FluentCollections.newFluentIterable(Iterables.filter(this.delegate(), type));
-	}
+	<X> FluentIterable<X> filter(final Class<X> type);
 
 	/**
 	 * @param <X>
 	 * @param function
 	 * @return
 	 */
-	public <X> IFluentIterable<X> transform(Function<? super T, ? extends X> function) {
-		return FluentCollections.newFluentIterable(Iterables.transform(this.delegate(), function));
-	}
+	<X> FluentIterable<X> transform(Function<? super T, ? extends X> function);
 
 	/**
 	 * @param predicate
 	 * @return
 	 */
-	public boolean any(Predicate<? super T> predicate) {
-		return Iterables.any(this.delegate(), predicate);
-	}
+	boolean any(Predicate<? super T> predicate);
 
 	/**
 	 * @param predicate
 	 * @return
 	 */
-	public boolean all(Predicate<? super T> predicate) {
-		return Iterables.all(this.delegate(), predicate);
-	}
+	boolean all(Predicate<? super T> predicate);
 
 	/**
 	 * @param predicate
 	 * @return
 	 */
-	public T find(Predicate<? super T> predicate) {
-		return Iterables.find(this.delegate(), predicate);
-	}
+	T find(Predicate<? super T> predicate);
 
 	/**
 	 * @param position
 	 * @return
 	 */
-	public T get(int position) {
-		return Iterables.get(this.delegate(), position);
-	}
+	T get(int position);
 
 	/**
 	 * @return
 	 */
-	public boolean isEmpty() {
-		return Iterables.isEmpty(this.delegate());
-	}
+	boolean isEmpty();
 
 	/**
 	 * @return
 	 */
-	public T first() {
-		return Iterables.get(this.delegate(), 0);
-	}
+	T first();
 
 	/**
 	 * @return
 	 */
-	public T last() {
-		return Iterables.getLast(this.delegate());
-	}
+	T last();
 
 	/**
 	 * @param n
 	 * @return
 	 */
-	public boolean atLeast(int n) {
-		return Iterables2.containsAtLeast(n).elementsIn(this.delegate());
-	}
+	boolean atLeast(int n);
 
 	/**
 	 * @param n
 	 * @return
 	 */
-	public boolean atMost(int n) {
-		return Iterables2.containsAtMost(n).elementsIn(this.delegate());
-	}
+	boolean atMost(int n);
 
 	/**
 	 * @return
 	 */
-	public FluentSet<T> removeDuplicates() {
-		return FluentCollections.newFluentSet(Sets.newLinkedHashSet(this.delegate()));
-	}
+	FluentIterable<T> removeDuplicates();
 
 	/**
 	 * @param ordering
 	 * @return
 	 */
-	public FluentList<T> sort(Ordering<T> ordering) {
-		List<T> it = ordering.sortedCopy(this.delegate());
-		return FluentCollections.newFluentList(it);
-	}
+	FluentIterable<T> sort(Ordering<T> ordering);
 
 	/**
 	 * @param ordering
 	 * @return
 	 */
-	public T max(final Ordering<T> ordering) {
-		return ordering.max(this.delegate());
-	}
+	T max(final Ordering<T> ordering);
 
 	/**
 	 * @param ordering
 	 * @return
 	 */
-	public T min(Ordering<T> ordering) {
-		return ordering.min(this.delegate());
-	}
-
-	@Override
-	public Iterator<T> iterator() {
-		return this.delegate().iterator();
-	}
-
-	@Override
-	protected Iterable<T> delegate() {
-		return this.delegator;
-	}
+	T min(Ordering<T> ordering);
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.IFluentIterable#asFluentList()
+	 * @return
 	 */
-	public FluentList<T> asFluentList() {
-		return FluentCollections.newFluentList(this.delegate());
-	}
+	FluentList<T> asFluentList();
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.IFluentIterable#asFluentSet()
+	 * @return
 	 */
-	public FluentSet<T> asFluentSet() {
-		return FluentCollections.newFluentSet(this.delegate());
-	}
+	FluentSet<T> asFluentSet();
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.IFluentIterable#asFluentMultiset()
+	 * @return
 	 */
-	public FluentMultiset<T> asFluentMultiset() {
-		return FluentCollections.newFluentMultiset(this.delegate());
-	}
-
+	FluentMultiset<T> asFluentMultiset();
 }

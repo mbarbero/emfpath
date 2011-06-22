@@ -3,14 +3,14 @@ package org.eclipselabs.emfpath.ecore.fluent;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipselabs.emfpath.indie.collect.FluentCollections;
+import org.eclipselabs.emfpath.indie.collect.FluentIterableImpl;
 import org.eclipselabs.emfpath.indie.collect.FluentIterable;
-import org.eclipselabs.emfpath.indie.collect.IFluentIterable;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 
-final class FIterableImpl<E extends EObject> extends FluentIterable<E> implements FIterable<E> {
+final class FIterableImpl<E extends EObject> extends FluentIterableImpl<E> implements FIterable<E> {
 
 	FIterableImpl(Iterable<E> delegator) {
 		super(delegator);
@@ -36,26 +36,26 @@ final class FIterableImpl<E extends EObject> extends FluentIterable<E> implement
 		return AbstractMProperties.create(this.delegate(), featureName);
 	}
 
-	public <X extends Iterable<Z>, Z> IFluentIterable<IFluentIterable<Z>> fGetIterables(
+	public <X extends Iterable<Z>, Z> FluentIterable<FluentIterable<Z>> fGetIterables(
 			Function<? super E, ? extends Iterable<Z>> function) {
 		Iterable<Iterable<Z>> functionApplied = Iterables.transform(this.delegate(), function);
-		Iterable<IFluentIterable<Z>> wrapped1 = Iterables.transform(functionApplied, FluentIterable.<Z> wrapFunction());
-		IFluentIterable<IFluentIterable<Z>> wrapped2 = FluentCollections.newFluentIterable(wrapped1);
+		Iterable<FluentIterable<Z>> wrapped1 = Iterables.transform(functionApplied, FluentIterableImpl.<Z> wrapFunction());
+		FluentIterable<FluentIterable<Z>> wrapped2 = FluentCollections.newFluentIterable(wrapped1);
 		return wrapped2;
 	}
 
-	public <X extends Iterable<Z>, Z> IFluentIterable<Z> fGetIterable(
+	public <X extends Iterable<Z>, Z> FluentIterable<Z> fGetIterable(
 			Function<? super E, ? extends Iterable<Z>> function) {
 		Iterable<Iterable<Z>> functionApplied = Iterables.transform(this.delegate(), function);
 		Iterable<Z> concat = Iterables.concat(functionApplied);
-		IFluentIterable<Z> wrapped = FluentCollections.newFluentIterable(concat);
+		FluentIterable<Z> wrapped = FluentCollections.newFluentIterable(concat);
 		return wrapped;
 	}
 
-	public <X extends Iterable<Z>, Z extends EObject> IFluentIterable<FIterable<Z>> fGetFIterables(Function<? super E, ? extends Iterable<Z>> function) {
+	public <X extends Iterable<Z>, Z extends EObject> FluentIterable<FIterable<Z>> fGetFIterables(Function<? super E, ? extends Iterable<Z>> function) {
 		Iterable<Iterable<Z>> functionApplied = Iterables.transform(this.delegate(), function);
 		Iterable<FIterable<Z>> wrapped1 = Iterables.transform(functionApplied, FIterableImpl.<Z> wrapFunction2());
-		IFluentIterable<FIterable<Z>> wrapped2 = FluentCollections.newFluentIterable(wrapped1);
+		FluentIterable<FIterable<Z>> wrapped2 = FluentCollections.newFluentIterable(wrapped1);
 		return wrapped2;
 	}
 

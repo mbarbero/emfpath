@@ -120,7 +120,7 @@ class FluentListImpl<T> extends FluentCollectionImpl<T> implements FluentList<T>
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#partition(int)
+	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterableImpl#partition(int)
 	 */
 	@Override
 	public FluentList<List<T>> partition(int size) {
@@ -128,7 +128,7 @@ class FluentListImpl<T> extends FluentCollectionImpl<T> implements FluentList<T>
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.IFluentIterable#asFluentList()
+	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentList()
 	 */
 	@Override
 	public FluentList<T> asFluentList() {
@@ -136,7 +136,7 @@ class FluentListImpl<T> extends FluentCollectionImpl<T> implements FluentList<T>
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.IFluentIterable#asFluentSet()
+	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentSet()
 	 */
 	@Override
 	public FluentSet<T> asFluentSet() {
@@ -144,7 +144,7 @@ class FluentListImpl<T> extends FluentCollectionImpl<T> implements FluentList<T>
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.IFluentIterable#asFluentMultiset()
+	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentMultiset()
 	 */
 	@Override
 	public FluentMultiset<T> asFluentMultiset() {

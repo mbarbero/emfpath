@@ -34,8 +34,8 @@ public final class FluentCollections {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public static <T> IFluentIterable<T> newFluentIterable(Iterable<T> delegator) {
-		return new FluentIterable<T>(delegator);
+	public static <T> FluentIterable<T> newFluentIterable(Iterable<T> delegator) {
+		return new FluentIterableImpl<T>(delegator);
 	}
 
 	/**

@@ -4,53 +4,53 @@ import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipselabs.emfpath.indie.collect.IFluentIterable;
+import org.eclipselabs.emfpath.indie.collect.FluentIterable;
 
-public interface FProperties extends IFluentIterable<FProperty> {
+public interface FProperties extends FluentIterable<FProperty> {
 
-	IFluentIterable<?> values();
+	FluentIterable<?> values();
 	
-	<T> IFluentIterable<T> values(Class<T> clazz);
+	<T> FluentIterable<T> values(Class<T> clazz);
 	
 	/**
 	 * @return
 	 */
-	IFluentIterable<String> asStrings();
+	FluentIterable<String> asStrings();
 
 	/**
 	 * @return
 	 */
-	IFluentIterable<Integer> asIntegers();
+	FluentIterable<Integer> asIntegers();
 
 	/**
 	 * @return
 	 */
-	IFluentIterable<Boolean> asBooleans();
+	FluentIterable<Boolean> asBooleans();
 
 	/**
 	 * @return
 	 */
-	IFluentIterable<Long> asLongs();
+	FluentIterable<Long> asLongs();
 
 	/**
 	 * @return
 	 */
-	IFluentIterable<Double> asDoubles();
+	FluentIterable<Double> asDoubles();
 
 	/**
 	 * @return
 	 */
-	IFluentIterable<Float> asFloats();
+	FluentIterable<Float> asFloats();
 
 	/**
 	 * @return
 	 */
-	IFluentIterable<Short> asShorts();
+	FluentIterable<Short> asShorts();
 
 	/**
 	 * @return
 	 */
-	IFluentIterable<Character> asCharacters();
+	FluentIterable<Character> asCharacters();
 
 	/**
 	 * @return
@@ -62,17 +62,17 @@ public interface FProperties extends IFluentIterable<FProperty> {
 	/**
 	 * @return
 	 */
-	IFluentIterable<Iterable<?>> asIterables();
+	FluentIterable<Iterable<?>> asIterables();
 	
-	<T> IFluentIterable<Iterable<T>> asIterables(Class<T> elementType);
+	<T> FluentIterable<Iterable<T>> asIterables(Class<T> elementType);
 	
-	IFluentIterable<?> asIterable();
+	FluentIterable<?> asIterable();
 	
-	<T> IFluentIterable<T> asIterable(Class<T> elementType);
+	<T> FluentIterable<T> asIterable(Class<T> elementType);
 
-	IFluentIterable<FIterable<EObject>> asFIterables();
+	FluentIterable<FIterable<EObject>> asFIterables();
 	
-	<T extends EObject> IFluentIterable<FIterable<T>> asFIterables(Class<T> elementType);
+	<T extends EObject> FluentIterable<FIterable<T>> asFIterables(Class<T> elementType);
 	
 	FIterable<EObject> asFIterable();
 	
