@@ -20,16 +20,17 @@ import org.eclipse.uml2.uml.Stereotype;
 /**
  * @generated
  */
-public final class ElementPath {
+public class ElementPath {
 
 	/**
 	 * @generated
 	 */
-	private ElementPath() {
+	 ElementPath() {
 		// prevent instantiation
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getOwnedElements()
 	 * @generated
 	 */
 	public static final Function<Element, EList<Element>> ownedElement = new Function<Element, EList<Element>>() {
@@ -39,6 +40,7 @@ public final class ElementPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getOwner()
 	 * @generated
 	 */
 	public static final Function<Element, Element> owner = new Function<Element, Element>() {
@@ -48,6 +50,7 @@ public final class ElementPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getOwnedComments()
 	 * @generated
 	 */
 	public static final Function<Element, EList<Comment>> ownedComment = new Function<Element, EList<Comment>>() {
@@ -57,6 +60,7 @@ public final class ElementPath {
 	};
 	
 	/**
+	 * @see org.eclipse.uml2.uml.Element#validateNotOwnSelf()
 	 * @generated
 	 */
 	public static Predicate<Element> validateNotOwnSelf(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -68,6 +72,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#validateHasOwner()
 	 * @generated
 	 */
 	public static Predicate<Element> validateHasOwner(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -79,6 +84,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#destroy()
 	 * @generated
 	 */
 	public static final Function<Element, Element> destroy = new Function<Element, Element>() {
@@ -89,6 +95,7 @@ public final class ElementPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#hasKeyword()
 	 * @generated
 	 */
 	public static Predicate<Element> hasKeyword(final String keyword) {
@@ -100,6 +107,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getKeywords()
 	 * @generated
 	 */
 	public static final Function<Element, EList<String>> getKeywords = new Function<Element, EList<String>>() {
@@ -109,6 +117,7 @@ public final class ElementPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#addKeyword()
 	 * @generated
 	 */
 	public static Predicate<Element> addKeyword(final String keyword) {
@@ -120,6 +129,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#removeKeyword()
 	 * @generated
 	 */
 	public static Predicate<Element> removeKeyword(final String keyword) {
@@ -131,6 +141,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getNearestPackage()
 	 * @generated
 	 */
 	public static final Function<Element, Package> getNearestPackage = new Function<Element, Package>() {
@@ -140,6 +151,7 @@ public final class ElementPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getModel()
 	 * @generated
 	 */
 	public static final Function<Element, Model> getModel = new Function<Element, Model>() {
@@ -149,6 +161,7 @@ public final class ElementPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#isStereotypeApplicable()
 	 * @generated
 	 */
 	public static Predicate<Element> isStereotypeApplicable(final Stereotype stereotype) {
@@ -160,6 +173,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#isStereotypeRequired()
 	 * @generated
 	 */
 	public static Predicate<Element> isStereotypeRequired(final Stereotype stereotype) {
@@ -171,6 +185,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#isStereotypeApplied()
 	 * @generated
 	 */
 	public static Predicate<Element> isStereotypeApplied(final Stereotype stereotype) {
@@ -182,6 +197,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#applyStereotype()
 	 * @generated
 	 */
 	public static Function<Element, EObject> applyStereotype(final Stereotype stereotype) {
@@ -193,6 +209,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#unapplyStereotype()
 	 * @generated
 	 */
 	public static Function<Element, EObject> unapplyStereotype(final Stereotype stereotype) {
@@ -204,6 +221,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getApplicableStereotypes()
 	 * @generated
 	 */
 	public static final Function<Element, EList<Stereotype>> getApplicableStereotypes = new Function<Element, EList<Stereotype>>() {
@@ -213,6 +231,7 @@ public final class ElementPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getApplicableStereotype()
 	 * @generated
 	 */
 	public static Function<Element, Stereotype> getApplicableStereotype(final String qualifiedName) {
@@ -224,6 +243,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getStereotypeApplications()
 	 * @generated
 	 */
 	public static final Function<Element, EList<EObject>> getStereotypeApplications = new Function<Element, EList<EObject>>() {
@@ -233,6 +253,7 @@ public final class ElementPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getStereotypeApplication()
 	 * @generated
 	 */
 	public static Function<Element, EObject> getStereotypeApplication(final Stereotype stereotype) {
@@ -244,6 +265,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getRequiredStereotypes()
 	 * @generated
 	 */
 	public static final Function<Element, EList<Stereotype>> getRequiredStereotypes = new Function<Element, EList<Stereotype>>() {
@@ -253,6 +275,7 @@ public final class ElementPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getRequiredStereotype()
 	 * @generated
 	 */
 	public static Function<Element, Stereotype> getRequiredStereotype(final String qualifiedName) {
@@ -264,6 +287,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getAppliedStereotypes()
 	 * @generated
 	 */
 	public static final Function<Element, EList<Stereotype>> getAppliedStereotypes = new Function<Element, EList<Stereotype>>() {
@@ -273,6 +297,7 @@ public final class ElementPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getAppliedStereotype()
 	 * @generated
 	 */
 	public static Function<Element, Stereotype> getAppliedStereotype(final String qualifiedName) {
@@ -284,6 +309,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getAppliedSubstereotypes()
 	 * @generated
 	 */
 	public static Function<Element, EList<Stereotype>> getAppliedSubstereotypes(final Stereotype stereotype) {
@@ -295,6 +321,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getAppliedSubstereotype()
 	 * @generated
 	 */
 	public static Function<Element, Stereotype> getAppliedSubstereotype(final Stereotype stereotype, final String qualifiedName) {
@@ -306,6 +333,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#hasValue()
 	 * @generated
 	 */
 	public static Predicate<Element> hasValue(final Stereotype stereotype, final String propertyName) {
@@ -317,6 +345,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getValue()
 	 * @generated
 	 */
 	public static Function<Element, Object> getValue(final Stereotype stereotype, final String propertyName) {
@@ -328,6 +357,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#setValue()
 	 * @generated
 	 */
 	public static Function<Element, Element> setValue(final Stereotype stereotype, final String propertyName, final Object newValue) {
@@ -340,6 +370,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#createEAnnotation()
 	 * @generated
 	 */
 	public static Function<Element, EAnnotation> createEAnnotation(final String source) {
@@ -351,6 +382,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getRelationships()
 	 * @generated
 	 */
 	public static final Function<Element, EList<Relationship>> getRelationships = new Function<Element, EList<Relationship>>() {
@@ -360,6 +392,7 @@ public final class ElementPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getRelationships()
 	 * @generated
 	 */
 	public static Function<Element, EList<Relationship>> getRelationships(final EClass eClass) {
@@ -371,6 +404,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getSourceDirectedRelationships()
 	 * @generated
 	 */
 	public static final Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships = new Function<Element, EList<DirectedRelationship>>() {
@@ -380,6 +414,7 @@ public final class ElementPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getSourceDirectedRelationships()
 	 * @generated
 	 */
 	public static Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships(final EClass eClass) {
@@ -391,6 +426,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getTargetDirectedRelationships()
 	 * @generated
 	 */
 	public static final Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships = new Function<Element, EList<DirectedRelationship>>() {
@@ -400,6 +436,7 @@ public final class ElementPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#getTargetDirectedRelationships()
 	 * @generated
 	 */
 	public static Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships(final EClass eClass) {
@@ -411,6 +448,7 @@ public final class ElementPath {
 	}
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#allOwnedElements()
 	 * @generated
 	 */
 	public static final Function<Element, EList<Element>> allOwnedElements = new Function<Element, EList<Element>>() {
@@ -420,6 +458,7 @@ public final class ElementPath {
 	};
 
 	/**
+	 * @see org.eclipse.uml2.uml.Element#mustBeOwned()
 	 * @generated
 	 */
 	public static final Predicate<Element> mustBeOwned = new Predicate<Element>() {
