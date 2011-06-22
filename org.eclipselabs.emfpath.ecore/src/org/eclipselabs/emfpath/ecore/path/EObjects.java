@@ -71,7 +71,7 @@ public final class EObjects {
   /**
    * @generated
    */
-  public static final Function<EObject, ? extends EObject> eContainer = new Function<EObject, EObject>() {
+  public static final Function<EObject, EObject> eContainer = new Function<EObject, EObject>() {
     public EObject apply(EObject s) {
       return s.eContainer();
     }
@@ -123,24 +123,26 @@ public final class EObjects {
   };
 
   /**
-   * @generated
+   * @generated NOT
    */
 	public static Function<EObject, Object> eGet(final EStructuralFeature feature) {
-		return new Function<EObject, Object>() {
-			public Object apply(EObject s) {
-				return s.eGet(feature);
-			}
-		};
-	}
+    return new Function<EObject, Object>() {
+      public Object apply(EObject s) {
+    	Preconditions.checkArgument(s.eClass().getEAllStructuralFeatures().contains(feature));
+        return s.eGet(feature);
+      }
+    };
+  }
 
 
 
   /**
-   * @generated
+   * @generated NOT
    */
   public static Function<EObject, Object> eGet(final EStructuralFeature feature, final boolean resolve) {
     return new Function<EObject, Object>() {
       public Object apply(EObject s) {
+    	  Preconditions.checkArgument(s.eClass().getEAllStructuralFeatures().contains(feature));
         return s.eGet(feature, resolve);
       }
     };
@@ -160,13 +162,8 @@ public static EFunction<EObject, Object> eGet(final String featureName) {
 	return new EFunction<EObject, Object>() {
 		public Object apply(EObject s) {
 			EClass eClass = s.eClass();
-			try {
-				EStructuralFeature feature = EStructuralFeatures.from(
-						eClass).named(featureName);
-				return s.eGet(feature);
-			} catch (NoSuchFeatureException e) {
-				throw new IllegalArgumentException(e);
-			}
+			EStructuralFeature feature = getFeatureAndRedirectToRuntimeExceptions(featureName, eClass);
+			return s.eGet(feature);
 		}
 	};
 }
@@ -195,20 +192,28 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 
 
 /**
-   * @generated
+   * @generated NOT
    */
   public static Function<EObject, EObject> eSet(final EStructuralFeature feature, final Object newValue) {
     return new Function<EObject, EObject>() {
       public EObject apply(EObject s) {
+    	  Preconditions.checkArgument(s.eClass().getEAllStructuralFeatures().contains(feature));
         s.eSet(feature, newValue);
         return s;
       }
     };
   }
   
-  /**
-   * @generated
-   */
+  public static Function<EObject, EObject> eSet(final EStructuralFeature feature, final Function<EObject, Object> valueFunction) {
+	    return new Function<EObject, EObject>() {
+	      public EObject apply(EObject s) {
+	    	  Preconditions.checkArgument(s.eClass().getEAllStructuralFeatures().contains(feature));
+	        s.eSet(feature, valueFunction.apply(s));
+	        return s;
+	      }
+	    };
+	  }
+  
   public static Function<EObject, EObject> eSet(final String featureName, final Object newValue) {
     return new Function<EObject, EObject>() {
       public EObject apply(EObject s) {
@@ -223,11 +228,12 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 
 
   /**
-   * @generated
+   * @generated NOT
    */
   public static Predicate<EObject> eIsSet(final EStructuralFeature feature) {
     return new Predicate<EObject>() {
       public boolean apply(EObject s) {
+    	  Preconditions.checkArgument(s.eClass().getEAllStructuralFeatures().contains(feature));
         return s.eIsSet(feature);
       }
     };
@@ -248,20 +254,18 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 
 
 /**
-   * @generated
+   * @generated NOT
    */
   public static Function<EObject, EObject> eUnset(final EStructuralFeature feature) {
     return new Function<EObject, EObject>() {
       public EObject apply(EObject s) {
+    	  Preconditions.checkArgument(s.eClass().getEAllStructuralFeatures().contains(feature));
         s.eUnset(feature);
         return s;
       }
     };
   }
 
-  /**
-   * @generated
-   */
   public static Function<EObject, EObject> eUnset(final String featureName) {
     return new Function<EObject, EObject>() {
       public EObject apply(EObject s) {
@@ -387,12 +391,7 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 
 		@SuppressWarnings("unchecked")
 		public boolean apply(T input) {
-			EStructuralFeature feature;
-			try {
-				feature = EStructuralFeatures.from(input.eClass()).named(this.featureName);
-			} catch (NoSuchFeatureException e) {
-				throw new IllegalArgumentException(e);
-			}
+			EStructuralFeature feature = getFeatureAndRedirectToRuntimeExceptions(featureName, input.eClass());
 			return this.filter.apply((F) input.eGet(feature));
 		}
 	}
@@ -416,7 +415,7 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 	/**
 	 * @see EcoreUtil#isAncestor(EObject, EObject)
 	 */
-	public static Predicate<? super EObject> isAncestorOf(final EObject child) {
+	public static Predicate<EObject> isAncestorOf(final EObject child) {
 		return new Predicate<EObject>() {
 			public boolean apply(EObject input) {
 				return EcoreUtil.isAncestor(input, child);
@@ -427,7 +426,7 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 	/**
 	 * @see EcoreUtil#isAncestor(EObject, EObject)
 	 */
-	public static Predicate<? super EObject> isChildOf(final EObject ancestor) {
+	public static Predicate<EObject> isChildOf(final EObject ancestor) {
 		return new Predicate<EObject>() {
 			public boolean apply(EObject input) {
 				return EcoreUtil.isAncestor(ancestor, input);
@@ -435,7 +434,7 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 		};
 	}
 
-	public static Predicate<? super EObject> isKindOf(final EClass eClass) {
+	public static Predicate<EObject> isKindOf(final EClass eClass) {
 		return new Predicate<EObject>() {
 			public boolean apply(EObject input) {
 				EClass inputEClass = input.eClass();
@@ -452,7 +451,7 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 	 * @param eClassName
 	 * @return
 	 */
-	public static Predicate<? super EObject> isKindOf(final String eClassName) {
+	public static Predicate<EObject> isKindOf(final String eClassName) {
 		return new Predicate<EObject>() {
 			public boolean apply(EObject input) {
 				EClass of;
@@ -468,7 +467,7 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 		};
 	}
 
-	public static Predicate<? super EObject> isTypeOf(final EClass eClass) {
+	public static Predicate<EObject> isTypeOf(final EClass eClass) {
 		return new Predicate<EObject>() {
 			public boolean apply(EObject input) {
 				EClass inputEClass = input.eClass();
@@ -484,7 +483,7 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 	 * @param eClassName
 	 * @return
 	 */
-	public static Predicate<? super EObject> isTypeOf(final String eClassName) {
+	public static Predicate<EObject> isTypeOf(final String eClassName) {
 		return new Predicate<EObject>() {
 			public boolean apply(EObject input) {
 				EClass of;
@@ -584,7 +583,7 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 	/**
 	 * 
 	 */
-	public static final EFunction<EObject, Iterable<? extends EObject>> descendant = new EFunction<EObject, Iterable<? extends EObject>>() {
+	public static final EFunction<EObject, Iterable<EObject>> descendant = new EFunction<EObject, Iterable<EObject>>() {
 		public Iterable<EObject> apply(final EObject from) {
 			Preconditions.checkNotNull(from);
 			return new Iterable<EObject>() {
