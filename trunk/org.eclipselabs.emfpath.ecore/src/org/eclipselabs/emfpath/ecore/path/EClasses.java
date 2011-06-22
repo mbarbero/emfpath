@@ -504,7 +504,7 @@ public final class EClasses {
 			Preconditions.checkArgument(fullName != null, "fullName cannot be null");
 			Preconditions.checkArgument(fullName.length() >= 0);
 
-			Iterable<? extends EClass> allEClasses = Iterables.filter(Iterables.concat(Iterables.transform(
+			Iterable<EClass> allEClasses = Iterables.filter(Iterables.concat(Iterables.transform(
 				EPackages.allEPackages(this.ePackageRegistry), EObjects.descendant)), EClass.class);
 
 			try {
