@@ -5,7 +5,7 @@
 [import org::eclipselabs::emfpath::gen::typing /]
 [import org::eclipselabs::emfpath::gen::utils /]
 [import org::eclipselabs::emfpath::gen::primitives /]
-
+[import org::eclipselabs::emfpath::gen::genClasses /]
 
 [template public genImports(e : GenClass) post(trim())]
 [if (not (allGenFeatures()->select(gf : GenFeature | not gf.willGeneratePredicate())->isEmpty() and allGenOperations()->select(go : GenOperation | not go.willGeneratePredicate())->isEmpty()))]
@@ -30,10 +30,10 @@ import org.eclipse.emf.common.util.EList;
 [/template]
 
 [query private allEClassifierToImport(e : GenClass) : OrderedSet(EClassifier) = 
-	eAllSuperTypesAndSelfWithAtLeastOneFeature().eAllContents(ETypedElement)
-	->select(eTypedElement : ETypedElement | not eTypedElement.eContainer().oclIsKindOf(EAnnotation))
-	->select(not eType.oclIsUndefined()).eType
-	->union(eAllSuperTypesAndSelfWithAtLeastOneFeature())
+	getAllMixinEClasses()
+	->union(getAllMixinGenFeatures().ecoreFeature.eType)
+	->union(getAllMixinGenOperations().ecoreOperation.eType)
+	->union(getAllMixinGenParameters().ecoreParameter.eType)
 	->asOrderedSet()
 		->select(not isPrimitiveOrNonJavaLangClassifier())
 /]
