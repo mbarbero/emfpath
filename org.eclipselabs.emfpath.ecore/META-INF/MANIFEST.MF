@@ -16,8 +16,9 @@ Import-Package: com.google.common.base;version="9.0.0",
  org.eclipse.emf.ecore.xmi,
  org.eclipse.emf.ecore.xmi.impl,
  org.eclipselabs.emfpath.base;version="0.4.0",
+ org.eclipselabs.emfpath.collect;version="0.4.0",
  org.eclipselabs.emfpath.exception;version="0.4.0",
  org.eclipselabs.emfpath.util;version="0.4.0"
 Export-Package: org.eclipselabs.emfpath.ecore.fluent;version="0.4.0",
- org.eclipselabs.emfpath.ecore.path;version="0.4.0",
+ org.eclipselabs.emfpath.ecore.path;version="0.4.0";x-internal:=true,
  org.eclipselabs.emfpath.ecore.resource;version="0.4.0"
