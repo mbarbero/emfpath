@@ -2,7 +2,7 @@ package org.eclipselabs.emfpath.gen.uml2;
 
 public class CaseFormat {
 
-	public String lowerUnderscoreToUpperCamel(String from) {
+	public static String lowerUnderscoreToUpperCamel(String from) {
 		boolean nextToUpper = true;
 		char[] charArray = from.toCharArray();
 		StringBuilder sb = new StringBuilder();
