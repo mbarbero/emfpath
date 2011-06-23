@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.indie.collect;
+package org.eclipselabs.emfpath.collect;
 
 import java.util.List;
 import java.util.Set;
@@ -33,7 +33,6 @@ public final class FluentCollections {
 	 * @param delegator
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	public static <T> FluentIterable<T> newFluentIterable(Iterable<T> delegator) {
 		return new FluentIterableImpl<T>(delegator);
 	}

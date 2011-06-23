@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.indie.collect;
+package org.eclipselabs.emfpath.collect;
 
 import java.util.Collection;
 
@@ -17,14 +17,14 @@ import com.google.common.base.Predicate;
 
 /**
  * @author mbarbero
- * @param <T>
+ * @param <E>
  */
-abstract class FluentCollectionImpl<T> extends FluentIterableImpl<T> implements FluentCollection<T> {
+abstract class FluentCollectionImpl<E> extends FluentIterableImpl<E> implements FluentCollection<E> {
 
 	/**
 	 * @param delegator
 	 */
-	FluentCollectionImpl(Collection<T> delegator) {
+	FluentCollectionImpl(Collection<E> delegator) {
 		super(delegator);
 	}
 
@@ -45,7 +45,7 @@ abstract class FluentCollectionImpl<T> extends FluentIterableImpl<T> implements 
 	/**
 	 * @see java.util.Collection#add(java.lang.Object)
 	 */
-	public boolean add(T o) {
+	public boolean add(E o) {
 		return this.delegate().add(o);
 	}
 
@@ -66,7 +66,7 @@ abstract class FluentCollectionImpl<T> extends FluentIterableImpl<T> implements 
 	/**
 	 * @see java.util.Collection#addAll(java.util.Collection)
 	 */
-	public boolean addAll(Collection<? extends T> c) {
+	public boolean addAll(Collection<? extends E> c) {
 		return this.delegate().addAll(c);
 	}
 
@@ -92,22 +92,22 @@ abstract class FluentCollectionImpl<T> extends FluentIterableImpl<T> implements 
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterableImpl#delegate()
+	 * @see org.eclipselabs.emfpath.collect.FluentIterableImpl#delegate()
 	 */
 	@Override
-	protected Collection<T> delegate() {
-		return (Collection<T>) super.delegate();
+	protected Collection<E> delegate() {
+		return (Collection<E>) super.delegate();
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterableImpl#filter(com.google.common.base.Predicate)
+	 * @see org.eclipselabs.emfpath.collect.FluentIterableImpl#filter(com.google.common.base.Predicate)
 	 */
 	@Override
-	public abstract FluentCollection<T> filter(Predicate<? super T> predicate);
+	public abstract FluentCollection<E> filter(Predicate<? super E> predicate);
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterableImpl#transform(com.google.common.base.Function)
+	 * @see org.eclipselabs.emfpath.collect.FluentIterableImpl#transform(com.google.common.base.Function)
 	 */
 	@Override
-	public abstract <X> FluentCollection<X> transform(Function<? super T, ? extends X> function);
+	public abstract <X> FluentCollection<X> transform(Function<? super E, ? extends X> function);
 }

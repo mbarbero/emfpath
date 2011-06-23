@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.indie.collect;
+package org.eclipselabs.emfpath.collect;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,46 +22,46 @@ import com.google.common.collect.Sets;
 
 /**
  * @author mbarbero
- * @param <T>
+ * @param <E>
  */
-class FluentSetImpl<T> extends FluentCollectionImpl<T> implements FluentSet<T> {
+class FluentSetImpl<E> extends FluentCollectionImpl<E> implements FluentSet<E> {
 
 	/**
 	 * @param delegator
 	 */
-	FluentSetImpl(Set<T> delegator) {
+	FluentSetImpl(Set<E> delegator) {
 		super(delegator);
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentCollectionImpl#delegate()
+	 * @see org.eclipselabs.emfpath.collect.FluentCollectionImpl#delegate()
 	 */
 	@Override
-	protected Set<T> delegate() {
-		return (Set<T>) super.delegate();
+	protected Set<E> delegate() {
+		return (Set<E>) super.delegate();
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentList()
+	 * @see org.eclipselabs.emfpath.collect.FluentIterable#asFluentList()
 	 */
 	@Override
-	public FluentList<T> asFluentList() {
+	public FluentList<E> asFluentList() {
 		return FluentCollections.newFluentList(this.delegate());
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentSet()
+	 * @see org.eclipselabs.emfpath.collect.FluentIterable#asFluentSet()
 	 */
 	@Override
-	public FluentSet<T> asFluentSet() {
+	public FluentSet<E> asFluentSet() {
 		return this;
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentMultiset()
+	 * @see org.eclipselabs.emfpath.collect.FluentIterable#asFluentMultiset()
 	 */
 	@Override
-	public FluentMultiset<T> asFluentMultiset() {
+	public FluentMultiset<E> asFluentMultiset() {
 		return FluentCollections.newFluentMultiset(this.delegate());
 	}
 
@@ -69,7 +69,7 @@ class FluentSetImpl<T> extends FluentCollectionImpl<T> implements FluentSet<T> {
 	 * @param other
 	 * @return
 	 */
-	public FluentSet<T> union(Set<? extends T> other) {
+	public FluentSet<E> union(Set<? extends E> other) {
 		return FluentCollections.newFluentSet(Sets.union(this.delegate(), other));
 	}
 
@@ -77,7 +77,7 @@ class FluentSetImpl<T> extends FluentCollectionImpl<T> implements FluentSet<T> {
 	 * @param other
 	 * @return
 	 */
-	public FluentSet<T> difference(Set<?> other) {
+	public FluentSet<E> difference(Set<?> other) {
 		return FluentCollections.newFluentSet(Sets.difference(this.delegate(), other));
 	}
 
@@ -85,7 +85,7 @@ class FluentSetImpl<T> extends FluentCollectionImpl<T> implements FluentSet<T> {
 	 * @param other
 	 * @return
 	 */
-	public FluentSet<T> symmetricDifference(Set<? extends T> other) {
+	public FluentSet<E> symmetricDifference(Set<? extends E> other) {
 		return FluentCollections.newFluentSet(Sets.symmetricDifference(this.delegate(), other));
 	}
 
@@ -93,14 +93,14 @@ class FluentSetImpl<T> extends FluentCollectionImpl<T> implements FluentSet<T> {
 	 * @param other
 	 * @return
 	 */
-	public FluentSet<T> intersection(Set<?> other) {
+	public FluentSet<E> intersection(Set<?> other) {
 		return FluentCollections.newFluentSet(Sets.intersection(this.delegate(), other));
 	}
 
 	/**
 	 * @return
 	 */
-	public FluentSet<Set<T>> powerSet() {
+	public FluentSet<Set<E>> powerSet() {
 		return FluentCollections.newFluentSet(Sets.powerSet(this.delegate()));
 	}
 
@@ -108,8 +108,8 @@ class FluentSetImpl<T> extends FluentCollectionImpl<T> implements FluentSet<T> {
 	 * @param other
 	 * @return
 	 */
-	public FluentSet<List<T>> cartesianProduct(List<? extends Set<? extends T>> other) {
-		List<Set<? extends T>> sets = Lists.newArrayList();
+	public FluentSet<List<E>> cartesianProduct(List<? extends Set<? extends E>> other) {
+		List<Set<? extends E>> sets = Lists.newArrayList();
 		sets.add(this.delegate());
 		sets.addAll(other);
 		return FluentCollections.newFluentSet(Sets.cartesianProduct(sets));
@@ -119,23 +119,23 @@ class FluentSetImpl<T> extends FluentCollectionImpl<T> implements FluentSet<T> {
 	 * @param other
 	 * @return
 	 */
-	public FluentSet<List<T>> cartesianProduct(Set<? extends T>... other) {
-		List<Set<? extends T>> sets = Lists.newArrayList();
+	public FluentSet<List<E>> cartesianProduct(Set<? extends E>... other) {
+		List<Set<? extends E>> sets = Lists.newArrayList();
 		sets.add(this.delegate());
 		sets.addAll(Arrays.asList(other));
 		return FluentCollections.newFluentSet(Sets.cartesianProduct(sets));
 	}
 
 	@Override
-	public FluentSet<T> filter(Predicate<? super T> predicate) {
+	public FluentSet<E> filter(Predicate<? super E> predicate) {
 		return FluentCollections.newFluentSet(Sets.filter(this.delegate(), predicate));
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentCollectionImpl#transform(com.google.common.base.Function)
+	 * @see org.eclipselabs.emfpath.collect.FluentCollectionImpl#transform(com.google.common.base.Function)
 	 */
 	@Override
-	public <X> FluentSet<X> transform(Function<? super T, ? extends X> function) {
+	public <X> FluentSet<X> transform(Function<? super E, ? extends X> function) {
 		// FIXME: ASAP wehn Collections2.transform has been updated to accept "? extends X"
 		return (FluentSet<X>) FluentCollections.newFluentSet(Collections2.transform(this.delegate(), function));
 	}

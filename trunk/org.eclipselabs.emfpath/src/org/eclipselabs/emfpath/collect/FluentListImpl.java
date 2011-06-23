@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.indie.collect;
+package org.eclipselabs.emfpath.collect;
 
 import java.util.Collection;
 import java.util.List;
@@ -21,42 +21,42 @@ import com.google.common.collect.Lists;
 
 /**
  * @author mbarbero
- * @param <T>
+ * @param <E>
  */
-class FluentListImpl<T> extends FluentCollectionImpl<T> implements FluentList<T> {
+class FluentListImpl<E> extends FluentCollectionImpl<E> implements FluentList<E> {
 
 	/**
 	 * @param delegator
 	 */
-	protected FluentListImpl(List<T> delegator) {
+	protected FluentListImpl(List<E> delegator) {
 		super(delegator);
 	}
 
 	/**
 	 * @see java.util.List#addAll(int, java.util.Collection)
 	 */
-	public boolean addAll(int index, Collection<? extends T> c) {
+	public boolean addAll(int index, Collection<? extends E> c) {
 		return this.delegate().addAll(index, c);
 	}
 
 	/**
 	 * @see java.util.List#set(int, java.lang.Object)
 	 */
-	public T set(int index, T element) {
+	public E set(int index, E element) {
 		return this.delegate().set(index, element);
 	}
 
 	/**
 	 * @see java.util.List#add(int, java.lang.Object)
 	 */
-	public void add(int index, T element) {
+	public void add(int index, E element) {
 		this.delegate().add(index, element);
 	}
 
 	/**
 	 * @see java.util.List#remove(int)
 	 */
-	public T remove(int index) {
+	public E remove(int index) {
 		return this.delegate().remove(index);
 	}
 
@@ -77,36 +77,36 @@ class FluentListImpl<T> extends FluentCollectionImpl<T> implements FluentList<T>
 	/**
 	 * @see java.util.List#listIterator()
 	 */
-	public ListIterator<T> listIterator() {
+	public ListIterator<E> listIterator() {
 		return this.delegate().listIterator();
 	}
 
 	/**
 	 * @see java.util.List#listIterator(int)
 	 */
-	public ListIterator<T> listIterator(int index) {
+	public ListIterator<E> listIterator(int index) {
 		return this.delegate().listIterator(index);
 	}
 
 	/**
 	 * @see java.util.List#subList(int, int)
 	 */
-	public FluentList<T> subList(int fromIndex, int toIndex) {
+	public FluentList<E> subList(int fromIndex, int toIndex) {
 		return FluentCollections.newFluentList(this.delegate().subList(fromIndex, toIndex));
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentCollectionImpl#delegate()
+	 * @see org.eclipselabs.emfpath.collect.FluentCollectionImpl#delegate()
 	 */
 	@Override
-	protected List<T> delegate() {
-		return (List<T>) super.delegate();
+	protected List<E> delegate() {
+		return (List<E>) super.delegate();
 	}
 
 	/**
 	 * @return
 	 */
-	public FluentList<T> reverse() {
+	public FluentList<E> reverse() {
 		return FluentCollections.newFluentList(Lists.reverse(this.delegate()));
 	}
 
@@ -115,47 +115,47 @@ class FluentListImpl<T> extends FluentCollectionImpl<T> implements FluentList<T>
 	 * @return
 	 */
 	@Override
-	public <V> FluentList<V> transform(Function<? super T, ? extends V> function) {
+	public <V> FluentList<V> transform(Function<? super E, ? extends V> function) {
 		return FluentCollections.newFluentList(Lists.transform(this.delegate(), function));
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterableImpl#partition(int)
+	 * @see org.eclipselabs.emfpath.collect.FluentIterableImpl#partition(int)
 	 */
 	@Override
-	public FluentList<List<T>> partition(int size) {
+	public FluentList<List<E>> partition(int size) {
 		return FluentCollections.newFluentList(Lists.partition(this.delegate(), size));
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentList()
+	 * @see org.eclipselabs.emfpath.collect.FluentIterable#asFluentList()
 	 */
 	@Override
-	public FluentList<T> asFluentList() {
+	public FluentList<E> asFluentList() {
 		return this;
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentSet()
+	 * @see org.eclipselabs.emfpath.collect.FluentIterable#asFluentSet()
 	 */
 	@Override
-	public FluentSet<T> asFluentSet() {
+	public FluentSet<E> asFluentSet() {
 		return FluentCollections.newFluentSet(this.delegate());
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentMultiset()
+	 * @see org.eclipselabs.emfpath.collect.FluentIterable#asFluentMultiset()
 	 */
 	@Override
-	public FluentMultiset<T> asFluentMultiset() {
+	public FluentMultiset<E> asFluentMultiset() {
 		return FluentCollections.newFluentMultiset(this.delegate());
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentCollectionImpl#filter(com.google.common.base.Predicate)
+	 * @see org.eclipselabs.emfpath.collect.FluentCollectionImpl#filter(com.google.common.base.Predicate)
 	 */
 	@Override
-	public FluentCollection<T> filter(Predicate<? super T> predicate) {
+	public FluentCollection<E> filter(Predicate<? super E> predicate) {
 		return FluentCollections.newFluentList(Collections2.filter(this.delegate(), predicate));
 	}
 }

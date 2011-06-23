@@ -8,25 +8,14 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.indie.collect;
+package org.eclipselabs.emfpath.collect;
 
-import java.util.Collection;
-
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
+import com.google.common.collect.Multiset;
 
 /**
  * @author mbarbero
- * @param <T>
+ * @param <E>
  */
-public interface FluentCollection<T> extends FluentIterable<T>, Collection<T> {
+public interface FluentMultiset<E> extends Multiset<E>, FluentCollection<E> {
 
-	/**
-	 * @param function
-	 * @return
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#transform(com.google.common.base.Function)
-	 */
-	<X> FluentCollection<X> transform(Function<? super T, ? extends X> function);
-
-	FluentCollection<T> filter(Predicate<? super T> predicate);
 }

@@ -8,14 +8,26 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.indie.collect;
+package org.eclipselabs.emfpath.collect;
 
-import com.google.common.collect.Multiset;
+import java.util.List;
+
+import com.google.common.base.Function;
 
 /**
  * @author mbarbero
- * @param <T>
+ * @param <E>
  */
-public interface FluentMultiset<T> extends Multiset<T>, FluentCollection<T> {
+public interface FluentList<E> extends FluentCollection<E>, List<E> {
 
+	FluentList<E> subList(int fromIndex, int toIndex);
+
+	FluentList<List<E>> partition(int size);
+
+	<T> FluentList<T> transform(Function<? super E, ? extends T> function);
+
+	/**
+	 * @return
+	 */
+	FluentList<E> reverse();
 }

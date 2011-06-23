@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.indie.collect;
+package org.eclipselabs.emfpath.collect;
 
 import java.util.List;
 import java.util.Set;
@@ -17,50 +17,50 @@ import com.google.common.base.Predicate;
 
 /**
  * @author mbarbero
- * @param <T>
+ * @param <E>
  */
-public interface FluentSet<T> extends FluentCollection<T>, Set<T> {
+public interface FluentSet<E> extends FluentCollection<E>, Set<E> {
 
 	/**
 	 * @param other
 	 * @return
 	 */
-	FluentSet<T> union(Set<? extends T> other);
+	FluentSet<E> union(Set<? extends E> other);
 
 	/**
 	 * @param other
 	 * @return
 	 */
-	FluentSet<T> difference(Set<?> other);
+	FluentSet<E> difference(Set<?> other);
 
 	/**
 	 * @param other
 	 * @return
 	 */
-	FluentSet<T> symmetricDifference(Set<? extends T> other);
+	FluentSet<E> symmetricDifference(Set<? extends E> other);
 
 	/**
 	 * @param other
 	 * @return
 	 */
-	FluentSet<T> intersection(Set<?> other);
+	FluentSet<E> intersection(Set<?> other);
 
 	/**
 	 * @return
 	 */
-	FluentSet<Set<T>> powerSet();
-
-	/**
-	 * @param other
-	 * @return
-	 */
-	FluentSet<List<T>> cartesianProduct(List<? extends Set<? extends T>> other);
+	FluentSet<Set<E>> powerSet();
 
 	/**
 	 * @param other
 	 * @return
 	 */
-	FluentSet<List<T>> cartesianProduct(Set<? extends T>... other);
+	FluentSet<List<E>> cartesianProduct(List<? extends Set<? extends E>> other);
 
-	FluentSet<T> filter(Predicate<? super T> predicate);
+	/**
+	 * @param other
+	 * @return
+	 */
+	FluentSet<List<E>> cartesianProduct(Set<? extends E>... other);
+
+	FluentSet<E> filter(Predicate<? super E> predicate);
 }

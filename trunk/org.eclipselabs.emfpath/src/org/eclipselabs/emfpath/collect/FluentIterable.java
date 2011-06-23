@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.indie.collect;
+package org.eclipselabs.emfpath.collect;
 
 import java.util.List;
 
@@ -20,9 +20,9 @@ import com.google.common.collect.Ordering;
 /**
  * @author mbarbero
  *
- * @param <T>
+ * @param <E>
  */
-public interface FluentIterable<T> extends Iterable<T> {
+public interface FluentIterable<E> extends Iterable<E> {
 
 	/**
 	 * @see Iterables#size(Iterable)
@@ -41,25 +41,25 @@ public interface FluentIterable<T> extends Iterable<T> {
 	 * @param type
 	 * @return
 	 */
-	T[] toArray(Class<T> type);
+	E[] toArray(Class<E> type);
 
 	/**
 	 * @param size
 	 * @return
 	 */
-	FluentIterable<List<T>> partition(final int size);
+	FluentIterable<List<E>> partition(final int size);
 
 	/**
 	 * @param size
 	 * @return
 	 */
-	FluentIterable<List<T>> paddedPartition(final int size);
+	FluentIterable<List<E>> paddedPartition(final int size);
 
 	/**
 	 * @param predicate
 	 * @return
 	 */
-	FluentIterable<T> filter(Predicate<? super T> predicate);
+	FluentIterable<E> filter(Predicate<? super E> predicate);
 
 	/**
 	 * @param <X>
@@ -73,31 +73,31 @@ public interface FluentIterable<T> extends Iterable<T> {
 	 * @param function
 	 * @return
 	 */
-	<X> FluentIterable<X> transform(Function<? super T, ? extends X> function);
+	<X> FluentIterable<X> transform(Function<? super E, ? extends X> function);
 
 	/**
 	 * @param predicate
 	 * @return
 	 */
-	boolean any(Predicate<? super T> predicate);
+	boolean any(Predicate<? super E> predicate);
 
 	/**
 	 * @param predicate
 	 * @return
 	 */
-	boolean all(Predicate<? super T> predicate);
+	boolean all(Predicate<? super E> predicate);
 
 	/**
 	 * @param predicate
 	 * @return
 	 */
-	T find(Predicate<? super T> predicate);
+	E find(Predicate<? super E> predicate);
 
 	/**
 	 * @param position
 	 * @return
 	 */
-	T get(int position);
+	E get(int position);
 
 	/**
 	 * @return
@@ -107,12 +107,12 @@ public interface FluentIterable<T> extends Iterable<T> {
 	/**
 	 * @return
 	 */
-	T first();
+	E first();
 
 	/**
 	 * @return
 	 */
-	T last();
+	E last();
 
 	/**
 	 * @param n
@@ -129,38 +129,38 @@ public interface FluentIterable<T> extends Iterable<T> {
 	/**
 	 * @return
 	 */
-	FluentIterable<T> removeDuplicates();
+	FluentIterable<E> removeDuplicates();
 
 	/**
 	 * @param ordering
 	 * @return
 	 */
-	FluentIterable<T> sort(Ordering<T> ordering);
+	FluentIterable<E> sort(Ordering<E> ordering);
 
 	/**
 	 * @param ordering
 	 * @return
 	 */
-	T max(final Ordering<T> ordering);
+	E max(final Ordering<E> ordering);
 
 	/**
 	 * @param ordering
 	 * @return
 	 */
-	T min(Ordering<T> ordering);
+	E min(Ordering<E> ordering);
 
 	/**
 	 * @return
 	 */
-	FluentList<T> asFluentList();
+	FluentList<E> asFluentList();
 
 	/**
 	 * @return
 	 */
-	FluentSet<T> asFluentSet();
+	FluentSet<E> asFluentSet();
 
 	/**
 	 * @return
 	 */
-	FluentMultiset<T> asFluentMultiset();
+	FluentMultiset<E> asFluentMultiset();
 }
