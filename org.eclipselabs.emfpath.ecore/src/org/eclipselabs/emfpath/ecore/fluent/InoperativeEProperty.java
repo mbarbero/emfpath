@@ -2,7 +2,7 @@ package org.eclipselabs.emfpath.ecore.fluent;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipselabs.emfpath.indie.collect.FluentList;
+import org.eclipselabs.emfpath.collect.FluentList;
 
 enum InoperativeEProperty implements FProperty {
 	INVALID {

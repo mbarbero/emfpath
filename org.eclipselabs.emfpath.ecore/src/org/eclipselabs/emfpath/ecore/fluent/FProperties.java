@@ -4,7 +4,7 @@ import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipselabs.emfpath.indie.collect.FluentIterable;
+import org.eclipselabs.emfpath.collect.FluentIterable;
 
 public interface FProperties extends FluentIterable<FProperty> {
 
