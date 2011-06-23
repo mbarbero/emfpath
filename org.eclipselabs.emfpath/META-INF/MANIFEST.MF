@@ -12,6 +12,6 @@ Export-Package: org.eclipselabs.emfpath.base;version="0.4.0",
  org.eclipselabs.emfpath.operation;version="0.4.0",
  org.eclipselabs.emfpath.predicate;version="0.4.0",
  org.eclipselabs.emfpath.util;version="0.4.0"
-Import-Package: com.google.common.base;version="5.0.0",
- com.google.common.collect;version="5.0.0",
+Import-Package: com.google.common.base;version="9.0.0",
+ com.google.common.collect;version="9.0.0",
  org.eclipse.emf.ecore
