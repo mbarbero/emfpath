@@ -18,6 +18,12 @@ import org.eclipse.uml2.uml.Relationship;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Element Element} in a functional way.
+ * <p>
+ * An element is a constituent of a model. As such, it has the capability of owning other
+ * elements. 
+ * @see org.eclipse.uml2.uml.Element
  * @generated
  */
 public class ElementPath {
@@ -30,6 +36,7 @@ public class ElementPath {
 	}
 
 	/**
+	 * The Elements owned by this element. 
 	 * @see org.eclipse.uml2.uml.Element#getOwnedElements()
 	 * @generated
 	 */
@@ -40,6 +47,7 @@ public class ElementPath {
 	};
 
 	/**
+	 * The Element that owns this element. 
 	 * @see org.eclipse.uml2.uml.Element#getOwner()
 	 * @generated
 	 */
@@ -50,6 +58,7 @@ public class ElementPath {
 	};
 
 	/**
+	 * The Comments owned by this element. 
 	 * @see org.eclipse.uml2.uml.Element#getOwnedComments()
 	 * @generated
 	 */
@@ -60,7 +69,9 @@ public class ElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.Element#validateNotOwnSelf()
+	 * An element may not directly or indirectly own itself.
+	not self.allOwnedElements()->includes(self)
+	 * @see org.eclipse.uml2.uml.Element#validateNotOwnSelf(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Element> validateNotOwnSelf(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -72,7 +83,9 @@ public class ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#validateHasOwner()
+	 * Elements that must be owned must have an owner.
+	self.mustBeOwned() implies owner->notEmpty()
+	 * @see org.eclipse.uml2.uml.Element#validateHasOwner(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Element> validateHasOwner(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -84,6 +97,8 @@ public class ElementPath {
 	}
 
 	/**
+	 * Destroys this element by removing all cross references to/from it and removing it
+	 * from its containing resource or object. 
 	 * @see org.eclipse.uml2.uml.Element#destroy()
 	 * @generated
 	 */
@@ -95,7 +110,8 @@ public class ElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#hasKeyword()
+	 * Determines whether this element has the specified keyword. 
+	 * @see org.eclipse.uml2.uml.Element#hasKeyword(String)
 	 * @generated
 	 */
 	public static Predicate<Element> hasKeyword(final String keyword) {
@@ -107,6 +123,7 @@ public class ElementPath {
 	}
 
 	/**
+	 * Retrieves the keywords for this element. 
 	 * @see org.eclipse.uml2.uml.Element#getKeywords()
 	 * @generated
 	 */
@@ -117,7 +134,8 @@ public class ElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#addKeyword()
+	 * Adds the specified keyword to this element. 
+	 * @see org.eclipse.uml2.uml.Element#addKeyword(String)
 	 * @generated
 	 */
 	public static Predicate<Element> addKeyword(final String keyword) {
@@ -129,7 +147,8 @@ public class ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#removeKeyword()
+	 * Removes the specified keyword from this element. 
+	 * @see org.eclipse.uml2.uml.Element#removeKeyword(String)
 	 * @generated
 	 */
 	public static Predicate<Element> removeKeyword(final String keyword) {
@@ -141,6 +160,8 @@ public class ElementPath {
 	}
 
 	/**
+	 * Retrieves the nearest package that owns (either directly or indirectly) this element,
+	 * or the element itself (if it is a package). 
 	 * @see org.eclipse.uml2.uml.Element#getNearestPackage()
 	 * @generated
 	 */
@@ -151,6 +172,7 @@ public class ElementPath {
 	};
 
 	/**
+	 * Retrieves the model that owns (either directly or indirectly) this element. 
 	 * @see org.eclipse.uml2.uml.Element#getModel()
 	 * @generated
 	 */
@@ -161,7 +183,8 @@ public class ElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#isStereotypeApplicable()
+	 * Determines whether the specified stereotype is applicable to this element. 
+	 * @see org.eclipse.uml2.uml.Element#isStereotypeApplicable(Stereotype)
 	 * @generated
 	 */
 	public static Predicate<Element> isStereotypeApplicable(final Stereotype stereotype) {
@@ -173,7 +196,8 @@ public class ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#isStereotypeRequired()
+	 * Determines whether the specified stereotype is required for this element. 
+	 * @see org.eclipse.uml2.uml.Element#isStereotypeRequired(Stereotype)
 	 * @generated
 	 */
 	public static Predicate<Element> isStereotypeRequired(final Stereotype stereotype) {
@@ -185,7 +209,8 @@ public class ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#isStereotypeApplied()
+	 * Determines whether the specified stereotype is applied to this element. 
+	 * @see org.eclipse.uml2.uml.Element#isStereotypeApplied(Stereotype)
 	 * @generated
 	 */
 	public static Predicate<Element> isStereotypeApplied(final Stereotype stereotype) {
@@ -197,7 +222,8 @@ public class ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#applyStereotype()
+	 * Applies the specified stereotype to this element. 
+	 * @see org.eclipse.uml2.uml.Element#applyStereotype(Stereotype)
 	 * @generated
 	 */
 	public static Function<Element, EObject> applyStereotype(final Stereotype stereotype) {
@@ -209,7 +235,8 @@ public class ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#unapplyStereotype()
+	 * Unapplies the specified stereotype from this element. 
+	 * @see org.eclipse.uml2.uml.Element#unapplyStereotype(Stereotype)
 	 * @generated
 	 */
 	public static Function<Element, EObject> unapplyStereotype(final Stereotype stereotype) {
@@ -221,6 +248,8 @@ public class ElementPath {
 	}
 
 	/**
+	 * Retrieves the stereotypes that are applicable to this element, including those that
+	 * are required and/or may already be applied. 
 	 * @see org.eclipse.uml2.uml.Element#getApplicableStereotypes()
 	 * @generated
 	 */
@@ -231,7 +260,9 @@ public class ElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#getApplicableStereotype()
+	 * Retrieves the stereotype with the specified qualified name that is applicable to this
+	 * element, or null if no such stereotype is applicable. 
+	 * @see org.eclipse.uml2.uml.Element#getApplicableStereotype(String)
 	 * @generated
 	 */
 	public static Function<Element, Stereotype> getApplicableStereotype(final String qualifiedName) {
@@ -243,6 +274,7 @@ public class ElementPath {
 	}
 
 	/**
+	 * Retrieves the stereotype applications for this element. 
 	 * @see org.eclipse.uml2.uml.Element#getStereotypeApplications()
 	 * @generated
 	 */
@@ -253,7 +285,9 @@ public class ElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#getStereotypeApplication()
+	 * Retrieves the application of the specified stereotype for this element, or null if
+	 * no such stereotype application exists. 
+	 * @see org.eclipse.uml2.uml.Element#getStereotypeApplication(Stereotype)
 	 * @generated
 	 */
 	public static Function<Element, EObject> getStereotypeApplication(final Stereotype stereotype) {
@@ -265,6 +299,7 @@ public class ElementPath {
 	}
 
 	/**
+	 * Retrieves the stereotypes that are required for this element. 
 	 * @see org.eclipse.uml2.uml.Element#getRequiredStereotypes()
 	 * @generated
 	 */
@@ -275,7 +310,9 @@ public class ElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#getRequiredStereotype()
+	 * Retrieves the stereotype with the specified qualified name that is required for this
+	 * element, or null if no such stereotype is required. 
+	 * @see org.eclipse.uml2.uml.Element#getRequiredStereotype(String)
 	 * @generated
 	 */
 	public static Function<Element, Stereotype> getRequiredStereotype(final String qualifiedName) {
@@ -287,6 +324,7 @@ public class ElementPath {
 	}
 
 	/**
+	 * Retrieves the stereotypes that are applied to this element. 
 	 * @see org.eclipse.uml2.uml.Element#getAppliedStereotypes()
 	 * @generated
 	 */
@@ -297,7 +335,9 @@ public class ElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#getAppliedStereotype()
+	 * Retrieves the stereotype with the specified qualified name that is applied to this
+	 * element, or null if no such stereotype is  applied. 
+	 * @see org.eclipse.uml2.uml.Element#getAppliedStereotype(String)
 	 * @generated
 	 */
 	public static Function<Element, Stereotype> getAppliedStereotype(final String qualifiedName) {
@@ -309,7 +349,9 @@ public class ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#getAppliedSubstereotypes()
+	 * Retrieves the substereotypes of the specified stereotype that are applied to this
+	 * element. 
+	 * @see org.eclipse.uml2.uml.Element#getAppliedSubstereotypes(Stereotype)
 	 * @generated
 	 */
 	public static Function<Element, EList<Stereotype>> getAppliedSubstereotypes(final Stereotype stereotype) {
@@ -321,7 +363,9 @@ public class ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#getAppliedSubstereotype()
+	 * Retrieves the substereotype of the specified stereotype with the specified qualified
+	 * name that is applied to this element, or null if no such stereotype is applied. 
+	 * @see org.eclipse.uml2.uml.Element#getAppliedSubstereotype(Stereotype, String)
 	 * @generated
 	 */
 	public static Function<Element, Stereotype> getAppliedSubstereotype(final Stereotype stereotype, final String qualifiedName) {
@@ -333,7 +377,9 @@ public class ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#hasValue()
+	 * Determines whether this element has a (non-default) value for the property with the
+	 * specified name in the specified stereotype. 
+	 * @see org.eclipse.uml2.uml.Element#hasValue(Stereotype, String)
 	 * @generated
 	 */
 	public static Predicate<Element> hasValue(final Stereotype stereotype, final String propertyName) {
@@ -345,7 +391,9 @@ public class ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#getValue()
+	 * Retrieves the value of the property with the specified name in the specified stereotype
+	 * for this element. 
+	 * @see org.eclipse.uml2.uml.Element#getValue(Stereotype, String)
 	 * @generated
 	 */
 	public static Function<Element, Object> getValue(final Stereotype stereotype, final String propertyName) {
@@ -357,7 +405,9 @@ public class ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#setValue()
+	 * Sets the value of the property with the specified name in the specified stereotype
+	 * for this element. 
+	 * @see org.eclipse.uml2.uml.Element#setValue(Stereotype, String, Object)
 	 * @generated
 	 */
 	public static Function<Element, Element> setValue(final Stereotype stereotype, final String propertyName, final Object newValue) {
@@ -370,7 +420,8 @@ public class ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#createEAnnotation()
+	 * Creates an annotation with the specified source and this element as its model element.
+	 * @see org.eclipse.uml2.uml.Element#createEAnnotation(String)
 	 * @generated
 	 */
 	public static Function<Element, EAnnotation> createEAnnotation(final String source) {
@@ -382,6 +433,7 @@ public class ElementPath {
 	}
 
 	/**
+	 * Retrieves the relationships in which this element is involved. 
 	 * @see org.eclipse.uml2.uml.Element#getRelationships()
 	 * @generated
 	 */
@@ -392,7 +444,8 @@ public class ElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#getRelationships()
+	 * Retrieves the relationships of the specified type in which this element is involved.
+	 * @see org.eclipse.uml2.uml.Element#getRelationships(EClass)
 	 * @generated
 	 */
 	public static Function<Element, EList<Relationship>> getRelationships(final EClass eClass) {
@@ -404,6 +457,7 @@ public class ElementPath {
 	}
 
 	/**
+	 * Retrieves the directed relationships for which this element is a source. 
 	 * @see org.eclipse.uml2.uml.Element#getSourceDirectedRelationships()
 	 * @generated
 	 */
@@ -414,7 +468,9 @@ public class ElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#getSourceDirectedRelationships()
+	 * Retrieves the directed relationships of the specified type for which this element
+	 * is a source. 
+	 * @see org.eclipse.uml2.uml.Element#getSourceDirectedRelationships(EClass)
 	 * @generated
 	 */
 	public static Function<Element, EList<DirectedRelationship>> getSourceDirectedRelationships(final EClass eClass) {
@@ -426,6 +482,7 @@ public class ElementPath {
 	}
 
 	/**
+	 * Retrieves the directed relationships for which this element is a target. 
 	 * @see org.eclipse.uml2.uml.Element#getTargetDirectedRelationships()
 	 * @generated
 	 */
@@ -436,7 +493,9 @@ public class ElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Element#getTargetDirectedRelationships()
+	 * Retrieves the directed relationships of the specified type for which this element
+	 * is a target. 
+	 * @see org.eclipse.uml2.uml.Element#getTargetDirectedRelationships(EClass)
 	 * @generated
 	 */
 	public static Function<Element, EList<DirectedRelationship>> getTargetDirectedRelationships(final EClass eClass) {
@@ -448,6 +507,9 @@ public class ElementPath {
 	}
 
 	/**
+	 * The query allOwnedElements() gives all of the direct and indirect owned elements of
+	 * an element.
+	result = ownedElement->union(ownedElement->collect(e | e.allOwnedElements()))
 	 * @see org.eclipse.uml2.uml.Element#allOwnedElements()
 	 * @generated
 	 */
@@ -458,6 +520,10 @@ public class ElementPath {
 	};
 
 	/**
+	 * The query mustBeOwned() indicates whether elements of this type must have an owner.
+	 * Subclasses of Element that do not require an owner must override this operation.
+	result
+	 * = true 
 	 * @see org.eclipse.uml2.uml.Element#mustBeOwned()
 	 * @generated
 	 */

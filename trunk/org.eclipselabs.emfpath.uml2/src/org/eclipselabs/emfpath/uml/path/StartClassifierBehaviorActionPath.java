@@ -9,6 +9,12 @@ import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.StartClassifierBehaviorAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.StartClassifierBehaviorAction StartClassifierBehaviorAction} in a functional way.
+ * <p>
+ * A start classifier behavior action is an action that starts the classifier behavior
+ * of the input. 
+ * @see org.eclipse.uml2.uml.StartClassifierBehaviorAction
  * @generated
  */
 public class StartClassifierBehaviorActionPath extends ActionPath {
@@ -21,6 +27,7 @@ public class StartClassifierBehaviorActionPath extends ActionPath {
 	}
 
 	/**
+	 * Holds the object on which to start the owned behavior. 
 	 * @see org.eclipse.uml2.uml.StartClassifierBehaviorAction#getObject()
 	 * @generated
 	 */
@@ -31,7 +38,9 @@ public class StartClassifierBehaviorActionPath extends ActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.StartClassifierBehaviorAction#validateMultiplicity()
+	 * The multiplicity of the input pin is 1..1
+	true 
+	 * @see org.eclipse.uml2.uml.StartClassifierBehaviorAction#validateMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<StartClassifierBehaviorAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -43,7 +52,9 @@ public class StartClassifierBehaviorActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.StartClassifierBehaviorAction#validateTypeHasClassifier()
+	 * If the input pin has a type, then the type must have a classifier behavior.
+	true
+	 * @see org.eclipse.uml2.uml.StartClassifierBehaviorAction#validateTypeHasClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<StartClassifierBehaviorAction> validateTypeHasClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

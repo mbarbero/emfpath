@@ -7,6 +7,12 @@ import org.eclipse.uml2.uml.ExceptionHandler;
 import org.eclipse.uml2.uml.ExecutableNode;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ExecutableNode ExecutableNode} in a functional way.
+ * <p>
+ * An executable node is an abstract class for activity nodes that may be executed. It
+ * is used as an attachment point for exception handlers. 
+ * @see org.eclipse.uml2.uml.ExecutableNode
  * @generated
  */
 public class ExecutableNodePath extends ActivityNodePath {
@@ -19,6 +25,8 @@ public class ExecutableNodePath extends ActivityNodePath {
 	}
 
 	/**
+	 * A set of exception handlers that are examined if an uncaught exception propagates
+	 * to the outer level of the executable node. 
 	 * @see org.eclipse.uml2.uml.ExecutableNode#getHandlers()
 	 * @generated
 	 */

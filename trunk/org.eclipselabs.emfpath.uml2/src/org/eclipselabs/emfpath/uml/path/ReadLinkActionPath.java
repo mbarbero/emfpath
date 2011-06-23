@@ -9,6 +9,12 @@ import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.ReadLinkAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ReadLinkAction ReadLinkAction} in a functional way.
+ * <p>
+ * A read link action is a link action that navigates across associations to retrieve
+ * objects on one end. 
+ * @see org.eclipse.uml2.uml.ReadLinkAction
  * @generated
  */
 public class ReadLinkActionPath extends LinkActionPath {
@@ -21,6 +27,9 @@ public class ReadLinkActionPath extends LinkActionPath {
 	}
 
 	/**
+	 * The pin on which are put the objects participating in the association at the end not
+	 * specified by the inputs.
+	 
 	 * @see org.eclipse.uml2.uml.ReadLinkAction#getResult()
 	 * @generated
 	 */
@@ -31,7 +40,10 @@ public class ReadLinkActionPath extends LinkActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkAction#validateOneOpenEnd()
+	 * Exactly one link-end data specification (the 'open' end) must not have an end object
+	 * input pin.
+	self.endData->select(ed | ed.value->size() = 0)->size() = 1 
+	 * @see org.eclipse.uml2.uml.ReadLinkAction#validateOneOpenEnd(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkAction> validateOneOpenEnd(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -43,7 +55,15 @@ public class ReadLinkActionPath extends LinkActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkAction#validateTypeAndOrdering()
+	 * The type and ordering of the result output pin are same as the type and ordering of
+	 * the open association end.
+	let openend : AssociationEnd = self.endData->select(ed
+	 * | ed.value->size() = 0)->asSequence()->first().end in
+	self.result.type = openend.type
+	and
+	 * self.result.ordering = openend.ordering
+	 
+	 * @see org.eclipse.uml2.uml.ReadLinkAction#validateTypeAndOrdering(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkAction> validateTypeAndOrdering(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -55,7 +75,13 @@ public class ReadLinkActionPath extends LinkActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkAction#validateCompatibleMultiplicity()
+	 * The multiplicity of the open association end must be compatible with the multiplicity
+	 * of the result output pin.
+	let openend : AssociationEnd = self.endData->select(ed
+	 * | ed.value->size() = 0)->asSequence()->first().end in
+	openend.multiplicity.compatibleWith(self.result.multiplicity)
+	
+	 * @see org.eclipse.uml2.uml.ReadLinkAction#validateCompatibleMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkAction> validateCompatibleMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -67,7 +93,12 @@ public class ReadLinkActionPath extends LinkActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkAction#validateNavigableOpenEnd()
+	 * The open end must be navigable.
+	let openend : AssociationEnd = self.endData->select(ed
+	 * | ed.value->size() = 0)->asSequence()->first().end in
+	openend.isNavigable()
+	 
+	 * @see org.eclipse.uml2.uml.ReadLinkAction#validateNavigableOpenEnd(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkAction> validateNavigableOpenEnd(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -79,7 +110,20 @@ public class ReadLinkActionPath extends LinkActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkAction#validateVisibility()
+	 * Visibility of the open end must allow access to the object performing the action.
+	let
+	 * host : Classifier = self.context in
+	let openend : AssociationEnd = self.endData->select(ed
+	 * | ed.value->size() = 0)->asSequence()->first().end in
+	openend.visibility = #public
+	or
+	 * self.endData->exists(oed | not oed.end = openend
+	and (host = oed.end.participant
+	or
+	 * (openend.visibility = #protected
+	and host.allSupertypes->includes(oed.end.participant))))
+	
+	 * @see org.eclipse.uml2.uml.ReadLinkAction#validateVisibility(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkAction> validateVisibility(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

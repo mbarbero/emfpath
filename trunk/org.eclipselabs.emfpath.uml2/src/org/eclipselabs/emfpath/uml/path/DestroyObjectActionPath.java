@@ -9,6 +9,11 @@ import org.eclipse.uml2.uml.DestroyObjectAction;
 import org.eclipse.uml2.uml.InputPin;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.DestroyObjectAction DestroyObjectAction} in a functional way.
+ * <p>
+ * A destroy object action is an action that destroys objects. 
+ * @see org.eclipse.uml2.uml.DestroyObjectAction
  * @generated
  */
 public class DestroyObjectActionPath extends ActionPath {
@@ -21,6 +26,8 @@ public class DestroyObjectActionPath extends ActionPath {
 	}
 
 	/**
+	 * Specifies whether links in which the object participates are destroyed along with
+	 * the object. 
 	 * @see org.eclipse.uml2.uml.DestroyObjectAction#isDestroyLinks()
 	 * @generated
 	 */
@@ -31,6 +38,7 @@ public class DestroyObjectActionPath extends ActionPath {
 	};
 
 	/**
+	 * Specifies whether objects owned by the object are destroyed along with the object.
 	 * @see org.eclipse.uml2.uml.DestroyObjectAction#isDestroyOwnedObjects()
 	 * @generated
 	 */
@@ -41,6 +49,7 @@ public class DestroyObjectActionPath extends ActionPath {
 	};
 
 	/**
+	 * The input pin providing the object to be destroyed. 
 	 * @see org.eclipse.uml2.uml.DestroyObjectAction#getTarget()
 	 * @generated
 	 */
@@ -51,7 +60,9 @@ public class DestroyObjectActionPath extends ActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.DestroyObjectAction#validateMultiplicity()
+	 * The multiplicity of the input pin is 1..1.
+	self.target.multiplicity.is(1,1) 
+	 * @see org.eclipse.uml2.uml.DestroyObjectAction#validateMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<DestroyObjectAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -63,7 +74,9 @@ public class DestroyObjectActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.DestroyObjectAction#validateNoType()
+	 * The input pin has no type.
+	self.target.type->size() = 0 
+	 * @see org.eclipse.uml2.uml.DestroyObjectAction#validateNoType(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<DestroyObjectAction> validateNoType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

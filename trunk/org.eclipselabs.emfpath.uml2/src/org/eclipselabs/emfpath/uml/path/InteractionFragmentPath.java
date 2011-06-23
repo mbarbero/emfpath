@@ -10,6 +10,13 @@ import org.eclipse.uml2.uml.InteractionOperand;
 import org.eclipse.uml2.uml.Lifeline;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.InteractionFragment InteractionFragment} in a functional way.
+ * <p>
+ * InteractionFragment is an abstract notion of the most general interaction unit. An
+ * interaction fragment is a piece of an interaction. Each interaction fragment is conceptually
+ * like an interaction by itself. 
+ * @see org.eclipse.uml2.uml.InteractionFragment
  * @generated
  */
 public class InteractionFragmentPath extends NamedElementPath {
@@ -22,6 +29,7 @@ public class InteractionFragmentPath extends NamedElementPath {
 	}
 
 	/**
+	 * References the Lifelines that the InteractionFragment involves. 
 	 * @see org.eclipse.uml2.uml.InteractionFragment#getCovereds()
 	 * @generated
 	 */
@@ -32,6 +40,7 @@ public class InteractionFragmentPath extends NamedElementPath {
 	};
 
 	/**
+	 * The general ordering relationships contained in this fragment. 
 	 * @see org.eclipse.uml2.uml.InteractionFragment#getGeneralOrderings()
 	 * @generated
 	 */
@@ -42,6 +51,7 @@ public class InteractionFragmentPath extends NamedElementPath {
 	};
 
 	/**
+	 * The Interaction enclosing this InteractionFragment. 
 	 * @see org.eclipse.uml2.uml.InteractionFragment#getEnclosingInteraction()
 	 * @generated
 	 */
@@ -52,6 +62,7 @@ public class InteractionFragmentPath extends NamedElementPath {
 	};
 
 	/**
+	 * The operand enclosing this InteractionFragment (they may nest recursively) 
 	 * @see org.eclipse.uml2.uml.InteractionFragment#getEnclosingOperand()
 	 * @generated
 	 */

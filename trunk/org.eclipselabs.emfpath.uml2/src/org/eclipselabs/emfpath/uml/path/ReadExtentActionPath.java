@@ -10,6 +10,11 @@ import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.ReadExtentAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ReadExtentAction ReadExtentAction} in a functional way.
+ * <p>
+ * A read extent action is an action that retrieves the current instances of a classifier.
+ * @see org.eclipse.uml2.uml.ReadExtentAction
  * @generated
  */
 public class ReadExtentActionPath extends ActionPath {
@@ -22,6 +27,7 @@ public class ReadExtentActionPath extends ActionPath {
 	}
 
 	/**
+	 * The runtime instances of the classifier. 
 	 * @see org.eclipse.uml2.uml.ReadExtentAction#getResult()
 	 * @generated
 	 */
@@ -32,6 +38,7 @@ public class ReadExtentActionPath extends ActionPath {
 	};
 
 	/**
+	 * The classifier whose instances are to be retrieved. 
 	 * @see org.eclipse.uml2.uml.ReadExtentAction#getClassifier()
 	 * @generated
 	 */
@@ -42,7 +49,9 @@ public class ReadExtentActionPath extends ActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ReadExtentAction#validateTypeIsClassifier()
+	 * The type of the result output pin is the classifier.
+	true 
+	 * @see org.eclipse.uml2.uml.ReadExtentAction#validateTypeIsClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadExtentAction> validateTypeIsClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -54,7 +63,9 @@ public class ReadExtentActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadExtentAction#validateMultiplicityOfResult()
+	 * The multiplicity of the result output pin is 0..*.
+	self.result.multiplicity.is(0,#null)
+	 * @see org.eclipse.uml2.uml.ReadExtentAction#validateMultiplicityOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadExtentAction> validateMultiplicityOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

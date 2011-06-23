@@ -12,6 +12,12 @@ import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.UnmarshallAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.UnmarshallAction UnmarshallAction} in a functional way.
+ * <p>
+ * An unmarshall action is an action that breaks an object of a known type into outputs
+ * each of which is equal to a value from a structural feature of the object. 
+ * @see org.eclipse.uml2.uml.UnmarshallAction
  * @generated
  */
 public class UnmarshallActionPath extends ActionPath {
@@ -24,6 +30,7 @@ public class UnmarshallActionPath extends ActionPath {
 	}
 
 	/**
+	 * The values of the structural features of the input object. 
 	 * @see org.eclipse.uml2.uml.UnmarshallAction#getResults()
 	 * @generated
 	 */
@@ -34,6 +41,7 @@ public class UnmarshallActionPath extends ActionPath {
 	};
 
 	/**
+	 * The type of the object to be unmarshalled. 
 	 * @see org.eclipse.uml2.uml.UnmarshallAction#getUnmarshallType()
 	 * @generated
 	 */
@@ -44,6 +52,7 @@ public class UnmarshallActionPath extends ActionPath {
 	};
 
 	/**
+	 * The object to be unmarshalled. 
 	 * @see org.eclipse.uml2.uml.UnmarshallAction#getObject()
 	 * @generated
 	 */
@@ -54,7 +63,9 @@ public class UnmarshallActionPath extends ActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.UnmarshallAction#validateSameType()
+	 * The type of the object input pin must be the same as the unmarshall classifier.
+	true
+	 * @see org.eclipse.uml2.uml.UnmarshallAction#validateSameType(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<UnmarshallAction> validateSameType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -66,7 +77,9 @@ public class UnmarshallActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.UnmarshallAction#validateMultiplicityOfObject()
+	 * The multiplicity of the object input pin is 1..1
+	true 
+	 * @see org.eclipse.uml2.uml.UnmarshallAction#validateMultiplicityOfObject(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<UnmarshallAction> validateMultiplicityOfObject(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -78,7 +91,10 @@ public class UnmarshallActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.UnmarshallAction#validateNumberOfResult()
+	 * The number of result output pins must be the same as the number of structural features
+	 * of the unmarshall classifier.
+	true 
+	 * @see org.eclipse.uml2.uml.UnmarshallAction#validateNumberOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<UnmarshallAction> validateNumberOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -90,7 +106,10 @@ public class UnmarshallActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.UnmarshallAction#validateTypeAndOrdering()
+	 * The type and ordering of each result output pin must be the same as the corresponding
+	 * structural feature of the unmarshall classifier.
+	true 
+	 * @see org.eclipse.uml2.uml.UnmarshallAction#validateTypeAndOrdering(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<UnmarshallAction> validateTypeAndOrdering(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -102,7 +121,11 @@ public class UnmarshallActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.UnmarshallAction#validateMultiplicityOfResult()
+	 * The multiplicity of each result output pin must be compatible with the multiplicity
+	 * of the corresponding structural features of the unmarshall classifier.
+	
+	true 
+	 * @see org.eclipse.uml2.uml.UnmarshallAction#validateMultiplicityOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<UnmarshallAction> validateMultiplicityOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -114,7 +137,9 @@ public class UnmarshallActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.UnmarshallAction#validateStructuralFeature()
+	 * The unmarshall classifier must have at least one structural feature.
+	true 
+	 * @see org.eclipse.uml2.uml.UnmarshallAction#validateStructuralFeature(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<UnmarshallAction> validateStructuralFeature(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -126,7 +151,9 @@ public class UnmarshallActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.UnmarshallAction#validateUnmarshallTypeIsClassifier()
+	 * unmarshallType must be a Classifier with ordered attributes
+	true 
+	 * @see org.eclipse.uml2.uml.UnmarshallAction#validateUnmarshallTypeIsClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<UnmarshallAction> validateUnmarshallTypeIsClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

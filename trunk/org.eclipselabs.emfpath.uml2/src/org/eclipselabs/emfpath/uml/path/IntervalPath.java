@@ -6,6 +6,11 @@ import org.eclipse.uml2.uml.Interval;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Interval Interval} in a functional way.
+ * <p>
+ * An interval defines the range between two value specifications. 
+ * @see org.eclipse.uml2.uml.Interval
  * @generated
  */
 public class IntervalPath extends ValueSpecificationPath {
@@ -18,6 +23,7 @@ public class IntervalPath extends ValueSpecificationPath {
 	}
 
 	/**
+	 * Refers to the ValueSpecification denoting the minimum value of the range. 
 	 * @see org.eclipse.uml2.uml.Interval#getMin()
 	 * @generated
 	 */
@@ -28,6 +34,7 @@ public class IntervalPath extends ValueSpecificationPath {
 	};
 
 	/**
+	 * Refers to the ValueSpecification denoting the maximum value of the range. 
 	 * @see org.eclipse.uml2.uml.Interval#getMax()
 	 * @generated
 	 */

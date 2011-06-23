@@ -10,6 +10,12 @@ import org.eclipse.uml2.uml.ClearAssociationAction;
 import org.eclipse.uml2.uml.InputPin;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ClearAssociationAction ClearAssociationAction} in a functional way.
+ * <p>
+ * A clear association action is an action that destroys all links of an association
+ * in which a particular object participates. 
+ * @see org.eclipse.uml2.uml.ClearAssociationAction
  * @generated
  */
 public class ClearAssociationActionPath extends ActionPath {
@@ -22,6 +28,8 @@ public class ClearAssociationActionPath extends ActionPath {
 	}
 
 	/**
+	 * Gives the input pin from which is obtained the object whose participation in the association
+	 * is to be cleared. 
 	 * @see org.eclipse.uml2.uml.ClearAssociationAction#getObject()
 	 * @generated
 	 */
@@ -32,6 +40,7 @@ public class ClearAssociationActionPath extends ActionPath {
 	};
 
 	/**
+	 * Association to be cleared. 
 	 * @see org.eclipse.uml2.uml.ClearAssociationAction#getAssociation()
 	 * @generated
 	 */
@@ -42,7 +51,10 @@ public class ClearAssociationActionPath extends ActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ClearAssociationAction#validateSameType()
+	 * The type of the input pin must be the same as the type of at least one of the association
+	 * ends of the association.
+	self.association->exists(end.type = self.object.type) 
+	 * @see org.eclipse.uml2.uml.ClearAssociationAction#validateSameType(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ClearAssociationAction> validateSameType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -54,7 +66,9 @@ public class ClearAssociationActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ClearAssociationAction#validateMultiplicity()
+	 * The multiplicity of the input pin is 1..1.
+	self.object.multiplicity.is(1,1) 
+	 * @see org.eclipse.uml2.uml.ClearAssociationAction#validateMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ClearAssociationAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

@@ -9,6 +9,12 @@ import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
 import org.eclipse.uml2.uml.InputPin;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.AddStructuralFeatureValueAction AddStructuralFeatureValueAction} in a functional way.
+ * <p>
+ * An add structural feature value action is a write structural feature action for adding
+ * values to a structural feature. 
+ * @see org.eclipse.uml2.uml.AddStructuralFeatureValueAction
  * @generated
  */
 public class AddStructuralFeatureValueActionPath extends WriteStructuralFeatureActionPath {
@@ -21,6 +27,8 @@ public class AddStructuralFeatureValueActionPath extends WriteStructuralFeatureA
 	}
 
 	/**
+	 * Specifies whether existing values of the structural feature of the object should be
+	 * removed before adding the new value. 
 	 * @see org.eclipse.uml2.uml.AddStructuralFeatureValueAction#isReplaceAll()
 	 * @generated
 	 */
@@ -31,6 +39,9 @@ public class AddStructuralFeatureValueActionPath extends WriteStructuralFeatureA
 	};
 
 	/**
+	 * Gives the position at which to insert a new value or move an existing value in ordered
+	 * structural features. The type of the pin is UnlimitedNatural, but the value cannot
+	 * be zero. This pin is omitted for unordered structural features. 
 	 * @see org.eclipse.uml2.uml.AddStructuralFeatureValueAction#getInsertAt()
 	 * @generated
 	 */
@@ -41,7 +52,22 @@ public class AddStructuralFeatureValueActionPath extends WriteStructuralFeatureA
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.AddStructuralFeatureValueAction#validateUnlimitedNaturalAndMultiplicity()
+	 * Actions adding a value to ordered structural features must have a single input pin
+	 * for the insertion point with type UnlimitedNatural and multiplicity of 1..1, otherwise
+	 * the action has no input pin for the insertion point.
+	let insertAtPins : Collection
+	 * = self.insertAt in
+	if self.structuralFeature.isOrdered = #false
+	then insertAtPins->size()
+	 * = 0
+	else let insertAtPin : InputPin= insertAt->asSequence()->first() in
+	insertAtPins->size()
+	 * = 1
+	and insertAtPin.type = UnlimitedNatural
+	and insertAtPin.multiplicity.is(1,1))
+	endif
+	
+	 * @see org.eclipse.uml2.uml.AddStructuralFeatureValueAction#validateUnlimitedNaturalAndMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<AddStructuralFeatureValueAction> validateUnlimitedNaturalAndMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

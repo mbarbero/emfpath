@@ -15,6 +15,15 @@ import org.eclipse.uml2.uml.Usage;
 import org.eclipse.uml2.uml.VisibilityKind;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.NamedElement NamedElement} in a functional way.
+ * <p>
+ * A named element is an element in a model that may have a name.
+A named element supports
+ * using a string expression to specify its name. This allows names of model elements
+ * to involve template parameters. The actual name is evaluated from the string expression
+ * only when it is sensible to do so (e.g., when a template is bound). 
+ * @see org.eclipse.uml2.uml.NamedElement
  * @generated
  */
 public class NamedElementPath extends ElementPath {
@@ -27,6 +36,7 @@ public class NamedElementPath extends ElementPath {
 	}
 
 	/**
+	 * The name of the NamedElement. 
 	 * @see org.eclipse.uml2.uml.NamedElement#getName()
 	 * @generated
 	 */
@@ -37,6 +47,8 @@ public class NamedElementPath extends ElementPath {
 	};
 
 	/**
+	 * Determines where the NamedElement appears within different Namespaces within the overall
+	 * model, and its accessibility. 
 	 * @see org.eclipse.uml2.uml.NamedElement#getVisibility()
 	 * @generated
 	 */
@@ -47,6 +59,9 @@ public class NamedElementPath extends ElementPath {
 	};
 
 	/**
+	 * A name which allows the NamedElement to be identified within a hierarchy of nested
+	 * Namespaces. It is constructed from the names of the containing namespaces starting
+	 * at the root of the hierarchy and ending with the name of the NamedElement itself.
 	 * @see org.eclipse.uml2.uml.NamedElement#getQualifiedName()
 	 * @generated
 	 */
@@ -57,6 +72,7 @@ public class NamedElementPath extends ElementPath {
 	};
 
 	/**
+	 * Indicates the dependencies that reference the client. 
 	 * @see org.eclipse.uml2.uml.NamedElement#getClientDependencies()
 	 * @generated
 	 */
@@ -67,6 +83,7 @@ public class NamedElementPath extends ElementPath {
 	};
 
 	/**
+	 * Specifies the namespace that owns the NamedElement. 
 	 * @see org.eclipse.uml2.uml.NamedElement#getNamespace()
 	 * @generated
 	 */
@@ -77,6 +94,7 @@ public class NamedElementPath extends ElementPath {
 	};
 
 	/**
+	 * The string expression used to define the name of this named element. 
 	 * @see org.eclipse.uml2.uml.NamedElement#getNameExpression()
 	 * @generated
 	 */
@@ -87,7 +105,12 @@ public class NamedElementPath extends ElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.NamedElement#validateHasNoQualifiedName()
+	 * If there is no name, or one of the containing namespaces has no name, there is no
+	 * qualified name.
+	(self.name->isEmpty() or self.allNamespaces()->select(ns | ns.name->isEmpty())->notEmpty())
+	
+	 *  implies self.qualifiedName->isEmpty() 
+	 * @see org.eclipse.uml2.uml.NamedElement#validateHasNoQualifiedName(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<NamedElement> validateHasNoQualifiedName(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -99,7 +122,13 @@ public class NamedElementPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.NamedElement#validateHasQualifiedName()
+	 * When there is a name, and all of the containing namespaces have a name, the qualified
+	 * name is constructed from the names of the containing namespaces.
+	(self.name->notEmpty()
+	 * and self.allNamespaces()->select(ns | ns.name->isEmpty())->isEmpty()) implies
+	  self.qualifiedName
+	 * = self.allNamespaces()->iterate( ns : Namespace; result: String = self.name | ns.name->union(self.separator())->union(result))
+	 * @see org.eclipse.uml2.uml.NamedElement#validateHasQualifiedName(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<NamedElement> validateHasQualifiedName(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -111,7 +140,10 @@ public class NamedElementPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.NamedElement#validateVisibilityNeedsOwnership()
+	 * If a NamedElement is not owned by a Namespace, it does not have a visibility.
+	namespace->isEmpty()
+	 * implies visibility->isEmpty() 
+	 * @see org.eclipse.uml2.uml.NamedElement#validateVisibilityNeedsOwnership(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<NamedElement> validateVisibilityNeedsOwnership(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -123,7 +155,9 @@ public class NamedElementPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.NamedElement#createDependency()
+	 * Creates a dependency between this named element and the specified supplier, owned
+	 * by this named element's nearest package. 
+	 * @see org.eclipse.uml2.uml.NamedElement#createDependency(NamedElement)
 	 * @generated
 	 */
 	public static Function<NamedElement, Dependency> createDependency(final NamedElement supplier) {
@@ -135,6 +169,7 @@ public class NamedElementPath extends ElementPath {
 	}
 
 	/**
+	 * Retrieves a localized label for this named element. 
 	 * @see org.eclipse.uml2.uml.NamedElement#getLabel()
 	 * @generated
 	 */
@@ -145,7 +180,8 @@ public class NamedElementPath extends ElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.NamedElement#getLabel()
+	 * Retrieves a label for this named element, localized if indicated. 
+	 * @see org.eclipse.uml2.uml.NamedElement#getLabel(boolean)
 	 * @generated
 	 */
 	public static Function<NamedElement, String> getLabel(final boolean localize) {
@@ -157,7 +193,9 @@ public class NamedElementPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.NamedElement#createUsage()
+	 * Creates a usage between this named element and the specified supplier, owned by this
+	 * named element's nearest package. 
+	 * @see org.eclipse.uml2.uml.NamedElement#createUsage(NamedElement)
 	 * @generated
 	 */
 	public static Function<NamedElement, Usage> createUsage(final NamedElement supplier) {
@@ -169,6 +207,17 @@ public class NamedElementPath extends ElementPath {
 	}
 
 	/**
+	 * When there is a name, and all of the containing namespaces have a name, the qualified
+	 * name is constructed from the names of the containing namespaces.
+	result = if self.name->notEmpty()
+	 * and self.allNamespaces()->select(ns | ns.name->isEmpty())->isEmpty()
+	then 
+	    self.allNamespaces()->iterate(
+	 * ns : Namespace; result: String = self.name | ns.name->union(self.separator())->union(result))
+	else
+	
+	 *    Set{}
+	endif 
 	 * @see org.eclipse.uml2.uml.NamedElement#getQualifiedName()
 	 * @generated
 	 */
@@ -179,6 +228,13 @@ public class NamedElementPath extends ElementPath {
 	};
 
 	/**
+	 * The query allNamespaces() gives the sequence of namespaces in which the NamedElement
+	 * is nested, working outwards.
+	result = if self.namespace->isEmpty()
+	then Sequence{}
+	else
+	 * self.namespace.allNamespaces()->prepend(self.namespace)
+	endif 
 	 * @see org.eclipse.uml2.uml.NamedElement#allNamespaces()
 	 * @generated
 	 */
@@ -189,7 +245,16 @@ public class NamedElementPath extends ElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.NamedElement#isDistinguishableFrom()
+	 * The query isDistinguishableFrom() determines whether two NamedElements may logically
+	 * co-exist within a Namespace. By default, two named elements are distinguishable if
+	 * (a) they have unrelated types or (b) they have related types but different names.
+	result
+	 * = if self.oclIsKindOf(n.oclType) or n.oclIsKindOf(self.oclType)
+	then ns.getNamesOfMember(self)->intersection(ns.getNamesOfMember(n))->isEmpty()
+	else
+	 * true
+	endif 
+	 * @see org.eclipse.uml2.uml.NamedElement#isDistinguishableFrom(NamedElement, Namespace)
 	 * @generated
 	 */
 	public static Predicate<NamedElement> isDistinguishableFrom(final NamedElement n, final Namespace ns) {
@@ -201,6 +266,9 @@ public class NamedElementPath extends ElementPath {
 	}
 
 	/**
+	 * The query separator() gives the string that is used to separate names when constructing
+	 * a qualified name.
+	result = '::' 
 	 * @see org.eclipse.uml2.uml.NamedElement#separator()
 	 * @generated
 	 */
@@ -211,6 +279,9 @@ public class NamedElementPath extends ElementPath {
 	};
 
 	/**
+	 * The query allOwningPackages() returns all the directly or indirectly owning packages.
+	result
+	 * = self.namespace->select(p | p.oclIsKindOf(Package))->union(p.allOwningPackages())
 	 * @see org.eclipse.uml2.uml.NamedElement#allOwningPackages()
 	 * @generated
 	 */

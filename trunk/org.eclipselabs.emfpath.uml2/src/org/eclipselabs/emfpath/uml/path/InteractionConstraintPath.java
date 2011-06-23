@@ -9,6 +9,12 @@ import org.eclipse.uml2.uml.InteractionConstraint;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.InteractionConstraint InteractionConstraint} in a functional way.
+ * <p>
+ * An interaction constraint is a Boolean expression that guards an operand in a combined
+ * fragment. 
+ * @see org.eclipse.uml2.uml.InteractionConstraint
  * @generated
  */
 public class InteractionConstraintPath extends ConstraintPath {
@@ -21,6 +27,7 @@ public class InteractionConstraintPath extends ConstraintPath {
 	}
 
 	/**
+	 * The minimum number of iterations of a loop 
 	 * @see org.eclipse.uml2.uml.InteractionConstraint#getMinint()
 	 * @generated
 	 */
@@ -31,6 +38,7 @@ public class InteractionConstraintPath extends ConstraintPath {
 	};
 
 	/**
+	 * The maximum number of iterations of a loop 
 	 * @see org.eclipse.uml2.uml.InteractionConstraint#getMaxint()
 	 * @generated
 	 */
@@ -41,7 +49,10 @@ public class InteractionConstraintPath extends ConstraintPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.InteractionConstraint#validateDynamicVariables()
+	 * The dynamic variables that take part in the constraint must be owned by the ConnectableElement
+	 * corresponding to the covered Lifeline.
+	true 
+	 * @see org.eclipse.uml2.uml.InteractionConstraint#validateDynamicVariables(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<InteractionConstraint> validateDynamicVariables(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -53,7 +64,9 @@ public class InteractionConstraintPath extends ConstraintPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.InteractionConstraint#validateGlobalData()
+	 * The constraint may contain references to global data or write-once data.
+	true 
+	 * @see org.eclipse.uml2.uml.InteractionConstraint#validateGlobalData(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<InteractionConstraint> validateGlobalData(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -65,7 +78,10 @@ public class InteractionConstraintPath extends ConstraintPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.InteractionConstraint#validateMinintMaxint()
+	 * Minint/maxint can only be present if the InteractionConstraint is associated with
+	 * the operand of a loop CombinedFragment.
+	true 
+	 * @see org.eclipse.uml2.uml.InteractionConstraint#validateMinintMaxint(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<InteractionConstraint> validateMinintMaxint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -77,7 +93,9 @@ public class InteractionConstraintPath extends ConstraintPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.InteractionConstraint#validateMinintNonNegative()
+	 * If minint is specified, then the expression must evaluate to a non-negative integer.
+	true
+	 * @see org.eclipse.uml2.uml.InteractionConstraint#validateMinintNonNegative(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<InteractionConstraint> validateMinintNonNegative(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -89,7 +107,9 @@ public class InteractionConstraintPath extends ConstraintPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.InteractionConstraint#validateMaxintPositive()
+	 * If maxint is specified, then the expression must evaluate to a positive integer.
+	true
+	 * @see org.eclipse.uml2.uml.InteractionConstraint#validateMaxintPositive(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<InteractionConstraint> validateMaxintPositive(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -101,7 +121,10 @@ public class InteractionConstraintPath extends ConstraintPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.InteractionConstraint#validateMaxintGreaterEqualMinint()
+	 * If maxint is specified, then minint must be specified and the evaluation of maxint
+	 * must be >= the evaluation of minint
+	true 
+	 * @see org.eclipse.uml2.uml.InteractionConstraint#validateMaxintGreaterEqualMinint(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<InteractionConstraint> validateMaxintGreaterEqualMinint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

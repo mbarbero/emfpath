@@ -6,6 +6,11 @@ import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.EnumerationLiteral EnumerationLiteral} in a functional way.
+ * <p>
+ * An enumeration literal is a user-defined data value for an enumeration. 
+ * @see org.eclipse.uml2.uml.EnumerationLiteral
  * @generated
  */
 public class EnumerationLiteralPath extends InstanceSpecificationPath {
@@ -18,6 +23,7 @@ public class EnumerationLiteralPath extends InstanceSpecificationPath {
 	}
 
 	/**
+	 * The Enumeration that this EnumerationLiteral is a member of. 
 	 * @see org.eclipse.uml2.uml.EnumerationLiteral#getEnumeration()
 	 * @generated
 	 */

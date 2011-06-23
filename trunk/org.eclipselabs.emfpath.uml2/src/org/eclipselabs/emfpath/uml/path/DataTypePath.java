@@ -9,6 +9,12 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.DataType DataType} in a functional way.
+ * <p>
+ * A data type is a type whose instances are identified only by their value. A data type
+ * may contain attributes to support the modeling of structured data types. 
+ * @see org.eclipse.uml2.uml.DataType
  * @generated
  */
 public class DataTypePath extends ClassifierPath {
@@ -21,6 +27,7 @@ public class DataTypePath extends ClassifierPath {
 	}
 
 	/**
+	 * The Attributes owned by the DataType. 
 	 * @see org.eclipse.uml2.uml.DataType#getOwnedAttributes()
 	 * @generated
 	 */
@@ -31,6 +38,7 @@ public class DataTypePath extends ClassifierPath {
 	};
 
 	/**
+	 * The Operations owned by the DataType. 
 	 * @see org.eclipse.uml2.uml.DataType#getOwnedOperations()
 	 * @generated
 	 */
@@ -41,7 +49,9 @@ public class DataTypePath extends ClassifierPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.DataType#createOwnedOperation()
+	 * Creates an operation with the specified name, parameter names, parameter types, and
+	 * return type (or null) as an owned operation of this data type. 
+	 * @see org.eclipse.uml2.uml.DataType#createOwnedOperation(String, EList, EList, Type)
 	 * @generated
 	 */
 	public static Function<DataType, Operation> createOwnedOperation(final String name, final EList<String> parameterNames, final EList<Type> parameterTypes, final Type returnType) {
@@ -53,7 +63,9 @@ public class DataTypePath extends ClassifierPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.DataType#createOwnedAttribute()
+	 * Creates a property with the specified name, type, lower bound, and upper bound as
+	 * an owned attribute of this data type. 
+	 * @see org.eclipse.uml2.uml.DataType#createOwnedAttribute(String, Type, int, int)
 	 * @generated
 	 */
 	public static Function<DataType, Property> createOwnedAttribute(final String name, final Type type, final int lower, final int upper) {

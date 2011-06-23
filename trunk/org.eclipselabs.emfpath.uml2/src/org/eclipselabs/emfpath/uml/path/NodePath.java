@@ -14,6 +14,13 @@ import org.eclipse.uml2.uml.Node;
 import org.eclipse.uml2.uml.PackageableElement;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Node Node} in a functional way.
+ * <p>
+ * A node is computational resource upon which artifacts may be deployed for execution.
+Nodes
+ * can be interconnected through communication paths to define network structures. 
+ * @see org.eclipse.uml2.uml.Node
  * @generated
  */
 public class NodePath extends ClassPath {
@@ -26,18 +33,26 @@ public class NodePath extends ClassPath {
 	}
 
 	/**
+	 * The set of Deployments for a DeploymentTarget. 
+	 *
+	 * @see DeploymentTargetPath#deployment()
 	 * @see org.eclipse.uml2.uml.DeploymentTarget#getDeployments()
 	 * @generated
 	 */
 	public static final Function<DeploymentTarget, EList<Deployment>> deployment = DeploymentTargetPath.deployment;
 
 	/**
+	 * The set of elements that are manifested in an Artifact that is involved in Deployment
+	 * to a DeploymentTarget. 
+	 *
+	 * @see DeploymentTargetPath#deployedElement()
 	 * @see org.eclipse.uml2.uml.DeploymentTarget#getDeployedElements()
 	 * @generated
 	 */
 	public static final Function<DeploymentTarget, EList<PackageableElement>> deployedElement = DeploymentTargetPath.deployedElement;
 
 	/**
+	 * The Nodes that are defined (nested) within the Node. 
 	 * @see org.eclipse.uml2.uml.Node#getNestedNodes()
 	 * @generated
 	 */
@@ -48,7 +63,9 @@ public class NodePath extends ClassPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.Node#validateInternalStructure()
+	 * The internal structure of a Node (if defined) consists solely of parts of type Node.
+	true
+	 * @see org.eclipse.uml2.uml.Node#validateInternalStructure(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Node> validateInternalStructure(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -60,7 +77,10 @@ public class NodePath extends ClassPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Node#createCommunicationPath()
+	 * Creates a (binary) communication path between this node and the specified other node,
+	 * with the specified navigabilities, aggregations, names, lower bounds, and upper bounds,
+	 * and owned by this node's nearest package. 
+	 * @see org.eclipse.uml2.uml.Node#createCommunicationPath(boolean, AggregationKind, String, int, int, Node, boolean, AggregationKind, String, int, int)
 	 * @generated
 	 */
 	public static Function<Node, CommunicationPath> createCommunicationPath(final boolean end1IsNavigable, final AggregationKind end1Aggregation, final String end1Name, final int end1Lower, final int end1Upper, final Node end1Node, final boolean end2IsNavigable, final AggregationKind end2Aggregation, final String end2Name, final int end2Lower, final int end2Upper) {
@@ -72,6 +92,7 @@ public class NodePath extends ClassPath {
 	}
 
 	/**
+	 * Retrieves the communication paths in which this node is involved. 
 	 * @see org.eclipse.uml2.uml.Node#getCommunicationPaths()
 	 * @generated
 	 */

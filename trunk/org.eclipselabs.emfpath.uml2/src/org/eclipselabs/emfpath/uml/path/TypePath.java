@@ -10,6 +10,13 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Type Type} in a functional way.
+ * <p>
+ * A type is a named element that is used as the type for a typed element. A type can
+ * be contained in a package.
+A type constrains the values represented by a typed element.
+ * @see org.eclipse.uml2.uml.Type
  * @generated
  */
 public class TypePath extends PackageableElementPath {
@@ -22,6 +29,7 @@ public class TypePath extends PackageableElementPath {
 	}
 
 	/**
+	 * Specifies the owning package of this classifier, if any. 
 	 * @see org.eclipse.uml2.uml.Type#getPackage()
 	 * @generated
 	 */
@@ -32,7 +40,10 @@ public class TypePath extends PackageableElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.Type#createAssociation()
+	 * Creates a(n) (binary) association between this type and the specified other type,
+	 * with the specified navigabilities, aggregations, names, lower bounds, and upper bounds,
+	 * and owned by this type's nearest package. 
+	 * @see org.eclipse.uml2.uml.Type#createAssociation(boolean, AggregationKind, String, int, int, Type, boolean, AggregationKind, String, int, int)
 	 * @generated
 	 */
 	public static Function<Type, Association> createAssociation(final boolean end1IsNavigable, final AggregationKind end1Aggregation, final String end1Name, final int end1Lower, final int end1Upper, final Type end1Type, final boolean end2IsNavigable, final AggregationKind end2Aggregation, final String end2Name, final int end2Lower, final int end2Upper) {
@@ -44,6 +55,7 @@ public class TypePath extends PackageableElementPath {
 	}
 
 	/**
+	 * Retrieves the associations in which this type is involved. 
 	 * @see org.eclipse.uml2.uml.Type#getAssociations()
 	 * @generated
 	 */
@@ -54,7 +66,11 @@ public class TypePath extends PackageableElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Type#conformsTo()
+	 * The query conformsTo() gives true for a type that conforms to another. By default,
+	 * two types do not conform to each other. This query is intended to be redefined for
+	 * specific conformance situations.
+	result = false 
+	 * @see org.eclipse.uml2.uml.Type#conformsTo(Type)
 	 * @generated
 	 */
 	public static Predicate<Type> conformsTo(final Type other) {

@@ -8,6 +8,12 @@ import org.eclipse.uml2.uml.Observation;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Duration Duration} in a functional way.
+ * <p>
+ * Duration defines a value specification that specifies the temporal distance between
+ * two time instants. 
+ * @see org.eclipse.uml2.uml.Duration
  * @generated
  */
 public class DurationPath extends ValueSpecificationPath {
@@ -20,6 +26,7 @@ public class DurationPath extends ValueSpecificationPath {
 	}
 
 	/**
+	 * The value of the Duration. 
 	 * @see org.eclipse.uml2.uml.Duration#getExpr()
 	 * @generated
 	 */
@@ -30,6 +37,7 @@ public class DurationPath extends ValueSpecificationPath {
 	};
 
 	/**
+	 * Refers to the time and duration observations that are involved in expr. 
 	 * @see org.eclipse.uml2.uml.Duration#getObservations()
 	 * @generated
 	 */

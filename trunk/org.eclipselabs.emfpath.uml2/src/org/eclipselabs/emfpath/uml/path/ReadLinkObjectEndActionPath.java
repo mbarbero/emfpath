@@ -11,6 +11,12 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.ReadLinkObjectEndAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ReadLinkObjectEndAction ReadLinkObjectEndAction} in a functional way.
+ * <p>
+ * A read link object end action is an action that retrieves an end object from a link
+ * object. 
+ * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction
  * @generated
  */
 public class ReadLinkObjectEndActionPath extends ActionPath {
@@ -23,6 +29,7 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	}
 
 	/**
+	 * Gives the input pin from which the link object is obtained. 
 	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#getObject()
 	 * @generated
 	 */
@@ -33,6 +40,7 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	};
 
 	/**
+	 * Link end to be read. 
 	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#getEnd()
 	 * @generated
 	 */
@@ -43,6 +51,7 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	};
 
 	/**
+	 * Pin where the result value is placed. 
 	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#getResult()
 	 * @generated
 	 */
@@ -53,7 +62,9 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateProperty()
+	 * The property must be an association end.
+	self.end.association.notEmpty() 
+	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateProperty(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkObjectEndAction> validateProperty(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -65,7 +76,9 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateAssociationOfAssociation()
+	 * The association of the association end must be an association class.
+	self.end.Association.oclIsKindOf(AssociationClass)
+	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateAssociationOfAssociation(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkObjectEndAction> validateAssociationOfAssociation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -77,7 +90,10 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateEndsOfAssociation()
+	 * The ends of the association must not be static.
+	self.end.association.memberEnd->forall(e
+	 * | not e.isStatic) 
+	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateEndsOfAssociation(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkObjectEndAction> validateEndsOfAssociation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -89,7 +105,10 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateTypeOfObject()
+	 * The type of the object input pin is the association class that owns the association
+	 * end.
+	self.object.type = self.end.association 
+	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateTypeOfObject(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkObjectEndAction> validateTypeOfObject(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -101,7 +120,9 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateMultiplicityOfObject()
+	 * The multiplicity of the object input pin is 1..1.
+	self.object.multiplicity.is(1,1)
+	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateMultiplicityOfObject(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkObjectEndAction> validateMultiplicityOfObject(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -113,7 +134,10 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateTypeOfResult()
+	 * The type of the result output pin is the same as the type of the association end.
+	self.result.type
+	 * = self.end.type 
+	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateTypeOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkObjectEndAction> validateTypeOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -125,7 +149,9 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateMultiplicityOfResult()
+	 * The multiplicity of the result output pin is 1..1.
+	self.result.multiplicity.is(1,1)
+	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateMultiplicityOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkObjectEndAction> validateMultiplicityOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

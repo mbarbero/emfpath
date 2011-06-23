@@ -10,6 +10,11 @@ import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.TestIdentityAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.TestIdentityAction TestIdentityAction} in a functional way.
+ * <p>
+ * A test identity action is an action that tests if two values are identical objects.
+ * @see org.eclipse.uml2.uml.TestIdentityAction
  * @generated
  */
 public class TestIdentityActionPath extends ActionPath {
@@ -22,6 +27,7 @@ public class TestIdentityActionPath extends ActionPath {
 	}
 
 	/**
+	 * Gives the pin on which an object is placed. 
 	 * @see org.eclipse.uml2.uml.TestIdentityAction#getFirst()
 	 * @generated
 	 */
@@ -32,6 +38,7 @@ public class TestIdentityActionPath extends ActionPath {
 	};
 
 	/**
+	 * Gives the pin on which an object is placed. 
 	 * @see org.eclipse.uml2.uml.TestIdentityAction#getSecond()
 	 * @generated
 	 */
@@ -42,6 +49,7 @@ public class TestIdentityActionPath extends ActionPath {
 	};
 
 	/**
+	 * Tells whether the two input objects are identical. 
 	 * @see org.eclipse.uml2.uml.TestIdentityAction#getResult()
 	 * @generated
 	 */
@@ -52,7 +60,12 @@ public class TestIdentityActionPath extends ActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.TestIdentityAction#validateNoType()
+	 * The input pins have no type.
+	self.first.type->size() = 0
+	and self.second.type->size()
+	 * = 0
+	 
+	 * @see org.eclipse.uml2.uml.TestIdentityAction#validateNoType(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<TestIdentityAction> validateNoType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -64,7 +77,11 @@ public class TestIdentityActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.TestIdentityAction#validateMultiplicity()
+	 * The multiplicity of the input pins is 1..1.
+	self.first.multiplicity.is(1,1)
+	and self.second.multiplicity.is(1,1)
+	
+	 * @see org.eclipse.uml2.uml.TestIdentityAction#validateMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<TestIdentityAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -76,7 +93,9 @@ public class TestIdentityActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.TestIdentityAction#validateResultIsBoolean()
+	 * The type of the result is Boolean.
+	self.result.type.oclIsTypeOf(Boolean) 
+	 * @see org.eclipse.uml2.uml.TestIdentityAction#validateResultIsBoolean(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<TestIdentityAction> validateResultIsBoolean(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

@@ -7,6 +7,11 @@ import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Element;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Comment Comment} in a functional way.
+ * <p>
+ * A comment is a textual annotation that can be attached to a set of elements. 
+ * @see org.eclipse.uml2.uml.Comment
  * @generated
  */
 public class CommentPath extends ElementPath {
@@ -19,6 +24,7 @@ public class CommentPath extends ElementPath {
 	}
 
 	/**
+	 * Specifies a string that is the comment. 
 	 * @see org.eclipse.uml2.uml.Comment#getBody()
 	 * @generated
 	 */
@@ -29,6 +35,7 @@ public class CommentPath extends ElementPath {
 	};
 
 	/**
+	 * References the Element(s) being commented. 
 	 * @see org.eclipse.uml2.uml.Comment#getAnnotatedElements()
 	 * @generated
 	 */

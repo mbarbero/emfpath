@@ -15,6 +15,12 @@ import org.eclipse.uml2.uml.StructuredActivityNode;
 import org.eclipse.uml2.uml.Variable;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Activity Activity} in a functional way.
+ * <p>
+ * An activity is the specification of parameterized behavior as the coordinated sequencing
+ * of subordinate units whose individual elements are actions. 
+ * @see org.eclipse.uml2.uml.Activity
  * @generated
  */
 public class ActivityPath extends BehaviorPath {
@@ -27,6 +33,7 @@ public class ActivityPath extends BehaviorPath {
 	}
 
 	/**
+	 * Top-level structured nodes in the activity. 
 	 * @see org.eclipse.uml2.uml.Activity#getStructuredNodes()
 	 * @generated
 	 */
@@ -37,6 +44,7 @@ public class ActivityPath extends BehaviorPath {
 	};
 
 	/**
+	 * Top-level variables in the activity. 
 	 * @see org.eclipse.uml2.uml.Activity#getVariables()
 	 * @generated
 	 */
@@ -47,6 +55,7 @@ public class ActivityPath extends BehaviorPath {
 	};
 
 	/**
+	 * Nodes coordinated by the activity. 
 	 * @see org.eclipse.uml2.uml.Activity#getNodes()
 	 * @generated
 	 */
@@ -57,6 +66,11 @@ public class ActivityPath extends BehaviorPath {
 	};
 
 	/**
+	 * If true, this activity must not make any changes to variables outside the activity
+	 * or to objects. (This is an assertion, not an executable property. It may be used by
+	 * an execution engine to optimize model execution. If the assertion is violated by the
+	 * action, then the model is ill-formed.) The default is false (an activity may make
+	 * nonlocal changes). 
 	 * @see org.eclipse.uml2.uml.Activity#isReadOnly()
 	 * @generated
 	 */
@@ -67,6 +81,7 @@ public class ActivityPath extends BehaviorPath {
 	};
 
 	/**
+	 * Edges expressing flow between nodes of the activity. 
 	 * @see org.eclipse.uml2.uml.Activity#getEdges()
 	 * @generated
 	 */
@@ -77,6 +92,7 @@ public class ActivityPath extends BehaviorPath {
 	};
 
 	/**
+	 * Top-level partitions in the activity. 
 	 * @see org.eclipse.uml2.uml.Activity#getPartitions()
 	 * @generated
 	 */
@@ -87,6 +103,7 @@ public class ActivityPath extends BehaviorPath {
 	};
 
 	/**
+	 * If true, all invocations of the activity are handled by the same execution. 
 	 * @see org.eclipse.uml2.uml.Activity#isSingleExecution()
 	 * @generated
 	 */
@@ -97,6 +114,7 @@ public class ActivityPath extends BehaviorPath {
 	};
 
 	/**
+	 * Top-level groups in the activity. 
 	 * @see org.eclipse.uml2.uml.Activity#getGroups()
 	 * @generated
 	 */
@@ -107,7 +125,9 @@ public class ActivityPath extends BehaviorPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.Activity#validateNoSupergroups()
+	 * The groups of an activity have no supergroups.
+	true 
+	 * @see org.eclipse.uml2.uml.Activity#validateNoSupergroups(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Activity> validateNoSupergroups(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -119,7 +139,9 @@ public class ActivityPath extends BehaviorPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Activity#validateActivityParameterNode()
+	 * The nodes of the activity must include one ActivityParameterNode for each parameter.
+	true
+	 * @see org.eclipse.uml2.uml.Activity#validateActivityParameterNode(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Activity> validateActivityParameterNode(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -131,7 +153,10 @@ public class ActivityPath extends BehaviorPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Activity#validateAutonomous()
+	 * An activity cannot be autonomous and have a classifier or behavioral feature context
+	 * at the same time.
+	true 
+	 * @see org.eclipse.uml2.uml.Activity#validateAutonomous(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Activity> validateAutonomous(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

@@ -12,6 +12,14 @@ import org.eclipse.uml2.uml.InteractionOperand;
 import org.eclipse.uml2.uml.InteractionOperatorKind;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.CombinedFragment CombinedFragment} in a functional way.
+ * <p>
+ * A combined fragment defines an expression of interaction fragments. A combined fragment
+ * is defined by an interaction operator and corresponding interaction operands. Through
+ * the use of combined fragments the user will be able to describe a number of traces
+ * in a compact and concise manner. 
+ * @see org.eclipse.uml2.uml.CombinedFragment
  * @generated
  */
 public class CombinedFragmentPath extends InteractionFragmentPath {
@@ -24,6 +32,7 @@ public class CombinedFragmentPath extends InteractionFragmentPath {
 	}
 
 	/**
+	 * Specifies the operation which defines the semantics of this combination of InteractionFragments.
 	 * @see org.eclipse.uml2.uml.CombinedFragment#getInteractionOperator()
 	 * @generated
 	 */
@@ -34,6 +43,7 @@ public class CombinedFragmentPath extends InteractionFragmentPath {
 	};
 
 	/**
+	 * The set of operands of the combined fragment. 
 	 * @see org.eclipse.uml2.uml.CombinedFragment#getOperands()
 	 * @generated
 	 */
@@ -44,6 +54,8 @@ public class CombinedFragmentPath extends InteractionFragmentPath {
 	};
 
 	/**
+	 * Specifies the gates that form the interface between this CombinedFragment and its
+	 * surroundings 
 	 * @see org.eclipse.uml2.uml.CombinedFragment#getCfragmentGates()
 	 * @generated
 	 */
@@ -54,7 +66,9 @@ public class CombinedFragmentPath extends InteractionFragmentPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.CombinedFragment#validateOptLoopBreakNeg()
+	 * If the interactionOperator is opt, loop, break, or neg there must be exactly one operand
+	true
+	 * @see org.eclipse.uml2.uml.CombinedFragment#validateOptLoopBreakNeg(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<CombinedFragment> validateOptLoopBreakNeg(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -66,7 +80,10 @@ public class CombinedFragmentPath extends InteractionFragmentPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.CombinedFragment#validateMinintAndMaxint()
+	 * The InteractionConstraint with minint and maxint only apply when attached to an InteractionOperand
+	 * where the interactionOperator is loop.
+	true 
+	 * @see org.eclipse.uml2.uml.CombinedFragment#validateMinintAndMaxint(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<CombinedFragment> validateMinintAndMaxint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -78,7 +95,10 @@ public class CombinedFragmentPath extends InteractionFragmentPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.CombinedFragment#validateBreak()
+	 * If the interactionOperator is break, the corresponding InteractionOperand must cover
+	 * all Lifelines within the enclosing InteractionFragment.
+	true 
+	 * @see org.eclipse.uml2.uml.CombinedFragment#validateBreak(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<CombinedFragment> validateBreak(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -90,7 +110,11 @@ public class CombinedFragmentPath extends InteractionFragmentPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.CombinedFragment#validateConsiderAndIgnore()
+	 * The interaction operators 'consider' and 'ignore' can only be used for the CombineIgnoreFragment
+	 * subtype of CombinedFragment
+	((interactionOperator = #consider) or (interactionOperator
+	 * = #ignore)) implies oclsisTypeOf(CombineIgnoreFragment) 
+	 * @see org.eclipse.uml2.uml.CombinedFragment#validateConsiderAndIgnore(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<CombinedFragment> validateConsiderAndIgnore(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

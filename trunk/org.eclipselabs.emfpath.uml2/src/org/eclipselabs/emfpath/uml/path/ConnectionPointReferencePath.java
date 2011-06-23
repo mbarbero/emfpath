@@ -11,6 +11,12 @@ import org.eclipse.uml2.uml.Pseudostate;
 import org.eclipse.uml2.uml.State;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ConnectionPointReference ConnectionPointReference} in a functional way.
+ * <p>
+ * A connection point reference represents a usage (as part of a submachine state) of
+ * an entry/exit point defined in the statemachine reference by the submachine state.
+ * @see org.eclipse.uml2.uml.ConnectionPointReference
  * @generated
  */
 public class ConnectionPointReferencePath extends VertexPath {
@@ -23,6 +29,7 @@ public class ConnectionPointReferencePath extends VertexPath {
 	}
 
 	/**
+	 * The entryPoint kind pseudo states corresponding to this connection point. 
 	 * @see org.eclipse.uml2.uml.ConnectionPointReference#getEntries()
 	 * @generated
 	 */
@@ -33,6 +40,7 @@ public class ConnectionPointReferencePath extends VertexPath {
 	};
 
 	/**
+	 * The exitPoints kind pseudo states corresponding to this connection point. 
 	 * @see org.eclipse.uml2.uml.ConnectionPointReference#getExits()
 	 * @generated
 	 */
@@ -43,6 +51,7 @@ public class ConnectionPointReferencePath extends VertexPath {
 	};
 
 	/**
+	 * The State in which the connection point refreshens are defined. 
 	 * @see org.eclipse.uml2.uml.ConnectionPointReference#getState()
 	 * @generated
 	 */
@@ -53,7 +62,10 @@ public class ConnectionPointReferencePath extends VertexPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ConnectionPointReference#validateEntryPseudostates()
+	 * The entry Pseudostates must be Pseudostates with kind entryPoint.
+	entry->notEmpty()
+	 * implies entry->forAll(e | e.kind = #entryPoint) 
+	 * @see org.eclipse.uml2.uml.ConnectionPointReference#validateEntryPseudostates(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ConnectionPointReference> validateEntryPseudostates(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -65,7 +77,10 @@ public class ConnectionPointReferencePath extends VertexPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ConnectionPointReference#validateExitPseudostates()
+	 * The exit Pseudostates must be Pseudostates with kind exitPoint.
+	exit->notEmpty()
+	 * implies exit->forAll(e | e.kind = #exitPoint) 
+	 * @see org.eclipse.uml2.uml.ConnectionPointReference#validateExitPseudostates(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ConnectionPointReference> validateExitPseudostates(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

@@ -9,6 +9,12 @@ import org.eclipse.uml2.uml.Variable;
 import org.eclipse.uml2.uml.VariableAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.VariableAction VariableAction} in a functional way.
+ * <p>
+ * VariableAction is an abstract class for actions that operate on a statically specified
+ * variable. 
+ * @see org.eclipse.uml2.uml.VariableAction
  * @generated
  */
 public class VariableActionPath extends ActionPath {
@@ -21,6 +27,7 @@ public class VariableActionPath extends ActionPath {
 	}
 
 	/**
+	 * Variable to be read. 
 	 * @see org.eclipse.uml2.uml.VariableAction#getVariable()
 	 * @generated
 	 */
@@ -31,7 +38,9 @@ public class VariableActionPath extends ActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.VariableAction#validateScopeOfVariable()
+	 * The action must be in the scope of the variable.
+	self.variable.isAccessibleBy(self)
+	 * @see org.eclipse.uml2.uml.VariableAction#validateScopeOfVariable(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<VariableAction> validateScopeOfVariable(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

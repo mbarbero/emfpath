@@ -9,6 +9,11 @@ import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.ReadVariableAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ReadVariableAction ReadVariableAction} in a functional way.
+ * <p>
+ * A read variable action is a variable action that retrieves the values of a variable.
+ * @see org.eclipse.uml2.uml.ReadVariableAction
  * @generated
  */
 public class ReadVariableActionPath extends VariableActionPath {
@@ -21,6 +26,7 @@ public class ReadVariableActionPath extends VariableActionPath {
 	}
 
 	/**
+	 * Gives the output pin on which the result is put. 
 	 * @see org.eclipse.uml2.uml.ReadVariableAction#getResult()
 	 * @generated
 	 */
@@ -31,7 +37,13 @@ public class ReadVariableActionPath extends VariableActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ReadVariableAction#validateTypeAndOrdering()
+	 * The type and ordering of the result output pin of a read-variable action are the same
+	 * as the type and ordering of the variable.
+	self.result.type =self.variable.type
+	and
+	 * self.result.ordering = self.variable.ordering
+	 
+	 * @see org.eclipse.uml2.uml.ReadVariableAction#validateTypeAndOrdering(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadVariableAction> validateTypeAndOrdering(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -43,7 +55,10 @@ public class ReadVariableActionPath extends VariableActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadVariableAction#validateCompatibleMultiplicity()
+	 * The multiplicity of the variable must be compatible with the multiplicity of the output
+	 * pin.
+	self.variable.multiplicity.compatibleWith(self.result.multiplicity) 
+	 * @see org.eclipse.uml2.uml.ReadVariableAction#validateCompatibleMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadVariableAction> validateCompatibleMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

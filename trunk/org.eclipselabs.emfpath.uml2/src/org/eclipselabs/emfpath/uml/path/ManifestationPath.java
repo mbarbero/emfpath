@@ -6,6 +6,12 @@ import org.eclipse.uml2.uml.Manifestation;
 import org.eclipse.uml2.uml.PackageableElement;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Manifestation Manifestation} in a functional way.
+ * <p>
+ * A manifestation is the concrete physical rendering of one or more model elements by
+ * an artifact. 
+ * @see org.eclipse.uml2.uml.Manifestation
  * @generated
  */
 public class ManifestationPath extends AbstractionPath {
@@ -18,6 +24,7 @@ public class ManifestationPath extends AbstractionPath {
 	}
 
 	/**
+	 * The model element that is utilized in the manifestation in an Artifact. 
 	 * @see org.eclipse.uml2.uml.Manifestation#getUtilizedElement()
 	 * @generated
 	 */

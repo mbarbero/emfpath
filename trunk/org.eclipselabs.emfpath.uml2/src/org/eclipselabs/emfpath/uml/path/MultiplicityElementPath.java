@@ -9,6 +9,14 @@ import org.eclipse.uml2.uml.MultiplicityElement;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.MultiplicityElement MultiplicityElement} in a functional way.
+ * <p>
+ * A multiplicity is a definition of an inclusive interval of non-negative integers beginning
+ * with a lower bound and ending with a (possibly infinite) upper bound. A multiplicity
+ * element embeds this information to specify the allowable cardinalities for an instantiation
+ * of this element. 
+ * @see org.eclipse.uml2.uml.MultiplicityElement
  * @generated
  */
 public class MultiplicityElementPath extends ElementPath {
@@ -21,6 +29,8 @@ public class MultiplicityElementPath extends ElementPath {
 	}
 
 	/**
+	 * For a multivalued multiplicity, this attribute specifies whether the values in an
+	 * instantiation of this element are sequentially ordered. 
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isOrdered()
 	 * @generated
 	 */
@@ -31,6 +41,8 @@ public class MultiplicityElementPath extends ElementPath {
 	};
 
 	/**
+	 * For a multivalued multiplicity, this attributes specifies whether the values in an
+	 * instantiation of this element are unique. 
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isUnique()
 	 * @generated
 	 */
@@ -41,6 +53,7 @@ public class MultiplicityElementPath extends ElementPath {
 	};
 
 	/**
+	 * Specifies the upper bound of the multiplicity interval. 
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#getUpper()
 	 * @generated
 	 */
@@ -51,6 +64,7 @@ public class MultiplicityElementPath extends ElementPath {
 	};
 
 	/**
+	 * Specifies the lower bound of the multiplicity interval. 
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#getLower()
 	 * @generated
 	 */
@@ -61,6 +75,7 @@ public class MultiplicityElementPath extends ElementPath {
 	};
 
 	/**
+	 * The specification of the upper bound for this multiplicity. 
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#getUpperValue()
 	 * @generated
 	 */
@@ -71,6 +86,7 @@ public class MultiplicityElementPath extends ElementPath {
 	};
 
 	/**
+	 * The specification of the lower bound for this multiplicity. 
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#getLowerValue()
 	 * @generated
 	 */
@@ -81,7 +97,10 @@ public class MultiplicityElementPath extends ElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateLowerGe0()
+	 * The lower bound must be a non-negative integer literal.
+	lowerBound()->notEmpty()
+	 * implies lowerBound() >= 0 
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateLowerGe0(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> validateLowerGe0(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -93,7 +112,10 @@ public class MultiplicityElementPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateUpperGeLower()
+	 * The upper bound must be greater than or equal to the lower bound.
+	(upperBound()->notEmpty()
+	 * and lowerBound()->notEmpty()) implies upperBound() >= lowerBound() 
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateUpperGeLower(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> validateUpperGeLower(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -105,7 +127,10 @@ public class MultiplicityElementPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationNoSideEffects()
+	 * If a non-literal ValueSpecification is used for the lower or upper bound, then evaluating
+	 * that specification must not have side effects.
+	true 
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationNoSideEffects(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> validateValueSpecificationNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -117,7 +142,10 @@ public class MultiplicityElementPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationConstant()
+	 * If a non-literal ValueSpecification is used for the lower or upper bound, then that
+	 * specification must be a constant expression.
+	true 
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationConstant(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> validateValueSpecificationConstant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -129,7 +157,8 @@ public class MultiplicityElementPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#setLower()
+	 * 
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#setLower(int)
 	 * @generated
 	 */
 	public static Function<MultiplicityElement, MultiplicityElement> setLower(final int newLower) {
@@ -142,7 +171,8 @@ public class MultiplicityElementPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#setUpper()
+	 * 
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#setUpper(int)
 	 * @generated
 	 */
 	public static Function<MultiplicityElement, MultiplicityElement> setUpper(final int newUpper) {
@@ -155,6 +185,8 @@ public class MultiplicityElementPath extends ElementPath {
 	}
 
 	/**
+	 * The derived lower attribute must equal the lowerBound.
+	result = lowerBound() 
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#getLower()
 	 * @generated
 	 */
@@ -165,6 +197,8 @@ public class MultiplicityElementPath extends ElementPath {
 	};
 
 	/**
+	 * The derived upper attribute must equal the upperBound.
+	result = upperBound() 
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#getUpper()
 	 * @generated
 	 */
@@ -175,6 +209,10 @@ public class MultiplicityElementPath extends ElementPath {
 	};
 
 	/**
+	 * The query isMultivalued() checks whether this multiplicity has an upper bound greater
+	 * than one.
+	upperBound()->notEmpty()
+	result = upperBound() > 1 
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isMultivalued()
 	 * @generated
 	 */
@@ -185,7 +223,12 @@ public class MultiplicityElementPath extends ElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesCardinality()
+	 * The query includesCardinality() checks whether the specified cardinality is valid
+	 * for this multiplicity.
+	upperBound()->notEmpty() and lowerBound()->notEmpty()
+	result
+	 * = (lowerBound() <= C) and (upperBound() >= C) 
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesCardinality(int)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> includesCardinality(final int C) {
@@ -197,7 +240,13 @@ public class MultiplicityElementPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesMultiplicity()
+	 * The query includesMultiplicity() checks whether this multiplicity includes all the
+	 * cardinalities allowed by the specified multiplicity.
+	self.upperBound()->notEmpty()
+	 * and self.lowerBound()->notEmpty() and M.upperBound()->notEmpty() and M.lowerBound()->notEmpty()
+	result
+	 * = (self.lowerBound() <= M.lowerBound()) and (self.upperBound() >= M.upperBound())
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesMultiplicity(MultiplicityElement)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> includesMultiplicity(final MultiplicityElement M) {
@@ -209,6 +258,9 @@ public class MultiplicityElementPath extends ElementPath {
 	}
 
 	/**
+	 * The query lowerBound() returns the lower bound of the multiplicity as an integer.
+	result
+	 * = if lowerValue->isEmpty() then 1 else lowerValue.integerValue() endif 
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#lowerBound()
 	 * @generated
 	 */
@@ -219,6 +271,10 @@ public class MultiplicityElementPath extends ElementPath {
 	};
 
 	/**
+	 * The query upperBound() returns the upper bound of the multiplicity for a bounded multiplicity
+	 * as an unlimited natural.
+	result = if upperValue->isEmpty() then 1 else upperValue.unlimitedValue()
+	 * endif 
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#upperBound()
 	 * @generated
 	 */
@@ -229,7 +285,11 @@ public class MultiplicityElementPath extends ElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#compatibleWith()
+	 * The operation compatibleWith takes another multiplicity as input. It checks if one
+	 * multiplicity is compatible with another.
+	result = Integer.allInstances()->forAll(i
+	 * : Integer | self.includesCardinality(i) implies other.includesCardinality(i)) 
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#compatibleWith(MultiplicityElement)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> compatibleWith(final MultiplicityElement other) {
@@ -241,7 +301,10 @@ public class MultiplicityElementPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#is()
+	 * The operation is determines if the upper and lower bound of the ranges are the ones
+	 * given.
+	result = (lowerbound = self.lowerbound and upperbound = self.upperbound) 
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#is(int, int)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> is(final int lowerbound, final int upperbound) {

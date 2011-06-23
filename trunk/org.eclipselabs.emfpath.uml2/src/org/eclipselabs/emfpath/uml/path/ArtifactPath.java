@@ -10,6 +10,16 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Artifact Artifact} in a functional way.
+ * <p>
+ * An artifact is the specification of a physical piece of information that is used or
+ * produced by a software development process, or by deployment and operation of a system.
+ * Examples of artifacts include model files, source files, scripts, and binary executable
+ * files, a table in a database system, a development deliverable, or a word-processing
+ * document, a mail message.
+An artifact is the source of a deployment to a node. 
+ * @see org.eclipse.uml2.uml.Artifact
  * @generated
  */
 public class ArtifactPath extends ClassifierPath {
@@ -22,6 +32,8 @@ public class ArtifactPath extends ClassifierPath {
 	}
 
 	/**
+	 * A concrete name that is used to refer to the Artifact in a physical context. Example:
+	 * file system name, universal resource locator. 
 	 * @see org.eclipse.uml2.uml.Artifact#getFileName()
 	 * @generated
 	 */
@@ -32,6 +44,10 @@ public class ArtifactPath extends ClassifierPath {
 	};
 
 	/**
+	 * The Artifacts that are defined (nested) within the Artifact.
+	The association is a
+	 * specialization of the ownedMember association from Namespace to NamedElement.
+	 
 	 * @see org.eclipse.uml2.uml.Artifact#getNestedArtifacts()
 	 * @generated
 	 */
@@ -42,6 +58,8 @@ public class ArtifactPath extends ClassifierPath {
 	};
 
 	/**
+	 * The set of model elements that are manifested in the Artifact. That is, these model
+	 * elements are utilized in the construction (or generation) of the artifact. 
 	 * @see org.eclipse.uml2.uml.Artifact#getManifestations()
 	 * @generated
 	 */
@@ -52,6 +70,8 @@ public class ArtifactPath extends ClassifierPath {
 	};
 
 	/**
+	 * The Operations defined for the Artifact. The association is a specialization of the
+	 * ownedMember association. 
 	 * @see org.eclipse.uml2.uml.Artifact#getOwnedOperations()
 	 * @generated
 	 */
@@ -62,6 +82,10 @@ public class ArtifactPath extends ClassifierPath {
 	};
 
 	/**
+	 * The attributes or association ends defined for the Artifact.
+	The association is a
+	 * specialization of the ownedMember association.
+	 
 	 * @see org.eclipse.uml2.uml.Artifact#getOwnedAttributes()
 	 * @generated
 	 */
@@ -72,7 +96,9 @@ public class ArtifactPath extends ClassifierPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.Artifact#createOwnedOperation()
+	 * Creates an operation with the specified name, parameter names, parameter types, and
+	 * return type (or null) as an owned operation of this artifact. 
+	 * @see org.eclipse.uml2.uml.Artifact#createOwnedOperation(String, EList, EList, Type)
 	 * @generated
 	 */
 	public static Function<Artifact, Operation> createOwnedOperation(final String name, final EList<String> parameterNames, final EList<Type> parameterTypes, final Type returnType) {
@@ -84,7 +110,9 @@ public class ArtifactPath extends ClassifierPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Artifact#createOwnedAttribute()
+	 * Creates a property with the specified name, type, lower bound, and upper bound as
+	 * an owned attribute of this artifact. 
+	 * @see org.eclipse.uml2.uml.Artifact#createOwnedAttribute(String, Type, int, int)
 	 * @generated
 	 */
 	public static Function<Artifact, Property> createOwnedAttribute(final String name, final Type type, final int lower, final int upper) {

@@ -11,6 +11,13 @@ import org.eclipse.uml2.uml.ReplyAction;
 import org.eclipse.uml2.uml.Trigger;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ReplyAction ReplyAction} in a functional way.
+ * <p>
+ * A reply action is an action that accepts a set of return values and a value containing
+ * return information produced by a previous accept call action. The reply action returns
+ * the values to the caller of the previous call, completing execution of the call. 
+ * @see org.eclipse.uml2.uml.ReplyAction
  * @generated
  */
 public class ReplyActionPath extends ActionPath {
@@ -23,6 +30,7 @@ public class ReplyActionPath extends ActionPath {
 	}
 
 	/**
+	 * The trigger specifying the operation whose call is being replied to. 
 	 * @see org.eclipse.uml2.uml.ReplyAction#getReplyToCall()
 	 * @generated
 	 */
@@ -33,6 +41,7 @@ public class ReplyActionPath extends ActionPath {
 	};
 
 	/**
+	 * A pin containing the return information value produced by an earlier AcceptCallAction.
 	 * @see org.eclipse.uml2.uml.ReplyAction#getReturnInformation()
 	 * @generated
 	 */
@@ -43,6 +52,8 @@ public class ReplyActionPath extends ActionPath {
 	};
 
 	/**
+	 * A list of pins containing the reply values of the operation. These values are returned
+	 * to the caller. 
 	 * @see org.eclipse.uml2.uml.ReplyAction#getReplyValues()
 	 * @generated
 	 */
@@ -53,7 +64,10 @@ public class ReplyActionPath extends ActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ReplyAction#validatePinsMatchParameter()
+	 * The reply value pins must match the return, out, and inout parameters of the operation
+	 * on the event on the trigger in number, type, and order.
+	true 
+	 * @see org.eclipse.uml2.uml.ReplyAction#validatePinsMatchParameter(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReplyAction> validatePinsMatchParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -65,7 +79,9 @@ public class ReplyActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReplyAction#validateEventOnReplyToCallTrigger()
+	 * The event on replyToCall trigger must be a CallEvent replyToCallEvent.oclIsKindOf(CallEvent)
+	replyToCallEvent.oclIsKindOf(CallEvent)
+	 * @see org.eclipse.uml2.uml.ReplyAction#validateEventOnReplyToCallTrigger(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReplyAction> validateEventOnReplyToCallTrigger(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

@@ -10,6 +10,12 @@ import org.eclipse.uml2.uml.TemplateParameter;
 import org.eclipse.uml2.uml.TemplateSignature;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.TemplateParameter TemplateParameter} in a functional way.
+ * <p>
+ * A template parameter exposes a parameterable element as a formal template parameter
+ * of a template. 
+ * @see org.eclipse.uml2.uml.TemplateParameter
  * @generated
  */
 public class TemplateParameterPath extends ElementPath {
@@ -22,6 +28,7 @@ public class TemplateParameterPath extends ElementPath {
 	}
 
 	/**
+	 * The template signature that owns this template parameter. 
 	 * @see org.eclipse.uml2.uml.TemplateParameter#getSignature()
 	 * @generated
 	 */
@@ -32,6 +39,7 @@ public class TemplateParameterPath extends ElementPath {
 	};
 
 	/**
+	 * The element exposed by this template parameter. 
 	 * @see org.eclipse.uml2.uml.TemplateParameter#getParameteredElement()
 	 * @generated
 	 */
@@ -42,6 +50,7 @@ public class TemplateParameterPath extends ElementPath {
 	};
 
 	/**
+	 * The element that is owned by this template parameter. 
 	 * @see org.eclipse.uml2.uml.TemplateParameter#getOwnedParameteredElement()
 	 * @generated
 	 */
@@ -52,6 +61,7 @@ public class TemplateParameterPath extends ElementPath {
 	};
 
 	/**
+	 * The element that is the default for this formal template parameter. 
 	 * @see org.eclipse.uml2.uml.TemplateParameter#getDefault()
 	 * @generated
 	 */
@@ -62,6 +72,8 @@ public class TemplateParameterPath extends ElementPath {
 	};
 
 	/**
+	 * The element that is owned by this template parameter for the purpose of providing
+	 * a default. 
 	 * @see org.eclipse.uml2.uml.TemplateParameter#getOwnedDefault()
 	 * @generated
 	 */
@@ -72,7 +84,10 @@ public class TemplateParameterPath extends ElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.TemplateParameter#validateMustBeCompatible()
+	 * The default must be compatible with the formal template parameter.
+	default->notEmpty()
+	 * implies default->isCompatibleWith(parameteredElement) 
+	 * @see org.eclipse.uml2.uml.TemplateParameter#validateMustBeCompatible(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<TemplateParameter> validateMustBeCompatible(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

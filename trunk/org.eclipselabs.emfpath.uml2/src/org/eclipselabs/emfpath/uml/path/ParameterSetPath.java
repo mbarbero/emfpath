@@ -11,6 +11,12 @@ import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterSet;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ParameterSet ParameterSet} in a functional way.
+ * <p>
+ * A parameter set is an element that provides alternative sets of inputs or outputs
+ * that a behavior may use. 
+ * @see org.eclipse.uml2.uml.ParameterSet
  * @generated
  */
 public class ParameterSetPath extends NamedElementPath {
@@ -23,6 +29,7 @@ public class ParameterSetPath extends NamedElementPath {
 	}
 
 	/**
+	 * Parameters in the parameter set. 
 	 * @see org.eclipse.uml2.uml.ParameterSet#getParameters()
 	 * @generated
 	 */
@@ -33,6 +40,11 @@ public class ParameterSetPath extends NamedElementPath {
 	};
 
 	/**
+	 * Constraint that should be satisfied for the owner of the parameters in an input parameter
+	 * set to start execution using the values provided for those parameters, or the owner
+	 * of the parameters in an output parameter set to end execution providing the values
+	 * for those parameters, if all preconditions and conditions on input parameter sets
+	 * were satisfied. 
 	 * @see org.eclipse.uml2.uml.ParameterSet#getConditions()
 	 * @generated
 	 */
@@ -43,7 +55,10 @@ public class ParameterSetPath extends NamedElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ParameterSet#validateSameParameterizedEntity()
+	 * The parameters in a parameter set must all be inputs or all be outputs of the same
+	 * parameterized entity, and the parameter set is owned by that entity.
+	true 
+	 * @see org.eclipse.uml2.uml.ParameterSet#validateSameParameterizedEntity(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ParameterSet> validateSameParameterizedEntity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -55,7 +70,10 @@ public class ParameterSetPath extends NamedElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ParameterSet#validateInput()
+	 * If a behavior has input parameters that are in a parameter set, then any inputs that
+	 * are not in a parameter set must be streaming. Same for output parameters.
+	true 
+	 * @see org.eclipse.uml2.uml.ParameterSet#validateInput(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ParameterSet> validateInput(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -67,7 +85,9 @@ public class ParameterSetPath extends NamedElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ParameterSet#validateTwoParameterSets()
+	 * Two parameter sets cannot have exactly the same set of parameters.
+	true 
+	 * @see org.eclipse.uml2.uml.ParameterSet#validateTwoParameterSets(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ParameterSet> validateTwoParameterSets(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

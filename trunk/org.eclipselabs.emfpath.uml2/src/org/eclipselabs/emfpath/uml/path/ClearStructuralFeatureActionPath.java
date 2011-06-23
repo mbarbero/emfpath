@@ -9,6 +9,12 @@ import org.eclipse.uml2.uml.ClearStructuralFeatureAction;
 import org.eclipse.uml2.uml.OutputPin;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ClearStructuralFeatureAction ClearStructuralFeatureAction} in a functional way.
+ * <p>
+ * A clear structural feature action is a structural feature action that removes all
+ * values of a structural feature. 
+ * @see org.eclipse.uml2.uml.ClearStructuralFeatureAction
  * @generated
  */
 public class ClearStructuralFeatureActionPath extends StructuralFeatureActionPath {
@@ -21,6 +27,7 @@ public class ClearStructuralFeatureActionPath extends StructuralFeatureActionPat
 	}
 
 	/**
+	 * Gives the output pin on which the result is put. 
 	 * @see org.eclipse.uml2.uml.ClearStructuralFeatureAction#getResult()
 	 * @generated
 	 */
@@ -31,7 +38,10 @@ public class ClearStructuralFeatureActionPath extends StructuralFeatureActionPat
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ClearStructuralFeatureAction#validateTypeOfResult()
+	 * The type of the result output pin is the same as the type of the inherited object
+	 * input pin.
+	result->notEmpty() implies self.result.type = self.object.type 
+	 * @see org.eclipse.uml2.uml.ClearStructuralFeatureAction#validateTypeOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ClearStructuralFeatureAction> validateTypeOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -43,7 +53,10 @@ public class ClearStructuralFeatureActionPath extends StructuralFeatureActionPat
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ClearStructuralFeatureAction#validateMultiplicityOfResult()
+	 * The multiplicity of the result output pin must be 1..1.
+	result->notEmpty() implies
+	 * self.result.multiplicity.is(1,1) 
+	 * @see org.eclipse.uml2.uml.ClearStructuralFeatureAction#validateMultiplicityOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ClearStructuralFeatureAction> validateMultiplicityOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

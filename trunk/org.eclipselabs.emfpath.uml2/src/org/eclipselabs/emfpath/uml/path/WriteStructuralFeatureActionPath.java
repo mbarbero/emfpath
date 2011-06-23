@@ -10,6 +10,12 @@ import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.WriteStructuralFeatureAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.WriteStructuralFeatureAction WriteStructuralFeatureAction} in a functional way.
+ * <p>
+ * WriteStructuralFeatureAction is an abstract class for structural feature actions that
+ * change structural feature values. 
+ * @see org.eclipse.uml2.uml.WriteStructuralFeatureAction
  * @generated
  */
 public class WriteStructuralFeatureActionPath extends StructuralFeatureActionPath {
@@ -22,6 +28,7 @@ public class WriteStructuralFeatureActionPath extends StructuralFeatureActionPat
 	}
 
 	/**
+	 * Value to be added or removed from the structural feature. 
 	 * @see org.eclipse.uml2.uml.WriteStructuralFeatureAction#getValue()
 	 * @generated
 	 */
@@ -32,6 +39,7 @@ public class WriteStructuralFeatureActionPath extends StructuralFeatureActionPat
 	};
 
 	/**
+	 * Gives the output pin on which the result is put. 
 	 * @see org.eclipse.uml2.uml.WriteStructuralFeatureAction#getResult()
 	 * @generated
 	 */
@@ -42,7 +50,10 @@ public class WriteStructuralFeatureActionPath extends StructuralFeatureActionPat
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.WriteStructuralFeatureAction#validateInputPin()
+	 * The type input pin is the same as the classifier of the structural feature.
+	self.value.type
+	 * = self.structuralFeature.featuringClassifier 
+	 * @see org.eclipse.uml2.uml.WriteStructuralFeatureAction#validateInputPin(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<WriteStructuralFeatureAction> validateInputPin(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -54,7 +65,10 @@ public class WriteStructuralFeatureActionPath extends StructuralFeatureActionPat
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.WriteStructuralFeatureAction#validateTypeOfResult()
+	 * The type of the result output pin is the same as the type of the inherited object
+	 * input pin.
+	result->notEmpty() implies self.result.type = self.object.type 
+	 * @see org.eclipse.uml2.uml.WriteStructuralFeatureAction#validateTypeOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<WriteStructuralFeatureAction> validateTypeOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -66,7 +80,10 @@ public class WriteStructuralFeatureActionPath extends StructuralFeatureActionPat
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.WriteStructuralFeatureAction#validateMultiplicityOfResult()
+	 * The multiplicity of the result output pin must be 1..1.
+	result->notEmpty() implies
+	 * self.result.multiplicity.is(1,1) 
+	 * @see org.eclipse.uml2.uml.WriteStructuralFeatureAction#validateMultiplicityOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<WriteStructuralFeatureAction> validateMultiplicityOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

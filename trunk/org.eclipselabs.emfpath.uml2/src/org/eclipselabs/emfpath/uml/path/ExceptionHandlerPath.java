@@ -12,6 +12,12 @@ import org.eclipse.uml2.uml.ExecutableNode;
 import org.eclipse.uml2.uml.ObjectNode;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ExceptionHandler ExceptionHandler} in a functional way.
+ * <p>
+ * An exception handler is an element that specifies a body to execute in case the specified
+ * exception occurs during the execution of the protected node. 
+ * @see org.eclipse.uml2.uml.ExceptionHandler
  * @generated
  */
 public class ExceptionHandlerPath extends ElementPath {
@@ -24,6 +30,7 @@ public class ExceptionHandlerPath extends ElementPath {
 	}
 
 	/**
+	 * A node that is executed if the handler satisfies an uncaught exception. 
 	 * @see org.eclipse.uml2.uml.ExceptionHandler#getHandlerBody()
 	 * @generated
 	 */
@@ -34,6 +41,8 @@ public class ExceptionHandlerPath extends ElementPath {
 	};
 
 	/**
+	 * An object node within the handler body. When the handler catches an exception, the
+	 * exception token is placed in this node, causing the body to execute. 
 	 * @see org.eclipse.uml2.uml.ExceptionHandler#getExceptionInput()
 	 * @generated
 	 */
@@ -44,6 +53,9 @@ public class ExceptionHandlerPath extends ElementPath {
 	};
 
 	/**
+	 * The kind of instances that the handler catches. If an exception occurs whose type
+	 * is any of the classifiers in the set, the handler catches the exception and executes
+	 * its body. 
 	 * @see org.eclipse.uml2.uml.ExceptionHandler#getExceptionTypes()
 	 * @generated
 	 */
@@ -54,6 +66,8 @@ public class ExceptionHandlerPath extends ElementPath {
 	};
 
 	/**
+	 * The node protected by the handler. The handler is examined if an exception propagates
+	 * to the outside of the node. 
 	 * @see org.eclipse.uml2.uml.ExceptionHandler#getProtectedNode()
 	 * @generated
 	 */
@@ -64,7 +78,10 @@ public class ExceptionHandlerPath extends ElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ExceptionHandler#validateExceptionBody()
+	 * The exception handler and its input object node are not the source or target of any
+	 * edge.
+	true 
+	 * @see org.eclipse.uml2.uml.ExceptionHandler#validateExceptionBody(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ExceptionHandler> validateExceptionBody(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -76,7 +93,10 @@ public class ExceptionHandlerPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ExceptionHandler#validateResultPins()
+	 * The result pins of the exception handler body must correspond in number and types
+	 * to the result pins of the protected node.
+	true 
+	 * @see org.eclipse.uml2.uml.ExceptionHandler#validateResultPins(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ExceptionHandler> validateResultPins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -88,7 +108,9 @@ public class ExceptionHandlerPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ExceptionHandler#validateOneInput()
+	 * The handler body has one input, and that input is the same as the exception input.
+	true
+	 * @see org.eclipse.uml2.uml.ExceptionHandler#validateOneInput(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ExceptionHandler> validateOneInput(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -100,7 +122,10 @@ public class ExceptionHandlerPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ExceptionHandler#validateEdgeSourceTarget()
+	 * An edge that has a source in an exception handler structured node must have its target
+	 * in the handler also, and vice versa.
+	true 
+	 * @see org.eclipse.uml2.uml.ExceptionHandler#validateEdgeSourceTarget(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ExceptionHandler> validateEdgeSourceTarget(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

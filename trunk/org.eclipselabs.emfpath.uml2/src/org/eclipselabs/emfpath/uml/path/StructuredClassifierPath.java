@@ -13,6 +13,13 @@ import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.Type;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.StructuredClassifier StructuredClassifier} in a functional way.
+ * <p>
+ * A structured classifier is an abstract metaclass that represents any classifier whose
+ * behavior can be fully or partly described by the collaboration of owned or referenced
+ * instances. 
+ * @see org.eclipse.uml2.uml.StructuredClassifier
  * @generated
  */
 public class StructuredClassifierPath extends ClassifierPath {
@@ -25,6 +32,7 @@ public class StructuredClassifierPath extends ClassifierPath {
 	}
 
 	/**
+	 * References the properties owned by the classifier. 
 	 * @see org.eclipse.uml2.uml.StructuredClassifier#getOwnedAttributes()
 	 * @generated
 	 */
@@ -35,6 +43,9 @@ public class StructuredClassifierPath extends ClassifierPath {
 	};
 
 	/**
+	 * References the properties specifying instances that the classifier owns by composition.
+	 * This association is derived, selecting those owned properties where isComposite is
+	 * true. 
 	 * @see org.eclipse.uml2.uml.StructuredClassifier#getParts()
 	 * @generated
 	 */
@@ -45,6 +56,7 @@ public class StructuredClassifierPath extends ClassifierPath {
 	};
 
 	/**
+	 * References the roles that instances may play in this classifier. 
 	 * @see org.eclipse.uml2.uml.StructuredClassifier#getRoles()
 	 * @generated
 	 */
@@ -55,6 +67,7 @@ public class StructuredClassifierPath extends ClassifierPath {
 	};
 
 	/**
+	 * References the connectors owned by the classifier. 
 	 * @see org.eclipse.uml2.uml.StructuredClassifier#getOwnedConnectors()
 	 * @generated
 	 */
@@ -65,7 +78,9 @@ public class StructuredClassifierPath extends ClassifierPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.StructuredClassifier#validateMultiplicities()
+	 * The multiplicities on connected elements must be consistent.
+	true 
+	 * @see org.eclipse.uml2.uml.StructuredClassifier#validateMultiplicities(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<StructuredClassifier> validateMultiplicities(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -77,7 +92,9 @@ public class StructuredClassifierPath extends ClassifierPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.StructuredClassifier#createOwnedAttribute()
+	 * Creates a property with the specified name, type, lower bound, and upper bound as
+	 * an owned attribute of this structured classifier. 
+	 * @see org.eclipse.uml2.uml.StructuredClassifier#createOwnedAttribute(String, Type, int, int)
 	 * @generated
 	 */
 	public static Function<StructuredClassifier, Property> createOwnedAttribute(final String name, final Type type, final int lower, final int upper) {

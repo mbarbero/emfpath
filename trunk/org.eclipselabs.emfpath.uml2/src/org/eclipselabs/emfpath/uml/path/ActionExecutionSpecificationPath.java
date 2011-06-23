@@ -9,6 +9,12 @@ import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.ActionExecutionSpecification;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ActionExecutionSpecification ActionExecutionSpecification} in a functional way.
+ * <p>
+ * An action execution specification is a kind of execution specification representing
+ * the execution of an action. 
+ * @see org.eclipse.uml2.uml.ActionExecutionSpecification
  * @generated
  */
 public class ActionExecutionSpecificationPath extends ExecutionSpecificationPath {
@@ -21,6 +27,7 @@ public class ActionExecutionSpecificationPath extends ExecutionSpecificationPath
 	}
 
 	/**
+	 * Action whose execution is occurring. 
 	 * @see org.eclipse.uml2.uml.ActionExecutionSpecification#getAction()
 	 * @generated
 	 */
@@ -31,7 +38,10 @@ public class ActionExecutionSpecificationPath extends ExecutionSpecificationPath
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ActionExecutionSpecification#validateActionReferenced()
+	 * The Action referenced by the ActionExecutionSpecification, if any, must be owned by
+	 * the Interaction owning the ActionExecutionOccurrence.
+	true 
+	 * @see org.eclipse.uml2.uml.ActionExecutionSpecification#validateActionReferenced(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActionExecutionSpecification> validateActionReferenced(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

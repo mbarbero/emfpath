@@ -14,6 +14,13 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Stereotype Stereotype} in a functional way.
+ * <p>
+ * A stereotype defines how an existing metaclass may be extended, and enables the use
+ * of platform or domain specific terminology or notation in place of, or in addition
+ * to, the ones used for the extended metaclass. 
+ * @see org.eclipse.uml2.uml.Stereotype
  * @generated
  */
 public class StereotypePath extends ClassPath {
@@ -26,6 +33,9 @@ public class StereotypePath extends ClassPath {
 	}
 
 	/**
+	 * Stereotype can change the graphical appearance of the extended model element by using
+	 * attached icons. When this association is not null, it references the location of the
+	 * icon content to be displayed within diagrams presenting the extended model elements.
 	 * @see org.eclipse.uml2.uml.Stereotype#getIcons()
 	 * @generated
 	 */
@@ -36,7 +46,9 @@ public class StereotypePath extends ClassPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.Stereotype#validateNameNotClash()
+	 * Stereotype names should not clash with keyword names for the extended model element.
+	true
+	 * @see org.eclipse.uml2.uml.Stereotype#validateNameNotClash(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Stereotype> validateNameNotClash(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -48,7 +60,11 @@ public class StereotypePath extends ClassPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Stereotype#validateGeneralize()
+	 * A Stereotype may only generalize or specialize another Stereotype.
+	generalization.general->forAll(e
+	 * |e.oclIsKindOf(Stereotype)) and generalization.specific->forAll(e | e.oclIsKindOf(Stereotype))
+	 *  
+	 * @see org.eclipse.uml2.uml.Stereotype#validateGeneralize(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Stereotype> validateGeneralize(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -60,7 +76,8 @@ public class StereotypePath extends ClassPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Stereotype#createExtension()
+	 * Creates a(n) (required) extension of the specified metaclass with this stereotype.
+	 * @see org.eclipse.uml2.uml.Stereotype#createExtension(Class, boolean)
 	 * @generated
 	 */
 	public static Function<Stereotype, Extension> createExtension(final Class metaclass, final boolean isRequired) {
@@ -72,6 +89,7 @@ public class StereotypePath extends ClassPath {
 	}
 
 	/**
+	 * Retrieves the profile that owns this stereotype. 
 	 * @see org.eclipse.uml2.uml.Stereotype#getProfile()
 	 * @generated
 	 */
@@ -82,6 +100,7 @@ public class StereotypePath extends ClassPath {
 	};
 
 	/**
+	 * Retrieves the localized keyword for this stereotype. 
 	 * @see org.eclipse.uml2.uml.Stereotype#getKeyword()
 	 * @generated
 	 */
@@ -92,7 +111,8 @@ public class StereotypePath extends ClassPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Stereotype#getKeyword()
+	 * Retrieves the keyword for this stereotype, localized if indicated. 
+	 * @see org.eclipse.uml2.uml.Stereotype#getKeyword(boolean)
 	 * @generated
 	 */
 	public static Function<Stereotype, String> getKeyword(final boolean localize) {
@@ -104,6 +124,7 @@ public class StereotypePath extends ClassPath {
 	}
 
 	/**
+	 * Retrieves the metaclasses extended by this stereotype. 
 	 * @see org.eclipse.uml2.uml.Stereotype#getExtendedMetaclasses()
 	 * @generated
 	 */
@@ -114,6 +135,8 @@ public class StereotypePath extends ClassPath {
 	};
 
 	/**
+	 * Retrieves all the metaclasses extended by this stereotype, including the metaclasses
+	 * extended by its superstereotypes. 
 	 * @see org.eclipse.uml2.uml.Stereotype#getAllExtendedMetaclasses()
 	 * @generated
 	 */
@@ -124,6 +147,7 @@ public class StereotypePath extends ClassPath {
 	};
 
 	/**
+	 * Retrieves the current definition (Ecore representation) of this stereotype. 
 	 * @see org.eclipse.uml2.uml.Stereotype#getDefinition()
 	 * @generated
 	 */
@@ -134,7 +158,8 @@ public class StereotypePath extends ClassPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Stereotype#createIcon()
+	 * Creates an icon with the specified location for this stereotype. 
+	 * @see org.eclipse.uml2.uml.Stereotype#createIcon(String)
 	 * @generated
 	 */
 	public static Function<Stereotype, Image> createIcon(final String location) {
@@ -146,7 +171,8 @@ public class StereotypePath extends ClassPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Stereotype#createIcon()
+	 * Creates an icon with the specified format and content for this stereotype. 
+	 * @see org.eclipse.uml2.uml.Stereotype#createIcon(String, String)
 	 * @generated
 	 */
 	public static Function<Stereotype, Image> createIcon(final String format, final String content) {

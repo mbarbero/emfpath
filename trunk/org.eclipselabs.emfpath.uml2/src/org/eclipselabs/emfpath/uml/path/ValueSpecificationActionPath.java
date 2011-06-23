@@ -10,6 +10,11 @@ import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.ValueSpecificationAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ValueSpecificationAction ValueSpecificationAction} in a functional way.
+ * <p>
+ * A value specification action is an action that evaluates a value specification. 
+ * @see org.eclipse.uml2.uml.ValueSpecificationAction
  * @generated
  */
 public class ValueSpecificationActionPath extends ActionPath {
@@ -22,6 +27,7 @@ public class ValueSpecificationActionPath extends ActionPath {
 	}
 
 	/**
+	 * Value specification to be evaluated. 
 	 * @see org.eclipse.uml2.uml.ValueSpecificationAction#getValue()
 	 * @generated
 	 */
@@ -32,6 +38,7 @@ public class ValueSpecificationActionPath extends ActionPath {
 	};
 
 	/**
+	 * Gives the output pin on which the result is put. 
 	 * @see org.eclipse.uml2.uml.ValueSpecificationAction#getResult()
 	 * @generated
 	 */
@@ -42,7 +49,9 @@ public class ValueSpecificationActionPath extends ActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ValueSpecificationAction#validateCompatibleType()
+	 * The type of value specification must be compatible with the type of the result pin.
+	true
+	 * @see org.eclipse.uml2.uml.ValueSpecificationAction#validateCompatibleType(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ValueSpecificationAction> validateCompatibleType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -54,7 +63,9 @@ public class ValueSpecificationActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ValueSpecificationAction#validateMultiplicity()
+	 * The multiplicity of the result pin is 1..1
+	true 
+	 * @see org.eclipse.uml2.uml.ValueSpecificationAction#validateMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ValueSpecificationAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

@@ -7,6 +7,11 @@ import org.eclipse.uml2.uml.ExecutableNode;
 import org.eclipse.uml2.uml.SequenceNode;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.SequenceNode SequenceNode} in a functional way.
+ * <p>
+ * A sequence node is a structured activity node that executes its actions in order.
+ * @see org.eclipse.uml2.uml.SequenceNode
  * @generated
  */
 public class SequenceNodePath extends StructuredActivityNodePath {
@@ -19,6 +24,7 @@ public class SequenceNodePath extends StructuredActivityNodePath {
 	}
 
 	/**
+	 * An ordered set of executable nodes. 
 	 * @see org.eclipse.uml2.uml.SequenceNode#getExecutableNodes()
 	 * @generated
 	 */

@@ -20,6 +20,12 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Profile Profile} in a functional way.
+ * <p>
+ * A profile defines limited extensions to a reference metamodel with the purpose of
+ * adapting the metamodel to a specific platform or domain. 
+ * @see org.eclipse.uml2.uml.Profile
  * @generated
  */
 public class ProfilePath extends PackagePath {
@@ -32,6 +38,7 @@ public class ProfilePath extends PackagePath {
 	}
 
 	/**
+	 * References the Stereotypes that are owned by the Profile. 
 	 * @see org.eclipse.uml2.uml.Profile#getOwnedStereotypes()
 	 * @generated
 	 */
@@ -42,6 +49,7 @@ public class ProfilePath extends PackagePath {
 	};
 
 	/**
+	 * References a metaclass that may be extended. 
 	 * @see org.eclipse.uml2.uml.Profile#getMetaclassReferences()
 	 * @generated
 	 */
@@ -52,6 +60,7 @@ public class ProfilePath extends PackagePath {
 	};
 
 	/**
+	 * References a package containing (directly or indirectly) metaclasses that may be extended.
 	 * @see org.eclipse.uml2.uml.Profile#getMetamodelReferences()
 	 * @generated
 	 */
@@ -62,7 +71,15 @@ public class ProfilePath extends PackagePath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.Profile#validateMetaclassReferenceNotSpecialized()
+	 * An element imported as a metaclassReference is not specialized or generalized in a
+	 * Profile.
+	self.metaclassReference.importedElement->
+	  select(c | c.oclIsKindOf(Classifier)
+	 * and
+	    (c.generalization.namespace = self or
+	      (c.specialization.namespace
+	 * = self) )->isEmpty() 
+	 * @see org.eclipse.uml2.uml.Profile#validateMetaclassReferenceNotSpecialized(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Profile> validateMetaclassReferenceNotSpecialized(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -74,7 +91,12 @@ public class ProfilePath extends PackagePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Profile#validateReferencesSameMetamodel()
+	 * All elements imported either as metaclassReferences or through metamodelReferences
+	 * are members of the same base reference metamodel.
+	self.metamodelReference.importedPackage.elementImport.importedElement.allOwningPackages())->
+	
+	 *  union(self.metaclassReference.importedElement.allOwningPackages() )->notEmpty() 
+	 * @see org.eclipse.uml2.uml.Profile#validateReferencesSameMetamodel(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Profile> validateReferencesSameMetamodel(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -86,7 +108,9 @@ public class ProfilePath extends PackagePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Profile#create()
+	 * Creates and returns an instance of (the Ecore representation of) the specified classifier
+	 * defined in this profile. 
+	 * @see org.eclipse.uml2.uml.Profile#create(Classifier)
 	 * @generated
 	 */
 	public static Function<Profile, EObject> create(final Classifier classifier) {
@@ -98,7 +122,9 @@ public class ProfilePath extends PackagePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Profile#createOwnedStereotype()
+	 * Creates a(n) (abstract) stereotype with the specified name as an owned stereotype
+	 * of this profile. 
+	 * @see org.eclipse.uml2.uml.Profile#createOwnedStereotype(String, boolean)
 	 * @generated
 	 */
 	public static Function<Profile, Stereotype> createOwnedStereotype(final String name, final boolean isAbstract) {
@@ -110,6 +136,7 @@ public class ProfilePath extends PackagePath {
 	}
 
 	/**
+	 * Determines whether this profile is defined. 
 	 * @see org.eclipse.uml2.uml.Profile#isDefined()
 	 * @generated
 	 */
@@ -120,6 +147,7 @@ public class ProfilePath extends PackagePath {
 	};
 
 	/**
+	 * Defines this profile by (re)creating Ecore representations of its current contents.
 	 * @see org.eclipse.uml2.uml.Profile#define()
 	 * @generated
 	 */
@@ -130,7 +158,9 @@ public class ProfilePath extends PackagePath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Profile#define()
+	 * Defines this profile by (re)creating Ecore representations of its current contents,
+	 * using the specified options, diagnostics, and context. 
+	 * @see org.eclipse.uml2.uml.Profile#define(Map, DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Function<Profile, EPackage> define(final Map<String, String> options, final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -142,6 +172,7 @@ public class ProfilePath extends PackagePath {
 	}
 
 	/**
+	 * Retrieves the current definition (Ecore representation) of this profile. 
 	 * @see org.eclipse.uml2.uml.Profile#getDefinition()
 	 * @generated
 	 */
@@ -152,7 +183,9 @@ public class ProfilePath extends PackagePath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Profile#getDefinition()
+	 * Retrieves the current definition (Ecore representation) of the specified named element
+	 * in this profile. 
+	 * @see org.eclipse.uml2.uml.Profile#getDefinition(NamedElement)
 	 * @generated
 	 */
 	public static Function<Profile, ENamedElement> getDefinition(final NamedElement namedElement) {
@@ -164,6 +197,7 @@ public class ProfilePath extends PackagePath {
 	}
 
 	/**
+	 * Retrieves the metaclasses referenced by this profile. 
 	 * @see org.eclipse.uml2.uml.Profile#getReferencedMetaclasses()
 	 * @generated
 	 */
@@ -174,6 +208,7 @@ public class ProfilePath extends PackagePath {
 	};
 
 	/**
+	 * Retrieves the metamodels referenced by this profile. 
 	 * @see org.eclipse.uml2.uml.Profile#getReferencedMetamodels()
 	 * @generated
 	 */
@@ -184,7 +219,9 @@ public class ProfilePath extends PackagePath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Profile#getOwnedExtensions()
+	 * Retrieves the extensions owned by this profile, excluding non-required extensions
+	 * if indicated. 
+	 * @see org.eclipse.uml2.uml.Profile#getOwnedExtensions(boolean)
 	 * @generated
 	 */
 	public static Function<Profile, EList<Extension>> getOwnedExtensions(final boolean requiredOnly) {

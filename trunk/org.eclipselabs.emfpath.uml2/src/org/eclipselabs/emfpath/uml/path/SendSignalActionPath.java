@@ -10,6 +10,16 @@ import org.eclipse.uml2.uml.SendSignalAction;
 import org.eclipse.uml2.uml.Signal;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.SendSignalAction SendSignalAction} in a functional way.
+ * <p>
+ * A send signal action is an action that creates a signal instance from its inputs,
+ * and transmits it to the target object, where it may cause the firing of a state machine
+ * transition or the execution of an activity. The argument values are available to the
+ * execution of associated behaviors. The requestor continues execution immediately.
+ * Any reply message is ignored and is not transmitted to the requestor. If the input
+ * is already a signal instance, use a send object action. 
+ * @see org.eclipse.uml2.uml.SendSignalAction
  * @generated
  */
 public class SendSignalActionPath extends InvocationActionPath {
@@ -22,6 +32,7 @@ public class SendSignalActionPath extends InvocationActionPath {
 	}
 
 	/**
+	 * The target object to which the signal is sent. 
 	 * @see org.eclipse.uml2.uml.SendSignalAction#getTarget()
 	 * @generated
 	 */
@@ -32,6 +43,7 @@ public class SendSignalActionPath extends InvocationActionPath {
 	};
 
 	/**
+	 * The type of signal transmitted to the target object. 
 	 * @see org.eclipse.uml2.uml.SendSignalAction#getSignal()
 	 * @generated
 	 */
@@ -42,7 +54,10 @@ public class SendSignalActionPath extends InvocationActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.SendSignalAction#validateNumberOrder()
+	 * The number and order of argument pins must be the same as the number and order of
+	 * attributes in the signal.
+	true 
+	 * @see org.eclipse.uml2.uml.SendSignalAction#validateNumberOrder(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<SendSignalAction> validateNumberOrder(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -54,7 +69,10 @@ public class SendSignalActionPath extends InvocationActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.SendSignalAction#validateTypeOrderingMultiplicity()
+	 * The type, ordering, and multiplicity of an argument pin must be the same as the corresponding
+	 * attribute of the signal.
+	true 
+	 * @see org.eclipse.uml2.uml.SendSignalAction#validateTypeOrderingMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<SendSignalAction> validateTypeOrderingMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

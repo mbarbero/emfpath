@@ -9,6 +9,11 @@ import org.eclipse.uml2.uml.ValuePin;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ValuePin ValuePin} in a functional way.
+ * <p>
+ * A value pin is an input pin that provides a value by evaluating a value specification.
+ * @see org.eclipse.uml2.uml.ValuePin
  * @generated
  */
 public class ValuePinPath extends InputPinPath {
@@ -21,6 +26,7 @@ public class ValuePinPath extends InputPinPath {
 	}
 
 	/**
+	 * Value that the pin will provide. 
 	 * @see org.eclipse.uml2.uml.ValuePin#getValue()
 	 * @generated
 	 */
@@ -31,7 +37,9 @@ public class ValuePinPath extends InputPinPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ValuePin#validateCompatibleType()
+	 * The type of value specification must be compatible with the type of the value pin.
+	true
+	 * @see org.eclipse.uml2.uml.ValuePin#validateCompatibleType(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ValuePin> validateCompatibleType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -43,7 +51,9 @@ public class ValuePinPath extends InputPinPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ValuePin#validateNoIncomingEdges()
+	 * Value pins have no incoming edges.
+	true 
+	 * @see org.eclipse.uml2.uml.ValuePin#validateNoIncomingEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ValuePin> validateNoIncomingEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

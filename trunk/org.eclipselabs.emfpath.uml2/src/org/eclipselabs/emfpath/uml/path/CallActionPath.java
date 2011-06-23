@@ -10,6 +10,12 @@ import org.eclipse.uml2.uml.CallAction;
 import org.eclipse.uml2.uml.OutputPin;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.CallAction CallAction} in a functional way.
+ * <p>
+ * CallAction is an abstract class for actions that invoke behavior and receive return
+ * values. 
+ * @see org.eclipse.uml2.uml.CallAction
  * @generated
  */
 public class CallActionPath extends InvocationActionPath {
@@ -22,6 +28,11 @@ public class CallActionPath extends InvocationActionPath {
 	}
 
 	/**
+	 * If true, the call is synchronous and the caller waits for completion of the invoked
+	 * behavior.
+	If false, the call is asynchronous and the caller proceeds immediately
+	 * and does not expect a return values.
+	 
 	 * @see org.eclipse.uml2.uml.CallAction#isSynchronous()
 	 * @generated
 	 */
@@ -32,6 +43,7 @@ public class CallActionPath extends InvocationActionPath {
 	};
 
 	/**
+	 * A list of output pins where the results of performing the invocation are placed. 
 	 * @see org.eclipse.uml2.uml.CallAction#getResults()
 	 * @generated
 	 */
@@ -42,7 +54,9 @@ public class CallActionPath extends InvocationActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.CallAction#validateSynchronousCall()
+	 * Only synchronous call actions can have result pins.
+	true 
+	 * @see org.eclipse.uml2.uml.CallAction#validateSynchronousCall(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<CallAction> validateSynchronousCall(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -54,7 +68,11 @@ public class CallActionPath extends InvocationActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.CallAction#validateNumberAndOrder()
+	 * The number and order of argument pins must be the same as the number and order of
+	 * parameters of the invoked behavior or behavioral feature. Pins are matched to parameters
+	 * by order.
+	true 
+	 * @see org.eclipse.uml2.uml.CallAction#validateNumberAndOrder(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<CallAction> validateNumberAndOrder(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -66,7 +84,10 @@ public class CallActionPath extends InvocationActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.CallAction#validateTypeOrderingMultiplicity()
+	 * The type, ordering, and multiplicity of an argument pin must be the same as the corresponding
+	 * parameter of the behavior or behavioral feature.
+	true 
+	 * @see org.eclipse.uml2.uml.CallAction#validateTypeOrderingMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<CallAction> validateTypeOrderingMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

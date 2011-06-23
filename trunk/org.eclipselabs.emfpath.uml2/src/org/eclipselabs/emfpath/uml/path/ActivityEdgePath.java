@@ -16,6 +16,13 @@ import org.eclipse.uml2.uml.StructuredActivityNode;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ActivityEdge ActivityEdge} in a functional way.
+ * <p>
+ * An activity edge is an abstract class for directed connections between two activity
+ * nodes.
+Activity edges can be contained in interruptible regions. 
+ * @see org.eclipse.uml2.uml.ActivityEdge
  * @generated
  */
 public class ActivityEdgePath extends RedefinableElementPath {
@@ -28,6 +35,7 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	}
 
 	/**
+	 * Node from which tokens are taken when they traverse the edge. 
 	 * @see org.eclipse.uml2.uml.ActivityEdge#getSource()
 	 * @generated
 	 */
@@ -38,6 +46,7 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * Node to which tokens are put when they traverse the edge. 
 	 * @see org.eclipse.uml2.uml.ActivityEdge#getTarget()
 	 * @generated
 	 */
@@ -48,6 +57,7 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * Inherited edges replaced by this edge in a specialization of the activity. 
 	 * @see org.eclipse.uml2.uml.ActivityEdge#getRedefinedEdges()
 	 * @generated
 	 */
@@ -58,6 +68,7 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * Partitions containing the edge. 
 	 * @see org.eclipse.uml2.uml.ActivityEdge#getInPartitions()
 	 * @generated
 	 */
@@ -68,6 +79,7 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * Specification evaluated at runtime to determine if the edge can be traversed. 
 	 * @see org.eclipse.uml2.uml.ActivityEdge#getGuard()
 	 * @generated
 	 */
@@ -78,6 +90,7 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * The minimum number of tokens that must traverse the edge at the same time. 
 	 * @see org.eclipse.uml2.uml.ActivityEdge#getWeight()
 	 * @generated
 	 */
@@ -88,6 +101,7 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * Region that the edge can interrupt. 
 	 * @see org.eclipse.uml2.uml.ActivityEdge#getInterrupts()
 	 * @generated
 	 */
@@ -98,6 +112,7 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * Structured activity node containing the edge. 
 	 * @see org.eclipse.uml2.uml.ActivityEdge#getInStructuredNode()
 	 * @generated
 	 */
@@ -108,6 +123,7 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * Groups containing the edge. 
 	 * @see org.eclipse.uml2.uml.ActivityEdge#getInGroups()
 	 * @generated
 	 */
@@ -118,6 +134,7 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * Activity containing the edge. 
 	 * @see org.eclipse.uml2.uml.ActivityEdge#getActivity()
 	 * @generated
 	 */
@@ -128,7 +145,9 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityEdge#validateSourceAndTarget()
+	 * The source and target of an edge must be in the same activity as the edge.
+	true 
+	 * @see org.eclipse.uml2.uml.ActivityEdge#validateSourceAndTarget(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityEdge> validateSourceAndTarget(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -140,7 +159,9 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityEdge#validateOwned()
+	 * Activity edges may be owned only by activities or groups.
+	true 
+	 * @see org.eclipse.uml2.uml.ActivityEdge#validateOwned(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityEdge> validateOwned(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -152,7 +173,9 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityEdge#validateStructuredNode()
+	 * Activity edges may be owned by at most one structured node.
+	true 
+	 * @see org.eclipse.uml2.uml.ActivityEdge#validateStructuredNode(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityEdge> validateStructuredNode(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

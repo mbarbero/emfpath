@@ -9,6 +9,14 @@ import org.eclipse.uml2.uml.Reception;
 import org.eclipse.uml2.uml.Signal;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Reception Reception} in a functional way.
+ * <p>
+ * A reception is a declaration stating that a classifier is prepared to react to the
+ * receipt of a signal. A reception designates a signal and specifies the expected behavioral
+ * response. The details of handling a signal are specified by the behavior associated
+ * with the reception or the classifier itself. 
+ * @see org.eclipse.uml2.uml.Reception
  * @generated
  */
 public class ReceptionPath extends BehavioralFeaturePath {
@@ -21,6 +29,7 @@ public class ReceptionPath extends BehavioralFeaturePath {
 	}
 
 	/**
+	 * The signal that this reception handles. 
 	 * @see org.eclipse.uml2.uml.Reception#getSignal()
 	 * @generated
 	 */
@@ -31,7 +40,9 @@ public class ReceptionPath extends BehavioralFeaturePath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.Reception#validateNotQuery()
+	 * A Reception can not be a query.
+	not self.isQuery 
+	 * @see org.eclipse.uml2.uml.Reception#validateNotQuery(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Reception> validateNotQuery(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

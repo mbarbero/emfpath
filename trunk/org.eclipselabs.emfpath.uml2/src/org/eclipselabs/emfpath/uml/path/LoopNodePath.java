@@ -12,6 +12,12 @@ import org.eclipse.uml2.uml.LoopNode;
 import org.eclipse.uml2.uml.OutputPin;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.LoopNode LoopNode} in a functional way.
+ * <p>
+ * A loop node is a structured activity node that represents a loop with setup, test,
+ * and body sections. 
+ * @see org.eclipse.uml2.uml.LoopNode
  * @generated
  */
 public class LoopNodePath extends StructuredActivityNodePath {
@@ -24,6 +30,10 @@ public class LoopNodePath extends StructuredActivityNodePath {
 	}
 
 	/**
+	 * If true, the test is performed before the first execution of the body.
+	If false, the
+	 * body is executed once before the test is performed.
+	 
 	 * @see org.eclipse.uml2.uml.LoopNode#isTestedFirst()
 	 * @generated
 	 */
@@ -34,6 +44,8 @@ public class LoopNodePath extends StructuredActivityNodePath {
 	};
 
 	/**
+	 * The set of nodes and edges that perform the repetitive computations of the loop. The
+	 * body section is executed as long as the test section produces a true value. 
 	 * @see org.eclipse.uml2.uml.LoopNode#getBodyParts()
 	 * @generated
 	 */
@@ -44,6 +56,8 @@ public class LoopNodePath extends StructuredActivityNodePath {
 	};
 
 	/**
+	 * The set of nodes and edges that initialize values or perform other setup computations
+	 * for the loop. 
 	 * @see org.eclipse.uml2.uml.LoopNode#getSetupParts()
 	 * @generated
 	 */
@@ -54,6 +68,8 @@ public class LoopNodePath extends StructuredActivityNodePath {
 	};
 
 	/**
+	 * An output pin within the test fragment the value of which is examined after execution
+	 * of the test to determine whether to execute the loop body. 
 	 * @see org.eclipse.uml2.uml.LoopNode#getDecider()
 	 * @generated
 	 */
@@ -64,6 +80,8 @@ public class LoopNodePath extends StructuredActivityNodePath {
 	};
 
 	/**
+	 * The set of nodes, edges, and designated value that compute a Boolean value to determine
+	 * if another execution of the body will be performed. 
 	 * @see org.eclipse.uml2.uml.LoopNode#getTests()
 	 * @generated
 	 */
@@ -74,6 +92,7 @@ public class LoopNodePath extends StructuredActivityNodePath {
 	};
 
 	/**
+	 * A list of output pins that constitute the data flow output of the entire loop. 
 	 * @see org.eclipse.uml2.uml.LoopNode#getResults()
 	 * @generated
 	 */
@@ -84,6 +103,9 @@ public class LoopNodePath extends StructuredActivityNodePath {
 	};
 
 	/**
+	 * A list of output pins that hold the values of the loop variables during an execution
+	 * of the loop. When the test fails, the values are movied to the result pins of the
+	 * loop. 
 	 * @see org.eclipse.uml2.uml.LoopNode#getLoopVariables()
 	 * @generated
 	 */
@@ -94,6 +116,9 @@ public class LoopNodePath extends StructuredActivityNodePath {
 	};
 
 	/**
+	 * A list of output pins within the body fragment the values of which are moved to the
+	 * loop variable pins after completion of execution of the body, before the next iteration
+	 * of the loop begins or before the loop exits. 
 	 * @see org.eclipse.uml2.uml.LoopNode#getBodyOutputs()
 	 * @generated
 	 */
@@ -104,6 +129,8 @@ public class LoopNodePath extends StructuredActivityNodePath {
 	};
 
 	/**
+	 * A list of values that are moved into the loop variable pins before the first iteration
+	 * of the loop. 
 	 * @see org.eclipse.uml2.uml.LoopNode#getLoopVariableInputs()
 	 * @generated
 	 */
@@ -114,7 +141,9 @@ public class LoopNodePath extends StructuredActivityNodePath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.LoopNode#validateInputEdges()
+	 * Loop variable inputs must not have outgoing edges.
+	true 
+	 * @see org.eclipse.uml2.uml.LoopNode#validateInputEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<LoopNode> validateInputEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -126,7 +155,9 @@ public class LoopNodePath extends StructuredActivityNodePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.LoopNode#validateBodyOutputPins()
+	 * The bodyOutput pins are output pins on actions in the body of the loop node.
+	true
+	 * @see org.eclipse.uml2.uml.LoopNode#validateBodyOutputPins(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<LoopNode> validateBodyOutputPins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -138,7 +169,9 @@ public class LoopNodePath extends StructuredActivityNodePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.LoopNode#validateResultNoIncoming()
+	 * The result output pins have no incoming edges.
+	true 
+	 * @see org.eclipse.uml2.uml.LoopNode#validateResultNoIncoming(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<LoopNode> validateResultNoIncoming(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

@@ -11,6 +11,11 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ProfileApplication ProfileApplication} in a functional way.
+ * <p>
+ * A profile application is used to show which profiles have been applied to a package.
+ * @see org.eclipse.uml2.uml.ProfileApplication
  * @generated
  */
 public class ProfileApplicationPath extends DirectedRelationshipPath {
@@ -23,6 +28,7 @@ public class ProfileApplicationPath extends DirectedRelationshipPath {
 	}
 
 	/**
+	 * References the Profiles that are applied to a Package through this ProfileApplication.
 	 * @see org.eclipse.uml2.uml.ProfileApplication#getAppliedProfile()
 	 * @generated
 	 */
@@ -33,6 +39,8 @@ public class ProfileApplicationPath extends DirectedRelationshipPath {
 	};
 
 	/**
+	 * Specifies that the Profile filtering rules for the metaclasses of the referenced metamodel
+	 * shall be strictly applied. 
 	 * @see org.eclipse.uml2.uml.ProfileApplication#isStrict()
 	 * @generated
 	 */
@@ -43,6 +51,7 @@ public class ProfileApplicationPath extends DirectedRelationshipPath {
 	};
 
 	/**
+	 * The package that owns the profile application. 
 	 * @see org.eclipse.uml2.uml.ProfileApplication#getApplyingPackage()
 	 * @generated
 	 */
@@ -53,6 +62,8 @@ public class ProfileApplicationPath extends DirectedRelationshipPath {
 	};
 	
 	/**
+	 * Retrieves the definition (Ecore representation) of the profile associated with this
+	 * profile application. 
 	 * @see org.eclipse.uml2.uml.ProfileApplication#getAppliedDefinition()
 	 * @generated
 	 */
@@ -63,7 +74,9 @@ public class ProfileApplicationPath extends DirectedRelationshipPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.ProfileApplication#getAppliedDefinition()
+	 * Retrieves the definition (Ecore representation) of the specified named element in
+	 * the profile associated with this profile application. 
+	 * @see org.eclipse.uml2.uml.ProfileApplication#getAppliedDefinition(NamedElement)
 	 * @generated
 	 */
 	public static Function<ProfileApplication, ENamedElement> getAppliedDefinition(final NamedElement namedElement) {
