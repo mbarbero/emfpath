@@ -40,3 +40,19 @@
 [query public eAllSubClassesAndSelf(e : EClass) : Set(EClass) = 
 	eAllSubClasses()->including(e)
 /]
+
+[query private getDocumentation_(e : EModelElement) : String = 
+	invoke('org.eclipse.emf.ecore.util.EcoreUtil', 'getDocumentation(org.eclipse.emf.ecore.EModelElement)', Sequence{e}) 
+/]
+
+[query public getDocumentation(e : EModelElement) : String = 
+	if (getDocumentation_().oclIsUndefined()) then
+		getDocumentation_()
+	else 
+		getDocumentation_().split(80)->sep('\n * ')
+	endif
+/]
+
+[query public split(toSplit : String, limit : Integer) : Sequence(String) = 
+	invoke('org.eclipselabs.emfpath.gen.StringUtils', 'split(java.lang.String, int)', Sequence{toSplit, limit})
+/]

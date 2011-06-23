@@ -15,6 +15,11 @@ package [genPackage.generatedQualifiedJavaName()/];
 [genImports()/]
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link [qualifiedJavaName()/] [javaName()/]} in a functional way.
+ * <p>
+ * [ecoreClass.getDocumentation()/]
+ * @see [qualifiedJavaName()/]
  * @generated
  */
 public class [generatedClassName()/] [extendsDeclaration()/]{
@@ -36,6 +41,7 @@ public class [generatedClassName()/] [extendsDeclaration()/]{
 
 [template public gen(e : GenFeature, c : GenClass) ? (genClass = c and willGeneratePredicate()) post (trim())]
 /**
+ * [ecoreFeature.getDocumentation()/]
  * @see [genClass.qualifiedJavaName()/]#[getterName()/]()
  * @generated
  */
@@ -48,6 +54,7 @@ public static final Predicate<[genClass.javaName()/]> [predicateName()/] = new P
 
 [template public gen(e : GenFeature, c : GenClass) ? (genClass = c and not willGeneratePredicate()) post (trim())]
 /**
+ * [ecoreFeature.getDocumentation()/]
  * @see [genClass.qualifiedJavaName()/]#[getterName()/]()
  * @generated
  */
@@ -60,6 +67,7 @@ public static final Function<[genClass.javaName()/], [typeName().wrap()/]> [func
 
 [template public gen(e : GenOperation, c : GenClass) ? (genClass = c and willGeneratePredicate() and genParameters->size() = 0) post (trim())]
 /**
+ * [ecoreOperation.getDocumentation()/]
  * @see [genClass.qualifiedJavaName()/]#[operationName()/]()
  * @generated
  */
@@ -100,6 +108,7 @@ catch ([javaName()/] e[go.ecoreOperation.eExceptions->indexOf(e)/]) {
 
 [template public gen(e : GenOperation, c : GenClass) ? (genClass = c and not willGeneratePredicate() and genParameters->size() = 0) post (trim())]
 /**
+ * [ecoreOperation.getDocumentation()/]
  * @see [genClass.qualifiedJavaName()/]#[operationName()/]()
  * @generated
  */
@@ -112,7 +121,8 @@ public static final Function<[genClass.javaName()/], [typeName().wrap()/]> [func
 
 [template public gen(e : GenOperation, c : GenClass) ? (genClass = c and willGeneratePredicate() and genParameters->size() > 0) post (trim())]
 /**
- * @see [genClass.qualifiedJavaName()/]#[operationName()/]()
+ * [ecoreOperation.getDocumentation()/]
+ * @see [genClass.qualifiedJavaName()/]#[operationName()/]([genParameters.typeNameForDocumentation()->sep(', ')/])
  * @generated
  */
 public static Predicate<[genClass.javaName()/]> [predicateName()/]([genParameters.declaration()->sep(', ')/]) {
@@ -126,7 +136,8 @@ public static Predicate<[genClass.javaName()/]> [predicateName()/]([genParameter
 
 [template public gen(e : GenOperation, c : GenClass) ? (genClass = c and not willGeneratePredicate() and genParameters->size() > 0) post (trim())]
 /**
- * @see [genClass.qualifiedJavaName()/]#[operationName()/]()
+ * [ecoreOperation.getDocumentation()/]
+ * @see [genClass.qualifiedJavaName()/]#[operationName()/]([genParameters.typeNameForDocumentation()->sep(', ')/])
  * @generated
  */
 public static Function<[genClass.javaName()/], [typeName().wrap()/]> [functionName()/]([genParameters.declaration()->sep(', ')/]) {
@@ -140,6 +151,9 @@ public static Function<[genClass.javaName()/], [typeName().wrap()/]> [functionNa
 
 [template public gen(e : GenFeature, c : GenClass) ? (genClass <> c and willGeneratePredicate()) post (trim())]
 /**
+ * [ecoreFeature.getDocumentation()/]
+ *
+ * @see [genClass.generatedClassName()/]#[predicateName()/]()
  * @see [genClass.qualifiedJavaName()/]#[getterName()/]()
  * @generated
  */
@@ -148,6 +162,9 @@ public static final Predicate<[genClass.javaName()/]> [predicateName()/] = [genC
 
 [template public gen(e : GenFeature, c : GenClass) ? (genClass <> c and not willGeneratePredicate()) post (trim())]
 /**
+ * [ecoreFeature.getDocumentation()/]
+ *
+ * @see [genClass.generatedClassName()/]#[functionName()/]()
  * @see [genClass.qualifiedJavaName()/]#[getterName()/]()
  * @generated
  */
@@ -156,6 +173,9 @@ public static final Function<[genClass.javaName()/], [typeName().wrap()/]> [func
 
 [template public gen(e : GenOperation, c : GenClass) ? (genClass <> c and willGeneratePredicate() and genParameters->size() = 0) post (trim())]
 /**
+ * [ecoreOperation.getDocumentation()/]
+ *
+ * @see [genClass.generatedClassName()/]#[predicateName()/]()
  * @see [genClass.qualifiedJavaName()/]#[operationName()/]()
  * @generated
  */
@@ -164,6 +184,9 @@ public static final Predicate<[genClass.javaName()/]> [predicateName()/] = [genC
 
 [template public gen(e : GenOperation, c : GenClass) ? (genClass <> c and not willGeneratePredicate() and genParameters->size() = 0) post (trim())]
 /**
+ * [ecoreOperation.getDocumentation()/]
+ *
+ * @see [genClass.generatedClassName()/]#[functionName()/]()
  * @see [genClass.qualifiedJavaName()/]#[operationName()/]()
  * @generated
  */
@@ -172,7 +195,10 @@ public static final Function<[genClass.javaName()/], [typeName().wrap()/]> [func
 
 [template public gen(e : GenOperation, c : GenClass) ? (genClass <> c and willGeneratePredicate() and genParameters->size() > 0) post (trim())]
 /**
- * @see [genClass.qualifiedJavaName()/]#[operationName()/]()
+ * [ecoreOperation.getDocumentation()/]
+ *
+ * @see [genClass.generatedClassName()/]#[predicateName()/]()
+ * @see [genClass.qualifiedJavaName()/]#[operationName()/]([genParameters.typeNameForDocumentation()->sep(', ')/])
  * @generated
  */
 public static Predicate<[genClass.javaName()/]> [predicateName()/]([genParameters.declaration()->sep(', ')/]) {
@@ -182,7 +208,10 @@ public static Predicate<[genClass.javaName()/]> [predicateName()/]([genParameter
 
 [template public gen(e : GenOperation, c : GenClass) ? (genClass <> c and not willGeneratePredicate() and genParameters->size() > 0) post (trim())]
 /**
- * @see [genClass.qualifiedJavaName()/]#[operationName()/]()
+ * [ecoreOperation.getDocumentation()/]
+ *
+ * @see [genClass.generatedClassName()/]#[functionName()/]()
+ * @see [genClass.qualifiedJavaName()/]#[operationName()/]([genParameters.typeNameForDocumentation()->sep(', ')/])
  * @generated
  */
 public static Function<[genClass.javaName()/], [typeName().wrap()/]> [functionName()/]([genParameters.declaration()->sep(', ')/]) {

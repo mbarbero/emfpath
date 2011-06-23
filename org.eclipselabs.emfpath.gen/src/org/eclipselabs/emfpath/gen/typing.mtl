@@ -75,6 +75,22 @@
 [ecoreParameter.eType.javaTypeName().unwrap()/][ecoreParameter.generics()/]
 [/template]
 
+[template public typeNameForDocumentation(e : GenParameter) ? (ecoreParameter.many and not ecoreParameter.eType.instanceTypeName.oclIsUndefined() and ecoreParameter.eType.instanceTypeName = 'java.util.Map$Entry') post(trim())]
+	[if (eContainer(GenModel).suppressEMFTypes)]
+		Map
+	[else]
+		EMap	
+	[/if]
+[/template]
+
+[template public typeNameForDocumentation(e : GenParameter) ? (ecoreParameter.many) post(trim())]
+[listInterfaceName()/]
+[/template]
+
+[template public typeNameForDocumentation(e : GenParameter) ? (not ecoreParameter.many) post(trim())]
+[ecoreParameter.eType.javaTypeName().unwrap()/]
+[/template]
+
 [template public javaTypeName(e : EDataType) ? (not instanceTypeName.oclIsUndefined() and instanceTypeName <> '') post(trim())]
 [if (instanceTypeName.lastIndex('.') > -1)]
 [instanceTypeName.substring(instanceTypeName.lastIndex('.') + 1).replaceAll('\\$', '.')/]
