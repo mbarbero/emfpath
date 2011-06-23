@@ -1,192 +1,90 @@
 package org.eclipselabs.emfpath.ecore.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.ENamedElement;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.ETypedElement;
-import org.eclipse.emf.ecore.EModelElement;
 import org.eclipselabs.emfpath.exception.NoSuchFeatureException;
+
+import com.google.common.base.Function;
+import com.google.common.base.Predicate;
 
 /**
  * @generated
  */
-public final class EReferences {
+public class EReferences extends EStructuralFeatures {
 
-	private EReferences() {
-		// prevent instantiation
-	}
-
+	
 	/**
-	 * @generated
-	 */
-	public static final Function<EModelElement, EList<EAnnotation>> eAnnotations = EModelElements.eAnnotations;
+   * @generated
+   */
+  private EReferences() {
+    super();
+  }
 
-	/**
-	 * @generated
-	 */
-	public static final Function<ENamedElement, String> name = ENamedElements.name;
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<EStructuralFeature> isChangeable = EStructuralFeatures.isChangeable;
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<EStructuralFeature> isVolatile = EStructuralFeatures.isVolatile;
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<EStructuralFeature> isTransient = EStructuralFeatures.isTransient;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EStructuralFeature, String> defaultValueLiteral = EStructuralFeatures.defaultValueLiteral;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EStructuralFeature, Object> defaultValue = EStructuralFeatures.defaultValue;
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<EStructuralFeature> isUnsettable = EStructuralFeatures.isUnsettable;
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<EStructuralFeature> isDerived = EStructuralFeatures.isDerived;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EStructuralFeature, EClass> eContainingClass = EStructuralFeatures.eContainingClass;
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<ETypedElement> isOrdered = ETypedElements.isOrdered;
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<ETypedElement> isUnique = ETypedElements.isUnique;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<ETypedElement, java.lang.Integer> lowerBound = ETypedElements.lowerBound;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<ETypedElement, java.lang.Integer> upperBound = ETypedElements.upperBound;
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<ETypedElement> isMany = ETypedElements.isMany;
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<ETypedElement> isRequired = ETypedElements.isRequired;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<ETypedElement, EClassifier> eType = ETypedElements.eType;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<ETypedElement, EGenericType> eGenericType = ETypedElements.eGenericType;
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<EReference> isContainment = new Predicate<EReference>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EReference#isContainment()
+   * @generated
+   */
+  public static final Predicate<EReference> isContainment = new Predicate<EReference>() {
     public boolean apply(EReference s) {
       return s.isContainment();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<EReference> isContainer = new Predicate<EReference>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EReference#isContainer()
+   * @generated
+   */
+  public static final Predicate<EReference> isContainer = new Predicate<EReference>() {
     public boolean apply(EReference s) {
       return s.isContainer();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<EReference> isResolveProxies = new Predicate<EReference>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EReference#isResolveProxies()
+   * @generated
+   */
+  public static final Predicate<EReference> isResolveProxies = new Predicate<EReference>() {
     public boolean apply(EReference s) {
       return s.isResolveProxies();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EReference, EReference> eOpposite = new Function<EReference, EReference>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EReference#getEOpposite()
+   * @generated
+   */
+  public static final Function<EReference, EReference> eOpposite = new Function<EReference, EReference>() {
     public EReference apply(EReference s) {
       return s.getEOpposite();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EReference, EClass> eReferenceType = new Function<EReference, EClass>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EReference#getEReferenceType()
+   * @generated
+   */
+  public static final Function<EReference, EClass> eReferenceType = new Function<EReference, EClass>() {
     public EClass apply(EReference s) {
       return s.getEReferenceType();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EReference, EList<EAttribute>> eKeys = new Function<EReference, EList<EAttribute>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EReference#getEKeys()
+   * @generated
+   */
+  public static final Function<EReference, EList<EAttribute>> eKeys = new Function<EReference, EList<EAttribute>>() {
     public EList<EAttribute> apply(EReference s) {
       return s.getEKeys();
     }
   };
-	
-	/**
-	 * @generated
-	 */
-	public static Function<EModelElement, EAnnotation> getEAnnotation(final String source) {
-    return EModelElements.getEAnnotation(source);
-  }
 
-	/**
-	 * @generated
-	 */
-	public static final Function<EStructuralFeature, java.lang.Integer> getFeatureID = EStructuralFeatures.getFeatureID;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EStructuralFeature, Class<?>> getContainerClass = EStructuralFeatures.getContainerClass;
-
-	/**
+  /**
 	 * Create an new search object to find {@link EReference} from the specified <code>eClass</code>.
 	 * 
 	 * @param eClass the {@link EClass} to search in.

@@ -2,250 +2,210 @@ package org.eclipselabs.emfpath.ecore.path;
 
 import java.util.NoSuchElementException;
 
-import com.google.common.base.Function;	
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipselabs.emfpath.base.Equivalences2;
+import org.eclipselabs.emfpath.exception.NotFoundException;
+
+import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
-import com.google.common.base.Predicate;	
+import com.google.common.base.Predicate;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.ETypeParameter;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.ENamedElement;
-import org.eclipse.emf.ecore.EModelElement;
-import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipselabs.emfpath.exception.NotFoundException;
-import org.eclipselabs.emfpath.base.Equivalences2;
-
 /**
  * @generated
  */
-public final class EClasses {
+public class EClasses extends EClassifiers {
 
-	private EClasses() {
-		// prevent instantiation
-	}
+
 
 	/**
-	 * @generated
-	 */
-	public static final Function<EClassifier, String> instanceClassName = EClassifiers.instanceClassName;
+   * @generated
+   */
+  private EClasses() {
+    super();
+  }
 
-	/**
-	 * @generated
-	 */
-	public static final Function<EClassifier, Class<?>> instanceClass = EClassifiers.instanceClass;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClassifier, Object> defaultValue = EClassifiers.defaultValue;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClassifier, String> instanceTypeName = EClassifiers.instanceTypeName;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClassifier, EPackage> ePackage = EClassifiers.ePackage;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClassifier, EList<ETypeParameter>> eTypeParameters = EClassifiers.eTypeParameters;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EModelElement, EList<EAnnotation>> eAnnotations = EModelElements.eAnnotations;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<ENamedElement, String> name = ENamedElements.name;
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<EClass> isAbstract = new Predicate<EClass>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#isAbstract()
+   * @generated
+   */
+  public static final Predicate<EClass> isAbstract = new Predicate<EClass>() {
     public boolean apply(EClass s) {
       return s.isAbstract();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<EClass> isInterface = new Predicate<EClass>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#isInterface()
+   * @generated
+   */
+  public static final Predicate<EClass> isInterface = new Predicate<EClass>() {
     public boolean apply(EClass s) {
       return s.isInterface();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, EList<EClass>> eSuperTypes = new Function<EClass, EList<EClass>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getESuperTypes()
+   * @generated
+   */
+  public static final Function<EClass, EList<EClass>> eSuperTypes = new Function<EClass, EList<EClass>>() {
     public EList<EClass> apply(EClass s) {
       return s.getESuperTypes();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, EList<EOperation>> eOperations = new Function<EClass, EList<EOperation>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEOperations()
+   * @generated
+   */
+  public static final Function<EClass, EList<EOperation>> eOperations = new Function<EClass, EList<EOperation>>() {
     public EList<EOperation> apply(EClass s) {
       return s.getEOperations();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, EList<EAttribute>> eAllAttributes = new Function<EClass, EList<EAttribute>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEAllAttributes()
+   * @generated
+   */
+  public static final Function<EClass, EList<EAttribute>> eAllAttributes = new Function<EClass, EList<EAttribute>>() {
     public EList<EAttribute> apply(EClass s) {
       return s.getEAllAttributes();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, EList<EReference>> eAllReferences = new Function<EClass, EList<EReference>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEAllReferences()
+   * @generated
+   */
+  public static final Function<EClass, EList<EReference>> eAllReferences = new Function<EClass, EList<EReference>>() {
     public EList<EReference> apply(EClass s) {
       return s.getEAllReferences();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, EList<EReference>> eReferences = new Function<EClass, EList<EReference>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEReferences()
+   * @generated
+   */
+  public static final Function<EClass, EList<EReference>> eReferences = new Function<EClass, EList<EReference>>() {
     public EList<EReference> apply(EClass s) {
       return s.getEReferences();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, EList<EAttribute>> eAttributes = new Function<EClass, EList<EAttribute>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEAttributes()
+   * @generated
+   */
+  public static final Function<EClass, EList<EAttribute>> eAttributes = new Function<EClass, EList<EAttribute>>() {
     public EList<EAttribute> apply(EClass s) {
       return s.getEAttributes();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, EList<EReference>> eAllContainments = new Function<EClass, EList<EReference>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEAllContainments()
+   * @generated
+   */
+  public static final Function<EClass, EList<EReference>> eAllContainments = new Function<EClass, EList<EReference>>() {
     public EList<EReference> apply(EClass s) {
       return s.getEAllContainments();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, EList<EOperation>> eAllOperations = new Function<EClass, EList<EOperation>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEAllOperations()
+   * @generated
+   */
+  public static final Function<EClass, EList<EOperation>> eAllOperations = new Function<EClass, EList<EOperation>>() {
     public EList<EOperation> apply(EClass s) {
       return s.getEAllOperations();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, EList<EStructuralFeature>> eAllStructuralFeatures = new Function<EClass, EList<EStructuralFeature>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEAllStructuralFeatures()
+   * @generated
+   */
+  public static final Function<EClass, EList<EStructuralFeature>> eAllStructuralFeatures = new Function<EClass, EList<EStructuralFeature>>() {
     public EList<EStructuralFeature> apply(EClass s) {
       return s.getEAllStructuralFeatures();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, EList<EClass>> eAllSuperTypes = new Function<EClass, EList<EClass>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEAllSuperTypes()
+   * @generated
+   */
+  public static final Function<EClass, EList<EClass>> eAllSuperTypes = new Function<EClass, EList<EClass>>() {
     public EList<EClass> apply(EClass s) {
       return s.getEAllSuperTypes();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, EAttribute> eIDAttribute = new Function<EClass, EAttribute>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEIDAttribute()
+   * @generated
+   */
+  public static final Function<EClass, EAttribute> eIDAttribute = new Function<EClass, EAttribute>() {
     public EAttribute apply(EClass s) {
       return s.getEIDAttribute();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, EList<EStructuralFeature>> eStructuralFeatures = new Function<EClass, EList<EStructuralFeature>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEStructuralFeatures()
+   * @generated
+   */
+  public static final Function<EClass, EList<EStructuralFeature>> eStructuralFeatures = new Function<EClass, EList<EStructuralFeature>>() {
     public EList<EStructuralFeature> apply(EClass s) {
       return s.getEStructuralFeatures();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, EList<EGenericType>> eGenericSuperTypes = new Function<EClass, EList<EGenericType>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEGenericSuperTypes()
+   * @generated
+   */
+  public static final Function<EClass, EList<EGenericType>> eGenericSuperTypes = new Function<EClass, EList<EGenericType>>() {
     public EList<EGenericType> apply(EClass s) {
       return s.getEGenericSuperTypes();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, EList<EGenericType>> eAllGenericSuperTypes = new Function<EClass, EList<EGenericType>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEAllGenericSuperTypes()
+   * @generated
+   */
+  public static final Function<EClass, EList<EGenericType>> eAllGenericSuperTypes = new Function<EClass, EList<EGenericType>>() {
     public EList<EGenericType> apply(EClass s) {
       return s.getEAllGenericSuperTypes();
     }
   };
-	
-	/**
-	 * @generated
-	 */
-	public static Predicate<EClassifier> isInstance(final Object object) {
-    return EClassifiers.isInstance(object);
-  }
 
-	/**
-	 * @generated
-	 */
-	public static final Function<EClassifier, java.lang.Integer> getClassifierID = EClassifiers.getClassifierID;
-
-	/**
-	 * @generated
-	 */
-	public static Function<EModelElement, EAnnotation> getEAnnotation(final String source) {
-    return EModelElements.getEAnnotation(source);
-  }
-
-	/**
-	 * @generated
-	 */
-	public static Predicate<EClass> isSuperTypeOf(final EClass someClass) {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#isSuperTypeOf(EClass)
+   * @generated
+   */
+  public static Predicate<EClass> isSuperTypeOf(final EClass someClass) {
     return new Predicate<EClass>() {
       public boolean apply(EClass s) {
         return s.isSuperTypeOf(someClass);
@@ -253,19 +213,23 @@ public final class EClasses {
     };
   }
 
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, java.lang.Integer> getFeatureCount = new Function<EClass, java.lang.Integer>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getFeatureCount()
+   * @generated
+   */
+  public static final Function<EClass, java.lang.Integer> getFeatureCount = new Function<EClass, java.lang.Integer>() {
     public java.lang.Integer apply(EClass s) {
       return s.getFeatureCount();
     }
   };
 
-	/**
-	 * @generated
-	 */
-	public static Function<EClass, EStructuralFeature> getEStructuralFeature(final int featureID) {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEStructuralFeature(int)
+   * @generated
+   */
+  public static Function<EClass, EStructuralFeature> getEStructuralFeature(final int featureID) {
     return new Function<EClass, EStructuralFeature>() {
       public EStructuralFeature apply(EClass s) {
         return s.getEStructuralFeature(featureID);
@@ -273,10 +237,12 @@ public final class EClasses {
     };
   }
 
-	/**
-	 * @generated
-	 */
-	public static Function<EClass, java.lang.Integer> getFeatureID(final EStructuralFeature feature) {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getFeatureID(EStructuralFeature)
+   * @generated
+   */
+  public static Function<EClass, java.lang.Integer> getFeatureID(final EStructuralFeature feature) {
     return new Function<EClass, java.lang.Integer>() {
       public java.lang.Integer apply(EClass s) {
         return s.getFeatureID(feature);
@@ -284,10 +250,12 @@ public final class EClasses {
     };
   }
 
-	/**
-	 * @generated
-	 */
-	public static Function<EClass, EStructuralFeature> getEStructuralFeature(final String featureName) {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEStructuralFeature(String)
+   * @generated
+   */
+  public static Function<EClass, EStructuralFeature> getEStructuralFeature(final String featureName) {
     return new Function<EClass, EStructuralFeature>() {
       public EStructuralFeature apply(EClass s) {
         return s.getEStructuralFeature(featureName);
@@ -295,19 +263,23 @@ public final class EClasses {
     };
   }
 
-	/**
-	 * @generated
-	 */
-	public static final Function<EClass, java.lang.Integer> getOperationCount = new Function<EClass, java.lang.Integer>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getOperationCount()
+   * @generated
+   */
+  public static final Function<EClass, java.lang.Integer> getOperationCount = new Function<EClass, java.lang.Integer>() {
     public java.lang.Integer apply(EClass s) {
       return s.getOperationCount();
     }
   };
 
-	/**
-	 * @generated
-	 */
-	public static Function<EClass, EOperation> getEOperation(final int operationID) {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getEOperation(int)
+   * @generated
+   */
+  public static Function<EClass, EOperation> getEOperation(final int operationID) {
     return new Function<EClass, EOperation>() {
       public EOperation apply(EClass s) {
         return s.getEOperation(operationID);
@@ -315,10 +287,12 @@ public final class EClasses {
     };
   }
 
-	/**
-	 * @generated
-	 */
-	public static Function<EClass, java.lang.Integer> getOperationID(final EOperation operation) {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getOperationID(EOperation)
+   * @generated
+   */
+  public static Function<EClass, java.lang.Integer> getOperationID(final EOperation operation) {
     return new Function<EClass, java.lang.Integer>() {
       public java.lang.Integer apply(EClass s) {
         return s.getOperationID(operation);
@@ -326,10 +300,12 @@ public final class EClasses {
     };
   }
 
-	/**
-	 * @generated
-	 */
-	public static Function<EClass, EOperation> getOverride(final EOperation operation) {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EClass#getOverride(EOperation)
+   * @generated
+   */
+  public static Function<EClass, EOperation> getOverride(final EOperation operation) {
     return new Function<EClass, EOperation>() {
       public EOperation apply(EClass s) {
         return s.getOverride(operation);
@@ -337,8 +313,7 @@ public final class EClasses {
     };
   }
 
-
-	/**
+  /**
 	 * @param ePackage
 	 * @return
 	 */

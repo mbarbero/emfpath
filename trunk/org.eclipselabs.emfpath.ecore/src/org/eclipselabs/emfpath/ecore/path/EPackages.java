@@ -3,7 +3,16 @@ package org.eclipselabs.emfpath.ecore.path;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import com.google.common.base.Function;	
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EFactory;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipselabs.emfpath.ecore.internal.i18n.Messages;
+import org.eclipselabs.emfpath.exception.NotFoundException;
+
+import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
@@ -12,108 +21,85 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EFactory;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.ENamedElement;
-import org.eclipse.emf.ecore.EModelElement;
-import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipselabs.emfpath.ecore.internal.i18n.Messages;
-import org.eclipselabs.emfpath.exception.NotFoundException;
-
 /**
  * @generated
  */
-public final class EPackages {
+public class EPackages extends ENamedElements {
 
 	/**
-	 * String separator used between segments of an {@link EPackage} qualified name
-	 */
-	public static final String DEFAULT_FULL_NAME_SEPARATOR = "."; //$NON-NLS-1$
-	
-	private EPackages() {
-		// prevent instantiation
-	}
+   * @generated
+   */
+  private EPackages() {
+    super();
+  }
 
-	/**
-	 * @generated
-	 */
-	public static final Function<EModelElement, EList<EAnnotation>> eAnnotations = EModelElements.eAnnotations;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<ENamedElement, String> name = ENamedElements.name;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EPackage, String> nsURI = new Function<EPackage, String>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EPackage#getNsURI()
+   * @generated
+   */
+  public static final Function<EPackage, String> nsURI = new Function<EPackage, String>() {
     public String apply(EPackage s) {
       return s.getNsURI();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EPackage, String> nsPrefix = new Function<EPackage, String>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EPackage#getNsPrefix()
+   * @generated
+   */
+  public static final Function<EPackage, String> nsPrefix = new Function<EPackage, String>() {
     public String apply(EPackage s) {
       return s.getNsPrefix();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EPackage, EFactory> eFactoryInstance = new Function<EPackage, EFactory>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EPackage#getEFactoryInstance()
+   * @generated
+   */
+  public static final Function<EPackage, EFactory> eFactoryInstance = new Function<EPackage, EFactory>() {
     public EFactory apply(EPackage s) {
       return s.getEFactoryInstance();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EPackage, EList<EClassifier>> eClassifiers = new Function<EPackage, EList<EClassifier>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EPackage#getEClassifiers()
+   * @generated
+   */
+  public static final Function<EPackage, EList<EClassifier>> eClassifiers = new Function<EPackage, EList<EClassifier>>() {
     public EList<EClassifier> apply(EPackage s) {
       return s.getEClassifiers();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EPackage, EList<EPackage>> eSubpackages = new Function<EPackage, EList<EPackage>>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EPackage#getESubpackages()
+   * @generated
+   */
+  public static final Function<EPackage, EList<EPackage>> eSubpackages = new Function<EPackage, EList<EPackage>>() {
     public EList<EPackage> apply(EPackage s) {
       return s.getESubpackages();
     }
   };
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EPackage, EPackage> eSuperPackage = new Function<EPackage, EPackage>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EPackage#getESuperPackage()
+   * @generated
+   */
+  public static final Function<EPackage, EPackage> eSuperPackage = new Function<EPackage, EPackage>() {
     public EPackage apply(EPackage s) {
       return s.getESuperPackage();
     }
   };
-	
-	/**
-	 * @generated
-	 */
-	public static Function<EModelElement, EAnnotation> getEAnnotation(final String source) {
-    return EModelElements.getEAnnotation(source);
-  }
 
-	/**
-	 * @generated
-	 */
-	public static Function<EPackage, EClassifier> getEClassifier(final String name) {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EPackage#getEClassifier(String)
+   * @generated
+   */
+  public static Function<EPackage, EClassifier> getEClassifier(final String name) {
     return new Function<EPackage, EClassifier>() {
       public EClassifier apply(EPackage s) {
         return s.getEClassifier(name);
@@ -121,6 +107,11 @@ public final class EPackages {
     };
   }
 
+  /**
+	 * String separator used between segments of an {@link EPackage} qualified name
+	 */
+	public static final String DEFAULT_FULL_NAME_SEPARATOR = "."; //$NON-NLS-1$
+	
 	/**
 	 * Returns the fully qualified name of the given {@link EPackage}. Each segments of the fully qualified name are
 	 * separated by {@link EPackages#DEFAULT_FULL_NAME_SEPARATOR}. Equivalent to:

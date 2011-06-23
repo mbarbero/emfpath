@@ -33,15 +33,18 @@ import com.google.common.collect.Iterators;
 /**
  * @generated
  */
-public final class EObjects {
+public class EObjects {
 
-	private EObjects() {
-		// prevent instantiation
-	}
+/**
+   * @generated
+   */
+  private EObjects() {
+    // prevent instantiation
+  }
 
-
-
-  	/**
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EObject#eClass()
    * @generated
    */
   public static final Function<EObject, EClass> eClass = new Function<EObject, EClass>() {
@@ -51,6 +54,8 @@ public final class EObjects {
   };
 
   /**
+   * 
+   * @see org.eclipse.emf.ecore.EObject#eIsProxy()
    * @generated
    */
   public static final Predicate<EObject> eIsProxy = new Predicate<EObject>() {
@@ -60,6 +65,8 @@ public final class EObjects {
   };
 
   /**
+   * 
+   * @see org.eclipse.emf.ecore.EObject#eResource()
    * @generated
    */
   public static final Function<EObject, Resource> eResource = new Function<EObject, Resource>() {
@@ -69,6 +76,8 @@ public final class EObjects {
   };
 
   /**
+   * 
+   * @see org.eclipse.emf.ecore.EObject#eContainer()
    * @generated
    */
   public static final Function<EObject, EObject> eContainer = new Function<EObject, EObject>() {
@@ -78,6 +87,8 @@ public final class EObjects {
   };
 
   /**
+   * 
+   * @see org.eclipse.emf.ecore.EObject#eContainingFeature()
    * @generated
    */
   public static final Function<EObject, EStructuralFeature> eContainingFeature = new Function<EObject, EStructuralFeature>() {
@@ -87,6 +98,8 @@ public final class EObjects {
   };
 
   /**
+   * 
+   * @see org.eclipse.emf.ecore.EObject#eContainmentFeature()
    * @generated
    */
   public static final Function<EObject, EReference> eContainmentFeature = new Function<EObject, EReference>() {
@@ -96,6 +109,8 @@ public final class EObjects {
   };
 
   /**
+   * 
+   * @see org.eclipse.emf.ecore.EObject#eContents()
    * @generated
    */
   public static final Function<EObject, EList<EObject>> eContents = new Function<EObject, EList<EObject>>() {
@@ -105,6 +120,8 @@ public final class EObjects {
   };
 
   /**
+   * 
+   * @see org.eclipse.emf.ecore.EObject#eAllContents()
    * @generated
    */
   public static final Function<EObject, TreeIterator<EObject>> eAllContents = new Function<EObject, TreeIterator<EObject>>() {
@@ -114,6 +131,8 @@ public final class EObjects {
   };
 
   /**
+   * 
+   * @see org.eclipse.emf.ecore.EObject#eCrossReferences()
    * @generated
    */
   public static final Function<EObject, EList<EObject>> eCrossReferences = new Function<EObject, EList<EObject>>() {
@@ -123,12 +142,13 @@ public final class EObjects {
   };
 
   /**
-   * @generated NOT
+   * 
+   * @see org.eclipse.emf.ecore.EObject#eGet(EStructuralFeature)
+   * @generated
    */
-	public static Function<EObject, Object> eGet(final EStructuralFeature feature) {
+  public static Function<EObject, Object> eGet(final EStructuralFeature feature) {
     return new Function<EObject, Object>() {
       public Object apply(EObject s) {
-    	Preconditions.checkArgument(s.eClass().getEAllStructuralFeatures().contains(feature));
         return s.eGet(feature);
       }
     };
@@ -137,12 +157,13 @@ public final class EObjects {
 
 
   /**
-   * @generated NOT
+   * 
+   * @see org.eclipse.emf.ecore.EObject#eGet(EStructuralFeature, boolean)
+   * @generated
    */
   public static Function<EObject, Object> eGet(final EStructuralFeature feature, final boolean resolve) {
     return new Function<EObject, Object>() {
       public Object apply(EObject s) {
-    	  Preconditions.checkArgument(s.eClass().getEAllStructuralFeatures().contains(feature));
         return s.eGet(feature, resolve);
       }
     };
@@ -151,6 +172,72 @@ public final class EObjects {
 
 
   /**
+   * 
+   * @see org.eclipse.emf.ecore.EObject#eSet(EStructuralFeature, Object)
+   * @generated
+   */
+  public static Function<EObject, EObject> eSet(final EStructuralFeature feature, final Object newValue) {
+    return new Function<EObject, EObject>() {
+      public EObject apply(EObject s) {
+        s.eSet(feature, newValue);
+        return s;
+      }
+    };
+  }
+
+
+
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EObject#eIsSet(EStructuralFeature)
+   * @generated
+   */
+  public static Predicate<EObject> eIsSet(final EStructuralFeature feature) {
+    return new Predicate<EObject>() {
+      public boolean apply(EObject s) {
+        return s.eIsSet(feature);
+      }
+    };
+  }
+
+
+
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EObject#eUnset(EStructuralFeature)
+   * @generated
+   */
+  public static Function<EObject, EObject> eUnset(final EStructuralFeature feature) {
+    return new Function<EObject, EObject>() {
+      public EObject apply(EObject s) {
+        s.eUnset(feature);
+        return s;
+      }
+    };
+  }
+
+
+
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EObject#eInvoke(EOperation, EList)
+   * @generated
+   */
+  public static Function<EObject, Object> eInvoke(final EOperation operation, final EList<?> arguments) {
+    return new Function<EObject, Object>() {
+      public Object apply(EObject s) {
+        try {
+          return s.eInvoke(operation, arguments);
+        } catch (java.lang.reflect.InvocationTargetException e1) {
+          throw new WrappedException(e1);
+        }
+      }
+    };
+  }
+
+
+
+/**
  * A function that returns the value of the feature with the given name, or
  * a {@link NoSuchFeatureException} if the {@link EObject#eClass() EClass}
  * does not have a feature with the given name.
@@ -189,30 +276,6 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 	};
 }
 
-
-
-/**
-   * @generated NOT
-   */
-  public static Function<EObject, EObject> eSet(final EStructuralFeature feature, final Object newValue) {
-    return new Function<EObject, EObject>() {
-      public EObject apply(EObject s) {
-    	  Preconditions.checkArgument(s.eClass().getEAllStructuralFeatures().contains(feature));
-        s.eSet(feature, newValue);
-        return s;
-      }
-    };
-  }
-  
-  public static Function<EObject, EObject> eSet(final EStructuralFeature feature, final Function<EObject, Object> valueFunction) {
-	    return new Function<EObject, EObject>() {
-	      public EObject apply(EObject s) {
-	    	  Preconditions.checkArgument(s.eClass().getEAllStructuralFeatures().contains(feature));
-	        s.eSet(feature, valueFunction.apply(s));
-	        return s;
-	      }
-	    };
-	  }
   
   public static Function<EObject, EObject> eSet(final String featureName, final Object newValue) {
     return new Function<EObject, EObject>() {
@@ -227,19 +290,6 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 
 
 
-  /**
-   * @generated NOT
-   */
-  public static Predicate<EObject> eIsSet(final EStructuralFeature feature) {
-    return new Predicate<EObject>() {
-      public boolean apply(EObject s) {
-    	  Preconditions.checkArgument(s.eClass().getEAllStructuralFeatures().contains(feature));
-        return s.eIsSet(feature);
-      }
-    };
-  }
-
-
 
   public static Predicate<EObject> eIsSet(final String featureName) {
 	return new Predicate<EObject>() {
@@ -252,20 +302,6 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 }
 
 
-
-/**
-   * @generated NOT
-   */
-  public static Function<EObject, EObject> eUnset(final EStructuralFeature feature) {
-    return new Function<EObject, EObject>() {
-      public EObject apply(EObject s) {
-    	  Preconditions.checkArgument(s.eClass().getEAllStructuralFeatures().contains(feature));
-        s.eUnset(feature);
-        return s;
-      }
-    };
-  }
-
   public static Function<EObject, EObject> eUnset(final String featureName) {
     return new Function<EObject, EObject>() {
       public EObject apply(EObject s) {
@@ -276,23 +312,6 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
       }
     };
   }
-
-  /**
-   * @generated
-   */
-  public static Function<EObject, Object> eInvoke(final EOperation operation, final EList<?> arguments) {
-    return new Function<EObject, Object>() {
-      public Object apply(EObject s) {
-        try {
-          return s.eInvoke(operation, arguments);
-        } catch (java.lang.reflect.InvocationTargetException e1) {
-          throw new WrappedException(e1);
-        }
-      }
-    };
-  }
-
-
 
     public static Function<EObject, EObject> eAdd(final EStructuralFeature feature, final Object newValue) {
 	    return new Function<EObject, EObject>() {

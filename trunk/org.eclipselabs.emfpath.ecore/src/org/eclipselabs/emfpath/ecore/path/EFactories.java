@@ -1,50 +1,42 @@
 package org.eclipselabs.emfpath.ecore.path;
 
-import com.google.common.base.Function;	
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EFactory;
-import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import com.google.common.base.Function;
 
 /**
  * @generated
  */
-public final class EFactories {
+public class EFactories extends EModelElements {
 
-	private EFactories() {
-		// prevent instantiation
-	}
+  /**
+   * @generated
+   */
+  private EFactories() {
+    super();
+  }
 
-	/**
-	 * @generated
-	 */
-	public static final Function<EModelElement, EList<EAnnotation>> eAnnotations = EModelElements.eAnnotations;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EFactory, EPackage> ePackage = new Function<EFactory, EPackage>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EFactory#getEPackage()
+   * @generated
+   */
+  public static final Function<EFactory, EPackage> ePackage = new Function<EFactory, EPackage>() {
     public EPackage apply(EFactory s) {
       return s.getEPackage();
     }
   };
-	
-	/**
-	 * @generated
-	 */
-	public static Function<EModelElement, EAnnotation> getEAnnotation(final String source) {
-    return EModelElements.getEAnnotation(source);
-  }
 
-	/**
-	 * @generated
-	 */
-	public static Function<EFactory, EObject> create(final EClass eClass) {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EFactory#create(EClass)
+   * @generated
+   */
+  public static Function<EFactory, EObject> create(final EClass eClass) {
     return new Function<EFactory, EObject>() {
       public EObject apply(EFactory s) {
         return s.create(eClass);
@@ -52,10 +44,12 @@ public final class EFactories {
     };
   }
 
-	/**
-	 * @generated
-	 */
-	public static Function<EFactory, Object> createFromString(final EDataType eDataType, final String literalValue) {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EFactory#createFromString(EDataType, String)
+   * @generated
+   */
+  public static Function<EFactory, Object> createFromString(final EDataType eDataType, final String literalValue) {
     return new Function<EFactory, Object>() {
       public Object apply(EFactory s) {
         return s.createFromString(eDataType, literalValue);
@@ -63,10 +57,12 @@ public final class EFactories {
     };
   }
 
-	/**
-	 * @generated
-	 */
-	public static Function<EFactory, String> convertToString(final EDataType eDataType, final Object instanceValue) {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EFactory#convertToString(EDataType, Object)
+   * @generated
+   */
+  public static Function<EFactory, String> convertToString(final EDataType eDataType, final Object instanceValue) {
     return new Function<EFactory, String>() {
       public String apply(EFactory s) {
         return s.convertToString(eDataType, instanceValue);

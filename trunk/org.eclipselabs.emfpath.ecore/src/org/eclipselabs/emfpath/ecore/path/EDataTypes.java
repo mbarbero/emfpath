@@ -1,97 +1,65 @@
 package org.eclipselabs.emfpath.ecore.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Preconditions;
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.ETypeParameter;
-import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.ENamedElement;
-import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+
+import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
+import com.google.common.base.Predicate;
 
 /**
  * @generated
  */
-public final class EDataTypes {
+public class EDataTypes extends EClassifiers {
 
-	private EDataTypes() {
-		// prevent instantiation
-	}
-
+	
 	/**
-	 * @generated
-	 */
-	public static final Function<EClassifier, String> instanceClassName = EClassifiers.instanceClassName;
+   * @generated
+   */
+   EDataTypes() {
+    super();
+  }
 
-	/**
-	 * @generated
-	 */
-	public static final Function<EClassifier, Class<?>> instanceClass = EClassifiers.instanceClass;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClassifier, Object> defaultValue = EClassifiers.defaultValue;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClassifier, String> instanceTypeName = EClassifiers.instanceTypeName;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClassifier, EPackage> ePackage = EClassifiers.ePackage;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClassifier, EList<ETypeParameter>> eTypeParameters = EClassifiers.eTypeParameters;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EModelElement, EList<EAnnotation>> eAnnotations = EModelElements.eAnnotations;
-
-	/**
-	 * @generated
-	 */
-	public static final Function<ENamedElement, String> name = ENamedElements.name;
-
-	/**
-	 * @generated
-	 */
-	public static final Predicate<EDataType> isSerializable = new Predicate<EDataType>() {
+  /**
+   * 
+   * @see org.eclipse.emf.ecore.EDataType#isSerializable()
+   * @generated
+   */
+  public static final Predicate<EDataType> isSerializable = new Predicate<EDataType>() {
     public boolean apply(EDataType s) {
       return s.isSerializable();
     }
   };
+
+  /**
+	 * Creates a new {@link Function} that will be able to create instances of the
+	 * {@link EAttribute#getEAttributeType() type} of the given {@link EAttribute}.
+	 * 
+	 * @param eAttribute the {@link Object}s created with this {@link Function} will be instance of the type of this
+	 *        {@link EAttribute}.
+	 * @return a new {@link Function}
+	 */
+	public static FromStringLiteral fromString(EAttribute eAttribute) {
+		Preconditions.checkNotNull(eAttribute);
+		FromStringLiteral ret = new FromStringLiteral(eAttribute.getEAttributeType());
+		return ret;
+	}
 	
 	/**
-	 * @generated
+	 * Creates a new {@link Function} that will be able to serialize instances of the
+	 * {@link EAttribute#getEAttributeType() type} of the given {@link EAttribute}.
+	 * 
+	 * @param eAttribute the {@link String}s created with this {@link Function} will be serialization of the type of
+	 *        this {@link EAttribute}.
+	 * @return a new {@link Function}
 	 */
-	public static Predicate<EClassifier> isInstance(final Object object) {
-    return EClassifiers.isInstance(object);
-  }
-
-	/**
-	 * @generated
-	 */
-	public static final Function<EClassifier, java.lang.Integer> getClassifierID = EClassifiers.getClassifierID;
-
-	/**
-	 * @generated
-	 */
-	public static Function<EModelElement, EAnnotation> getEAnnotation(final String source) {
-    return EModelElements.getEAnnotation(source);
-  }
-
+	public static ToStringLiteral toString(EAttribute eAttribute) {
+		Preconditions.checkNotNull(eAttribute);
+		ToStringLiteral ret = new ToStringLiteral(eAttribute.getEAttributeType());
+		return ret;
+	}
+	
 	/**
 	 * Function that uses standard EMF mechanism to create an instance of an {@link EDataType} from a {@link String}
 	 * literal.
@@ -105,23 +73,9 @@ public final class EDataTypes {
 
 		private EDataType eDataType;
 
-		private FromStringLiteral(EDataType eDataType) {
+		FromStringLiteral(EDataType eDataType) {
 			Preconditions.checkNotNull(eDataType);
 			this.eDataType = eDataType;
-		}
-
-		/**
-		 * Creates a new {@link Function} that will be able to create instances of the
-		 * {@link EAttribute#getEAttributeType() type} of the given {@link EAttribute}.
-		 * 
-		 * @param eAttribute the {@link Object}s created with this {@link Function} will be instance of the type of this
-		 *        {@link EAttribute}.
-		 * @return a new {@link Function}
-		 */
-		public static FromStringLiteral ofType(EAttribute eAttribute) {
-			Preconditions.checkNotNull(eAttribute);
-			FromStringLiteral ret = new FromStringLiteral(eAttribute.getEAttributeType());
-			return ret;
 		}
 
 		/**
@@ -165,23 +119,9 @@ public final class EDataTypes {
 
 		private EDataType eDataType;
 
-		private ToStringLiteral(EDataType eDataType) {
+		ToStringLiteral(EDataType eDataType) {
 			Preconditions.checkNotNull(eDataType);
 			this.eDataType = eDataType;
-		}
-
-		/**
-		 * Creates a new {@link Function} that will be able to serialize instances of the
-		 * {@link EAttribute#getEAttributeType() type} of the given {@link EAttribute}.
-		 * 
-		 * @param eAttribute the {@link String}s created with this {@link Function} will be serialization of the type of
-		 *        this {@link EAttribute}.
-		 * @return a new {@link Function}
-		 */
-		public static ToStringLiteral ofType(EAttribute eAttribute) {
-			Preconditions.checkNotNull(eAttribute);
-			ToStringLiteral ret = new ToStringLiteral(eAttribute.getEAttributeType());
-			return ret;
 		}
 
 		/**
