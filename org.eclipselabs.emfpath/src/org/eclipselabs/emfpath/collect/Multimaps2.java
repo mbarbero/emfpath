@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.indie.collect;
+package org.eclipselabs.emfpath.collect;
 
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;

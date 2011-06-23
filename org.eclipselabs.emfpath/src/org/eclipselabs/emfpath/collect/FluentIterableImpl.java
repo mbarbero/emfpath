@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.indie.collect;
+package org.eclipselabs.emfpath.collect;
 
 import java.util.Iterator;
 import java.util.List;
@@ -21,11 +21,11 @@ import com.google.common.collect.Sets;
 
 /**
  * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
- * @param <T>
+ * @param <E>
  */
-public class FluentIterableImpl<T> extends ForwardingIterable<T> implements FluentIterable<T> {
+public class FluentIterableImpl<E> extends ForwardingIterable<E> implements FluentIterable<E> {
 
-	private final Iterable<T> delegator;
+	private final Iterable<E> delegator;
 
 	/**
 	 * @param <X>
@@ -42,7 +42,7 @@ public class FluentIterableImpl<T> extends ForwardingIterable<T> implements Flue
 	/**
 	 * @param delegator
 	 */
-	protected FluentIterableImpl(Iterable<T> delegator) {
+	protected FluentIterableImpl(Iterable<E> delegator) {
 		this.delegator = delegator;
 	}
 
@@ -67,7 +67,7 @@ public class FluentIterableImpl<T> extends ForwardingIterable<T> implements Flue
 	 * @param type
 	 * @return
 	 */
-	public T[] toArray(Class<T> type) {
+	public E[] toArray(Class<E> type) {
 		return Iterables.toArray(this.delegate(), type);
 	}
 
@@ -75,7 +75,7 @@ public class FluentIterableImpl<T> extends ForwardingIterable<T> implements Flue
 	 * @param size
 	 * @return
 	 */
-	public FluentIterable<List<T>> partition(final int size) {
+	public FluentIterable<List<E>> partition(final int size) {
 		return FluentCollections.newFluentIterable(Iterables.partition(this.delegate(), size));
 	}
 
@@ -83,7 +83,7 @@ public class FluentIterableImpl<T> extends ForwardingIterable<T> implements Flue
 	 * @param size
 	 * @return
 	 */
-	public FluentIterable<List<T>> paddedPartition(final int size) {
+	public FluentIterable<List<E>> paddedPartition(final int size) {
 		return FluentCollections.newFluentIterable(Iterables.paddedPartition(this.delegate(), size));
 	}
 
@@ -91,7 +91,7 @@ public class FluentIterableImpl<T> extends ForwardingIterable<T> implements Flue
 	 * @param predicate
 	 * @return
 	 */
-	public FluentIterable<T> filter(Predicate<? super T> predicate) {
+	public FluentIterable<E> filter(Predicate<? super E> predicate) {
 		return FluentCollections.newFluentIterable(Iterables.filter(this.delegate(), predicate));
 	}
 
@@ -109,7 +109,7 @@ public class FluentIterableImpl<T> extends ForwardingIterable<T> implements Flue
 	 * @param function
 	 * @return
 	 */
-	public <X> FluentIterable<X> transform(Function<? super T, ? extends X> function) {
+	public <X> FluentIterable<X> transform(Function<? super E, ? extends X> function) {
 		return FluentCollections.newFluentIterable(Iterables.transform(this.delegate(), function));
 	}
 
@@ -117,7 +117,7 @@ public class FluentIterableImpl<T> extends ForwardingIterable<T> implements Flue
 	 * @param predicate
 	 * @return
 	 */
-	public boolean any(Predicate<? super T> predicate) {
+	public boolean any(Predicate<? super E> predicate) {
 		return Iterables.any(this.delegate(), predicate);
 	}
 
@@ -125,7 +125,7 @@ public class FluentIterableImpl<T> extends ForwardingIterable<T> implements Flue
 	 * @param predicate
 	 * @return
 	 */
-	public boolean all(Predicate<? super T> predicate) {
+	public boolean all(Predicate<? super E> predicate) {
 		return Iterables.all(this.delegate(), predicate);
 	}
 
@@ -133,7 +133,7 @@ public class FluentIterableImpl<T> extends ForwardingIterable<T> implements Flue
 	 * @param predicate
 	 * @return
 	 */
-	public T find(Predicate<? super T> predicate) {
+	public E find(Predicate<? super E> predicate) {
 		return Iterables.find(this.delegate(), predicate);
 	}
 
@@ -141,7 +141,7 @@ public class FluentIterableImpl<T> extends ForwardingIterable<T> implements Flue
 	 * @param position
 	 * @return
 	 */
-	public T get(int position) {
+	public E get(int position) {
 		return Iterables.get(this.delegate(), position);
 	}
 
@@ -155,14 +155,14 @@ public class FluentIterableImpl<T> extends ForwardingIterable<T> implements Flue
 	/**
 	 * @return
 	 */
-	public T first() {
+	public E first() {
 		return Iterables.get(this.delegate(), 0);
 	}
 
 	/**
 	 * @return
 	 */
-	public T last() {
+	public E last() {
 		return Iterables.getLast(this.delegate());
 	}
 
@@ -185,7 +185,7 @@ public class FluentIterableImpl<T> extends ForwardingIterable<T> implements Flue
 	/**
 	 * @return
 	 */
-	public FluentSet<T> removeDuplicates() {
+	public FluentSet<E> removeDuplicates() {
 		return FluentCollections.newFluentSet(Sets.newLinkedHashSet(this.delegate()));
 	}
 
@@ -193,8 +193,8 @@ public class FluentIterableImpl<T> extends ForwardingIterable<T> implements Flue
 	 * @param ordering
 	 * @return
 	 */
-	public FluentList<T> sort(Ordering<T> ordering) {
-		List<T> it = ordering.sortedCopy(this.delegate());
+	public FluentList<E> sort(Ordering<E> ordering) {
+		List<E> it = ordering.sortedCopy(this.delegate());
 		return FluentCollections.newFluentList(it);
 	}
 
@@ -202,7 +202,7 @@ public class FluentIterableImpl<T> extends ForwardingIterable<T> implements Flue
 	 * @param ordering
 	 * @return
 	 */
-	public T max(final Ordering<T> ordering) {
+	public E max(final Ordering<E> ordering) {
 		return ordering.max(this.delegate());
 	}
 
@@ -210,38 +210,38 @@ public class FluentIterableImpl<T> extends ForwardingIterable<T> implements Flue
 	 * @param ordering
 	 * @return
 	 */
-	public T min(Ordering<T> ordering) {
+	public E min(Ordering<E> ordering) {
 		return ordering.min(this.delegate());
 	}
 
 	@Override
-	public Iterator<T> iterator() {
+	public Iterator<E> iterator() {
 		return this.delegate().iterator();
 	}
 
 	@Override
-	protected Iterable<T> delegate() {
+	protected Iterable<E> delegate() {
 		return this.delegator;
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentList()
+	 * @see org.eclipselabs.emfpath.collect.FluentIterable#asFluentList()
 	 */
-	public FluentList<T> asFluentList() {
+	public FluentList<E> asFluentList() {
 		return FluentCollections.newFluentList(this.delegate());
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentSet()
+	 * @see org.eclipselabs.emfpath.collect.FluentIterable#asFluentSet()
 	 */
-	public FluentSet<T> asFluentSet() {
+	public FluentSet<E> asFluentSet() {
 		return FluentCollections.newFluentSet(this.delegate());
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentMultiset()
+	 * @see org.eclipselabs.emfpath.collect.FluentIterable#asFluentMultiset()
 	 */
-	public FluentMultiset<T> asFluentMultiset() {
+	public FluentMultiset<E> asFluentMultiset() {
 		return FluentCollections.newFluentMultiset(this.delegate());
 	}
 

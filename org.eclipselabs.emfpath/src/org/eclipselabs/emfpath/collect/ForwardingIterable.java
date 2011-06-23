@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.indie.collect;
+package org.eclipselabs.emfpath.collect;
 
 import java.util.Iterator;
 
@@ -17,16 +17,16 @@ import com.google.common.collect.ForwardingObject;
 /**
  * A simple {@link Iterable} that forwards all of its method call to its the delegating {@link Iterable}.
  * 
- * @param <T> the kind of element in the {@link Iterable}.
+ * @param <E> the kind of element in the {@link Iterable}.
  * @since 0.3
  * @author <a href="mailto:mikael.barbero@obeo.fr">Mikaël Barbero</a>
  */
-public abstract class ForwardingIterable<T> extends ForwardingObject implements Iterable<T> {
+public abstract class ForwardingIterable<E> extends ForwardingObject implements Iterable<E> {
 
 	@Override
-	protected abstract Iterable<T> delegate();
+	protected abstract Iterable<E> delegate();
 
-	public Iterator<T> iterator() {
+	public Iterator<E> iterator() {
 		return this.delegate().iterator();
 	}
 }

@@ -8,26 +8,25 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.indie.collect;
+package org.eclipselabs.emfpath.collect;
 
-import java.util.List;
+import java.util.Collection;
 
 import com.google.common.base.Function;
+import com.google.common.base.Predicate;
 
 /**
  * @author mbarbero
- * @param <T>
+ * @param <E>
  */
-public interface FluentList<T> extends FluentCollection<T>, List<T> {
-
-	FluentList<T> subList(int fromIndex, int toIndex);
-
-	FluentList<List<T>> partition(int size);
-
-	<V> FluentList<V> transform(Function<? super T, ? extends V> function);
+public interface FluentCollection<E> extends FluentIterable<E>, Collection<E> {
 
 	/**
+	 * @param function
 	 * @return
+	 * @see org.eclipselabs.emfpath.collect.FluentIterable#transform(com.google.common.base.Function)
 	 */
-	FluentList<T> reverse();
+	<T> FluentCollection<T> transform(Function<? super E, ? extends T> function);
+
+	FluentCollection<E> filter(Predicate<? super E> predicate);
 }

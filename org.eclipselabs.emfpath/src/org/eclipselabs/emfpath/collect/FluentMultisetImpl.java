@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipselabs.emfpath.indie.collect;
+package org.eclipselabs.emfpath.collect;
 
 import java.util.Set;
 
@@ -19,14 +19,14 @@ import com.google.common.collect.Multiset;
 
 /**
  * @author mbarbero
- * @param <T>
+ * @param <E>
  */
-class FluentMultisetImpl<T> extends FluentCollectionImpl<T> implements FluentMultiset<T> {
+class FluentMultisetImpl<E> extends FluentCollectionImpl<E> implements FluentMultiset<E> {
 
 	/**
 	 * @param delegator
 	 */
-	FluentMultisetImpl(Multiset<T> delegator) {
+	FluentMultisetImpl(Multiset<E> delegator) {
 		super(delegator);
 	}
 
@@ -40,7 +40,7 @@ class FluentMultisetImpl<T> extends FluentCollectionImpl<T> implements FluentMul
 	/**
 	 * @see com.google.common.collect.Multiset#add(java.lang.Object, int)
 	 */
-	public int add(T element, int occurrences) {
+	public int add(E element, int occurrences) {
 		return this.delegate().add(element, occurrences);
 	}
 
@@ -54,77 +54,77 @@ class FluentMultisetImpl<T> extends FluentCollectionImpl<T> implements FluentMul
 	/**
 	 * @see com.google.common.collect.Multiset#setCount(java.lang.Object, int)
 	 */
-	public int setCount(T element, int count) {
+	public int setCount(E element, int count) {
 		return this.delegate().setCount(element, count);
 	}
 
 	/**
 	 * @see com.google.common.collect.Multiset#setCount(java.lang.Object, int, int)
 	 */
-	public boolean setCount(T element, int oldCount, int newCount) {
+	public boolean setCount(E element, int oldCount, int newCount) {
 		return this.delegate().setCount(element, oldCount, newCount);
 	}
 
 	/**
 	 * @see com.google.common.collect.Multiset#elementSet()
 	 */
-	public Set<T> elementSet() {
+	public Set<E> elementSet() {
 		return this.delegate().elementSet();
 	}
 
 	/**
 	 * @see com.google.common.collect.Multiset#entrySet()
 	 */
-	public Set<Multiset.Entry<T>> entrySet() {
+	public Set<Multiset.Entry<E>> entrySet() {
 		return this.delegate().entrySet();
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentCollectionImpl#delegate()
+	 * @see org.eclipselabs.emfpath.collect.FluentCollectionImpl#delegate()
 	 */
 	@Override
-	protected Multiset<T> delegate() {
-		return (Multiset<T>) super.delegate();
+	protected Multiset<E> delegate() {
+		return (Multiset<E>) super.delegate();
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentList()
+	 * @see org.eclipselabs.emfpath.collect.FluentIterable#asFluentList()
 	 */
 	@Override
-	public FluentList<T> asFluentList() {
+	public FluentList<E> asFluentList() {
 		return FluentCollections.newFluentList(this.delegate());
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentSet()
+	 * @see org.eclipselabs.emfpath.collect.FluentIterable#asFluentSet()
 	 */
 	@Override
-	public FluentSet<T> asFluentSet() {
+	public FluentSet<E> asFluentSet() {
 		return FluentCollections.newFluentSet(this.delegate());
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentIterable#asFluentMultiset()
+	 * @see org.eclipselabs.emfpath.collect.FluentIterable#asFluentMultiset()
 	 */
 	@Override
-	public FluentMultiset<T> asFluentMultiset() {
+	public FluentMultiset<E> asFluentMultiset() {
 		return this;
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentCollectionImpl#transform(com.google.common.base.Function)
+	 * @see org.eclipselabs.emfpath.collect.FluentCollectionImpl#transform(com.google.common.base.Function)
 	 */
 	@Override
-	public <X> FluentMultiset<X> transform(Function<? super T, ? extends X> function) {
+	public <X> FluentMultiset<X> transform(Function<? super E, ? extends X> function) {
 		// FIXME: ASAP wehn Collections2.transform has been updated to accept "? extends X"
 		return (FluentMultiset<X>) FluentCollections.newFluentMultiset(Collections2.transform(this.delegate(), function));
 	}
 
 	/**
-	 * @see org.eclipselabs.emfpath.indie.collect.FluentCollectionImpl#filter(com.google.common.base.Predicate)
+	 * @see org.eclipselabs.emfpath.collect.FluentCollectionImpl#filter(com.google.common.base.Predicate)
 	 */
 	@Override
-	public FluentCollection<T> filter(Predicate<? super T> predicate) {
+	public FluentCollection<E> filter(Predicate<? super E> predicate) {
 		return FluentCollections.newFluentMultiset(Collections2.filter(this.delegate(), predicate));
 	}
 }
