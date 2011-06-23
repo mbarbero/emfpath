@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipselabs.emfpath.exception.NotFoundException;
-import org.eclipselabs.emfpath.indie.base.Equivalences2;
+import org.eclipselabs.emfpath.base.Equivalences2;
 
 /**
  * @generated
