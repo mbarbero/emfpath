@@ -12,6 +12,13 @@ import org.eclipse.uml2.uml.TemplateSignature;
 import org.eclipse.uml2.uml.TemplateableElement;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.TemplateBinding TemplateBinding} in a functional way.
+ * <p>
+ * A template binding represents a relationship between a templateable element and a
+ * template. A template binding specifies the substitutions of actual parameters for
+ * the formal parameters of the template. 
+ * @see org.eclipse.uml2.uml.TemplateBinding
  * @generated
  */
 public class TemplateBindingPath extends DirectedRelationshipPath {
@@ -24,6 +31,7 @@ public class TemplateBindingPath extends DirectedRelationshipPath {
 	}
 
 	/**
+	 * The template signature for the template that is the target of the binding. 
 	 * @see org.eclipse.uml2.uml.TemplateBinding#getSignature()
 	 * @generated
 	 */
@@ -34,6 +42,7 @@ public class TemplateBindingPath extends DirectedRelationshipPath {
 	};
 
 	/**
+	 * The parameter substitutions owned by this template binding. 
 	 * @see org.eclipse.uml2.uml.TemplateBinding#getParameterSubstitutions()
 	 * @generated
 	 */
@@ -44,6 +53,7 @@ public class TemplateBindingPath extends DirectedRelationshipPath {
 	};
 
 	/**
+	 * The element that is bound by this binding. 
 	 * @see org.eclipse.uml2.uml.TemplateBinding#getBoundElement()
 	 * @generated
 	 */
@@ -54,7 +64,10 @@ public class TemplateBindingPath extends DirectedRelationshipPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.TemplateBinding#validateParameterSubstitutionFormal()
+	 * Each parameter substitution must refer to a formal template parameter of the target
+	 * template signature.
+	parameterSubstitution->forAll(b | template.parameter->includes(b.formal))
+	 * @see org.eclipse.uml2.uml.TemplateBinding#validateParameterSubstitutionFormal(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<TemplateBinding> validateParameterSubstitutionFormal(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -66,7 +79,11 @@ public class TemplateBindingPath extends DirectedRelationshipPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.TemplateBinding#validateOneParameterSubstitution()
+	 * A binding contains at most one parameter substitution for each formal template parameter
+	 * of the target template signature.
+	template.parameter->forAll(p | parameterSubstitution->select(b
+	 * | b.formal = p)->size() <= 1) 
+	 * @see org.eclipse.uml2.uml.TemplateBinding#validateOneParameterSubstitution(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<TemplateBinding> validateOneParameterSubstitution(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

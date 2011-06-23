@@ -10,6 +10,11 @@ import org.eclipse.uml2.uml.StructuralFeature;
 import org.eclipse.uml2.uml.StructuralFeatureAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.StructuralFeatureAction StructuralFeatureAction} in a functional way.
+ * <p>
+ * StructuralFeatureAction is an abstract class for all structural feature actions. 
+ * @see org.eclipse.uml2.uml.StructuralFeatureAction
  * @generated
  */
 public class StructuralFeatureActionPath extends ActionPath {
@@ -22,6 +27,7 @@ public class StructuralFeatureActionPath extends ActionPath {
 	}
 
 	/**
+	 * Structural feature to be read. 
 	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#getStructuralFeature()
 	 * @generated
 	 */
@@ -32,6 +38,9 @@ public class StructuralFeatureActionPath extends ActionPath {
 	};
 
 	/**
+	 * Gives the input pin from which the object whose structural feature is to be read or
+	 * written is obtained.
+	 
 	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#getObject()
 	 * @generated
 	 */
@@ -42,7 +51,9 @@ public class StructuralFeatureActionPath extends ActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#validateNotStatic()
+	 * The structural feature must not be static.
+	self.structuralFeature.isStatic = #false
+	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#validateNotStatic(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<StructuralFeatureAction> validateNotStatic(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -54,7 +65,10 @@ public class StructuralFeatureActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#validateSameType()
+	 * The type of the object input pin is the same as the classifier of the object passed
+	 * on this pin.
+	true 
+	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#validateSameType(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<StructuralFeatureAction> validateSameType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -66,7 +80,9 @@ public class StructuralFeatureActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#validateMultiplicity()
+	 * The multiplicity of the input pin must be 1..1.
+	self.object.multiplicity.is(1,1)
+	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#validateMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<StructuralFeatureAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -78,7 +94,17 @@ public class StructuralFeatureActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#validateVisibility()
+	 * Visibility of structural feature must allow access to the object performing the action.
+	let
+	 * host : Classifier = self.context in
+	self.structuralFeature.visibility = #public
+	or
+	 * host = self.structuralFeature.featuringClassifier.type
+	or (self.structuralFeature.visibility
+	 * = #protected and host.allSupertypes
+	->includes(self.structuralFeature.featuringClassifier.type)))
+	
+	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#validateVisibility(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<StructuralFeatureAction> validateVisibility(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -90,7 +116,10 @@ public class StructuralFeatureActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#validateOneFeaturingClassifier()
+	 * A structural feature has exactly one featuringClassifier.
+	self.structuralFeature.featuringClassifier->size()
+	 * = 1 
+	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#validateOneFeaturingClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<StructuralFeatureAction> validateOneFeaturingClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

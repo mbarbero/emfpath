@@ -9,6 +9,12 @@ import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.ReadStructuralFeatureAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ReadStructuralFeatureAction ReadStructuralFeatureAction} in a functional way.
+ * <p>
+ * A read structural feature action is a structural feature action that retrieves the
+ * values of a structural feature. 
+ * @see org.eclipse.uml2.uml.ReadStructuralFeatureAction
  * @generated
  */
 public class ReadStructuralFeatureActionPath extends StructuralFeatureActionPath {
@@ -21,6 +27,7 @@ public class ReadStructuralFeatureActionPath extends StructuralFeatureActionPath
 	}
 
 	/**
+	 * Gives the output pin on which the result is put. 
 	 * @see org.eclipse.uml2.uml.ReadStructuralFeatureAction#getResult()
 	 * @generated
 	 */
@@ -31,7 +38,13 @@ public class ReadStructuralFeatureActionPath extends StructuralFeatureActionPath
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ReadStructuralFeatureAction#validateTypeAndOrdering()
+	 * The type and ordering of the result output pin are the same as the type and ordering
+	 * of the structural feature.
+	self.result.type = self.structuralFeature.type
+	and self.result.ordering
+	 * = self.structuralFeature.ordering
+	 
+	 * @see org.eclipse.uml2.uml.ReadStructuralFeatureAction#validateTypeAndOrdering(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadStructuralFeatureAction> validateTypeAndOrdering(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

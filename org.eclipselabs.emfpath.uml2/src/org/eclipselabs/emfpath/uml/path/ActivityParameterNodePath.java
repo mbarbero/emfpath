@@ -9,6 +9,11 @@ import org.eclipse.uml2.uml.ActivityParameterNode;
 import org.eclipse.uml2.uml.Parameter;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ActivityParameterNode ActivityParameterNode} in a functional way.
+ * <p>
+ * An activity parameter node is an object node for inputs and outputs to activities.
+ * @see org.eclipse.uml2.uml.ActivityParameterNode
  * @generated
  */
 public class ActivityParameterNodePath extends ObjectNodePath {
@@ -21,6 +26,7 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	}
 
 	/**
+	 * The parameter the object node will be accepting or providing values for. 
 	 * @see org.eclipse.uml2.uml.ActivityParameterNode#getParameter()
 	 * @generated
 	 */
@@ -31,7 +37,9 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateHasParameters()
+	 * Activity parameter nodes must have parameters from the containing activity.
+	true
+	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateHasParameters(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityParameterNode> validateHasParameters(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -43,7 +51,9 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateSameType()
+	 * The type of an activity parameter node is the same as the type of its parameter.
+	true
+	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateSameType(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityParameterNode> validateSameType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -55,7 +65,10 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateNoEdges()
+	 * An activity parameter node may have all incoming edges or all outgoing edges, but
+	 * it must not have both incoming and outgoing edges.
+	true 
+	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateNoEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityParameterNode> validateNoEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -67,7 +80,11 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateNoIncomingEdges()
+	 * Activity parameter object nodes with no incoming edges and one or more outgoing edges
+	 * must have a parameter with in or inout direction.
+	
+	true 
+	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateNoIncomingEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityParameterNode> validateNoIncomingEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -79,7 +96,11 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateNoOutgoingEdges()
+	 * Activity parameter object nodes with no outgoing edges and one or more incoming edges
+	 * must have a parameter with out, inout, or return direction.
+	
+	true 
+	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateNoOutgoingEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityParameterNode> validateNoOutgoingEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -91,7 +112,10 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateMaximumOneParameterNode()
+	 * A parameter with direction other than inout must have at most one activity parameter
+	 * node in an activity.
+	true 
+	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateMaximumOneParameterNode(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityParameterNode> validateMaximumOneParameterNode(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -103,7 +127,10 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateMaximumTwoParameterNodes()
+	 * A parameter with direction inout must have at most two activity parameter nodes in
+	 * an activity, one with incoming flows and one with outgoing flows.
+	true 
+	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateMaximumTwoParameterNodes(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityParameterNode> validateMaximumTwoParameterNodes(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

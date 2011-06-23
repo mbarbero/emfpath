@@ -8,6 +8,11 @@ import org.eclipse.uml2.uml.DeploymentTarget;
 import org.eclipse.uml2.uml.PackageableElement;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.DeploymentTarget DeploymentTarget} in a functional way.
+ * <p>
+ * A deployment target is the location for a deployed artifact. 
+ * @see org.eclipse.uml2.uml.DeploymentTarget
  * @generated
  */
 public class DeploymentTargetPath extends NamedElementPath {
@@ -20,6 +25,7 @@ public class DeploymentTargetPath extends NamedElementPath {
 	}
 
 	/**
+	 * The set of Deployments for a DeploymentTarget. 
 	 * @see org.eclipse.uml2.uml.DeploymentTarget#getDeployments()
 	 * @generated
 	 */
@@ -30,6 +36,8 @@ public class DeploymentTargetPath extends NamedElementPath {
 	};
 
 	/**
+	 * The set of elements that are manifested in an Artifact that is involved in Deployment
+	 * to a DeploymentTarget. 
 	 * @see org.eclipse.uml2.uml.DeploymentTarget#getDeployedElements()
 	 * @generated
 	 */
@@ -40,6 +48,7 @@ public class DeploymentTargetPath extends NamedElementPath {
 	};
 	
 	/**
+	 * result = ((self.deployment->collect(deployedArtifact))->collect(manifestation))->collect(utilizedElement)
 	 * @see org.eclipse.uml2.uml.DeploymentTarget#getDeployedElements()
 	 * @generated
 	 */

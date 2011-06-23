@@ -8,6 +8,11 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Feature;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Feature Feature} in a functional way.
+ * <p>
+ * A feature declares a behavioral or structural characteristic of instances of classifiers.
+ * @see org.eclipse.uml2.uml.Feature
  * @generated
  */
 public class FeaturePath extends RedefinableElementPath {
@@ -20,6 +25,8 @@ public class FeaturePath extends RedefinableElementPath {
 	}
 
 	/**
+	 * Specifies whether this feature characterizes individual instances classified by the
+	 * classifier (false) or the classifier itself (true). 
 	 * @see org.eclipse.uml2.uml.Feature#isStatic()
 	 * @generated
 	 */
@@ -30,6 +37,7 @@ public class FeaturePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * The Classifiers that have this Feature as a feature. 
 	 * @see org.eclipse.uml2.uml.Feature#getFeaturingClassifiers()
 	 * @generated
 	 */

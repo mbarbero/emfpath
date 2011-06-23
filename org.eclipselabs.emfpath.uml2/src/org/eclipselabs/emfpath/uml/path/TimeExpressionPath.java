@@ -8,6 +8,11 @@ import org.eclipse.uml2.uml.TimeExpression;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.TimeExpression TimeExpression} in a functional way.
+ * <p>
+ * A time expression defines a value specification that represents a time value. 
+ * @see org.eclipse.uml2.uml.TimeExpression
  * @generated
  */
 public class TimeExpressionPath extends ValueSpecificationPath {
@@ -20,6 +25,7 @@ public class TimeExpressionPath extends ValueSpecificationPath {
 	}
 
 	/**
+	 * The value of the time expression. 
 	 * @see org.eclipse.uml2.uml.TimeExpression#getExpr()
 	 * @generated
 	 */
@@ -30,6 +36,7 @@ public class TimeExpressionPath extends ValueSpecificationPath {
 	};
 
 	/**
+	 * Refers to the time and duration observations that are involved in expr. 
 	 * @see org.eclipse.uml2.uml.TimeExpression#getObservations()
 	 * @generated
 	 */

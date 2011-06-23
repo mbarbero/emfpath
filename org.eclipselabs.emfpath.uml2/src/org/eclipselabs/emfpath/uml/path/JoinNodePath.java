@@ -9,6 +9,14 @@ import org.eclipse.uml2.uml.JoinNode;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.JoinNode JoinNode} in a functional way.
+ * <p>
+ * A join node is a control node that synchronizes multiple flows.
+Join nodes have a
+ * Boolean value specification using the names of the incoming edges to specify the conditions
+ * under which the join will emit a token. 
+ * @see org.eclipse.uml2.uml.JoinNode
  * @generated
  */
 public class JoinNodePath extends ControlNodePath {
@@ -21,6 +29,8 @@ public class JoinNodePath extends ControlNodePath {
 	}
 
 	/**
+	 * Tells whether tokens having objects with the same identity are combined into one by
+	 * the join. 
 	 * @see org.eclipse.uml2.uml.JoinNode#isCombineDuplicate()
 	 * @generated
 	 */
@@ -31,6 +41,8 @@ public class JoinNodePath extends ControlNodePath {
 	};
 
 	/**
+	 * A specification giving the conditions under which the join with emit a token. Default
+	 * is "and". 
 	 * @see org.eclipse.uml2.uml.JoinNode#getJoinSpec()
 	 * @generated
 	 */
@@ -41,7 +53,9 @@ public class JoinNodePath extends ControlNodePath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.JoinNode#validateOneOutgoingEdge()
+	 * A join node has one outgoing edge.
+	self.outgoing->size() = 1 
+	 * @see org.eclipse.uml2.uml.JoinNode#validateOneOutgoingEdge(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<JoinNode> validateOneOutgoingEdge(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -53,7 +67,15 @@ public class JoinNodePath extends ControlNodePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.JoinNode#validateIncomingObjectFlow()
+	 * If a join node has an incoming object flow, it must have an outgoing object flow,
+	 * otherwise, it must have an outgoing control flow.
+	(self.incoming.select(e | e.isTypeOf(ObjectFlow)->notEmpty()
+	 * implies
+	  self.outgoing.isTypeOf(ObjectFlow)) and
+	    (self.incoming.select(e |
+	 * e.isTypeOf(ObjectFlow)->empty() implies
+	      self.outgoing.isTypeOf(ControlFlow))
+	 * @see org.eclipse.uml2.uml.JoinNode#validateIncomingObjectFlow(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<JoinNode> validateIncomingObjectFlow(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

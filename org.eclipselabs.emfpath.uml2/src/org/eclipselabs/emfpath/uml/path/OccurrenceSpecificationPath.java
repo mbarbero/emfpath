@@ -8,6 +8,12 @@ import org.eclipse.uml2.uml.GeneralOrdering;
 import org.eclipse.uml2.uml.OccurrenceSpecification;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.OccurrenceSpecification OccurrenceSpecification} in a functional way.
+ * <p>
+ * An occurrence specification is the basic semantic unit of interactions. The sequences
+ * of occurrences specified by them are the meanings of interactions. 
+ * @see org.eclipse.uml2.uml.OccurrenceSpecification
  * @generated
  */
 public class OccurrenceSpecificationPath extends InteractionFragmentPath {
@@ -20,6 +26,9 @@ public class OccurrenceSpecificationPath extends InteractionFragmentPath {
 	}
 
 	/**
+	 * References the GeneralOrderings that specify EventOcurrences that must occur before
+	 * this OccurrenceSpecification
+	 
 	 * @see org.eclipse.uml2.uml.OccurrenceSpecification#getToBefores()
 	 * @generated
 	 */
@@ -30,6 +39,7 @@ public class OccurrenceSpecificationPath extends InteractionFragmentPath {
 	};
 
 	/**
+	 * References a specification of the occurring event. 
 	 * @see org.eclipse.uml2.uml.OccurrenceSpecification#getEvent()
 	 * @generated
 	 */
@@ -40,6 +50,9 @@ public class OccurrenceSpecificationPath extends InteractionFragmentPath {
 	};
 
 	/**
+	 * References the GeneralOrderings that specify EventOcurrences that must occur after
+	 * this OccurrenceSpecification
+	 
 	 * @see org.eclipse.uml2.uml.OccurrenceSpecification#getToAfters()
 	 * @generated
 	 */

@@ -13,6 +13,12 @@ import org.eclipse.uml2.uml.TemplateSignature;
 import org.eclipse.uml2.uml.TemplateableElement;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.RedefinableTemplateSignature RedefinableTemplateSignature} in a functional way.
+ * <p>
+ * A redefinable template signature supports the addition of formal template parameters
+ * in a specialization of a template classifier. 
+ * @see org.eclipse.uml2.uml.RedefinableTemplateSignature
  * @generated
  */
 public class RedefinableTemplateSignaturePath extends RedefinableElementPath {
@@ -25,24 +31,34 @@ public class RedefinableTemplateSignaturePath extends RedefinableElementPath {
 	}
 
 	/**
+	 * The ordered set of all formal template parameters for this template signature. 
+	 *
+	 * @see TemplateSignaturePath#parameter()
 	 * @see org.eclipse.uml2.uml.TemplateSignature#getParameters()
 	 * @generated
 	 */
 	public static final Function<TemplateSignature, EList<TemplateParameter>> parameter = TemplateSignaturePath.parameter;
 
 	/**
+	 * The formal template parameters that are owned by this template signature. 
+	 *
+	 * @see TemplateSignaturePath#ownedParameter()
 	 * @see org.eclipse.uml2.uml.TemplateSignature#getOwnedParameters()
 	 * @generated
 	 */
 	public static final Function<TemplateSignature, EList<TemplateParameter>> ownedParameter = TemplateSignaturePath.ownedParameter;
 
 	/**
+	 * The element that owns this template signature. 
+	 *
+	 * @see TemplateSignaturePath#template()
 	 * @see org.eclipse.uml2.uml.TemplateSignature#getTemplate()
 	 * @generated
 	 */
 	public static final Function<TemplateSignature, TemplateableElement> template = TemplateSignaturePath.template;
 
 	/**
+	 * The template signature that is extended by this template signature. 
 	 * @see org.eclipse.uml2.uml.RedefinableTemplateSignature#getExtendedSignatures()
 	 * @generated
 	 */
@@ -53,6 +69,7 @@ public class RedefinableTemplateSignaturePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * The formal template parameters of the extendedSignature. 
 	 * @see org.eclipse.uml2.uml.RedefinableTemplateSignature#getInheritedParameters()
 	 * @generated
 	 */
@@ -63,6 +80,7 @@ public class RedefinableTemplateSignaturePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * The classifier that owns this template signature. 
 	 * @see org.eclipse.uml2.uml.RedefinableTemplateSignature#getClassifier()
 	 * @generated
 	 */
@@ -73,7 +91,13 @@ public class RedefinableTemplateSignaturePath extends RedefinableElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.TemplateSignature#validateOwnElements()
+	 * Parameters must own the elements they parameter or those elements must be owned by
+	 * the element being templated.
+	templatedElement.ownedElement->includesAll(parameter.parameteredElement
+	 * - parameter.ownedParameteredElement) 
+	 *
+	 * @see TemplateSignaturePath#validateOwnElements()
+	 * @see org.eclipse.uml2.uml.TemplateSignature#validateOwnElements(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<TemplateSignature> validateOwnElements(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -81,7 +105,10 @@ public class RedefinableTemplateSignaturePath extends RedefinableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.RedefinableTemplateSignature#validateInheritedParameters()
+	 * The inherited parameters are the parameters of the extended template signature.
+	if
+	 * extendedSignature->isEmpty() then Set{} else extendedSignature.parameter endif 
+	 * @see org.eclipse.uml2.uml.RedefinableTemplateSignature#validateInheritedParameters(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<RedefinableTemplateSignature> validateInheritedParameters(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -93,6 +120,7 @@ public class RedefinableTemplateSignaturePath extends RedefinableElementPath {
 	}
 
 	/**
+	 * 
 	 * @see org.eclipse.uml2.uml.RedefinableTemplateSignature#getInheritedParameters()
 	 * @generated
 	 */

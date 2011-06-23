@@ -6,6 +6,11 @@ import org.eclipse.uml2.uml.ReceiveSignalEvent;
 import org.eclipse.uml2.uml.Signal;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ReceiveSignalEvent ReceiveSignalEvent} in a functional way.
+ * <p>
+ * A receive signal event specifies the event of receiving a signal by the target entity.
+ * @see org.eclipse.uml2.uml.ReceiveSignalEvent
  * @generated
  */
 public class ReceiveSignalEventPath extends MessageEventPath {
@@ -18,6 +23,7 @@ public class ReceiveSignalEventPath extends MessageEventPath {
 	}
 
 	/**
+	 * The signal associated with this event. 
 	 * @see org.eclipse.uml2.uml.ReceiveSignalEvent#getSignal()
 	 * @generated
 	 */

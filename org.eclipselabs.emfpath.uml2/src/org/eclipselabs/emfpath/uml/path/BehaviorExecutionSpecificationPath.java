@@ -6,6 +6,12 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.BehaviorExecutionSpecification BehaviorExecutionSpecification} in a functional way.
+ * <p>
+ * A behavior execution specification is a kind of execution specification representing
+ * the execution of a behavior. 
+ * @see org.eclipse.uml2.uml.BehaviorExecutionSpecification
  * @generated
  */
 public class BehaviorExecutionSpecificationPath extends ExecutionSpecificationPath {
@@ -18,6 +24,7 @@ public class BehaviorExecutionSpecificationPath extends ExecutionSpecificationPa
 	}
 
 	/**
+	 * Behavior whose execution is occurring. 
 	 * @see org.eclipse.uml2.uml.BehaviorExecutionSpecification#getBehavior()
 	 * @generated
 	 */

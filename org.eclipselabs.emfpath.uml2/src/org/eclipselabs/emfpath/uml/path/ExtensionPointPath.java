@@ -9,6 +9,13 @@ import org.eclipse.uml2.uml.ExtensionPoint;
 import org.eclipse.uml2.uml.UseCase;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ExtensionPoint ExtensionPoint} in a functional way.
+ * <p>
+ * An extension point identifies a point in the behavior of a use case where that behavior
+ * can be extended by the behavior of some other (extending) use case, as specified by
+ * an extend relationship. 
+ * @see org.eclipse.uml2.uml.ExtensionPoint
  * @generated
  */
 public class ExtensionPointPath extends RedefinableElementPath {
@@ -21,6 +28,7 @@ public class ExtensionPointPath extends RedefinableElementPath {
 	}
 
 	/**
+	 * References the use case that owns this extension point. 
 	 * @see org.eclipse.uml2.uml.ExtensionPoint#getUseCase()
 	 * @generated
 	 */
@@ -31,7 +39,9 @@ public class ExtensionPointPath extends RedefinableElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ExtensionPoint#validateMustHaveName()
+	 * An ExtensionPoint must have a name.
+	self.name->notEmpty () 
+	 * @see org.eclipse.uml2.uml.ExtensionPoint#validateMustHaveName(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ExtensionPoint> validateMustHaveName(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

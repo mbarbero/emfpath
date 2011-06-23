@@ -9,6 +9,17 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.CallBehaviorAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.CallBehaviorAction CallBehaviorAction} in a functional way.
+ * <p>
+ * A call behavior action is a call action that invokes a behavior directly rather than
+ * invoking a behavioral feature that, in turn, results in the invocation of that behavior.
+ * The argument values of the action are available to the execution of the invoked behavior.
+ * For synchronous calls the execution of the call behavior action waits until the execution
+ * of the invoked behavior completes and a result is returned on its output pin. The
+ * action completes immediately without a result, if the call is asynchronous. In particular,
+ * the invoked behavior may be an activity. 
+ * @see org.eclipse.uml2.uml.CallBehaviorAction
  * @generated
  */
 public class CallBehaviorActionPath extends CallActionPath {
@@ -21,6 +32,7 @@ public class CallBehaviorActionPath extends CallActionPath {
 	}
 
 	/**
+	 * The invoked behavior. It must be capable of accepting and returning control. 
 	 * @see org.eclipse.uml2.uml.CallBehaviorAction#getBehavior()
 	 * @generated
 	 */
@@ -31,7 +43,10 @@ public class CallBehaviorActionPath extends CallActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.CallBehaviorAction#validateArgumentPinEqualParameter()
+	 * The number of argument pins and the number of parameters of the behavior of type in
+	 * and in-out must be equal.
+	true 
+	 * @see org.eclipse.uml2.uml.CallBehaviorAction#validateArgumentPinEqualParameter(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<CallBehaviorAction> validateArgumentPinEqualParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -43,7 +58,10 @@ public class CallBehaviorActionPath extends CallActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.CallBehaviorAction#validateResultPinEqualParameter()
+	 * The number of result pins and the number of parameters of the behavior of type return,
+	 * out, and in-out must be equal.
+	true 
+	 * @see org.eclipse.uml2.uml.CallBehaviorAction#validateResultPinEqualParameter(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<CallBehaviorAction> validateResultPinEqualParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

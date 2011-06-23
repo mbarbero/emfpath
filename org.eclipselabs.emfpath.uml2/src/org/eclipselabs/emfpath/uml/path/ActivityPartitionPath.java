@@ -14,6 +14,12 @@ import org.eclipse.uml2.uml.ActivityPartition;
 import org.eclipse.uml2.uml.Element;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ActivityPartition ActivityPartition} in a functional way.
+ * <p>
+ * An activity partition is a kind of activity group for identifying actions that have
+ * some characteristic in common. 
+ * @see org.eclipse.uml2.uml.ActivityPartition
  * @generated
  */
 public class ActivityPartitionPath extends NamedElementPath {
@@ -26,36 +32,52 @@ public class ActivityPartitionPath extends NamedElementPath {
 	}
 
 	/**
+	 * Groups immediately contained in the group. 
+	 *
+	 * @see ActivityGroupPath#subgroup()
 	 * @see org.eclipse.uml2.uml.ActivityGroup#getSubgroups()
 	 * @generated
 	 */
 	public static final Function<ActivityGroup, EList<ActivityGroup>> subgroup = ActivityGroupPath.subgroup;
 
 	/**
+	 * Group immediately containing the group. 
+	 *
+	 * @see ActivityGroupPath#superGroup()
 	 * @see org.eclipse.uml2.uml.ActivityGroup#getSuperGroup()
 	 * @generated
 	 */
 	public static final Function<ActivityGroup, ActivityGroup> superGroup = ActivityGroupPath.superGroup;
 
 	/**
+	 * Activity containing the group. 
+	 *
+	 * @see ActivityGroupPath#inActivity()
 	 * @see org.eclipse.uml2.uml.ActivityGroup#getInActivity()
 	 * @generated
 	 */
 	public static final Function<ActivityGroup, Activity> inActivity = ActivityGroupPath.inActivity;
 
 	/**
+	 * Edges immediately contained in the group. 
+	 *
+	 * @see ActivityGroupPath#containedEdge()
 	 * @see org.eclipse.uml2.uml.ActivityGroup#getContainedEdges()
 	 * @generated
 	 */
 	public static final Function<ActivityGroup, EList<ActivityEdge>> containedEdge = ActivityGroupPath.containedEdge;
 
 	/**
+	 * Nodes immediately contained in the group. 
+	 *
+	 * @see ActivityGroupPath#containedNode()
 	 * @see org.eclipse.uml2.uml.ActivityGroup#getContainedNodes()
 	 * @generated
 	 */
 	public static final Function<ActivityGroup, EList<ActivityNode>> containedNode = ActivityGroupPath.containedNode;
 
 	/**
+	 * Tells whether the partition groups other partitions along a dimension. 
 	 * @see org.eclipse.uml2.uml.ActivityPartition#isDimension()
 	 * @generated
 	 */
@@ -66,6 +88,8 @@ public class ActivityPartitionPath extends NamedElementPath {
 	};
 
 	/**
+	 * Tells whether the partition represents an entity to which the partitioning structure
+	 * does not apply. 
 	 * @see org.eclipse.uml2.uml.ActivityPartition#isExternal()
 	 * @generated
 	 */
@@ -76,6 +100,7 @@ public class ActivityPartitionPath extends NamedElementPath {
 	};
 
 	/**
+	 * Nodes immediately contained in the group. 
 	 * @see org.eclipse.uml2.uml.ActivityPartition#getNodes()
 	 * @generated
 	 */
@@ -86,6 +111,7 @@ public class ActivityPartitionPath extends NamedElementPath {
 	};
 
 	/**
+	 * Partitions immediately contained in the partition. 
 	 * @see org.eclipse.uml2.uml.ActivityPartition#getSubpartitions()
 	 * @generated
 	 */
@@ -96,6 +122,7 @@ public class ActivityPartitionPath extends NamedElementPath {
 	};
 
 	/**
+	 * Partition immediately containing the partition. 
 	 * @see org.eclipse.uml2.uml.ActivityPartition#getSuperPartition()
 	 * @generated
 	 */
@@ -106,6 +133,7 @@ public class ActivityPartitionPath extends NamedElementPath {
 	};
 
 	/**
+	 * An element constraining behaviors invoked by nodes in the partition. 
 	 * @see org.eclipse.uml2.uml.ActivityPartition#getRepresents()
 	 * @generated
 	 */
@@ -116,6 +144,7 @@ public class ActivityPartitionPath extends NamedElementPath {
 	};
 
 	/**
+	 * Edges immediately contained in the group. 
 	 * @see org.eclipse.uml2.uml.ActivityPartition#getEdges()
 	 * @generated
 	 */
@@ -126,7 +155,11 @@ public class ActivityPartitionPath extends NamedElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityGroup#validateNodesAndEdges()
+	 * All nodes and edges of the group must be in the same activity as the group.
+	true
+	 *
+	 * @see ActivityGroupPath#validateNodesAndEdges()
+	 * @see org.eclipse.uml2.uml.ActivityGroup#validateNodesAndEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityGroup> validateNodesAndEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -134,7 +167,12 @@ public class ActivityPartitionPath extends NamedElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityGroup#validateNotContained()
+	 * No node or edge in a group may be contained by its subgroups or its containing groups,
+	 * transitively.
+	true 
+	 *
+	 * @see ActivityGroupPath#validateNotContained()
+	 * @see org.eclipse.uml2.uml.ActivityGroup#validateNotContained(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityGroup> validateNotContained(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -142,7 +180,11 @@ public class ActivityPartitionPath extends NamedElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityGroup#validateGroupOwned()
+	 * Groups may only be owned by activities or groups.
+	true 
+	 *
+	 * @see ActivityGroupPath#validateGroupOwned()
+	 * @see org.eclipse.uml2.uml.ActivityGroup#validateGroupOwned(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityGroup> validateGroupOwned(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -150,7 +192,9 @@ public class ActivityPartitionPath extends NamedElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityPartition#validateDimensionNotContained()
+	 * A partition with isDimension = true may not be contained by another partition.
+	true
+	 * @see org.eclipse.uml2.uml.ActivityPartition#validateDimensionNotContained(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityPartition> validateDimensionNotContained(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -162,7 +206,11 @@ public class ActivityPartitionPath extends NamedElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityPartition#validateRepresentsPart()
+	 * If a partition represents a part, then all the non-external partitions in the same
+	 * dimension and at the same level of nesting in that dimension must represent parts
+	 * directly contained in the internal structure of the same classifier.
+	true 
+	 * @see org.eclipse.uml2.uml.ActivityPartition#validateRepresentsPart(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityPartition> validateRepresentsPart(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -174,7 +222,13 @@ public class ActivityPartitionPath extends NamedElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityPartition#validateRepresentsClassifier()
+	 * If a non-external partition represents a classifier and is contained in another partition,
+	 * then the containing partition must represent a classifier, and the classifier of the
+	 * subpartition must be nested in the classifier represented by the containing partition,
+	 * or be at the contained end of a strong composition association with the classifier
+	 * represented by the containing partition.
+	true 
+	 * @see org.eclipse.uml2.uml.ActivityPartition#validateRepresentsClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityPartition> validateRepresentsClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -186,7 +240,11 @@ public class ActivityPartitionPath extends NamedElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityPartition#validateRepresentsPartAndIsContained()
+	 * If a partition represents a part and is contained by another partition, then the part
+	 * must be of a classifier represented by the containing partition, or of a classifier
+	 * that is the type of a part representing the containing partition.
+	true 
+	 * @see org.eclipse.uml2.uml.ActivityPartition#validateRepresentsPartAndIsContained(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityPartition> validateRepresentsPartAndIsContained(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

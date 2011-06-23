@@ -13,6 +13,14 @@ import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.Trigger;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.BehavioredClassifier BehavioredClassifier} in a functional way.
+ * <p>
+ * A behaviored classifier may have an interface realization.
+A classifier can have
+ * behavior specifications defined in its namespace. One of these may specify the behavior
+ * of the classifier itself. 
+ * @see org.eclipse.uml2.uml.BehavioredClassifier
  * @generated
  */
 public class BehavioredClassifierPath extends ClassifierPath {
@@ -25,6 +33,7 @@ public class BehavioredClassifierPath extends ClassifierPath {
 	}
 
 	/**
+	 * References behavior specifications owned by a classifier. 
 	 * @see org.eclipse.uml2.uml.BehavioredClassifier#getOwnedBehaviors()
 	 * @generated
 	 */
@@ -35,6 +44,7 @@ public class BehavioredClassifierPath extends ClassifierPath {
 	};
 
 	/**
+	 * A behavior specification that specifies the behavior of the classifier itself. 
 	 * @see org.eclipse.uml2.uml.BehavioredClassifier#getClassifierBehavior()
 	 * @generated
 	 */
@@ -45,6 +55,8 @@ public class BehavioredClassifierPath extends ClassifierPath {
 	};
 
 	/**
+	 * The set of InterfaceRealizations owned by the BehavioredClassifier. Interface realizations
+	 * reference the Interfaces of which the BehavioredClassifier is an implementation. 
 	 * @see org.eclipse.uml2.uml.BehavioredClassifier#getInterfaceRealizations()
 	 * @generated
 	 */
@@ -55,6 +67,7 @@ public class BehavioredClassifierPath extends ClassifierPath {
 	};
 
 	/**
+	 * References Trigger descriptions owned by a Classifier. 
 	 * @see org.eclipse.uml2.uml.BehavioredClassifier#getOwnedTriggers()
 	 * @generated
 	 */
@@ -65,7 +78,10 @@ public class BehavioredClassifierPath extends ClassifierPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.BehavioredClassifier#validateClassBehavior()
+	 * If a behavior is classifier behavior, it does not have a specification.
+	self.classifierBehavior.notEmpty()
+	 * implies self.specification.isEmpty() 
+	 * @see org.eclipse.uml2.uml.BehavioredClassifier#validateClassBehavior(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<BehavioredClassifier> validateClassBehavior(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -77,6 +93,8 @@ public class BehavioredClassifierPath extends ClassifierPath {
 	}
 
 	/**
+	 * Retrieves the interfaces on which this behaviored classifier has an interface realization
+	 * dependency. 
 	 * @see org.eclipse.uml2.uml.BehavioredClassifier#getImplementedInterfaces()
 	 * @generated
 	 */
@@ -87,6 +105,8 @@ public class BehavioredClassifierPath extends ClassifierPath {
 	};
 
 	/**
+	 * Retrieves all the interfaces on which this behaviored classifier or any of its parents
+	 * has an interface realization dependency. 
 	 * @see org.eclipse.uml2.uml.BehavioredClassifier#getAllImplementedInterfaces()
 	 * @generated
 	 */

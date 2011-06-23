@@ -11,6 +11,16 @@ import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.GeneralizationSet;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Generalization Generalization} in a functional way.
+ * <p>
+ * A generalization is a taxonomic relationship between a more general classifier and
+ * a more specific classifier. Each instance of the specific classifier is also an indirect
+ * instance of the general classifier. Thus, the specific classifier inherits the features
+ * of the more general classifier.
+A generalization relates a specific classifier to
+ * a more general classifier, and is owned by the specific classifier. 
+ * @see org.eclipse.uml2.uml.Generalization
  * @generated
  */
 public class GeneralizationPath extends DirectedRelationshipPath {
@@ -23,6 +33,9 @@ public class GeneralizationPath extends DirectedRelationshipPath {
 	}
 
 	/**
+	 * Indicates whether the specific classifier can be used wherever the general classifier
+	 * can be used. If true, the execution traces of the specific classifier will be a superset
+	 * of the execution traces of the general classifier. 
 	 * @see org.eclipse.uml2.uml.Generalization#isSubstitutable()
 	 * @generated
 	 */
@@ -33,6 +46,7 @@ public class GeneralizationPath extends DirectedRelationshipPath {
 	};
 
 	/**
+	 * References the general classifier in the Generalization relationship. 
 	 * @see org.eclipse.uml2.uml.Generalization#getGeneral()
 	 * @generated
 	 */
@@ -43,6 +57,7 @@ public class GeneralizationPath extends DirectedRelationshipPath {
 	};
 
 	/**
+	 * Designates a set in which instances of Generalization is considered members. 
 	 * @see org.eclipse.uml2.uml.Generalization#getGeneralizationSets()
 	 * @generated
 	 */
@@ -53,6 +68,7 @@ public class GeneralizationPath extends DirectedRelationshipPath {
 	};
 
 	/**
+	 * References the specializing classifier in the Generalization relationship. 
 	 * @see org.eclipse.uml2.uml.Generalization#getSpecific()
 	 * @generated
 	 */
@@ -63,7 +79,11 @@ public class GeneralizationPath extends DirectedRelationshipPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.Generalization#validateGeneralizationSameClassifier()
+	 * Every Generalization associated with a given GeneralizationSet must have the same
+	 * general Classifier. That is, all Generalizations for a particular GeneralizationSet
+	 * must have the same superclass.
+	true 
+	 * @see org.eclipse.uml2.uml.Generalization#validateGeneralizationSameClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Generalization> validateGeneralizationSameClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

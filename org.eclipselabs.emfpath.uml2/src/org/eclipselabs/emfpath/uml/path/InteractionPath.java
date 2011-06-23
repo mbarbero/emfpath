@@ -13,6 +13,12 @@ import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Interaction Interaction} in a functional way.
+ * <p>
+ * An interaction is a unit of behavior that focuses on the observable exchange of information
+ * between connectable elements. 
+ * @see org.eclipse.uml2.uml.Interaction
  * @generated
  */
 public class InteractionPath extends BehaviorPath {
@@ -25,30 +31,43 @@ public class InteractionPath extends BehaviorPath {
 	}
 
 	/**
+	 * References the Lifelines that the InteractionFragment involves. 
+	 *
+	 * @see InteractionFragmentPath#covered()
 	 * @see org.eclipse.uml2.uml.InteractionFragment#getCovereds()
 	 * @generated
 	 */
 	public static final Function<InteractionFragment, EList<Lifeline>> covered = InteractionFragmentPath.covered;
 
 	/**
+	 * The general ordering relationships contained in this fragment. 
+	 *
+	 * @see InteractionFragmentPath#generalOrdering()
 	 * @see org.eclipse.uml2.uml.InteractionFragment#getGeneralOrderings()
 	 * @generated
 	 */
 	public static final Function<InteractionFragment, EList<GeneralOrdering>> generalOrdering = InteractionFragmentPath.generalOrdering;
 
 	/**
+	 * The Interaction enclosing this InteractionFragment. 
+	 *
+	 * @see InteractionFragmentPath#enclosingInteraction()
 	 * @see org.eclipse.uml2.uml.InteractionFragment#getEnclosingInteraction()
 	 * @generated
 	 */
 	public static final Function<InteractionFragment, Interaction> enclosingInteraction = InteractionFragmentPath.enclosingInteraction;
 
 	/**
+	 * The operand enclosing this InteractionFragment (they may nest recursively) 
+	 *
+	 * @see InteractionFragmentPath#enclosingOperand()
 	 * @see org.eclipse.uml2.uml.InteractionFragment#getEnclosingOperand()
 	 * @generated
 	 */
 	public static final Function<InteractionFragment, InteractionOperand> enclosingOperand = InteractionFragmentPath.enclosingOperand;
 
 	/**
+	 * Specifies the participants in this Interaction. 
 	 * @see org.eclipse.uml2.uml.Interaction#getLifelines()
 	 * @generated
 	 */
@@ -59,6 +78,7 @@ public class InteractionPath extends BehaviorPath {
 	};
 
 	/**
+	 * The ordered set of fragments in the Interaction. 
 	 * @see org.eclipse.uml2.uml.Interaction#getFragments()
 	 * @generated
 	 */
@@ -69,6 +89,7 @@ public class InteractionPath extends BehaviorPath {
 	};
 
 	/**
+	 * Actions owned by the Interaction. 
 	 * @see org.eclipse.uml2.uml.Interaction#getActions()
 	 * @generated
 	 */
@@ -79,6 +100,9 @@ public class InteractionPath extends BehaviorPath {
 	};
 
 	/**
+	 * Specifies the gates that form the message interface between this Interaction and any
+	 * InteractionUses which reference it.
+	 
 	 * @see org.eclipse.uml2.uml.Interaction#getFormalGates()
 	 * @generated
 	 */
@@ -89,6 +113,7 @@ public class InteractionPath extends BehaviorPath {
 	};
 
 	/**
+	 * The Messages contained in this Interaction. 
 	 * @see org.eclipse.uml2.uml.Interaction#getMessages()
 	 * @generated
 	 */

@@ -7,6 +7,12 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Relationship;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Relationship Relationship} in a functional way.
+ * <p>
+ * Relationship is an abstract concept that specifies some kind of relationship between
+ * elements. 
+ * @see org.eclipse.uml2.uml.Relationship
  * @generated
  */
 public class RelationshipPath extends ElementPath {
@@ -19,6 +25,7 @@ public class RelationshipPath extends ElementPath {
 	}
 
 	/**
+	 * Specifies the elements related by the Relationship. 
 	 * @see org.eclipse.uml2.uml.Relationship#getRelatedElements()
 	 * @generated
 	 */

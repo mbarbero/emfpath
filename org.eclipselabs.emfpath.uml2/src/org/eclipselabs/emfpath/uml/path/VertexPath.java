@@ -9,6 +9,12 @@ import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.Vertex;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Vertex Vertex} in a functional way.
+ * <p>
+ * A vertex is an abstraction of a node in a state machine graph. In general, it can
+ * be the source or destination of any number of transitions. 
+ * @see org.eclipse.uml2.uml.Vertex
  * @generated
  */
 public class VertexPath extends NamedElementPath {
@@ -21,6 +27,7 @@ public class VertexPath extends NamedElementPath {
 	}
 
 	/**
+	 * Specifies the transitions departing from this vertex. 
 	 * @see org.eclipse.uml2.uml.Vertex#getOutgoings()
 	 * @generated
 	 */
@@ -31,6 +38,7 @@ public class VertexPath extends NamedElementPath {
 	};
 
 	/**
+	 * Specifies the transitions entering this vertex. 
 	 * @see org.eclipse.uml2.uml.Vertex#getIncomings()
 	 * @generated
 	 */
@@ -41,6 +49,7 @@ public class VertexPath extends NamedElementPath {
 	};
 
 	/**
+	 * The region that contains this vertex. 
 	 * @see org.eclipse.uml2.uml.Vertex#getContainer()
 	 * @generated
 	 */
@@ -51,6 +60,23 @@ public class VertexPath extends NamedElementPath {
 	};
 	
 	/**
+	 * The operation containingStateMachine() returns the state machine in which this Vertex
+	 * is defined
+	result = if not container->isEmpty()
+	then
+	-- the container is a region
+	container.containingStateMachine()
+	else
+	 * if (oclIsKindOf(Pseudostate)) then
+	-- entry or exit point?
+	if (kind = #entryPoint)
+	 * or (kind = #exitPoint) then
+	stateMachine
+	else if (oclIsKindOf(ConnectionPointReference))
+	 * then
+	state.containingStateMachine() -- no other valid cases possible
+	endif
+	 
 	 * @see org.eclipse.uml2.uml.Vertex#containingStateMachine()
 	 * @generated
 	 */
@@ -61,6 +87,7 @@ public class VertexPath extends NamedElementPath {
 	};
 
 	/**
+	 * result = Transition.allInstances()->select(t | t.source=self) 
 	 * @see org.eclipse.uml2.uml.Vertex#getOutgoings()
 	 * @generated
 	 */
@@ -71,6 +98,7 @@ public class VertexPath extends NamedElementPath {
 	};
 
 	/**
+	 * result = Transition.allInstances()->select(t | t.target=self) 
 	 * @see org.eclipse.uml2.uml.Vertex#getIncomings()
 	 * @generated
 	 */

@@ -9,6 +9,12 @@ import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.RemoveVariableValueAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.RemoveVariableValueAction RemoveVariableValueAction} in a functional way.
+ * <p>
+ * A remove variable value action is a write variable action that removes values from
+ * variables. 
+ * @see org.eclipse.uml2.uml.RemoveVariableValueAction
  * @generated
  */
 public class RemoveVariableValueActionPath extends WriteVariableActionPath {
@@ -21,6 +27,7 @@ public class RemoveVariableValueActionPath extends WriteVariableActionPath {
 	}
 
 	/**
+	 * Specifies whether to remove duplicates of the value in nonunique variables. 
 	 * @see org.eclipse.uml2.uml.RemoveVariableValueAction#isRemoveDuplicates()
 	 * @generated
 	 */
@@ -31,6 +38,8 @@ public class RemoveVariableValueActionPath extends WriteVariableActionPath {
 	};
 
 	/**
+	 * Specifies the position of an existing value to remove in ordered nonunique variables.
+	 * The type of the pin is UnlimitedNatural, but the value cannot be zero or unlimited.
 	 * @see org.eclipse.uml2.uml.RemoveVariableValueAction#getRemoveAt()
 	 * @generated
 	 */
@@ -41,7 +50,11 @@ public class RemoveVariableValueActionPath extends WriteVariableActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.RemoveVariableValueAction#validateUnlimitedNatural()
+	 * Actions removing a value from ordered nonunique variables must have a single removeAt
+	 * input pin if isRemoveDuplicates is false. It must be of type UnlimitedNatural with
+	 * multiplicity of 1..1, otherwise the action has no removeAt input pin.
+	true 
+	 * @see org.eclipse.uml2.uml.RemoveVariableValueAction#validateUnlimitedNatural(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<RemoveVariableValueAction> validateUnlimitedNatural(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

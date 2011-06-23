@@ -20,6 +20,16 @@ import org.eclipse.uml2.uml.Trigger;
 import org.eclipse.uml2.uml.Vertex;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.State State} in a functional way.
+ * <p>
+ * A state models a situation during which some (usually implicit) invariant condition
+ * holds.
+The states of protocol state machines are exposed to the users of their context
+ * classifiers. A protocol state represents an exposed stable situation of its context
+ * classifier: when an instance of the classifier is not processing any operation, users
+ * of this instance can always know its state configuration. 
+ * @see org.eclipse.uml2.uml.State
  * @generated
  */
 public class StatePath extends NamespacePath {
@@ -32,42 +42,63 @@ public class StatePath extends NamespacePath {
 	}
 
 	/**
+	 * Indicates whether it is possible to further specialize a RedefinableElement. If the
+	 * value is true, then it is not possible to further specialize the RedefinableElement.
+	 *
+	 * @see RedefinableElementPath#isLeaf()
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isLeaf()
 	 * @generated
 	 */
 	public static final Predicate<RedefinableElement> isLeaf = RedefinableElementPath.isLeaf;
 
 	/**
+	 * The redefinable element that is being redefined by this element. 
+	 *
+	 * @see RedefinableElementPath#redefinedElement()
 	 * @see org.eclipse.uml2.uml.RedefinableElement#getRedefinedElements()
 	 * @generated
 	 */
 	public static final Function<RedefinableElement, EList<RedefinableElement>> redefinedElement = RedefinableElementPath.redefinedElement;
 
 	/**
+	 * References the contexts that this element may be redefined from. 
+	 *
+	 * @see RedefinableElementPath#redefinitionContext()
 	 * @see org.eclipse.uml2.uml.RedefinableElement#getRedefinitionContexts()
 	 * @generated
 	 */
 	public static final Function<RedefinableElement, EList<Classifier>> redefinitionContext = RedefinableElementPath.redefinitionContext;
 
 	/**
+	 * Specifies the transitions departing from this vertex. 
+	 *
+	 * @see VertexPath#outgoing()
 	 * @see org.eclipse.uml2.uml.Vertex#getOutgoings()
 	 * @generated
 	 */
 	public static final Function<Vertex, EList<Transition>> outgoing = VertexPath.outgoing;
 
 	/**
+	 * Specifies the transitions entering this vertex. 
+	 *
+	 * @see VertexPath#incoming()
 	 * @see org.eclipse.uml2.uml.Vertex#getIncomings()
 	 * @generated
 	 */
 	public static final Function<Vertex, EList<Transition>> incoming = VertexPath.incoming;
 
 	/**
+	 * The region that contains this vertex. 
+	 *
+	 * @see VertexPath#container()
 	 * @see org.eclipse.uml2.uml.Vertex#getContainer()
 	 * @generated
 	 */
 	public static final Function<Vertex, Region> container = VertexPath.container;
 
 	/**
+	 * A state with isComposite=true is said to be a composite state. A composite state is
+	 * a state that contains at least one region. 
 	 * @see org.eclipse.uml2.uml.State#isComposite()
 	 * @generated
 	 */
@@ -78,6 +109,8 @@ public class StatePath extends NamespacePath {
 	};
 
 	/**
+	 * A state with isOrthogonal=true is said to be an orthogonal composite state. An orthogonal
+	 * composite state contains two or more regions. 
 	 * @see org.eclipse.uml2.uml.State#isOrthogonal()
 	 * @generated
 	 */
@@ -88,6 +121,8 @@ public class StatePath extends NamespacePath {
 	};
 
 	/**
+	 * A state with isSimple=true is said to be a simple state. A simple state does not have
+	 * any regions and it does not refer to any submachine state machine. 
 	 * @see org.eclipse.uml2.uml.State#isSimple()
 	 * @generated
 	 */
@@ -98,6 +133,8 @@ public class StatePath extends NamespacePath {
 	};
 
 	/**
+	 * A state with isSubmachineState=true is said to be a submachine state. Such a state
+	 * refers to a state machine (submachine). 
 	 * @see org.eclipse.uml2.uml.State#isSubmachineState()
 	 * @generated
 	 */
@@ -108,6 +145,7 @@ public class StatePath extends NamespacePath {
 	};
 
 	/**
+	 * The state machine that is to be inserted in place of the (submachine) state. 
 	 * @see org.eclipse.uml2.uml.State#getSubmachine()
 	 * @generated
 	 */
@@ -118,6 +156,10 @@ public class StatePath extends NamespacePath {
 	};
 
 	/**
+	 * The entry and exit connection points used in conjunction with this (submachine) state,
+	 * i.e. as targets and sources, respectively, in the region with the submachine state.
+	 * A connection point reference references the corresponding definition of a connection
+	 * point pseudostate in the statemachine referenced by the submachinestate. 
 	 * @see org.eclipse.uml2.uml.State#getConnections()
 	 * @generated
 	 */
@@ -128,6 +170,9 @@ public class StatePath extends NamespacePath {
 	};
 
 	/**
+	 * The entry and exit pseudostates of a composite state. These can only be entry or exit
+	 * Pseudostates, and they must have different names. They can only be defined for composite
+	 * states. 
 	 * @see org.eclipse.uml2.uml.State#getConnectionPoints()
 	 * @generated
 	 */
@@ -138,6 +183,7 @@ public class StatePath extends NamespacePath {
 	};
 
 	/**
+	 * The state of which this state is a redefinition. 
 	 * @see org.eclipse.uml2.uml.State#getRedefinedState()
 	 * @generated
 	 */
@@ -148,6 +194,10 @@ public class StatePath extends NamespacePath {
 	};
 
 	/**
+	 * Specifies conditions that are always true when this state is the current state. In
+	 * protocol state machines, state invariants are additional conditions to the preconditions
+	 * of the outgoing transitions, and to the postcondition of the incoming transitions.
+	
 	 * @see org.eclipse.uml2.uml.State#getStateInvariant()
 	 * @generated
 	 */
@@ -158,6 +208,10 @@ public class StatePath extends NamespacePath {
 	};
 
 	/**
+	 * An optional behavior that is executed whenever this state is entered regardless of
+	 * the transition taken to reach the state. If defined, entry actions are always executed
+	 * to completion prior to any internal behavior or transitions performed within the state.
+	
 	 * @see org.eclipse.uml2.uml.State#getEntry()
 	 * @generated
 	 */
@@ -168,6 +222,10 @@ public class StatePath extends NamespacePath {
 	};
 
 	/**
+	 * An optional behavior that is executed whenever this state is exited regardless of
+	 * which transition was taken out of the state. If defined, exit actions are always executed
+	 * to completion only after all internal activities and transition actions have completed
+	 * execution. 
 	 * @see org.eclipse.uml2.uml.State#getExit()
 	 * @generated
 	 */
@@ -178,6 +236,9 @@ public class StatePath extends NamespacePath {
 	};
 
 	/**
+	 * An optional behavior that is executed while being in the state. The execution starts
+	 * when this state is entered, and stops either by itself, or when the state is exited,
+	 * whichever comes first. 
 	 * @see org.eclipse.uml2.uml.State#getDoActivity()
 	 * @generated
 	 */
@@ -188,6 +249,10 @@ public class StatePath extends NamespacePath {
 	};
 
 	/**
+	 * A list of triggers that are candidates to be retained by the state machine if they
+	 * trigger no transitions out of the state (not consumed). A deferred trigger is retained
+	 * until the state machine reaches a state configuration where it is no longer deferred.
+	
 	 * @see org.eclipse.uml2.uml.State#getDeferrableTriggers()
 	 * @generated
 	 */
@@ -198,6 +263,7 @@ public class StatePath extends NamespacePath {
 	};
 
 	/**
+	 * The regions owned directly by the state. 
 	 * @see org.eclipse.uml2.uml.State#getRegions()
 	 * @generated
 	 */
@@ -208,7 +274,13 @@ public class StatePath extends NamespacePath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionContextValid()
+	 * At least one of the redefinition contexts of the redefining element must be a specialization
+	 * of at least one of the redefinition contexts for each redefined element.
+	self.redefinedElement->forAll(e
+	 * | self.isRedefinitionContextValid(e)) 
+	 *
+	 * @see RedefinableElementPath#validateRedefinitionContextValid()
+	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionContextValid(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<RedefinableElement> validateRedefinitionContextValid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -216,7 +288,12 @@ public class StatePath extends NamespacePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionConsistent()
+	 * A redefining element must be consistent with each redefined element.
+	self.redefinedElement->forAll(re
+	 * | re.isConsistentWith(self)) 
+	 *
+	 * @see RedefinableElementPath#validateRedefinitionConsistent()
+	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionConsistent(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<RedefinableElement> validateRedefinitionConsistent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -224,7 +301,16 @@ public class StatePath extends NamespacePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.RedefinableElement#isConsistentWith()
+	 * The query isConsistentWith() specifies, for any two RedefinableElements in a context
+	 * in which redefinition is possible, whether redefinition would be logically consistent.
+	 * By default, this is false; this operation must be overridden for subclasses of RedefinableElement
+	 * to define the consistency conditions.
+	redefinee.isRedefinitionContextValid(self)
+	result
+	 * = false 
+	 *
+	 * @see RedefinableElementPath#isConsistentWith()
+	 * @see org.eclipse.uml2.uml.RedefinableElement#isConsistentWith(RedefinableElement)
 	 * @generated
 	 */
 	public static Predicate<RedefinableElement> isConsistentWith(final RedefinableElement redefinee) {
@@ -232,7 +318,16 @@ public class StatePath extends NamespacePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.RedefinableElement#isRedefinitionContextValid()
+	 * The query isRedefinitionContextValid() specifies whether the redefinition contexts
+	 * of this RedefinableElement are properly related to the redefinition contexts of the
+	 * specified RedefinableElement to allow this element to redefine the other. By default
+	 * at least one of the redefinition contexts of this element must be a specialization
+	 * of at least one of the redefinition contexts of the specified element.
+	result = redefinitionContext->exists(c
+	 * | c.allParents()->includes(redefined.redefinitionContext))) 
+	 *
+	 * @see RedefinableElementPath#isRedefinitionContextValid()
+	 * @see org.eclipse.uml2.uml.RedefinableElement#isRedefinitionContextValid(RedefinableElement)
 	 * @generated
 	 */
 	public static Predicate<RedefinableElement> isRedefinitionContextValid(final RedefinableElement redefined) {
@@ -240,13 +335,35 @@ public class StatePath extends NamespacePath {
 	}
 
 	/**
+	 * The operation containingStateMachine() returns the state machine in which this Vertex
+	 * is defined
+	result = if not container->isEmpty()
+	then
+	-- the container is a region
+	container.containingStateMachine()
+	else
+	 * if (oclIsKindOf(Pseudostate)) then
+	-- entry or exit point?
+	if (kind = #entryPoint)
+	 * or (kind = #exitPoint) then
+	stateMachine
+	else if (oclIsKindOf(ConnectionPointReference))
+	 * then
+	state.containingStateMachine() -- no other valid cases possible
+	endif
+	 
+	 *
+	 * @see VertexPath#containingStateMachine()
 	 * @see org.eclipse.uml2.uml.Vertex#containingStateMachine()
 	 * @generated
 	 */
 	public static final Function<Vertex, StateMachine> containingStateMachine = VertexPath.containingStateMachine;
 
 	/**
-	 * @see org.eclipse.uml2.uml.State#validateSubmachineStates()
+	 * Only submachine states can have connection point references.
+	isSubmachineState implies
+	 * connection->notEmpty ( ) 
+	 * @see org.eclipse.uml2.uml.State#validateSubmachineStates(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<State> validateSubmachineStates(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -258,7 +375,15 @@ public class StatePath extends NamespacePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.State#validateDestinationsOrSourcesOfTransitions()
+	 * The connection point references used as destinations/sources of transitions associated
+	 * with a submachine state must be defined as entry/exit points in the submachine state
+	 * machine.
+	self.isSubmachineState implies (self.connection->forAll (cp |
+	cp.entry->forAll
+	 * (p | p.statemachine = self.submachine) and
+	cp.exit->forAll (p | p.statemachine =
+	 * self.submachine))) 
+	 * @see org.eclipse.uml2.uml.State#validateDestinationsOrSourcesOfTransitions(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<State> validateDestinationsOrSourcesOfTransitions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -270,7 +395,10 @@ public class StatePath extends NamespacePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.State#validateSubmachineOrRegions()
+	 * A state is not allowed to have both a submachine and regions.
+	isComposite implies
+	 * not isSubmachineState 
+	 * @see org.eclipse.uml2.uml.State#validateSubmachineOrRegions(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<State> validateSubmachineOrRegions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -282,7 +410,10 @@ public class StatePath extends NamespacePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.State#validateCompositeStates()
+	 * Only composite states can have entry or exit pseudostates defined.
+	connectionPoint->notEmpty()
+	 * implies isComoposite 
+	 * @see org.eclipse.uml2.uml.State#validateCompositeStates(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<State> validateCompositeStates(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -294,7 +425,10 @@ public class StatePath extends NamespacePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.State#validateEntryOrExit()
+	 * Only entry or exit pseudostates can serve as connection points.
+	connectionPoint->forAll(cp|cp.kind
+	 * = #entry or cp.kind = #exit) 
+	 * @see org.eclipse.uml2.uml.State#validateEntryOrExit(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<State> validateEntryOrExit(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -306,6 +440,15 @@ public class StatePath extends NamespacePath {
 	}
 
 	/**
+	 * The redefinition context of a state is the nearest containing statemachine.
+	result
+	 * = let sm = containingStateMachine() in
+	if sm.context->isEmpty() or sm.general->notEmpty()
+	 * then
+	sm
+	else
+	sm.context
+	endif 
 	 * @see org.eclipse.uml2.uml.State#redefinitionContext()
 	 * @generated
 	 */
@@ -316,7 +459,12 @@ public class StatePath extends NamespacePath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.State#isRedefinitionContextValid()
+	 * The query isRedefinitionContextValid() specifies whether the redefinition contexts
+	 * of a state are properly related to the redefinition contexts of the specified state
+	 * to allow this element to redefine the other. The containing region of a redefining
+	 * state must redefine the containing region of the redefined state.
+	result = true 
+	 * @see org.eclipse.uml2.uml.State#isRedefinitionContextValid(State)
 	 * @generated
 	 */
 	public static Predicate<State> isRedefinitionContextValid(final State redefined) {

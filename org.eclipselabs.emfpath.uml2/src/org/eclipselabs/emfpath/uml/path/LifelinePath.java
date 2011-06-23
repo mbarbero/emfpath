@@ -14,6 +14,13 @@ import org.eclipse.uml2.uml.PartDecomposition;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Lifeline Lifeline} in a functional way.
+ * <p>
+ * A lifeline represents an individual participant in the interaction. While parts and
+ * structural features may have multiplicity greater than 1, lifelines represent only
+ * one interacting entity. 
+ * @see org.eclipse.uml2.uml.Lifeline
  * @generated
  */
 public class LifelinePath extends NamedElementPath {
@@ -26,6 +33,8 @@ public class LifelinePath extends NamedElementPath {
 	}
 
 	/**
+	 * References the ConnectableElement within the classifier that contains the enclosing
+	 * interaction. 
 	 * @see org.eclipse.uml2.uml.Lifeline#getRepresents()
 	 * @generated
 	 */
@@ -36,6 +45,7 @@ public class LifelinePath extends NamedElementPath {
 	};
 
 	/**
+	 * References the Interaction enclosing this Lifeline. 
 	 * @see org.eclipse.uml2.uml.Lifeline#getInteraction()
 	 * @generated
 	 */
@@ -46,6 +56,8 @@ public class LifelinePath extends NamedElementPath {
 	};
 
 	/**
+	 * If the referenced ConnectableElement is multivalued, then this specifies the specific
+	 * individual part within that set. 
 	 * @see org.eclipse.uml2.uml.Lifeline#getSelector()
 	 * @generated
 	 */
@@ -56,6 +68,7 @@ public class LifelinePath extends NamedElementPath {
 	};
 
 	/**
+	 * References the Interaction that represents the decomposition. 
 	 * @see org.eclipse.uml2.uml.Lifeline#getDecomposedAs()
 	 * @generated
 	 */
@@ -66,6 +79,7 @@ public class LifelinePath extends NamedElementPath {
 	};
 
 	/**
+	 * References the InteractionFragments in which this Lifeline takes part. 
 	 * @see org.eclipse.uml2.uml.Lifeline#getCoveredBys()
 	 * @generated
 	 */
@@ -76,7 +90,11 @@ public class LifelinePath extends NamedElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.Lifeline#validateInteractionUsesShareLifeline()
+	 * If two (or more) InteractionUses within one Interaction, refer to Interactions with
+	 * 'common Lifelines,' those Lifelines must also appear in the Interaction with the InteractionUses.
+	 * By common Lifelines we mean Lifelines with the same selector and represents associations.
+	true
+	 * @see org.eclipse.uml2.uml.Lifeline#validateInteractionUsesShareLifeline(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Lifeline> validateInteractionUsesShareLifeline(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -88,7 +106,13 @@ public class LifelinePath extends NamedElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Lifeline#validateSelectorSpecified()
+	 * The selector for a Lifeline must only be specified if the referenced Part is multivalued.
+	(self.selector->isEmpty()
+	 * implies not self.represents.isMultivalued()) or
+	(not self.selector->isEmpty() implies
+	 * self.represents.isMultivalued())
+	 
+	 * @see org.eclipse.uml2.uml.Lifeline#validateSelectorSpecified(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Lifeline> validateSelectorSpecified(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -100,7 +124,14 @@ public class LifelinePath extends NamedElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Lifeline#validateSameClassifier()
+	 * The classifier containing the referenced ConnectableElement must be the same classifier,
+	 * or an ancestor, of the classifier that contains the interaction enclosing this lifeline.
+	if
+	 * (represents->notEmpty()) then
+	(if selector->notEmpty() then represents.isMultivalued()
+	 * else not represents.isMultivalued())
+	 
+	 * @see org.eclipse.uml2.uml.Lifeline#validateSameClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Lifeline> validateSameClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

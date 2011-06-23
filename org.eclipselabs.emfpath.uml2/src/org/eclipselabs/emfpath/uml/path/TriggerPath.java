@@ -8,6 +8,13 @@ import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Trigger;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Trigger Trigger} in a functional way.
+ * <p>
+ * A trigger relates an event to a behavior that may affect an instance of the classifier.
+A
+ * trigger specification may be qualified by the port on which the event occurred. 
+ * @see org.eclipse.uml2.uml.Trigger
  * @generated
  */
 public class TriggerPath extends NamedElementPath {
@@ -20,6 +27,7 @@ public class TriggerPath extends NamedElementPath {
 	}
 
 	/**
+	 * The event that causes the trigger. 
 	 * @see org.eclipse.uml2.uml.Trigger#getEvent()
 	 * @generated
 	 */
@@ -30,6 +38,7 @@ public class TriggerPath extends NamedElementPath {
 	};
 
 	/**
+	 * A optional port of the receiver object on which the behavioral feature is invoked.
 	 * @see org.eclipse.uml2.uml.Trigger#getPorts()
 	 * @generated
 	 */

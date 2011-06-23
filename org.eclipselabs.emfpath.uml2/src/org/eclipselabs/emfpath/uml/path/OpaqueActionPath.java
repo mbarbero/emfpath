@@ -8,6 +8,11 @@ import org.eclipse.uml2.uml.OpaqueAction;
 import org.eclipse.uml2.uml.OutputPin;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.OpaqueAction OpaqueAction} in a functional way.
+ * <p>
+ * An action with implementation-specific semantics. 
+ * @see org.eclipse.uml2.uml.OpaqueAction
  * @generated
  */
 public class OpaqueActionPath extends ActionPath {
@@ -20,6 +25,7 @@ public class OpaqueActionPath extends ActionPath {
 	}
 
 	/**
+	 * Specifies the action in one or more languages. 
 	 * @see org.eclipse.uml2.uml.OpaqueAction#getBodies()
 	 * @generated
 	 */
@@ -30,6 +36,7 @@ public class OpaqueActionPath extends ActionPath {
 	};
 
 	/**
+	 * Languages the body strings use, in the same order as the body strings 
 	 * @see org.eclipse.uml2.uml.OpaqueAction#getLanguages()
 	 * @generated
 	 */
@@ -40,6 +47,7 @@ public class OpaqueActionPath extends ActionPath {
 	};
 
 	/**
+	 * Provides input to the action. 
 	 * @see org.eclipse.uml2.uml.OpaqueAction#getInputValues()
 	 * @generated
 	 */
@@ -50,6 +58,7 @@ public class OpaqueActionPath extends ActionPath {
 	};
 
 	/**
+	 * Takes output from the action. 
 	 * @see org.eclipse.uml2.uml.OpaqueAction#getOutputValues()
 	 * @generated
 	 */

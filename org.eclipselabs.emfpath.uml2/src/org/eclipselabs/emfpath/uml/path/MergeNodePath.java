@@ -7,6 +7,13 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.MergeNode;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.MergeNode MergeNode} in a functional way.
+ * <p>
+ * A merge node is a control node that brings together multiple alternate flows. It is
+ * not used to synchronize concurrent flows but to accept one among several alternate
+ * flows. 
+ * @see org.eclipse.uml2.uml.MergeNode
  * @generated
  */
 public class MergeNodePath extends ControlNodePath {
@@ -21,7 +28,9 @@ public class MergeNodePath extends ControlNodePath {
 	
 	
 	/**
-	 * @see org.eclipse.uml2.uml.MergeNode#validateOneOutgoingEdge()
+	 * A merge node has one outgoing edge.
+	true 
+	 * @see org.eclipse.uml2.uml.MergeNode#validateOneOutgoingEdge(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<MergeNode> validateOneOutgoingEdge(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -33,7 +42,10 @@ public class MergeNodePath extends ControlNodePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.MergeNode#validateEdges()
+	 * The edges coming into and out of a merge node must be either all object flows or all
+	 * control flows.
+	true 
+	 * @see org.eclipse.uml2.uml.MergeNode#validateEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<MergeNode> validateEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

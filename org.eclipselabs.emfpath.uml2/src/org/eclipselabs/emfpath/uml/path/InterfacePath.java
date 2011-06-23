@@ -15,6 +15,22 @@ import org.eclipse.uml2.uml.Reception;
 import org.eclipse.uml2.uml.Type;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Interface Interface} in a functional way.
+ * <p>
+ * An interface is a kind of classifier that represents a declaration of a set of coherent
+ * public features and obligations. An interface specifies a contract; any instance of
+ * a classifier that realizes the interface must fulfill that contract. The obligations
+ * that may be associated with an interface are in the form of various kinds of constraints
+ * (such as pre- and post-conditions) or protocol specifications, which may impose ordering
+ * restrictions on interactions through the interface.
+Interfaces may include receptions
+ * (in addition to operations).
+Since an interface specifies conformance characteristics,
+ * it does not own detailed behavior specifications. Instead, interfaces may own a protocol
+ * state machine that specifies event sequences and pre/post conditions for the operations
+ * and receptions described by the interface. 
+ * @see org.eclipse.uml2.uml.Interface
  * @generated
  */
 public class InterfacePath extends ClassifierPath {
@@ -27,6 +43,7 @@ public class InterfacePath extends ClassifierPath {
 	}
 
 	/**
+	 * The attributes (i.e. the properties) owned by the class. 
 	 * @see org.eclipse.uml2.uml.Interface#getOwnedAttributes()
 	 * @generated
 	 */
@@ -37,6 +54,7 @@ public class InterfacePath extends ClassifierPath {
 	};
 
 	/**
+	 * The operations owned by the class. 
 	 * @see org.eclipse.uml2.uml.Interface#getOwnedOperations()
 	 * @generated
 	 */
@@ -47,6 +65,7 @@ public class InterfacePath extends ClassifierPath {
 	};
 
 	/**
+	 * References all the Classifiers that are defined (nested) within the Class. 
 	 * @see org.eclipse.uml2.uml.Interface#getNestedClassifiers()
 	 * @generated
 	 */
@@ -57,6 +76,7 @@ public class InterfacePath extends ClassifierPath {
 	};
 
 	/**
+	 * References all the Interfaces redefined by this Interface. 
 	 * @see org.eclipse.uml2.uml.Interface#getRedefinedInterfaces()
 	 * @generated
 	 */
@@ -67,6 +87,7 @@ public class InterfacePath extends ClassifierPath {
 	};
 
 	/**
+	 * Receptions that objects providing this interface are willing to accept. 
 	 * @see org.eclipse.uml2.uml.Interface#getOwnedReceptions()
 	 * @generated
 	 */
@@ -77,6 +98,8 @@ public class InterfacePath extends ClassifierPath {
 	};
 
 	/**
+	 * References a protocol state machine specifying the legal sequences of the invocation
+	 * of the behavioral features described in the interface. 
 	 * @see org.eclipse.uml2.uml.Interface#getProtocol()
 	 * @generated
 	 */
@@ -87,7 +110,10 @@ public class InterfacePath extends ClassifierPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.Interface#validateVisibility()
+	 * The visibility of all features owned by an interface must be public.
+	self.feature->forAll(f
+	 * | f.visibility = #public) 
+	 * @see org.eclipse.uml2.uml.Interface#validateVisibility(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Interface> validateVisibility(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -99,7 +125,9 @@ public class InterfacePath extends ClassifierPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Interface#createOwnedOperation()
+	 * Creates an operation with the specified name, parameter names, parameter types, and
+	 * return type (or null) as an owned operation of this interface. 
+	 * @see org.eclipse.uml2.uml.Interface#createOwnedOperation(String, EList, EList, Type)
 	 * @generated
 	 */
 	public static Function<Interface, Operation> createOwnedOperation(final String name, final EList<String> parameterNames, final EList<Type> parameterTypes, final Type returnType) {
@@ -111,7 +139,9 @@ public class InterfacePath extends ClassifierPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Interface#createOwnedAttribute()
+	 * Creates a property with the specified name, type, lower bound, and upper bound as
+	 * an owned attribute of this interface. 
+	 * @see org.eclipse.uml2.uml.Interface#createOwnedAttribute(String, Type, int, int)
 	 * @generated
 	 */
 	public static Function<Interface, Property> createOwnedAttribute(final String name, final Type type, final int lower, final int upper) {

@@ -9,6 +9,12 @@ import org.eclipse.uml2.uml.StructuralFeature;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Slot Slot} in a functional way.
+ * <p>
+ * A slot specifies that an entity modeled by an instance specification has a value or
+ * values for a specific structural feature. 
+ * @see org.eclipse.uml2.uml.Slot
  * @generated
  */
 public class SlotPath extends ElementPath {
@@ -21,6 +27,7 @@ public class SlotPath extends ElementPath {
 	}
 
 	/**
+	 * The structural feature that specifies the values that may be held by the slot. 
 	 * @see org.eclipse.uml2.uml.Slot#getDefiningFeature()
 	 * @generated
 	 */
@@ -31,6 +38,8 @@ public class SlotPath extends ElementPath {
 	};
 
 	/**
+	 * The value or values corresponding to the defining feature for the owning instance
+	 * specification. 
 	 * @see org.eclipse.uml2.uml.Slot#getValues()
 	 * @generated
 	 */
@@ -41,6 +50,7 @@ public class SlotPath extends ElementPath {
 	};
 
 	/**
+	 * The instance specification that owns this slot. 
 	 * @see org.eclipse.uml2.uml.Slot#getOwningInstance()
 	 * @generated
 	 */

@@ -9,6 +9,14 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.ObjectFlow;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ObjectFlow ObjectFlow} in a functional way.
+ * <p>
+ * An object flow is an activity edge that can have objects or data passing along it.
+Object
+ * flows have support for multicast/receive, token selection from object nodes, and transformation
+ * of tokens. 
+ * @see org.eclipse.uml2.uml.ObjectFlow
  * @generated
  */
 public class ObjectFlowPath extends ActivityEdgePath {
@@ -21,6 +29,7 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	}
 
 	/**
+	 * Tells whether the objects in the flow are passed by multicasting. 
 	 * @see org.eclipse.uml2.uml.ObjectFlow#isMulticast()
 	 * @generated
 	 */
@@ -31,6 +40,7 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	};
 
 	/**
+	 * Tells whether the objects in the flow are gathered from respondents to multicasting.
 	 * @see org.eclipse.uml2.uml.ObjectFlow#isMultireceive()
 	 * @generated
 	 */
@@ -41,6 +51,7 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	};
 
 	/**
+	 * Changes or replaces data tokens flowing along edge. 
 	 * @see org.eclipse.uml2.uml.ObjectFlow#getTransformation()
 	 * @generated
 	 */
@@ -51,6 +62,7 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	};
 
 	/**
+	 * Selects tokens from a source object node. 
 	 * @see org.eclipse.uml2.uml.ObjectFlow#getSelection()
 	 * @generated
 	 */
@@ -61,7 +73,9 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ObjectFlow#validateNoActions()
+	 * Object flows may not have actions at either end.
+	true 
+	 * @see org.eclipse.uml2.uml.ObjectFlow#validateNoActions(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ObjectFlow> validateNoActions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -73,7 +87,12 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ObjectFlow#validateCompatibleTypes()
+	 * Object nodes connected by an object flow, with optionally intervening control nodes,
+	 * must have compatible types. In particular, the downstream object node type must be
+	 * the same or a supertype of the upstream object node type.
+	
+	true 
+	 * @see org.eclipse.uml2.uml.ObjectFlow#validateCompatibleTypes(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ObjectFlow> validateCompatibleTypes(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -85,7 +104,10 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ObjectFlow#validateSameUpperBounds()
+	 * Object nodes connected by an object flow, with optionally intervening control nodes,
+	 * must have the same upper bounds.
+	true 
+	 * @see org.eclipse.uml2.uml.ObjectFlow#validateSameUpperBounds(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ObjectFlow> validateSameUpperBounds(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -97,7 +119,10 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ObjectFlow#validateTarget()
+	 * An edge with constant weight may not target an object node, or lead to an object node
+	 * downstream with no intervening actions, that has an upper bound less than the weight.
+	true
+	 * @see org.eclipse.uml2.uml.ObjectFlow#validateTarget(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ObjectFlow> validateTarget(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -109,7 +134,12 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ObjectFlow#validateTransformationBehaviour()
+	 * A transformation behavior has one input parameter and one output parameter. The input
+	 * parameter must be the same as or a supertype of the type of object token coming from
+	 * the source end. The output parameter must be the same or a subtype of the type of
+	 * object token expected downstream. The behavior cannot have side effects.
+	true 
+	 * @see org.eclipse.uml2.uml.ObjectFlow#validateTransformationBehaviour(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ObjectFlow> validateTransformationBehaviour(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -121,7 +151,9 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ObjectFlow#validateSelectionBehaviour()
+	 * An object flow may have a selection behavior only if has an object node as a source.
+	true
+	 * @see org.eclipse.uml2.uml.ObjectFlow#validateSelectionBehaviour(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ObjectFlow> validateSelectionBehaviour(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -133,7 +165,12 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ObjectFlow#validateInputAndOutputParameter()
+	 * A selection behavior has one input parameter and one output parameter. The input parameter
+	 * must be a bag of elements of the same as or a supertype of the type of source object
+	 * node. The output parameter must be the same or a subtype of the type of source object
+	 * node. The behavior cannot have side effects.
+	true 
+	 * @see org.eclipse.uml2.uml.ObjectFlow#validateInputAndOutputParameter(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ObjectFlow> validateInputAndOutputParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -145,7 +182,9 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ObjectFlow#validateIsMulticastOrIsMultireceive()
+	 * isMulticast and isMultireceive cannot both be true.
+	true 
+	 * @see org.eclipse.uml2.uml.ObjectFlow#validateIsMulticastOrIsMultireceive(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ObjectFlow> validateIsMulticastOrIsMultireceive(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

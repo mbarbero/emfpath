@@ -11,6 +11,12 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction ReadLinkObjectEndQualifierAction} in a functional way.
+ * <p>
+ * A read link object end qualifier action is an action that retrieves a qualifier end
+ * value from a link object. 
+ * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction
  * @generated
  */
 public class ReadLinkObjectEndQualifierActionPath extends ActionPath {
@@ -23,6 +29,7 @@ public class ReadLinkObjectEndQualifierActionPath extends ActionPath {
 	}
 
 	/**
+	 * Gives the input pin from which the link object is obtained. 
 	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#getObject()
 	 * @generated
 	 */
@@ -33,6 +40,7 @@ public class ReadLinkObjectEndQualifierActionPath extends ActionPath {
 	};
 
 	/**
+	 * Pin where the result value is placed. 
 	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#getResult()
 	 * @generated
 	 */
@@ -43,6 +51,7 @@ public class ReadLinkObjectEndQualifierActionPath extends ActionPath {
 	};
 
 	/**
+	 * The attribute representing the qualifier to be read. 
 	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#getQualifier()
 	 * @generated
 	 */
@@ -53,7 +62,10 @@ public class ReadLinkObjectEndQualifierActionPath extends ActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateQualifierAttribute()
+	 * The qualifier attribute must be a qualifier attribute of an association end.
+	self.qualifier.associationEnd->size()
+	 * = 1 
+	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateQualifierAttribute(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkObjectEndQualifierAction> validateQualifierAttribute(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -65,7 +77,10 @@ public class ReadLinkObjectEndQualifierActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateAssociationOfAssociation()
+	 * The association of the association end of the qualifier attribute must be an association
+	 * class.
+	self.qualifier.associationEnd.association.oclIsKindOf(AssociationClass) 
+	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateAssociationOfAssociation(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkObjectEndQualifierAction> validateAssociationOfAssociation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -77,7 +92,10 @@ public class ReadLinkObjectEndQualifierActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateEndsOfAssociation()
+	 * The ends of the association must not be static.
+	self.qualifier.associationEnd.association.memberEnd->forall(e
+	 * | not e.isStatic) 
+	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateEndsOfAssociation(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkObjectEndQualifierAction> validateEndsOfAssociation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -89,7 +107,10 @@ public class ReadLinkObjectEndQualifierActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateTypeOfObject()
+	 * The type of the object input pin is the association class that owns the association
+	 * end that has the given qualifier attribute.
+	self.object.type = self.qualifier.associationEnd.association
+	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateTypeOfObject(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkObjectEndQualifierAction> validateTypeOfObject(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -101,7 +122,9 @@ public class ReadLinkObjectEndQualifierActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateMultiplicityOfQualifier()
+	 * The multiplicity of the qualifier attribute is 1..1.
+	self.qualifier.multiplicity.is(1,1)
+	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateMultiplicityOfQualifier(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkObjectEndQualifierAction> validateMultiplicityOfQualifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -113,7 +136,9 @@ public class ReadLinkObjectEndQualifierActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateMultiplicityOfObject()
+	 * The multiplicity of the object input pin is 1..1.
+	self.object.multiplicity.is(1,1)
+	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateMultiplicityOfObject(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkObjectEndQualifierAction> validateMultiplicityOfObject(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -125,7 +150,10 @@ public class ReadLinkObjectEndQualifierActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateSameType()
+	 * The type of the result output pin is the same as the type of the qualifier attribute.
+	self.result.type
+	 * = self.qualifier.type 
+	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateSameType(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkObjectEndQualifierAction> validateSameType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -137,7 +165,9 @@ public class ReadLinkObjectEndQualifierActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateMultiplicityOfResult()
+	 * The multiplicity of the result output pin is 1..1.
+	self.result.multiplicity.is(1,1)
+	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndQualifierAction#validateMultiplicityOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReadLinkObjectEndQualifierAction> validateMultiplicityOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

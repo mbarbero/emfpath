@@ -13,6 +13,12 @@ import org.eclipse.uml2.uml.Relationship;
 import org.eclipse.uml2.uml.Type;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Association Association} in a functional way.
+ * <p>
+ * An association describes a set of tuples whose values refer to typed instances. An
+ * instance of an association is called a link. 
+ * @see org.eclipse.uml2.uml.Association
  * @generated
  */
 public class AssociationPath extends ClassifierPath {
@@ -25,12 +31,16 @@ public class AssociationPath extends ClassifierPath {
 	}
 
 	/**
+	 * Specifies the elements related by the Relationship. 
+	 *
+	 * @see RelationshipPath#relatedElement()
 	 * @see org.eclipse.uml2.uml.Relationship#getRelatedElements()
 	 * @generated
 	 */
 	public static final Function<Relationship, EList<Element>> relatedElement = RelationshipPath.relatedElement;
 
 	/**
+	 * The ends that are owned by the association itself. 
 	 * @see org.eclipse.uml2.uml.Association#getOwnedEnds()
 	 * @generated
 	 */
@@ -41,6 +51,8 @@ public class AssociationPath extends ClassifierPath {
 	};
 
 	/**
+	 * Each end represents participation of instances of the classifier connected to the
+	 * end in links of the association. 
 	 * @see org.eclipse.uml2.uml.Association#getMemberEnds()
 	 * @generated
 	 */
@@ -51,6 +63,8 @@ public class AssociationPath extends ClassifierPath {
 	};
 
 	/**
+	 * Specifies whether the association is derived from other model elements such as other
+	 * associations or constraints. 
 	 * @see org.eclipse.uml2.uml.Association#isDerived()
 	 * @generated
 	 */
@@ -61,6 +75,7 @@ public class AssociationPath extends ClassifierPath {
 	};
 
 	/**
+	 * References the classifiers that are used as types of the ends of the association.
 	 * @see org.eclipse.uml2.uml.Association#getEndTypes()
 	 * @generated
 	 */
@@ -71,6 +86,7 @@ public class AssociationPath extends ClassifierPath {
 	};
 
 	/**
+	 * The navigable ends that are owned by the association itself. 
 	 * @see org.eclipse.uml2.uml.Association#getNavigableOwnedEnds()
 	 * @generated
 	 */
@@ -81,7 +97,10 @@ public class AssociationPath extends ClassifierPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.Association#validateSpecializedEndNumber()
+	 * An association specializing another association has the same number of ends as the
+	 * other association.
+	self.parents()->forAll(p | p.memberEnd.size() = self.memberEnd.size())
+	 * @see org.eclipse.uml2.uml.Association#validateSpecializedEndNumber(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Association> validateSpecializedEndNumber(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -93,7 +112,11 @@ public class AssociationPath extends ClassifierPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Association#validateSpecializedEndTypes()
+	 * When an association specializes another association, every end of the specific association
+	 * corresponds to an end of the general association, and the specific end reaches the
+	 * same type or a subtype of the more general end.
+	true 
+	 * @see org.eclipse.uml2.uml.Association#validateSpecializedEndTypes(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Association> validateSpecializedEndTypes(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -105,7 +128,10 @@ public class AssociationPath extends ClassifierPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Association#validateBinaryAssociations()
+	 * Only binary associations can be aggregations.
+	self.memberEnd->exists(aggregation
+	 * <> Aggregation::none) implies self.memberEnd->size() = 2 
+	 * @see org.eclipse.uml2.uml.Association#validateBinaryAssociations(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Association> validateBinaryAssociations(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -117,7 +143,10 @@ public class AssociationPath extends ClassifierPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Association#validateAssociationEnds()
+	 * Association ends of associations with more than two ends must be owned by the association.
+	if
+	 * memberEnd->size() > 2 then ownedEnd->includesAll(memberEnd) 
+	 * @see org.eclipse.uml2.uml.Association#validateAssociationEnds(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Association> validateAssociationEnds(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -129,6 +158,8 @@ public class AssociationPath extends ClassifierPath {
 	}
 
 	/**
+	 * Determines whether this association is a binary association, i.e. whether it has exactly
+	 * two member ends. 
 	 * @see org.eclipse.uml2.uml.Association#isBinary()
 	 * @generated
 	 */
@@ -139,6 +170,9 @@ public class AssociationPath extends ClassifierPath {
 	};
 
 	/**
+	 * endType is derived from the types of the member ends.
+	result = self.memberEnd->collect(e
+	 * | e.type) 
 	 * @see org.eclipse.uml2.uml.Association#getEndTypes()
 	 * @generated
 	 */

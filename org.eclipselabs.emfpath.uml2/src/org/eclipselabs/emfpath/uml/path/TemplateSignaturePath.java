@@ -11,6 +11,12 @@ import org.eclipse.uml2.uml.TemplateSignature;
 import org.eclipse.uml2.uml.TemplateableElement;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.TemplateSignature TemplateSignature} in a functional way.
+ * <p>
+ * A template signature bundles the set of formal template parameters for a templated
+ * element. 
+ * @see org.eclipse.uml2.uml.TemplateSignature
  * @generated
  */
 public class TemplateSignaturePath extends ElementPath {
@@ -23,6 +29,7 @@ public class TemplateSignaturePath extends ElementPath {
 	}
 
 	/**
+	 * The ordered set of all formal template parameters for this template signature. 
 	 * @see org.eclipse.uml2.uml.TemplateSignature#getParameters()
 	 * @generated
 	 */
@@ -33,6 +40,7 @@ public class TemplateSignaturePath extends ElementPath {
 	};
 
 	/**
+	 * The formal template parameters that are owned by this template signature. 
 	 * @see org.eclipse.uml2.uml.TemplateSignature#getOwnedParameters()
 	 * @generated
 	 */
@@ -43,6 +51,7 @@ public class TemplateSignaturePath extends ElementPath {
 	};
 
 	/**
+	 * The element that owns this template signature. 
 	 * @see org.eclipse.uml2.uml.TemplateSignature#getTemplate()
 	 * @generated
 	 */
@@ -53,7 +62,11 @@ public class TemplateSignaturePath extends ElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.TemplateSignature#validateOwnElements()
+	 * Parameters must own the elements they parameter or those elements must be owned by
+	 * the element being templated.
+	templatedElement.ownedElement->includesAll(parameter.parameteredElement
+	 * - parameter.ownedParameteredElement) 
+	 * @see org.eclipse.uml2.uml.TemplateSignature#validateOwnElements(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<TemplateSignature> validateOwnElements(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

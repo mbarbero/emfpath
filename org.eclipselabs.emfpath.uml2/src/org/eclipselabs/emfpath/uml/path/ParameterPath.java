@@ -15,6 +15,16 @@ import org.eclipse.uml2.uml.ParameterSet;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Parameter Parameter} in a functional way.
+ * <p>
+ * A parameter is a specification of an argument used to pass information into or out
+ * of an invocation of a behavioral feature.
+Parameters are allowed to be treated as
+ * connectable elements.
+Parameters have support for streaming, exceptions, and parameter
+ * sets. 
+ * @see org.eclipse.uml2.uml.Parameter
  * @generated
  */
 public class ParameterPath extends ConnectableElementPath {
@@ -27,42 +37,63 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
+	 * For a multivalued multiplicity, this attribute specifies whether the values in an
+	 * instantiation of this element are sequentially ordered. 
+	 *
+	 * @see MultiplicityElementPath#isOrdered()
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isOrdered()
 	 * @generated
 	 */
 	public static final Predicate<MultiplicityElement> isOrdered = MultiplicityElementPath.isOrdered;
 
 	/**
+	 * For a multivalued multiplicity, this attributes specifies whether the values in an
+	 * instantiation of this element are unique. 
+	 *
+	 * @see MultiplicityElementPath#isUnique()
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isUnique()
 	 * @generated
 	 */
 	public static final Predicate<MultiplicityElement> isUnique = MultiplicityElementPath.isUnique;
 
 	/**
+	 * Specifies the upper bound of the multiplicity interval. 
+	 *
+	 * @see MultiplicityElementPath#upper()
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#getUpper()
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, java.lang.Integer> upper = MultiplicityElementPath.upper;
 
 	/**
+	 * Specifies the lower bound of the multiplicity interval. 
+	 *
+	 * @see MultiplicityElementPath#lower()
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#getLower()
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, java.lang.Integer> lower = MultiplicityElementPath.lower;
 
 	/**
+	 * The specification of the upper bound for this multiplicity. 
+	 *
+	 * @see MultiplicityElementPath#upperValue()
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#getUpperValue()
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, ValueSpecification> upperValue = MultiplicityElementPath.upperValue;
 
 	/**
+	 * The specification of the lower bound for this multiplicity. 
+	 *
+	 * @see MultiplicityElementPath#lowerValue()
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#getLowerValue()
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, ValueSpecification> lowerValue = MultiplicityElementPath.lowerValue;
 
 	/**
+	 * The parameter sets containing the parameter. See ParameterSet. 
 	 * @see org.eclipse.uml2.uml.Parameter#getParameterSets()
 	 * @generated
 	 */
@@ -73,6 +104,7 @@ public class ParameterPath extends ConnectableElementPath {
 	};
 
 	/**
+	 * References the Operation owning this parameter. 
 	 * @see org.eclipse.uml2.uml.Parameter#getOperation()
 	 * @generated
 	 */
@@ -83,6 +115,7 @@ public class ParameterPath extends ConnectableElementPath {
 	};
 
 	/**
+	 * Indicates whether a parameter is being sent into or out of a behavioral element. 
 	 * @see org.eclipse.uml2.uml.Parameter#getDirection()
 	 * @generated
 	 */
@@ -93,6 +126,8 @@ public class ParameterPath extends ConnectableElementPath {
 	};
 
 	/**
+	 * Specifies a String that represents a value to be used when no argument is supplied
+	 * for the Parameter. 
 	 * @see org.eclipse.uml2.uml.Parameter#getDefault()
 	 * @generated
 	 */
@@ -103,6 +138,8 @@ public class ParameterPath extends ConnectableElementPath {
 	};
 
 	/**
+	 * Specifies a ValueSpecification that represents a value to be used when no argument
+	 * is supplied for the Parameter. 
 	 * @see org.eclipse.uml2.uml.Parameter#getDefaultValue()
 	 * @generated
 	 */
@@ -113,6 +150,7 @@ public class ParameterPath extends ConnectableElementPath {
 	};
 
 	/**
+	 * Tells whether an output parameter may emit a value to the exclusion of the other outputs.
 	 * @see org.eclipse.uml2.uml.Parameter#isException()
 	 * @generated
 	 */
@@ -123,6 +161,8 @@ public class ParameterPath extends ConnectableElementPath {
 	};
 
 	/**
+	 * Tells whether an input parameter may accept values while its behavior is executing,
+	 * or whether an output parameter post values while the behavior is executing. 
 	 * @see org.eclipse.uml2.uml.Parameter#isStream()
 	 * @generated
 	 */
@@ -133,6 +173,8 @@ public class ParameterPath extends ConnectableElementPath {
 	};
 
 	/**
+	 * Specifies the effect that the owner of the parameter has on values passed in or out
+	 * of the parameter. 
 	 * @see org.eclipse.uml2.uml.Parameter#getEffect()
 	 * @generated
 	 */
@@ -143,7 +185,12 @@ public class ParameterPath extends ConnectableElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateLowerGe0()
+	 * The lower bound must be a non-negative integer literal.
+	lowerBound()->notEmpty()
+	 * implies lowerBound() >= 0 
+	 *
+	 * @see MultiplicityElementPath#validateLowerGe0()
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateLowerGe0(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> validateLowerGe0(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -151,7 +198,12 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateUpperGeLower()
+	 * The upper bound must be greater than or equal to the lower bound.
+	(upperBound()->notEmpty()
+	 * and lowerBound()->notEmpty()) implies upperBound() >= lowerBound() 
+	 *
+	 * @see MultiplicityElementPath#validateUpperGeLower()
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateUpperGeLower(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> validateUpperGeLower(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -159,7 +211,12 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationNoSideEffects()
+	 * If a non-literal ValueSpecification is used for the lower or upper bound, then evaluating
+	 * that specification must not have side effects.
+	true 
+	 *
+	 * @see MultiplicityElementPath#validateValueSpecificationNoSideEffects()
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationNoSideEffects(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> validateValueSpecificationNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -167,7 +224,12 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationConstant()
+	 * If a non-literal ValueSpecification is used for the lower or upper bound, then that
+	 * specification must be a constant expression.
+	true 
+	 *
+	 * @see MultiplicityElementPath#validateValueSpecificationConstant()
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationConstant(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> validateValueSpecificationConstant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -175,13 +237,26 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
+	 * The query isMultivalued() checks whether this multiplicity has an upper bound greater
+	 * than one.
+	upperBound()->notEmpty()
+	result = upperBound() > 1 
+	 *
+	 * @see MultiplicityElementPath#isMultivalued()
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isMultivalued()
 	 * @generated
 	 */
 	public static final Predicate<MultiplicityElement> isMultivalued = MultiplicityElementPath.isMultivalued;
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesCardinality()
+	 * The query includesCardinality() checks whether the specified cardinality is valid
+	 * for this multiplicity.
+	upperBound()->notEmpty() and lowerBound()->notEmpty()
+	result
+	 * = (lowerBound() <= C) and (upperBound() >= C) 
+	 *
+	 * @see MultiplicityElementPath#includesCardinality()
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesCardinality(int)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> includesCardinality(final int C) {
@@ -189,7 +264,15 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesMultiplicity()
+	 * The query includesMultiplicity() checks whether this multiplicity includes all the
+	 * cardinalities allowed by the specified multiplicity.
+	self.upperBound()->notEmpty()
+	 * and self.lowerBound()->notEmpty() and M.upperBound()->notEmpty() and M.lowerBound()->notEmpty()
+	result
+	 * = (self.lowerBound() <= M.lowerBound()) and (self.upperBound() >= M.upperBound())
+	 *
+	 * @see MultiplicityElementPath#includesMultiplicity()
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesMultiplicity(MultiplicityElement)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> includesMultiplicity(final MultiplicityElement M) {
@@ -197,19 +280,36 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
+	 * The query lowerBound() returns the lower bound of the multiplicity as an integer.
+	result
+	 * = if lowerValue->isEmpty() then 1 else lowerValue.integerValue() endif 
+	 *
+	 * @see MultiplicityElementPath#lowerBound()
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#lowerBound()
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, java.lang.Integer> lowerBound = MultiplicityElementPath.lowerBound;
 
 	/**
+	 * The query upperBound() returns the upper bound of the multiplicity for a bounded multiplicity
+	 * as an unlimited natural.
+	result = if upperValue->isEmpty() then 1 else upperValue.unlimitedValue()
+	 * endif 
+	 *
+	 * @see MultiplicityElementPath#upperBound_()
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#upperBound()
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, java.lang.Integer> upperBound_ = MultiplicityElementPath.upperBound_;
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#compatibleWith()
+	 * The operation compatibleWith takes another multiplicity as input. It checks if one
+	 * multiplicity is compatible with another.
+	result = Integer.allInstances()->forAll(i
+	 * : Integer | self.includesCardinality(i) implies other.includesCardinality(i)) 
+	 *
+	 * @see MultiplicityElementPath#compatibleWith()
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#compatibleWith(MultiplicityElement)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> compatibleWith(final MultiplicityElement other) {
@@ -217,7 +317,12 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.MultiplicityElement#is()
+	 * The operation is determines if the upper and lower bound of the ranges are the ones
+	 * given.
+	result = (lowerbound = self.lowerbound and upperbound = self.upperbound) 
+	 *
+	 * @see MultiplicityElementPath#is()
+	 * @see org.eclipse.uml2.uml.MultiplicityElement#is(int, int)
 	 * @generated
 	 */
 	public static Predicate<MultiplicityElement> is(final int lowerbound, final int upperbound) {
@@ -225,7 +330,10 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Parameter#validateConnectorEnd()
+	 * A parameter may only be associated with a connector end within the context of a collaboration.
+	self.end.notEmpty()
+	 * implies self.collaboration.notEmpty() 
+	 * @see org.eclipse.uml2.uml.Parameter#validateConnectorEnd(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Parameter> validateConnectorEnd(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -237,7 +345,9 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Parameter#validateStreamAndException()
+	 * A parameter cannot be a stream and exception at the same time.
+	true 
+	 * @see org.eclipse.uml2.uml.Parameter#validateStreamAndException(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Parameter> validateStreamAndException(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -249,7 +359,9 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Parameter#validateNotException()
+	 * An input parameter cannot be an exception.
+	true 
+	 * @see org.eclipse.uml2.uml.Parameter#validateNotException(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Parameter> validateNotException(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -261,7 +373,9 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Parameter#validateReentrantBehaviors()
+	 * Reentrant behaviors cannot have stream parameters.
+	true 
+	 * @see org.eclipse.uml2.uml.Parameter#validateReentrantBehaviors(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Parameter> validateReentrantBehaviors(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -273,7 +387,10 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Parameter#validateInAndOut()
+	 * Only in and inout parameters may have a delete effect. Only out, inout, and return
+	 * parameters may have a create effect.
+	true 
+	 * @see org.eclipse.uml2.uml.Parameter#validateInAndOut(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Parameter> validateInAndOut(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -285,6 +402,7 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
+	 * 
 	 * @see org.eclipse.uml2.uml.Parameter#getDefault()
 	 * @generated
 	 */
@@ -295,6 +413,7 @@ public class ParameterPath extends ConnectableElementPath {
 	};
 
 	/**
+	 * 
 	 * @see org.eclipse.uml2.uml.Parameter#isSetDefault()
 	 * @generated
 	 */
@@ -305,7 +424,8 @@ public class ParameterPath extends ConnectableElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Parameter#setDefault()
+	 * 
+	 * @see org.eclipse.uml2.uml.Parameter#setDefault(String)
 	 * @generated
 	 */
 	public static Function<Parameter, Parameter> setDefault(final String newDefault) {
@@ -318,6 +438,7 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
+	 * 
 	 * @see org.eclipse.uml2.uml.Parameter#unsetDefault()
 	 * @generated
 	 */
@@ -329,7 +450,8 @@ public class ParameterPath extends ConnectableElementPath {
 	};
 
 	/**
-	 * @see org.eclipse.uml2.uml.Parameter#setBooleanDefaultValue()
+	 * Sets the default value for this parameter to the specified Boolean value. 
+	 * @see org.eclipse.uml2.uml.Parameter#setBooleanDefaultValue(boolean)
 	 * @generated
 	 */
 	public static Function<Parameter, Parameter> setBooleanDefaultValue(final boolean value) {
@@ -342,7 +464,8 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Parameter#setIntegerDefaultValue()
+	 * Sets the default value for this parameter to the specified integer value. 
+	 * @see org.eclipse.uml2.uml.Parameter#setIntegerDefaultValue(int)
 	 * @generated
 	 */
 	public static Function<Parameter, Parameter> setIntegerDefaultValue(final int value) {
@@ -355,7 +478,8 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Parameter#setStringDefaultValue()
+	 * Sets the default value for this parameter to the specified string value. 
+	 * @see org.eclipse.uml2.uml.Parameter#setStringDefaultValue(String)
 	 * @generated
 	 */
 	public static Function<Parameter, Parameter> setStringDefaultValue(final String value) {
@@ -368,7 +492,8 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Parameter#setUnlimitedNaturalDefaultValue()
+	 * Sets the default value for this parameter to the specified unlimited natural value.
+	 * @see org.eclipse.uml2.uml.Parameter#setUnlimitedNaturalDefaultValue(int)
 	 * @generated
 	 */
 	public static Function<Parameter, Parameter> setUnlimitedNaturalDefaultValue(final int value) {
@@ -381,6 +506,7 @@ public class ParameterPath extends ConnectableElementPath {
 	}
 
 	/**
+	 * Sets the default value for this parameter to the null value. 
 	 * @see org.eclipse.uml2.uml.Parameter#setNullDefaultValue()
 	 * @generated
 	 */

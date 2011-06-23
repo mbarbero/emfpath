@@ -11,6 +11,12 @@ import org.eclipse.uml2.uml.ConditionalNode;
 import org.eclipse.uml2.uml.OutputPin;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ConditionalNode ConditionalNode} in a functional way.
+ * <p>
+ * A conditional node is a structured activity node that represents an exclusive choice
+ * among some number of alternatives. 
+ * @see org.eclipse.uml2.uml.ConditionalNode
  * @generated
  */
 public class ConditionalNodePath extends StructuredActivityNodePath {
@@ -23,6 +29,7 @@ public class ConditionalNodePath extends StructuredActivityNodePath {
 	}
 
 	/**
+	 * If true, the modeler asserts that at most one test will succeed. 
 	 * @see org.eclipse.uml2.uml.ConditionalNode#isDeterminate()
 	 * @generated
 	 */
@@ -33,6 +40,7 @@ public class ConditionalNodePath extends StructuredActivityNodePath {
 	};
 
 	/**
+	 * If true, the modeler asserts that at least one test will succeed. 
 	 * @see org.eclipse.uml2.uml.ConditionalNode#isAssured()
 	 * @generated
 	 */
@@ -43,6 +51,7 @@ public class ConditionalNodePath extends StructuredActivityNodePath {
 	};
 
 	/**
+	 * Set of clauses composing the conditional. 
 	 * @see org.eclipse.uml2.uml.ConditionalNode#getClauses()
 	 * @generated
 	 */
@@ -53,6 +62,7 @@ public class ConditionalNodePath extends StructuredActivityNodePath {
 	};
 
 	/**
+	 * A list of output pins that constitute the data flow outputs of the conditional. 
 	 * @see org.eclipse.uml2.uml.ConditionalNode#getResults()
 	 * @generated
 	 */
@@ -63,7 +73,9 @@ public class ConditionalNodePath extends StructuredActivityNodePath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ConditionalNode#validateResultNoIncoming()
+	 * The result output pins have no incoming edges.
+	true 
+	 * @see org.eclipse.uml2.uml.ConditionalNode#validateResultNoIncoming(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ConditionalNode> validateResultNoIncoming(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

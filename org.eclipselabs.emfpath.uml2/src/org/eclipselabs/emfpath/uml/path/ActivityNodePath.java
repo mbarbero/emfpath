@@ -15,6 +15,12 @@ import org.eclipse.uml2.uml.InterruptibleActivityRegion;
 import org.eclipse.uml2.uml.StructuredActivityNode;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ActivityNode ActivityNode} in a functional way.
+ * <p>
+ * ActivityNode is an abstract class for points in the flow of an activity connected
+ * by edges. 
+ * @see org.eclipse.uml2.uml.ActivityNode
  * @generated
  */
 public class ActivityNodePath extends RedefinableElementPath {
@@ -27,6 +33,7 @@ public class ActivityNodePath extends RedefinableElementPath {
 	}
 
 	/**
+	 * Structured activity node containing the node. 
 	 * @see org.eclipse.uml2.uml.ActivityNode#getInStructuredNode()
 	 * @generated
 	 */
@@ -37,6 +44,7 @@ public class ActivityNodePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * Activity containing the node. 
 	 * @see org.eclipse.uml2.uml.ActivityNode#getActivity()
 	 * @generated
 	 */
@@ -47,6 +55,7 @@ public class ActivityNodePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * Edges that have the node as source. 
 	 * @see org.eclipse.uml2.uml.ActivityNode#getOutgoings()
 	 * @generated
 	 */
@@ -57,6 +66,7 @@ public class ActivityNodePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * Edges that have the node as target. 
 	 * @see org.eclipse.uml2.uml.ActivityNode#getIncomings()
 	 * @generated
 	 */
@@ -67,6 +77,7 @@ public class ActivityNodePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * Partitions containing the node. 
 	 * @see org.eclipse.uml2.uml.ActivityNode#getInPartitions()
 	 * @generated
 	 */
@@ -77,6 +88,7 @@ public class ActivityNodePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * Interruptible regions containing the node. 
 	 * @see org.eclipse.uml2.uml.ActivityNode#getInInterruptibleRegions()
 	 * @generated
 	 */
@@ -87,6 +99,7 @@ public class ActivityNodePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * Groups containing the node. 
 	 * @see org.eclipse.uml2.uml.ActivityNode#getInGroups()
 	 * @generated
 	 */
@@ -97,6 +110,7 @@ public class ActivityNodePath extends RedefinableElementPath {
 	};
 
 	/**
+	 * Inherited nodes replaced by this node in a specialization of the activity. 
 	 * @see org.eclipse.uml2.uml.ActivityNode#getRedefinedNodes()
 	 * @generated
 	 */
@@ -107,7 +121,9 @@ public class ActivityNodePath extends RedefinableElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityNode#validateOwnedStructuredNode()
+	 * Activity nodes may be owned by at most one structured node.
+	true 
+	 * @see org.eclipse.uml2.uml.ActivityNode#validateOwnedStructuredNode(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityNode> validateOwnedStructuredNode(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -119,7 +135,9 @@ public class ActivityNodePath extends RedefinableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ActivityNode#validateOwned()
+	 * Activity nodes can only be owned by activities or groups.
+	true 
+	 * @see org.eclipse.uml2.uml.ActivityNode#validateOwned(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ActivityNode> validateOwned(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

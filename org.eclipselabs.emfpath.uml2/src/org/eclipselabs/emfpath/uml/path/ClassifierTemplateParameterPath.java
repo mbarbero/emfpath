@@ -10,6 +10,11 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ClassifierTemplateParameter;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ClassifierTemplateParameter ClassifierTemplateParameter} in a functional way.
+ * <p>
+ * A classifier template parameter exposes a classifier as a formal template parameter.
+ * @see org.eclipse.uml2.uml.ClassifierTemplateParameter
  * @generated
  */
 public class ClassifierTemplateParameterPath extends TemplateParameterPath {
@@ -22,6 +27,8 @@ public class ClassifierTemplateParameterPath extends TemplateParameterPath {
 	}
 
 	/**
+	 * Constrains the required relationship between an actual parameter and the parameteredElement
+	 * for this formal parameter. 
 	 * @see org.eclipse.uml2.uml.ClassifierTemplateParameter#isAllowSubstitutable()
 	 * @generated
 	 */
@@ -32,6 +39,11 @@ public class ClassifierTemplateParameterPath extends TemplateParameterPath {
 	};
 
 	/**
+	 * The classifiers that constrain the argument that can be used for the parameter. If
+	 * the allowSubstitutable attribute is true, then any classifier that is compatible with
+	 * this constraining classifier can be substituted; otherwise, it must be either this
+	 * classifier or one of its subclasses. If this property is empty, there are no constraints
+	 * on the classifier that can be used as an argument. 
 	 * @see org.eclipse.uml2.uml.ClassifierTemplateParameter#getConstrainingClassifiers()
 	 * @generated
 	 */
@@ -42,7 +54,10 @@ public class ClassifierTemplateParameterPath extends TemplateParameterPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ClassifierTemplateParameter#validateHasConstrainingClassifier()
+	 * If "allowSubstitutable" is true, then there must be a constrainingClassifier.
+	allowSubstitutable
+	 * implies constrainingClassifier->notEmpty() 
+	 * @see org.eclipse.uml2.uml.ClassifierTemplateParameter#validateHasConstrainingClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ClassifierTemplateParameter> validateHasConstrainingClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

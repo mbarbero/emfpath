@@ -6,6 +6,11 @@ import org.eclipse.uml2.uml.CallEvent;
 import org.eclipse.uml2.uml.Operation;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.CallEvent CallEvent} in a functional way.
+ * <p>
+ * A call event models the receipt by an object of a message invoking a call of an operation.
+ * @see org.eclipse.uml2.uml.CallEvent
  * @generated
  */
 public class CallEventPath extends MessageEventPath {
@@ -18,6 +23,7 @@ public class CallEventPath extends MessageEventPath {
 	}
 
 	/**
+	 * Designates the operation whose invocation raised the call event. 
 	 * @see org.eclipse.uml2.uml.CallEvent#getOperation()
 	 * @generated
 	 */

@@ -13,6 +13,28 @@ import org.eclipse.uml2.uml.ConnectorEnd;
 import org.eclipse.uml2.uml.ConnectorKind;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Connector Connector} in a functional way.
+ * <p>
+ * Specifies a link that enables communication between two or more instances. This link
+ * may be an instance of an association, or it may represent the possibility of the instances
+ * being able to communicate because their identities are known by virtue of being passed
+ * in as parameters, held in variables or slots, or because the communicating instances
+ * are the same instance. The link may be realized by something as simple as a pointer
+ * or by something as complex as a network connection. In contrast to associations, which
+ * specify links between any instance of the associated classifiers, connectors specify
+ * links between instances playing the connected parts only.
+A delegation connector
+ * is a connector that links the external contract of a component (as specified by its
+ * ports) to the internal realization of that behavior by the component's parts. It represents
+ * the forwarding of signals (operation requests and events): a signal that arrives at
+ * a port that has a delegation connector to a part or to another port will be passed
+ * on to that target for handling.
+An assembly connector is a connector between two
+ * components that defines that one component provides the services that another component
+ * requires. An assembly connector is a connector that is defined from a required interface
+ * or port to a provided interface or port. 
+ * @see org.eclipse.uml2.uml.Connector
  * @generated
  */
 public class ConnectorPath extends FeaturePath {
@@ -25,6 +47,7 @@ public class ConnectorPath extends FeaturePath {
 	}
 
 	/**
+	 * An optional association that specifies the link corresponding to this connector. 
 	 * @see org.eclipse.uml2.uml.Connector#getType()
 	 * @generated
 	 */
@@ -35,6 +58,11 @@ public class ConnectorPath extends FeaturePath {
 	};
 
 	/**
+	 * A connector may be redefined when its containing classifier is specialized. The redefining
+	 * connector may have a type that specializes the type of the redefined connector. The
+	 * types of the connector ends of the redefining connector may specialize the types of
+	 * the connector ends of the redefined connector. The properties of the connector ends
+	 * of the redefining connector may be replaced. 
 	 * @see org.eclipse.uml2.uml.Connector#getRedefinedConnectors()
 	 * @generated
 	 */
@@ -45,6 +73,9 @@ public class ConnectorPath extends FeaturePath {
 	};
 
 	/**
+	 * A connector consists of at least two connector ends, each representing the participation
+	 * of instances of the classifiers typing the connectable elements attached to this end.
+	 * The set of connector ends is ordered. 
 	 * @see org.eclipse.uml2.uml.Connector#getEnds()
 	 * @generated
 	 */
@@ -55,6 +86,7 @@ public class ConnectorPath extends FeaturePath {
 	};
 
 	/**
+	 * Indicates the kind of connector. 
 	 * @see org.eclipse.uml2.uml.Connector#getKind()
 	 * @generated
 	 */
@@ -65,6 +97,7 @@ public class ConnectorPath extends FeaturePath {
 	};
 
 	/**
+	 * The set of Behaviors that specify the valid interaction patterns across the connector.
 	 * @see org.eclipse.uml2.uml.Connector#getContracts()
 	 * @generated
 	 */
@@ -75,7 +108,11 @@ public class ConnectorPath extends FeaturePath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.Connector#validateTypes()
+	 * The types of the connectable elements that the ends of a connector are attached to
+	 * must conform to the types of the association ends of the association that types the
+	 * connector, if any.
+	true 
+	 * @see org.eclipse.uml2.uml.Connector#validateTypes(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Connector> validateTypes(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -87,7 +124,9 @@ public class ConnectorPath extends FeaturePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Connector#validateCompatible()
+	 * The connectable elements attached to the ends of a connector must be compatible.
+	true
+	 * @see org.eclipse.uml2.uml.Connector#validateCompatible(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Connector> validateCompatible(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -99,7 +138,11 @@ public class ConnectorPath extends FeaturePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Connector#validateRoles()
+	 * The ConnectableElements attached as roles to each ConnectorEnd owned by a Connector
+	 * must be roles of the Classifier that owned the Connector, or they must be ports of
+	 * such roles.
+	true 
+	 * @see org.eclipse.uml2.uml.Connector#validateRoles(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Connector> validateRoles(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -111,7 +154,10 @@ public class ConnectorPath extends FeaturePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Connector#validateBetweenInterfacesPorts()
+	 * A delegation connector must only be defined between used Interfaces or Ports of the
+	 * same kind, e.g. between two provided Ports or between two required Ports.
+	true 
+	 * @see org.eclipse.uml2.uml.Connector#validateBetweenInterfacesPorts(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Connector> validateBetweenInterfacesPorts(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -123,7 +169,11 @@ public class ConnectorPath extends FeaturePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Connector#validateBetweenInterfacePortImplements()
+	 * If a delegation connector is defined between a used Interface or Port and an internal
+	 * Part Classifier, then that Classifier must have an 'implements' relationship to the
+	 * Interface type of that Port.
+	true 
+	 * @see org.eclipse.uml2.uml.Connector#validateBetweenInterfacePortImplements(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Connector> validateBetweenInterfacePortImplements(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -135,7 +185,11 @@ public class ConnectorPath extends FeaturePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Connector#validateBetweenInterfacePortSignature()
+	 * If a delegation connector is defined between a source Interface or Port and a target
+	 * Interface or Port, then the target Interface must support a signature compatible subset
+	 * of Operations of the source Interface or Port.
+	true 
+	 * @see org.eclipse.uml2.uml.Connector#validateBetweenInterfacePortSignature(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Connector> validateBetweenInterfacePortSignature(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -147,7 +201,11 @@ public class ConnectorPath extends FeaturePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Connector#validateUnionSignatureCompatible()
+	 * In a complete model, if a source Port has delegation connectors to a set of delegated
+	 * target Ports, then the union of the Interfaces of these target Ports must be signature
+	 * compatible with the Interface that types the source Port.
+	true 
+	 * @see org.eclipse.uml2.uml.Connector#validateUnionSignatureCompatible(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Connector> validateUnionSignatureCompatible(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -159,7 +217,10 @@ public class ConnectorPath extends FeaturePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Connector#validateAssemblyConnector()
+	 * An assembly connector must only be defined from a required Interface or Ports to a
+	 * provided Interface or Port.
+	true 
+	 * @see org.eclipse.uml2.uml.Connector#validateAssemblyConnector(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Connector> validateAssemblyConnector(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

@@ -7,6 +7,12 @@ import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Enumeration Enumeration} in a functional way.
+ * <p>
+ * An enumeration is a data type whose values are enumerated in the model as enumeration
+ * literals. 
+ * @see org.eclipse.uml2.uml.Enumeration
  * @generated
  */
 public class EnumerationPath extends DataTypePath {
@@ -19,6 +25,7 @@ public class EnumerationPath extends DataTypePath {
 	}
 
 	/**
+	 * The ordered set of literals for this Enumeration. 
 	 * @see org.eclipse.uml2.uml.Enumeration#getOwnedLiterals()
 	 * @generated
 	 */

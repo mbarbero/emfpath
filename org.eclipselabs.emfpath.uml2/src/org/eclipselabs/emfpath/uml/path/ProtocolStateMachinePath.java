@@ -10,6 +10,18 @@ import org.eclipse.uml2.uml.ProtocolConformance;
 import org.eclipse.uml2.uml.ProtocolStateMachine;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ProtocolStateMachine ProtocolStateMachine} in a functional way.
+ * <p>
+ * A protocol state machine is always defined in the context of a classifier. It specifies
+ * which operations of the classifier can be called in which state and under which condition,
+ * thus specifying the allowed call sequences on the classifier's operations. A protocol
+ * state machine presents the possible and permitted transitions on the instances of
+ * its context classifier, together with the operations which carry the transitions.
+ * In this manner, an instance lifecycle can be created for a classifier, by specifying
+ * the order in which the operations can be activated and the states through which an
+ * instance progresses during its existence. 
+ * @see org.eclipse.uml2.uml.ProtocolStateMachine
  * @generated
  */
 public class ProtocolStateMachinePath extends StateMachinePath {
@@ -22,6 +34,7 @@ public class ProtocolStateMachinePath extends StateMachinePath {
 	}
 
 	/**
+	 * Conformance between protocol state machines. 
 	 * @see org.eclipse.uml2.uml.ProtocolStateMachine#getConformances()
 	 * @generated
 	 */
@@ -32,7 +45,11 @@ public class ProtocolStateMachinePath extends StateMachinePath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ProtocolStateMachine#validateProtocolTransitions()
+	 * All transitions of a protocol state machine must be protocol transitions. (transitions
+	 * as extended by the ProtocolStateMachines package)
+	region->forAll(r | r.transition->forAll(t
+	 * | t.oclIsTypeOf(ProtocolTransition))) 
+	 * @see org.eclipse.uml2.uml.ProtocolStateMachine#validateProtocolTransitions(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ProtocolStateMachine> validateProtocolTransitions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -44,7 +61,13 @@ public class ProtocolStateMachinePath extends StateMachinePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ProtocolStateMachine#validateEntryExitDo()
+	 * The states of a protocol state machine cannot have entry, exit, or do activity actions.
+	region->forAll(r
+	 * | r.subvertex->forAll(v | v.oclIsKindOf(State) implies
+	(v.entry->isEmpty() and v.exit->isEmpty()
+	 * and v.doActivity->isEmpty())))
+	 
+	 * @see org.eclipse.uml2.uml.ProtocolStateMachine#validateEntryExitDo(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ProtocolStateMachine> validateEntryExitDo(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -56,7 +79,13 @@ public class ProtocolStateMachinePath extends StateMachinePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ProtocolStateMachine#validateDeepOrShallowHistory()
+	 * Protocol state machines cannot have deep or shallow history pseudostates.
+	region->forAll
+	 * (r | r.subvertex->forAll (v | v.oclIsKindOf(Psuedostate) implies
+	((v.kind <> #deepHistory)
+	 * and (v.kind <> #shallowHistory)))))
+	 
+	 * @see org.eclipse.uml2.uml.ProtocolStateMachine#validateDeepOrShallowHistory(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ProtocolStateMachine> validateDeepOrShallowHistory(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -68,7 +97,11 @@ public class ProtocolStateMachinePath extends StateMachinePath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ProtocolStateMachine#validatePortsConnected()
+	 * If two ports are connected, then the protocol state machine of the required interface
+	 * (if defined) must be conformant to the protocol state machine of the provided interface
+	 * (if defined).
+	true 
+	 * @see org.eclipse.uml2.uml.ProtocolStateMachine#validatePortsConnected(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ProtocolStateMachine> validatePortsConnected(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

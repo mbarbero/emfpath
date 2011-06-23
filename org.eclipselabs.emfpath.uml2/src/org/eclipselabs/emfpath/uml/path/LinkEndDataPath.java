@@ -12,6 +12,18 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.QualifierValue;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.LinkEndData LinkEndData} in a functional way.
+ * <p>
+ * A link end data is not an action. It is an element that identifies links. It identifies
+ * one end of a link to be read or written by the children of a link action. A link cannot
+ * be passed as a runtime value to or from an action. Instead, a link is identified by
+ * its end objects and qualifier values, if any. This requires more than one piece of
+ * data, namely, the statically-specified end in the user model, the object on the end,
+ * and the qualifier values for that end, if any. These pieces are brought together around
+ * a link end data. Each association end is identified separately with an instance of
+ * the LinkEndData class. 
+ * @see org.eclipse.uml2.uml.LinkEndData
  * @generated
  */
 public class LinkEndDataPath extends ElementPath {
@@ -24,6 +36,8 @@ public class LinkEndDataPath extends ElementPath {
 	}
 
 	/**
+	 * Input pin that provides the specified object for the given end. This pin is omitted
+	 * if the link-end data specifies an 'open' end for reading. 
 	 * @see org.eclipse.uml2.uml.LinkEndData#getValue()
 	 * @generated
 	 */
@@ -34,6 +48,7 @@ public class LinkEndDataPath extends ElementPath {
 	};
 
 	/**
+	 * Association end for which this link-end data specifies values. 
 	 * @see org.eclipse.uml2.uml.LinkEndData#getEnd()
 	 * @generated
 	 */
@@ -44,6 +59,7 @@ public class LinkEndDataPath extends ElementPath {
 	};
 
 	/**
+	 * List of qualifier values 
 	 * @see org.eclipse.uml2.uml.LinkEndData#getQualifiers()
 	 * @generated
 	 */
@@ -54,7 +70,9 @@ public class LinkEndDataPath extends ElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.LinkEndData#validatePropertyIsAssociationEnd()
+	 * The property must be an association end.
+	self.end.association->size() = 1 
+	 * @see org.eclipse.uml2.uml.LinkEndData#validatePropertyIsAssociationEnd(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<LinkEndData> validatePropertyIsAssociationEnd(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -66,7 +84,10 @@ public class LinkEndDataPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.LinkEndData#validateSameType()
+	 * The type of the end object input pin is the same as the type of the association end.
+	self.value.type
+	 * = self.end.type 
+	 * @see org.eclipse.uml2.uml.LinkEndData#validateSameType(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<LinkEndData> validateSameType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -78,7 +99,9 @@ public class LinkEndDataPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.LinkEndData#validateMultiplicity()
+	 * The multiplicity of the end object input pin must be 1..1.
+	self.value.multiplicity.is(1,1)
+	 * @see org.eclipse.uml2.uml.LinkEndData#validateMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<LinkEndData> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -90,7 +113,10 @@ public class LinkEndDataPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.LinkEndData#validateQualifiers()
+	 * The qualifiers include all and only the qualifiers of the association end.
+	self.qualifier->collect(qualifier)
+	 * = self.end.qualifier 
+	 * @see org.eclipse.uml2.uml.LinkEndData#validateQualifiers(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<LinkEndData> validateQualifiers(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -102,7 +128,9 @@ public class LinkEndDataPath extends ElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.LinkEndData#validateEndObjectInputPin()
+	 * The end object input pin is not also a qualifier value input pin.
+	self.value->excludesAll(self.qualifier.value)
+	 * @see org.eclipse.uml2.uml.LinkEndData#validateEndObjectInputPin(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<LinkEndData> validateEndObjectInputPin(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

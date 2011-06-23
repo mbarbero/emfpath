@@ -11,6 +11,12 @@ import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.ReclassifyObjectAction;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.ReclassifyObjectAction ReclassifyObjectAction} in a functional way.
+ * <p>
+ * A reclassify object action is an action that changes which classifiers classify an
+ * object. 
+ * @see org.eclipse.uml2.uml.ReclassifyObjectAction
  * @generated
  */
 public class ReclassifyObjectActionPath extends ActionPath {
@@ -23,6 +29,7 @@ public class ReclassifyObjectActionPath extends ActionPath {
 	}
 
 	/**
+	 * Specifies whether existing classifiers should be removed before adding the new classifiers.
 	 * @see org.eclipse.uml2.uml.ReclassifyObjectAction#isReplaceAll()
 	 * @generated
 	 */
@@ -33,6 +40,7 @@ public class ReclassifyObjectActionPath extends ActionPath {
 	};
 
 	/**
+	 * A set of classifiers to be removed from the classifiers of the object. 
 	 * @see org.eclipse.uml2.uml.ReclassifyObjectAction#getOldClassifiers()
 	 * @generated
 	 */
@@ -43,6 +51,7 @@ public class ReclassifyObjectActionPath extends ActionPath {
 	};
 
 	/**
+	 * A set of classifiers to be added to the classifiers of the object. 
 	 * @see org.eclipse.uml2.uml.ReclassifyObjectAction#getNewClassifiers()
 	 * @generated
 	 */
@@ -53,6 +62,7 @@ public class ReclassifyObjectActionPath extends ActionPath {
 	};
 
 	/**
+	 * Holds the object to be reclassified. 
 	 * @see org.eclipse.uml2.uml.ReclassifyObjectAction#getObject()
 	 * @generated
 	 */
@@ -63,7 +73,10 @@ public class ReclassifyObjectActionPath extends ActionPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.ReclassifyObjectAction#validateClassifierNotAbstract()
+	 * None of the new classifiers may be abstract.
+	not self.newClassifier->exists(isAbstract
+	 * = true) 
+	 * @see org.eclipse.uml2.uml.ReclassifyObjectAction#validateClassifierNotAbstract(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReclassifyObjectAction> validateClassifierNotAbstract(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -75,7 +88,9 @@ public class ReclassifyObjectActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReclassifyObjectAction#validateMultiplicity()
+	 * The multiplicity of the input pin is 1..1.
+	self.argument.multiplicity.is(1,1) 
+	 * @see org.eclipse.uml2.uml.ReclassifyObjectAction#validateMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReclassifyObjectAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -87,7 +102,9 @@ public class ReclassifyObjectActionPath extends ActionPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.ReclassifyObjectAction#validateInputPin()
+	 * The input pin has no type.
+	self.argument.type->size() = 0 
+	 * @see org.eclipse.uml2.uml.ReclassifyObjectAction#validateInputPin(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<ReclassifyObjectAction> validateInputPin(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

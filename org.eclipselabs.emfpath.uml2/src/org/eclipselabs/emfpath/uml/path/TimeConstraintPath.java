@@ -5,6 +5,11 @@ import com.google.common.base.Predicate;
 import org.eclipse.uml2.uml.TimeConstraint;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.TimeConstraint TimeConstraint} in a functional way.
+ * <p>
+ * A time constraint is a constraint that refers to a time interval. 
+ * @see org.eclipse.uml2.uml.TimeConstraint
  * @generated
  */
 public class TimeConstraintPath extends IntervalConstraintPath {
@@ -17,6 +22,10 @@ public class TimeConstraintPath extends IntervalConstraintPath {
 	}
 
 	/**
+	 * The value of firstEvent is related to constrainedElement. If firstEvent is true, then
+	 * the corresponding observation event is the first time instant the execution enters
+	 * constrainedElement. If firstEvent is false, then the corresponding observation event
+	 * is the last time instant the execution is within constrainedElement. 
 	 * @see org.eclipse.uml2.uml.TimeConstraint#isFirstEvent()
 	 * @generated
 	 */

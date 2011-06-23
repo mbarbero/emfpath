@@ -10,6 +10,17 @@ import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.OutputPin;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Action Action} in a functional way.
+ * <p>
+ * An action is a named element that is the fundamental unit of executable functionality.
+ * The execution of an action represents some transformation or processing in the modeled
+ * system, be it a computer system or otherwise.
+An action represents a single step
+ * within an activity, that is, one that is not further decomposed within the activity.
+An
+ * action has pre- and post-conditions. 
+ * @see org.eclipse.uml2.uml.Action
  * @generated
  */
 public class ActionPath extends ExecutableNodePath {
@@ -22,6 +33,8 @@ public class ActionPath extends ExecutableNodePath {
 	}
 
 	/**
+	 * The ordered set of output pins connected to the Action. The action places its results
+	 * onto pins in this set. 
 	 * @see org.eclipse.uml2.uml.Action#getOutputs()
 	 * @generated
 	 */
@@ -32,6 +45,8 @@ public class ActionPath extends ExecutableNodePath {
 	};
 
 	/**
+	 * The ordered set of input pins connected to the Action. These are among the total set
+	 * of inputs. 
 	 * @see org.eclipse.uml2.uml.Action#getInputs()
 	 * @generated
 	 */
@@ -42,6 +57,7 @@ public class ActionPath extends ExecutableNodePath {
 	};
 
 	/**
+	 * The classifier that owns the behavior of which this action is a part. 
 	 * @see org.eclipse.uml2.uml.Action#getContext()
 	 * @generated
 	 */
@@ -52,6 +68,7 @@ public class ActionPath extends ExecutableNodePath {
 	};
 
 	/**
+	 * Constraint that must be satisfied when execution is started. 
 	 * @see org.eclipse.uml2.uml.Action#getLocalPreconditions()
 	 * @generated
 	 */
@@ -62,6 +79,7 @@ public class ActionPath extends ExecutableNodePath {
 	};
 
 	/**
+	 * Constraint that must be satisfied when executed is completed. 
 	 * @see org.eclipse.uml2.uml.Action#getLocalPostconditions()
 	 * @generated
 	 */

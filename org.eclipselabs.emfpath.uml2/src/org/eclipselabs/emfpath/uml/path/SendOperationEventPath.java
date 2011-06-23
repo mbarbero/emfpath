@@ -6,6 +6,11 @@ import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.SendOperationEvent;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.SendOperationEvent SendOperationEvent} in a functional way.
+ * <p>
+ * A send operation event models the invocation of an operation call. 
+ * @see org.eclipse.uml2.uml.SendOperationEvent
  * @generated
  */
 public class SendOperationEventPath extends MessageEventPath {
@@ -18,6 +23,7 @@ public class SendOperationEventPath extends MessageEventPath {
 	}
 
 	/**
+	 * The operation associated with this event. 
 	 * @see org.eclipse.uml2.uml.SendOperationEvent#getOperation()
 	 * @generated
 	 */

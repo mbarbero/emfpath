@@ -11,6 +11,12 @@ import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.InterruptibleActivityRegion;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.InterruptibleActivityRegion InterruptibleActivityRegion} in a functional way.
+ * <p>
+ * An interruptible activity region is an activity group that supports termination of
+ * tokens flowing in the portions of an activity. 
+ * @see org.eclipse.uml2.uml.InterruptibleActivityRegion
  * @generated
  */
 public class InterruptibleActivityRegionPath extends ActivityGroupPath {
@@ -23,6 +29,7 @@ public class InterruptibleActivityRegionPath extends ActivityGroupPath {
 	}
 
 	/**
+	 * Nodes immediately contained in the group. 
 	 * @see org.eclipse.uml2.uml.InterruptibleActivityRegion#getNodes()
 	 * @generated
 	 */
@@ -33,6 +40,7 @@ public class InterruptibleActivityRegionPath extends ActivityGroupPath {
 	};
 
 	/**
+	 * The edges leaving the region that will abort other tokens flowing in the region. 
 	 * @see org.eclipse.uml2.uml.InterruptibleActivityRegion#getInterruptingEdges()
 	 * @generated
 	 */
@@ -43,7 +51,11 @@ public class InterruptibleActivityRegionPath extends ActivityGroupPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.InterruptibleActivityRegion#validateInterruptingEdges()
+	 * Interrupting edges of a region must have their source node in the region and their
+	 * target node outside the region in the same activity containing the region.
+	
+	true
+	 * @see org.eclipse.uml2.uml.InterruptibleActivityRegion#validateInterruptingEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<InterruptibleActivityRegion> validateInterruptingEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {

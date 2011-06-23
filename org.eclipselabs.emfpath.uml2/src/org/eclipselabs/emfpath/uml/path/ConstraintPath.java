@@ -12,6 +12,13 @@ import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 /**
+ * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
+ * to browse {@link org.eclipse.uml2.uml.Constraint Constraint} in a functional way.
+ * <p>
+ * A constraint is a condition or restriction expressed in natural language text or in
+ * a machine readable language for the purpose of declaring some of the semantics of
+ * an element. 
+ * @see org.eclipse.uml2.uml.Constraint
  * @generated
  */
 public class ConstraintPath extends PackageableElementPath {
@@ -24,6 +31,7 @@ public class ConstraintPath extends PackageableElementPath {
 	}
 
 	/**
+	 * The ordered set of Elements referenced by this Constraint. 
 	 * @see org.eclipse.uml2.uml.Constraint#getConstrainedElements()
 	 * @generated
 	 */
@@ -34,6 +42,7 @@ public class ConstraintPath extends PackageableElementPath {
 	};
 
 	/**
+	 * A condition that must be true when evaluated in order for the constraint to be satisfied.
 	 * @see org.eclipse.uml2.uml.Constraint#getSpecification()
 	 * @generated
 	 */
@@ -44,6 +53,7 @@ public class ConstraintPath extends PackageableElementPath {
 	};
 
 	/**
+	 * Specifies the namespace that owns the NamedElement. 
 	 * @see org.eclipse.uml2.uml.Constraint#getContext()
 	 * @generated
 	 */
@@ -54,7 +64,9 @@ public class ConstraintPath extends PackageableElementPath {
 	};
 	
 	/**
-	 * @see org.eclipse.uml2.uml.Constraint#validateNotApplyToSelf()
+	 * A constraint cannot be applied to itself.
+	not constrainedElement->includes(self)
+	 * @see org.eclipse.uml2.uml.Constraint#validateNotApplyToSelf(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Constraint> validateNotApplyToSelf(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -66,7 +78,9 @@ public class ConstraintPath extends PackageableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Constraint#validateValueSpecificationBoolean()
+	 * The value specification for a constraint must evaluate to a Boolean value.
+	self.specification().booleanValue().isOclKindOf(Boolean)
+	 * @see org.eclipse.uml2.uml.Constraint#validateValueSpecificationBoolean(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Constraint> validateValueSpecificationBoolean(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -78,7 +92,9 @@ public class ConstraintPath extends PackageableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Constraint#validateBooleanValue()
+	 * The value specification for a constraint must evaluate to a Boolean value.
+	true 
+	 * @see org.eclipse.uml2.uml.Constraint#validateBooleanValue(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Constraint> validateBooleanValue(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -90,7 +106,9 @@ public class ConstraintPath extends PackageableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Constraint#validateNoSideEffects()
+	 * Evaluating the value specification for a constraint must not have side effects.
+	true
+	 * @see org.eclipse.uml2.uml.Constraint#validateNoSideEffects(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Constraint> validateNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
@@ -102,7 +120,9 @@ public class ConstraintPath extends PackageableElementPath {
 	}
 
 	/**
-	 * @see org.eclipse.uml2.uml.Constraint#validateNotAppliedToSelf()
+	 * A constraint cannot be applied to itself.
+	not constrainedElement->includes(self)
+	 * @see org.eclipse.uml2.uml.Constraint#validateNotAppliedToSelf(DiagnosticChain, Map)
 	 * @generated
 	 */
 	public static Predicate<Constraint> validateNotAppliedToSelf(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
