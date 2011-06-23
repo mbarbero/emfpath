@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipselabs.emfpath.ecore.path.internal.i18n.Messages;
+import org.eclipselabs.emfpath.ecore.internal.i18n.Messages;
 import org.eclipselabs.emfpath.exception.NoSuchFeatureException;
 import org.eclipselabs.emfpath.exception.NotFoundException;
 

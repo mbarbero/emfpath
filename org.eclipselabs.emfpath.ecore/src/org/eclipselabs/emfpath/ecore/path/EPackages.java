@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipselabs.emfpath.ecore.path.internal.i18n.Messages;
+import org.eclipselabs.emfpath.ecore.internal.i18n.Messages;
 import org.eclipselabs.emfpath.exception.NotFoundException;
 
 /**

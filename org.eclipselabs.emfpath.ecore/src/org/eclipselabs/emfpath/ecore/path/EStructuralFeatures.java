@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.ETypedElement;
-import org.eclipselabs.emfpath.ecore.path.internal.i18n.Messages;
+import org.eclipselabs.emfpath.ecore.internal.i18n.Messages;
 import org.eclipselabs.emfpath.exception.NoSuchFeatureException;
 
 import com.google.common.base.Function;
