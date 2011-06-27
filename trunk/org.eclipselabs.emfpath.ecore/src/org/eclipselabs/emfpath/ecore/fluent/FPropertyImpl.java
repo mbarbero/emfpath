@@ -5,7 +5,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipselabs.emfpath.ecore.path.EStructuralFeatures;
-import org.eclipselabs.emfpath.exception.NoSuchFeatureException;
+import org.eclipselabs.emfpath.ecore.exception.NoSuchFeatureException;
 import org.eclipselabs.emfpath.collect.FluentCollections;
 import org.eclipselabs.emfpath.collect.FluentIterable;
 
