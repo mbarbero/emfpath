@@ -82,7 +82,7 @@ public final class Resources {
 	 * @since 0.1.0
 	 */
 	public static void initResourceSet(ResourceSet resourceSet) {
-		Preconditions.checkArgument(resourceSet != null, Messages.getString("Resources.0")); //$NON-NLS-1$
+		Preconditions.checkArgument(resourceSet != null, Messages.getString("EResources.0")); //$NON-NLS-1$
 
 		Resource.Factory xmiResourceFactory = new XMIResourceFactoryImpl();
 		Resource.Factory ecoreResourceFactory = new EcoreResourceFactoryImpl();

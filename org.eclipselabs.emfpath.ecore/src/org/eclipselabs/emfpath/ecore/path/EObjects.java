@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipselabs.emfpath.ecore.exception.NoSuchFeatureException;
+import org.eclipselabs.emfpath.ecore.exception.NotFoundException;
 import org.eclipselabs.emfpath.ecore.internal.i18n.Messages;
-import org.eclipselabs.emfpath.exception.NoSuchFeatureException;
-import org.eclipselabs.emfpath.exception.NotFoundException;
 
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
@@ -234,6 +234,19 @@ public class EObjects {
       }
     };
   }
+  
+  public static Function<EObject, Object> eInvoke(final String operationName, final EList<?> arguments) {
+	    return new Function<EObject, Object>() {
+	      public Object apply(EObject s) {
+	    	EOperation eOperation = EClasses.getEOperation(s.eClass(), operationName);
+	        try {
+	          return s.eInvoke(eOperation, arguments);
+	        } catch (java.lang.reflect.InvocationTargetException e1) {
+	          throw new WrappedException(e1);
+	        }
+	      }
+	    };
+	  }
 
 
 
@@ -459,6 +472,14 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 				EClass inputEClass = input.eClass();
 				return ((inputEClass == eClass) || inputEClass
 						.getEAllSuperTypes().contains(eClass));
+			}
+		};
+	}
+	
+	public static Predicate<EObject> isKindOf(final Class<? extends EObject> eClass) {
+		return new Predicate<EObject>() {
+			public boolean apply(EObject input) {
+				return eClass.isInstance(input);
 			}
 		};
 	}

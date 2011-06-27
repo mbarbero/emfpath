@@ -14,13 +14,14 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipselabs.emfpath.base.Equivalences2;
-import org.eclipselabs.emfpath.exception.NotFoundException;
+import org.eclipselabs.emfpath.ecore.exception.NotFoundException;
 
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 import com.google.common.base.Splitter;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -313,6 +314,28 @@ public class EClasses extends EClassifiers {
     };
   }
 
+  public static EOperation getEOperation(EClass eClass, String operationName) {
+	  Preconditions.checkArgument(Strings.isNullOrEmpty(operationName));
+	  for (EOperation eOperation : eClass.getEAllOperations()) {
+		if (operationName.equals(eOperation.getName())) {
+			return eOperation;
+		}
+	  }
+	  return null;
+  }
+  
+  public static Function<EClass, EOperation> getEOperation(final String operationName) {
+	  return new Function<EClass, EOperation>() {
+		public EOperation apply(EClass input) {
+			EOperation eOperation = getEOperation(input, operationName);
+			if (eOperation == null) {
+				throw new IllegalArgumentException(operationName);
+			}
+			return eOperation;
+		}
+	};
+  }
+  
   /**
 	 * @param ePackage
 	 * @return

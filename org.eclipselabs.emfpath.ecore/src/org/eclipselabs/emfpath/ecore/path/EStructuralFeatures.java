@@ -3,7 +3,7 @@ package org.eclipselabs.emfpath.ecore.path;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipselabs.emfpath.ecore.internal.i18n.Messages;
-import org.eclipselabs.emfpath.exception.NoSuchFeatureException;
+import org.eclipselabs.emfpath.ecore.exception.NoSuchFeatureException;
 
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;

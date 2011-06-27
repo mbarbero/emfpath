@@ -96,7 +96,4 @@ public class EOperations extends ETypedElements {
       }
     };
   }
-
-
-
 }

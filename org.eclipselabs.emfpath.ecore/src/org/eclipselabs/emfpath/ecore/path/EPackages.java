@@ -9,8 +9,8 @@ import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipselabs.emfpath.ecore.exception.NotFoundException;
 import org.eclipselabs.emfpath.ecore.internal.i18n.Messages;
-import org.eclipselabs.emfpath.exception.NotFoundException;
 
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
