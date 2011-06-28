@@ -20,6 +20,7 @@ import java.util.List;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -72,6 +73,8 @@ public class GenerateEMFPathAction extends ActionDelegate implements IActionDele
 						Iterator<IFile> filesIt = files.iterator();
 						while (filesIt.hasNext()) {
 							IFile model = (IFile)filesIt.next();
+							IProject modelProject = model.getProject();
+							IFile buildProperties = modelProject.getFile("build.properties");
 							URI modelURI = URI.createPlatformResourceURI(model.getFullPath().toString(), true);
 							try {
 								// here is the target generation folder
@@ -81,6 +84,9 @@ public class GenerateEMFPathAction extends ActionDelegate implements IActionDele
 									targetFolder.mkdirs();
 								}
 								Main generator = new Main(modelURI, targetFolder, Collections.emptyList());
+								if (buildProperties.exists()) {
+									generator.addPropertiesFile(buildProperties.getLocation().toString());
+								}
 								generator.doGenerate(BasicMonitor.toMonitor(monitor));
 							} catch (IOException e) {
 								IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
