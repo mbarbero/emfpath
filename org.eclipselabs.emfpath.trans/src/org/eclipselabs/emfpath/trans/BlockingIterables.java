@@ -8,7 +8,7 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterators;
 
-public class BlockingIterables {
+class BlockingIterables {
 
 	@SuppressWarnings("unchecked")
 	public static <T> BlockingIterable<T> of() {
