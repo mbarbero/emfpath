@@ -1,11 +1,11 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.OpaqueAction;
 import org.eclipse.uml2.uml.OutputPin;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -21,8 +21,8 @@ public class OpaqueActionPath extends ActionPath {
 	 * @generated
 	 */
 	private OpaqueActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies the action in one or more languages. 
@@ -30,10 +30,10 @@ public class OpaqueActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<OpaqueAction, EList<String>> body = new Function<OpaqueAction, EList<String>>() {
-		public EList<String> apply(OpaqueAction s) {
-			return s.getBodies();
-		}
-	};
+    public EList<String> apply(OpaqueAction s) {
+      return s.getBodies();
+    }
+  };
 
 	/**
 	 * Languages the body strings use, in the same order as the body strings 
@@ -41,10 +41,10 @@ public class OpaqueActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<OpaqueAction, EList<String>> language = new Function<OpaqueAction, EList<String>>() {
-		public EList<String> apply(OpaqueAction s) {
-			return s.getLanguages();
-		}
-	};
+    public EList<String> apply(OpaqueAction s) {
+      return s.getLanguages();
+    }
+  };
 
 	/**
 	 * Provides input to the action. 
@@ -52,10 +52,10 @@ public class OpaqueActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<OpaqueAction, EList<InputPin>> inputValue = new Function<OpaqueAction, EList<InputPin>>() {
-		public EList<InputPin> apply(OpaqueAction s) {
-			return s.getInputValues();
-		}
-	};
+    public EList<InputPin> apply(OpaqueAction s) {
+      return s.getInputValues();
+    }
+  };
 
 	/**
 	 * Takes output from the action. 
@@ -63,10 +63,10 @@ public class OpaqueActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<OpaqueAction, EList<OutputPin>> outputValue = new Function<OpaqueAction, EList<OutputPin>>() {
-		public EList<OutputPin> apply(OpaqueAction s) {
-			return s.getOutputValues();
-		}
-	};
+    public EList<OutputPin> apply(OpaqueAction s) {
+      return s.getOutputValues();
+    }
+  };
 	
 	
 

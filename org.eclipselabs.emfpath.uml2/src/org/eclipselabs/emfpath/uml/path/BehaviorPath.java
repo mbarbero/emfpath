@@ -1,17 +1,18 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.BehavioralFeature;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterSet;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -32,8 +33,8 @@ public class BehaviorPath extends ClassPath {
 	 * @generated
 	 */
 	 BehaviorPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Tells whether the behavior can be invoked while it is still executing from a previous
@@ -41,11 +42,11 @@ public class BehaviorPath extends ClassPath {
 	 * @see org.eclipse.uml2.uml.Behavior#isReentrant()
 	 * @generated
 	 */
-	public static final Predicate<Behavior> isReentrant = new Predicate<Behavior>() {
-		public boolean apply(Behavior s) {
-			return s.isReentrant();
-		}
-	};
+	public static final ComposablePredicate<Behavior> isReentrant = new ComposablePredicate<Behavior>() {
+    public boolean apply(Behavior s) {
+      return s.isReentrant();
+    }
+  };
 
 	/**
 	 * References a behavior that this behavior redefines. A subtype of Behavior may redefine
@@ -56,10 +57,10 @@ public class BehaviorPath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Behavior, EList<Behavior>> redefinedBehavior = new Function<Behavior, EList<Behavior>>() {
-		public EList<Behavior> apply(Behavior s) {
-			return s.getRedefinedBehaviors();
-		}
-	};
+    public EList<Behavior> apply(Behavior s) {
+      return s.getRedefinedBehaviors();
+    }
+  };
 
 	/**
 	 * References a list of parameters to the behavior which describes the order and type
@@ -70,10 +71,10 @@ public class BehaviorPath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Behavior, EList<Parameter>> ownedParameter = new Function<Behavior, EList<Parameter>>() {
-		public EList<Parameter> apply(Behavior s) {
-			return s.getOwnedParameters();
-		}
-	};
+    public EList<Parameter> apply(Behavior s) {
+      return s.getOwnedParameters();
+    }
+  };
 
 	/**
 	 * The classifier that is the context for the execution of the behavior. If the behavior
@@ -87,10 +88,10 @@ public class BehaviorPath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Behavior, BehavioredClassifier> context = new Function<Behavior, BehavioredClassifier>() {
-		public BehavioredClassifier apply(Behavior s) {
-			return s.getContext();
-		}
-	};
+    public BehavioredClassifier apply(Behavior s) {
+      return s.getContext();
+    }
+  };
 
 	/**
 	 * An optional set of Constraints specifying what must be fulfilled when the behavior
@@ -99,10 +100,10 @@ public class BehaviorPath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Behavior, EList<Constraint>> precondition = new Function<Behavior, EList<Constraint>>() {
-		public EList<Constraint> apply(Behavior s) {
-			return s.getPreconditions();
-		}
-	};
+    public EList<Constraint> apply(Behavior s) {
+      return s.getPreconditions();
+    }
+  };
 
 	/**
 	 * An optional set of Constraints specifying what is fulfilled after the execution of
@@ -111,10 +112,10 @@ public class BehaviorPath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Behavior, EList<Constraint>> postcondition = new Function<Behavior, EList<Constraint>>() {
-		public EList<Constraint> apply(Behavior s) {
-			return s.getPostconditions();
-		}
-	};
+    public EList<Constraint> apply(Behavior s) {
+      return s.getPostconditions();
+    }
+  };
 
 	/**
 	 * The ParameterSets owned by this Behavior. 
@@ -122,10 +123,10 @@ public class BehaviorPath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Behavior, EList<ParameterSet>> ownedParameterSet = new Function<Behavior, EList<ParameterSet>>() {
-		public EList<ParameterSet> apply(Behavior s) {
-			return s.getOwnedParameterSets();
-		}
-	};
+    public EList<ParameterSet> apply(Behavior s) {
+      return s.getOwnedParameterSets();
+    }
+  };
 
 	/**
 	 * Designates a behavioral feature that the behavior implements. The behavioral feature
@@ -137,10 +138,10 @@ public class BehaviorPath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Behavior, BehavioralFeature> specification = new Function<Behavior, BehavioralFeature>() {
-		public BehavioralFeature apply(Behavior s) {
-			return s.getSpecification();
-		}
-	};
+    public BehavioralFeature apply(Behavior s) {
+      return s.getSpecification();
+    }
+  };
 	
 	/**
 	 * The parameters of the behavior must match the parameters of the implemented behavioral
@@ -149,13 +150,13 @@ public class BehaviorPath extends ClassPath {
 	 * @see org.eclipse.uml2.uml.Behavior#validateParametersMatch(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Behavior> validateParametersMatch(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Behavior>() {
-			public boolean apply(Behavior s) {
-				return s.validateParametersMatch(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Behavior> validateParametersMatch(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Behavior>() {
+      public boolean apply(Behavior s) {
+        return s.validateParametersMatch(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The implemented behavioral feature must be a feature (possibly inherited) of the context
@@ -164,13 +165,13 @@ public class BehaviorPath extends ClassPath {
 	 * @see org.eclipse.uml2.uml.Behavior#validateFeatureOfContextClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Behavior> validateFeatureOfContextClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Behavior>() {
-			public boolean apply(Behavior s) {
-				return s.validateFeatureOfContextClassifier(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Behavior> validateFeatureOfContextClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Behavior>() {
+      public boolean apply(Behavior s) {
+        return s.validateFeatureOfContextClassifier(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If the implemented behavioral feature has been redefined in the ancestors of the owner
@@ -179,13 +180,13 @@ public class BehaviorPath extends ClassPath {
 	 * @see org.eclipse.uml2.uml.Behavior#validateMustRealize(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Behavior> validateMustRealize(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Behavior>() {
-			public boolean apply(Behavior s) {
-				return s.validateMustRealize(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Behavior> validateMustRealize(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Behavior>() {
+      public boolean apply(Behavior s) {
+        return s.validateMustRealize(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * There may be at most one behavior for a given pairing of classifier (as owner of the
@@ -194,13 +195,13 @@ public class BehaviorPath extends ClassPath {
 	 * @see org.eclipse.uml2.uml.Behavior#validateMostOneBehaviour(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Behavior> validateMostOneBehaviour(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Behavior>() {
-			public boolean apply(Behavior s) {
-				return s.validateMostOneBehaviour(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Behavior> validateMostOneBehaviour(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Behavior>() {
+      public boolean apply(Behavior s) {
+        return s.validateMostOneBehaviour(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -208,9 +209,9 @@ public class BehaviorPath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Behavior, BehavioredClassifier> getContext = new Function<Behavior, BehavioredClassifier>() {
-		public BehavioredClassifier apply(Behavior s) {
-			return s.getContext();
-		}
-	};
+    public BehavioredClassifier apply(Behavior s) {
+      return s.getContext();
+    }
+  };
 
 }

@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.CallAction;
 import org.eclipse.uml2.uml.OutputPin;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -24,8 +25,8 @@ public class CallActionPath extends InvocationActionPath {
 	 * @generated
 	 */
 	 CallActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * If true, the call is synchronous and the caller waits for completion of the invoked
@@ -36,11 +37,11 @@ public class CallActionPath extends InvocationActionPath {
 	 * @see org.eclipse.uml2.uml.CallAction#isSynchronous()
 	 * @generated
 	 */
-	public static final Predicate<CallAction> isSynchronous = new Predicate<CallAction>() {
-		public boolean apply(CallAction s) {
-			return s.isSynchronous();
-		}
-	};
+	public static final ComposablePredicate<CallAction> isSynchronous = new ComposablePredicate<CallAction>() {
+    public boolean apply(CallAction s) {
+      return s.isSynchronous();
+    }
+  };
 
 	/**
 	 * A list of output pins where the results of performing the invocation are placed. 
@@ -48,10 +49,10 @@ public class CallActionPath extends InvocationActionPath {
 	 * @generated
 	 */
 	public static final Function<CallAction, EList<OutputPin>> result = new Function<CallAction, EList<OutputPin>>() {
-		public EList<OutputPin> apply(CallAction s) {
-			return s.getResults();
-		}
-	};
+    public EList<OutputPin> apply(CallAction s) {
+      return s.getResults();
+    }
+  };
 	
 	/**
 	 * Only synchronous call actions can have result pins.
@@ -59,13 +60,13 @@ public class CallActionPath extends InvocationActionPath {
 	 * @see org.eclipse.uml2.uml.CallAction#validateSynchronousCall(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CallAction> validateSynchronousCall(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CallAction>() {
-			public boolean apply(CallAction s) {
-				return s.validateSynchronousCall(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CallAction> validateSynchronousCall(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CallAction>() {
+      public boolean apply(CallAction s) {
+        return s.validateSynchronousCall(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The number and order of argument pins must be the same as the number and order of
@@ -75,13 +76,13 @@ public class CallActionPath extends InvocationActionPath {
 	 * @see org.eclipse.uml2.uml.CallAction#validateNumberAndOrder(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CallAction> validateNumberAndOrder(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CallAction>() {
-			public boolean apply(CallAction s) {
-				return s.validateNumberAndOrder(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CallAction> validateNumberAndOrder(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CallAction>() {
+      public boolean apply(CallAction s) {
+        return s.validateNumberAndOrder(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The type, ordering, and multiplicity of an argument pin must be the same as the corresponding
@@ -90,12 +91,12 @@ public class CallActionPath extends InvocationActionPath {
 	 * @see org.eclipse.uml2.uml.CallAction#validateTypeOrderingMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CallAction> validateTypeOrderingMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CallAction>() {
-			public boolean apply(CallAction s) {
-				return s.validateTypeOrderingMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CallAction> validateTypeOrderingMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CallAction>() {
+      public boolean apply(CallAction s) {
+        return s.validateTypeOrderingMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 }

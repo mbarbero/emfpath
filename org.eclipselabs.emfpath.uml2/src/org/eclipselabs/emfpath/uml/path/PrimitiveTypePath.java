@@ -18,8 +18,8 @@ public class PrimitiveTypePath extends DataTypePath {
 	 * @generated
 	 */
 	private PrimitiveTypePath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.RemoveStructuralFeatureValueAction;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,19 +24,19 @@ public class RemoveStructuralFeatureValueActionPath extends WriteStructuralFeatu
 	 * @generated
 	 */
 	private RemoveStructuralFeatureValueActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies whether to remove duplicates of the value in nonunique structural features.
 	 * @see org.eclipse.uml2.uml.RemoveStructuralFeatureValueAction#isRemoveDuplicates()
 	 * @generated
 	 */
-	public static final Predicate<RemoveStructuralFeatureValueAction> isRemoveDuplicates = new Predicate<RemoveStructuralFeatureValueAction>() {
-		public boolean apply(RemoveStructuralFeatureValueAction s) {
-			return s.isRemoveDuplicates();
-		}
-	};
+	public static final ComposablePredicate<RemoveStructuralFeatureValueAction> isRemoveDuplicates = new ComposablePredicate<RemoveStructuralFeatureValueAction>() {
+    public boolean apply(RemoveStructuralFeatureValueAction s) {
+      return s.isRemoveDuplicates();
+    }
+  };
 
 	/**
 	 * Specifies the position of an existing value to remove in ordered nonunique structural
@@ -45,10 +46,10 @@ public class RemoveStructuralFeatureValueActionPath extends WriteStructuralFeatu
 	 * @generated
 	 */
 	public static final Function<RemoveStructuralFeatureValueAction, InputPin> removeAt = new Function<RemoveStructuralFeatureValueAction, InputPin>() {
-		public InputPin apply(RemoveStructuralFeatureValueAction s) {
-			return s.getRemoveAt();
-		}
-	};
+    public InputPin apply(RemoveStructuralFeatureValueAction s) {
+      return s.getRemoveAt();
+    }
+  };
 	
 	/**
 	 * Actions removing a value from ordered nonunique structural features must have a single
@@ -59,12 +60,12 @@ public class RemoveStructuralFeatureValueActionPath extends WriteStructuralFeatu
 	 * @see org.eclipse.uml2.uml.RemoveStructuralFeatureValueAction#validateNonUniqueRemoval(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<RemoveStructuralFeatureValueAction> validateNonUniqueRemoval(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<RemoveStructuralFeatureValueAction>() {
-			public boolean apply(RemoveStructuralFeatureValueAction s) {
-				return s.validateNonUniqueRemoval(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<RemoveStructuralFeatureValueAction> validateNonUniqueRemoval(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<RemoveStructuralFeatureValueAction>() {
+      public boolean apply(RemoveStructuralFeatureValueAction s) {
+        return s.validateNonUniqueRemoval(diagnostics, context);
+      }
+    };
+  }
 
 }

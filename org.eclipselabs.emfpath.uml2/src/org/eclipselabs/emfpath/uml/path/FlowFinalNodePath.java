@@ -16,8 +16,8 @@ public class FlowFinalNodePath extends FinalNodePath {
 	 * @generated
 	 */
 	private FlowFinalNodePath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

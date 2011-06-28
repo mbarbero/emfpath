@@ -1,17 +1,18 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.ActivityGroup;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.ActivityPartition;
 import org.eclipse.uml2.uml.Element;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -28,8 +29,8 @@ public class ActivityPartitionPath extends NamedElementPath {
 	 * @generated
 	 */
 	private ActivityPartitionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Groups immediately contained in the group. 
@@ -81,11 +82,11 @@ public class ActivityPartitionPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.ActivityPartition#isDimension()
 	 * @generated
 	 */
-	public static final Predicate<ActivityPartition> isDimension = new Predicate<ActivityPartition>() {
-		public boolean apply(ActivityPartition s) {
-			return s.isDimension();
-		}
-	};
+	public static final ComposablePredicate<ActivityPartition> isDimension = new ComposablePredicate<ActivityPartition>() {
+    public boolean apply(ActivityPartition s) {
+      return s.isDimension();
+    }
+  };
 
 	/**
 	 * Tells whether the partition represents an entity to which the partitioning structure
@@ -93,11 +94,11 @@ public class ActivityPartitionPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.ActivityPartition#isExternal()
 	 * @generated
 	 */
-	public static final Predicate<ActivityPartition> isExternal = new Predicate<ActivityPartition>() {
-		public boolean apply(ActivityPartition s) {
-			return s.isExternal();
-		}
-	};
+	public static final ComposablePredicate<ActivityPartition> isExternal = new ComposablePredicate<ActivityPartition>() {
+    public boolean apply(ActivityPartition s) {
+      return s.isExternal();
+    }
+  };
 
 	/**
 	 * Nodes immediately contained in the group. 
@@ -105,10 +106,10 @@ public class ActivityPartitionPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<ActivityPartition, EList<ActivityNode>> node = new Function<ActivityPartition, EList<ActivityNode>>() {
-		public EList<ActivityNode> apply(ActivityPartition s) {
-			return s.getNodes();
-		}
-	};
+    public EList<ActivityNode> apply(ActivityPartition s) {
+      return s.getNodes();
+    }
+  };
 
 	/**
 	 * Partitions immediately contained in the partition. 
@@ -116,10 +117,10 @@ public class ActivityPartitionPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<ActivityPartition, EList<ActivityPartition>> subpartition = new Function<ActivityPartition, EList<ActivityPartition>>() {
-		public EList<ActivityPartition> apply(ActivityPartition s) {
-			return s.getSubpartitions();
-		}
-	};
+    public EList<ActivityPartition> apply(ActivityPartition s) {
+      return s.getSubpartitions();
+    }
+  };
 
 	/**
 	 * Partition immediately containing the partition. 
@@ -127,10 +128,10 @@ public class ActivityPartitionPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<ActivityPartition, ActivityPartition> superPartition = new Function<ActivityPartition, ActivityPartition>() {
-		public ActivityPartition apply(ActivityPartition s) {
-			return s.getSuperPartition();
-		}
-	};
+    public ActivityPartition apply(ActivityPartition s) {
+      return s.getSuperPartition();
+    }
+  };
 
 	/**
 	 * An element constraining behaviors invoked by nodes in the partition. 
@@ -138,10 +139,10 @@ public class ActivityPartitionPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<ActivityPartition, Element> represents = new Function<ActivityPartition, Element>() {
-		public Element apply(ActivityPartition s) {
-			return s.getRepresents();
-		}
-	};
+    public Element apply(ActivityPartition s) {
+      return s.getRepresents();
+    }
+  };
 
 	/**
 	 * Edges immediately contained in the group. 
@@ -149,10 +150,10 @@ public class ActivityPartitionPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<ActivityPartition, EList<ActivityEdge>> edge = new Function<ActivityPartition, EList<ActivityEdge>>() {
-		public EList<ActivityEdge> apply(ActivityPartition s) {
-			return s.getEdges();
-		}
-	};
+    public EList<ActivityEdge> apply(ActivityPartition s) {
+      return s.getEdges();
+    }
+  };
 	
 	/**
 	 * All nodes and edges of the group must be in the same activity as the group.
@@ -162,9 +163,9 @@ public class ActivityPartitionPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.ActivityGroup#validateNodesAndEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityGroup> validateNodesAndEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return ActivityGroupPath.validateNodesAndEdges(diagnostics, context);
-	}
+	public static ComposablePredicate<ActivityGroup> validateNodesAndEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return ActivityGroupPath.validateNodesAndEdges(diagnostics, context);
+  }
 
 	/**
 	 * No node or edge in a group may be contained by its subgroups or its containing groups,
@@ -175,9 +176,9 @@ public class ActivityPartitionPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.ActivityGroup#validateNotContained(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityGroup> validateNotContained(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return ActivityGroupPath.validateNotContained(diagnostics, context);
-	}
+	public static ComposablePredicate<ActivityGroup> validateNotContained(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return ActivityGroupPath.validateNotContained(diagnostics, context);
+  }
 
 	/**
 	 * Groups may only be owned by activities or groups.
@@ -187,9 +188,9 @@ public class ActivityPartitionPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.ActivityGroup#validateGroupOwned(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityGroup> validateGroupOwned(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return ActivityGroupPath.validateGroupOwned(diagnostics, context);
-	}
+	public static ComposablePredicate<ActivityGroup> validateGroupOwned(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return ActivityGroupPath.validateGroupOwned(diagnostics, context);
+  }
 
 	/**
 	 * A partition with isDimension = true may not be contained by another partition.
@@ -197,13 +198,13 @@ public class ActivityPartitionPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.ActivityPartition#validateDimensionNotContained(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityPartition> validateDimensionNotContained(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActivityPartition>() {
-			public boolean apply(ActivityPartition s) {
-				return s.validateDimensionNotContained(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActivityPartition> validateDimensionNotContained(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActivityPartition>() {
+      public boolean apply(ActivityPartition s) {
+        return s.validateDimensionNotContained(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If a partition represents a part, then all the non-external partitions in the same
@@ -213,13 +214,13 @@ public class ActivityPartitionPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.ActivityPartition#validateRepresentsPart(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityPartition> validateRepresentsPart(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActivityPartition>() {
-			public boolean apply(ActivityPartition s) {
-				return s.validateRepresentsPart(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActivityPartition> validateRepresentsPart(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActivityPartition>() {
+      public boolean apply(ActivityPartition s) {
+        return s.validateRepresentsPart(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If a non-external partition represents a classifier and is contained in another partition,
@@ -231,13 +232,13 @@ public class ActivityPartitionPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.ActivityPartition#validateRepresentsClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityPartition> validateRepresentsClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActivityPartition>() {
-			public boolean apply(ActivityPartition s) {
-				return s.validateRepresentsClassifier(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActivityPartition> validateRepresentsClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActivityPartition>() {
+      public boolean apply(ActivityPartition s) {
+        return s.validateRepresentsClassifier(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If a partition represents a part and is contained by another partition, then the part
@@ -247,12 +248,12 @@ public class ActivityPartitionPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.ActivityPartition#validateRepresentsPartAndIsContained(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityPartition> validateRepresentsPartAndIsContained(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActivityPartition>() {
-			public boolean apply(ActivityPartition s) {
-				return s.validateRepresentsPartAndIsContained(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActivityPartition> validateRepresentsPartAndIsContained(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActivityPartition>() {
+      public boolean apply(ActivityPartition s) {
+        return s.validateRepresentsPartAndIsContained(diagnostics, context);
+      }
+    };
+  }
 
 }

@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.CallOperationAction;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.Operation;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -32,8 +33,8 @@ public class CallOperationActionPath extends CallActionPath {
 	 * @generated
 	 */
 	private CallOperationActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The operation to be invoked by the action execution. 
@@ -41,10 +42,10 @@ public class CallOperationActionPath extends CallActionPath {
 	 * @generated
 	 */
 	public static final Function<CallOperationAction, Operation> operation = new Function<CallOperationAction, Operation>() {
-		public Operation apply(CallOperationAction s) {
-			return s.getOperation();
-		}
-	};
+    public Operation apply(CallOperationAction s) {
+      return s.getOperation();
+    }
+  };
 
 	/**
 	 * The target object to which the request is sent. The classifier of the target object
@@ -54,10 +55,10 @@ public class CallOperationActionPath extends CallActionPath {
 	 * @generated
 	 */
 	public static final Function<CallOperationAction, InputPin> target = new Function<CallOperationAction, InputPin>() {
-		public InputPin apply(CallOperationAction s) {
-			return s.getTarget();
-		}
-	};
+    public InputPin apply(CallOperationAction s) {
+      return s.getTarget();
+    }
+  };
 	
 	/**
 	 * The number of argument pins and the number of owned parameters of the operation of
@@ -66,13 +67,13 @@ public class CallOperationActionPath extends CallActionPath {
 	 * @see org.eclipse.uml2.uml.CallOperationAction#validateArgumentPinEqualParameter(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CallOperationAction> validateArgumentPinEqualParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CallOperationAction>() {
-			public boolean apply(CallOperationAction s) {
-				return s.validateArgumentPinEqualParameter(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CallOperationAction> validateArgumentPinEqualParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CallOperationAction>() {
+      public boolean apply(CallOperationAction s) {
+        return s.validateArgumentPinEqualParameter(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The number of result pins and the number of owned parameters of the operation of type
@@ -81,13 +82,13 @@ public class CallOperationActionPath extends CallActionPath {
 	 * @see org.eclipse.uml2.uml.CallOperationAction#validateResultPinEqualParameter(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CallOperationAction> validateResultPinEqualParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CallOperationAction>() {
-			public boolean apply(CallOperationAction s) {
-				return s.validateResultPinEqualParameter(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CallOperationAction> validateResultPinEqualParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CallOperationAction>() {
+      public boolean apply(CallOperationAction s) {
+        return s.validateResultPinEqualParameter(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The type of the target pin must be the same as the type that owns the operation.
@@ -95,12 +96,12 @@ public class CallOperationActionPath extends CallActionPath {
 	 * @see org.eclipse.uml2.uml.CallOperationAction#validateTypeTargetPin(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CallOperationAction> validateTypeTargetPin(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CallOperationAction>() {
-			public boolean apply(CallOperationAction s) {
-				return s.validateTypeTargetPin(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CallOperationAction> validateTypeTargetPin(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CallOperationAction>() {
+      public boolean apply(CallOperationAction s) {
+        return s.validateTypeTargetPin(diagnostics, context);
+      }
+    };
+  }
 
 }

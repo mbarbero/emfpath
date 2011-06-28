@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.ParameterableElement;
 import org.eclipse.uml2.uml.TemplateBinding;
 import org.eclipse.uml2.uml.TemplateParameter;
 import org.eclipse.uml2.uml.TemplateParameterSubstitution;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class TemplateParameterSubstitutionPath extends ElementPath {
 	 * @generated
 	 */
 	private TemplateParameterSubstitutionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The formal template parameter that is associated with this substitution. 
@@ -34,10 +35,10 @@ public class TemplateParameterSubstitutionPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<TemplateParameterSubstitution, TemplateParameter> formal = new Function<TemplateParameterSubstitution, TemplateParameter>() {
-		public TemplateParameter apply(TemplateParameterSubstitution s) {
-			return s.getFormal();
-		}
-	};
+    public TemplateParameter apply(TemplateParameterSubstitution s) {
+      return s.getFormal();
+    }
+  };
 
 	/**
 	 * The element that is the actual parameter for this substitution. 
@@ -45,10 +46,10 @@ public class TemplateParameterSubstitutionPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<TemplateParameterSubstitution, ParameterableElement> actual = new Function<TemplateParameterSubstitution, ParameterableElement>() {
-		public ParameterableElement apply(TemplateParameterSubstitution s) {
-			return s.getActual();
-		}
-	};
+    public ParameterableElement apply(TemplateParameterSubstitution s) {
+      return s.getActual();
+    }
+  };
 
 	/**
 	 * The actual parameter that is owned by this substitution. 
@@ -56,10 +57,10 @@ public class TemplateParameterSubstitutionPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<TemplateParameterSubstitution, ParameterableElement> ownedActual = new Function<TemplateParameterSubstitution, ParameterableElement>() {
-		public ParameterableElement apply(TemplateParameterSubstitution s) {
-			return s.getOwnedActual();
-		}
-	};
+    public ParameterableElement apply(TemplateParameterSubstitution s) {
+      return s.getOwnedActual();
+    }
+  };
 
 	/**
 	 * The optional bindings from this element to templates. 
@@ -67,10 +68,10 @@ public class TemplateParameterSubstitutionPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<TemplateParameterSubstitution, TemplateBinding> templateBinding = new Function<TemplateParameterSubstitution, TemplateBinding>() {
-		public TemplateBinding apply(TemplateParameterSubstitution s) {
-			return s.getTemplateBinding();
-		}
-	};
+    public TemplateBinding apply(TemplateParameterSubstitution s) {
+      return s.getTemplateBinding();
+    }
+  };
 	
 	/**
 	 * The actual parameter must be compatible with the formal template parameter, e.g. the
@@ -80,12 +81,12 @@ public class TemplateParameterSubstitutionPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.TemplateParameterSubstitution#validateMustBeCompatible(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<TemplateParameterSubstitution> validateMustBeCompatible(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<TemplateParameterSubstitution>() {
-			public boolean apply(TemplateParameterSubstitution s) {
-				return s.validateMustBeCompatible(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<TemplateParameterSubstitution> validateMustBeCompatible(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<TemplateParameterSubstitution>() {
+      public boolean apply(TemplateParameterSubstitution s) {
+        return s.validateMustBeCompatible(diagnostics, context);
+      }
+    };
+  }
 
 }

@@ -16,8 +16,8 @@ public class TimeIntervalPath extends IntervalPath {
 	 * @generated
 	 */
 	private TimeIntervalPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

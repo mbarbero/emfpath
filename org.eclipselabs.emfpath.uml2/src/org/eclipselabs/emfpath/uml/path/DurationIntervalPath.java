@@ -16,8 +16,8 @@ public class DurationIntervalPath extends IntervalPath {
 	 * @generated
 	 */
 	private DurationIntervalPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

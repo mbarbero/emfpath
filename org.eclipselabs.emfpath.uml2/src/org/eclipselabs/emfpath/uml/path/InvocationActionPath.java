@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.InvocationAction;
 import org.eclipse.uml2.uml.Port;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -29,8 +30,8 @@ public class InvocationActionPath extends ActionPath {
 	 * @generated
 	 */
 	 InvocationActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specification of the ordered set of argument values that appears during execution.
@@ -38,10 +39,10 @@ public class InvocationActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<InvocationAction, EList<InputPin>> argument = new Function<InvocationAction, EList<InputPin>>() {
-		public EList<InputPin> apply(InvocationAction s) {
-			return s.getArguments();
-		}
-	};
+    public EList<InputPin> apply(InvocationAction s) {
+      return s.getArguments();
+    }
+  };
 
 	/**
 	 * A optional port of the receiver object on which the behavioral feature is invoked.
@@ -49,10 +50,10 @@ public class InvocationActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<InvocationAction, Port> onPort = new Function<InvocationAction, Port>() {
-		public Port apply(InvocationAction s) {
-			return s.getOnPort();
-		}
-	};
+    public Port apply(InvocationAction s) {
+      return s.getOnPort();
+    }
+  };
 	
 	/**
 	 * The onPort must be a port on the receiver object.
@@ -60,12 +61,12 @@ public class InvocationActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.InvocationAction#validateOnPortReceiver(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InvocationAction> validateOnPortReceiver(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InvocationAction>() {
-			public boolean apply(InvocationAction s) {
-				return s.validateOnPortReceiver(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InvocationAction> validateOnPortReceiver(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InvocationAction>() {
+      public boolean apply(InvocationAction s) {
+        return s.validateOnPortReceiver(diagnostics, context);
+      }
+    };
+  }
 
 }

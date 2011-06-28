@@ -1,13 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.DirectedRelationship;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Relationship;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -26,8 +26,8 @@ public class DependencyPath extends PackageableElementPath {
 	 * @generated
 	 */
 	 DependencyPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies the elements related by the Relationship. 
@@ -67,10 +67,10 @@ public class DependencyPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<Dependency, EList<NamedElement>> supplier = new Function<Dependency, EList<NamedElement>>() {
-		public EList<NamedElement> apply(Dependency s) {
-			return s.getSuppliers();
-		}
-	};
+    public EList<NamedElement> apply(Dependency s) {
+      return s.getSuppliers();
+    }
+  };
 
 	/**
 	 * The element(s) dependent on the supplier element(s). In some cases (such as a Trace
@@ -80,10 +80,10 @@ public class DependencyPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<Dependency, EList<NamedElement>> client = new Function<Dependency, EList<NamedElement>>() {
-		public EList<NamedElement> apply(Dependency s) {
-			return s.getClients();
-		}
-	};
+    public EList<NamedElement> apply(Dependency s) {
+      return s.getClients();
+    }
+  };
 	
 	
 

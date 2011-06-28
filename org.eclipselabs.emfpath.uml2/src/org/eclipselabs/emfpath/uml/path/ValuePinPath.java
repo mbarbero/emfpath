@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.ValuePin;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -22,8 +23,8 @@ public class ValuePinPath extends InputPinPath {
 	 * @generated
 	 */
 	private ValuePinPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Value that the pin will provide. 
@@ -31,10 +32,10 @@ public class ValuePinPath extends InputPinPath {
 	 * @generated
 	 */
 	public static final Function<ValuePin, ValueSpecification> value = new Function<ValuePin, ValueSpecification>() {
-		public ValueSpecification apply(ValuePin s) {
-			return s.getValue();
-		}
-	};
+    public ValueSpecification apply(ValuePin s) {
+      return s.getValue();
+    }
+  };
 	
 	/**
 	 * The type of value specification must be compatible with the type of the value pin.
@@ -42,13 +43,13 @@ public class ValuePinPath extends InputPinPath {
 	 * @see org.eclipse.uml2.uml.ValuePin#validateCompatibleType(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ValuePin> validateCompatibleType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ValuePin>() {
-			public boolean apply(ValuePin s) {
-				return s.validateCompatibleType(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ValuePin> validateCompatibleType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ValuePin>() {
+      public boolean apply(ValuePin s) {
+        return s.validateCompatibleType(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Value pins have no incoming edges.
@@ -56,12 +57,12 @@ public class ValuePinPath extends InputPinPath {
 	 * @see org.eclipse.uml2.uml.ValuePin#validateNoIncomingEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ValuePin> validateNoIncomingEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ValuePin>() {
-			public boolean apply(ValuePin s) {
-				return s.validateNoIncomingEdges(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ValuePin> validateNoIncomingEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ValuePin>() {
+      public boolean apply(ValuePin s) {
+        return s.validateNoIncomingEdges(diagnostics, context);
+      }
+    };
+  }
 
 }

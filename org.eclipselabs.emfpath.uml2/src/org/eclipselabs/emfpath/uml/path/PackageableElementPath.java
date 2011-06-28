@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import org.eclipse.uml2.uml.ParameterableElement;
 import org.eclipse.uml2.uml.TemplateParameter;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -22,8 +22,8 @@ public class PackageableElementPath extends NamedElementPath {
 	 * @generated
 	 */
 	 PackageableElementPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The formal template parameter that owns this element. 
@@ -55,8 +55,8 @@ public class PackageableElementPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.ParameterableElement#isCompatibleWith(ParameterableElement)
 	 * @generated
 	 */
-	public static Predicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
-		return ParameterableElementPath.isCompatibleWith(p);
-	}
+	public static ComposablePredicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
+    return ParameterableElementPath.isCompatibleWith(p);
+  }
 
 }

@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.ProtocolTransition;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -28,8 +29,8 @@ public class ProtocolTransitionPath extends TransitionPath {
 	 * @generated
 	 */
 	private ProtocolTransitionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies the post condition of the transition which is the condition that should
@@ -40,10 +41,10 @@ public class ProtocolTransitionPath extends TransitionPath {
 	 * @generated
 	 */
 	public static final Function<ProtocolTransition, Constraint> postCondition = new Function<ProtocolTransition, Constraint>() {
-		public Constraint apply(ProtocolTransition s) {
-			return s.getPostCondition();
-		}
-	};
+    public Constraint apply(ProtocolTransition s) {
+      return s.getPostCondition();
+    }
+  };
 
 	/**
 	 * This association refers to the associated operation. It is derived from the operation
@@ -52,10 +53,10 @@ public class ProtocolTransitionPath extends TransitionPath {
 	 * @generated
 	 */
 	public static final Function<ProtocolTransition, EList<Operation>> referred = new Function<ProtocolTransition, EList<Operation>>() {
-		public EList<Operation> apply(ProtocolTransition s) {
-			return s.getReferreds();
-		}
-	};
+    public EList<Operation> apply(ProtocolTransition s) {
+      return s.getReferreds();
+    }
+  };
 
 	/**
 	 * Specifies the precondition of the transition. It specifies the condition that should
@@ -66,10 +67,10 @@ public class ProtocolTransitionPath extends TransitionPath {
 	 * @generated
 	 */
 	public static final Function<ProtocolTransition, Constraint> preCondition = new Function<ProtocolTransition, Constraint>() {
-		public Constraint apply(ProtocolTransition s) {
-			return s.getPreCondition();
-		}
-	};
+    public Constraint apply(ProtocolTransition s) {
+      return s.getPreCondition();
+    }
+  };
 	
 	/**
 	 * A protocol transition always belongs to a protocol state machine.
@@ -77,13 +78,13 @@ public class ProtocolTransitionPath extends TransitionPath {
 	 * @see org.eclipse.uml2.uml.ProtocolTransition#validateBelongsToPsm(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ProtocolTransition> validateBelongsToPsm(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ProtocolTransition>() {
-			public boolean apply(ProtocolTransition s) {
-				return s.validateBelongsToPsm(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ProtocolTransition> validateBelongsToPsm(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ProtocolTransition>() {
+      public boolean apply(ProtocolTransition s) {
+        return s.validateBelongsToPsm(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A protocol transition never has associated actions.
@@ -91,13 +92,13 @@ public class ProtocolTransitionPath extends TransitionPath {
 	 * @see org.eclipse.uml2.uml.ProtocolTransition#validateAssociatedActions(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ProtocolTransition> validateAssociatedActions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ProtocolTransition>() {
-			public boolean apply(ProtocolTransition s) {
-				return s.validateAssociatedActions(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ProtocolTransition> validateAssociatedActions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ProtocolTransition>() {
+      public boolean apply(ProtocolTransition s) {
+        return s.validateAssociatedActions(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If a protocol transition refers to an operation (i. e. has a call trigger corresponding
@@ -107,12 +108,12 @@ public class ProtocolTransitionPath extends TransitionPath {
 	 * @see org.eclipse.uml2.uml.ProtocolTransition#validateRefersToOperation(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ProtocolTransition> validateRefersToOperation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ProtocolTransition>() {
-			public boolean apply(ProtocolTransition s) {
-				return s.validateRefersToOperation(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ProtocolTransition> validateRefersToOperation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ProtocolTransition>() {
+      public boolean apply(ProtocolTransition s) {
+        return s.validateRefersToOperation(diagnostics, context);
+      }
+    };
+  }
 
 }

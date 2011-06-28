@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.ReadLinkAction;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +24,8 @@ public class ReadLinkActionPath extends LinkActionPath {
 	 * @generated
 	 */
 	private ReadLinkActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The pin on which are put the objects participating in the association at the end not
@@ -34,10 +35,10 @@ public class ReadLinkActionPath extends LinkActionPath {
 	 * @generated
 	 */
 	public static final Function<ReadLinkAction, OutputPin> result = new Function<ReadLinkAction, OutputPin>() {
-		public OutputPin apply(ReadLinkAction s) {
-			return s.getResult();
-		}
-	};
+    public OutputPin apply(ReadLinkAction s) {
+      return s.getResult();
+    }
+  };
 	
 	/**
 	 * Exactly one link-end data specification (the 'open' end) must not have an end object
@@ -46,13 +47,13 @@ public class ReadLinkActionPath extends LinkActionPath {
 	 * @see org.eclipse.uml2.uml.ReadLinkAction#validateOneOpenEnd(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReadLinkAction> validateOneOpenEnd(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReadLinkAction>() {
-			public boolean apply(ReadLinkAction s) {
-				return s.validateOneOpenEnd(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReadLinkAction> validateOneOpenEnd(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReadLinkAction>() {
+      public boolean apply(ReadLinkAction s) {
+        return s.validateOneOpenEnd(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The type and ordering of the result output pin are same as the type and ordering of
@@ -66,13 +67,13 @@ public class ReadLinkActionPath extends LinkActionPath {
 	 * @see org.eclipse.uml2.uml.ReadLinkAction#validateTypeAndOrdering(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReadLinkAction> validateTypeAndOrdering(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReadLinkAction>() {
-			public boolean apply(ReadLinkAction s) {
-				return s.validateTypeAndOrdering(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReadLinkAction> validateTypeAndOrdering(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReadLinkAction>() {
+      public boolean apply(ReadLinkAction s) {
+        return s.validateTypeAndOrdering(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The multiplicity of the open association end must be compatible with the multiplicity
@@ -84,13 +85,13 @@ public class ReadLinkActionPath extends LinkActionPath {
 	 * @see org.eclipse.uml2.uml.ReadLinkAction#validateCompatibleMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReadLinkAction> validateCompatibleMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReadLinkAction>() {
-			public boolean apply(ReadLinkAction s) {
-				return s.validateCompatibleMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReadLinkAction> validateCompatibleMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReadLinkAction>() {
+      public boolean apply(ReadLinkAction s) {
+        return s.validateCompatibleMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The open end must be navigable.
@@ -101,13 +102,13 @@ public class ReadLinkActionPath extends LinkActionPath {
 	 * @see org.eclipse.uml2.uml.ReadLinkAction#validateNavigableOpenEnd(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReadLinkAction> validateNavigableOpenEnd(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReadLinkAction>() {
-			public boolean apply(ReadLinkAction s) {
-				return s.validateNavigableOpenEnd(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReadLinkAction> validateNavigableOpenEnd(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReadLinkAction>() {
+      public boolean apply(ReadLinkAction s) {
+        return s.validateNavigableOpenEnd(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Visibility of the open end must allow access to the object performing the action.
@@ -126,12 +127,12 @@ public class ReadLinkActionPath extends LinkActionPath {
 	 * @see org.eclipse.uml2.uml.ReadLinkAction#validateVisibility(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReadLinkAction> validateVisibility(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReadLinkAction>() {
-			public boolean apply(ReadLinkAction s) {
-				return s.validateVisibility(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReadLinkAction> validateVisibility(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReadLinkAction>() {
+      public boolean apply(ReadLinkAction s) {
+        return s.validateVisibility(diagnostics, context);
+      }
+    };
+  }
 
 }

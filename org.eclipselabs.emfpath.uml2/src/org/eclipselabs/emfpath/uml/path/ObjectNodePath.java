@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.ObjectNode;
 import org.eclipse.uml2.uml.ObjectNodeOrderingKind;
@@ -13,6 +11,9 @@ import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.TypedElement;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -31,8 +32,8 @@ public class ObjectNodePath extends ActivityNodePath {
 	 * @generated
 	 */
 	 ObjectNodePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * This information is derived from the return result for this Operation.
@@ -52,21 +53,21 @@ public class ObjectNodePath extends ActivityNodePath {
 	 * @generated
 	 */
 	public static final Function<ObjectNode, ObjectNodeOrderingKind> ordering = new Function<ObjectNode, ObjectNodeOrderingKind>() {
-		public ObjectNodeOrderingKind apply(ObjectNode s) {
-			return s.getOrdering();
-		}
-	};
+    public ObjectNodeOrderingKind apply(ObjectNode s) {
+      return s.getOrdering();
+    }
+  };
 
 	/**
 	 * Tells whether the type of the object node is to be treated as control. 
 	 * @see org.eclipse.uml2.uml.ObjectNode#isControlType()
 	 * @generated
 	 */
-	public static final Predicate<ObjectNode> isControlType = new Predicate<ObjectNode>() {
-		public boolean apply(ObjectNode s) {
-			return s.isControlType();
-		}
-	};
+	public static final ComposablePredicate<ObjectNode> isControlType = new ComposablePredicate<ObjectNode>() {
+    public boolean apply(ObjectNode s) {
+      return s.isControlType();
+    }
+  };
 
 	/**
 	 * The maximum number of tokens allowed in the node. Objects cannot flow into the node
@@ -75,10 +76,10 @@ public class ObjectNodePath extends ActivityNodePath {
 	 * @generated
 	 */
 	public static final Function<ObjectNode, ValueSpecification> upperBound = new Function<ObjectNode, ValueSpecification>() {
-		public ValueSpecification apply(ObjectNode s) {
-			return s.getUpperBound();
-		}
-	};
+    public ValueSpecification apply(ObjectNode s) {
+      return s.getUpperBound();
+    }
+  };
 
 	/**
 	 * The required states of the object available at this point in the activity. 
@@ -86,10 +87,10 @@ public class ObjectNodePath extends ActivityNodePath {
 	 * @generated
 	 */
 	public static final Function<ObjectNode, EList<State>> inState = new Function<ObjectNode, EList<State>>() {
-		public EList<State> apply(ObjectNode s) {
-			return s.getInStates();
-		}
-	};
+    public EList<State> apply(ObjectNode s) {
+      return s.getInStates();
+    }
+  };
 
 	/**
 	 * Selects tokens for outgoing edges. 
@@ -97,10 +98,10 @@ public class ObjectNodePath extends ActivityNodePath {
 	 * @generated
 	 */
 	public static final Function<ObjectNode, Behavior> selection = new Function<ObjectNode, Behavior>() {
-		public Behavior apply(ObjectNode s) {
-			return s.getSelection();
-		}
-	};
+    public Behavior apply(ObjectNode s) {
+      return s.getSelection();
+    }
+  };
 	
 	/**
 	 * All edges coming into or going out of object nodes must be object flow edges.
@@ -108,13 +109,13 @@ public class ObjectNodePath extends ActivityNodePath {
 	 * @see org.eclipse.uml2.uml.ObjectNode#validateObjectFlowEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ObjectNode> validateObjectFlowEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ObjectNode>() {
-			public boolean apply(ObjectNode s) {
-				return s.validateObjectFlowEdges(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ObjectNode> validateObjectFlowEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ObjectNode>() {
+      public boolean apply(ObjectNode s) {
+        return s.validateObjectFlowEdges(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Object nodes are not unique typed elements
@@ -122,13 +123,13 @@ public class ObjectNodePath extends ActivityNodePath {
 	 * @see org.eclipse.uml2.uml.ObjectNode#validateNotUnique(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ObjectNode> validateNotUnique(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ObjectNode>() {
-			public boolean apply(ObjectNode s) {
-				return s.validateNotUnique(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ObjectNode> validateNotUnique(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ObjectNode>() {
+      public boolean apply(ObjectNode s) {
+        return s.validateNotUnique(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If an object node has a selection behavior, then the ordering of the object node is
@@ -137,13 +138,13 @@ public class ObjectNodePath extends ActivityNodePath {
 	 * @see org.eclipse.uml2.uml.ObjectNode#validateSelectionBehavior(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ObjectNode> validateSelectionBehavior(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ObjectNode>() {
-			public boolean apply(ObjectNode s) {
-				return s.validateSelectionBehavior(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ObjectNode> validateSelectionBehavior(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ObjectNode>() {
+      public boolean apply(ObjectNode s) {
+        return s.validateSelectionBehavior(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A selection behavior has one input parameter and one output parameter. The input parameter
@@ -154,12 +155,12 @@ public class ObjectNodePath extends ActivityNodePath {
 	 * @see org.eclipse.uml2.uml.ObjectNode#validateInputOutputParameter(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ObjectNode> validateInputOutputParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ObjectNode>() {
-			public boolean apply(ObjectNode s) {
-				return s.validateInputOutputParameter(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ObjectNode> validateInputOutputParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ObjectNode>() {
+      public boolean apply(ObjectNode s) {
+        return s.validateInputOutputParameter(diagnostics, context);
+      }
+    };
+  }
 
 }

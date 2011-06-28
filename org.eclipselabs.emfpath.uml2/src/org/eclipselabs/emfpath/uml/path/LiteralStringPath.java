@@ -1,8 +1,8 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.LiteralString;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -18,8 +18,8 @@ public class LiteralStringPath extends LiteralSpecificationPath {
 	 * @generated
 	 */
 	private LiteralStringPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The specified String value. 
@@ -27,10 +27,10 @@ public class LiteralStringPath extends LiteralSpecificationPath {
 	 * @generated
 	 */
 	public static final Function<LiteralString, String> value = new Function<LiteralString, String>() {
-		public String apply(LiteralString s) {
-			return s.getValue();
-		}
-	};
+    public String apply(LiteralString s) {
+      return s.getValue();
+    }
+  };
 	
 	
 

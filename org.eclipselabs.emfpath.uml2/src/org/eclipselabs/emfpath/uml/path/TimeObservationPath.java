@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.TimeObservation;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -22,8 +22,8 @@ public class TimeObservationPath extends ObservationPath {
 	 * @generated
 	 */
 	private TimeObservationPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The observation is determined by the entering or exiting of the event element during
@@ -32,10 +32,10 @@ public class TimeObservationPath extends ObservationPath {
 	 * @generated
 	 */
 	public static final Function<TimeObservation, NamedElement> event = new Function<TimeObservation, NamedElement>() {
-		public NamedElement apply(TimeObservation s) {
-			return s.getEvent();
-		}
-	};
+    public NamedElement apply(TimeObservation s) {
+      return s.getEvent();
+    }
+  };
 
 	/**
 	 * The value of firstEvent is related to event. If firstEvent is true, then the corresponding
@@ -45,11 +45,11 @@ public class TimeObservationPath extends ObservationPath {
 	 * @see org.eclipse.uml2.uml.TimeObservation#isFirstEvent()
 	 * @generated
 	 */
-	public static final Predicate<TimeObservation> isFirstEvent = new Predicate<TimeObservation>() {
-		public boolean apply(TimeObservation s) {
-			return s.isFirstEvent();
-		}
-	};
+	public static final ComposablePredicate<TimeObservation> isFirstEvent = new ComposablePredicate<TimeObservation>() {
+    public boolean apply(TimeObservation s) {
+      return s.isFirstEvent();
+    }
+  };
 	
 	
 

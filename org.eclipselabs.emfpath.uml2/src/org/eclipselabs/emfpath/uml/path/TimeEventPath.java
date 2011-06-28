@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.TimeEvent;
 import org.eclipse.uml2.uml.TimeExpression;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,19 +26,19 @@ public class TimeEventPath extends EventPath {
 	 * @generated
 	 */
 	private TimeEventPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies whether it is relative or absolute time. 
 	 * @see org.eclipse.uml2.uml.TimeEvent#isRelative()
 	 * @generated
 	 */
-	public static final Predicate<TimeEvent> isRelative = new Predicate<TimeEvent>() {
-		public boolean apply(TimeEvent s) {
-			return s.isRelative();
-		}
-	};
+	public static final ComposablePredicate<TimeEvent> isRelative = new ComposablePredicate<TimeEvent>() {
+    public boolean apply(TimeEvent s) {
+      return s.isRelative();
+    }
+  };
 
 	/**
 	 * Specifies the corresponding time deadline. 
@@ -45,10 +46,10 @@ public class TimeEventPath extends EventPath {
 	 * @generated
 	 */
 	public static final Function<TimeEvent, TimeExpression> when = new Function<TimeEvent, TimeExpression>() {
-		public TimeExpression apply(TimeEvent s) {
-			return s.getWhen();
-		}
-	};
+    public TimeExpression apply(TimeEvent s) {
+      return s.getWhen();
+    }
+  };
 	
 	/**
 	 * The ValueSpecification when must return a non-negative Integer.
@@ -56,13 +57,13 @@ public class TimeEventPath extends EventPath {
 	 * @see org.eclipse.uml2.uml.TimeEvent#validateWhenNonNegative(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<TimeEvent> validateWhenNonNegative(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<TimeEvent>() {
-			public boolean apply(TimeEvent s) {
-				return s.validateWhenNonNegative(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<TimeEvent> validateWhenNonNegative(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<TimeEvent>() {
+      public boolean apply(TimeEvent s) {
+        return s.validateWhenNonNegative(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The starting time for a relative time event may only be omitted for a time event that
@@ -71,12 +72,12 @@ public class TimeEventPath extends EventPath {
 	 * @see org.eclipse.uml2.uml.TimeEvent#validateStartingTime(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<TimeEvent> validateStartingTime(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<TimeEvent>() {
-			public boolean apply(TimeEvent s) {
-				return s.validateStartingTime(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<TimeEvent> validateStartingTime(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<TimeEvent>() {
+      public boolean apply(TimeEvent s) {
+        return s.validateStartingTime(diagnostics, context);
+      }
+    };
+  }
 
 }

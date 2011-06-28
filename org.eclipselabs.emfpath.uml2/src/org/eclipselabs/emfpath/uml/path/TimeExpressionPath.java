@@ -1,11 +1,11 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.Observation;
 import org.eclipse.uml2.uml.TimeExpression;
 import org.eclipse.uml2.uml.ValueSpecification;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -21,8 +21,8 @@ public class TimeExpressionPath extends ValueSpecificationPath {
 	 * @generated
 	 */
 	private TimeExpressionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The value of the time expression. 
@@ -30,10 +30,10 @@ public class TimeExpressionPath extends ValueSpecificationPath {
 	 * @generated
 	 */
 	public static final Function<TimeExpression, ValueSpecification> expr = new Function<TimeExpression, ValueSpecification>() {
-		public ValueSpecification apply(TimeExpression s) {
-			return s.getExpr();
-		}
-	};
+    public ValueSpecification apply(TimeExpression s) {
+      return s.getExpr();
+    }
+  };
 
 	/**
 	 * Refers to the time and duration observations that are involved in expr. 
@@ -41,10 +41,10 @@ public class TimeExpressionPath extends ValueSpecificationPath {
 	 * @generated
 	 */
 	public static final Function<TimeExpression, EList<Observation>> observation = new Function<TimeExpression, EList<Observation>>() {
-		public EList<Observation> apply(TimeExpression s) {
-			return s.getObservations();
-		}
-	};
+    public EList<Observation> apply(TimeExpression s) {
+      return s.getObservations();
+    }
+  };
 	
 	
 

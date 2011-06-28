@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.RemoveVariableValueAction;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,19 +24,19 @@ public class RemoveVariableValueActionPath extends WriteVariableActionPath {
 	 * @generated
 	 */
 	private RemoveVariableValueActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies whether to remove duplicates of the value in nonunique variables. 
 	 * @see org.eclipse.uml2.uml.RemoveVariableValueAction#isRemoveDuplicates()
 	 * @generated
 	 */
-	public static final Predicate<RemoveVariableValueAction> isRemoveDuplicates = new Predicate<RemoveVariableValueAction>() {
-		public boolean apply(RemoveVariableValueAction s) {
-			return s.isRemoveDuplicates();
-		}
-	};
+	public static final ComposablePredicate<RemoveVariableValueAction> isRemoveDuplicates = new ComposablePredicate<RemoveVariableValueAction>() {
+    public boolean apply(RemoveVariableValueAction s) {
+      return s.isRemoveDuplicates();
+    }
+  };
 
 	/**
 	 * Specifies the position of an existing value to remove in ordered nonunique variables.
@@ -44,10 +45,10 @@ public class RemoveVariableValueActionPath extends WriteVariableActionPath {
 	 * @generated
 	 */
 	public static final Function<RemoveVariableValueAction, InputPin> removeAt = new Function<RemoveVariableValueAction, InputPin>() {
-		public InputPin apply(RemoveVariableValueAction s) {
-			return s.getRemoveAt();
-		}
-	};
+    public InputPin apply(RemoveVariableValueAction s) {
+      return s.getRemoveAt();
+    }
+  };
 	
 	/**
 	 * Actions removing a value from ordered nonunique variables must have a single removeAt
@@ -57,12 +58,12 @@ public class RemoveVariableValueActionPath extends WriteVariableActionPath {
 	 * @see org.eclipse.uml2.uml.RemoveVariableValueAction#validateUnlimitedNatural(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<RemoveVariableValueAction> validateUnlimitedNatural(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<RemoveVariableValueAction>() {
-			public boolean apply(RemoveVariableValueAction s) {
-				return s.validateUnlimitedNatural(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<RemoveVariableValueAction> validateUnlimitedNatural(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<RemoveVariableValueAction>() {
+      public boolean apply(RemoveVariableValueAction s) {
+        return s.validateUnlimitedNatural(diagnostics, context);
+      }
+    };
+  }
 
 }

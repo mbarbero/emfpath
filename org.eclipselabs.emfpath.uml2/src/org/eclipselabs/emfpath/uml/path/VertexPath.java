@@ -1,12 +1,12 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.Region;
 import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.Vertex;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +23,8 @@ public class VertexPath extends NamedElementPath {
 	 * @generated
 	 */
 	 VertexPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies the transitions departing from this vertex. 
@@ -32,10 +32,10 @@ public class VertexPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Vertex, EList<Transition>> outgoing = new Function<Vertex, EList<Transition>>() {
-		public EList<Transition> apply(Vertex s) {
-			return s.getOutgoings();
-		}
-	};
+    public EList<Transition> apply(Vertex s) {
+      return s.getOutgoings();
+    }
+  };
 
 	/**
 	 * Specifies the transitions entering this vertex. 
@@ -43,10 +43,10 @@ public class VertexPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Vertex, EList<Transition>> incoming = new Function<Vertex, EList<Transition>>() {
-		public EList<Transition> apply(Vertex s) {
-			return s.getIncomings();
-		}
-	};
+    public EList<Transition> apply(Vertex s) {
+      return s.getIncomings();
+    }
+  };
 
 	/**
 	 * The region that contains this vertex. 
@@ -54,10 +54,10 @@ public class VertexPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Vertex, Region> container = new Function<Vertex, Region>() {
-		public Region apply(Vertex s) {
-			return s.getContainer();
-		}
-	};
+    public Region apply(Vertex s) {
+      return s.getContainer();
+    }
+  };
 	
 	/**
 	 * The operation containingStateMachine() returns the state machine in which this Vertex
@@ -81,10 +81,10 @@ public class VertexPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Vertex, StateMachine> containingStateMachine = new Function<Vertex, StateMachine>() {
-		public StateMachine apply(Vertex s) {
-			return s.containingStateMachine();
-		}
-	};
+    public StateMachine apply(Vertex s) {
+      return s.containingStateMachine();
+    }
+  };
 
 	/**
 	 * result = Transition.allInstances()->select(t | t.source=self) 
@@ -92,10 +92,10 @@ public class VertexPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Vertex, EList<Transition>> getOutgoings = new Function<Vertex, EList<Transition>>() {
-		public EList<Transition> apply(Vertex s) {
-			return s.getOutgoings();
-		}
-	};
+    public EList<Transition> apply(Vertex s) {
+      return s.getOutgoings();
+    }
+  };
 
 	/**
 	 * result = Transition.allInstances()->select(t | t.target=self) 
@@ -103,9 +103,9 @@ public class VertexPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Vertex, EList<Transition>> getIncomings = new Function<Vertex, EList<Transition>>() {
-		public EList<Transition> apply(Vertex s) {
-			return s.getIncomings();
-		}
-	};
+    public EList<Transition> apply(Vertex s) {
+      return s.getIncomings();
+    }
+  };
 
 }

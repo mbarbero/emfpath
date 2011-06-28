@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.ReadLinkObjectEndAction;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	 * @generated
 	 */
 	private ReadLinkObjectEndActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Gives the input pin from which the link object is obtained. 
@@ -34,10 +35,10 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ReadLinkObjectEndAction, InputPin> object = new Function<ReadLinkObjectEndAction, InputPin>() {
-		public InputPin apply(ReadLinkObjectEndAction s) {
-			return s.getObject();
-		}
-	};
+    public InputPin apply(ReadLinkObjectEndAction s) {
+      return s.getObject();
+    }
+  };
 
 	/**
 	 * Link end to be read. 
@@ -45,10 +46,10 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ReadLinkObjectEndAction, Property> end = new Function<ReadLinkObjectEndAction, Property>() {
-		public Property apply(ReadLinkObjectEndAction s) {
-			return s.getEnd();
-		}
-	};
+    public Property apply(ReadLinkObjectEndAction s) {
+      return s.getEnd();
+    }
+  };
 
 	/**
 	 * Pin where the result value is placed. 
@@ -56,10 +57,10 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ReadLinkObjectEndAction, OutputPin> result = new Function<ReadLinkObjectEndAction, OutputPin>() {
-		public OutputPin apply(ReadLinkObjectEndAction s) {
-			return s.getResult();
-		}
-	};
+    public OutputPin apply(ReadLinkObjectEndAction s) {
+      return s.getResult();
+    }
+  };
 	
 	/**
 	 * The property must be an association end.
@@ -67,13 +68,13 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateProperty(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReadLinkObjectEndAction> validateProperty(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReadLinkObjectEndAction>() {
-			public boolean apply(ReadLinkObjectEndAction s) {
-				return s.validateProperty(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReadLinkObjectEndAction> validateProperty(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReadLinkObjectEndAction>() {
+      public boolean apply(ReadLinkObjectEndAction s) {
+        return s.validateProperty(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The association of the association end must be an association class.
@@ -81,13 +82,13 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateAssociationOfAssociation(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReadLinkObjectEndAction> validateAssociationOfAssociation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReadLinkObjectEndAction>() {
-			public boolean apply(ReadLinkObjectEndAction s) {
-				return s.validateAssociationOfAssociation(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReadLinkObjectEndAction> validateAssociationOfAssociation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReadLinkObjectEndAction>() {
+      public boolean apply(ReadLinkObjectEndAction s) {
+        return s.validateAssociationOfAssociation(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The ends of the association must not be static.
@@ -96,13 +97,13 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateEndsOfAssociation(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReadLinkObjectEndAction> validateEndsOfAssociation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReadLinkObjectEndAction>() {
-			public boolean apply(ReadLinkObjectEndAction s) {
-				return s.validateEndsOfAssociation(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReadLinkObjectEndAction> validateEndsOfAssociation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReadLinkObjectEndAction>() {
+      public boolean apply(ReadLinkObjectEndAction s) {
+        return s.validateEndsOfAssociation(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The type of the object input pin is the association class that owns the association
@@ -111,13 +112,13 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateTypeOfObject(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReadLinkObjectEndAction> validateTypeOfObject(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReadLinkObjectEndAction>() {
-			public boolean apply(ReadLinkObjectEndAction s) {
-				return s.validateTypeOfObject(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReadLinkObjectEndAction> validateTypeOfObject(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReadLinkObjectEndAction>() {
+      public boolean apply(ReadLinkObjectEndAction s) {
+        return s.validateTypeOfObject(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The multiplicity of the object input pin is 1..1.
@@ -125,13 +126,13 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateMultiplicityOfObject(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReadLinkObjectEndAction> validateMultiplicityOfObject(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReadLinkObjectEndAction>() {
-			public boolean apply(ReadLinkObjectEndAction s) {
-				return s.validateMultiplicityOfObject(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReadLinkObjectEndAction> validateMultiplicityOfObject(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReadLinkObjectEndAction>() {
+      public boolean apply(ReadLinkObjectEndAction s) {
+        return s.validateMultiplicityOfObject(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The type of the result output pin is the same as the type of the association end.
@@ -140,13 +141,13 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateTypeOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReadLinkObjectEndAction> validateTypeOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReadLinkObjectEndAction>() {
-			public boolean apply(ReadLinkObjectEndAction s) {
-				return s.validateTypeOfResult(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReadLinkObjectEndAction> validateTypeOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReadLinkObjectEndAction>() {
+      public boolean apply(ReadLinkObjectEndAction s) {
+        return s.validateTypeOfResult(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The multiplicity of the result output pin is 1..1.
@@ -154,12 +155,12 @@ public class ReadLinkObjectEndActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReadLinkObjectEndAction#validateMultiplicityOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReadLinkObjectEndAction> validateMultiplicityOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReadLinkObjectEndAction>() {
-			public boolean apply(ReadLinkObjectEndAction s) {
-				return s.validateMultiplicityOfResult(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReadLinkObjectEndAction> validateMultiplicityOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReadLinkObjectEndAction>() {
+      public boolean apply(ReadLinkObjectEndAction s) {
+        return s.validateMultiplicityOfResult(diagnostics, context);
+      }
+    };
+  }
 
 }

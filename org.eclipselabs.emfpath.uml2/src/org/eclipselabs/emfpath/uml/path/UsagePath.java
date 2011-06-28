@@ -18,8 +18,8 @@ public class UsagePath extends DependencyPath {
 	 * @generated
 	 */
 	private UsagePath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

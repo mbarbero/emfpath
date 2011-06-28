@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.ClearAssociationAction;
 import org.eclipse.uml2.uml.InputPin;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -24,8 +25,8 @@ public class ClearAssociationActionPath extends ActionPath {
 	 * @generated
 	 */
 	private ClearAssociationActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Gives the input pin from which is obtained the object whose participation in the association
@@ -34,10 +35,10 @@ public class ClearAssociationActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ClearAssociationAction, InputPin> object = new Function<ClearAssociationAction, InputPin>() {
-		public InputPin apply(ClearAssociationAction s) {
-			return s.getObject();
-		}
-	};
+    public InputPin apply(ClearAssociationAction s) {
+      return s.getObject();
+    }
+  };
 
 	/**
 	 * Association to be cleared. 
@@ -45,10 +46,10 @@ public class ClearAssociationActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ClearAssociationAction, Association> association = new Function<ClearAssociationAction, Association>() {
-		public Association apply(ClearAssociationAction s) {
-			return s.getAssociation();
-		}
-	};
+    public Association apply(ClearAssociationAction s) {
+      return s.getAssociation();
+    }
+  };
 	
 	/**
 	 * The type of the input pin must be the same as the type of at least one of the association
@@ -57,13 +58,13 @@ public class ClearAssociationActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ClearAssociationAction#validateSameType(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ClearAssociationAction> validateSameType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ClearAssociationAction>() {
-			public boolean apply(ClearAssociationAction s) {
-				return s.validateSameType(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ClearAssociationAction> validateSameType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ClearAssociationAction>() {
+      public boolean apply(ClearAssociationAction s) {
+        return s.validateSameType(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The multiplicity of the input pin is 1..1.
@@ -71,12 +72,12 @@ public class ClearAssociationActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ClearAssociationAction#validateMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ClearAssociationAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ClearAssociationAction>() {
-			public boolean apply(ClearAssociationAction s) {
-				return s.validateMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ClearAssociationAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ClearAssociationAction>() {
+      public boolean apply(ClearAssociationAction s) {
+        return s.validateMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 }

@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Connector;
@@ -15,6 +13,9 @@ import org.eclipse.uml2.uml.InformationFlow;
 import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Relationship;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -39,8 +40,8 @@ public class InformationFlowPath extends PackageableElementPath {
 	 * @generated
 	 */
 	private InformationFlowPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies the elements related by the Relationship. 
@@ -75,10 +76,10 @@ public class InformationFlowPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<InformationFlow, EList<Relationship>> realization = new Function<InformationFlow, EList<Relationship>>() {
-		public EList<Relationship> apply(InformationFlow s) {
-			return s.getRealizations();
-		}
-	};
+    public EList<Relationship> apply(InformationFlow s) {
+      return s.getRealizations();
+    }
+  };
 
 	/**
 	 * Specifies the information items that may circulate on this information flow. 
@@ -86,10 +87,10 @@ public class InformationFlowPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<InformationFlow, EList<Classifier>> conveyed = new Function<InformationFlow, EList<Classifier>>() {
-		public EList<Classifier> apply(InformationFlow s) {
-			return s.getConveyeds();
-		}
-	};
+    public EList<Classifier> apply(InformationFlow s) {
+      return s.getConveyeds();
+    }
+  };
 
 	/**
 	 * Defines from which source the conveyed InformationItems are initiated. 
@@ -97,10 +98,10 @@ public class InformationFlowPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<InformationFlow, EList<NamedElement>> informationSource = new Function<InformationFlow, EList<NamedElement>>() {
-		public EList<NamedElement> apply(InformationFlow s) {
-			return s.getInformationSources();
-		}
-	};
+    public EList<NamedElement> apply(InformationFlow s) {
+      return s.getInformationSources();
+    }
+  };
 
 	/**
 	 * Defines to which target the conveyed InformationItems are directed. 
@@ -108,10 +109,10 @@ public class InformationFlowPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<InformationFlow, EList<NamedElement>> informationTarget = new Function<InformationFlow, EList<NamedElement>>() {
-		public EList<NamedElement> apply(InformationFlow s) {
-			return s.getInformationTargets();
-		}
-	};
+    public EList<NamedElement> apply(InformationFlow s) {
+      return s.getInformationTargets();
+    }
+  };
 
 	/**
 	 * Determines which ActivityEdges will realize the specified flow. 
@@ -119,10 +120,10 @@ public class InformationFlowPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<InformationFlow, EList<ActivityEdge>> realizingActivityEdge = new Function<InformationFlow, EList<ActivityEdge>>() {
-		public EList<ActivityEdge> apply(InformationFlow s) {
-			return s.getRealizingActivityEdges();
-		}
-	};
+    public EList<ActivityEdge> apply(InformationFlow s) {
+      return s.getRealizingActivityEdges();
+    }
+  };
 
 	/**
 	 * Determines which Connectors will realize the specified flow. 
@@ -130,10 +131,10 @@ public class InformationFlowPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<InformationFlow, EList<Connector>> realizingConnector = new Function<InformationFlow, EList<Connector>>() {
-		public EList<Connector> apply(InformationFlow s) {
-			return s.getRealizingConnectors();
-		}
-	};
+    public EList<Connector> apply(InformationFlow s) {
+      return s.getRealizingConnectors();
+    }
+  };
 
 	/**
 	 * Determines which Messages will realize the specified flow. 
@@ -141,10 +142,10 @@ public class InformationFlowPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<InformationFlow, EList<Message>> realizingMessage = new Function<InformationFlow, EList<Message>>() {
-		public EList<Message> apply(InformationFlow s) {
-			return s.getRealizingMessages();
-		}
-	};
+    public EList<Message> apply(InformationFlow s) {
+      return s.getRealizingMessages();
+    }
+  };
 	
 	/**
 	 * The sources and targets of the information flow can only be one of the following kind:
@@ -172,13 +173,13 @@ public class InformationFlowPath extends PackageableElementPath {
 	 * @see org.eclipse.uml2.uml.InformationFlow#validateSourcesAndTargetsKind(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InformationFlow> validateSourcesAndTargetsKind(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InformationFlow>() {
-			public boolean apply(InformationFlow s) {
-				return s.validateSourcesAndTargetsKind(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InformationFlow> validateSourcesAndTargetsKind(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InformationFlow>() {
+      public boolean apply(InformationFlow s) {
+        return s.validateSourcesAndTargetsKind(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The sources and targets of the information flow must conform with the sources and
@@ -187,13 +188,13 @@ public class InformationFlowPath extends PackageableElementPath {
 	 * @see org.eclipse.uml2.uml.InformationFlow#validateMustConform(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InformationFlow> validateMustConform(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InformationFlow>() {
-			public boolean apply(InformationFlow s) {
-				return s.validateMustConform(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InformationFlow> validateMustConform(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InformationFlow>() {
+      public boolean apply(InformationFlow s) {
+        return s.validateMustConform(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * An information flow can only convey classifiers that are allowed to represent an information
@@ -205,12 +206,12 @@ public class InformationFlowPath extends PackageableElementPath {
 	 * @see org.eclipse.uml2.uml.InformationFlow#validateConveyClassifiers(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InformationFlow> validateConveyClassifiers(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InformationFlow>() {
-			public boolean apply(InformationFlow s) {
-				return s.validateConveyClassifiers(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InformationFlow> validateConveyClassifiers(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InformationFlow>() {
+      public boolean apply(InformationFlow s) {
+        return s.validateConveyClassifiers(diagnostics, context);
+      }
+    };
+  }
 
 }

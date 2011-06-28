@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ClassifierTemplateParameter;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +24,8 @@ public class ClassifierTemplateParameterPath extends TemplateParameterPath {
 	 * @generated
 	 */
 	private ClassifierTemplateParameterPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Constrains the required relationship between an actual parameter and the parameteredElement
@@ -32,11 +33,11 @@ public class ClassifierTemplateParameterPath extends TemplateParameterPath {
 	 * @see org.eclipse.uml2.uml.ClassifierTemplateParameter#isAllowSubstitutable()
 	 * @generated
 	 */
-	public static final Predicate<ClassifierTemplateParameter> isAllowSubstitutable = new Predicate<ClassifierTemplateParameter>() {
-		public boolean apply(ClassifierTemplateParameter s) {
-			return s.isAllowSubstitutable();
-		}
-	};
+	public static final ComposablePredicate<ClassifierTemplateParameter> isAllowSubstitutable = new ComposablePredicate<ClassifierTemplateParameter>() {
+    public boolean apply(ClassifierTemplateParameter s) {
+      return s.isAllowSubstitutable();
+    }
+  };
 
 	/**
 	 * The classifiers that constrain the argument that can be used for the parameter. If
@@ -48,10 +49,10 @@ public class ClassifierTemplateParameterPath extends TemplateParameterPath {
 	 * @generated
 	 */
 	public static final Function<ClassifierTemplateParameter, EList<Classifier>> constrainingClassifier = new Function<ClassifierTemplateParameter, EList<Classifier>>() {
-		public EList<Classifier> apply(ClassifierTemplateParameter s) {
-			return s.getConstrainingClassifiers();
-		}
-	};
+    public EList<Classifier> apply(ClassifierTemplateParameter s) {
+      return s.getConstrainingClassifiers();
+    }
+  };
 	
 	/**
 	 * If "allowSubstitutable" is true, then there must be a constrainingClassifier.
@@ -60,12 +61,12 @@ public class ClassifierTemplateParameterPath extends TemplateParameterPath {
 	 * @see org.eclipse.uml2.uml.ClassifierTemplateParameter#validateHasConstrainingClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ClassifierTemplateParameter> validateHasConstrainingClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ClassifierTemplateParameter>() {
-			public boolean apply(ClassifierTemplateParameter s) {
-				return s.validateHasConstrainingClassifier(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ClassifierTemplateParameter> validateHasConstrainingClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ClassifierTemplateParameter>() {
+      public boolean apply(ClassifierTemplateParameter s) {
+        return s.validateHasConstrainingClassifier(diagnostics, context);
+      }
+    };
+  }
 
 }

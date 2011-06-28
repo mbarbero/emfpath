@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.ReceiveOperationEvent;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class ReceiveOperationEventPath extends MessageEventPath {
 	 * @generated
 	 */
 	private ReceiveOperationEventPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The operation associated with this event. 
@@ -29,10 +29,10 @@ public class ReceiveOperationEventPath extends MessageEventPath {
 	 * @generated
 	 */
 	public static final Function<ReceiveOperationEvent, Operation> operation = new Function<ReceiveOperationEvent, Operation>() {
-		public Operation apply(ReceiveOperationEvent s) {
-			return s.getOperation();
-		}
-	};
+    public Operation apply(ReceiveOperationEvent s) {
+      return s.getOperation();
+    }
+  };
 	
 	
 

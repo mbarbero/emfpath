@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.RaiseExceptionAction;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class RaiseExceptionActionPath extends ActionPath {
 	 * @generated
 	 */
 	private RaiseExceptionActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * An input pin whose value becomes an exception object. 
@@ -29,10 +29,10 @@ public class RaiseExceptionActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<RaiseExceptionAction, InputPin> exception = new Function<RaiseExceptionAction, InputPin>() {
-		public InputPin apply(RaiseExceptionAction s) {
-			return s.getException();
-		}
-	};
+    public InputPin apply(RaiseExceptionAction s) {
+      return s.getException();
+    }
+  };
 	
 	
 

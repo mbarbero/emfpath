@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.ProtocolConformance;
 import org.eclipse.uml2.uml.ProtocolStateMachine;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +23,8 @@ public class ProtocolConformancePath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	private ProtocolConformancePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies the protocol state machine to which the specific state machine conforms.
@@ -32,10 +32,10 @@ public class ProtocolConformancePath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<ProtocolConformance, ProtocolStateMachine> generalMachine = new Function<ProtocolConformance, ProtocolStateMachine>() {
-		public ProtocolStateMachine apply(ProtocolConformance s) {
-			return s.getGeneralMachine();
-		}
-	};
+    public ProtocolStateMachine apply(ProtocolConformance s) {
+      return s.getGeneralMachine();
+    }
+  };
 
 	/**
 	 * Specifies the state machine which conforms to the general state machine. 
@@ -43,10 +43,10 @@ public class ProtocolConformancePath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<ProtocolConformance, ProtocolStateMachine> specificMachine = new Function<ProtocolConformance, ProtocolStateMachine>() {
-		public ProtocolStateMachine apply(ProtocolConformance s) {
-			return s.getSpecificMachine();
-		}
-	};
+    public ProtocolStateMachine apply(ProtocolConformance s) {
+      return s.getSpecificMachine();
+    }
+  };
 	
 	
 

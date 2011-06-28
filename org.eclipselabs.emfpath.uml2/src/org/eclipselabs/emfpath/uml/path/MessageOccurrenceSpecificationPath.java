@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.MessageEnd;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +23,8 @@ public class MessageOccurrenceSpecificationPath extends OccurrenceSpecificationP
 	 * @generated
 	 */
 	private MessageOccurrenceSpecificationPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * References a Message. 

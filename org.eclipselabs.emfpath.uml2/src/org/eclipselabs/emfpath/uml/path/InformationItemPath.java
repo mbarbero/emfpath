@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.InformationItem;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class InformationItemPath extends ClassifierPath {
 	 * @generated
 	 */
 	private InformationItemPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Determines the classifiers that will specify the structure and nature of the information.
@@ -35,10 +36,10 @@ public class InformationItemPath extends ClassifierPath {
 	 * @generated
 	 */
 	public static final Function<InformationItem, EList<Classifier>> represented = new Function<InformationItem, EList<Classifier>>() {
-		public EList<Classifier> apply(InformationItem s) {
-			return s.getRepresenteds();
-		}
-	};
+    public EList<Classifier> apply(InformationItem s) {
+      return s.getRepresenteds();
+    }
+  };
 	
 	/**
 	 * The sources and targets of an information item (its related information flows) must
@@ -58,13 +59,13 @@ public class InformationItemPath extends ClassifierPath {
 	 * @see org.eclipse.uml2.uml.InformationItem#validateSourcesAndTargets(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InformationItem> validateSourcesAndTargets(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InformationItem>() {
-			public boolean apply(InformationItem s) {
-				return s.validateSourcesAndTargets(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InformationItem> validateSourcesAndTargets(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InformationItem>() {
+      public boolean apply(InformationItem s) {
+        return s.validateSourcesAndTargets(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * An informationItem has no feature, no generalization, and no associations.
@@ -73,13 +74,13 @@ public class InformationItemPath extends ClassifierPath {
 	 * @see org.eclipse.uml2.uml.InformationItem#validateHasNo(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InformationItem> validateHasNo(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InformationItem>() {
-			public boolean apply(InformationItem s) {
-				return s.validateHasNo(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InformationItem> validateHasNo(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InformationItem>() {
+      public boolean apply(InformationItem s) {
+        return s.validateHasNo(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * It is not instantiable.
@@ -87,12 +88,12 @@ public class InformationItemPath extends ClassifierPath {
 	 * @see org.eclipse.uml2.uml.InformationItem#validateNotInstantiable(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InformationItem> validateNotInstantiable(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InformationItem>() {
-			public boolean apply(InformationItem s) {
-				return s.validateNotInstantiable(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InformationItem> validateNotInstantiable(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InformationItem>() {
+      public boolean apply(InformationItem s) {
+        return s.validateNotInstantiable(diagnostics, context);
+      }
+    };
+  }
 
 }

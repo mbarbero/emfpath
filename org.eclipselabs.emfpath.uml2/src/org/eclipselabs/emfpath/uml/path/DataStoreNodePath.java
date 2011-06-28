@@ -16,8 +16,8 @@ public class DataStoreNodePath extends CentralBufferNodePath {
 	 * @generated
 	 */
 	private DataStoreNodePath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

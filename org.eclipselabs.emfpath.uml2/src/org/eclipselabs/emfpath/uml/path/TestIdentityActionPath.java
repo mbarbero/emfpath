@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.TestIdentityAction;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +24,8 @@ public class TestIdentityActionPath extends ActionPath {
 	 * @generated
 	 */
 	private TestIdentityActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Gives the pin on which an object is placed. 
@@ -32,10 +33,10 @@ public class TestIdentityActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<TestIdentityAction, InputPin> first = new Function<TestIdentityAction, InputPin>() {
-		public InputPin apply(TestIdentityAction s) {
-			return s.getFirst();
-		}
-	};
+    public InputPin apply(TestIdentityAction s) {
+      return s.getFirst();
+    }
+  };
 
 	/**
 	 * Gives the pin on which an object is placed. 
@@ -43,10 +44,10 @@ public class TestIdentityActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<TestIdentityAction, InputPin> second = new Function<TestIdentityAction, InputPin>() {
-		public InputPin apply(TestIdentityAction s) {
-			return s.getSecond();
-		}
-	};
+    public InputPin apply(TestIdentityAction s) {
+      return s.getSecond();
+    }
+  };
 
 	/**
 	 * Tells whether the two input objects are identical. 
@@ -54,10 +55,10 @@ public class TestIdentityActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<TestIdentityAction, OutputPin> result = new Function<TestIdentityAction, OutputPin>() {
-		public OutputPin apply(TestIdentityAction s) {
-			return s.getResult();
-		}
-	};
+    public OutputPin apply(TestIdentityAction s) {
+      return s.getResult();
+    }
+  };
 	
 	/**
 	 * The input pins have no type.
@@ -68,13 +69,13 @@ public class TestIdentityActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.TestIdentityAction#validateNoType(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<TestIdentityAction> validateNoType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<TestIdentityAction>() {
-			public boolean apply(TestIdentityAction s) {
-				return s.validateNoType(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<TestIdentityAction> validateNoType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<TestIdentityAction>() {
+      public boolean apply(TestIdentityAction s) {
+        return s.validateNoType(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The multiplicity of the input pins is 1..1.
@@ -84,13 +85,13 @@ public class TestIdentityActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.TestIdentityAction#validateMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<TestIdentityAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<TestIdentityAction>() {
-			public boolean apply(TestIdentityAction s) {
-				return s.validateMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<TestIdentityAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<TestIdentityAction>() {
+      public boolean apply(TestIdentityAction s) {
+        return s.validateMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The type of the result is Boolean.
@@ -98,12 +99,12 @@ public class TestIdentityActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.TestIdentityAction#validateResultIsBoolean(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<TestIdentityAction> validateResultIsBoolean(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<TestIdentityAction>() {
-			public boolean apply(TestIdentityAction s) {
-				return s.validateResultIsBoolean(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<TestIdentityAction> validateResultIsBoolean(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<TestIdentityAction>() {
+      public boolean apply(TestIdentityAction s) {
+        return s.validateResultIsBoolean(diagnostics, context);
+      }
+    };
+  }
 
 }

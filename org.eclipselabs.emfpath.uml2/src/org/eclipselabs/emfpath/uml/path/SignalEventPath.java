@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.Signal;
 import org.eclipse.uml2.uml.SignalEvent;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class SignalEventPath extends MessageEventPath {
 	 * @generated
 	 */
 	private SignalEventPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The specific signal that is associated with this event. 
@@ -29,10 +29,10 @@ public class SignalEventPath extends MessageEventPath {
 	 * @generated
 	 */
 	public static final Function<SignalEvent, Signal> signal = new Function<SignalEvent, Signal>() {
-		public Signal apply(SignalEvent s) {
-			return s.getSignal();
-		}
-	};
+    public Signal apply(SignalEvent s) {
+      return s.getSignal();
+    }
+  };
 	
 	
 

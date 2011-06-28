@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.ReduceAction;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class ReduceActionPath extends ActionPath {
 	 * @generated
 	 */
 	private ReduceActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Behavior that is applied to two elements of the input collection to produce a value
@@ -35,10 +36,10 @@ public class ReduceActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ReduceAction, Behavior> reducer = new Function<ReduceAction, Behavior>() {
-		public Behavior apply(ReduceAction s) {
-			return s.getReducer();
-		}
-	};
+    public Behavior apply(ReduceAction s) {
+      return s.getReducer();
+    }
+  };
 
 	/**
 	 * Gives the output pin on which the result is put. 
@@ -46,10 +47,10 @@ public class ReduceActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ReduceAction, OutputPin> result = new Function<ReduceAction, OutputPin>() {
-		public OutputPin apply(ReduceAction s) {
-			return s.getResult();
-		}
-	};
+    public OutputPin apply(ReduceAction s) {
+      return s.getResult();
+    }
+  };
 
 	/**
 	 * The collection to be reduced. 
@@ -57,10 +58,10 @@ public class ReduceActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ReduceAction, InputPin> collection = new Function<ReduceAction, InputPin>() {
-		public InputPin apply(ReduceAction s) {
-			return s.getCollection();
-		}
-	};
+    public InputPin apply(ReduceAction s) {
+      return s.getCollection();
+    }
+  };
 
 	/**
 	 * Tells whether the order of the input collection should determine the order in which
@@ -68,11 +69,11 @@ public class ReduceActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReduceAction#isOrdered()
 	 * @generated
 	 */
-	public static final Predicate<ReduceAction> isOrdered = new Predicate<ReduceAction>() {
-		public boolean apply(ReduceAction s) {
-			return s.isOrdered();
-		}
-	};
+	public static final ComposablePredicate<ReduceAction> isOrdered = new ComposablePredicate<ReduceAction>() {
+    public boolean apply(ReduceAction s) {
+      return s.isOrdered();
+    }
+  };
 	
 	/**
 	 * The type of the input must be a collection.
@@ -80,13 +81,13 @@ public class ReduceActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReduceAction#validateInputTypeIsCollection(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReduceAction> validateInputTypeIsCollection(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReduceAction>() {
-			public boolean apply(ReduceAction s) {
-				return s.validateInputTypeIsCollection(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReduceAction> validateInputTypeIsCollection(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReduceAction>() {
+      public boolean apply(ReduceAction s) {
+        return s.validateInputTypeIsCollection(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The type of the output must be compatible with the type of the output of the reducer
@@ -95,13 +96,13 @@ public class ReduceActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReduceAction#validateOutputTypesAreCompatible(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReduceAction> validateOutputTypesAreCompatible(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReduceAction>() {
-			public boolean apply(ReduceAction s) {
-				return s.validateOutputTypesAreCompatible(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReduceAction> validateOutputTypesAreCompatible(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReduceAction>() {
+      public boolean apply(ReduceAction s) {
+        return s.validateOutputTypesAreCompatible(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The reducer behavior must have two input parameters and one output parameter, of types
@@ -110,12 +111,12 @@ public class ReduceActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReduceAction#validateReducerInputsOutput(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReduceAction> validateReducerInputsOutput(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReduceAction>() {
-			public boolean apply(ReduceAction s) {
-				return s.validateReducerInputsOutput(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReduceAction> validateReducerInputsOutput(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReduceAction>() {
+      public boolean apply(ReduceAction s) {
+        return s.validateReducerInputsOutput(diagnostics, context);
+      }
+    };
+  }
 
 }

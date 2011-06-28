@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.Interval;
 import org.eclipse.uml2.uml.ValueSpecification;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -19,8 +19,8 @@ public class IntervalPath extends ValueSpecificationPath {
 	 * @generated
 	 */
 	 IntervalPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Refers to the ValueSpecification denoting the minimum value of the range. 
@@ -28,10 +28,10 @@ public class IntervalPath extends ValueSpecificationPath {
 	 * @generated
 	 */
 	public static final Function<Interval, ValueSpecification> min = new Function<Interval, ValueSpecification>() {
-		public ValueSpecification apply(Interval s) {
-			return s.getMin();
-		}
-	};
+    public ValueSpecification apply(Interval s) {
+      return s.getMin();
+    }
+  };
 
 	/**
 	 * Refers to the ValueSpecification denoting the maximum value of the range. 
@@ -39,10 +39,10 @@ public class IntervalPath extends ValueSpecificationPath {
 	 * @generated
 	 */
 	public static final Function<Interval, ValueSpecification> max = new Function<Interval, ValueSpecification>() {
-		public ValueSpecification apply(Interval s) {
-			return s.getMax();
-		}
-	};
+    public ValueSpecification apply(Interval s) {
+      return s.getMax();
+    }
+  };
 	
 	
 

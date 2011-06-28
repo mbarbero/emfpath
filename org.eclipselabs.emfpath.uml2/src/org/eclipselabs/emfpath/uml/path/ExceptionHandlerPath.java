@@ -1,15 +1,16 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ExceptionHandler;
 import org.eclipse.uml2.uml.ExecutableNode;
 import org.eclipse.uml2.uml.ObjectNode;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -26,8 +27,8 @@ public class ExceptionHandlerPath extends ElementPath {
 	 * @generated
 	 */
 	private ExceptionHandlerPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * A node that is executed if the handler satisfies an uncaught exception. 
@@ -35,10 +36,10 @@ public class ExceptionHandlerPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<ExceptionHandler, ExecutableNode> handlerBody = new Function<ExceptionHandler, ExecutableNode>() {
-		public ExecutableNode apply(ExceptionHandler s) {
-			return s.getHandlerBody();
-		}
-	};
+    public ExecutableNode apply(ExceptionHandler s) {
+      return s.getHandlerBody();
+    }
+  };
 
 	/**
 	 * An object node within the handler body. When the handler catches an exception, the
@@ -47,10 +48,10 @@ public class ExceptionHandlerPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<ExceptionHandler, ObjectNode> exceptionInput = new Function<ExceptionHandler, ObjectNode>() {
-		public ObjectNode apply(ExceptionHandler s) {
-			return s.getExceptionInput();
-		}
-	};
+    public ObjectNode apply(ExceptionHandler s) {
+      return s.getExceptionInput();
+    }
+  };
 
 	/**
 	 * The kind of instances that the handler catches. If an exception occurs whose type
@@ -60,10 +61,10 @@ public class ExceptionHandlerPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<ExceptionHandler, EList<Classifier>> exceptionType = new Function<ExceptionHandler, EList<Classifier>>() {
-		public EList<Classifier> apply(ExceptionHandler s) {
-			return s.getExceptionTypes();
-		}
-	};
+    public EList<Classifier> apply(ExceptionHandler s) {
+      return s.getExceptionTypes();
+    }
+  };
 
 	/**
 	 * The node protected by the handler. The handler is examined if an exception propagates
@@ -72,10 +73,10 @@ public class ExceptionHandlerPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<ExceptionHandler, ExecutableNode> protectedNode = new Function<ExceptionHandler, ExecutableNode>() {
-		public ExecutableNode apply(ExceptionHandler s) {
-			return s.getProtectedNode();
-		}
-	};
+    public ExecutableNode apply(ExceptionHandler s) {
+      return s.getProtectedNode();
+    }
+  };
 	
 	/**
 	 * The exception handler and its input object node are not the source or target of any
@@ -84,13 +85,13 @@ public class ExceptionHandlerPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.ExceptionHandler#validateExceptionBody(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ExceptionHandler> validateExceptionBody(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ExceptionHandler>() {
-			public boolean apply(ExceptionHandler s) {
-				return s.validateExceptionBody(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ExceptionHandler> validateExceptionBody(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ExceptionHandler>() {
+      public boolean apply(ExceptionHandler s) {
+        return s.validateExceptionBody(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The result pins of the exception handler body must correspond in number and types
@@ -99,13 +100,13 @@ public class ExceptionHandlerPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.ExceptionHandler#validateResultPins(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ExceptionHandler> validateResultPins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ExceptionHandler>() {
-			public boolean apply(ExceptionHandler s) {
-				return s.validateResultPins(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ExceptionHandler> validateResultPins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ExceptionHandler>() {
+      public boolean apply(ExceptionHandler s) {
+        return s.validateResultPins(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The handler body has one input, and that input is the same as the exception input.
@@ -113,13 +114,13 @@ public class ExceptionHandlerPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.ExceptionHandler#validateOneInput(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ExceptionHandler> validateOneInput(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ExceptionHandler>() {
-			public boolean apply(ExceptionHandler s) {
-				return s.validateOneInput(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ExceptionHandler> validateOneInput(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ExceptionHandler>() {
+      public boolean apply(ExceptionHandler s) {
+        return s.validateOneInput(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * An edge that has a source in an exception handler structured node must have its target
@@ -128,12 +129,12 @@ public class ExceptionHandlerPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.ExceptionHandler#validateEdgeSourceTarget(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ExceptionHandler> validateEdgeSourceTarget(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ExceptionHandler>() {
-			public boolean apply(ExceptionHandler s) {
-				return s.validateEdgeSourceTarget(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ExceptionHandler> validateEdgeSourceTarget(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ExceptionHandler>() {
+      public boolean apply(ExceptionHandler s) {
+        return s.validateEdgeSourceTarget(diagnostics, context);
+      }
+    };
+  }
 
 }

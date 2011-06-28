@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.InstanceValue;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -19,8 +19,8 @@ public class InstanceValuePath extends ValueSpecificationPath {
 	 * @generated
 	 */
 	private InstanceValuePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The instance that is the specified value. 
@@ -28,10 +28,10 @@ public class InstanceValuePath extends ValueSpecificationPath {
 	 * @generated
 	 */
 	public static final Function<InstanceValue, InstanceSpecification> instance = new Function<InstanceValue, InstanceSpecification>() {
-		public InstanceSpecification apply(InstanceValue s) {
-			return s.getInstance();
-		}
-	};
+    public InstanceSpecification apply(InstanceValue s) {
+      return s.getInstance();
+    }
+  };
 	
 	
 

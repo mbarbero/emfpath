@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -19,8 +19,8 @@ public class EnumerationLiteralPath extends InstanceSpecificationPath {
 	 * @generated
 	 */
 	private EnumerationLiteralPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The Enumeration that this EnumerationLiteral is a member of. 
@@ -28,10 +28,10 @@ public class EnumerationLiteralPath extends InstanceSpecificationPath {
 	 * @generated
 	 */
 	public static final Function<EnumerationLiteral, Enumeration> enumeration = new Function<EnumerationLiteral, Enumeration>() {
-		public Enumeration apply(EnumerationLiteral s) {
-			return s.getEnumeration();
-		}
-	};
+    public Enumeration apply(EnumerationLiteral s) {
+      return s.getEnumeration();
+    }
+  };
 	
 	
 

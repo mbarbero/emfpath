@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.ValueSpecificationAction;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +24,8 @@ public class ValueSpecificationActionPath extends ActionPath {
 	 * @generated
 	 */
 	private ValueSpecificationActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Value specification to be evaluated. 
@@ -32,10 +33,10 @@ public class ValueSpecificationActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ValueSpecificationAction, ValueSpecification> value = new Function<ValueSpecificationAction, ValueSpecification>() {
-		public ValueSpecification apply(ValueSpecificationAction s) {
-			return s.getValue();
-		}
-	};
+    public ValueSpecification apply(ValueSpecificationAction s) {
+      return s.getValue();
+    }
+  };
 
 	/**
 	 * Gives the output pin on which the result is put. 
@@ -43,10 +44,10 @@ public class ValueSpecificationActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ValueSpecificationAction, OutputPin> result = new Function<ValueSpecificationAction, OutputPin>() {
-		public OutputPin apply(ValueSpecificationAction s) {
-			return s.getResult();
-		}
-	};
+    public OutputPin apply(ValueSpecificationAction s) {
+      return s.getResult();
+    }
+  };
 	
 	/**
 	 * The type of value specification must be compatible with the type of the result pin.
@@ -54,13 +55,13 @@ public class ValueSpecificationActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ValueSpecificationAction#validateCompatibleType(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ValueSpecificationAction> validateCompatibleType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ValueSpecificationAction>() {
-			public boolean apply(ValueSpecificationAction s) {
-				return s.validateCompatibleType(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ValueSpecificationAction> validateCompatibleType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ValueSpecificationAction>() {
+      public boolean apply(ValueSpecificationAction s) {
+        return s.validateCompatibleType(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The multiplicity of the result pin is 1..1
@@ -68,12 +69,12 @@ public class ValueSpecificationActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ValueSpecificationAction#validateMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ValueSpecificationAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ValueSpecificationAction>() {
-			public boolean apply(ValueSpecificationAction s) {
-				return s.validateMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ValueSpecificationAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ValueSpecificationAction>() {
+      public boolean apply(ValueSpecificationAction s) {
+        return s.validateMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 }

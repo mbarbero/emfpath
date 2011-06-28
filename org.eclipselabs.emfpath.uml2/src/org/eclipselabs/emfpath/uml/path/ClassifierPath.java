@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Classifier;
@@ -27,6 +25,9 @@ import org.eclipse.uml2.uml.TemplateSignature;
 import org.eclipse.uml2.uml.TemplateableElement;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UseCase;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -55,8 +56,8 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	 ClassifierPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Indicates whether it is possible to further specialize a RedefinableElement. If the
@@ -66,7 +67,7 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isLeaf()
 	 * @generated
 	 */
-	public static final Predicate<RedefinableElement> isLeaf = RedefinableElementPath.isLeaf;
+	public static final ComposablePredicate<RedefinableElement> isLeaf = RedefinableElementPath.isLeaf;
 
 	/**
 	 * The redefinable element that is being redefined by this element. 
@@ -139,11 +140,11 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Classifier#isAbstract()
 	 * @generated
 	 */
-	public static final Predicate<Classifier> isAbstract = new Predicate<Classifier>() {
-		public boolean apply(Classifier s) {
-			return s.isAbstract();
-		}
-	};
+	public static final ComposablePredicate<Classifier> isAbstract = new ComposablePredicate<Classifier>() {
+    public boolean apply(Classifier s) {
+      return s.isAbstract();
+    }
+  };
 
 	/**
 	 * Specifies the Generalization relationships for this Classifier. These Generalizations
@@ -152,10 +153,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<Generalization>> generalization = new Function<Classifier, EList<Generalization>>() {
-		public EList<Generalization> apply(Classifier s) {
-			return s.getGeneralizations();
-		}
-	};
+    public EList<Generalization> apply(Classifier s) {
+      return s.getGeneralizations();
+    }
+  };
 
 	/**
 	 * Designates the GeneralizationSet of which the associated Classifier is a power type.
@@ -163,10 +164,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<GeneralizationSet>> powertypeExtent = new Function<Classifier, EList<GeneralizationSet>>() {
-		public EList<GeneralizationSet> apply(Classifier s) {
-			return s.getPowertypeExtents();
-		}
-	};
+    public EList<GeneralizationSet> apply(Classifier s) {
+      return s.getPowertypeExtents();
+    }
+  };
 
 	/**
 	 * Note that there may be members of the Classifier that are of the type Feature but
@@ -177,10 +178,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<Feature>> feature = new Function<Classifier, EList<Feature>>() {
-		public EList<Feature> apply(Classifier s) {
-			return s.getFeatures();
-		}
-	};
+    public EList<Feature> apply(Classifier s) {
+      return s.getFeatures();
+    }
+  };
 
 	/**
 	 * Specifies all elements inherited by this classifier from the general classifiers.
@@ -188,10 +189,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<NamedElement>> inheritedMember = new Function<Classifier, EList<NamedElement>>() {
-		public EList<NamedElement> apply(Classifier s) {
-			return s.getInheritedMembers();
-		}
-	};
+    public EList<NamedElement> apply(Classifier s) {
+      return s.getInheritedMembers();
+    }
+  };
 
 	/**
 	 * References the Classifiers that are redefined by this Classifier. 
@@ -199,10 +200,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<Classifier>> redefinedClassifier = new Function<Classifier, EList<Classifier>>() {
-		public EList<Classifier> apply(Classifier s) {
-			return s.getRedefinedClassifiers();
-		}
-	};
+    public EList<Classifier> apply(Classifier s) {
+      return s.getRedefinedClassifiers();
+    }
+  };
 
 	/**
 	 * References the general classifier in the Generalization relationship.
@@ -212,10 +213,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<Classifier>> general = new Function<Classifier, EList<Classifier>>() {
-		public EList<Classifier> apply(Classifier s) {
-			return s.getGenerals();
-		}
-	};
+    public EList<Classifier> apply(Classifier s) {
+      return s.getGenerals();
+    }
+  };
 
 	/**
 	 * References the substitutions that are owned by this Classifier. 
@@ -223,10 +224,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<Substitution>> substitution = new Function<Classifier, EList<Substitution>>() {
-		public EList<Substitution> apply(Classifier s) {
-			return s.getSubstitutions();
-		}
-	};
+    public EList<Substitution> apply(Classifier s) {
+      return s.getSubstitutions();
+    }
+  };
 
 	/**
 	 * Refers to all of the Properties that are direct (i.e. not inherited or imported) attributes
@@ -235,10 +236,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<Property>> attribute = new Function<Classifier, EList<Property>>() {
-		public EList<Property> apply(Classifier s) {
-			return s.getAttributes();
-		}
-	};
+    public EList<Property> apply(Classifier s) {
+      return s.getAttributes();
+    }
+  };
 
 	/**
 	 * References a collaboration use which indicates the collaboration that represents this
@@ -247,10 +248,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, CollaborationUse> representation = new Function<Classifier, CollaborationUse>() {
-		public CollaborationUse apply(Classifier s) {
-			return s.getRepresentation();
-		}
-	};
+    public CollaborationUse apply(Classifier s) {
+      return s.getRepresentation();
+    }
+  };
 
 	/**
 	 * References the collaboration uses owned by the classifier. 
@@ -258,10 +259,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<CollaborationUse>> collaborationUse = new Function<Classifier, EList<CollaborationUse>>() {
-		public EList<CollaborationUse> apply(Classifier s) {
-			return s.getCollaborationUses();
-		}
-	};
+    public EList<CollaborationUse> apply(Classifier s) {
+      return s.getCollaborationUses();
+    }
+  };
 
 	/**
 	 * References the use cases owned by this classifier. 
@@ -269,10 +270,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<UseCase>> ownedUseCase = new Function<Classifier, EList<UseCase>>() {
-		public EList<UseCase> apply(Classifier s) {
-			return s.getOwnedUseCases();
-		}
-	};
+    public EList<UseCase> apply(Classifier s) {
+      return s.getOwnedUseCases();
+    }
+  };
 
 	/**
 	 * The set of use cases for which this Classifier is the subject. 
@@ -280,10 +281,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<UseCase>> useCase = new Function<Classifier, EList<UseCase>>() {
-		public EList<UseCase> apply(Classifier s) {
-			return s.getUseCases();
-		}
-	};
+    public EList<UseCase> apply(Classifier s) {
+      return s.getUseCases();
+    }
+  };
 	
 	/**
 	 * At least one of the redefinition contexts of the redefining element must be a specialization
@@ -295,9 +296,9 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionContextValid(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> validateRedefinitionContextValid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return RedefinableElementPath.validateRedefinitionContextValid(diagnostics, context);
-	}
+	public static ComposablePredicate<RedefinableElement> validateRedefinitionContextValid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return RedefinableElementPath.validateRedefinitionContextValid(diagnostics, context);
+  }
 
 	/**
 	 * A redefining element must be consistent with each redefined element.
@@ -308,9 +309,9 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionConsistent(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> validateRedefinitionConsistent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return RedefinableElementPath.validateRedefinitionConsistent(diagnostics, context);
-	}
+	public static ComposablePredicate<RedefinableElement> validateRedefinitionConsistent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return RedefinableElementPath.validateRedefinitionConsistent(diagnostics, context);
+  }
 
 	/**
 	 * The query isConsistentWith() specifies, for any two RedefinableElements in a context
@@ -325,9 +326,9 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isConsistentWith(RedefinableElement)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> isConsistentWith(final RedefinableElement redefinee) {
-		return RedefinableElementPath.isConsistentWith(redefinee);
-	}
+	public static ComposablePredicate<RedefinableElement> isConsistentWith(final RedefinableElement redefinee) {
+    return RedefinableElementPath.isConsistentWith(redefinee);
+  }
 
 	/**
 	 * The query isRedefinitionContextValid() specifies whether the redefinition contexts
@@ -342,9 +343,9 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isRedefinitionContextValid(RedefinableElement)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> isRedefinitionContextValid(final RedefinableElement redefined) {
-		return RedefinableElementPath.isRedefinitionContextValid(redefined);
-	}
+	public static ComposablePredicate<RedefinableElement> isRedefinitionContextValid(final RedefinableElement redefined) {
+    return RedefinableElementPath.isRedefinitionContextValid(redefined);
+  }
 
 	/**
 	 * The query isCompatibleWith() determines if this parameterable element is compatible
@@ -358,9 +359,9 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.ParameterableElement#isCompatibleWith(ParameterableElement)
 	 * @generated
 	 */
-	public static Predicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
-		return ParameterableElementPath.isCompatibleWith(p);
-	}
+	public static ComposablePredicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
+    return ParameterableElementPath.isCompatibleWith(p);
+  }
 
 	/**
 	 * Creates a(n) (binary) association between this type and the specified other type,
@@ -372,8 +373,8 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<Type, Association> createAssociation(final boolean end1IsNavigable, final AggregationKind end1Aggregation, final String end1Name, final int end1Lower, final int end1Upper, final Type end1Type, final boolean end2IsNavigable, final AggregationKind end2Aggregation, final String end2Name, final int end2Lower, final int end2Upper) {
-		return TypePath.createAssociation(end1IsNavigable, end1Aggregation, end1Name, end1Lower, end1Upper, end1Type, end2IsNavigable, end2Aggregation, end2Name, end2Lower, end2Upper);
-	}
+    return TypePath.createAssociation(end1IsNavigable, end1Aggregation, end1Name, end1Lower, end1Upper, end1Type, end2IsNavigable, end2Aggregation, end2Name, end2Lower, end2Upper);
+  }
 
 	/**
 	 * Retrieves the associations in which this type is involved. 
@@ -394,9 +395,9 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Type#conformsTo(Type)
 	 * @generated
 	 */
-	public static Predicate<Type> conformsTo(final Type other) {
-		return TypePath.conformsTo(other);
-	}
+	public static ComposablePredicate<Type> conformsTo(final Type other) {
+    return TypePath.conformsTo(other);
+  }
 
 	/**
 	 * The query parameterableElements() returns the set of elements that may be used as
@@ -420,7 +421,7 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.TemplateableElement#isTemplate()
 	 * @generated
 	 */
-	public static final Predicate<TemplateableElement> isTemplate = TemplateableElementPath.isTemplate;
+	public static final ComposablePredicate<TemplateableElement> isTemplate = TemplateableElementPath.isTemplate;
 
 	/**
 	 * Generalization hierarchies must be directed and acyclical. A classifier can not be
@@ -430,13 +431,13 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Classifier#validateNoCyclesInGeneralization(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Classifier> validateNoCyclesInGeneralization(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Classifier>() {
-			public boolean apply(Classifier s) {
-				return s.validateNoCyclesInGeneralization(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Classifier> validateNoCyclesInGeneralization(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Classifier>() {
+      public boolean apply(Classifier s) {
+        return s.validateNoCyclesInGeneralization(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Generalization hierarchies must be directed and acyclical. A classifier can not be
@@ -446,13 +447,13 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Classifier#validateGeneralizationHierarchies(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Classifier> validateGeneralizationHierarchies(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Classifier>() {
-			public boolean apply(Classifier s) {
-				return s.validateGeneralizationHierarchies(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Classifier> validateGeneralizationHierarchies(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Classifier>() {
+      public boolean apply(Classifier s) {
+        return s.validateGeneralizationHierarchies(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A classifier may only specialize classifiers of a valid type.
@@ -461,13 +462,13 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Classifier#validateSpecializeType(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Classifier> validateSpecializeType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Classifier>() {
-			public boolean apply(Classifier s) {
-				return s.validateSpecializeType(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Classifier> validateSpecializeType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Classifier>() {
+      public boolean apply(Classifier s) {
+        return s.validateSpecializeType(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The Classifier that maps to a GeneralizationSet may neither be a specific nor a general
@@ -478,13 +479,13 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Classifier#validateMapsToGeneralizationSet(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Classifier> validateMapsToGeneralizationSet(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Classifier>() {
-			public boolean apply(Classifier s) {
-				return s.validateMapsToGeneralizationSet(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Classifier> validateMapsToGeneralizationSet(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Classifier>() {
+      public boolean apply(Classifier s) {
+        return s.validateMapsToGeneralizationSet(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Retrieves all the attributes of this classifier, including those inherited from its
@@ -493,10 +494,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<Property>> getAllAttributes = new Function<Classifier, EList<Property>>() {
-		public EList<Property> apply(Classifier s) {
-			return s.getAllAttributes();
-		}
-	};
+    public EList<Property> apply(Classifier s) {
+      return s.getAllAttributes();
+    }
+  };
 
 	/**
 	 * Retrieves the operations of this classifier. 
@@ -504,10 +505,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<Operation>> getOperations = new Function<Classifier, EList<Operation>>() {
-		public EList<Operation> apply(Classifier s) {
-			return s.getOperations();
-		}
-	};
+    public EList<Operation> apply(Classifier s) {
+      return s.getOperations();
+    }
+  };
 
 	/**
 	 * Retrieves all the operations of this classifier, including those inherited from its
@@ -516,10 +517,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<Operation>> getAllOperations = new Function<Classifier, EList<Operation>>() {
-		public EList<Operation> apply(Classifier s) {
-			return s.getAllOperations();
-		}
-	};
+    public EList<Operation> apply(Classifier s) {
+      return s.getAllOperations();
+    }
+  };
 
 	/**
 	 * Retrieves the first operation with the specified name, parameter names, and parameter
@@ -528,12 +529,12 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<Classifier, Operation> getOperation(final String name, final EList<String> parameterNames, final EList<Type> parameterTypes) {
-		return new Function<Classifier, Operation>() {
-			public Operation apply(Classifier s) {
-				return s.getOperation(name, parameterNames, parameterTypes);
-			}
-		};
-	}
+    return new Function<Classifier, Operation>() {
+      public Operation apply(Classifier s) {
+        return s.getOperation(name, parameterNames, parameterTypes);
+      }
+    };
+  }
 
 	/**
 	 * Retrieves the first operation with the specified name, parameter names, and parameter
@@ -542,12 +543,12 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<Classifier, Operation> getOperation(final String name, final EList<String> parameterNames, final EList<Type> parameterTypes, final boolean ignoreCase) {
-		return new Function<Classifier, Operation>() {
-			public Operation apply(Classifier s) {
-				return s.getOperation(name, parameterNames, parameterTypes, ignoreCase);
-			}
-		};
-	}
+    return new Function<Classifier, Operation>() {
+      public Operation apply(Classifier s) {
+        return s.getOperation(name, parameterNames, parameterTypes, ignoreCase);
+      }
+    };
+  }
 
 	/**
 	 * Retrieves the interfaces on which this classifier has a usage dependency. 
@@ -555,10 +556,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<Interface>> getUsedInterfaces = new Function<Classifier, EList<Interface>>() {
-		public EList<Interface> apply(Classifier s) {
-			return s.getUsedInterfaces();
-		}
-	};
+    public EList<Interface> apply(Classifier s) {
+      return s.getUsedInterfaces();
+    }
+  };
 
 	/**
 	 * Retrieves all the interfaces on which this classifier or any of its parents has a
@@ -567,10 +568,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<Interface>> getAllUsedInterfaces = new Function<Classifier, EList<Interface>>() {
-		public EList<Interface> apply(Classifier s) {
-			return s.getAllUsedInterfaces();
-		}
-	};
+    public EList<Interface> apply(Classifier s) {
+      return s.getAllUsedInterfaces();
+    }
+  };
 
 	/**
 	 * The general classifiers are the classifiers referenced by the generalization relationships.
@@ -580,10 +581,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<Classifier>> getGenerals = new Function<Classifier, EList<Classifier>>() {
-		public EList<Classifier> apply(Classifier s) {
-			return s.getGenerals();
-		}
-	};
+    public EList<Classifier> apply(Classifier s) {
+      return s.getGenerals();
+    }
+  };
 
 	/**
 	 * The inheritedMember association is derived by inheriting the inheritable members of
@@ -593,10 +594,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<NamedElement>> getInheritedMembers = new Function<Classifier, EList<NamedElement>>() {
-		public EList<NamedElement> apply(Classifier s) {
-			return s.getInheritedMembers();
-		}
-	};
+    public EList<NamedElement> apply(Classifier s) {
+      return s.getInheritedMembers();
+    }
+  };
 
 	/**
 	 * The query allFeatures() gives all of the features in the namespace of the classifier.
@@ -607,10 +608,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<Feature>> allFeatures = new Function<Classifier, EList<Feature>>() {
-		public EList<Feature> apply(Classifier s) {
-			return s.allFeatures();
-		}
-	};
+    public EList<Feature> apply(Classifier s) {
+      return s.allFeatures();
+    }
+  };
 
 	/**
 	 * The query parents() gives all of the immediate ancestors of a generalized Classifier.
@@ -620,10 +621,10 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<Classifier>> parents = new Function<Classifier, EList<Classifier>>() {
-		public EList<Classifier> apply(Classifier s) {
-			return s.parents();
-		}
-	};
+    public EList<Classifier> apply(Classifier s) {
+      return s.parents();
+    }
+  };
 
 	/**
 	 * The query inheritableMembers() gives all of the members of a classifier that may be
@@ -635,12 +636,12 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<Classifier, EList<NamedElement>> inheritableMembers(final Classifier c) {
-		return new Function<Classifier, EList<NamedElement>>() {
-			public EList<NamedElement> apply(Classifier s) {
-				return s.inheritableMembers(c);
-			}
-		};
-	}
+    return new Function<Classifier, EList<NamedElement>>() {
+      public EList<NamedElement> apply(Classifier s) {
+        return s.inheritableMembers(c);
+      }
+    };
+  }
 
 	/**
 	 * The query hasVisibilityOf() determines whether a named element is visible in the classifier.
@@ -652,13 +653,13 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Classifier#hasVisibilityOf(NamedElement)
 	 * @generated
 	 */
-	public static Predicate<Classifier> hasVisibilityOf(final NamedElement n) {
-		return new Predicate<Classifier>() {
-			public boolean apply(Classifier s) {
-				return s.hasVisibilityOf(n);
-			}
-		};
-	}
+	public static ComposablePredicate<Classifier> hasVisibilityOf(final NamedElement n) {
+    return new ComposablePredicate<Classifier>() {
+      public boolean apply(Classifier s) {
+        return s.hasVisibilityOf(n);
+      }
+    };
+  }
 
 	/**
 	 * The query conformsTo() gives true for a classifier that defines a type that conforms
@@ -668,13 +669,13 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Classifier#conformsTo(Classifier)
 	 * @generated
 	 */
-	public static Predicate<Classifier> conformsTo(final Classifier other) {
-		return new Predicate<Classifier>() {
-			public boolean apply(Classifier s) {
-				return s.conformsTo(other);
-			}
-		};
-	}
+	public static ComposablePredicate<Classifier> conformsTo(final Classifier other) {
+    return new ComposablePredicate<Classifier>() {
+      public boolean apply(Classifier s) {
+        return s.conformsTo(other);
+      }
+    };
+  }
 
 	/**
 	 * The inherit operation is overridden to exclude redefined properties.
@@ -687,12 +688,12 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<Classifier, EList<NamedElement>> inherit(final EList<NamedElement> inhs) {
-		return new Function<Classifier, EList<NamedElement>>() {
-			public EList<NamedElement> apply(Classifier s) {
-				return s.inherit(inhs);
-			}
-		};
-	}
+    return new Function<Classifier, EList<NamedElement>>() {
+      public EList<NamedElement> apply(Classifier s) {
+        return s.inherit(inhs);
+      }
+    };
+  }
 
 	/**
 	 * The query maySpecializeType() determines whether this classifier may have a generalization
@@ -703,13 +704,13 @@ public class ClassifierPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Classifier#maySpecializeType(Classifier)
 	 * @generated
 	 */
-	public static Predicate<Classifier> maySpecializeType(final Classifier c) {
-		return new Predicate<Classifier>() {
-			public boolean apply(Classifier s) {
-				return s.maySpecializeType(c);
-			}
-		};
-	}
+	public static ComposablePredicate<Classifier> maySpecializeType(final Classifier c) {
+    return new ComposablePredicate<Classifier>() {
+      public boolean apply(Classifier s) {
+        return s.maySpecializeType(c);
+      }
+    };
+  }
 
 	/**
 	 * The query allParents() gives all of the direct and indirect ancestors of a generalized
@@ -719,9 +720,9 @@ public class ClassifierPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Classifier, EList<Classifier>> allParents = new Function<Classifier, EList<Classifier>>() {
-		public EList<Classifier> apply(Classifier s) {
-			return s.allParents();
-		}
-	};
+    public EList<Classifier> apply(Classifier s) {
+      return s.allParents();
+    }
+  };
 
 }

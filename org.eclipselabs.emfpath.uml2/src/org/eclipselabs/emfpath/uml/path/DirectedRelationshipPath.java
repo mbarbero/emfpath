@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.DirectedRelationship;
 import org.eclipse.uml2.uml.Element;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -21,8 +21,8 @@ public class DirectedRelationshipPath extends RelationshipPath {
 	 * @generated
 	 */
 	 DirectedRelationshipPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies the sources of the DirectedRelationship. 
@@ -30,10 +30,10 @@ public class DirectedRelationshipPath extends RelationshipPath {
 	 * @generated
 	 */
 	public static final Function<DirectedRelationship, EList<Element>> source = new Function<DirectedRelationship, EList<Element>>() {
-		public EList<Element> apply(DirectedRelationship s) {
-			return s.getSources();
-		}
-	};
+    public EList<Element> apply(DirectedRelationship s) {
+      return s.getSources();
+    }
+  };
 
 	/**
 	 * Specifies the targets of the DirectedRelationship. 
@@ -41,10 +41,10 @@ public class DirectedRelationshipPath extends RelationshipPath {
 	 * @generated
 	 */
 	public static final Function<DirectedRelationship, EList<Element>> target = new Function<DirectedRelationship, EList<Element>>() {
-		public EList<Element> apply(DirectedRelationship s) {
-			return s.getTargets();
-		}
-	};
+    public EList<Element> apply(DirectedRelationship s) {
+      return s.getTargets();
+    }
+  };
 	
 	
 

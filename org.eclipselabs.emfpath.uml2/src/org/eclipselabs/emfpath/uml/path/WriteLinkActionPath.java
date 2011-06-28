@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.WriteLinkAction;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class WriteLinkActionPath extends LinkActionPath {
 	 * @generated
 	 */
 	 WriteLinkActionPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	
@@ -31,12 +31,12 @@ public class WriteLinkActionPath extends LinkActionPath {
 	 * @see org.eclipse.uml2.uml.WriteLinkAction#validateAllowAccess(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<WriteLinkAction> validateAllowAccess(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<WriteLinkAction>() {
-			public boolean apply(WriteLinkAction s) {
-				return s.validateAllowAccess(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<WriteLinkAction> validateAllowAccess(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<WriteLinkAction>() {
+      public boolean apply(WriteLinkAction s) {
+        return s.validateAllowAccess(diagnostics, context);
+      }
+    };
+  }
 
 }

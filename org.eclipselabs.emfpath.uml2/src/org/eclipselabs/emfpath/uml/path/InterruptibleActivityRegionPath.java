@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.InterruptibleActivityRegion;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class InterruptibleActivityRegionPath extends ActivityGroupPath {
 	 * @generated
 	 */
 	private InterruptibleActivityRegionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Nodes immediately contained in the group. 
@@ -34,10 +35,10 @@ public class InterruptibleActivityRegionPath extends ActivityGroupPath {
 	 * @generated
 	 */
 	public static final Function<InterruptibleActivityRegion, EList<ActivityNode>> node = new Function<InterruptibleActivityRegion, EList<ActivityNode>>() {
-		public EList<ActivityNode> apply(InterruptibleActivityRegion s) {
-			return s.getNodes();
-		}
-	};
+    public EList<ActivityNode> apply(InterruptibleActivityRegion s) {
+      return s.getNodes();
+    }
+  };
 
 	/**
 	 * The edges leaving the region that will abort other tokens flowing in the region. 
@@ -45,10 +46,10 @@ public class InterruptibleActivityRegionPath extends ActivityGroupPath {
 	 * @generated
 	 */
 	public static final Function<InterruptibleActivityRegion, EList<ActivityEdge>> interruptingEdge = new Function<InterruptibleActivityRegion, EList<ActivityEdge>>() {
-		public EList<ActivityEdge> apply(InterruptibleActivityRegion s) {
-			return s.getInterruptingEdges();
-		}
-	};
+    public EList<ActivityEdge> apply(InterruptibleActivityRegion s) {
+      return s.getInterruptingEdges();
+    }
+  };
 	
 	/**
 	 * Interrupting edges of a region must have their source node in the region and their
@@ -58,12 +59,12 @@ public class InterruptibleActivityRegionPath extends ActivityGroupPath {
 	 * @see org.eclipse.uml2.uml.InterruptibleActivityRegion#validateInterruptingEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InterruptibleActivityRegion> validateInterruptingEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InterruptibleActivityRegion>() {
-			public boolean apply(InterruptibleActivityRegion s) {
-				return s.validateInterruptingEdges(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InterruptibleActivityRegion> validateInterruptingEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InterruptibleActivityRegion>() {
+      public boolean apply(InterruptibleActivityRegion s) {
+        return s.validateInterruptingEdges(diagnostics, context);
+      }
+    };
+  }
 
 }

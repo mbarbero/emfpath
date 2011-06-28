@@ -1,15 +1,16 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.MultiplicityElement;
 import org.eclipse.uml2.uml.StructuralFeature;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.TypedElement;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -29,8 +30,8 @@ public class StructuralFeaturePath extends FeaturePath {
 	 * @generated
 	 */
 	 StructuralFeaturePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * This information is derived from the return result for this Operation.
@@ -51,7 +52,7 @@ public class StructuralFeaturePath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isOrdered()
 	 * @generated
 	 */
-	public static final Predicate<MultiplicityElement> isOrdered = MultiplicityElementPath.isOrdered;
+	public static final ComposablePredicate<MultiplicityElement> isOrdered = MultiplicityElementPath.isOrdered;
 
 	/**
 	 * For a multivalued multiplicity, this attributes specifies whether the values in an
@@ -61,7 +62,7 @@ public class StructuralFeaturePath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isUnique()
 	 * @generated
 	 */
-	public static final Predicate<MultiplicityElement> isUnique = MultiplicityElementPath.isUnique;
+	public static final ComposablePredicate<MultiplicityElement> isUnique = MultiplicityElementPath.isUnique;
 
 	/**
 	 * Specifies the upper bound of the multiplicity interval. 
@@ -104,11 +105,11 @@ public class StructuralFeaturePath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.StructuralFeature#isReadOnly()
 	 * @generated
 	 */
-	public static final Predicate<StructuralFeature> isReadOnly = new Predicate<StructuralFeature>() {
-		public boolean apply(StructuralFeature s) {
-			return s.isReadOnly();
-		}
-	};
+	public static final ComposablePredicate<StructuralFeature> isReadOnly = new ComposablePredicate<StructuralFeature>() {
+    public boolean apply(StructuralFeature s) {
+      return s.isReadOnly();
+    }
+  };
 	
 	/**
 	 * The lower bound must be a non-negative integer literal.
@@ -119,9 +120,9 @@ public class StructuralFeaturePath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateLowerGe0(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateLowerGe0(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateLowerGe0(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateLowerGe0(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateLowerGe0(diagnostics, context);
+  }
 
 	/**
 	 * The upper bound must be greater than or equal to the lower bound.
@@ -132,9 +133,9 @@ public class StructuralFeaturePath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateUpperGeLower(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateUpperGeLower(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateUpperGeLower(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateUpperGeLower(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateUpperGeLower(diagnostics, context);
+  }
 
 	/**
 	 * If a non-literal ValueSpecification is used for the lower or upper bound, then evaluating
@@ -145,9 +146,9 @@ public class StructuralFeaturePath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationNoSideEffects(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateValueSpecificationNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateValueSpecificationNoSideEffects(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateValueSpecificationNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateValueSpecificationNoSideEffects(diagnostics, context);
+  }
 
 	/**
 	 * If a non-literal ValueSpecification is used for the lower or upper bound, then that
@@ -158,9 +159,9 @@ public class StructuralFeaturePath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationConstant(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateValueSpecificationConstant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateValueSpecificationConstant(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateValueSpecificationConstant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateValueSpecificationConstant(diagnostics, context);
+  }
 
 	/**
 	 * The query isMultivalued() checks whether this multiplicity has an upper bound greater
@@ -172,7 +173,7 @@ public class StructuralFeaturePath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isMultivalued()
 	 * @generated
 	 */
-	public static final Predicate<MultiplicityElement> isMultivalued = MultiplicityElementPath.isMultivalued;
+	public static final ComposablePredicate<MultiplicityElement> isMultivalued = MultiplicityElementPath.isMultivalued;
 
 	/**
 	 * The query includesCardinality() checks whether the specified cardinality is valid
@@ -185,9 +186,9 @@ public class StructuralFeaturePath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesCardinality(int)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> includesCardinality(final int C) {
-		return MultiplicityElementPath.includesCardinality(C);
-	}
+	public static ComposablePredicate<MultiplicityElement> includesCardinality(final int C) {
+    return MultiplicityElementPath.includesCardinality(C);
+  }
 
 	/**
 	 * The query includesMultiplicity() checks whether this multiplicity includes all the
@@ -201,9 +202,9 @@ public class StructuralFeaturePath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesMultiplicity(MultiplicityElement)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> includesMultiplicity(final MultiplicityElement M) {
-		return MultiplicityElementPath.includesMultiplicity(M);
-	}
+	public static ComposablePredicate<MultiplicityElement> includesMultiplicity(final MultiplicityElement M) {
+    return MultiplicityElementPath.includesMultiplicity(M);
+  }
 
 	/**
 	 * The query lowerBound() returns the lower bound of the multiplicity as an integer.
@@ -238,9 +239,9 @@ public class StructuralFeaturePath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#compatibleWith(MultiplicityElement)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> compatibleWith(final MultiplicityElement other) {
-		return MultiplicityElementPath.compatibleWith(other);
-	}
+	public static ComposablePredicate<MultiplicityElement> compatibleWith(final MultiplicityElement other) {
+    return MultiplicityElementPath.compatibleWith(other);
+  }
 
 	/**
 	 * The operation is determines if the upper and lower bound of the ranges are the ones
@@ -251,8 +252,8 @@ public class StructuralFeaturePath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#is(int, int)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> is(final int lowerbound, final int upperbound) {
-		return MultiplicityElementPath.is(lowerbound, upperbound);
-	}
+	public static ComposablePredicate<MultiplicityElement> is(final int lowerbound, final int upperbound) {
+    return MultiplicityElementPath.is(lowerbound, upperbound);
+  }
 
 }

@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.ActivityParameterNode;
 import org.eclipse.uml2.uml.Parameter;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -22,8 +23,8 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	 * @generated
 	 */
 	private ActivityParameterNodePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The parameter the object node will be accepting or providing values for. 
@@ -31,10 +32,10 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	 * @generated
 	 */
 	public static final Function<ActivityParameterNode, Parameter> parameter = new Function<ActivityParameterNode, Parameter>() {
-		public Parameter apply(ActivityParameterNode s) {
-			return s.getParameter();
-		}
-	};
+    public Parameter apply(ActivityParameterNode s) {
+      return s.getParameter();
+    }
+  };
 	
 	/**
 	 * Activity parameter nodes must have parameters from the containing activity.
@@ -42,13 +43,13 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateHasParameters(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityParameterNode> validateHasParameters(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActivityParameterNode>() {
-			public boolean apply(ActivityParameterNode s) {
-				return s.validateHasParameters(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActivityParameterNode> validateHasParameters(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActivityParameterNode>() {
+      public boolean apply(ActivityParameterNode s) {
+        return s.validateHasParameters(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The type of an activity parameter node is the same as the type of its parameter.
@@ -56,13 +57,13 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateSameType(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityParameterNode> validateSameType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActivityParameterNode>() {
-			public boolean apply(ActivityParameterNode s) {
-				return s.validateSameType(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActivityParameterNode> validateSameType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActivityParameterNode>() {
+      public boolean apply(ActivityParameterNode s) {
+        return s.validateSameType(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * An activity parameter node may have all incoming edges or all outgoing edges, but
@@ -71,13 +72,13 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateNoEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityParameterNode> validateNoEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActivityParameterNode>() {
-			public boolean apply(ActivityParameterNode s) {
-				return s.validateNoEdges(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActivityParameterNode> validateNoEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActivityParameterNode>() {
+      public boolean apply(ActivityParameterNode s) {
+        return s.validateNoEdges(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Activity parameter object nodes with no incoming edges and one or more outgoing edges
@@ -87,13 +88,13 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateNoIncomingEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityParameterNode> validateNoIncomingEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActivityParameterNode>() {
-			public boolean apply(ActivityParameterNode s) {
-				return s.validateNoIncomingEdges(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActivityParameterNode> validateNoIncomingEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActivityParameterNode>() {
+      public boolean apply(ActivityParameterNode s) {
+        return s.validateNoIncomingEdges(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Activity parameter object nodes with no outgoing edges and one or more incoming edges
@@ -103,13 +104,13 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateNoOutgoingEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityParameterNode> validateNoOutgoingEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActivityParameterNode>() {
-			public boolean apply(ActivityParameterNode s) {
-				return s.validateNoOutgoingEdges(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActivityParameterNode> validateNoOutgoingEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActivityParameterNode>() {
+      public boolean apply(ActivityParameterNode s) {
+        return s.validateNoOutgoingEdges(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A parameter with direction other than inout must have at most one activity parameter
@@ -118,13 +119,13 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateMaximumOneParameterNode(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityParameterNode> validateMaximumOneParameterNode(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActivityParameterNode>() {
-			public boolean apply(ActivityParameterNode s) {
-				return s.validateMaximumOneParameterNode(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActivityParameterNode> validateMaximumOneParameterNode(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActivityParameterNode>() {
+      public boolean apply(ActivityParameterNode s) {
+        return s.validateMaximumOneParameterNode(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A parameter with direction inout must have at most two activity parameter nodes in
@@ -133,12 +134,12 @@ public class ActivityParameterNodePath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.ActivityParameterNode#validateMaximumTwoParameterNodes(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityParameterNode> validateMaximumTwoParameterNodes(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActivityParameterNode>() {
-			public boolean apply(ActivityParameterNode s) {
-				return s.validateMaximumTwoParameterNodes(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActivityParameterNode> validateMaximumTwoParameterNodes(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActivityParameterNode>() {
+      public boolean apply(ActivityParameterNode s) {
+        return s.validateMaximumTwoParameterNodes(diagnostics, context);
+      }
+    };
+  }
 
 }

@@ -16,8 +16,8 @@ public class IntervalConstraintPath extends ConstraintPath {
 	 * @generated
 	 */
 	 IntervalConstraintPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.SendObjectAction;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +23,8 @@ public class SendObjectActionPath extends InvocationActionPath {
 	 * @generated
 	 */
 	private SendObjectActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The target object to which the object is sent. 
@@ -32,10 +32,10 @@ public class SendObjectActionPath extends InvocationActionPath {
 	 * @generated
 	 */
 	public static final Function<SendObjectAction, InputPin> target = new Function<SendObjectAction, InputPin>() {
-		public InputPin apply(SendObjectAction s) {
-			return s.getTarget();
-		}
-	};
+    public InputPin apply(SendObjectAction s) {
+      return s.getTarget();
+    }
+  };
 
 	/**
 	 * The request object, which is transmitted to the target object. The object may be copied
@@ -44,10 +44,10 @@ public class SendObjectActionPath extends InvocationActionPath {
 	 * @generated
 	 */
 	public static final Function<SendObjectAction, InputPin> request = new Function<SendObjectAction, InputPin>() {
-		public InputPin apply(SendObjectAction s) {
-			return s.getRequest();
-		}
-	};
+    public InputPin apply(SendObjectAction s) {
+      return s.getRequest();
+    }
+  };
 	
 	
 

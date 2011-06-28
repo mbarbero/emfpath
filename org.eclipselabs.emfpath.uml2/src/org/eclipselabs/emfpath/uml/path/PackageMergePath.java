@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageMerge;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class PackageMergePath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	private PackageMergePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * References the Package that is to be merged with the receiving package of the PackageMerge.
@@ -29,10 +29,10 @@ public class PackageMergePath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<PackageMerge, Package> mergedPackage = new Function<PackageMerge, Package>() {
-		public Package apply(PackageMerge s) {
-			return s.getMergedPackage();
-		}
-	};
+    public Package apply(PackageMerge s) {
+      return s.getMergedPackage();
+    }
+  };
 
 	/**
 	 * References the Package that is being extended with the contents of the merged package
@@ -41,10 +41,10 @@ public class PackageMergePath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<PackageMerge, Package> receivingPackage = new Function<PackageMerge, Package>() {
-		public Package apply(PackageMerge s) {
-			return s.getReceivingPackage();
-		}
-	};
+    public Package apply(PackageMerge s) {
+      return s.getReceivingPackage();
+    }
+  };
 	
 	
 

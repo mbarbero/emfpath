@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.ObjectFlow;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,30 +26,30 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	 * @generated
 	 */
 	private ObjectFlowPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Tells whether the objects in the flow are passed by multicasting. 
 	 * @see org.eclipse.uml2.uml.ObjectFlow#isMulticast()
 	 * @generated
 	 */
-	public static final Predicate<ObjectFlow> isMulticast = new Predicate<ObjectFlow>() {
-		public boolean apply(ObjectFlow s) {
-			return s.isMulticast();
-		}
-	};
+	public static final ComposablePredicate<ObjectFlow> isMulticast = new ComposablePredicate<ObjectFlow>() {
+    public boolean apply(ObjectFlow s) {
+      return s.isMulticast();
+    }
+  };
 
 	/**
 	 * Tells whether the objects in the flow are gathered from respondents to multicasting.
 	 * @see org.eclipse.uml2.uml.ObjectFlow#isMultireceive()
 	 * @generated
 	 */
-	public static final Predicate<ObjectFlow> isMultireceive = new Predicate<ObjectFlow>() {
-		public boolean apply(ObjectFlow s) {
-			return s.isMultireceive();
-		}
-	};
+	public static final ComposablePredicate<ObjectFlow> isMultireceive = new ComposablePredicate<ObjectFlow>() {
+    public boolean apply(ObjectFlow s) {
+      return s.isMultireceive();
+    }
+  };
 
 	/**
 	 * Changes or replaces data tokens flowing along edge. 
@@ -56,10 +57,10 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	 * @generated
 	 */
 	public static final Function<ObjectFlow, Behavior> transformation = new Function<ObjectFlow, Behavior>() {
-		public Behavior apply(ObjectFlow s) {
-			return s.getTransformation();
-		}
-	};
+    public Behavior apply(ObjectFlow s) {
+      return s.getTransformation();
+    }
+  };
 
 	/**
 	 * Selects tokens from a source object node. 
@@ -67,10 +68,10 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	 * @generated
 	 */
 	public static final Function<ObjectFlow, Behavior> selection = new Function<ObjectFlow, Behavior>() {
-		public Behavior apply(ObjectFlow s) {
-			return s.getSelection();
-		}
-	};
+    public Behavior apply(ObjectFlow s) {
+      return s.getSelection();
+    }
+  };
 	
 	/**
 	 * Object flows may not have actions at either end.
@@ -78,13 +79,13 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	 * @see org.eclipse.uml2.uml.ObjectFlow#validateNoActions(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ObjectFlow> validateNoActions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ObjectFlow>() {
-			public boolean apply(ObjectFlow s) {
-				return s.validateNoActions(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ObjectFlow> validateNoActions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ObjectFlow>() {
+      public boolean apply(ObjectFlow s) {
+        return s.validateNoActions(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Object nodes connected by an object flow, with optionally intervening control nodes,
@@ -95,13 +96,13 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	 * @see org.eclipse.uml2.uml.ObjectFlow#validateCompatibleTypes(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ObjectFlow> validateCompatibleTypes(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ObjectFlow>() {
-			public boolean apply(ObjectFlow s) {
-				return s.validateCompatibleTypes(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ObjectFlow> validateCompatibleTypes(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ObjectFlow>() {
+      public boolean apply(ObjectFlow s) {
+        return s.validateCompatibleTypes(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Object nodes connected by an object flow, with optionally intervening control nodes,
@@ -110,13 +111,13 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	 * @see org.eclipse.uml2.uml.ObjectFlow#validateSameUpperBounds(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ObjectFlow> validateSameUpperBounds(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ObjectFlow>() {
-			public boolean apply(ObjectFlow s) {
-				return s.validateSameUpperBounds(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ObjectFlow> validateSameUpperBounds(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ObjectFlow>() {
+      public boolean apply(ObjectFlow s) {
+        return s.validateSameUpperBounds(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * An edge with constant weight may not target an object node, or lead to an object node
@@ -125,13 +126,13 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	 * @see org.eclipse.uml2.uml.ObjectFlow#validateTarget(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ObjectFlow> validateTarget(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ObjectFlow>() {
-			public boolean apply(ObjectFlow s) {
-				return s.validateTarget(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ObjectFlow> validateTarget(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ObjectFlow>() {
+      public boolean apply(ObjectFlow s) {
+        return s.validateTarget(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A transformation behavior has one input parameter and one output parameter. The input
@@ -142,13 +143,13 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	 * @see org.eclipse.uml2.uml.ObjectFlow#validateTransformationBehaviour(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ObjectFlow> validateTransformationBehaviour(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ObjectFlow>() {
-			public boolean apply(ObjectFlow s) {
-				return s.validateTransformationBehaviour(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ObjectFlow> validateTransformationBehaviour(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ObjectFlow>() {
+      public boolean apply(ObjectFlow s) {
+        return s.validateTransformationBehaviour(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * An object flow may have a selection behavior only if has an object node as a source.
@@ -156,13 +157,13 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	 * @see org.eclipse.uml2.uml.ObjectFlow#validateSelectionBehaviour(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ObjectFlow> validateSelectionBehaviour(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ObjectFlow>() {
-			public boolean apply(ObjectFlow s) {
-				return s.validateSelectionBehaviour(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ObjectFlow> validateSelectionBehaviour(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ObjectFlow>() {
+      public boolean apply(ObjectFlow s) {
+        return s.validateSelectionBehaviour(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A selection behavior has one input parameter and one output parameter. The input parameter
@@ -173,13 +174,13 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	 * @see org.eclipse.uml2.uml.ObjectFlow#validateInputAndOutputParameter(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ObjectFlow> validateInputAndOutputParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ObjectFlow>() {
-			public boolean apply(ObjectFlow s) {
-				return s.validateInputAndOutputParameter(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ObjectFlow> validateInputAndOutputParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ObjectFlow>() {
+      public boolean apply(ObjectFlow s) {
+        return s.validateInputAndOutputParameter(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * isMulticast and isMultireceive cannot both be true.
@@ -187,12 +188,12 @@ public class ObjectFlowPath extends ActivityEdgePath {
 	 * @see org.eclipse.uml2.uml.ObjectFlow#validateIsMulticastOrIsMultireceive(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ObjectFlow> validateIsMulticastOrIsMultireceive(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ObjectFlow>() {
-			public boolean apply(ObjectFlow s) {
-				return s.validateIsMulticastOrIsMultireceive(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ObjectFlow> validateIsMulticastOrIsMultireceive(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ObjectFlow>() {
+      public boolean apply(ObjectFlow s) {
+        return s.validateIsMulticastOrIsMultireceive(diagnostics, context);
+      }
+    };
+  }
 
 }

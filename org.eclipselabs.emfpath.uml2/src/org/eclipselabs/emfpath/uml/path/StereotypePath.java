@@ -1,17 +1,18 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.Image;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -29,8 +30,8 @@ public class StereotypePath extends ClassPath {
 	 * @generated
 	 */
 	private StereotypePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Stereotype can change the graphical appearance of the extended model element by using
@@ -40,10 +41,10 @@ public class StereotypePath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Stereotype, EList<Image>> icon = new Function<Stereotype, EList<Image>>() {
-		public EList<Image> apply(Stereotype s) {
-			return s.getIcons();
-		}
-	};
+    public EList<Image> apply(Stereotype s) {
+      return s.getIcons();
+    }
+  };
 	
 	/**
 	 * Stereotype names should not clash with keyword names for the extended model element.
@@ -51,13 +52,13 @@ public class StereotypePath extends ClassPath {
 	 * @see org.eclipse.uml2.uml.Stereotype#validateNameNotClash(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Stereotype> validateNameNotClash(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Stereotype>() {
-			public boolean apply(Stereotype s) {
-				return s.validateNameNotClash(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Stereotype> validateNameNotClash(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Stereotype>() {
+      public boolean apply(Stereotype s) {
+        return s.validateNameNotClash(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A Stereotype may only generalize or specialize another Stereotype.
@@ -67,13 +68,13 @@ public class StereotypePath extends ClassPath {
 	 * @see org.eclipse.uml2.uml.Stereotype#validateGeneralize(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Stereotype> validateGeneralize(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Stereotype>() {
-			public boolean apply(Stereotype s) {
-				return s.validateGeneralize(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Stereotype> validateGeneralize(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Stereotype>() {
+      public boolean apply(Stereotype s) {
+        return s.validateGeneralize(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Creates a(n) (required) extension of the specified metaclass with this stereotype.
@@ -81,12 +82,12 @@ public class StereotypePath extends ClassPath {
 	 * @generated
 	 */
 	public static Function<Stereotype, Extension> createExtension(final Class metaclass, final boolean isRequired) {
-		return new Function<Stereotype, Extension>() {
-			public Extension apply(Stereotype s) {
-				return s.createExtension(metaclass, isRequired);
-			}
-		};
-	}
+    return new Function<Stereotype, Extension>() {
+      public Extension apply(Stereotype s) {
+        return s.createExtension(metaclass, isRequired);
+      }
+    };
+  }
 
 	/**
 	 * Retrieves the profile that owns this stereotype. 
@@ -94,10 +95,10 @@ public class StereotypePath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Stereotype, Profile> getProfile = new Function<Stereotype, Profile>() {
-		public Profile apply(Stereotype s) {
-			return s.getProfile();
-		}
-	};
+    public Profile apply(Stereotype s) {
+      return s.getProfile();
+    }
+  };
 
 	/**
 	 * Retrieves the localized keyword for this stereotype. 
@@ -105,10 +106,10 @@ public class StereotypePath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Stereotype, String> getKeyword = new Function<Stereotype, String>() {
-		public String apply(Stereotype s) {
-			return s.getKeyword();
-		}
-	};
+    public String apply(Stereotype s) {
+      return s.getKeyword();
+    }
+  };
 
 	/**
 	 * Retrieves the keyword for this stereotype, localized if indicated. 
@@ -116,12 +117,12 @@ public class StereotypePath extends ClassPath {
 	 * @generated
 	 */
 	public static Function<Stereotype, String> getKeyword(final boolean localize) {
-		return new Function<Stereotype, String>() {
-			public String apply(Stereotype s) {
-				return s.getKeyword(localize);
-			}
-		};
-	}
+    return new Function<Stereotype, String>() {
+      public String apply(Stereotype s) {
+        return s.getKeyword(localize);
+      }
+    };
+  }
 
 	/**
 	 * Retrieves the metaclasses extended by this stereotype. 
@@ -129,10 +130,10 @@ public class StereotypePath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Stereotype, EList<Class>> getExtendedMetaclasses = new Function<Stereotype, EList<Class>>() {
-		public EList<Class> apply(Stereotype s) {
-			return s.getExtendedMetaclasses();
-		}
-	};
+    public EList<Class> apply(Stereotype s) {
+      return s.getExtendedMetaclasses();
+    }
+  };
 
 	/**
 	 * Retrieves all the metaclasses extended by this stereotype, including the metaclasses
@@ -141,10 +142,10 @@ public class StereotypePath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Stereotype, EList<Class>> getAllExtendedMetaclasses = new Function<Stereotype, EList<Class>>() {
-		public EList<Class> apply(Stereotype s) {
-			return s.getAllExtendedMetaclasses();
-		}
-	};
+    public EList<Class> apply(Stereotype s) {
+      return s.getAllExtendedMetaclasses();
+    }
+  };
 
 	/**
 	 * Retrieves the current definition (Ecore representation) of this stereotype. 
@@ -152,10 +153,10 @@ public class StereotypePath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Stereotype, EClass> getDefinition = new Function<Stereotype, EClass>() {
-		public EClass apply(Stereotype s) {
-			return s.getDefinition();
-		}
-	};
+    public EClass apply(Stereotype s) {
+      return s.getDefinition();
+    }
+  };
 
 	/**
 	 * Creates an icon with the specified location for this stereotype. 
@@ -163,12 +164,12 @@ public class StereotypePath extends ClassPath {
 	 * @generated
 	 */
 	public static Function<Stereotype, Image> createIcon(final String location) {
-		return new Function<Stereotype, Image>() {
-			public Image apply(Stereotype s) {
-				return s.createIcon(location);
-			}
-		};
-	}
+    return new Function<Stereotype, Image>() {
+      public Image apply(Stereotype s) {
+        return s.createIcon(location);
+      }
+    };
+  }
 
 	/**
 	 * Creates an icon with the specified format and content for this stereotype. 
@@ -176,11 +177,11 @@ public class StereotypePath extends ClassPath {
 	 * @generated
 	 */
 	public static Function<Stereotype, Image> createIcon(final String format, final String content) {
-		return new Function<Stereotype, Image>() {
-			public Image apply(Stereotype s) {
-				return s.createIcon(format, content);
-			}
-		};
-	}
+    return new Function<Stereotype, Image>() {
+      public Image apply(Stereotype s) {
+        return s.createIcon(format, content);
+      }
+    };
+  }
 
 }

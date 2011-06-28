@@ -17,8 +17,8 @@ public class CentralBufferNodePath extends ObjectNodePath {
 	 * @generated
 	 */
 	 CentralBufferNodePath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.BroadcastSignalAction;
 import org.eclipse.uml2.uml.Signal;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -27,8 +28,8 @@ public class BroadcastSignalActionPath extends InvocationActionPath {
 	 * @generated
 	 */
 	private BroadcastSignalActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The specification of signal object transmitted to the target objects. 
@@ -36,10 +37,10 @@ public class BroadcastSignalActionPath extends InvocationActionPath {
 	 * @generated
 	 */
 	public static final Function<BroadcastSignalAction, Signal> signal = new Function<BroadcastSignalAction, Signal>() {
-		public Signal apply(BroadcastSignalAction s) {
-			return s.getSignal();
-		}
-	};
+    public Signal apply(BroadcastSignalAction s) {
+      return s.getSignal();
+    }
+  };
 	
 	/**
 	 * The number and order of argument pins must be the same as the number and order of
@@ -48,13 +49,13 @@ public class BroadcastSignalActionPath extends InvocationActionPath {
 	 * @see org.eclipse.uml2.uml.BroadcastSignalAction#validateNumberAndOrder(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<BroadcastSignalAction> validateNumberAndOrder(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<BroadcastSignalAction>() {
-			public boolean apply(BroadcastSignalAction s) {
-				return s.validateNumberAndOrder(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<BroadcastSignalAction> validateNumberAndOrder(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<BroadcastSignalAction>() {
+      public boolean apply(BroadcastSignalAction s) {
+        return s.validateNumberAndOrder(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The type, ordering, and multiplicity of an argument pin must be the same as the corresponding
@@ -63,12 +64,12 @@ public class BroadcastSignalActionPath extends InvocationActionPath {
 	 * @see org.eclipse.uml2.uml.BroadcastSignalAction#validateTypeOrderingMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<BroadcastSignalAction> validateTypeOrderingMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<BroadcastSignalAction>() {
-			public boolean apply(BroadcastSignalAction s) {
-				return s.validateTypeOrderingMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<BroadcastSignalAction> validateTypeOrderingMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<BroadcastSignalAction>() {
+      public boolean apply(BroadcastSignalAction s) {
+        return s.validateTypeOrderingMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 }

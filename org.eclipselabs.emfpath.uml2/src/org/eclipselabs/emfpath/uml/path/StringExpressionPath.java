@@ -1,16 +1,17 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.ParameterableElement;
 import org.eclipse.uml2.uml.StringExpression;
 import org.eclipse.uml2.uml.TemplateBinding;
 import org.eclipse.uml2.uml.TemplateSignature;
 import org.eclipse.uml2.uml.TemplateableElement;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -27,8 +28,8 @@ public class StringExpressionPath extends ExpressionPath {
 	 * @generated
 	 */
 	private StringExpressionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The optional bindings from this element to templates. 
@@ -54,10 +55,10 @@ public class StringExpressionPath extends ExpressionPath {
 	 * @generated
 	 */
 	public static final Function<StringExpression, EList<StringExpression>> subExpression = new Function<StringExpression, EList<StringExpression>>() {
-		public EList<StringExpression> apply(StringExpression s) {
-			return s.getSubExpressions();
-		}
-	};
+    public EList<StringExpression> apply(StringExpression s) {
+      return s.getSubExpressions();
+    }
+  };
 
 	/**
 	 * The string expression of which this expression is a substring. 
@@ -65,10 +66,10 @@ public class StringExpressionPath extends ExpressionPath {
 	 * @generated
 	 */
 	public static final Function<StringExpression, StringExpression> owningExpression = new Function<StringExpression, StringExpression>() {
-		public StringExpression apply(StringExpression s) {
-			return s.getOwningExpression();
-		}
-	};
+    public StringExpression apply(StringExpression s) {
+      return s.getOwningExpression();
+    }
+  };
 	
 	/**
 	 * The query parameterableElements() returns the set of elements that may be used as
@@ -92,7 +93,7 @@ public class StringExpressionPath extends ExpressionPath {
 	 * @see org.eclipse.uml2.uml.TemplateableElement#isTemplate()
 	 * @generated
 	 */
-	public static final Predicate<TemplateableElement> isTemplate = TemplateableElementPath.isTemplate;
+	public static final ComposablePredicate<TemplateableElement> isTemplate = TemplateableElementPath.isTemplate;
 
 	/**
 	 * All the operands of a StringExpression must be LiteralStrings
@@ -101,13 +102,13 @@ public class StringExpressionPath extends ExpressionPath {
 	 * @see org.eclipse.uml2.uml.StringExpression#validateOperands(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<StringExpression> validateOperands(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<StringExpression>() {
-			public boolean apply(StringExpression s) {
-				return s.validateOperands(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<StringExpression> validateOperands(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<StringExpression>() {
+      public boolean apply(StringExpression s) {
+        return s.validateOperands(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If a StringExpression has sub-expressions, it cannot have operands and vice versa
@@ -119,12 +120,12 @@ public class StringExpressionPath extends ExpressionPath {
 	 * @see org.eclipse.uml2.uml.StringExpression#validateSubexpressions(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<StringExpression> validateSubexpressions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<StringExpression>() {
-			public boolean apply(StringExpression s) {
-				return s.validateSubexpressions(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<StringExpression> validateSubexpressions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<StringExpression>() {
+      public boolean apply(StringExpression s) {
+        return s.validateSubexpressions(diagnostics, context);
+      }
+    };
+  }
 
 }

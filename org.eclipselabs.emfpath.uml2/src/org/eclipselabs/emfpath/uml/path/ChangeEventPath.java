@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.ChangeEvent;
 import org.eclipse.uml2.uml.ValueSpecification;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class ChangeEventPath extends EventPath {
 	 * @generated
 	 */
 	private ChangeEventPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * A Boolean-valued expression that will result in a change event whenever its value
@@ -30,10 +30,10 @@ public class ChangeEventPath extends EventPath {
 	 * @generated
 	 */
 	public static final Function<ChangeEvent, ValueSpecification> changeExpression = new Function<ChangeEvent, ValueSpecification>() {
-		public ValueSpecification apply(ChangeEvent s) {
-			return s.getChangeExpression();
-		}
-	};
+    public ValueSpecification apply(ChangeEvent s) {
+      return s.getChangeExpression();
+    }
+  };
 	
 	
 

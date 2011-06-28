@@ -1,12 +1,12 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.DeployedArtifact;
 import org.eclipse.uml2.uml.Deployment;
 import org.eclipse.uml2.uml.DeploymentSpecification;
 import org.eclipse.uml2.uml.DeploymentTarget;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -26,8 +26,8 @@ public class DeploymentPath extends DependencyPath {
 	 * @generated
 	 */
 	private DeploymentPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The Artifacts that are deployed onto a Node. This association specializes the supplier
@@ -36,10 +36,10 @@ public class DeploymentPath extends DependencyPath {
 	 * @generated
 	 */
 	public static final Function<Deployment, EList<DeployedArtifact>> deployedArtifact = new Function<Deployment, EList<DeployedArtifact>>() {
-		public EList<DeployedArtifact> apply(Deployment s) {
-			return s.getDeployedArtifacts();
-		}
-	};
+    public EList<DeployedArtifact> apply(Deployment s) {
+      return s.getDeployedArtifacts();
+    }
+  };
 
 	/**
 	 * The specification of properties that parameterize the deployment and execution of
@@ -48,10 +48,10 @@ public class DeploymentPath extends DependencyPath {
 	 * @generated
 	 */
 	public static final Function<Deployment, EList<DeploymentSpecification>> configuration = new Function<Deployment, EList<DeploymentSpecification>>() {
-		public EList<DeploymentSpecification> apply(Deployment s) {
-			return s.getConfigurations();
-		}
-	};
+    public EList<DeploymentSpecification> apply(Deployment s) {
+      return s.getConfigurations();
+    }
+  };
 
 	/**
 	 * The DeployedTarget which is the target of a Deployment. 
@@ -59,10 +59,10 @@ public class DeploymentPath extends DependencyPath {
 	 * @generated
 	 */
 	public static final Function<Deployment, DeploymentTarget> location = new Function<Deployment, DeploymentTarget>() {
-		public DeploymentTarget apply(Deployment s) {
-			return s.getLocation();
-		}
-	};
+    public DeploymentTarget apply(Deployment s) {
+      return s.getLocation();
+    }
+  };
 	
 	
 

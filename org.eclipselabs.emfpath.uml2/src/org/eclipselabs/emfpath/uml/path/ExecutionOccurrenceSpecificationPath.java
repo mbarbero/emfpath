@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.ExecutionOccurrenceSpecification;
 import org.eclipse.uml2.uml.ExecutionSpecification;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class ExecutionOccurrenceSpecificationPath extends OccurrenceSpecificatio
 	 * @generated
 	 */
 	private ExecutionOccurrenceSpecificationPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * References the execution specification describing the execution that is started or
@@ -30,10 +30,10 @@ public class ExecutionOccurrenceSpecificationPath extends OccurrenceSpecificatio
 	 * @generated
 	 */
 	public static final Function<ExecutionOccurrenceSpecification, ExecutionSpecification> execution = new Function<ExecutionOccurrenceSpecification, ExecutionSpecification>() {
-		public ExecutionSpecification apply(ExecutionOccurrenceSpecification s) {
-			return s.getExecution();
-		}
-	};
+    public ExecutionSpecification apply(ExecutionOccurrenceSpecification s) {
+      return s.getExecution();
+    }
+  };
 	
 	
 

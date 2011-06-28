@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
@@ -20,6 +18,9 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.TemplateParameter;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -56,8 +57,8 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	 PropertyPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The formal template parameter that owns this element. 
@@ -111,10 +112,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, Class> class_ = new Function<Property, Class>() {
-		public Class apply(Property s) {
-			return s.getClass_();
-		}
-	};
+    public Class apply(Property s) {
+      return s.getClass_();
+    }
+  };
 
 	/**
 	 * The DataType that owns this Property. 
@@ -122,10 +123,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, DataType> datatype = new Function<Property, DataType>() {
-		public DataType apply(Property s) {
-			return s.getDatatype();
-		}
-	};
+    public DataType apply(Property s) {
+      return s.getDatatype();
+    }
+  };
 
 	/**
 	 * If isDerived is true, the value of the attribute is derived from information elsewhere.
@@ -135,11 +136,11 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Property#isDerived()
 	 * @generated
 	 */
-	public static final Predicate<Property> isDerived = new Predicate<Property>() {
-		public boolean apply(Property s) {
-			return s.isDerived();
-		}
-	};
+	public static final ComposablePredicate<Property> isDerived = new ComposablePredicate<Property>() {
+    public boolean apply(Property s) {
+      return s.isDerived();
+    }
+  };
 
 	/**
 	 * Specifies whether the property is derived as the union of all of the properties that
@@ -147,11 +148,11 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Property#isDerivedUnion()
 	 * @generated
 	 */
-	public static final Predicate<Property> isDerivedUnion = new Predicate<Property>() {
-		public boolean apply(Property s) {
-			return s.isDerivedUnion();
-		}
-	};
+	public static final ComposablePredicate<Property> isDerivedUnion = new ComposablePredicate<Property>() {
+    public boolean apply(Property s) {
+      return s.isDerivedUnion();
+    }
+  };
 
 	/**
 	 * Specifies a String that represents a value to be used when no argument is supplied
@@ -162,10 +163,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, String> default_ = new Function<Property, String>() {
-		public String apply(Property s) {
-			return s.getDefault();
-		}
-	};
+    public String apply(Property s) {
+      return s.getDefault();
+    }
+  };
 
 	/**
 	 * Specifies the kind of aggregation that applies to the Property. 
@@ -173,10 +174,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, AggregationKind> aggregation = new Function<Property, AggregationKind>() {
-		public AggregationKind apply(Property s) {
-			return s.getAggregation();
-		}
-	};
+    public AggregationKind apply(Property s) {
+      return s.getAggregation();
+    }
+  };
 
 	/**
 	 * If isComposite is true, the object containing the attribute is a container for the
@@ -186,11 +187,11 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Property#isComposite()
 	 * @generated
 	 */
-	public static final Predicate<Property> isComposite = new Predicate<Property>() {
-		public boolean apply(Property s) {
-			return s.isComposite();
-		}
-	};
+	public static final ComposablePredicate<Property> isComposite = new ComposablePredicate<Property>() {
+    public boolean apply(Property s) {
+      return s.isComposite();
+    }
+  };
 
 	/**
 	 * References the properties that are redefined by this property. 
@@ -198,10 +199,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, EList<Property>> redefinedProperty = new Function<Property, EList<Property>>() {
-		public EList<Property> apply(Property s) {
-			return s.getRedefinedProperties();
-		}
-	};
+    public EList<Property> apply(Property s) {
+      return s.getRedefinedProperties();
+    }
+  };
 
 	/**
 	 * References the owning association of this property, if any. 
@@ -209,10 +210,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, Association> owningAssociation = new Function<Property, Association>() {
-		public Association apply(Property s) {
-			return s.getOwningAssociation();
-		}
-	};
+    public Association apply(Property s) {
+      return s.getOwningAssociation();
+    }
+  };
 
 	/**
 	 * A ValueSpecification that is evaluated to give a default value for the Property when
@@ -221,10 +222,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, ValueSpecification> defaultValue = new Function<Property, ValueSpecification>() {
-		public ValueSpecification apply(Property s) {
-			return s.getDefaultValue();
-		}
-	};
+    public ValueSpecification apply(Property s) {
+      return s.getDefaultValue();
+    }
+  };
 
 	/**
 	 * In the case where the property is one navigable end of a binary association with both
@@ -233,10 +234,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, Property> opposite = new Function<Property, Property>() {
-		public Property apply(Property s) {
-			return s.getOpposite();
-		}
-	};
+    public Property apply(Property s) {
+      return s.getOpposite();
+    }
+  };
 
 	/**
 	 * References the properties of which this property is constrained to be a subset. 
@@ -244,10 +245,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, EList<Property>> subsettedProperty = new Function<Property, EList<Property>>() {
-		public EList<Property> apply(Property s) {
-			return s.getSubsettedProperties();
-		}
-	};
+    public EList<Property> apply(Property s) {
+      return s.getSubsettedProperties();
+    }
+  };
 
 	/**
 	 * References the association of which this property is a member, if any. 
@@ -255,10 +256,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, Association> association = new Function<Property, Association>() {
-		public Association apply(Property s) {
-			return s.getAssociation();
-		}
-	};
+    public Association apply(Property s) {
+      return s.getAssociation();
+    }
+  };
 
 	/**
 	 * An optional list of ordered qualifier attributes for the end. If the list is empty,
@@ -267,10 +268,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, EList<Property>> qualifier = new Function<Property, EList<Property>>() {
-		public EList<Property> apply(Property s) {
-			return s.getQualifiers();
-		}
-	};
+    public EList<Property> apply(Property s) {
+      return s.getQualifiers();
+    }
+  };
 
 	/**
 	 * Designates the optional association end that owns a qualifier attribute. 
@@ -278,10 +279,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, Property> associationEnd = new Function<Property, Property>() {
-		public Property apply(Property s) {
-			return s.getAssociationEnd();
-		}
-	};
+    public Property apply(Property s) {
+      return s.getAssociationEnd();
+    }
+  };
 	
 	/**
 	 * The query isCompatibleWith() determines if this parameterable element is compatible
@@ -295,9 +296,9 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.ParameterableElement#isCompatibleWith(ParameterableElement)
 	 * @generated
 	 */
-	public static Predicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
-		return ParameterableElementPath.isCompatibleWith(p);
-	}
+	public static ComposablePredicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
+    return ParameterableElementPath.isCompatibleWith(p);
+  }
 
 	/**
 	 * A multiplicity of a composite aggregation must not have an upper bound greater than
@@ -309,13 +310,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Property#validateMultiplicityOfComposite(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Property> validateMultiplicityOfComposite(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Property>() {
-			public boolean apply(Property s) {
-				return s.validateMultiplicityOfComposite(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Property> validateMultiplicityOfComposite(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Property>() {
+      public boolean apply(Property s) {
+        return s.validateMultiplicityOfComposite(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Subsetting may only occur when the context of the subsetting property conforms to
@@ -329,13 +330,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Property#validateSubsettingContextConforms(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Property> validateSubsettingContextConforms(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Property>() {
-			public boolean apply(Property s) {
-				return s.validateSubsettingContextConforms(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Property> validateSubsettingContextConforms(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Property>() {
+      public boolean apply(Property s) {
+        return s.validateSubsettingContextConforms(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A redefined property must be inherited from a more general classifier containing the
@@ -350,13 +351,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Property#validateRedefinedPropertyInherited(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Property> validateRedefinedPropertyInherited(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Property>() {
-			public boolean apply(Property s) {
-				return s.validateRedefinedPropertyInherited(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Property> validateRedefinedPropertyInherited(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Property>() {
+      public boolean apply(Property s) {
+        return s.validateRedefinedPropertyInherited(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A subsetting property may strengthen the type of the subsetted property, and its upper
@@ -370,13 +371,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Property#validateSubsettingRules(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Property> validateSubsettingRules(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Property>() {
-			public boolean apply(Property s) {
-				return s.validateSubsettingRules(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Property> validateSubsettingRules(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Property>() {
+      public boolean apply(Property s) {
+        return s.validateSubsettingRules(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Only a navigable property can be marked as readOnly.
@@ -384,13 +385,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Property#validateNavigableReadonly(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Property> validateNavigableReadonly(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Property>() {
-			public boolean apply(Property s) {
-				return s.validateNavigableReadonly(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Property> validateNavigableReadonly(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Property>() {
+      public boolean apply(Property s) {
+        return s.validateNavigableReadonly(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A derived union is derived.
@@ -398,13 +399,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Property#validateDerivedUnionIsDerived(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Property> validateDerivedUnionIsDerived(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Property>() {
-			public boolean apply(Property s) {
-				return s.validateDerivedUnionIsDerived(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Property> validateDerivedUnionIsDerived(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Property>() {
+      public boolean apply(Property s) {
+        return s.validateDerivedUnionIsDerived(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A derived union is read only.
@@ -412,13 +413,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Property#validateDerivedUnionIsReadOnly(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Property> validateDerivedUnionIsReadOnly(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Property>() {
-			public boolean apply(Property s) {
-				return s.validateDerivedUnionIsReadOnly(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Property> validateDerivedUnionIsReadOnly(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Property>() {
+      public boolean apply(Property s) {
+        return s.validateDerivedUnionIsReadOnly(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A property may not subset a property with the same name.
@@ -426,13 +427,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Property#validateSubsettedPropertyNames(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Property> validateSubsettedPropertyNames(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Property>() {
-			public boolean apply(Property s) {
-				return s.validateSubsettedPropertyNames(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Property> validateSubsettedPropertyNames(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Property>() {
+      public boolean apply(Property s) {
+        return s.validateSubsettedPropertyNames(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A Property can be a DeploymentTarget if it is a kind of Node and functions as a part
@@ -441,13 +442,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Property#validateDeploymentTarget(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Property> validateDeploymentTarget(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Property>() {
-			public boolean apply(Property s) {
-				return s.validateDeploymentTarget(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Property> validateDeploymentTarget(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Property>() {
+      public boolean apply(Property s) {
+        return s.validateDeploymentTarget(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A binding of a property template parameter representing an attribute must be to an
@@ -458,13 +459,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Property#validateBindingToAttribute(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Property> validateBindingToAttribute(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Property>() {
-			public boolean apply(Property s) {
-				return s.validateBindingToAttribute(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Property> validateBindingToAttribute(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Property>() {
+      public boolean apply(Property s) {
+        return s.validateBindingToAttribute(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -472,21 +473,21 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, String> getDefault = new Function<Property, String>() {
-		public String apply(Property s) {
-			return s.getDefault();
-		}
-	};
+    public String apply(Property s) {
+      return s.getDefault();
+    }
+  };
 
 	/**
 	 * 
 	 * @see org.eclipse.uml2.uml.Property#isSetDefault()
 	 * @generated
 	 */
-	public static final Predicate<Property> isSetDefault = new Predicate<Property>() {
-		public boolean apply(Property s) {
-			return s.isSetDefault();
-		}
-	};
+	public static final ComposablePredicate<Property> isSetDefault = new ComposablePredicate<Property>() {
+    public boolean apply(Property s) {
+      return s.isSetDefault();
+    }
+  };
 
 	/**
 	 * 
@@ -494,13 +495,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static Function<Property, Property> setDefault(final String newDefault) {
-		return new Function<Property, Property>() {
-			public Property apply(Property s) {
-				s.setDefault(newDefault);
-				return s;
-			}
-		};
-	}
+    return new Function<Property, Property>() {
+      public Property apply(Property s) {
+        s.setDefault(newDefault);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -508,13 +509,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static Function<Property, Property> setIsComposite(final boolean newIsComposite) {
-		return new Function<Property, Property>() {
-			public Property apply(Property s) {
-				s.setIsComposite(newIsComposite);
-				return s;
-			}
-		};
-	}
+    return new Function<Property, Property>() {
+      public Property apply(Property s) {
+        s.setIsComposite(newIsComposite);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -522,13 +523,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static Function<Property, Property> setOpposite(final Property newOpposite) {
-		return new Function<Property, Property>() {
-			public Property apply(Property s) {
-				s.setOpposite(newOpposite);
-				return s;
-			}
-		};
-	}
+    return new Function<Property, Property>() {
+      public Property apply(Property s) {
+        s.setOpposite(newOpposite);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -536,11 +537,11 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, Property> unsetDefault = new Function<Property, Property>() {
-		public Property apply(Property s) {
-			s.unsetDefault();
-			return s;
-		}
-	};
+    public Property apply(Property s) {
+      s.unsetDefault();
+      return s;
+    }
+  };
 
 	/**
 	 * Sets the navigability of this property as indicated. 
@@ -548,13 +549,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static Function<Property, Property> setIsNavigable(final boolean isNavigable) {
-		return new Function<Property, Property>() {
-			public Property apply(Property s) {
-				s.setIsNavigable(isNavigable);
-				return s;
-			}
-		};
-	}
+    return new Function<Property, Property>() {
+      public Property apply(Property s) {
+        s.setIsNavigable(isNavigable);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * Retrieves the other end of the (binary) association in which this property is a member
@@ -563,10 +564,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, Property> getOtherEnd = new Function<Property, Property>() {
-		public Property apply(Property s) {
-			return s.getOtherEnd();
-		}
-	};
+    public Property apply(Property s) {
+      return s.getOtherEnd();
+    }
+  };
 
 	/**
 	 * Sets the default value for this property to the specified Boolean value. 
@@ -574,13 +575,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static Function<Property, Property> setBooleanDefaultValue(final boolean value) {
-		return new Function<Property, Property>() {
-			public Property apply(Property s) {
-				s.setBooleanDefaultValue(value);
-				return s;
-			}
-		};
-	}
+    return new Function<Property, Property>() {
+      public Property apply(Property s) {
+        s.setBooleanDefaultValue(value);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * Sets the default value for this property to the specified integer value. 
@@ -588,13 +589,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static Function<Property, Property> setIntegerDefaultValue(final int value) {
-		return new Function<Property, Property>() {
-			public Property apply(Property s) {
-				s.setIntegerDefaultValue(value);
-				return s;
-			}
-		};
-	}
+    return new Function<Property, Property>() {
+      public Property apply(Property s) {
+        s.setIntegerDefaultValue(value);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * Sets the default value for this property to the specified string value. 
@@ -602,13 +603,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static Function<Property, Property> setStringDefaultValue(final String value) {
-		return new Function<Property, Property>() {
-			public Property apply(Property s) {
-				s.setStringDefaultValue(value);
-				return s;
-			}
-		};
-	}
+    return new Function<Property, Property>() {
+      public Property apply(Property s) {
+        s.setStringDefaultValue(value);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * Sets the default value for this property to the specified unlimited natural value.
@@ -616,13 +617,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static Function<Property, Property> setUnlimitedNaturalDefaultValue(final int value) {
-		return new Function<Property, Property>() {
-			public Property apply(Property s) {
-				s.setUnlimitedNaturalDefaultValue(value);
-				return s;
-			}
-		};
-	}
+    return new Function<Property, Property>() {
+      public Property apply(Property s) {
+        s.setUnlimitedNaturalDefaultValue(value);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * Sets the default value for this property to the null value. 
@@ -630,11 +631,11 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, Property> setNullDefaultValue = new Function<Property, Property>() {
-		public Property apply(Property s) {
-			s.setNullDefaultValue();
-			return s;
-		}
-	};
+    public Property apply(Property s) {
+      s.setNullDefaultValue();
+      return s;
+    }
+  };
 
 	/**
 	 * The query isAttribute() is true if the Property is defined as an attribute of some
@@ -643,13 +644,13 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Property#isAttribute(Property)
 	 * @generated
 	 */
-	public static Predicate<Property> isAttribute(final Property p) {
-		return new Predicate<Property>() {
-			public boolean apply(Property s) {
-				return s.isAttribute(p);
-			}
-		};
-	}
+	public static ComposablePredicate<Property> isAttribute(final Property p) {
+    return new ComposablePredicate<Property>() {
+      public boolean apply(Property s) {
+        return s.isAttribute(p);
+      }
+    };
+  }
 
 	/**
 	 * If this property is owned by a class, associated with a binary association, and the
@@ -667,10 +668,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, Property> getOpposite = new Function<Property, Property>() {
-		public Property apply(Property s) {
-			return s.getOpposite();
-		}
-	};
+    public Property apply(Property s) {
+      return s.getOpposite();
+    }
+  };
 
 	/**
 	 * The query subsettingContext() gives the context for subsetting a property. It consists,
@@ -686,10 +687,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Property, EList<Type>> subsettingContext = new Function<Property, EList<Type>>() {
-		public EList<Type> apply(Property s) {
-			return s.subsettingContext();
-		}
-	};
+    public EList<Type> apply(Property s) {
+      return s.subsettingContext();
+    }
+  };
 
 	/**
 	 * The query isNavigable() indicates whether it is possible to navigate across the property.
@@ -698,10 +699,10 @@ public class PropertyPath extends StructuralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Property#isNavigable()
 	 * @generated
 	 */
-	public static final Predicate<Property> isNavigable = new Predicate<Property>() {
-		public boolean apply(Property s) {
-			return s.isNavigable();
-		}
-	};
+	public static final ComposablePredicate<Property> isNavigable = new ComposablePredicate<Property>() {
+    public boolean apply(Property s) {
+      return s.isNavigable();
+    }
+  };
 
 }

@@ -17,8 +17,8 @@ public class ConnectableElementTemplateParameterPath extends TemplateParameterPa
 	 * @generated
 	 */
 	private ConnectableElementTemplateParameterPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

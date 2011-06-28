@@ -16,8 +16,8 @@ public class MessageEventPath extends EventPath {
 	 * @generated
 	 */
 	 MessageEventPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

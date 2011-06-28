@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.CreateLinkObjectAction;
 import org.eclipse.uml2.uml.OutputPin;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -22,8 +23,8 @@ public class CreateLinkObjectActionPath extends CreateLinkActionPath {
 	 * @generated
 	 */
 	private CreateLinkObjectActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Gives the output pin on which the result is put. 
@@ -31,10 +32,10 @@ public class CreateLinkObjectActionPath extends CreateLinkActionPath {
 	 * @generated
 	 */
 	public static final Function<CreateLinkObjectAction, OutputPin> result = new Function<CreateLinkObjectAction, OutputPin>() {
-		public OutputPin apply(CreateLinkObjectAction s) {
-			return s.getResult();
-		}
-	};
+    public OutputPin apply(CreateLinkObjectAction s) {
+      return s.getResult();
+    }
+  };
 	
 	/**
 	 * The association must be an association class.
@@ -42,13 +43,13 @@ public class CreateLinkObjectActionPath extends CreateLinkActionPath {
 	 * @see org.eclipse.uml2.uml.CreateLinkObjectAction#validateAssociationClass(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CreateLinkObjectAction> validateAssociationClass(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CreateLinkObjectAction>() {
-			public boolean apply(CreateLinkObjectAction s) {
-				return s.validateAssociationClass(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CreateLinkObjectAction> validateAssociationClass(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CreateLinkObjectAction>() {
+      public boolean apply(CreateLinkObjectAction s) {
+        return s.validateAssociationClass(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The type of the result pin must be the same as the association of the action.
@@ -57,13 +58,13 @@ public class CreateLinkObjectActionPath extends CreateLinkActionPath {
 	 * @see org.eclipse.uml2.uml.CreateLinkObjectAction#validateTypeOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CreateLinkObjectAction> validateTypeOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CreateLinkObjectAction>() {
-			public boolean apply(CreateLinkObjectAction s) {
-				return s.validateTypeOfResult(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CreateLinkObjectAction> validateTypeOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CreateLinkObjectAction>() {
+      public boolean apply(CreateLinkObjectAction s) {
+        return s.validateTypeOfResult(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The multiplicity of the output pin is 1..1.
@@ -71,12 +72,12 @@ public class CreateLinkObjectActionPath extends CreateLinkActionPath {
 	 * @see org.eclipse.uml2.uml.CreateLinkObjectAction#validateMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CreateLinkObjectAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CreateLinkObjectAction>() {
-			public boolean apply(CreateLinkObjectAction s) {
-				return s.validateMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CreateLinkObjectAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CreateLinkObjectAction>() {
+      public boolean apply(CreateLinkObjectAction s) {
+        return s.validateMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 }

@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.NamedElement;
@@ -14,6 +12,9 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageImport;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.VisibilityKind;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -30,8 +31,8 @@ public class NamespacePath extends NamedElementPath {
 	 * @generated
 	 */
 	 NamespacePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * References the ElementImports owned by the Namespace. 
@@ -39,10 +40,10 @@ public class NamespacePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Namespace, EList<ElementImport>> elementImport = new Function<Namespace, EList<ElementImport>>() {
-		public EList<ElementImport> apply(Namespace s) {
-			return s.getElementImports();
-		}
-	};
+    public EList<ElementImport> apply(Namespace s) {
+      return s.getElementImports();
+    }
+  };
 
 	/**
 	 * References the PackageImports owned by the Namespace. 
@@ -50,10 +51,10 @@ public class NamespacePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Namespace, EList<PackageImport>> packageImport = new Function<Namespace, EList<PackageImport>>() {
-		public EList<PackageImport> apply(Namespace s) {
-			return s.getPackageImports();
-		}
-	};
+    public EList<PackageImport> apply(Namespace s) {
+      return s.getPackageImports();
+    }
+  };
 
 	/**
 	 * Specifies a set of Constraints owned by this Namespace. 
@@ -61,10 +62,10 @@ public class NamespacePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Namespace, EList<Constraint>> ownedRule = new Function<Namespace, EList<Constraint>>() {
-		public EList<Constraint> apply(Namespace s) {
-			return s.getOwnedRules();
-		}
-	};
+    public EList<Constraint> apply(Namespace s) {
+      return s.getOwnedRules();
+    }
+  };
 
 	/**
 	 * A collection of NamedElements identifiable within the Namespace, either by being owned
@@ -73,10 +74,10 @@ public class NamespacePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Namespace, EList<NamedElement>> member = new Function<Namespace, EList<NamedElement>>() {
-		public EList<NamedElement> apply(Namespace s) {
-			return s.getMembers();
-		}
-	};
+    public EList<NamedElement> apply(Namespace s) {
+      return s.getMembers();
+    }
+  };
 
 	/**
 	 * References the PackageableElements that are members of this Namespace as a result
@@ -85,10 +86,10 @@ public class NamespacePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Namespace, EList<PackageableElement>> importedMember = new Function<Namespace, EList<PackageableElement>>() {
-		public EList<PackageableElement> apply(Namespace s) {
-			return s.getImportedMembers();
-		}
-	};
+    public EList<PackageableElement> apply(Namespace s) {
+      return s.getImportedMembers();
+    }
+  };
 
 	/**
 	 * A collection of NamedElements owned by the Namespace. 
@@ -96,10 +97,10 @@ public class NamespacePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Namespace, EList<NamedElement>> ownedMember = new Function<Namespace, EList<NamedElement>>() {
-		public EList<NamedElement> apply(Namespace s) {
-			return s.getOwnedMembers();
-		}
-	};
+    public EList<NamedElement> apply(Namespace s) {
+      return s.getOwnedMembers();
+    }
+  };
 	
 	/**
 	 * All the members of a Namespace are distinguishable within it.
@@ -107,13 +108,13 @@ public class NamespacePath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.Namespace#validateMembersDistinguishable(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Namespace> validateMembersDistinguishable(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Namespace>() {
-			public boolean apply(Namespace s) {
-				return s.validateMembersDistinguishable(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Namespace> validateMembersDistinguishable(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Namespace>() {
+      public boolean apply(Namespace s) {
+        return s.validateMembersDistinguishable(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Creates an import of the specified element into this namespace with the specified
@@ -122,12 +123,12 @@ public class NamespacePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static Function<Namespace, ElementImport> createElementImport(final PackageableElement element, final VisibilityKind visibility) {
-		return new Function<Namespace, ElementImport>() {
-			public ElementImport apply(Namespace s) {
-				return s.createElementImport(element, visibility);
-			}
-		};
-	}
+    return new Function<Namespace, ElementImport>() {
+      public ElementImport apply(Namespace s) {
+        return s.createElementImport(element, visibility);
+      }
+    };
+  }
 
 	/**
 	 * Creates an import of the specified package into this namespace with the specified
@@ -136,12 +137,12 @@ public class NamespacePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static Function<Namespace, PackageImport> createPackageImport(final Package package_, final VisibilityKind visibility) {
-		return new Function<Namespace, PackageImport>() {
-			public PackageImport apply(Namespace s) {
-				return s.createPackageImport(package_, visibility);
-			}
-		};
-	}
+    return new Function<Namespace, PackageImport>() {
+      public PackageImport apply(Namespace s) {
+        return s.createPackageImport(package_, visibility);
+      }
+    };
+  }
 
 	/**
 	 * Retrieves the elements imported by this namespace. 
@@ -149,10 +150,10 @@ public class NamespacePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Namespace, EList<PackageableElement>> getImportedElements = new Function<Namespace, EList<PackageableElement>>() {
-		public EList<PackageableElement> apply(Namespace s) {
-			return s.getImportedElements();
-		}
-	};
+    public EList<PackageableElement> apply(Namespace s) {
+      return s.getImportedElements();
+    }
+  };
 
 	/**
 	 * Retrieves the packages imported by this namespace. 
@@ -160,10 +161,10 @@ public class NamespacePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Namespace, EList<Package>> getImportedPackages = new Function<Namespace, EList<Package>>() {
-		public EList<Package> apply(Namespace s) {
-			return s.getImportedPackages();
-		}
-	};
+    public EList<Package> apply(Namespace s) {
+      return s.getImportedPackages();
+    }
+  };
 
 	/**
 	 * The importedMember property is derived from the ElementImports and the PackageImports.
@@ -176,10 +177,10 @@ public class NamespacePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Namespace, EList<PackageableElement>> getImportedMembers = new Function<Namespace, EList<PackageableElement>>() {
-		public EList<PackageableElement> apply(Namespace s) {
-			return s.getImportedMembers();
-		}
-	};
+    public EList<PackageableElement> apply(Namespace s) {
+      return s.getImportedMembers();
+    }
+  };
 
 	/**
 	 * The query getNamesOfMember() takes importing into account. It gives back the set of
@@ -208,12 +209,12 @@ public class NamespacePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static Function<Namespace, EList<String>> getNamesOfMember(final NamedElement element) {
-		return new Function<Namespace, EList<String>>() {
-			public EList<String> apply(Namespace s) {
-				return s.getNamesOfMember(element);
-			}
-		};
-	}
+    return new Function<Namespace, EList<String>>() {
+      public EList<String> apply(Namespace s) {
+        return s.getNamesOfMember(element);
+      }
+    };
+  }
 
 	/**
 	 * The Boolean query membersAreDistinguishable() determines whether all of the namespace's
@@ -225,11 +226,11 @@ public class NamespacePath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.Namespace#membersAreDistinguishable()
 	 * @generated
 	 */
-	public static final Predicate<Namespace> membersAreDistinguishable = new Predicate<Namespace>() {
-		public boolean apply(Namespace s) {
-			return s.membersAreDistinguishable();
-		}
-	};
+	public static final ComposablePredicate<Namespace> membersAreDistinguishable = new ComposablePredicate<Namespace>() {
+    public boolean apply(Namespace s) {
+      return s.membersAreDistinguishable();
+    }
+  };
 
 	/**
 	 * The query importMembers() defines which of a set of PackageableElements are actually
@@ -243,12 +244,12 @@ public class NamespacePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static Function<Namespace, EList<PackageableElement>> importMembers(final EList<PackageableElement> imps) {
-		return new Function<Namespace, EList<PackageableElement>>() {
-			public EList<PackageableElement> apply(Namespace s) {
-				return s.importMembers(imps);
-			}
-		};
-	}
+    return new Function<Namespace, EList<PackageableElement>>() {
+      public EList<PackageableElement> apply(Namespace s) {
+        return s.importMembers(imps);
+      }
+    };
+  }
 
 	/**
 	 * The query excludeCollisions() excludes from a set of PackageableElements any that
@@ -259,11 +260,11 @@ public class NamespacePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static Function<Namespace, EList<PackageableElement>> excludeCollisions(final EList<PackageableElement> imps) {
-		return new Function<Namespace, EList<PackageableElement>>() {
-			public EList<PackageableElement> apply(Namespace s) {
-				return s.excludeCollisions(imps);
-			}
-		};
-	}
+    return new Function<Namespace, EList<PackageableElement>>() {
+      public EList<PackageableElement> apply(Namespace s) {
+        return s.excludeCollisions(imps);
+      }
+    };
+  }
 
 }

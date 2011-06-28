@@ -1,17 +1,18 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.ParameterableElement;
 import org.eclipse.uml2.uml.Slot;
 import org.eclipse.uml2.uml.TemplateParameter;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -31,8 +32,8 @@ public class InstanceSpecificationPath extends DeploymentTargetPath {
 	 * @generated
 	 */
 	 InstanceSpecificationPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The formal template parameter that owns this element. 
@@ -59,10 +60,10 @@ public class InstanceSpecificationPath extends DeploymentTargetPath {
 	 * @generated
 	 */
 	public static final Function<InstanceSpecification, EList<Classifier>> classifier = new Function<InstanceSpecification, EList<Classifier>>() {
-		public EList<Classifier> apply(InstanceSpecification s) {
-			return s.getClassifiers();
-		}
-	};
+    public EList<Classifier> apply(InstanceSpecification s) {
+      return s.getClassifiers();
+    }
+  };
 
 	/**
 	 * A slot giving the value or values of a structural feature of the instance. An instance
@@ -73,10 +74,10 @@ public class InstanceSpecificationPath extends DeploymentTargetPath {
 	 * @generated
 	 */
 	public static final Function<InstanceSpecification, EList<Slot>> slot = new Function<InstanceSpecification, EList<Slot>>() {
-		public EList<Slot> apply(InstanceSpecification s) {
-			return s.getSlots();
-		}
-	};
+    public EList<Slot> apply(InstanceSpecification s) {
+      return s.getSlots();
+    }
+  };
 
 	/**
 	 * A specification of how to compute, derive, or construct the instance. 
@@ -84,10 +85,10 @@ public class InstanceSpecificationPath extends DeploymentTargetPath {
 	 * @generated
 	 */
 	public static final Function<InstanceSpecification, ValueSpecification> specification = new Function<InstanceSpecification, ValueSpecification>() {
-		public ValueSpecification apply(InstanceSpecification s) {
-			return s.getSpecification();
-		}
-	};
+    public ValueSpecification apply(InstanceSpecification s) {
+      return s.getSpecification();
+    }
+  };
 	
 	/**
 	 * The query isCompatibleWith() determines if this parameterable element is compatible
@@ -101,9 +102,9 @@ public class InstanceSpecificationPath extends DeploymentTargetPath {
 	 * @see org.eclipse.uml2.uml.ParameterableElement#isCompatibleWith(ParameterableElement)
 	 * @generated
 	 */
-	public static Predicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
-		return ParameterableElementPath.isCompatibleWith(p);
-	}
+	public static ComposablePredicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
+    return ParameterableElementPath.isCompatibleWith(p);
+  }
 
 	/**
 	 * The defining feature of each slot is a structural feature (directly or inherited)
@@ -113,13 +114,13 @@ public class InstanceSpecificationPath extends DeploymentTargetPath {
 	 * @see org.eclipse.uml2.uml.InstanceSpecification#validateDefiningFeature(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InstanceSpecification> validateDefiningFeature(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InstanceSpecification>() {
-			public boolean apply(InstanceSpecification s) {
-				return s.validateDefiningFeature(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InstanceSpecification> validateDefiningFeature(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InstanceSpecification>() {
+      public boolean apply(InstanceSpecification s) {
+        return s.validateDefiningFeature(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * One structural feature (including the same feature inherited from multiple classifiers)
@@ -130,13 +131,13 @@ public class InstanceSpecificationPath extends DeploymentTargetPath {
 	 * @see org.eclipse.uml2.uml.InstanceSpecification#validateStructuralFeature(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InstanceSpecification> validateStructuralFeature(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InstanceSpecification>() {
-			public boolean apply(InstanceSpecification s) {
-				return s.validateStructuralFeature(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InstanceSpecification> validateStructuralFeature(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InstanceSpecification>() {
+      public boolean apply(InstanceSpecification s) {
+        return s.validateStructuralFeature(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * An InstanceSpecification can be a DeploymentTarget if it is the instance specification
@@ -145,13 +146,13 @@ public class InstanceSpecificationPath extends DeploymentTargetPath {
 	 * @see org.eclipse.uml2.uml.InstanceSpecification#validateDeploymentTarget(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InstanceSpecification> validateDeploymentTarget(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InstanceSpecification>() {
-			public boolean apply(InstanceSpecification s) {
-				return s.validateDeploymentTarget(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InstanceSpecification> validateDeploymentTarget(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InstanceSpecification>() {
+      public boolean apply(InstanceSpecification s) {
+        return s.validateDeploymentTarget(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * An InstanceSpecification can be a DeployedArtifact if it is the instance specification
@@ -160,12 +161,12 @@ public class InstanceSpecificationPath extends DeploymentTargetPath {
 	 * @see org.eclipse.uml2.uml.InstanceSpecification#validateDeploymentArtifact(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InstanceSpecification> validateDeploymentArtifact(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InstanceSpecification>() {
-			public boolean apply(InstanceSpecification s) {
-				return s.validateDeploymentArtifact(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InstanceSpecification> validateDeploymentArtifact(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InstanceSpecification>() {
+      public boolean apply(InstanceSpecification s) {
+        return s.validateDeploymentArtifact(diagnostics, context);
+      }
+    };
+  }
 
 }

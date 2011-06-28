@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.ActivityGroup;
@@ -13,6 +11,9 @@ import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.ActivityPartition;
 import org.eclipse.uml2.uml.StructuredActivityNode;
 import org.eclipse.uml2.uml.Variable;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -29,8 +30,8 @@ public class ActivityPath extends BehaviorPath {
 	 * @generated
 	 */
 	private ActivityPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Top-level structured nodes in the activity. 
@@ -38,10 +39,10 @@ public class ActivityPath extends BehaviorPath {
 	 * @generated
 	 */
 	public static final Function<Activity, EList<StructuredActivityNode>> structuredNode = new Function<Activity, EList<StructuredActivityNode>>() {
-		public EList<StructuredActivityNode> apply(Activity s) {
-			return s.getStructuredNodes();
-		}
-	};
+    public EList<StructuredActivityNode> apply(Activity s) {
+      return s.getStructuredNodes();
+    }
+  };
 
 	/**
 	 * Top-level variables in the activity. 
@@ -49,10 +50,10 @@ public class ActivityPath extends BehaviorPath {
 	 * @generated
 	 */
 	public static final Function<Activity, EList<Variable>> variable = new Function<Activity, EList<Variable>>() {
-		public EList<Variable> apply(Activity s) {
-			return s.getVariables();
-		}
-	};
+    public EList<Variable> apply(Activity s) {
+      return s.getVariables();
+    }
+  };
 
 	/**
 	 * Nodes coordinated by the activity. 
@@ -60,10 +61,10 @@ public class ActivityPath extends BehaviorPath {
 	 * @generated
 	 */
 	public static final Function<Activity, EList<ActivityNode>> node = new Function<Activity, EList<ActivityNode>>() {
-		public EList<ActivityNode> apply(Activity s) {
-			return s.getNodes();
-		}
-	};
+    public EList<ActivityNode> apply(Activity s) {
+      return s.getNodes();
+    }
+  };
 
 	/**
 	 * If true, this activity must not make any changes to variables outside the activity
@@ -74,11 +75,11 @@ public class ActivityPath extends BehaviorPath {
 	 * @see org.eclipse.uml2.uml.Activity#isReadOnly()
 	 * @generated
 	 */
-	public static final Predicate<Activity> isReadOnly = new Predicate<Activity>() {
-		public boolean apply(Activity s) {
-			return s.isReadOnly();
-		}
-	};
+	public static final ComposablePredicate<Activity> isReadOnly = new ComposablePredicate<Activity>() {
+    public boolean apply(Activity s) {
+      return s.isReadOnly();
+    }
+  };
 
 	/**
 	 * Edges expressing flow between nodes of the activity. 
@@ -86,10 +87,10 @@ public class ActivityPath extends BehaviorPath {
 	 * @generated
 	 */
 	public static final Function<Activity, EList<ActivityEdge>> edge = new Function<Activity, EList<ActivityEdge>>() {
-		public EList<ActivityEdge> apply(Activity s) {
-			return s.getEdges();
-		}
-	};
+    public EList<ActivityEdge> apply(Activity s) {
+      return s.getEdges();
+    }
+  };
 
 	/**
 	 * Top-level partitions in the activity. 
@@ -97,21 +98,21 @@ public class ActivityPath extends BehaviorPath {
 	 * @generated
 	 */
 	public static final Function<Activity, EList<ActivityPartition>> partition = new Function<Activity, EList<ActivityPartition>>() {
-		public EList<ActivityPartition> apply(Activity s) {
-			return s.getPartitions();
-		}
-	};
+    public EList<ActivityPartition> apply(Activity s) {
+      return s.getPartitions();
+    }
+  };
 
 	/**
 	 * If true, all invocations of the activity are handled by the same execution. 
 	 * @see org.eclipse.uml2.uml.Activity#isSingleExecution()
 	 * @generated
 	 */
-	public static final Predicate<Activity> isSingleExecution = new Predicate<Activity>() {
-		public boolean apply(Activity s) {
-			return s.isSingleExecution();
-		}
-	};
+	public static final ComposablePredicate<Activity> isSingleExecution = new ComposablePredicate<Activity>() {
+    public boolean apply(Activity s) {
+      return s.isSingleExecution();
+    }
+  };
 
 	/**
 	 * Top-level groups in the activity. 
@@ -119,10 +120,10 @@ public class ActivityPath extends BehaviorPath {
 	 * @generated
 	 */
 	public static final Function<Activity, EList<ActivityGroup>> group = new Function<Activity, EList<ActivityGroup>>() {
-		public EList<ActivityGroup> apply(Activity s) {
-			return s.getGroups();
-		}
-	};
+    public EList<ActivityGroup> apply(Activity s) {
+      return s.getGroups();
+    }
+  };
 	
 	/**
 	 * The groups of an activity have no supergroups.
@@ -130,13 +131,13 @@ public class ActivityPath extends BehaviorPath {
 	 * @see org.eclipse.uml2.uml.Activity#validateNoSupergroups(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Activity> validateNoSupergroups(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Activity>() {
-			public boolean apply(Activity s) {
-				return s.validateNoSupergroups(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Activity> validateNoSupergroups(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Activity>() {
+      public boolean apply(Activity s) {
+        return s.validateNoSupergroups(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The nodes of the activity must include one ActivityParameterNode for each parameter.
@@ -144,13 +145,13 @@ public class ActivityPath extends BehaviorPath {
 	 * @see org.eclipse.uml2.uml.Activity#validateActivityParameterNode(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Activity> validateActivityParameterNode(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Activity>() {
-			public boolean apply(Activity s) {
-				return s.validateActivityParameterNode(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Activity> validateActivityParameterNode(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Activity>() {
+      public boolean apply(Activity s) {
+        return s.validateActivityParameterNode(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * An activity cannot be autonomous and have a classifier or behavioral feature context
@@ -159,12 +160,12 @@ public class ActivityPath extends BehaviorPath {
 	 * @see org.eclipse.uml2.uml.Activity#validateAutonomous(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Activity> validateAutonomous(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Activity>() {
-			public boolean apply(Activity s) {
-				return s.validateAutonomous(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Activity> validateAutonomous(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Activity>() {
+      public boolean apply(Activity s) {
+        return s.validateAutonomous(diagnostics, context);
+      }
+    };
+  }
 
 }

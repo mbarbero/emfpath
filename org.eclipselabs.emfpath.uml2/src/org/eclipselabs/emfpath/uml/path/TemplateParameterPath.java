@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.ParameterableElement;
 import org.eclipse.uml2.uml.TemplateParameter;
 import org.eclipse.uml2.uml.TemplateSignature;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -24,8 +25,8 @@ public class TemplateParameterPath extends ElementPath {
 	 * @generated
 	 */
 	 TemplateParameterPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The template signature that owns this template parameter. 
@@ -33,10 +34,10 @@ public class TemplateParameterPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<TemplateParameter, TemplateSignature> signature = new Function<TemplateParameter, TemplateSignature>() {
-		public TemplateSignature apply(TemplateParameter s) {
-			return s.getSignature();
-		}
-	};
+    public TemplateSignature apply(TemplateParameter s) {
+      return s.getSignature();
+    }
+  };
 
 	/**
 	 * The element exposed by this template parameter. 
@@ -44,10 +45,10 @@ public class TemplateParameterPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<TemplateParameter, ParameterableElement> parameteredElement = new Function<TemplateParameter, ParameterableElement>() {
-		public ParameterableElement apply(TemplateParameter s) {
-			return s.getParameteredElement();
-		}
-	};
+    public ParameterableElement apply(TemplateParameter s) {
+      return s.getParameteredElement();
+    }
+  };
 
 	/**
 	 * The element that is owned by this template parameter. 
@@ -55,10 +56,10 @@ public class TemplateParameterPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<TemplateParameter, ParameterableElement> ownedParameteredElement = new Function<TemplateParameter, ParameterableElement>() {
-		public ParameterableElement apply(TemplateParameter s) {
-			return s.getOwnedParameteredElement();
-		}
-	};
+    public ParameterableElement apply(TemplateParameter s) {
+      return s.getOwnedParameteredElement();
+    }
+  };
 
 	/**
 	 * The element that is the default for this formal template parameter. 
@@ -66,10 +67,10 @@ public class TemplateParameterPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<TemplateParameter, ParameterableElement> default_ = new Function<TemplateParameter, ParameterableElement>() {
-		public ParameterableElement apply(TemplateParameter s) {
-			return s.getDefault();
-		}
-	};
+    public ParameterableElement apply(TemplateParameter s) {
+      return s.getDefault();
+    }
+  };
 
 	/**
 	 * The element that is owned by this template parameter for the purpose of providing
@@ -78,10 +79,10 @@ public class TemplateParameterPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<TemplateParameter, ParameterableElement> ownedDefault = new Function<TemplateParameter, ParameterableElement>() {
-		public ParameterableElement apply(TemplateParameter s) {
-			return s.getOwnedDefault();
-		}
-	};
+    public ParameterableElement apply(TemplateParameter s) {
+      return s.getOwnedDefault();
+    }
+  };
 	
 	/**
 	 * The default must be compatible with the formal template parameter.
@@ -90,12 +91,12 @@ public class TemplateParameterPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.TemplateParameter#validateMustBeCompatible(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<TemplateParameter> validateMustBeCompatible(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<TemplateParameter>() {
-			public boolean apply(TemplateParameter s) {
-				return s.validateMustBeCompatible(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<TemplateParameter> validateMustBeCompatible(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<TemplateParameter>() {
+      public boolean apply(TemplateParameter s) {
+        return s.validateMustBeCompatible(diagnostics, context);
+      }
+    };
+  }
 
 }

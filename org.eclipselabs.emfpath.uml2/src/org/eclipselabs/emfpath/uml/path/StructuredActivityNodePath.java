@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.ActivityGroup;
@@ -20,6 +18,9 @@ import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.StructuredActivityNode;
 import org.eclipse.uml2.uml.Variable;
 import org.eclipse.uml2.uml.VisibilityKind;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -48,8 +49,8 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @generated
 	 */
 	 StructuredActivityNodePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * References the ElementImports owned by the Namespace. 
@@ -159,10 +160,10 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<StructuredActivityNode, EList<Variable>> variable = new Function<StructuredActivityNode, EList<Variable>>() {
-		public EList<Variable> apply(StructuredActivityNode s) {
-			return s.getVariables();
-		}
-	};
+    public EList<Variable> apply(StructuredActivityNode s) {
+      return s.getVariables();
+    }
+  };
 
 	/**
 	 * Edges immediately contained in the structured node. 
@@ -170,10 +171,10 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<StructuredActivityNode, EList<ActivityEdge>> edge = new Function<StructuredActivityNode, EList<ActivityEdge>>() {
-		public EList<ActivityEdge> apply(StructuredActivityNode s) {
-			return s.getEdges();
-		}
-	};
+    public EList<ActivityEdge> apply(StructuredActivityNode s) {
+      return s.getEdges();
+    }
+  };
 
 	/**
 	 * If true, then the actions in the node execute in isolation from actions outside the
@@ -181,11 +182,11 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.StructuredActivityNode#isMustIsolate()
 	 * @generated
 	 */
-	public static final Predicate<StructuredActivityNode> isMustIsolate = new Predicate<StructuredActivityNode>() {
-		public boolean apply(StructuredActivityNode s) {
-			return s.isMustIsolate();
-		}
-	};
+	public static final ComposablePredicate<StructuredActivityNode> isMustIsolate = new ComposablePredicate<StructuredActivityNode>() {
+    public boolean apply(StructuredActivityNode s) {
+      return s.isMustIsolate();
+    }
+  };
 
 	/**
 	 * Nodes immediately contained in the group. 
@@ -193,10 +194,10 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<StructuredActivityNode, EList<ActivityNode>> node = new Function<StructuredActivityNode, EList<ActivityNode>>() {
-		public EList<ActivityNode> apply(StructuredActivityNode s) {
-			return s.getNodes();
-		}
-	};
+    public EList<ActivityNode> apply(StructuredActivityNode s) {
+      return s.getNodes();
+    }
+  };
 	
 	/**
 	 * All the members of a Namespace are distinguishable within it.
@@ -206,9 +207,9 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.Namespace#validateMembersDistinguishable(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Namespace> validateMembersDistinguishable(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return NamespacePath.validateMembersDistinguishable(diagnostics, context);
-	}
+	public static ComposablePredicate<Namespace> validateMembersDistinguishable(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return NamespacePath.validateMembersDistinguishable(diagnostics, context);
+  }
 
 	/**
 	 * Creates an import of the specified element into this namespace with the specified
@@ -219,8 +220,8 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @generated
 	 */
 	public static Function<Namespace, ElementImport> createElementImport(final PackageableElement element, final VisibilityKind visibility) {
-		return NamespacePath.createElementImport(element, visibility);
-	}
+    return NamespacePath.createElementImport(element, visibility);
+  }
 
 	/**
 	 * Creates an import of the specified package into this namespace with the specified
@@ -231,8 +232,8 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @generated
 	 */
 	public static Function<Namespace, PackageImport> createPackageImport(final Package package_, final VisibilityKind visibility) {
-		return NamespacePath.createPackageImport(package_, visibility);
-	}
+    return NamespacePath.createPackageImport(package_, visibility);
+  }
 
 	/**
 	 * Retrieves the elements imported by this namespace. 
@@ -281,8 +282,8 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @generated
 	 */
 	public static Function<Namespace, EList<String>> getNamesOfMember(final NamedElement element) {
-		return NamespacePath.getNamesOfMember(element);
-	}
+    return NamespacePath.getNamesOfMember(element);
+  }
 
 	/**
 	 * The Boolean query membersAreDistinguishable() determines whether all of the namespace's
@@ -296,7 +297,7 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.Namespace#membersAreDistinguishable()
 	 * @generated
 	 */
-	public static final Predicate<Namespace> membersAreDistinguishable = NamespacePath.membersAreDistinguishable;
+	public static final ComposablePredicate<Namespace> membersAreDistinguishable = NamespacePath.membersAreDistinguishable;
 
 	/**
 	 * The query importMembers() defines which of a set of PackageableElements are actually
@@ -312,8 +313,8 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @generated
 	 */
 	public static Function<Namespace, EList<PackageableElement>> importMembers(final EList<PackageableElement> imps) {
-		return NamespacePath.importMembers(imps);
-	}
+    return NamespacePath.importMembers(imps);
+  }
 
 	/**
 	 * The query excludeCollisions() excludes from a set of PackageableElements any that
@@ -326,8 +327,8 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @generated
 	 */
 	public static Function<Namespace, EList<PackageableElement>> excludeCollisions(final EList<PackageableElement> imps) {
-		return NamespacePath.excludeCollisions(imps);
-	}
+    return NamespacePath.excludeCollisions(imps);
+  }
 
 	/**
 	 * All nodes and edges of the group must be in the same activity as the group.
@@ -337,9 +338,9 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ActivityGroup#validateNodesAndEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityGroup> validateNodesAndEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return ActivityGroupPath.validateNodesAndEdges(diagnostics, context);
-	}
+	public static ComposablePredicate<ActivityGroup> validateNodesAndEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return ActivityGroupPath.validateNodesAndEdges(diagnostics, context);
+  }
 
 	/**
 	 * No node or edge in a group may be contained by its subgroups or its containing groups,
@@ -350,9 +351,9 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ActivityGroup#validateNotContained(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityGroup> validateNotContained(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return ActivityGroupPath.validateNotContained(diagnostics, context);
-	}
+	public static ComposablePredicate<ActivityGroup> validateNotContained(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return ActivityGroupPath.validateNotContained(diagnostics, context);
+  }
 
 	/**
 	 * Groups may only be owned by activities or groups.
@@ -362,9 +363,9 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ActivityGroup#validateGroupOwned(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityGroup> validateGroupOwned(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return ActivityGroupPath.validateGroupOwned(diagnostics, context);
-	}
+	public static ComposablePredicate<ActivityGroup> validateGroupOwned(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return ActivityGroupPath.validateGroupOwned(diagnostics, context);
+  }
 
 	/**
 	 * The edges owned by a structured node must have source and target nodes in the structured
@@ -373,12 +374,12 @@ public class StructuredActivityNodePath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.StructuredActivityNode#validateEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<StructuredActivityNode> validateEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<StructuredActivityNode>() {
-			public boolean apply(StructuredActivityNode s) {
-				return s.validateEdges(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<StructuredActivityNode> validateEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<StructuredActivityNode>() {
+      public boolean apply(StructuredActivityNode s) {
+        return s.validateEdges(diagnostics, context);
+      }
+    };
+  }
 
 }

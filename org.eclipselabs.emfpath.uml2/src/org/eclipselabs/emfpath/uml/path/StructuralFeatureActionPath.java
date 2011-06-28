@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.StructuralFeature;
 import org.eclipse.uml2.uml.StructuralFeatureAction;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +24,8 @@ public class StructuralFeatureActionPath extends ActionPath {
 	 * @generated
 	 */
 	 StructuralFeatureActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Structural feature to be read. 
@@ -32,10 +33,10 @@ public class StructuralFeatureActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<StructuralFeatureAction, StructuralFeature> structuralFeature = new Function<StructuralFeatureAction, StructuralFeature>() {
-		public StructuralFeature apply(StructuralFeatureAction s) {
-			return s.getStructuralFeature();
-		}
-	};
+    public StructuralFeature apply(StructuralFeatureAction s) {
+      return s.getStructuralFeature();
+    }
+  };
 
 	/**
 	 * Gives the input pin from which the object whose structural feature is to be read or
@@ -45,10 +46,10 @@ public class StructuralFeatureActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<StructuralFeatureAction, InputPin> object = new Function<StructuralFeatureAction, InputPin>() {
-		public InputPin apply(StructuralFeatureAction s) {
-			return s.getObject();
-		}
-	};
+    public InputPin apply(StructuralFeatureAction s) {
+      return s.getObject();
+    }
+  };
 	
 	/**
 	 * The structural feature must not be static.
@@ -56,13 +57,13 @@ public class StructuralFeatureActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#validateNotStatic(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<StructuralFeatureAction> validateNotStatic(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<StructuralFeatureAction>() {
-			public boolean apply(StructuralFeatureAction s) {
-				return s.validateNotStatic(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<StructuralFeatureAction> validateNotStatic(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<StructuralFeatureAction>() {
+      public boolean apply(StructuralFeatureAction s) {
+        return s.validateNotStatic(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The type of the object input pin is the same as the classifier of the object passed
@@ -71,13 +72,13 @@ public class StructuralFeatureActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#validateSameType(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<StructuralFeatureAction> validateSameType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<StructuralFeatureAction>() {
-			public boolean apply(StructuralFeatureAction s) {
-				return s.validateSameType(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<StructuralFeatureAction> validateSameType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<StructuralFeatureAction>() {
+      public boolean apply(StructuralFeatureAction s) {
+        return s.validateSameType(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The multiplicity of the input pin must be 1..1.
@@ -85,13 +86,13 @@ public class StructuralFeatureActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#validateMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<StructuralFeatureAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<StructuralFeatureAction>() {
-			public boolean apply(StructuralFeatureAction s) {
-				return s.validateMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<StructuralFeatureAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<StructuralFeatureAction>() {
+      public boolean apply(StructuralFeatureAction s) {
+        return s.validateMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Visibility of structural feature must allow access to the object performing the action.
@@ -107,13 +108,13 @@ public class StructuralFeatureActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#validateVisibility(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<StructuralFeatureAction> validateVisibility(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<StructuralFeatureAction>() {
-			public boolean apply(StructuralFeatureAction s) {
-				return s.validateVisibility(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<StructuralFeatureAction> validateVisibility(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<StructuralFeatureAction>() {
+      public boolean apply(StructuralFeatureAction s) {
+        return s.validateVisibility(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A structural feature has exactly one featuringClassifier.
@@ -122,12 +123,12 @@ public class StructuralFeatureActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.StructuralFeatureAction#validateOneFeaturingClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<StructuralFeatureAction> validateOneFeaturingClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<StructuralFeatureAction>() {
-			public boolean apply(StructuralFeatureAction s) {
-				return s.validateOneFeaturingClassifier(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<StructuralFeatureAction> validateOneFeaturingClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<StructuralFeatureAction>() {
+      public boolean apply(StructuralFeatureAction s) {
+        return s.validateOneFeaturingClassifier(diagnostics, context);
+      }
+    };
+  }
 
 }

@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.VisibilityKind;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class ElementImportPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	private ElementImportPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies the visibility of the imported PackageableElement within the importing Package.
@@ -37,10 +38,10 @@ public class ElementImportPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<ElementImport, VisibilityKind> visibility = new Function<ElementImport, VisibilityKind>() {
-		public VisibilityKind apply(ElementImport s) {
-			return s.getVisibility();
-		}
-	};
+    public VisibilityKind apply(ElementImport s) {
+      return s.getVisibility();
+    }
+  };
 
 	/**
 	 * Specifies the name that should be added to the namespace of the importing package
@@ -51,10 +52,10 @@ public class ElementImportPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<ElementImport, String> alias = new Function<ElementImport, String>() {
-		public String apply(ElementImport s) {
-			return s.getAlias();
-		}
-	};
+    public String apply(ElementImport s) {
+      return s.getAlias();
+    }
+  };
 
 	/**
 	 * Specifies the PackageableElement whose name is to be added to a Namespace. 
@@ -62,10 +63,10 @@ public class ElementImportPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<ElementImport, PackageableElement> importedElement = new Function<ElementImport, PackageableElement>() {
-		public PackageableElement apply(ElementImport s) {
-			return s.getImportedElement();
-		}
-	};
+    public PackageableElement apply(ElementImport s) {
+      return s.getImportedElement();
+    }
+  };
 
 	/**
 	 * Specifies the Namespace that imports a PackageableElement from another Package. 
@@ -73,10 +74,10 @@ public class ElementImportPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<ElementImport, Namespace> importingNamespace = new Function<ElementImport, Namespace>() {
-		public Namespace apply(ElementImport s) {
-			return s.getImportingNamespace();
-		}
-	};
+    public Namespace apply(ElementImport s) {
+      return s.getImportingNamespace();
+    }
+  };
 	
 	/**
 	 * The visibility of an ElementImport is either public or private.
@@ -85,13 +86,13 @@ public class ElementImportPath extends DirectedRelationshipPath {
 	 * @see org.eclipse.uml2.uml.ElementImport#validateVisibilityPublicOrPrivate(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ElementImport> validateVisibilityPublicOrPrivate(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ElementImport>() {
-			public boolean apply(ElementImport s) {
-				return s.validateVisibilityPublicOrPrivate(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ElementImport> validateVisibilityPublicOrPrivate(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ElementImport>() {
+      public boolean apply(ElementImport s) {
+        return s.validateVisibilityPublicOrPrivate(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * An importedElement has either public visibility or no visibility at all.
@@ -100,13 +101,13 @@ public class ElementImportPath extends DirectedRelationshipPath {
 	 * @see org.eclipse.uml2.uml.ElementImport#validateImportedElementIsPublic(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ElementImport> validateImportedElementIsPublic(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ElementImport>() {
-			public boolean apply(ElementImport s) {
-				return s.validateImportedElementIsPublic(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ElementImport> validateImportedElementIsPublic(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ElementImport>() {
+      public boolean apply(ElementImport s) {
+        return s.validateImportedElementIsPublic(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The query getName() returns the name under which the imported PackageableElement will
@@ -121,9 +122,9 @@ public class ElementImportPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<ElementImport, String> getName = new Function<ElementImport, String>() {
-		public String apply(ElementImport s) {
-			return s.getName();
-		}
-	};
+    public String apply(ElementImport s) {
+      return s.getName();
+    }
+  };
 
 }

@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Substitution;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -22,8 +22,8 @@ public class SubstitutionPath extends RealizationPath {
 	 * @generated
 	 */
 	private SubstitutionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The contract with which the substituting classifier complies. 
@@ -31,10 +31,10 @@ public class SubstitutionPath extends RealizationPath {
 	 * @generated
 	 */
 	public static final Function<Substitution, Classifier> contract = new Function<Substitution, Classifier>() {
-		public Classifier apply(Substitution s) {
-			return s.getContract();
-		}
-	};
+    public Classifier apply(Substitution s) {
+      return s.getContract();
+    }
+  };
 
 	/**
 	 * Instances of the substituting classifier are runtime substitutable where instances
@@ -43,10 +43,10 @@ public class SubstitutionPath extends RealizationPath {
 	 * @generated
 	 */
 	public static final Function<Substitution, Classifier> substitutingClassifier = new Function<Substitution, Classifier>() {
-		public Classifier apply(Substitution s) {
-			return s.getSubstitutingClassifier();
-		}
-	};
+    public Classifier apply(Substitution s) {
+      return s.getSubstitutingClassifier();
+    }
+  };
 	
 	
 

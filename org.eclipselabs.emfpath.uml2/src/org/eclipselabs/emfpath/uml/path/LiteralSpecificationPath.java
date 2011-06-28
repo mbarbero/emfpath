@@ -16,8 +16,8 @@ public class LiteralSpecificationPath extends ValueSpecificationPath {
 	 * @generated
 	 */
 	 LiteralSpecificationPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

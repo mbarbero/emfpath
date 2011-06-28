@@ -16,8 +16,8 @@ public class ActivityFinalNodePath extends FinalNodePath {
 	 * @generated
 	 */
 	private ActivityFinalNodePath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

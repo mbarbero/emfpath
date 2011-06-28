@@ -1,16 +1,17 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.RedefinableTemplateSignature;
 import org.eclipse.uml2.uml.TemplateParameter;
 import org.eclipse.uml2.uml.TemplateSignature;
 import org.eclipse.uml2.uml.TemplateableElement;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -27,8 +28,8 @@ public class RedefinableTemplateSignaturePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	private RedefinableTemplateSignaturePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The ordered set of all formal template parameters for this template signature. 
@@ -63,10 +64,10 @@ public class RedefinableTemplateSignaturePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	public static final Function<RedefinableTemplateSignature, EList<RedefinableTemplateSignature>> extendedSignature = new Function<RedefinableTemplateSignature, EList<RedefinableTemplateSignature>>() {
-		public EList<RedefinableTemplateSignature> apply(RedefinableTemplateSignature s) {
-			return s.getExtendedSignatures();
-		}
-	};
+    public EList<RedefinableTemplateSignature> apply(RedefinableTemplateSignature s) {
+      return s.getExtendedSignatures();
+    }
+  };
 
 	/**
 	 * The formal template parameters of the extendedSignature. 
@@ -74,10 +75,10 @@ public class RedefinableTemplateSignaturePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	public static final Function<RedefinableTemplateSignature, EList<TemplateParameter>> inheritedParameter = new Function<RedefinableTemplateSignature, EList<TemplateParameter>>() {
-		public EList<TemplateParameter> apply(RedefinableTemplateSignature s) {
-			return s.getInheritedParameters();
-		}
-	};
+    public EList<TemplateParameter> apply(RedefinableTemplateSignature s) {
+      return s.getInheritedParameters();
+    }
+  };
 
 	/**
 	 * The classifier that owns this template signature. 
@@ -85,10 +86,10 @@ public class RedefinableTemplateSignaturePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	public static final Function<RedefinableTemplateSignature, Classifier> classifier = new Function<RedefinableTemplateSignature, Classifier>() {
-		public Classifier apply(RedefinableTemplateSignature s) {
-			return s.getClassifier();
-		}
-	};
+    public Classifier apply(RedefinableTemplateSignature s) {
+      return s.getClassifier();
+    }
+  };
 	
 	/**
 	 * Parameters must own the elements they parameter or those elements must be owned by
@@ -100,9 +101,9 @@ public class RedefinableTemplateSignaturePath extends RedefinableElementPath {
 	 * @see org.eclipse.uml2.uml.TemplateSignature#validateOwnElements(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<TemplateSignature> validateOwnElements(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return TemplateSignaturePath.validateOwnElements(diagnostics, context);
-	}
+	public static ComposablePredicate<TemplateSignature> validateOwnElements(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return TemplateSignaturePath.validateOwnElements(diagnostics, context);
+  }
 
 	/**
 	 * The inherited parameters are the parameters of the extended template signature.
@@ -111,13 +112,13 @@ public class RedefinableTemplateSignaturePath extends RedefinableElementPath {
 	 * @see org.eclipse.uml2.uml.RedefinableTemplateSignature#validateInheritedParameters(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<RedefinableTemplateSignature> validateInheritedParameters(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<RedefinableTemplateSignature>() {
-			public boolean apply(RedefinableTemplateSignature s) {
-				return s.validateInheritedParameters(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<RedefinableTemplateSignature> validateInheritedParameters(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<RedefinableTemplateSignature>() {
+      public boolean apply(RedefinableTemplateSignature s) {
+        return s.validateInheritedParameters(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -125,9 +126,9 @@ public class RedefinableTemplateSignaturePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	public static final Function<RedefinableTemplateSignature, EList<TemplateParameter>> getInheritedParameters = new Function<RedefinableTemplateSignature, EList<TemplateParameter>>() {
-		public EList<TemplateParameter> apply(RedefinableTemplateSignature s) {
-			return s.getInheritedParameters();
-		}
-	};
+    public EList<TemplateParameter> apply(RedefinableTemplateSignature s) {
+      return s.getInheritedParameters();
+    }
+  };
 
 }

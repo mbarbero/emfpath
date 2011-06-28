@@ -17,8 +17,8 @@ public class EventPath extends PackageableElementPath {
 	 * @generated
 	 */
 	 EventPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

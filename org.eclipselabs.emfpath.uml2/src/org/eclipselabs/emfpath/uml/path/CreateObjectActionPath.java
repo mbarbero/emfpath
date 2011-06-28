@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.CreateObjectAction;
 import org.eclipse.uml2.uml.OutputPin;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -24,8 +25,8 @@ public class CreateObjectActionPath extends ActionPath {
 	 * @generated
 	 */
 	private CreateObjectActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Classifier to be instantiated. 
@@ -33,10 +34,10 @@ public class CreateObjectActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<CreateObjectAction, Classifier> classifier = new Function<CreateObjectAction, Classifier>() {
-		public Classifier apply(CreateObjectAction s) {
-			return s.getClassifier();
-		}
-	};
+    public Classifier apply(CreateObjectAction s) {
+      return s.getClassifier();
+    }
+  };
 
 	/**
 	 * Gives the output pin on which the result is put. 
@@ -44,10 +45,10 @@ public class CreateObjectActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<CreateObjectAction, OutputPin> result = new Function<CreateObjectAction, OutputPin>() {
-		public OutputPin apply(CreateObjectAction s) {
-			return s.getResult();
-		}
-	};
+    public OutputPin apply(CreateObjectAction s) {
+      return s.getResult();
+    }
+  };
 	
 	/**
 	 * The classifier cannot be abstract.
@@ -55,13 +56,13 @@ public class CreateObjectActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.CreateObjectAction#validateClassifierNotAbstract(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CreateObjectAction> validateClassifierNotAbstract(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CreateObjectAction>() {
-			public boolean apply(CreateObjectAction s) {
-				return s.validateClassifierNotAbstract(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CreateObjectAction> validateClassifierNotAbstract(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CreateObjectAction>() {
+      public boolean apply(CreateObjectAction s) {
+        return s.validateClassifierNotAbstract(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The classifier cannot be an association class
@@ -69,13 +70,13 @@ public class CreateObjectActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.CreateObjectAction#validateClassifierNotAssociationClass(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CreateObjectAction> validateClassifierNotAssociationClass(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CreateObjectAction>() {
-			public boolean apply(CreateObjectAction s) {
-				return s.validateClassifierNotAssociationClass(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CreateObjectAction> validateClassifierNotAssociationClass(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CreateObjectAction>() {
+      public boolean apply(CreateObjectAction s) {
+        return s.validateClassifierNotAssociationClass(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The type of the result pin must be the same as the classifier of the action.
@@ -84,13 +85,13 @@ public class CreateObjectActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.CreateObjectAction#validateSameType(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CreateObjectAction> validateSameType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CreateObjectAction>() {
-			public boolean apply(CreateObjectAction s) {
-				return s.validateSameType(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CreateObjectAction> validateSameType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CreateObjectAction>() {
+      public boolean apply(CreateObjectAction s) {
+        return s.validateSameType(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The multiplicity of the output pin is 1..1.
@@ -98,12 +99,12 @@ public class CreateObjectActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.CreateObjectAction#validateMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CreateObjectAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CreateObjectAction>() {
-			public boolean apply(CreateObjectAction s) {
-				return s.validateMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CreateObjectAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CreateObjectAction>() {
+      public boolean apply(CreateObjectAction s) {
+        return s.validateMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 }

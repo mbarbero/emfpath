@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.CallEvent;
 import org.eclipse.uml2.uml.Operation;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -19,8 +19,8 @@ public class CallEventPath extends MessageEventPath {
 	 * @generated
 	 */
 	private CallEventPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Designates the operation whose invocation raised the call event. 
@@ -28,10 +28,10 @@ public class CallEventPath extends MessageEventPath {
 	 * @generated
 	 */
 	public static final Function<CallEvent, Operation> operation = new Function<CallEvent, Operation>() {
-		public Operation apply(CallEvent s) {
-			return s.getOperation();
-		}
-	};
+    public Operation apply(CallEvent s) {
+      return s.getOperation();
+    }
+  };
 	
 	
 

@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.GeneralizationSet;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class GeneralizationSetPath extends PackageableElementPath {
 	 * @generated
 	 */
 	private GeneralizationSetPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Indicates (via the associated Generalizations) whether or not the set of specific
@@ -38,11 +39,11 @@ public class GeneralizationSetPath extends PackageableElementPath {
 	 * @see org.eclipse.uml2.uml.GeneralizationSet#isCovering()
 	 * @generated
 	 */
-	public static final Predicate<GeneralizationSet> isCovering = new Predicate<GeneralizationSet>() {
-		public boolean apply(GeneralizationSet s) {
-			return s.isCovering();
-		}
-	};
+	public static final ComposablePredicate<GeneralizationSet> isCovering = new ComposablePredicate<GeneralizationSet>() {
+    public boolean apply(GeneralizationSet s) {
+      return s.isCovering();
+    }
+  };
 
 	/**
 	 * Indicates whether or not the set of specific Classifiers in a Generalization relationship
@@ -59,11 +60,11 @@ public class GeneralizationSetPath extends PackageableElementPath {
 	 * @see org.eclipse.uml2.uml.GeneralizationSet#isDisjoint()
 	 * @generated
 	 */
-	public static final Predicate<GeneralizationSet> isDisjoint = new Predicate<GeneralizationSet>() {
-		public boolean apply(GeneralizationSet s) {
-			return s.isDisjoint();
-		}
-	};
+	public static final ComposablePredicate<GeneralizationSet> isDisjoint = new ComposablePredicate<GeneralizationSet>() {
+    public boolean apply(GeneralizationSet s) {
+      return s.isDisjoint();
+    }
+  };
 
 	/**
 	 * Designates the Classifier that is defined as the power type for the associated GeneralizationSet.
@@ -71,10 +72,10 @@ public class GeneralizationSetPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<GeneralizationSet, Classifier> powertype = new Function<GeneralizationSet, Classifier>() {
-		public Classifier apply(GeneralizationSet s) {
-			return s.getPowertype();
-		}
-	};
+    public Classifier apply(GeneralizationSet s) {
+      return s.getPowertype();
+    }
+  };
 
 	/**
 	 * Designates the instances of Generalization which are members of a given GeneralizationSet.
@@ -82,10 +83,10 @@ public class GeneralizationSetPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<GeneralizationSet, EList<Generalization>> generalization = new Function<GeneralizationSet, EList<Generalization>>() {
-		public EList<Generalization> apply(GeneralizationSet s) {
-			return s.getGeneralizations();
-		}
-	};
+    public EList<Generalization> apply(GeneralizationSet s) {
+      return s.getGeneralizations();
+    }
+  };
 	
 	/**
 	 * Every Generalization associated with a particular GeneralizationSet must have the
@@ -95,13 +96,13 @@ public class GeneralizationSetPath extends PackageableElementPath {
 	 * @see org.eclipse.uml2.uml.GeneralizationSet#validateGeneralizationSameClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<GeneralizationSet> validateGeneralizationSameClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<GeneralizationSet>() {
-			public boolean apply(GeneralizationSet s) {
-				return s.validateGeneralizationSameClassifier(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<GeneralizationSet> validateGeneralizationSameClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<GeneralizationSet>() {
+      public boolean apply(GeneralizationSet s) {
+        return s.validateGeneralizationSameClassifier(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The Classifier that maps to a GeneralizationSet may neither be a specific nor a general
@@ -112,12 +113,12 @@ public class GeneralizationSetPath extends PackageableElementPath {
 	 * @see org.eclipse.uml2.uml.GeneralizationSet#validateMapsToGeneralizationSet(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<GeneralizationSet> validateMapsToGeneralizationSet(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<GeneralizationSet>() {
-			public boolean apply(GeneralizationSet s) {
-				return s.validateMapsToGeneralizationSet(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<GeneralizationSet> validateMapsToGeneralizationSet(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<GeneralizationSet>() {
+      public boolean apply(GeneralizationSet s) {
+        return s.validateMapsToGeneralizationSet(diagnostics, context);
+      }
+    };
+  }
 
 }

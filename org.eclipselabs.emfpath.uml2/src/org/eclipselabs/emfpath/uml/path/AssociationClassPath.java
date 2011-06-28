@@ -1,17 +1,18 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.AssociationClass;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Relationship;
 import org.eclipse.uml2.uml.Type;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -30,8 +31,8 @@ public class AssociationClassPath extends ClassPath {
 	 * @generated
 	 */
 	private AssociationClassPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies the elements related by the Relationship. 
@@ -69,7 +70,7 @@ public class AssociationClassPath extends ClassPath {
 	 * @see org.eclipse.uml2.uml.Association#isDerived()
 	 * @generated
 	 */
-	public static final Predicate<Association> isDerived = AssociationPath.isDerived;
+	public static final ComposablePredicate<Association> isDerived = AssociationPath.isDerived;
 
 	/**
 	 * References the classifiers that are used as types of the ends of the association.
@@ -98,9 +99,9 @@ public class AssociationClassPath extends ClassPath {
 	 * @see org.eclipse.uml2.uml.Association#validateSpecializedEndNumber(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Association> validateSpecializedEndNumber(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return AssociationPath.validateSpecializedEndNumber(diagnostics, context);
-	}
+	public static ComposablePredicate<Association> validateSpecializedEndNumber(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return AssociationPath.validateSpecializedEndNumber(diagnostics, context);
+  }
 
 	/**
 	 * When an association specializes another association, every end of the specific association
@@ -112,9 +113,9 @@ public class AssociationClassPath extends ClassPath {
 	 * @see org.eclipse.uml2.uml.Association#validateSpecializedEndTypes(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Association> validateSpecializedEndTypes(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return AssociationPath.validateSpecializedEndTypes(diagnostics, context);
-	}
+	public static ComposablePredicate<Association> validateSpecializedEndTypes(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return AssociationPath.validateSpecializedEndTypes(diagnostics, context);
+  }
 
 	/**
 	 * Only binary associations can be aggregations.
@@ -125,9 +126,9 @@ public class AssociationClassPath extends ClassPath {
 	 * @see org.eclipse.uml2.uml.Association#validateBinaryAssociations(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Association> validateBinaryAssociations(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return AssociationPath.validateBinaryAssociations(diagnostics, context);
-	}
+	public static ComposablePredicate<Association> validateBinaryAssociations(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return AssociationPath.validateBinaryAssociations(diagnostics, context);
+  }
 
 	/**
 	 * Association ends of associations with more than two ends must be owned by the association.
@@ -138,9 +139,9 @@ public class AssociationClassPath extends ClassPath {
 	 * @see org.eclipse.uml2.uml.Association#validateAssociationEnds(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Association> validateAssociationEnds(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return AssociationPath.validateAssociationEnds(diagnostics, context);
-	}
+	public static ComposablePredicate<Association> validateAssociationEnds(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return AssociationPath.validateAssociationEnds(diagnostics, context);
+  }
 
 	/**
 	 * Determines whether this association is a binary association, i.e. whether it has exactly
@@ -150,7 +151,7 @@ public class AssociationClassPath extends ClassPath {
 	 * @see org.eclipse.uml2.uml.Association#isBinary()
 	 * @generated
 	 */
-	public static final Predicate<Association> isBinary = AssociationPath.isBinary;
+	public static final ComposablePredicate<Association> isBinary = AssociationPath.isBinary;
 
 	/**
 	 * An AssociationClass cannot be defined between itself and something else.
@@ -159,13 +160,13 @@ public class AssociationClassPath extends ClassPath {
 	 * @see org.eclipse.uml2.uml.AssociationClass#validateCannotBeDefined(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<AssociationClass> validateCannotBeDefined(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<AssociationClass>() {
-			public boolean apply(AssociationClass s) {
-				return s.validateCannotBeDefined(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<AssociationClass> validateCannotBeDefined(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<AssociationClass>() {
+      public boolean apply(AssociationClass s) {
+        return s.validateCannotBeDefined(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The operation allConnections results in the set of all AssociationEnds of the Association.
@@ -175,9 +176,9 @@ public class AssociationClassPath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<AssociationClass, EList<Property>> allConnections = new Function<AssociationClass, EList<Property>>() {
-		public EList<Property> apply(AssociationClass s) {
-			return s.allConnections();
-		}
-	};
+    public EList<Property> apply(AssociationClass s) {
+      return s.allConnections();
+    }
+  };
 
 }

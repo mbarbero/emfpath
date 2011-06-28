@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.ReadVariableAction;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -22,8 +23,8 @@ public class ReadVariableActionPath extends VariableActionPath {
 	 * @generated
 	 */
 	private ReadVariableActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Gives the output pin on which the result is put. 
@@ -31,10 +32,10 @@ public class ReadVariableActionPath extends VariableActionPath {
 	 * @generated
 	 */
 	public static final Function<ReadVariableAction, OutputPin> result = new Function<ReadVariableAction, OutputPin>() {
-		public OutputPin apply(ReadVariableAction s) {
-			return s.getResult();
-		}
-	};
+    public OutputPin apply(ReadVariableAction s) {
+      return s.getResult();
+    }
+  };
 	
 	/**
 	 * The type and ordering of the result output pin of a read-variable action are the same
@@ -46,13 +47,13 @@ public class ReadVariableActionPath extends VariableActionPath {
 	 * @see org.eclipse.uml2.uml.ReadVariableAction#validateTypeAndOrdering(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReadVariableAction> validateTypeAndOrdering(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReadVariableAction>() {
-			public boolean apply(ReadVariableAction s) {
-				return s.validateTypeAndOrdering(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReadVariableAction> validateTypeAndOrdering(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReadVariableAction>() {
+      public boolean apply(ReadVariableAction s) {
+        return s.validateTypeAndOrdering(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The multiplicity of the variable must be compatible with the multiplicity of the output
@@ -61,12 +62,12 @@ public class ReadVariableActionPath extends VariableActionPath {
 	 * @see org.eclipse.uml2.uml.ReadVariableAction#validateCompatibleMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReadVariableAction> validateCompatibleMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReadVariableAction>() {
-			public boolean apply(ReadVariableAction s) {
-				return s.validateCompatibleMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReadVariableAction> validateCompatibleMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReadVariableAction>() {
+      public boolean apply(ReadVariableAction s) {
+        return s.validateCompatibleMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 }

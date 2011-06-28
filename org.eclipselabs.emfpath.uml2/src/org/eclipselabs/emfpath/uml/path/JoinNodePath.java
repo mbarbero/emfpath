@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.JoinNode;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class JoinNodePath extends ControlNodePath {
 	 * @generated
 	 */
 	private JoinNodePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Tells whether tokens having objects with the same identity are combined into one by
@@ -34,11 +35,11 @@ public class JoinNodePath extends ControlNodePath {
 	 * @see org.eclipse.uml2.uml.JoinNode#isCombineDuplicate()
 	 * @generated
 	 */
-	public static final Predicate<JoinNode> isCombineDuplicate = new Predicate<JoinNode>() {
-		public boolean apply(JoinNode s) {
-			return s.isCombineDuplicate();
-		}
-	};
+	public static final ComposablePredicate<JoinNode> isCombineDuplicate = new ComposablePredicate<JoinNode>() {
+    public boolean apply(JoinNode s) {
+      return s.isCombineDuplicate();
+    }
+  };
 
 	/**
 	 * A specification giving the conditions under which the join with emit a token. Default
@@ -47,10 +48,10 @@ public class JoinNodePath extends ControlNodePath {
 	 * @generated
 	 */
 	public static final Function<JoinNode, ValueSpecification> joinSpec = new Function<JoinNode, ValueSpecification>() {
-		public ValueSpecification apply(JoinNode s) {
-			return s.getJoinSpec();
-		}
-	};
+    public ValueSpecification apply(JoinNode s) {
+      return s.getJoinSpec();
+    }
+  };
 	
 	/**
 	 * A join node has one outgoing edge.
@@ -58,13 +59,13 @@ public class JoinNodePath extends ControlNodePath {
 	 * @see org.eclipse.uml2.uml.JoinNode#validateOneOutgoingEdge(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<JoinNode> validateOneOutgoingEdge(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<JoinNode>() {
-			public boolean apply(JoinNode s) {
-				return s.validateOneOutgoingEdge(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<JoinNode> validateOneOutgoingEdge(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<JoinNode>() {
+      public boolean apply(JoinNode s) {
+        return s.validateOneOutgoingEdge(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If a join node has an incoming object flow, it must have an outgoing object flow,
@@ -78,12 +79,12 @@ public class JoinNodePath extends ControlNodePath {
 	 * @see org.eclipse.uml2.uml.JoinNode#validateIncomingObjectFlow(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<JoinNode> validateIncomingObjectFlow(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<JoinNode>() {
-			public boolean apply(JoinNode s) {
-				return s.validateIncomingObjectFlow(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<JoinNode> validateIncomingObjectFlow(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<JoinNode>() {
+      public boolean apply(JoinNode s) {
+        return s.validateIncomingObjectFlow(diagnostics, context);
+      }
+    };
+  }
 
 }

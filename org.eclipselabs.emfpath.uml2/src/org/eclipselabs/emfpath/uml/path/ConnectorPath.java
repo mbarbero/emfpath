@@ -1,16 +1,17 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.ConnectorEnd;
 import org.eclipse.uml2.uml.ConnectorKind;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -43,8 +44,8 @@ public class ConnectorPath extends FeaturePath {
 	 * @generated
 	 */
 	private ConnectorPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * An optional association that specifies the link corresponding to this connector. 
@@ -52,10 +53,10 @@ public class ConnectorPath extends FeaturePath {
 	 * @generated
 	 */
 	public static final Function<Connector, Association> type = new Function<Connector, Association>() {
-		public Association apply(Connector s) {
-			return s.getType();
-		}
-	};
+    public Association apply(Connector s) {
+      return s.getType();
+    }
+  };
 
 	/**
 	 * A connector may be redefined when its containing classifier is specialized. The redefining
@@ -67,10 +68,10 @@ public class ConnectorPath extends FeaturePath {
 	 * @generated
 	 */
 	public static final Function<Connector, EList<Connector>> redefinedConnector = new Function<Connector, EList<Connector>>() {
-		public EList<Connector> apply(Connector s) {
-			return s.getRedefinedConnectors();
-		}
-	};
+    public EList<Connector> apply(Connector s) {
+      return s.getRedefinedConnectors();
+    }
+  };
 
 	/**
 	 * A connector consists of at least two connector ends, each representing the participation
@@ -80,10 +81,10 @@ public class ConnectorPath extends FeaturePath {
 	 * @generated
 	 */
 	public static final Function<Connector, EList<ConnectorEnd>> end = new Function<Connector, EList<ConnectorEnd>>() {
-		public EList<ConnectorEnd> apply(Connector s) {
-			return s.getEnds();
-		}
-	};
+    public EList<ConnectorEnd> apply(Connector s) {
+      return s.getEnds();
+    }
+  };
 
 	/**
 	 * Indicates the kind of connector. 
@@ -91,10 +92,10 @@ public class ConnectorPath extends FeaturePath {
 	 * @generated
 	 */
 	public static final Function<Connector, ConnectorKind> kind = new Function<Connector, ConnectorKind>() {
-		public ConnectorKind apply(Connector s) {
-			return s.getKind();
-		}
-	};
+    public ConnectorKind apply(Connector s) {
+      return s.getKind();
+    }
+  };
 
 	/**
 	 * The set of Behaviors that specify the valid interaction patterns across the connector.
@@ -102,10 +103,10 @@ public class ConnectorPath extends FeaturePath {
 	 * @generated
 	 */
 	public static final Function<Connector, EList<Behavior>> contract = new Function<Connector, EList<Behavior>>() {
-		public EList<Behavior> apply(Connector s) {
-			return s.getContracts();
-		}
-	};
+    public EList<Behavior> apply(Connector s) {
+      return s.getContracts();
+    }
+  };
 	
 	/**
 	 * The types of the connectable elements that the ends of a connector are attached to
@@ -115,13 +116,13 @@ public class ConnectorPath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.Connector#validateTypes(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Connector> validateTypes(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Connector>() {
-			public boolean apply(Connector s) {
-				return s.validateTypes(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Connector> validateTypes(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Connector>() {
+      public boolean apply(Connector s) {
+        return s.validateTypes(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The connectable elements attached to the ends of a connector must be compatible.
@@ -129,13 +130,13 @@ public class ConnectorPath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.Connector#validateCompatible(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Connector> validateCompatible(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Connector>() {
-			public boolean apply(Connector s) {
-				return s.validateCompatible(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Connector> validateCompatible(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Connector>() {
+      public boolean apply(Connector s) {
+        return s.validateCompatible(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The ConnectableElements attached as roles to each ConnectorEnd owned by a Connector
@@ -145,13 +146,13 @@ public class ConnectorPath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.Connector#validateRoles(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Connector> validateRoles(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Connector>() {
-			public boolean apply(Connector s) {
-				return s.validateRoles(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Connector> validateRoles(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Connector>() {
+      public boolean apply(Connector s) {
+        return s.validateRoles(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A delegation connector must only be defined between used Interfaces or Ports of the
@@ -160,13 +161,13 @@ public class ConnectorPath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.Connector#validateBetweenInterfacesPorts(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Connector> validateBetweenInterfacesPorts(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Connector>() {
-			public boolean apply(Connector s) {
-				return s.validateBetweenInterfacesPorts(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Connector> validateBetweenInterfacesPorts(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Connector>() {
+      public boolean apply(Connector s) {
+        return s.validateBetweenInterfacesPorts(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If a delegation connector is defined between a used Interface or Port and an internal
@@ -176,13 +177,13 @@ public class ConnectorPath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.Connector#validateBetweenInterfacePortImplements(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Connector> validateBetweenInterfacePortImplements(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Connector>() {
-			public boolean apply(Connector s) {
-				return s.validateBetweenInterfacePortImplements(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Connector> validateBetweenInterfacePortImplements(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Connector>() {
+      public boolean apply(Connector s) {
+        return s.validateBetweenInterfacePortImplements(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If a delegation connector is defined between a source Interface or Port and a target
@@ -192,13 +193,13 @@ public class ConnectorPath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.Connector#validateBetweenInterfacePortSignature(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Connector> validateBetweenInterfacePortSignature(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Connector>() {
-			public boolean apply(Connector s) {
-				return s.validateBetweenInterfacePortSignature(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Connector> validateBetweenInterfacePortSignature(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Connector>() {
+      public boolean apply(Connector s) {
+        return s.validateBetweenInterfacePortSignature(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * In a complete model, if a source Port has delegation connectors to a set of delegated
@@ -208,13 +209,13 @@ public class ConnectorPath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.Connector#validateUnionSignatureCompatible(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Connector> validateUnionSignatureCompatible(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Connector>() {
-			public boolean apply(Connector s) {
-				return s.validateUnionSignatureCompatible(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Connector> validateUnionSignatureCompatible(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Connector>() {
+      public boolean apply(Connector s) {
+        return s.validateUnionSignatureCompatible(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * An assembly connector must only be defined from a required Interface or Ports to a
@@ -223,12 +224,12 @@ public class ConnectorPath extends FeaturePath {
 	 * @see org.eclipse.uml2.uml.Connector#validateAssemblyConnector(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Connector> validateAssemblyConnector(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Connector>() {
-			public boolean apply(Connector s) {
-				return s.validateAssemblyConnector(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Connector> validateAssemblyConnector(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Connector>() {
+      public boolean apply(Connector s) {
+        return s.validateAssemblyConnector(diagnostics, context);
+      }
+    };
+  }
 
 }

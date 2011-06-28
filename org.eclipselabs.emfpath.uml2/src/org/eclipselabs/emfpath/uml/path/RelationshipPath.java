@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Relationship;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -21,8 +21,8 @@ public class RelationshipPath extends ElementPath {
 	 * @generated
 	 */
 	 RelationshipPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies the elements related by the Relationship. 
@@ -30,10 +30,10 @@ public class RelationshipPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<Relationship, EList<Element>> relatedElement = new Function<Relationship, EList<Element>>() {
-		public EList<Element> apply(Relationship s) {
-			return s.getRelatedElements();
-		}
-	};
+    public EList<Element> apply(Relationship s) {
+      return s.getRelatedElements();
+    }
+  };
 	
 	
 

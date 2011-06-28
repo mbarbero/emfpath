@@ -1,15 +1,16 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.TemplateBinding;
 import org.eclipse.uml2.uml.TemplateParameterSubstitution;
 import org.eclipse.uml2.uml.TemplateSignature;
 import org.eclipse.uml2.uml.TemplateableElement;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -27,8 +28,8 @@ public class TemplateBindingPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	private TemplateBindingPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The template signature for the template that is the target of the binding. 
@@ -36,10 +37,10 @@ public class TemplateBindingPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<TemplateBinding, TemplateSignature> signature = new Function<TemplateBinding, TemplateSignature>() {
-		public TemplateSignature apply(TemplateBinding s) {
-			return s.getSignature();
-		}
-	};
+    public TemplateSignature apply(TemplateBinding s) {
+      return s.getSignature();
+    }
+  };
 
 	/**
 	 * The parameter substitutions owned by this template binding. 
@@ -47,10 +48,10 @@ public class TemplateBindingPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<TemplateBinding, EList<TemplateParameterSubstitution>> parameterSubstitution = new Function<TemplateBinding, EList<TemplateParameterSubstitution>>() {
-		public EList<TemplateParameterSubstitution> apply(TemplateBinding s) {
-			return s.getParameterSubstitutions();
-		}
-	};
+    public EList<TemplateParameterSubstitution> apply(TemplateBinding s) {
+      return s.getParameterSubstitutions();
+    }
+  };
 
 	/**
 	 * The element that is bound by this binding. 
@@ -58,10 +59,10 @@ public class TemplateBindingPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<TemplateBinding, TemplateableElement> boundElement = new Function<TemplateBinding, TemplateableElement>() {
-		public TemplateableElement apply(TemplateBinding s) {
-			return s.getBoundElement();
-		}
-	};
+    public TemplateableElement apply(TemplateBinding s) {
+      return s.getBoundElement();
+    }
+  };
 	
 	/**
 	 * Each parameter substitution must refer to a formal template parameter of the target
@@ -70,13 +71,13 @@ public class TemplateBindingPath extends DirectedRelationshipPath {
 	 * @see org.eclipse.uml2.uml.TemplateBinding#validateParameterSubstitutionFormal(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<TemplateBinding> validateParameterSubstitutionFormal(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<TemplateBinding>() {
-			public boolean apply(TemplateBinding s) {
-				return s.validateParameterSubstitutionFormal(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<TemplateBinding> validateParameterSubstitutionFormal(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<TemplateBinding>() {
+      public boolean apply(TemplateBinding s) {
+        return s.validateParameterSubstitutionFormal(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A binding contains at most one parameter substitution for each formal template parameter
@@ -86,12 +87,12 @@ public class TemplateBindingPath extends DirectedRelationshipPath {
 	 * @see org.eclipse.uml2.uml.TemplateBinding#validateOneParameterSubstitution(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<TemplateBinding> validateOneParameterSubstitution(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<TemplateBinding>() {
-			public boolean apply(TemplateBinding s) {
-				return s.validateOneParameterSubstitution(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<TemplateBinding> validateOneParameterSubstitution(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<TemplateBinding>() {
+      public boolean apply(TemplateBinding s) {
+        return s.validateOneParameterSubstitution(diagnostics, context);
+      }
+    };
+  }
 
 }

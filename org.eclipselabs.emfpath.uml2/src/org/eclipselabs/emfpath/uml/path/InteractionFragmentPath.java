@@ -1,13 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.GeneralOrdering;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
 import org.eclipse.uml2.uml.InteractionOperand;
 import org.eclipse.uml2.uml.Lifeline;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +25,8 @@ public class InteractionFragmentPath extends NamedElementPath {
 	 * @generated
 	 */
 	 InteractionFragmentPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * References the Lifelines that the InteractionFragment involves. 
@@ -34,10 +34,10 @@ public class InteractionFragmentPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<InteractionFragment, EList<Lifeline>> covered = new Function<InteractionFragment, EList<Lifeline>>() {
-		public EList<Lifeline> apply(InteractionFragment s) {
-			return s.getCovereds();
-		}
-	};
+    public EList<Lifeline> apply(InteractionFragment s) {
+      return s.getCovereds();
+    }
+  };
 
 	/**
 	 * The general ordering relationships contained in this fragment. 
@@ -45,10 +45,10 @@ public class InteractionFragmentPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<InteractionFragment, EList<GeneralOrdering>> generalOrdering = new Function<InteractionFragment, EList<GeneralOrdering>>() {
-		public EList<GeneralOrdering> apply(InteractionFragment s) {
-			return s.getGeneralOrderings();
-		}
-	};
+    public EList<GeneralOrdering> apply(InteractionFragment s) {
+      return s.getGeneralOrderings();
+    }
+  };
 
 	/**
 	 * The Interaction enclosing this InteractionFragment. 
@@ -56,10 +56,10 @@ public class InteractionFragmentPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<InteractionFragment, Interaction> enclosingInteraction = new Function<InteractionFragment, Interaction>() {
-		public Interaction apply(InteractionFragment s) {
-			return s.getEnclosingInteraction();
-		}
-	};
+    public Interaction apply(InteractionFragment s) {
+      return s.getEnclosingInteraction();
+    }
+  };
 
 	/**
 	 * The operand enclosing this InteractionFragment (they may nest recursively) 
@@ -67,10 +67,10 @@ public class InteractionFragmentPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<InteractionFragment, InteractionOperand> enclosingOperand = new Function<InteractionFragment, InteractionOperand>() {
-		public InteractionOperand apply(InteractionFragment s) {
-			return s.getEnclosingOperand();
-		}
-	};
+    public InteractionOperand apply(InteractionFragment s) {
+      return s.getEnclosingOperand();
+    }
+  };
 	
 	
 

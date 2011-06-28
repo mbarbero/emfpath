@@ -1,16 +1,17 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.Type;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -28,8 +29,8 @@ public class StructuredClassifierPath extends ClassifierPath {
 	 * @generated
 	 */
 	 StructuredClassifierPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * References the properties owned by the classifier. 
@@ -37,10 +38,10 @@ public class StructuredClassifierPath extends ClassifierPath {
 	 * @generated
 	 */
 	public static final Function<StructuredClassifier, EList<Property>> ownedAttribute = new Function<StructuredClassifier, EList<Property>>() {
-		public EList<Property> apply(StructuredClassifier s) {
-			return s.getOwnedAttributes();
-		}
-	};
+    public EList<Property> apply(StructuredClassifier s) {
+      return s.getOwnedAttributes();
+    }
+  };
 
 	/**
 	 * References the properties specifying instances that the classifier owns by composition.
@@ -50,10 +51,10 @@ public class StructuredClassifierPath extends ClassifierPath {
 	 * @generated
 	 */
 	public static final Function<StructuredClassifier, EList<Property>> part = new Function<StructuredClassifier, EList<Property>>() {
-		public EList<Property> apply(StructuredClassifier s) {
-			return s.getParts();
-		}
-	};
+    public EList<Property> apply(StructuredClassifier s) {
+      return s.getParts();
+    }
+  };
 
 	/**
 	 * References the roles that instances may play in this classifier. 
@@ -61,10 +62,10 @@ public class StructuredClassifierPath extends ClassifierPath {
 	 * @generated
 	 */
 	public static final Function<StructuredClassifier, EList<ConnectableElement>> role = new Function<StructuredClassifier, EList<ConnectableElement>>() {
-		public EList<ConnectableElement> apply(StructuredClassifier s) {
-			return s.getRoles();
-		}
-	};
+    public EList<ConnectableElement> apply(StructuredClassifier s) {
+      return s.getRoles();
+    }
+  };
 
 	/**
 	 * References the connectors owned by the classifier. 
@@ -72,10 +73,10 @@ public class StructuredClassifierPath extends ClassifierPath {
 	 * @generated
 	 */
 	public static final Function<StructuredClassifier, EList<Connector>> ownedConnector = new Function<StructuredClassifier, EList<Connector>>() {
-		public EList<Connector> apply(StructuredClassifier s) {
-			return s.getOwnedConnectors();
-		}
-	};
+    public EList<Connector> apply(StructuredClassifier s) {
+      return s.getOwnedConnectors();
+    }
+  };
 	
 	/**
 	 * The multiplicities on connected elements must be consistent.
@@ -83,13 +84,13 @@ public class StructuredClassifierPath extends ClassifierPath {
 	 * @see org.eclipse.uml2.uml.StructuredClassifier#validateMultiplicities(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<StructuredClassifier> validateMultiplicities(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<StructuredClassifier>() {
-			public boolean apply(StructuredClassifier s) {
-				return s.validateMultiplicities(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<StructuredClassifier> validateMultiplicities(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<StructuredClassifier>() {
+      public boolean apply(StructuredClassifier s) {
+        return s.validateMultiplicities(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Creates a property with the specified name, type, lower bound, and upper bound as
@@ -98,11 +99,11 @@ public class StructuredClassifierPath extends ClassifierPath {
 	 * @generated
 	 */
 	public static Function<StructuredClassifier, Property> createOwnedAttribute(final String name, final Type type, final int lower, final int upper) {
-		return new Function<StructuredClassifier, Property>() {
-			public Property apply(StructuredClassifier s) {
-				return s.createOwnedAttribute(name, type, lower, upper);
-			}
-		};
-	}
+    return new Function<StructuredClassifier, Property>() {
+      public Property apply(StructuredClassifier s) {
+        return s.createOwnedAttribute(name, type, lower, upper);
+      }
+    };
+  }
 
 }

@@ -18,8 +18,8 @@ public class AnyReceiveEventPath extends MessageEventPath {
 	 * @generated
 	 */
 	private AnyReceiveEventPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.OutputPin;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class OutputPinPath extends PinPath {
 	 * @generated
 	 */
 	private OutputPinPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	
@@ -32,12 +32,12 @@ public class OutputPinPath extends PinPath {
 	 * @see org.eclipse.uml2.uml.OutputPin#validateIncomingEdgesStructuredOnly(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<OutputPin> validateIncomingEdgesStructuredOnly(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<OutputPin>() {
-			public boolean apply(OutputPin s) {
-				return s.validateIncomingEdgesStructuredOnly(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<OutputPin> validateIncomingEdgesStructuredOnly(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<OutputPin>() {
+      public boolean apply(OutputPin s) {
+        return s.validateIncomingEdgesStructuredOnly(diagnostics, context);
+      }
+    };
+  }
 
 }

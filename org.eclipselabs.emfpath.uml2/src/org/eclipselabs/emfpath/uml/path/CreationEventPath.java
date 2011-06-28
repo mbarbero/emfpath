@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.CreationEvent;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class CreationEventPath extends EventPath {
 	 * @generated
 	 */
 	private CreationEventPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	
@@ -32,12 +32,12 @@ public class CreationEventPath extends EventPath {
 	 * @see org.eclipse.uml2.uml.CreationEvent#validateNoOccurrenceAbove(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CreationEvent> validateNoOccurrenceAbove(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CreationEvent>() {
-			public boolean apply(CreationEvent s) {
-				return s.validateNoOccurrenceAbove(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CreationEvent> validateNoOccurrenceAbove(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CreationEvent>() {
+      public boolean apply(CreationEvent s) {
+        return s.validateNoOccurrenceAbove(diagnostics, context);
+      }
+    };
+  }
 
 }

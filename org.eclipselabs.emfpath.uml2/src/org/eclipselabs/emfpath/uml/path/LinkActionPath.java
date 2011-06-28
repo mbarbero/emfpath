@@ -1,15 +1,16 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.LinkAction;
 import org.eclipse.uml2.uml.LinkEndData;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -26,8 +27,8 @@ public class LinkActionPath extends ActionPath {
 	 * @generated
 	 */
 	 LinkActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Data identifying one end of a link by the objects on its ends and qualifiers. 
@@ -35,10 +36,10 @@ public class LinkActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<LinkAction, EList<LinkEndData>> endData = new Function<LinkAction, EList<LinkEndData>>() {
-		public EList<LinkEndData> apply(LinkAction s) {
-			return s.getEndData();
-		}
-	};
+    public EList<LinkEndData> apply(LinkAction s) {
+      return s.getEndData();
+    }
+  };
 
 	/**
 	 * Pins taking end objects and qualifier values as input. 
@@ -46,10 +47,10 @@ public class LinkActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<LinkAction, EList<InputPin>> inputValue = new Function<LinkAction, EList<InputPin>>() {
-		public EList<InputPin> apply(LinkAction s) {
-			return s.getInputValues();
-		}
-	};
+    public EList<InputPin> apply(LinkAction s) {
+      return s.getInputValues();
+    }
+  };
 	
 	/**
 	 * The association ends of the link end data must all be from the same association and
@@ -59,13 +60,13 @@ public class LinkActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.LinkAction#validateSameAssociation(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<LinkAction> validateSameAssociation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<LinkAction>() {
-			public boolean apply(LinkAction s) {
-				return s.validateSameAssociation(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<LinkAction> validateSameAssociation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<LinkAction>() {
+      public boolean apply(LinkAction s) {
+        return s.validateSameAssociation(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The association ends of the link end data must not be static.
@@ -74,13 +75,13 @@ public class LinkActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.LinkAction#validateNotStatic(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<LinkAction> validateNotStatic(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<LinkAction>() {
-			public boolean apply(LinkAction s) {
-				return s.validateNotStatic(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<LinkAction> validateNotStatic(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<LinkAction>() {
+      public boolean apply(LinkAction s) {
+        return s.validateNotStatic(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The input pins of the action are the same as the pins of the link end data and insertion
@@ -96,13 +97,13 @@ public class LinkActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.LinkAction#validateSamePins(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<LinkAction> validateSamePins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<LinkAction>() {
-			public boolean apply(LinkAction s) {
-				return s.validateSamePins(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<LinkAction> validateSamePins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<LinkAction>() {
+      public boolean apply(LinkAction s) {
+        return s.validateSamePins(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The association operates on LinkAction. It returns the association of the action.
@@ -112,9 +113,9 @@ public class LinkActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<LinkAction, Association> association = new Function<LinkAction, Association>() {
-		public Association apply(LinkAction s) {
-			return s.association();
-		}
-	};
+    public Association apply(LinkAction s) {
+      return s.association();
+    }
+  };
 
 }

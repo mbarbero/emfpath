@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.DurationObservation;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class DurationObservationPath extends ObservationPath {
 	 * @generated
 	 */
 	private DurationObservationPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The observation is determined by the entering or exiting of the event element during
@@ -35,10 +36,10 @@ public class DurationObservationPath extends ObservationPath {
 	 * @generated
 	 */
 	public static final Function<DurationObservation, EList<NamedElement>> event = new Function<DurationObservation, EList<NamedElement>>() {
-		public EList<NamedElement> apply(DurationObservation s) {
-			return s.getEvents();
-		}
-	};
+    public EList<NamedElement> apply(DurationObservation s) {
+      return s.getEvents();
+    }
+  };
 
 	/**
 	 * The value of firstEvent[i] is related to event[i] (where i is 1 or 2). If firstEvent[i]
@@ -50,10 +51,10 @@ public class DurationObservationPath extends ObservationPath {
 	 * @generated
 	 */
 	public static final Function<DurationObservation, EList<java.lang.Boolean>> firstEvent = new Function<DurationObservation, EList<java.lang.Boolean>>() {
-		public EList<java.lang.Boolean> apply(DurationObservation s) {
-			return s.getFirstEvents();
-		}
-	};
+    public EList<java.lang.Boolean> apply(DurationObservation s) {
+      return s.getFirstEvents();
+    }
+  };
 	
 	/**
 	 * The multiplicity of firstEvent must be 2 if the multiplicity of event is 2. Otherwise
@@ -64,12 +65,12 @@ public class DurationObservationPath extends ObservationPath {
 	 * @see org.eclipse.uml2.uml.DurationObservation#validateFirstEventMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<DurationObservation> validateFirstEventMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<DurationObservation>() {
-			public boolean apply(DurationObservation s) {
-				return s.validateFirstEventMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<DurationObservation> validateFirstEventMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<DurationObservation>() {
+      public boolean apply(DurationObservation s) {
+        return s.validateFirstEventMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 }
