@@ -2,12 +2,12 @@ package org.eclipselabs.emfpath.ecore.path;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipselabs.emfpath.ecore.internal.i18n.Messages;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 import org.eclipselabs.emfpath.ecore.exception.NoSuchFeatureException;
+import org.eclipselabs.emfpath.ecore.internal.i18n.Messages;
 
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
-import com.google.common.base.Predicate;
 import com.google.common.base.Strings;
 
 /**
@@ -28,7 +28,7 @@ public class EStructuralFeatures extends ETypedElements {
    * @see org.eclipse.emf.ecore.EStructuralFeature#isChangeable()
    * @generated
    */
-  public static final Predicate<EStructuralFeature> isChangeable = new Predicate<EStructuralFeature>() {
+  public static final ComposablePredicate<EStructuralFeature> isChangeable = new ComposablePredicate<EStructuralFeature>() {
     public boolean apply(EStructuralFeature s) {
       return s.isChangeable();
     }
@@ -38,7 +38,7 @@ public class EStructuralFeatures extends ETypedElements {
    * @see org.eclipse.emf.ecore.EStructuralFeature#isVolatile()
    * @generated
    */
-  public static final Predicate<EStructuralFeature> isVolatile = new Predicate<EStructuralFeature>() {
+  public static final ComposablePredicate<EStructuralFeature> isVolatile = new ComposablePredicate<EStructuralFeature>() {
     public boolean apply(EStructuralFeature s) {
       return s.isVolatile();
     }
@@ -48,7 +48,7 @@ public class EStructuralFeatures extends ETypedElements {
    * @see org.eclipse.emf.ecore.EStructuralFeature#isTransient()
    * @generated
    */
-  public static final Predicate<EStructuralFeature> isTransient = new Predicate<EStructuralFeature>() {
+  public static final ComposablePredicate<EStructuralFeature> isTransient = new ComposablePredicate<EStructuralFeature>() {
     public boolean apply(EStructuralFeature s) {
       return s.isTransient();
     }
@@ -78,7 +78,7 @@ public class EStructuralFeatures extends ETypedElements {
    * @see org.eclipse.emf.ecore.EStructuralFeature#isUnsettable()
    * @generated
    */
-  public static final Predicate<EStructuralFeature> isUnsettable = new Predicate<EStructuralFeature>() {
+  public static final ComposablePredicate<EStructuralFeature> isUnsettable = new ComposablePredicate<EStructuralFeature>() {
     public boolean apply(EStructuralFeature s) {
       return s.isUnsettable();
     }
@@ -88,7 +88,7 @@ public class EStructuralFeatures extends ETypedElements {
    * @see org.eclipse.emf.ecore.EStructuralFeature#isDerived()
    * @generated
    */
-  public static final Predicate<EStructuralFeature> isDerived = new Predicate<EStructuralFeature>() {
+  public static final ComposablePredicate<EStructuralFeature> isDerived = new ComposablePredicate<EStructuralFeature>() {
     public boolean apply(EStructuralFeature s) {
       return s.isDerived();
     }

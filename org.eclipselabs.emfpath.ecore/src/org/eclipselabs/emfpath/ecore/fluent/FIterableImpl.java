@@ -3,8 +3,8 @@ package org.eclipselabs.emfpath.ecore.fluent;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipselabs.emfpath.collect.FluentCollections;
-import org.eclipselabs.emfpath.collect.FluentIterableImpl;
 import org.eclipselabs.emfpath.collect.FluentIterable;
+import org.eclipselabs.emfpath.collect.FluentIterableImpl;
 
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;

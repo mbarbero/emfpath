@@ -7,9 +7,9 @@ import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.ETypeParameter;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 import com.google.common.base.Function;
-import com.google.common.base.Predicate;
 
 /**
  * @generated
@@ -89,8 +89,8 @@ public class EOperations extends ETypedElements {
    * @see org.eclipse.emf.ecore.EOperation#isOverrideOf(EOperation)
    * @generated
    */
-  public static Predicate<EOperation> isOverrideOf(final EOperation someOperation) {
-    return new Predicate<EOperation>() {
+  public static ComposablePredicate<EOperation> isOverrideOf(final EOperation someOperation) {
+    return new ComposablePredicate<EOperation>() {
       public boolean apply(EOperation s) {
         return s.isOverrideOf(someOperation);
       }

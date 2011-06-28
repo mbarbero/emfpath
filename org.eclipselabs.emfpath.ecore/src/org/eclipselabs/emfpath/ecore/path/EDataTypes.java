@@ -3,10 +3,10 @@ package org.eclipselabs.emfpath.ecore.path;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
-import com.google.common.base.Predicate;
 
 /**
  * @generated
@@ -26,7 +26,7 @@ public class EDataTypes extends EClassifiers {
    * @see org.eclipse.emf.ecore.EDataType#isSerializable()
    * @generated
    */
-  public static final Predicate<EDataType> isSerializable = new Predicate<EDataType>() {
+  public static final ComposablePredicate<EDataType> isSerializable = new ComposablePredicate<EDataType>() {
     public boolean apply(EDataType s) {
       return s.isSerializable();
     }
