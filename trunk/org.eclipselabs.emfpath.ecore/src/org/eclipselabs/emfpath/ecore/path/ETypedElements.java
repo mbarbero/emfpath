@@ -3,9 +3,9 @@ package org.eclipselabs.emfpath.ecore.path;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.ETypedElement;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 import com.google.common.base.Function;
-import com.google.common.base.Predicate;
 
 /**
  * @generated
@@ -24,7 +24,7 @@ public class ETypedElements extends ENamedElements {
    * @see org.eclipse.emf.ecore.ETypedElement#isOrdered()
    * @generated
    */
-  public static final Predicate<ETypedElement> isOrdered = new Predicate<ETypedElement>() {
+  public static final ComposablePredicate<ETypedElement> isOrdered = new ComposablePredicate<ETypedElement>() {
     public boolean apply(ETypedElement s) {
       return s.isOrdered();
     }
@@ -34,7 +34,7 @@ public class ETypedElements extends ENamedElements {
    * @see org.eclipse.emf.ecore.ETypedElement#isUnique()
    * @generated
    */
-  public static final Predicate<ETypedElement> isUnique = new Predicate<ETypedElement>() {
+  public static final ComposablePredicate<ETypedElement> isUnique = new ComposablePredicate<ETypedElement>() {
     public boolean apply(ETypedElement s) {
       return s.isUnique();
     }
@@ -64,7 +64,7 @@ public class ETypedElements extends ENamedElements {
    * @see org.eclipse.emf.ecore.ETypedElement#isMany()
    * @generated
    */
-  public static final Predicate<ETypedElement> isMany = new Predicate<ETypedElement>() {
+  public static final ComposablePredicate<ETypedElement> isMany = new ComposablePredicate<ETypedElement>() {
     public boolean apply(ETypedElement s) {
       return s.isMany();
     }
@@ -74,7 +74,7 @@ public class ETypedElements extends ENamedElements {
    * @see org.eclipse.emf.ecore.ETypedElement#isRequired()
    * @generated
    */
-  public static final Predicate<ETypedElement> isRequired = new Predicate<ETypedElement>() {
+  public static final ComposablePredicate<ETypedElement> isRequired = new ComposablePredicate<ETypedElement>() {
     public boolean apply(ETypedElement s) {
       return s.isRequired();
     }

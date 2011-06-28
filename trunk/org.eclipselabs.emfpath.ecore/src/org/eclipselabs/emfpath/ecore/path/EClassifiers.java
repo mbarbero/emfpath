@@ -4,9 +4,9 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.ETypeParameter;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 import com.google.common.base.Function;
-import com.google.common.base.Predicate;
 
 /**
  * @generated
@@ -86,8 +86,8 @@ public class EClassifiers extends ENamedElements {
    * @see org.eclipse.emf.ecore.EClassifier#isInstance(Object)
    * @generated
    */
-  public static Predicate<EClassifier> isInstance(final Object object) {
-    return new Predicate<EClassifier>() {
+  public static ComposablePredicate<EClassifier> isInstance(final Object object) {
+    return new ComposablePredicate<EClassifier>() {
       public boolean apply(EClassifier s) {
         return s.isInstance(object);
       }

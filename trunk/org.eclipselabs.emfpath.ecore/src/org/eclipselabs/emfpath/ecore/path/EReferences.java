@@ -5,10 +5,10 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 import org.eclipselabs.emfpath.ecore.exception.NoSuchFeatureException;
 
 import com.google.common.base.Function;
-import com.google.common.base.Predicate;
 
 /**
  * @generated
@@ -28,7 +28,7 @@ public class EReferences extends EStructuralFeatures {
    * @see org.eclipse.emf.ecore.EReference#isContainment()
    * @generated
    */
-  public static final Predicate<EReference> isContainment = new Predicate<EReference>() {
+  public static final ComposablePredicate<EReference> isContainment = new ComposablePredicate<EReference>() {
     public boolean apply(EReference s) {
       return s.isContainment();
     }
@@ -38,7 +38,7 @@ public class EReferences extends EStructuralFeatures {
    * @see org.eclipse.emf.ecore.EReference#isContainer()
    * @generated
    */
-  public static final Predicate<EReference> isContainer = new Predicate<EReference>() {
+  public static final ComposablePredicate<EReference> isContainer = new ComposablePredicate<EReference>() {
     public boolean apply(EReference s) {
       return s.isContainer();
     }
@@ -48,7 +48,7 @@ public class EReferences extends EStructuralFeatures {
    * @see org.eclipse.emf.ecore.EReference#isResolveProxies()
    * @generated
    */
-  public static final Predicate<EReference> isResolveProxies = new Predicate<EReference>() {
+  public static final ComposablePredicate<EReference> isResolveProxies = new ComposablePredicate<EReference>() {
     public boolean apply(EReference s) {
       return s.isResolveProxies();
     }

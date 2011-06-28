@@ -35,8 +35,8 @@ import org.eclipse.emf.ecore.xmi.impl.EMOFExtendedMetaData;
 import org.eclipse.emf.ecore.xmi.impl.EMOFResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.eclipselabs.emfpath.ecore.path.EObjects;
 import org.eclipselabs.emfpath.ecore.internal.i18n.Messages;
+import org.eclipselabs.emfpath.ecore.path.EObjects;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Iterators;

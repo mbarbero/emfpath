@@ -12,8 +12,8 @@ package org.eclipselabs.emfpath.ecore.exception;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipselabs.emfpath.exception.EMFPathException;
 import org.eclipselabs.emfpath.ecore.internal.i18n.Messages;
+import org.eclipselabs.emfpath.exception.EMFPathException;
 
 
 /**

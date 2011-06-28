@@ -5,10 +5,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 import org.eclipselabs.emfpath.ecore.exception.NoSuchFeatureException;
 
 import com.google.common.base.Function;
-import com.google.common.base.Predicate;
 
 /**
  * @generated
@@ -30,7 +30,7 @@ public class EAttributes extends EStructuralFeatures {
    * @see org.eclipse.emf.ecore.EAttribute#isID()
    * @generated
    */
-  public static final Predicate<EAttribute> isID = new Predicate<EAttribute>() {
+  public static final ComposablePredicate<EAttribute> isID = new ComposablePredicate<EAttribute>() {
     public boolean apply(EAttribute s) {
       return s.isID();
     }

@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 import org.eclipselabs.emfpath.base.Equivalences2;
 import org.eclipselabs.emfpath.ecore.exception.NotFoundException;
 
@@ -45,7 +46,7 @@ public class EClasses extends EClassifiers {
    * @see org.eclipse.emf.ecore.EClass#isAbstract()
    * @generated
    */
-  public static final Predicate<EClass> isAbstract = new Predicate<EClass>() {
+  public static final ComposablePredicate<EClass> isAbstract = new ComposablePredicate<EClass>() {
     public boolean apply(EClass s) {
       return s.isAbstract();
     }
@@ -55,7 +56,7 @@ public class EClasses extends EClassifiers {
    * @see org.eclipse.emf.ecore.EClass#isInterface()
    * @generated
    */
-  public static final Predicate<EClass> isInterface = new Predicate<EClass>() {
+  public static final ComposablePredicate<EClass> isInterface = new ComposablePredicate<EClass>() {
     public boolean apply(EClass s) {
       return s.isInterface();
     }
@@ -206,8 +207,8 @@ public class EClasses extends EClassifiers {
    * @see org.eclipse.emf.ecore.EClass#isSuperTypeOf(EClass)
    * @generated
    */
-  public static Predicate<EClass> isSuperTypeOf(final EClass someClass) {
-    return new Predicate<EClass>() {
+  public static ComposablePredicate<EClass> isSuperTypeOf(final EClass someClass) {
+    return new ComposablePredicate<EClass>() {
       public boolean apply(EClass s) {
         return s.isSuperTypeOf(someClass);
       }

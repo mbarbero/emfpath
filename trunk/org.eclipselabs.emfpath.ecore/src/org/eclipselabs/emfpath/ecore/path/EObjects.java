@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 import org.eclipselabs.emfpath.ecore.exception.NoSuchFeatureException;
 import org.eclipselabs.emfpath.ecore.exception.NotFoundException;
 import org.eclipselabs.emfpath.ecore.internal.i18n.Messages;
@@ -58,7 +59,7 @@ public class EObjects {
    * @see org.eclipse.emf.ecore.EObject#eIsProxy()
    * @generated
    */
-  public static final Predicate<EObject> eIsProxy = new Predicate<EObject>() {
+  public static final ComposablePredicate<EObject> eIsProxy = new ComposablePredicate<EObject>() {
     public boolean apply(EObject s) {
       return s.eIsProxy();
     }
@@ -192,8 +193,8 @@ public class EObjects {
    * @see org.eclipse.emf.ecore.EObject#eIsSet(EStructuralFeature)
    * @generated
    */
-  public static Predicate<EObject> eIsSet(final EStructuralFeature feature) {
-    return new Predicate<EObject>() {
+  public static ComposablePredicate<EObject> eIsSet(final EStructuralFeature feature) {
+    return new ComposablePredicate<EObject>() {
       public boolean apply(EObject s) {
         return s.eIsSet(feature);
       }
