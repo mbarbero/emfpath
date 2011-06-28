@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterSet;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class ParameterSetPath extends NamedElementPath {
 	 * @generated
 	 */
 	private ParameterSetPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Parameters in the parameter set. 
@@ -34,10 +35,10 @@ public class ParameterSetPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<ParameterSet, EList<Parameter>> parameter = new Function<ParameterSet, EList<Parameter>>() {
-		public EList<Parameter> apply(ParameterSet s) {
-			return s.getParameters();
-		}
-	};
+    public EList<Parameter> apply(ParameterSet s) {
+      return s.getParameters();
+    }
+  };
 
 	/**
 	 * Constraint that should be satisfied for the owner of the parameters in an input parameter
@@ -49,10 +50,10 @@ public class ParameterSetPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<ParameterSet, EList<Constraint>> condition = new Function<ParameterSet, EList<Constraint>>() {
-		public EList<Constraint> apply(ParameterSet s) {
-			return s.getConditions();
-		}
-	};
+    public EList<Constraint> apply(ParameterSet s) {
+      return s.getConditions();
+    }
+  };
 	
 	/**
 	 * The parameters in a parameter set must all be inputs or all be outputs of the same
@@ -61,13 +62,13 @@ public class ParameterSetPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.ParameterSet#validateSameParameterizedEntity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ParameterSet> validateSameParameterizedEntity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ParameterSet>() {
-			public boolean apply(ParameterSet s) {
-				return s.validateSameParameterizedEntity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ParameterSet> validateSameParameterizedEntity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ParameterSet>() {
+      public boolean apply(ParameterSet s) {
+        return s.validateSameParameterizedEntity(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If a behavior has input parameters that are in a parameter set, then any inputs that
@@ -76,13 +77,13 @@ public class ParameterSetPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.ParameterSet#validateInput(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ParameterSet> validateInput(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ParameterSet>() {
-			public boolean apply(ParameterSet s) {
-				return s.validateInput(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ParameterSet> validateInput(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ParameterSet>() {
+      public boolean apply(ParameterSet s) {
+        return s.validateInput(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Two parameter sets cannot have exactly the same set of parameters.
@@ -90,12 +91,12 @@ public class ParameterSetPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.ParameterSet#validateTwoParameterSets(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ParameterSet> validateTwoParameterSets(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ParameterSet>() {
-			public boolean apply(ParameterSet s) {
-				return s.validateTwoParameterSets(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ParameterSet> validateTwoParameterSets(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ParameterSet>() {
+      public boolean apply(ParameterSet s) {
+        return s.validateTwoParameterSets(diagnostics, context);
+      }
+    };
+  }
 
 }

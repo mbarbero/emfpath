@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.WriteStructuralFeatureAction;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -24,8 +25,8 @@ public class WriteStructuralFeatureActionPath extends StructuralFeatureActionPat
 	 * @generated
 	 */
 	 WriteStructuralFeatureActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Value to be added or removed from the structural feature. 
@@ -33,10 +34,10 @@ public class WriteStructuralFeatureActionPath extends StructuralFeatureActionPat
 	 * @generated
 	 */
 	public static final Function<WriteStructuralFeatureAction, InputPin> value = new Function<WriteStructuralFeatureAction, InputPin>() {
-		public InputPin apply(WriteStructuralFeatureAction s) {
-			return s.getValue();
-		}
-	};
+    public InputPin apply(WriteStructuralFeatureAction s) {
+      return s.getValue();
+    }
+  };
 
 	/**
 	 * Gives the output pin on which the result is put. 
@@ -44,10 +45,10 @@ public class WriteStructuralFeatureActionPath extends StructuralFeatureActionPat
 	 * @generated
 	 */
 	public static final Function<WriteStructuralFeatureAction, OutputPin> result = new Function<WriteStructuralFeatureAction, OutputPin>() {
-		public OutputPin apply(WriteStructuralFeatureAction s) {
-			return s.getResult();
-		}
-	};
+    public OutputPin apply(WriteStructuralFeatureAction s) {
+      return s.getResult();
+    }
+  };
 	
 	/**
 	 * The type input pin is the same as the classifier of the structural feature.
@@ -56,13 +57,13 @@ public class WriteStructuralFeatureActionPath extends StructuralFeatureActionPat
 	 * @see org.eclipse.uml2.uml.WriteStructuralFeatureAction#validateInputPin(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<WriteStructuralFeatureAction> validateInputPin(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<WriteStructuralFeatureAction>() {
-			public boolean apply(WriteStructuralFeatureAction s) {
-				return s.validateInputPin(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<WriteStructuralFeatureAction> validateInputPin(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<WriteStructuralFeatureAction>() {
+      public boolean apply(WriteStructuralFeatureAction s) {
+        return s.validateInputPin(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The type of the result output pin is the same as the type of the inherited object
@@ -71,13 +72,13 @@ public class WriteStructuralFeatureActionPath extends StructuralFeatureActionPat
 	 * @see org.eclipse.uml2.uml.WriteStructuralFeatureAction#validateTypeOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<WriteStructuralFeatureAction> validateTypeOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<WriteStructuralFeatureAction>() {
-			public boolean apply(WriteStructuralFeatureAction s) {
-				return s.validateTypeOfResult(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<WriteStructuralFeatureAction> validateTypeOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<WriteStructuralFeatureAction>() {
+      public boolean apply(WriteStructuralFeatureAction s) {
+        return s.validateTypeOfResult(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The multiplicity of the result output pin must be 1..1.
@@ -86,12 +87,12 @@ public class WriteStructuralFeatureActionPath extends StructuralFeatureActionPat
 	 * @see org.eclipse.uml2.uml.WriteStructuralFeatureAction#validateMultiplicityOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<WriteStructuralFeatureAction> validateMultiplicityOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<WriteStructuralFeatureAction>() {
-			public boolean apply(WriteStructuralFeatureAction s) {
-				return s.validateMultiplicityOfResult(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<WriteStructuralFeatureAction> validateMultiplicityOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<WriteStructuralFeatureAction>() {
+      public boolean apply(WriteStructuralFeatureAction s) {
+        return s.validateMultiplicityOfResult(diagnostics, context);
+      }
+    };
+  }
 
 }

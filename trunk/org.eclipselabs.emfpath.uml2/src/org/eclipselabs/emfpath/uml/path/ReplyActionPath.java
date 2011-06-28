@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.ReplyAction;
 import org.eclipse.uml2.uml.Trigger;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -26,8 +27,8 @@ public class ReplyActionPath extends ActionPath {
 	 * @generated
 	 */
 	private ReplyActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The trigger specifying the operation whose call is being replied to. 
@@ -35,10 +36,10 @@ public class ReplyActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ReplyAction, Trigger> replyToCall = new Function<ReplyAction, Trigger>() {
-		public Trigger apply(ReplyAction s) {
-			return s.getReplyToCall();
-		}
-	};
+    public Trigger apply(ReplyAction s) {
+      return s.getReplyToCall();
+    }
+  };
 
 	/**
 	 * A pin containing the return information value produced by an earlier AcceptCallAction.
@@ -46,10 +47,10 @@ public class ReplyActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ReplyAction, InputPin> returnInformation = new Function<ReplyAction, InputPin>() {
-		public InputPin apply(ReplyAction s) {
-			return s.getReturnInformation();
-		}
-	};
+    public InputPin apply(ReplyAction s) {
+      return s.getReturnInformation();
+    }
+  };
 
 	/**
 	 * A list of pins containing the reply values of the operation. These values are returned
@@ -58,10 +59,10 @@ public class ReplyActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ReplyAction, EList<InputPin>> replyValue = new Function<ReplyAction, EList<InputPin>>() {
-		public EList<InputPin> apply(ReplyAction s) {
-			return s.getReplyValues();
-		}
-	};
+    public EList<InputPin> apply(ReplyAction s) {
+      return s.getReplyValues();
+    }
+  };
 	
 	/**
 	 * The reply value pins must match the return, out, and inout parameters of the operation
@@ -70,13 +71,13 @@ public class ReplyActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReplyAction#validatePinsMatchParameter(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReplyAction> validatePinsMatchParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReplyAction>() {
-			public boolean apply(ReplyAction s) {
-				return s.validatePinsMatchParameter(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReplyAction> validatePinsMatchParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReplyAction>() {
+      public boolean apply(ReplyAction s) {
+        return s.validatePinsMatchParameter(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The event on replyToCall trigger must be a CallEvent replyToCallEvent.oclIsKindOf(CallEvent)
@@ -84,12 +85,12 @@ public class ReplyActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReplyAction#validateEventOnReplyToCallTrigger(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReplyAction> validateEventOnReplyToCallTrigger(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReplyAction>() {
-			public boolean apply(ReplyAction s) {
-				return s.validateEventOnReplyToCallTrigger(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReplyAction> validateEventOnReplyToCallTrigger(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReplyAction>() {
+      public boolean apply(ReplyAction s) {
+        return s.validateEventOnReplyToCallTrigger(diagnostics, context);
+      }
+    };
+  }
 
 }

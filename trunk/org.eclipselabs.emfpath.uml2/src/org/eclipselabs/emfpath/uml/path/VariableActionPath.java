@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.Variable;
 import org.eclipse.uml2.uml.VariableAction;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +24,8 @@ public class VariableActionPath extends ActionPath {
 	 * @generated
 	 */
 	 VariableActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Variable to be read. 
@@ -32,10 +33,10 @@ public class VariableActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<VariableAction, Variable> variable = new Function<VariableAction, Variable>() {
-		public Variable apply(VariableAction s) {
-			return s.getVariable();
-		}
-	};
+    public Variable apply(VariableAction s) {
+      return s.getVariable();
+    }
+  };
 	
 	/**
 	 * The action must be in the scope of the variable.
@@ -43,12 +44,12 @@ public class VariableActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.VariableAction#validateScopeOfVariable(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<VariableAction> validateScopeOfVariable(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<VariableAction>() {
-			public boolean apply(VariableAction s) {
-				return s.validateScopeOfVariable(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<VariableAction> validateScopeOfVariable(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<VariableAction>() {
+      public boolean apply(VariableAction s) {
+        return s.validateScopeOfVariable(diagnostics, context);
+      }
+    };
+  }
 
 }

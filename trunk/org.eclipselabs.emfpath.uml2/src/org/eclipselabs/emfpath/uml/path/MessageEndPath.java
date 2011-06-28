@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.MessageEnd;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class MessageEndPath extends NamedElementPath {
 	 * @generated
 	 */
 	 MessageEndPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * References a Message. 
@@ -29,10 +29,10 @@ public class MessageEndPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<MessageEnd, Message> message = new Function<MessageEnd, Message>() {
-		public Message apply(MessageEnd s) {
-			return s.getMessage();
-		}
-	};
+    public Message apply(MessageEnd s) {
+      return s.getMessage();
+    }
+  };
 	
 	
 

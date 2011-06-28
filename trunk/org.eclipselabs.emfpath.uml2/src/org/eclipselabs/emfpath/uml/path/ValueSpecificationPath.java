@@ -1,11 +1,11 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.TypedElement;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +25,8 @@ public class ValueSpecificationPath extends PackageableElementPath {
 	 * @generated
 	 */
 	 ValueSpecificationPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * This information is derived from the return result for this Operation.
@@ -50,11 +50,11 @@ public class ValueSpecificationPath extends PackageableElementPath {
 	 * @see org.eclipse.uml2.uml.ValueSpecification#isComputable()
 	 * @generated
 	 */
-	public static final Predicate<ValueSpecification> isComputable = new Predicate<ValueSpecification>() {
-		public boolean apply(ValueSpecification s) {
-			return s.isComputable();
-		}
-	};
+	public static final ComposablePredicate<ValueSpecification> isComputable = new ComposablePredicate<ValueSpecification>() {
+    public boolean apply(ValueSpecification s) {
+      return s.isComputable();
+    }
+  };
 
 	/**
 	 * The query integerValue() gives a single Integer value when one can be computed.
@@ -64,10 +64,10 @@ public class ValueSpecificationPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<ValueSpecification, java.lang.Integer> integerValue = new Function<ValueSpecification, java.lang.Integer>() {
-		public java.lang.Integer apply(ValueSpecification s) {
-			return s.integerValue();
-		}
-	};
+    public java.lang.Integer apply(ValueSpecification s) {
+      return s.integerValue();
+    }
+  };
 
 	/**
 	 * The query booleanValue() gives a single Boolean value when one can be computed.
@@ -76,11 +76,11 @@ public class ValueSpecificationPath extends PackageableElementPath {
 	 * @see org.eclipse.uml2.uml.ValueSpecification#booleanValue()
 	 * @generated
 	 */
-	public static final Predicate<ValueSpecification> booleanValue = new Predicate<ValueSpecification>() {
-		public boolean apply(ValueSpecification s) {
-			return s.booleanValue();
-		}
-	};
+	public static final ComposablePredicate<ValueSpecification> booleanValue = new ComposablePredicate<ValueSpecification>() {
+    public boolean apply(ValueSpecification s) {
+      return s.booleanValue();
+    }
+  };
 
 	/**
 	 * The query stringValue() gives a single String value when one can be computed.
@@ -90,10 +90,10 @@ public class ValueSpecificationPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<ValueSpecification, String> stringValue = new Function<ValueSpecification, String>() {
-		public String apply(ValueSpecification s) {
-			return s.stringValue();
-		}
-	};
+    public String apply(ValueSpecification s) {
+      return s.stringValue();
+    }
+  };
 
 	/**
 	 * The query unlimitedValue() gives a single UnlimitedNatural value when one can be computed.
@@ -103,10 +103,10 @@ public class ValueSpecificationPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<ValueSpecification, java.lang.Integer> unlimitedValue = new Function<ValueSpecification, java.lang.Integer>() {
-		public java.lang.Integer apply(ValueSpecification s) {
-			return s.unlimitedValue();
-		}
-	};
+    public java.lang.Integer apply(ValueSpecification s) {
+      return s.unlimitedValue();
+    }
+  };
 
 	/**
 	 * The query isNull() returns true when it can be computed that the value is null.
@@ -115,10 +115,10 @@ public class ValueSpecificationPath extends PackageableElementPath {
 	 * @see org.eclipse.uml2.uml.ValueSpecification#isNull()
 	 * @generated
 	 */
-	public static final Predicate<ValueSpecification> isNull = new Predicate<ValueSpecification>() {
-		public boolean apply(ValueSpecification s) {
-			return s.isNull();
-		}
-	};
+	public static final ComposablePredicate<ValueSpecification> isNull = new ComposablePredicate<ValueSpecification>() {
+    public boolean apply(ValueSpecification s) {
+      return s.isNull();
+    }
+  };
 
 }

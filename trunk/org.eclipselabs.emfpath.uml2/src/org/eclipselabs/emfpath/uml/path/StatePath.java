@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ConnectionPointReference;
@@ -18,6 +16,9 @@ import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.Trigger;
 import org.eclipse.uml2.uml.Vertex;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -38,8 +39,8 @@ public class StatePath extends NamespacePath {
 	 * @generated
 	 */
 	 StatePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Indicates whether it is possible to further specialize a RedefinableElement. If the
@@ -49,7 +50,7 @@ public class StatePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isLeaf()
 	 * @generated
 	 */
-	public static final Predicate<RedefinableElement> isLeaf = RedefinableElementPath.isLeaf;
+	public static final ComposablePredicate<RedefinableElement> isLeaf = RedefinableElementPath.isLeaf;
 
 	/**
 	 * The redefinable element that is being redefined by this element. 
@@ -102,11 +103,11 @@ public class StatePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.State#isComposite()
 	 * @generated
 	 */
-	public static final Predicate<State> isComposite = new Predicate<State>() {
-		public boolean apply(State s) {
-			return s.isComposite();
-		}
-	};
+	public static final ComposablePredicate<State> isComposite = new ComposablePredicate<State>() {
+    public boolean apply(State s) {
+      return s.isComposite();
+    }
+  };
 
 	/**
 	 * A state with isOrthogonal=true is said to be an orthogonal composite state. An orthogonal
@@ -114,11 +115,11 @@ public class StatePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.State#isOrthogonal()
 	 * @generated
 	 */
-	public static final Predicate<State> isOrthogonal = new Predicate<State>() {
-		public boolean apply(State s) {
-			return s.isOrthogonal();
-		}
-	};
+	public static final ComposablePredicate<State> isOrthogonal = new ComposablePredicate<State>() {
+    public boolean apply(State s) {
+      return s.isOrthogonal();
+    }
+  };
 
 	/**
 	 * A state with isSimple=true is said to be a simple state. A simple state does not have
@@ -126,11 +127,11 @@ public class StatePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.State#isSimple()
 	 * @generated
 	 */
-	public static final Predicate<State> isSimple = new Predicate<State>() {
-		public boolean apply(State s) {
-			return s.isSimple();
-		}
-	};
+	public static final ComposablePredicate<State> isSimple = new ComposablePredicate<State>() {
+    public boolean apply(State s) {
+      return s.isSimple();
+    }
+  };
 
 	/**
 	 * A state with isSubmachineState=true is said to be a submachine state. Such a state
@@ -138,11 +139,11 @@ public class StatePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.State#isSubmachineState()
 	 * @generated
 	 */
-	public static final Predicate<State> isSubmachineState = new Predicate<State>() {
-		public boolean apply(State s) {
-			return s.isSubmachineState();
-		}
-	};
+	public static final ComposablePredicate<State> isSubmachineState = new ComposablePredicate<State>() {
+    public boolean apply(State s) {
+      return s.isSubmachineState();
+    }
+  };
 
 	/**
 	 * The state machine that is to be inserted in place of the (submachine) state. 
@@ -150,10 +151,10 @@ public class StatePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<State, StateMachine> submachine = new Function<State, StateMachine>() {
-		public StateMachine apply(State s) {
-			return s.getSubmachine();
-		}
-	};
+    public StateMachine apply(State s) {
+      return s.getSubmachine();
+    }
+  };
 
 	/**
 	 * The entry and exit connection points used in conjunction with this (submachine) state,
@@ -164,10 +165,10 @@ public class StatePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<State, EList<ConnectionPointReference>> connection = new Function<State, EList<ConnectionPointReference>>() {
-		public EList<ConnectionPointReference> apply(State s) {
-			return s.getConnections();
-		}
-	};
+    public EList<ConnectionPointReference> apply(State s) {
+      return s.getConnections();
+    }
+  };
 
 	/**
 	 * The entry and exit pseudostates of a composite state. These can only be entry or exit
@@ -177,10 +178,10 @@ public class StatePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<State, EList<Pseudostate>> connectionPoint = new Function<State, EList<Pseudostate>>() {
-		public EList<Pseudostate> apply(State s) {
-			return s.getConnectionPoints();
-		}
-	};
+    public EList<Pseudostate> apply(State s) {
+      return s.getConnectionPoints();
+    }
+  };
 
 	/**
 	 * The state of which this state is a redefinition. 
@@ -188,10 +189,10 @@ public class StatePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<State, State> redefinedState = new Function<State, State>() {
-		public State apply(State s) {
-			return s.getRedefinedState();
-		}
-	};
+    public State apply(State s) {
+      return s.getRedefinedState();
+    }
+  };
 
 	/**
 	 * Specifies conditions that are always true when this state is the current state. In
@@ -202,10 +203,10 @@ public class StatePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<State, Constraint> stateInvariant = new Function<State, Constraint>() {
-		public Constraint apply(State s) {
-			return s.getStateInvariant();
-		}
-	};
+    public Constraint apply(State s) {
+      return s.getStateInvariant();
+    }
+  };
 
 	/**
 	 * An optional behavior that is executed whenever this state is entered regardless of
@@ -216,10 +217,10 @@ public class StatePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<State, Behavior> entry = new Function<State, Behavior>() {
-		public Behavior apply(State s) {
-			return s.getEntry();
-		}
-	};
+    public Behavior apply(State s) {
+      return s.getEntry();
+    }
+  };
 
 	/**
 	 * An optional behavior that is executed whenever this state is exited regardless of
@@ -230,10 +231,10 @@ public class StatePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<State, Behavior> exit = new Function<State, Behavior>() {
-		public Behavior apply(State s) {
-			return s.getExit();
-		}
-	};
+    public Behavior apply(State s) {
+      return s.getExit();
+    }
+  };
 
 	/**
 	 * An optional behavior that is executed while being in the state. The execution starts
@@ -243,10 +244,10 @@ public class StatePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<State, Behavior> doActivity = new Function<State, Behavior>() {
-		public Behavior apply(State s) {
-			return s.getDoActivity();
-		}
-	};
+    public Behavior apply(State s) {
+      return s.getDoActivity();
+    }
+  };
 
 	/**
 	 * A list of triggers that are candidates to be retained by the state machine if they
@@ -257,10 +258,10 @@ public class StatePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<State, EList<Trigger>> deferrableTrigger = new Function<State, EList<Trigger>>() {
-		public EList<Trigger> apply(State s) {
-			return s.getDeferrableTriggers();
-		}
-	};
+    public EList<Trigger> apply(State s) {
+      return s.getDeferrableTriggers();
+    }
+  };
 
 	/**
 	 * The regions owned directly by the state. 
@@ -268,10 +269,10 @@ public class StatePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<State, EList<Region>> region = new Function<State, EList<Region>>() {
-		public EList<Region> apply(State s) {
-			return s.getRegions();
-		}
-	};
+    public EList<Region> apply(State s) {
+      return s.getRegions();
+    }
+  };
 	
 	/**
 	 * At least one of the redefinition contexts of the redefining element must be a specialization
@@ -283,9 +284,9 @@ public class StatePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionContextValid(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> validateRedefinitionContextValid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return RedefinableElementPath.validateRedefinitionContextValid(diagnostics, context);
-	}
+	public static ComposablePredicate<RedefinableElement> validateRedefinitionContextValid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return RedefinableElementPath.validateRedefinitionContextValid(diagnostics, context);
+  }
 
 	/**
 	 * A redefining element must be consistent with each redefined element.
@@ -296,9 +297,9 @@ public class StatePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionConsistent(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> validateRedefinitionConsistent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return RedefinableElementPath.validateRedefinitionConsistent(diagnostics, context);
-	}
+	public static ComposablePredicate<RedefinableElement> validateRedefinitionConsistent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return RedefinableElementPath.validateRedefinitionConsistent(diagnostics, context);
+  }
 
 	/**
 	 * The query isConsistentWith() specifies, for any two RedefinableElements in a context
@@ -313,9 +314,9 @@ public class StatePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isConsistentWith(RedefinableElement)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> isConsistentWith(final RedefinableElement redefinee) {
-		return RedefinableElementPath.isConsistentWith(redefinee);
-	}
+	public static ComposablePredicate<RedefinableElement> isConsistentWith(final RedefinableElement redefinee) {
+    return RedefinableElementPath.isConsistentWith(redefinee);
+  }
 
 	/**
 	 * The query isRedefinitionContextValid() specifies whether the redefinition contexts
@@ -330,9 +331,9 @@ public class StatePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isRedefinitionContextValid(RedefinableElement)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> isRedefinitionContextValid(final RedefinableElement redefined) {
-		return RedefinableElementPath.isRedefinitionContextValid(redefined);
-	}
+	public static ComposablePredicate<RedefinableElement> isRedefinitionContextValid(final RedefinableElement redefined) {
+    return RedefinableElementPath.isRedefinitionContextValid(redefined);
+  }
 
 	/**
 	 * The operation containingStateMachine() returns the state machine in which this Vertex
@@ -366,13 +367,13 @@ public class StatePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.State#validateSubmachineStates(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<State> validateSubmachineStates(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<State>() {
-			public boolean apply(State s) {
-				return s.validateSubmachineStates(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<State> validateSubmachineStates(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<State>() {
+      public boolean apply(State s) {
+        return s.validateSubmachineStates(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The connection point references used as destinations/sources of transitions associated
@@ -386,13 +387,13 @@ public class StatePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.State#validateDestinationsOrSourcesOfTransitions(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<State> validateDestinationsOrSourcesOfTransitions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<State>() {
-			public boolean apply(State s) {
-				return s.validateDestinationsOrSourcesOfTransitions(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<State> validateDestinationsOrSourcesOfTransitions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<State>() {
+      public boolean apply(State s) {
+        return s.validateDestinationsOrSourcesOfTransitions(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A state is not allowed to have both a submachine and regions.
@@ -401,13 +402,13 @@ public class StatePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.State#validateSubmachineOrRegions(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<State> validateSubmachineOrRegions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<State>() {
-			public boolean apply(State s) {
-				return s.validateSubmachineOrRegions(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<State> validateSubmachineOrRegions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<State>() {
+      public boolean apply(State s) {
+        return s.validateSubmachineOrRegions(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Only composite states can have entry or exit pseudostates defined.
@@ -416,13 +417,13 @@ public class StatePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.State#validateCompositeStates(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<State> validateCompositeStates(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<State>() {
-			public boolean apply(State s) {
-				return s.validateCompositeStates(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<State> validateCompositeStates(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<State>() {
+      public boolean apply(State s) {
+        return s.validateCompositeStates(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Only entry or exit pseudostates can serve as connection points.
@@ -431,13 +432,13 @@ public class StatePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.State#validateEntryOrExit(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<State> validateEntryOrExit(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<State>() {
-			public boolean apply(State s) {
-				return s.validateEntryOrExit(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<State> validateEntryOrExit(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<State>() {
+      public boolean apply(State s) {
+        return s.validateEntryOrExit(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The redefinition context of a state is the nearest containing statemachine.
@@ -453,10 +454,10 @@ public class StatePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<State, Classifier> redefinitionContext_ = new Function<State, Classifier>() {
-		public Classifier apply(State s) {
-			return s.redefinitionContext();
-		}
-	};
+    public Classifier apply(State s) {
+      return s.redefinitionContext();
+    }
+  };
 
 	/**
 	 * The query isRedefinitionContextValid() specifies whether the redefinition contexts
@@ -467,12 +468,12 @@ public class StatePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.State#isRedefinitionContextValid(State)
 	 * @generated
 	 */
-	public static Predicate<State> isRedefinitionContextValid(final State redefined) {
-		return new Predicate<State>() {
-			public boolean apply(State s) {
-				return s.isRedefinitionContextValid(redefined);
-			}
-		};
-	}
+	public static ComposablePredicate<State> isRedefinitionContextValid(final State redefined) {
+    return new ComposablePredicate<State>() {
+      public boolean apply(State s) {
+        return s.isRedefinitionContextValid(redefined);
+      }
+    };
+  }
 
 }

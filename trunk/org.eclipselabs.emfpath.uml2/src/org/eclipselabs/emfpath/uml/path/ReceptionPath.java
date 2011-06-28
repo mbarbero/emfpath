@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.Reception;
 import org.eclipse.uml2.uml.Signal;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class ReceptionPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	private ReceptionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The signal that this reception handles. 
@@ -34,10 +35,10 @@ public class ReceptionPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Reception, Signal> signal = new Function<Reception, Signal>() {
-		public Signal apply(Reception s) {
-			return s.getSignal();
-		}
-	};
+    public Signal apply(Reception s) {
+      return s.getSignal();
+    }
+  };
 	
 	/**
 	 * A Reception can not be a query.
@@ -45,12 +46,12 @@ public class ReceptionPath extends BehavioralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Reception#validateNotQuery(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Reception> validateNotQuery(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Reception>() {
-			public boolean apply(Reception s) {
-				return s.validateNotQuery(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Reception> validateNotQuery(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Reception>() {
+      public boolean apply(Reception s) {
+        return s.validateNotQuery(diagnostics, context);
+      }
+    };
+  }
 
 }

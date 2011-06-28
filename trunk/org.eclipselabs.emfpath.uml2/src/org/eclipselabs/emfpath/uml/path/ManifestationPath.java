@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.Manifestation;
 import org.eclipse.uml2.uml.PackageableElement;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class ManifestationPath extends AbstractionPath {
 	 * @generated
 	 */
 	private ManifestationPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The model element that is utilized in the manifestation in an Artifact. 
@@ -29,10 +29,10 @@ public class ManifestationPath extends AbstractionPath {
 	 * @generated
 	 */
 	public static final Function<Manifestation, PackageableElement> utilizedElement = new Function<Manifestation, PackageableElement>() {
-		public PackageableElement apply(Manifestation s) {
-			return s.getUtilizedElement();
-		}
-	};
+    public PackageableElement apply(Manifestation s) {
+      return s.getUtilizedElement();
+    }
+  };
 	
 	
 

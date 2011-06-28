@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.Message;
@@ -14,6 +12,9 @@ import org.eclipse.uml2.uml.MessageKind;
 import org.eclipse.uml2.uml.MessageSort;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -29,8 +30,8 @@ public class MessagePath extends NamedElementPath {
 	 * @generated
 	 */
 	private MessagePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The derived kind of the Message (complete, lost, found or unknown) 
@@ -38,10 +39,10 @@ public class MessagePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Message, MessageKind> messageKind = new Function<Message, MessageKind>() {
-		public MessageKind apply(Message s) {
-			return s.getMessageKind();
-		}
-	};
+    public MessageKind apply(Message s) {
+      return s.getMessageKind();
+    }
+  };
 
 	/**
 	 * The sort of communication reflected by the Message 
@@ -49,10 +50,10 @@ public class MessagePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Message, MessageSort> messageSort = new Function<Message, MessageSort>() {
-		public MessageSort apply(Message s) {
-			return s.getMessageSort();
-		}
-	};
+    public MessageSort apply(Message s) {
+      return s.getMessageSort();
+    }
+  };
 
 	/**
 	 * References the Receiving of the Message 
@@ -60,10 +61,10 @@ public class MessagePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Message, MessageEnd> receiveEvent = new Function<Message, MessageEnd>() {
-		public MessageEnd apply(Message s) {
-			return s.getReceiveEvent();
-		}
-	};
+    public MessageEnd apply(Message s) {
+      return s.getReceiveEvent();
+    }
+  };
 
 	/**
 	 * References the Sending of the Message. 
@@ -71,10 +72,10 @@ public class MessagePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Message, MessageEnd> sendEvent = new Function<Message, MessageEnd>() {
-		public MessageEnd apply(Message s) {
-			return s.getSendEvent();
-		}
-	};
+    public MessageEnd apply(Message s) {
+      return s.getSendEvent();
+    }
+  };
 
 	/**
 	 * The Connector on which this Message is sent. 
@@ -82,10 +83,10 @@ public class MessagePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Message, Connector> connector = new Function<Message, Connector>() {
-		public Connector apply(Message s) {
-			return s.getConnector();
-		}
-	};
+    public Connector apply(Message s) {
+      return s.getConnector();
+    }
+  };
 
 	/**
 	 * The enclosing Interaction owning the Message 
@@ -93,10 +94,10 @@ public class MessagePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Message, Interaction> interaction = new Function<Message, Interaction>() {
-		public Interaction apply(Message s) {
-			return s.getInteraction();
-		}
-	};
+    public Interaction apply(Message s) {
+      return s.getInteraction();
+    }
+  };
 
 	/**
 	 * The arguments of the Message 
@@ -104,10 +105,10 @@ public class MessagePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Message, EList<ValueSpecification>> argument = new Function<Message, EList<ValueSpecification>>() {
-		public EList<ValueSpecification> apply(Message s) {
-			return s.getArguments();
-		}
-	};
+    public EList<ValueSpecification> apply(Message s) {
+      return s.getArguments();
+    }
+  };
 
 	/**
 	 * The definition of the type or signature of the Message (depending on its kind). The
@@ -118,10 +119,10 @@ public class MessagePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Message, NamedElement> signature = new Function<Message, NamedElement>() {
-		public NamedElement apply(Message s) {
-			return s.getSignature();
-		}
-	};
+    public NamedElement apply(Message s) {
+      return s.getSignature();
+    }
+  };
 	
 	/**
 	 * If the sending MessageEvent and the receiving MessageEvent of the same Message are
@@ -131,13 +132,13 @@ public class MessagePath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.Message#validateSendingReceivingMessageEvent(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Message> validateSendingReceivingMessageEvent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Message>() {
-			public boolean apply(Message s) {
-				return s.validateSendingReceivingMessageEvent(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Message> validateSendingReceivingMessageEvent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Message>() {
+      public boolean apply(Message s) {
+        return s.validateSendingReceivingMessageEvent(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The signature must either refer an Operation (in which case messageSort is either
@@ -148,13 +149,13 @@ public class MessagePath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.Message#validateSignatureReferTo(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Message> validateSignatureReferTo(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Message>() {
-			public boolean apply(Message s) {
-				return s.validateSignatureReferTo(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Message> validateSignatureReferTo(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Message>() {
+      public boolean apply(Message s) {
+        return s.validateSignatureReferTo(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * In the case when the Message signature is an Operation, the arguments of the Message
@@ -164,13 +165,13 @@ public class MessagePath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.Message#validateSignatureIsOperation(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Message> validateSignatureIsOperation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Message>() {
-			public boolean apply(Message s) {
-				return s.validateSignatureIsOperation(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Message> validateSignatureIsOperation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Message>() {
+      public boolean apply(Message s) {
+        return s.validateSignatureIsOperation(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * In the case when the Message signature is a Signal, the arguments of the Message must
@@ -181,13 +182,13 @@ public class MessagePath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.Message#validateSignatureIsSignal(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Message> validateSignatureIsSignal(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Message>() {
-			public boolean apply(Message s) {
-				return s.validateSignatureIsSignal(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Message> validateSignatureIsSignal(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Message>() {
+      public boolean apply(Message s) {
+        return s.validateSignatureIsSignal(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Arguments of a Message must only be:
@@ -203,13 +204,13 @@ public class MessagePath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.Message#validateArguments(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Message> validateArguments(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Message>() {
-			public boolean apply(Message s) {
-				return s.validateArguments(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Message> validateArguments(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Message>() {
+      public boolean apply(Message s) {
+        return s.validateArguments(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Messages cannot cross bounderies of CombinedFragments or their operands.
@@ -217,13 +218,13 @@ public class MessagePath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.Message#validateCannotCrossBoundaries(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Message> validateCannotCrossBoundaries(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Message>() {
-			public boolean apply(Message s) {
-				return s.validateCannotCrossBoundaries(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Message> validateCannotCrossBoundaries(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Message>() {
+      public boolean apply(Message s) {
+        return s.validateCannotCrossBoundaries(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If the MessageEnds are both OccurrenceSpecifications then the connector must go between
@@ -232,13 +233,13 @@ public class MessagePath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.Message#validateOccurrenceSpecifications(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Message> validateOccurrenceSpecifications(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Message>() {
-			public boolean apply(Message s) {
-				return s.validateOccurrenceSpecifications(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Message> validateOccurrenceSpecifications(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Message>() {
+      public boolean apply(Message s) {
+        return s.validateOccurrenceSpecifications(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -246,10 +247,10 @@ public class MessagePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Message, MessageKind> getMessageKind = new Function<Message, MessageKind>() {
-		public MessageKind apply(Message s) {
-			return s.getMessageKind();
-		}
-	};
+    public MessageKind apply(Message s) {
+      return s.getMessageKind();
+    }
+  };
 
 	/**
 	 * 
@@ -257,9 +258,9 @@ public class MessagePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Message, NamedElement> getSignature = new Function<Message, NamedElement>() {
-		public NamedElement apply(Message s) {
-			return s.getSignature();
-		}
-	};
+    public NamedElement apply(Message s) {
+      return s.getSignature();
+    }
+  };
 
 }

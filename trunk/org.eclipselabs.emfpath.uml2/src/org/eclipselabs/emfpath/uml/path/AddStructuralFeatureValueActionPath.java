@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
 import org.eclipse.uml2.uml.InputPin;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +24,8 @@ public class AddStructuralFeatureValueActionPath extends WriteStructuralFeatureA
 	 * @generated
 	 */
 	private AddStructuralFeatureValueActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies whether existing values of the structural feature of the object should be
@@ -32,11 +33,11 @@ public class AddStructuralFeatureValueActionPath extends WriteStructuralFeatureA
 	 * @see org.eclipse.uml2.uml.AddStructuralFeatureValueAction#isReplaceAll()
 	 * @generated
 	 */
-	public static final Predicate<AddStructuralFeatureValueAction> isReplaceAll = new Predicate<AddStructuralFeatureValueAction>() {
-		public boolean apply(AddStructuralFeatureValueAction s) {
-			return s.isReplaceAll();
-		}
-	};
+	public static final ComposablePredicate<AddStructuralFeatureValueAction> isReplaceAll = new ComposablePredicate<AddStructuralFeatureValueAction>() {
+    public boolean apply(AddStructuralFeatureValueAction s) {
+      return s.isReplaceAll();
+    }
+  };
 
 	/**
 	 * Gives the position at which to insert a new value or move an existing value in ordered
@@ -46,10 +47,10 @@ public class AddStructuralFeatureValueActionPath extends WriteStructuralFeatureA
 	 * @generated
 	 */
 	public static final Function<AddStructuralFeatureValueAction, InputPin> insertAt = new Function<AddStructuralFeatureValueAction, InputPin>() {
-		public InputPin apply(AddStructuralFeatureValueAction s) {
-			return s.getInsertAt();
-		}
-	};
+    public InputPin apply(AddStructuralFeatureValueAction s) {
+      return s.getInsertAt();
+    }
+  };
 	
 	/**
 	 * Actions adding a value to ordered structural features must have a single input pin
@@ -70,12 +71,12 @@ public class AddStructuralFeatureValueActionPath extends WriteStructuralFeatureA
 	 * @see org.eclipse.uml2.uml.AddStructuralFeatureValueAction#validateUnlimitedNaturalAndMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<AddStructuralFeatureValueAction> validateUnlimitedNaturalAndMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<AddStructuralFeatureValueAction>() {
-			public boolean apply(AddStructuralFeatureValueAction s) {
-				return s.validateUnlimitedNaturalAndMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<AddStructuralFeatureValueAction> validateUnlimitedNaturalAndMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<AddStructuralFeatureValueAction>() {
+      public boolean apply(AddStructuralFeatureValueAction s) {
+        return s.validateUnlimitedNaturalAndMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 }

@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.Expression;
 import org.eclipse.uml2.uml.ValueSpecification;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -24,8 +24,8 @@ public class ExpressionPath extends ValueSpecificationPath {
 	 * @generated
 	 */
 	 ExpressionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The symbol associated with the node in the expression tree. 
@@ -33,10 +33,10 @@ public class ExpressionPath extends ValueSpecificationPath {
 	 * @generated
 	 */
 	public static final Function<Expression, String> symbol = new Function<Expression, String>() {
-		public String apply(Expression s) {
-			return s.getSymbol();
-		}
-	};
+    public String apply(Expression s) {
+      return s.getSymbol();
+    }
+  };
 
 	/**
 	 * Specifies a sequence of operands. 
@@ -44,10 +44,10 @@ public class ExpressionPath extends ValueSpecificationPath {
 	 * @generated
 	 */
 	public static final Function<Expression, EList<ValueSpecification>> operand = new Function<Expression, EList<ValueSpecification>>() {
-		public EList<ValueSpecification> apply(Expression s) {
-			return s.getOperands();
-		}
-	};
+    public EList<ValueSpecification> apply(Expression s) {
+      return s.getOperands();
+    }
+  };
 	
 	
 

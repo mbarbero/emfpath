@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.ExceptionHandler;
 import org.eclipse.uml2.uml.ExecutableNode;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -21,8 +21,8 @@ public class ExecutableNodePath extends ActivityNodePath {
 	 * @generated
 	 */
 	 ExecutableNodePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * A set of exception handlers that are examined if an uncaught exception propagates
@@ -31,10 +31,10 @@ public class ExecutableNodePath extends ActivityNodePath {
 	 * @generated
 	 */
 	public static final Function<ExecutableNode, EList<ExceptionHandler>> handler = new Function<ExecutableNode, EList<ExceptionHandler>>() {
-		public EList<ExceptionHandler> apply(ExecutableNode s) {
-			return s.getHandlers();
-		}
-	};
+    public EList<ExceptionHandler> apply(ExecutableNode s) {
+      return s.getHandlers();
+    }
+  };
 	
 	
 

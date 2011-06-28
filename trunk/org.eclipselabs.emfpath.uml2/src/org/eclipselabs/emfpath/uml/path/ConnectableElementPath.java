@@ -1,13 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.ConnectorEnd;
 import org.eclipse.uml2.uml.ParameterableElement;
 import org.eclipse.uml2.uml.TemplateParameter;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -28,8 +28,8 @@ public class ConnectableElementPath extends TypedElementPath {
 	 * @generated
 	 */
 	 ConnectableElementPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The formal template parameter that owns this element. 
@@ -55,10 +55,10 @@ public class ConnectableElementPath extends TypedElementPath {
 	 * @generated
 	 */
 	public static final Function<ConnectableElement, EList<ConnectorEnd>> end = new Function<ConnectableElement, EList<ConnectorEnd>>() {
-		public EList<ConnectorEnd> apply(ConnectableElement s) {
-			return s.getEnds();
-		}
-	};
+    public EList<ConnectorEnd> apply(ConnectableElement s) {
+      return s.getEnds();
+    }
+  };
 	
 	/**
 	 * The query isCompatibleWith() determines if this parameterable element is compatible
@@ -72,9 +72,9 @@ public class ConnectableElementPath extends TypedElementPath {
 	 * @see org.eclipse.uml2.uml.ParameterableElement#isCompatibleWith(ParameterableElement)
 	 * @generated
 	 */
-	public static Predicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
-		return ParameterableElementPath.isCompatibleWith(p);
-	}
+	public static ComposablePredicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
+    return ParameterableElementPath.isCompatibleWith(p);
+  }
 
 	/**
 	 * result = ConnectorEnd.allInstances()->select(e | e.role=self) 
@@ -82,9 +82,9 @@ public class ConnectableElementPath extends TypedElementPath {
 	 * @generated
 	 */
 	public static final Function<ConnectableElement, EList<ConnectorEnd>> getEnds = new Function<ConnectableElement, EList<ConnectorEnd>>() {
-		public EList<ConnectorEnd> apply(ConnectableElement s) {
-			return s.getEnds();
-		}
-	};
+    public EList<ConnectorEnd> apply(ConnectableElement s) {
+      return s.getEnds();
+    }
+  };
 
 }

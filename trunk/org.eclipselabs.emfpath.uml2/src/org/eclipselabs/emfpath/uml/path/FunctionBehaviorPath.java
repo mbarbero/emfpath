@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.FunctionBehavior;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -21,8 +21,8 @@ public class FunctionBehaviorPath extends OpaqueBehaviorPath {
 	 * @generated
 	 */
 	private FunctionBehaviorPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	
@@ -35,13 +35,13 @@ public class FunctionBehaviorPath extends OpaqueBehaviorPath {
 	 * @see org.eclipse.uml2.uml.FunctionBehavior#validateOneOutputParameter(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<FunctionBehavior> validateOneOutputParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<FunctionBehavior>() {
-			public boolean apply(FunctionBehavior s) {
-				return s.validateOneOutputParameter(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<FunctionBehavior> validateOneOutputParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<FunctionBehavior>() {
+      public boolean apply(FunctionBehavior s) {
+        return s.validateOneOutputParameter(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The types of parameters are all data types, which may not nest anything but other
@@ -57,12 +57,12 @@ public class FunctionBehaviorPath extends OpaqueBehaviorPath {
 	 * @see org.eclipse.uml2.uml.FunctionBehavior#validateTypesOfParameters(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<FunctionBehavior> validateTypesOfParameters(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<FunctionBehavior>() {
-			public boolean apply(FunctionBehavior s) {
-				return s.validateTypesOfParameters(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<FunctionBehavior> validateTypesOfParameters(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<FunctionBehavior>() {
+      public boolean apply(FunctionBehavior s) {
+        return s.validateTypesOfParameters(diagnostics, context);
+      }
+    };
+  }
 
 }

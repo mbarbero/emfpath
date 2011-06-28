@@ -16,8 +16,8 @@ public class ClearVariableActionPath extends VariableActionPath {
 	 * @generated
 	 */
 	private ClearVariableActionPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

@@ -17,8 +17,8 @@ public class ObservationPath extends PackageableElementPath {
 	 * @generated
 	 */
 	 ObservationPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

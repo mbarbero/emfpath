@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.ReclassifyObjectAction;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,19 +26,19 @@ public class ReclassifyObjectActionPath extends ActionPath {
 	 * @generated
 	 */
 	private ReclassifyObjectActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies whether existing classifiers should be removed before adding the new classifiers.
 	 * @see org.eclipse.uml2.uml.ReclassifyObjectAction#isReplaceAll()
 	 * @generated
 	 */
-	public static final Predicate<ReclassifyObjectAction> isReplaceAll = new Predicate<ReclassifyObjectAction>() {
-		public boolean apply(ReclassifyObjectAction s) {
-			return s.isReplaceAll();
-		}
-	};
+	public static final ComposablePredicate<ReclassifyObjectAction> isReplaceAll = new ComposablePredicate<ReclassifyObjectAction>() {
+    public boolean apply(ReclassifyObjectAction s) {
+      return s.isReplaceAll();
+    }
+  };
 
 	/**
 	 * A set of classifiers to be removed from the classifiers of the object. 
@@ -45,10 +46,10 @@ public class ReclassifyObjectActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ReclassifyObjectAction, EList<Classifier>> oldClassifier = new Function<ReclassifyObjectAction, EList<Classifier>>() {
-		public EList<Classifier> apply(ReclassifyObjectAction s) {
-			return s.getOldClassifiers();
-		}
-	};
+    public EList<Classifier> apply(ReclassifyObjectAction s) {
+      return s.getOldClassifiers();
+    }
+  };
 
 	/**
 	 * A set of classifiers to be added to the classifiers of the object. 
@@ -56,10 +57,10 @@ public class ReclassifyObjectActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ReclassifyObjectAction, EList<Classifier>> newClassifier = new Function<ReclassifyObjectAction, EList<Classifier>>() {
-		public EList<Classifier> apply(ReclassifyObjectAction s) {
-			return s.getNewClassifiers();
-		}
-	};
+    public EList<Classifier> apply(ReclassifyObjectAction s) {
+      return s.getNewClassifiers();
+    }
+  };
 
 	/**
 	 * Holds the object to be reclassified. 
@@ -67,10 +68,10 @@ public class ReclassifyObjectActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<ReclassifyObjectAction, InputPin> object = new Function<ReclassifyObjectAction, InputPin>() {
-		public InputPin apply(ReclassifyObjectAction s) {
-			return s.getObject();
-		}
-	};
+    public InputPin apply(ReclassifyObjectAction s) {
+      return s.getObject();
+    }
+  };
 	
 	/**
 	 * None of the new classifiers may be abstract.
@@ -79,13 +80,13 @@ public class ReclassifyObjectActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReclassifyObjectAction#validateClassifierNotAbstract(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReclassifyObjectAction> validateClassifierNotAbstract(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReclassifyObjectAction>() {
-			public boolean apply(ReclassifyObjectAction s) {
-				return s.validateClassifierNotAbstract(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReclassifyObjectAction> validateClassifierNotAbstract(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReclassifyObjectAction>() {
+      public boolean apply(ReclassifyObjectAction s) {
+        return s.validateClassifierNotAbstract(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The multiplicity of the input pin is 1..1.
@@ -93,13 +94,13 @@ public class ReclassifyObjectActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReclassifyObjectAction#validateMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReclassifyObjectAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReclassifyObjectAction>() {
-			public boolean apply(ReclassifyObjectAction s) {
-				return s.validateMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReclassifyObjectAction> validateMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReclassifyObjectAction>() {
+      public boolean apply(ReclassifyObjectAction s) {
+        return s.validateMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The input pin has no type.
@@ -107,12 +108,12 @@ public class ReclassifyObjectActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.ReclassifyObjectAction#validateInputPin(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReclassifyObjectAction> validateInputPin(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReclassifyObjectAction>() {
-			public boolean apply(ReclassifyObjectAction s) {
-				return s.validateInputPin(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReclassifyObjectAction> validateInputPin(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReclassifyObjectAction>() {
+      public boolean apply(ReclassifyObjectAction s) {
+        return s.validateInputPin(diagnostics, context);
+      }
+    };
+  }
 
 }

@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.ProtocolStateMachine;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -31,8 +32,8 @@ public class PortPath extends PropertyPath {
 	 * @generated
 	 */
 	private PortPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies whether requests arriving at this port are sent to the classifier behavior
@@ -43,11 +44,11 @@ public class PortPath extends PropertyPath {
 	 * @see org.eclipse.uml2.uml.Port#isBehavior()
 	 * @generated
 	 */
-	public static final Predicate<Port> isBehavior = new Predicate<Port>() {
-		public boolean apply(Port s) {
-			return s.isBehavior();
-		}
-	};
+	public static final ComposablePredicate<Port> isBehavior = new ComposablePredicate<Port>() {
+    public boolean apply(Port s) {
+      return s.isBehavior();
+    }
+  };
 
 	/**
 	 * If true indicates that this port is used to provide the published functionality of
@@ -58,11 +59,11 @@ public class PortPath extends PropertyPath {
 	 * @see org.eclipse.uml2.uml.Port#isService()
 	 * @generated
 	 */
-	public static final Predicate<Port> isService = new Predicate<Port>() {
-		public boolean apply(Port s) {
-			return s.isService();
-		}
-	};
+	public static final ComposablePredicate<Port> isService = new ComposablePredicate<Port>() {
+    public boolean apply(Port s) {
+      return s.isService();
+    }
+  };
 
 	/**
 	 * References the interfaces specifying the set of operations and receptions which the
@@ -72,10 +73,10 @@ public class PortPath extends PropertyPath {
 	 * @generated
 	 */
 	public static final Function<Port, EList<Interface>> required = new Function<Port, EList<Interface>>() {
-		public EList<Interface> apply(Port s) {
-			return s.getRequireds();
-		}
-	};
+    public EList<Interface> apply(Port s) {
+      return s.getRequireds();
+    }
+  };
 
 	/**
 	 * A port may be redefined when its containing classifier is specialized. The redefining
@@ -85,10 +86,10 @@ public class PortPath extends PropertyPath {
 	 * @generated
 	 */
 	public static final Function<Port, EList<Port>> redefinedPort = new Function<Port, EList<Port>>() {
-		public EList<Port> apply(Port s) {
-			return s.getRedefinedPorts();
-		}
-	};
+    public EList<Port> apply(Port s) {
+      return s.getRedefinedPorts();
+    }
+  };
 
 	/**
 	 * References the interfaces specifying the set of operations and receptions which the
@@ -101,10 +102,10 @@ public class PortPath extends PropertyPath {
 	 * @generated
 	 */
 	public static final Function<Port, EList<Interface>> provided = new Function<Port, EList<Interface>>() {
-		public EList<Interface> apply(Port s) {
-			return s.getProvideds();
-		}
-	};
+    public EList<Interface> apply(Port s) {
+      return s.getProvideds();
+    }
+  };
 
 	/**
 	 * References an optional protocol state machine which describes valid interactions at
@@ -113,10 +114,10 @@ public class PortPath extends PropertyPath {
 	 * @generated
 	 */
 	public static final Function<Port, ProtocolStateMachine> protocol = new Function<Port, ProtocolStateMachine>() {
-		public ProtocolStateMachine apply(Port s) {
-			return s.getProtocol();
-		}
-	};
+    public ProtocolStateMachine apply(Port s) {
+      return s.getProtocol();
+    }
+  };
 	
 	/**
 	 * The required interfaces of a port must be provided by elements to which the port is
@@ -125,13 +126,13 @@ public class PortPath extends PropertyPath {
 	 * @see org.eclipse.uml2.uml.Port#validateRequiredInterfaces(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Port> validateRequiredInterfaces(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Port>() {
-			public boolean apply(Port s) {
-				return s.validateRequiredInterfaces(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Port> validateRequiredInterfaces(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Port>() {
+      public boolean apply(Port s) {
+        return s.validateRequiredInterfaces(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Port.aggregation must be composite.
@@ -139,13 +140,13 @@ public class PortPath extends PropertyPath {
 	 * @see org.eclipse.uml2.uml.Port#validatePortAggregation(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Port> validatePortAggregation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Port>() {
-			public boolean apply(Port s) {
-				return s.validatePortAggregation(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Port> validatePortAggregation(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Port>() {
+      public boolean apply(Port s) {
+        return s.validatePortAggregation(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * When a port is destroyed, all connectors attached to this port will be destroyed also.
@@ -153,13 +154,13 @@ public class PortPath extends PropertyPath {
 	 * @see org.eclipse.uml2.uml.Port#validatePortDestroyed(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Port> validatePortDestroyed(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Port>() {
-			public boolean apply(Port s) {
-				return s.validatePortDestroyed(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Port> validatePortDestroyed(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Port>() {
+      public boolean apply(Port s) {
+        return s.validatePortDestroyed(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A defaultValue for port cannot be specified when the type of the Port is an Interface
@@ -167,13 +168,13 @@ public class PortPath extends PropertyPath {
 	 * @see org.eclipse.uml2.uml.Port#validateDefaultValue(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Port> validateDefaultValue(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Port>() {
-			public boolean apply(Port s) {
-				return s.validateDefaultValue(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Port> validateDefaultValue(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Port>() {
+      public boolean apply(Port s) {
+        return s.validateDefaultValue(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -181,10 +182,10 @@ public class PortPath extends PropertyPath {
 	 * @generated
 	 */
 	public static final Function<Port, EList<Interface>> getProvideds = new Function<Port, EList<Interface>>() {
-		public EList<Interface> apply(Port s) {
-			return s.getProvideds();
-		}
-	};
+    public EList<Interface> apply(Port s) {
+      return s.getProvideds();
+    }
+  };
 
 	/**
 	 * 
@@ -192,9 +193,9 @@ public class PortPath extends PropertyPath {
 	 * @generated
 	 */
 	public static final Function<Port, EList<Interface>> getRequireds = new Function<Port, EList<Interface>>() {
-		public EList<Interface> apply(Port s) {
-			return s.getRequireds();
-		}
-	};
+    public EList<Interface> apply(Port s) {
+      return s.getRequireds();
+    }
+  };
 
 }

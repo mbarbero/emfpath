@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.FinalState;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +23,8 @@ public class FinalStatePath extends StatePath {
 	 * @generated
 	 */
 	private FinalStatePath() {
-		super();
-	}
+    super();
+  }
 
 	
 	
@@ -34,13 +34,13 @@ public class FinalStatePath extends StatePath {
 	 * @see org.eclipse.uml2.uml.FinalState#validateNoOutgoingTransitions(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<FinalState> validateNoOutgoingTransitions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<FinalState>() {
-			public boolean apply(FinalState s) {
-				return s.validateNoOutgoingTransitions(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<FinalState> validateNoOutgoingTransitions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<FinalState>() {
+      public boolean apply(FinalState s) {
+        return s.validateNoOutgoingTransitions(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A final state cannot have regions.
@@ -48,13 +48,13 @@ public class FinalStatePath extends StatePath {
 	 * @see org.eclipse.uml2.uml.FinalState#validateNoRegions(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<FinalState> validateNoRegions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<FinalState>() {
-			public boolean apply(FinalState s) {
-				return s.validateNoRegions(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<FinalState> validateNoRegions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<FinalState>() {
+      public boolean apply(FinalState s) {
+        return s.validateNoRegions(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A final state cannot reference a submachine.
@@ -62,13 +62,13 @@ public class FinalStatePath extends StatePath {
 	 * @see org.eclipse.uml2.uml.FinalState#validateCannotReferenceSubmachine(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<FinalState> validateCannotReferenceSubmachine(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<FinalState>() {
-			public boolean apply(FinalState s) {
-				return s.validateCannotReferenceSubmachine(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<FinalState> validateCannotReferenceSubmachine(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<FinalState>() {
+      public boolean apply(FinalState s) {
+        return s.validateCannotReferenceSubmachine(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A final state has no entry behavior.
@@ -76,13 +76,13 @@ public class FinalStatePath extends StatePath {
 	 * @see org.eclipse.uml2.uml.FinalState#validateNoEntryBehavior(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<FinalState> validateNoEntryBehavior(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<FinalState>() {
-			public boolean apply(FinalState s) {
-				return s.validateNoEntryBehavior(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<FinalState> validateNoEntryBehavior(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<FinalState>() {
+      public boolean apply(FinalState s) {
+        return s.validateNoEntryBehavior(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A final state has no exit behavior.
@@ -90,13 +90,13 @@ public class FinalStatePath extends StatePath {
 	 * @see org.eclipse.uml2.uml.FinalState#validateNoExitBehavior(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<FinalState> validateNoExitBehavior(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<FinalState>() {
-			public boolean apply(FinalState s) {
-				return s.validateNoExitBehavior(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<FinalState> validateNoExitBehavior(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<FinalState>() {
+      public boolean apply(FinalState s) {
+        return s.validateNoExitBehavior(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A final state has no state (doActivity) behavior.
@@ -104,12 +104,12 @@ public class FinalStatePath extends StatePath {
 	 * @see org.eclipse.uml2.uml.FinalState#validateNoStateBehavior(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<FinalState> validateNoStateBehavior(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<FinalState>() {
-			public boolean apply(FinalState s) {
-				return s.validateNoStateBehavior(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<FinalState> validateNoStateBehavior(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<FinalState>() {
+      public boolean apply(FinalState s) {
+        return s.validateNoStateBehavior(diagnostics, context);
+      }
+    };
+  }
 
 }

@@ -1,15 +1,16 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -27,8 +28,8 @@ public class ConstraintPath extends PackageableElementPath {
 	 * @generated
 	 */
 	 ConstraintPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The ordered set of Elements referenced by this Constraint. 
@@ -36,10 +37,10 @@ public class ConstraintPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<Constraint, EList<Element>> constrainedElement = new Function<Constraint, EList<Element>>() {
-		public EList<Element> apply(Constraint s) {
-			return s.getConstrainedElements();
-		}
-	};
+    public EList<Element> apply(Constraint s) {
+      return s.getConstrainedElements();
+    }
+  };
 
 	/**
 	 * A condition that must be true when evaluated in order for the constraint to be satisfied.
@@ -47,10 +48,10 @@ public class ConstraintPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<Constraint, ValueSpecification> specification = new Function<Constraint, ValueSpecification>() {
-		public ValueSpecification apply(Constraint s) {
-			return s.getSpecification();
-		}
-	};
+    public ValueSpecification apply(Constraint s) {
+      return s.getSpecification();
+    }
+  };
 
 	/**
 	 * Specifies the namespace that owns the NamedElement. 
@@ -58,10 +59,10 @@ public class ConstraintPath extends PackageableElementPath {
 	 * @generated
 	 */
 	public static final Function<Constraint, Namespace> context = new Function<Constraint, Namespace>() {
-		public Namespace apply(Constraint s) {
-			return s.getContext();
-		}
-	};
+    public Namespace apply(Constraint s) {
+      return s.getContext();
+    }
+  };
 	
 	/**
 	 * A constraint cannot be applied to itself.
@@ -69,13 +70,13 @@ public class ConstraintPath extends PackageableElementPath {
 	 * @see org.eclipse.uml2.uml.Constraint#validateNotApplyToSelf(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Constraint> validateNotApplyToSelf(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Constraint>() {
-			public boolean apply(Constraint s) {
-				return s.validateNotApplyToSelf(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Constraint> validateNotApplyToSelf(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Constraint>() {
+      public boolean apply(Constraint s) {
+        return s.validateNotApplyToSelf(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The value specification for a constraint must evaluate to a Boolean value.
@@ -83,13 +84,13 @@ public class ConstraintPath extends PackageableElementPath {
 	 * @see org.eclipse.uml2.uml.Constraint#validateValueSpecificationBoolean(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Constraint> validateValueSpecificationBoolean(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Constraint>() {
-			public boolean apply(Constraint s) {
-				return s.validateValueSpecificationBoolean(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Constraint> validateValueSpecificationBoolean(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Constraint>() {
+      public boolean apply(Constraint s) {
+        return s.validateValueSpecificationBoolean(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The value specification for a constraint must evaluate to a Boolean value.
@@ -97,13 +98,13 @@ public class ConstraintPath extends PackageableElementPath {
 	 * @see org.eclipse.uml2.uml.Constraint#validateBooleanValue(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Constraint> validateBooleanValue(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Constraint>() {
-			public boolean apply(Constraint s) {
-				return s.validateBooleanValue(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Constraint> validateBooleanValue(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Constraint>() {
+      public boolean apply(Constraint s) {
+        return s.validateBooleanValue(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Evaluating the value specification for a constraint must not have side effects.
@@ -111,13 +112,13 @@ public class ConstraintPath extends PackageableElementPath {
 	 * @see org.eclipse.uml2.uml.Constraint#validateNoSideEffects(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Constraint> validateNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Constraint>() {
-			public boolean apply(Constraint s) {
-				return s.validateNoSideEffects(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Constraint> validateNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Constraint>() {
+      public boolean apply(Constraint s) {
+        return s.validateNoSideEffects(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A constraint cannot be applied to itself.
@@ -125,12 +126,12 @@ public class ConstraintPath extends PackageableElementPath {
 	 * @see org.eclipse.uml2.uml.Constraint#validateNotAppliedToSelf(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Constraint> validateNotAppliedToSelf(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Constraint>() {
-			public boolean apply(Constraint s) {
-				return s.validateNotAppliedToSelf(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Constraint> validateNotAppliedToSelf(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Constraint>() {
+      public boolean apply(Constraint s) {
+        return s.validateNotAppliedToSelf(diagnostics, context);
+      }
+    };
+  }
 
 }

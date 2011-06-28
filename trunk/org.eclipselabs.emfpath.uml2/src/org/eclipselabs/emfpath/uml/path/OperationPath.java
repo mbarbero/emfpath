@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.DataType;
@@ -18,6 +16,9 @@ import org.eclipse.uml2.uml.TemplateParameter;
 import org.eclipse.uml2.uml.TemplateSignature;
 import org.eclipse.uml2.uml.TemplateableElement;
 import org.eclipse.uml2.uml.Type;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -41,8 +42,8 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	private OperationPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The formal template parameter that owns this element. 
@@ -86,10 +87,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, Interface> interface_ = new Function<Operation, Interface>() {
-		public Interface apply(Operation s) {
-			return s.getInterface();
-		}
-	};
+    public Interface apply(Operation s) {
+      return s.getInterface();
+    }
+  };
 
 	/**
 	 * The class that owns the operation. 
@@ -97,10 +98,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, Class> class_ = new Function<Operation, Class>() {
-		public Class apply(Operation s) {
-			return s.getClass_();
-		}
-	};
+    public Class apply(Operation s) {
+      return s.getClass_();
+    }
+  };
 
 	/**
 	 * Specifies whether an execution of the BehavioralFeature leaves the state of the system
@@ -108,11 +109,11 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Operation#isQuery()
 	 * @generated
 	 */
-	public static final Predicate<Operation> isQuery = new Predicate<Operation>() {
-		public boolean apply(Operation s) {
-			return s.isQuery();
-		}
-	};
+	public static final ComposablePredicate<Operation> isQuery = new ComposablePredicate<Operation>() {
+    public boolean apply(Operation s) {
+      return s.isQuery();
+    }
+  };
 
 	/**
 	 * This information is derived from the return result for this Operation.
@@ -121,11 +122,11 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Operation#isOrdered()
 	 * @generated
 	 */
-	public static final Predicate<Operation> isOrdered = new Predicate<Operation>() {
-		public boolean apply(Operation s) {
-			return s.isOrdered();
-		}
-	};
+	public static final ComposablePredicate<Operation> isOrdered = new ComposablePredicate<Operation>() {
+    public boolean apply(Operation s) {
+      return s.isOrdered();
+    }
+  };
 
 	/**
 	 * This information is derived from the return result for this Operation.
@@ -134,11 +135,11 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Operation#isUnique()
 	 * @generated
 	 */
-	public static final Predicate<Operation> isUnique = new Predicate<Operation>() {
-		public boolean apply(Operation s) {
-			return s.isUnique();
-		}
-	};
+	public static final ComposablePredicate<Operation> isUnique = new ComposablePredicate<Operation>() {
+    public boolean apply(Operation s) {
+      return s.isUnique();
+    }
+  };
 
 	/**
 	 * This information is derived from the return result for this Operation.
@@ -148,10 +149,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, java.lang.Integer> lower = new Function<Operation, java.lang.Integer>() {
-		public java.lang.Integer apply(Operation s) {
-			return s.getLower();
-		}
-	};
+    public java.lang.Integer apply(Operation s) {
+      return s.getLower();
+    }
+  };
 
 	/**
 	 * This information is derived from the return result for this Operation.
@@ -161,10 +162,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, java.lang.Integer> upper = new Function<Operation, java.lang.Integer>() {
-		public java.lang.Integer apply(Operation s) {
-			return s.getUpper();
-		}
-	};
+    public java.lang.Integer apply(Operation s) {
+      return s.getUpper();
+    }
+  };
 
 	/**
 	 * An optional set of Constraints on the state of the system when the Operation is invoked.
@@ -172,10 +173,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, EList<Constraint>> precondition = new Function<Operation, EList<Constraint>>() {
-		public EList<Constraint> apply(Operation s) {
-			return s.getPreconditions();
-		}
-	};
+    public EList<Constraint> apply(Operation s) {
+      return s.getPreconditions();
+    }
+  };
 
 	/**
 	 * An optional set of Constraints specifying the state of the system when the Operation
@@ -184,10 +185,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, EList<Constraint>> postcondition = new Function<Operation, EList<Constraint>>() {
-		public EList<Constraint> apply(Operation s) {
-			return s.getPostconditions();
-		}
-	};
+    public EList<Constraint> apply(Operation s) {
+      return s.getPostconditions();
+    }
+  };
 
 	/**
 	 * References the Operations that are redefined by this Operation. 
@@ -195,10 +196,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, EList<Operation>> redefinedOperation = new Function<Operation, EList<Operation>>() {
-		public EList<Operation> apply(Operation s) {
-			return s.getRedefinedOperations();
-		}
-	};
+    public EList<Operation> apply(Operation s) {
+      return s.getRedefinedOperations();
+    }
+  };
 
 	/**
 	 * The DataType that owns this Operation. 
@@ -206,10 +207,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, DataType> datatype = new Function<Operation, DataType>() {
-		public DataType apply(Operation s) {
-			return s.getDatatype();
-		}
-	};
+    public DataType apply(Operation s) {
+      return s.getDatatype();
+    }
+  };
 
 	/**
 	 * An optional Constraint on the result values of an invocation of this Operation. 
@@ -217,10 +218,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, Constraint> bodyCondition = new Function<Operation, Constraint>() {
-		public Constraint apply(Operation s) {
-			return s.getBodyCondition();
-		}
-	};
+    public Constraint apply(Operation s) {
+      return s.getBodyCondition();
+    }
+  };
 
 	/**
 	 * This information is derived from the return result for this Operation.
@@ -230,10 +231,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, Type> type = new Function<Operation, Type>() {
-		public Type apply(Operation s) {
-			return s.getType();
-		}
-	};
+    public Type apply(Operation s) {
+      return s.getType();
+    }
+  };
 	
 	/**
 	 * The query isCompatibleWith() determines if this parameterable element is compatible
@@ -247,9 +248,9 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @see org.eclipse.uml2.uml.ParameterableElement#isCompatibleWith(ParameterableElement)
 	 * @generated
 	 */
-	public static Predicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
-		return ParameterableElementPath.isCompatibleWith(p);
-	}
+	public static ComposablePredicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
+    return ParameterableElementPath.isCompatibleWith(p);
+  }
 
 	/**
 	 * The query parameterableElements() returns the set of elements that may be used as
@@ -273,7 +274,7 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @see org.eclipse.uml2.uml.TemplateableElement#isTemplate()
 	 * @generated
 	 */
-	public static final Predicate<TemplateableElement> isTemplate = TemplateableElementPath.isTemplate;
+	public static final ComposablePredicate<TemplateableElement> isTemplate = TemplateableElementPath.isTemplate;
 
 	/**
 	 * An operation can have at most one return parameter; i.e., an owned parameter with
@@ -283,13 +284,13 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Operation#validateAtMostOneReturn(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Operation> validateAtMostOneReturn(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Operation>() {
-			public boolean apply(Operation s) {
-				return s.validateAtMostOneReturn(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Operation> validateAtMostOneReturn(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Operation>() {
+      public boolean apply(Operation s) {
+        return s.validateAtMostOneReturn(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A bodyCondition can only be specified for a query operation.
@@ -298,13 +299,13 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @see org.eclipse.uml2.uml.Operation#validateOnlyBodyForQuery(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Operation> validateOnlyBodyForQuery(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Operation>() {
-			public boolean apply(Operation s) {
-				return s.validateOnlyBodyForQuery(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Operation> validateOnlyBodyForQuery(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Operation>() {
+      public boolean apply(Operation s) {
+        return s.validateOnlyBodyForQuery(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -312,10 +313,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, java.lang.Integer> getLower = new Function<Operation, java.lang.Integer>() {
-		public java.lang.Integer apply(Operation s) {
-			return s.getLower();
-		}
-	};
+    public java.lang.Integer apply(Operation s) {
+      return s.getLower();
+    }
+  };
 
 	/**
 	 * 
@@ -323,10 +324,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, java.lang.Integer> getUpper = new Function<Operation, java.lang.Integer>() {
-		public java.lang.Integer apply(Operation s) {
-			return s.getUpper();
-		}
-	};
+    public java.lang.Integer apply(Operation s) {
+      return s.getUpper();
+    }
+  };
 
 	/**
 	 * 
@@ -334,13 +335,13 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static Function<Operation, Operation> setIsOrdered(final boolean newIsOrdered) {
-		return new Function<Operation, Operation>() {
-			public Operation apply(Operation s) {
-				s.setIsOrdered(newIsOrdered);
-				return s;
-			}
-		};
-	}
+    return new Function<Operation, Operation>() {
+      public Operation apply(Operation s) {
+        s.setIsOrdered(newIsOrdered);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -348,13 +349,13 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static Function<Operation, Operation> setIsUnique(final boolean newIsUnique) {
-		return new Function<Operation, Operation>() {
-			public Operation apply(Operation s) {
-				s.setIsUnique(newIsUnique);
-				return s;
-			}
-		};
-	}
+    return new Function<Operation, Operation>() {
+      public Operation apply(Operation s) {
+        s.setIsUnique(newIsUnique);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -362,13 +363,13 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static Function<Operation, Operation> setLower(final int newLower) {
-		return new Function<Operation, Operation>() {
-			public Operation apply(Operation s) {
-				s.setLower(newLower);
-				return s;
-			}
-		};
-	}
+    return new Function<Operation, Operation>() {
+      public Operation apply(Operation s) {
+        s.setLower(newLower);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -376,13 +377,13 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static Function<Operation, Operation> setType(final Type newType) {
-		return new Function<Operation, Operation>() {
-			public Operation apply(Operation s) {
-				s.setType(newType);
-				return s;
-			}
-		};
-	}
+    return new Function<Operation, Operation>() {
+      public Operation apply(Operation s) {
+        s.setType(newType);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -390,13 +391,13 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static Function<Operation, Operation> setUpper(final int newUpper) {
-		return new Function<Operation, Operation>() {
-			public Operation apply(Operation s) {
-				s.setUpper(newUpper);
-				return s;
-			}
-		};
-	}
+    return new Function<Operation, Operation>() {
+      public Operation apply(Operation s) {
+        s.setUpper(newUpper);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * Retrieves the (only) return result parameter for this operation. 
@@ -404,10 +405,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, Parameter> getReturnResult = new Function<Operation, Parameter>() {
-		public Parameter apply(Operation s) {
-			return s.getReturnResult();
-		}
-	};
+    public Parameter apply(Operation s) {
+      return s.getReturnResult();
+    }
+  };
 
 	/**
 	 * If this operation has a return parameter, lower equals the value of lower for that
@@ -418,10 +419,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, java.lang.Integer> lowerBound = new Function<Operation, java.lang.Integer>() {
-		public java.lang.Integer apply(Operation s) {
-			return s.lowerBound();
-		}
-	};
+    public java.lang.Integer apply(Operation s) {
+      return s.lowerBound();
+    }
+  };
 
 	/**
 	 * If this operation has a return parameter, upper equals the value of upper for that
@@ -432,10 +433,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, java.lang.Integer> upperBound = new Function<Operation, java.lang.Integer>() {
-		public java.lang.Integer apply(Operation s) {
-			return s.upperBound();
-		}
-	};
+    public java.lang.Integer apply(Operation s) {
+      return s.upperBound();
+    }
+  };
 
 	/**
 	 * If this operation has a return parameter, type equals the value of type for that parameter.
@@ -446,10 +447,10 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, Type> getType = new Function<Operation, Type>() {
-		public Type apply(Operation s) {
-			return s.getType();
-		}
-	};
+    public Type apply(Operation s) {
+      return s.getType();
+    }
+  };
 
 	/**
 	 * The query returnResult() returns the set containing the return parameter of the Operation
@@ -460,9 +461,9 @@ public class OperationPath extends BehavioralFeaturePath {
 	 * @generated
 	 */
 	public static final Function<Operation, EList<Parameter>> returnResult = new Function<Operation, EList<Parameter>>() {
-		public EList<Parameter> apply(Operation s) {
-			return s.returnResult();
-		}
-	};
+    public EList<Parameter> apply(Operation s) {
+      return s.returnResult();
+    }
+  };
 
 }

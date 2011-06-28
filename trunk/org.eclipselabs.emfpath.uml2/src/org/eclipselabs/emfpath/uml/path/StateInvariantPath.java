@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.StateInvariant;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -22,8 +22,8 @@ public class StateInvariantPath extends InteractionFragmentPath {
 	 * @generated
 	 */
 	private StateInvariantPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * A Constraint that should hold at runtime for this StateInvariant 
@@ -31,10 +31,10 @@ public class StateInvariantPath extends InteractionFragmentPath {
 	 * @generated
 	 */
 	public static final Function<StateInvariant, Constraint> invariant = new Function<StateInvariant, Constraint>() {
-		public Constraint apply(StateInvariant s) {
-			return s.getInvariant();
-		}
-	};
+    public Constraint apply(StateInvariant s) {
+      return s.getInvariant();
+    }
+  };
 	
 	
 

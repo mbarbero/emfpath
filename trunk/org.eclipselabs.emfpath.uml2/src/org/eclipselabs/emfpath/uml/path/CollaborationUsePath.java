@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Collaboration;
 import org.eclipse.uml2.uml.CollaborationUse;
 import org.eclipse.uml2.uml.Dependency;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -35,8 +36,8 @@ public class CollaborationUsePath extends NamedElementPath {
 	 * @generated
 	 */
 	private CollaborationUsePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The collaboration which is used in this occurrence. The collaboration defines the
@@ -46,10 +47,10 @@ public class CollaborationUsePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<CollaborationUse, Collaboration> type = new Function<CollaborationUse, Collaboration>() {
-		public Collaboration apply(CollaborationUse s) {
-			return s.getType();
-		}
-	};
+    public Collaboration apply(CollaborationUse s) {
+      return s.getType();
+    }
+  };
 
 	/**
 	 * A mapping between features of the collaboration type and features of the classifier
@@ -61,10 +62,10 @@ public class CollaborationUsePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<CollaborationUse, EList<Dependency>> roleBinding = new Function<CollaborationUse, EList<Dependency>>() {
-		public EList<Dependency> apply(CollaborationUse s) {
-			return s.getRoleBindings();
-		}
-	};
+    public EList<Dependency> apply(CollaborationUse s) {
+      return s.getRoleBindings();
+    }
+  };
 	
 	/**
 	 * All the client elements of a roleBinding are in one classifier and all supplier elements
@@ -73,13 +74,13 @@ public class CollaborationUsePath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.CollaborationUse#validateClientElements(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CollaborationUse> validateClientElements(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CollaborationUse>() {
-			public boolean apply(CollaborationUse s) {
-				return s.validateClientElements(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CollaborationUse> validateClientElements(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CollaborationUse>() {
+      public boolean apply(CollaborationUse s) {
+        return s.validateClientElements(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Every role in the collaboration is bound within the collaboration use to a connectable
@@ -88,13 +89,13 @@ public class CollaborationUsePath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.CollaborationUse#validateEveryRole(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CollaborationUse> validateEveryRole(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CollaborationUse>() {
-			public boolean apply(CollaborationUse s) {
-				return s.validateEveryRole(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CollaborationUse> validateEveryRole(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CollaborationUse>() {
+      public boolean apply(CollaborationUse s) {
+        return s.validateEveryRole(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The connectors in the classifier connect according to the connectors in the collaboration
@@ -102,12 +103,12 @@ public class CollaborationUsePath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.CollaborationUse#validateConnectors(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CollaborationUse> validateConnectors(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CollaborationUse>() {
-			public boolean apply(CollaborationUse s) {
-				return s.validateConnectors(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CollaborationUse> validateConnectors(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CollaborationUse>() {
+      public boolean apply(CollaborationUse s) {
+        return s.validateConnectors(diagnostics, context);
+      }
+    };
+  }
 
 }

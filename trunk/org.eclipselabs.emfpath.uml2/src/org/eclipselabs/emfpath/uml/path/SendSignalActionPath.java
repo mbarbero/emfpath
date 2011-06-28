@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.SendSignalAction;
 import org.eclipse.uml2.uml.Signal;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -28,8 +29,8 @@ public class SendSignalActionPath extends InvocationActionPath {
 	 * @generated
 	 */
 	private SendSignalActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The target object to which the signal is sent. 
@@ -37,10 +38,10 @@ public class SendSignalActionPath extends InvocationActionPath {
 	 * @generated
 	 */
 	public static final Function<SendSignalAction, InputPin> target = new Function<SendSignalAction, InputPin>() {
-		public InputPin apply(SendSignalAction s) {
-			return s.getTarget();
-		}
-	};
+    public InputPin apply(SendSignalAction s) {
+      return s.getTarget();
+    }
+  };
 
 	/**
 	 * The type of signal transmitted to the target object. 
@@ -48,10 +49,10 @@ public class SendSignalActionPath extends InvocationActionPath {
 	 * @generated
 	 */
 	public static final Function<SendSignalAction, Signal> signal = new Function<SendSignalAction, Signal>() {
-		public Signal apply(SendSignalAction s) {
-			return s.getSignal();
-		}
-	};
+    public Signal apply(SendSignalAction s) {
+      return s.getSignal();
+    }
+  };
 	
 	/**
 	 * The number and order of argument pins must be the same as the number and order of
@@ -60,13 +61,13 @@ public class SendSignalActionPath extends InvocationActionPath {
 	 * @see org.eclipse.uml2.uml.SendSignalAction#validateNumberOrder(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<SendSignalAction> validateNumberOrder(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<SendSignalAction>() {
-			public boolean apply(SendSignalAction s) {
-				return s.validateNumberOrder(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<SendSignalAction> validateNumberOrder(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<SendSignalAction>() {
+      public boolean apply(SendSignalAction s) {
+        return s.validateNumberOrder(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The type, ordering, and multiplicity of an argument pin must be the same as the corresponding
@@ -75,12 +76,12 @@ public class SendSignalActionPath extends InvocationActionPath {
 	 * @see org.eclipse.uml2.uml.SendSignalAction#validateTypeOrderingMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<SendSignalAction> validateTypeOrderingMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<SendSignalAction>() {
-			public boolean apply(SendSignalAction s) {
-				return s.validateTypeOrderingMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<SendSignalAction> validateTypeOrderingMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<SendSignalAction>() {
+      public boolean apply(SendSignalAction s) {
+        return s.validateTypeOrderingMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 }

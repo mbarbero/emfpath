@@ -1,17 +1,18 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Collaboration;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.Type;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -29,8 +30,8 @@ public class CollaborationPath extends BehavioredClassifierPath {
 	 * @generated
 	 */
 	private CollaborationPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * References the properties owned by the classifier. 
@@ -77,10 +78,10 @@ public class CollaborationPath extends BehavioredClassifierPath {
 	 * @generated
 	 */
 	public static final Function<Collaboration, EList<ConnectableElement>> collaborationRole = new Function<Collaboration, EList<ConnectableElement>>() {
-		public EList<ConnectableElement> apply(Collaboration s) {
-			return s.getCollaborationRoles();
-		}
-	};
+    public EList<ConnectableElement> apply(Collaboration s) {
+      return s.getCollaborationRoles();
+    }
+  };
 	
 	/**
 	 * The multiplicities on connected elements must be consistent.
@@ -90,9 +91,9 @@ public class CollaborationPath extends BehavioredClassifierPath {
 	 * @see org.eclipse.uml2.uml.StructuredClassifier#validateMultiplicities(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<StructuredClassifier> validateMultiplicities(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return StructuredClassifierPath.validateMultiplicities(diagnostics, context);
-	}
+	public static ComposablePredicate<StructuredClassifier> validateMultiplicities(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return StructuredClassifierPath.validateMultiplicities(diagnostics, context);
+  }
 
 	/**
 	 * Creates a property with the specified name, type, lower bound, and upper bound as
@@ -103,7 +104,7 @@ public class CollaborationPath extends BehavioredClassifierPath {
 	 * @generated
 	 */
 	public static Function<StructuredClassifier, Property> createOwnedAttribute(final String name, final Type type, final int lower, final int upper) {
-		return StructuredClassifierPath.createOwnedAttribute(name, type, lower, upper);
-	}
+    return StructuredClassifierPath.createOwnedAttribute(name, type, lower, upper);
+  }
 
 }

@@ -1,11 +1,11 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.Event;
 import org.eclipse.uml2.uml.GeneralOrdering;
 import org.eclipse.uml2.uml.OccurrenceSpecification;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -22,8 +22,8 @@ public class OccurrenceSpecificationPath extends InteractionFragmentPath {
 	 * @generated
 	 */
 	 OccurrenceSpecificationPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * References the GeneralOrderings that specify EventOcurrences that must occur before
@@ -33,10 +33,10 @@ public class OccurrenceSpecificationPath extends InteractionFragmentPath {
 	 * @generated
 	 */
 	public static final Function<OccurrenceSpecification, EList<GeneralOrdering>> toBefore = new Function<OccurrenceSpecification, EList<GeneralOrdering>>() {
-		public EList<GeneralOrdering> apply(OccurrenceSpecification s) {
-			return s.getToBefores();
-		}
-	};
+    public EList<GeneralOrdering> apply(OccurrenceSpecification s) {
+      return s.getToBefores();
+    }
+  };
 
 	/**
 	 * References a specification of the occurring event. 
@@ -44,10 +44,10 @@ public class OccurrenceSpecificationPath extends InteractionFragmentPath {
 	 * @generated
 	 */
 	public static final Function<OccurrenceSpecification, Event> event = new Function<OccurrenceSpecification, Event>() {
-		public Event apply(OccurrenceSpecification s) {
-			return s.getEvent();
-		}
-	};
+    public Event apply(OccurrenceSpecification s) {
+      return s.getEvent();
+    }
+  };
 
 	/**
 	 * References the GeneralOrderings that specify EventOcurrences that must occur after
@@ -57,10 +57,10 @@ public class OccurrenceSpecificationPath extends InteractionFragmentPath {
 	 * @generated
 	 */
 	public static final Function<OccurrenceSpecification, EList<GeneralOrdering>> toAfter = new Function<OccurrenceSpecification, EList<GeneralOrdering>>() {
-		public EList<GeneralOrdering> apply(OccurrenceSpecification s) {
-			return s.getToAfters();
-		}
-	};
+    public EList<GeneralOrdering> apply(OccurrenceSpecification s) {
+      return s.getToAfters();
+    }
+  };
 	
 	
 

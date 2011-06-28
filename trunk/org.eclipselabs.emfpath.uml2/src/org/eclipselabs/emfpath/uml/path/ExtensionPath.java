@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -26,8 +27,8 @@ public class ExtensionPath extends AssociationPath {
 	 * @generated
 	 */
 	private ExtensionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Indicates whether an instance of the extending stereotype must be created when an
@@ -38,11 +39,11 @@ public class ExtensionPath extends AssociationPath {
 	 * @see org.eclipse.uml2.uml.Extension#isRequired()
 	 * @generated
 	 */
-	public static final Predicate<Extension> isRequired = new Predicate<Extension>() {
-		public boolean apply(Extension s) {
-			return s.isRequired();
-		}
-	};
+	public static final ComposablePredicate<Extension> isRequired = new ComposablePredicate<Extension>() {
+    public boolean apply(Extension s) {
+      return s.isRequired();
+    }
+  };
 
 	/**
 	 * References the Class that is extended through an Extension. The property is derived
@@ -51,10 +52,10 @@ public class ExtensionPath extends AssociationPath {
 	 * @generated
 	 */
 	public static final Function<Extension, Class> metaclass = new Function<Extension, Class>() {
-		public Class apply(Extension s) {
-			return s.getMetaclass();
-		}
-	};
+    public Class apply(Extension s) {
+      return s.getMetaclass();
+    }
+  };
 	
 	/**
 	 * The non-owned end of an Extension is typed by a Class.
@@ -63,13 +64,13 @@ public class ExtensionPath extends AssociationPath {
 	 * @see org.eclipse.uml2.uml.Extension#validateNonOwnedEnd(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Extension> validateNonOwnedEnd(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Extension>() {
-			public boolean apply(Extension s) {
-				return s.validateNonOwnedEnd(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Extension> validateNonOwnedEnd(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Extension>() {
+      public boolean apply(Extension s) {
+        return s.validateNonOwnedEnd(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * An Extension is binary, i.e., it has only two memberEnds.
@@ -77,13 +78,13 @@ public class ExtensionPath extends AssociationPath {
 	 * @see org.eclipse.uml2.uml.Extension#validateIsBinary(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Extension> validateIsBinary(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Extension>() {
-			public boolean apply(Extension s) {
-				return s.validateIsBinary(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Extension> validateIsBinary(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Extension>() {
+      public boolean apply(Extension s) {
+        return s.validateIsBinary(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Retrieves the extension end that is typed by a stereotype (as opposed to a metaclass).
@@ -91,10 +92,10 @@ public class ExtensionPath extends AssociationPath {
 	 * @generated
 	 */
 	public static final Function<Extension, Property> getStereotypeEnd = new Function<Extension, Property>() {
-		public Property apply(Extension s) {
-			return s.getStereotypeEnd();
-		}
-	};
+    public Property apply(Extension s) {
+      return s.getStereotypeEnd();
+    }
+  };
 
 	/**
 	 * Retrieves the stereotype that extends a metaclass through this extension. 
@@ -102,10 +103,10 @@ public class ExtensionPath extends AssociationPath {
 	 * @generated
 	 */
 	public static final Function<Extension, Stereotype> getStereotype = new Function<Extension, Stereotype>() {
-		public Stereotype apply(Extension s) {
-			return s.getStereotype();
-		}
-	};
+    public Stereotype apply(Extension s) {
+      return s.getStereotype();
+    }
+  };
 
 	/**
 	 * The query metaclassEnd() returns the Property that is typed by a metaclass (as opposed
@@ -115,10 +116,10 @@ public class ExtensionPath extends AssociationPath {
 	 * @generated
 	 */
 	public static final Function<Extension, Property> metaclassEnd = new Function<Extension, Property>() {
-		public Property apply(Extension s) {
-			return s.metaclassEnd();
-		}
-	};
+    public Property apply(Extension s) {
+      return s.metaclassEnd();
+    }
+  };
 
 	/**
 	 * The query metaclass() returns the metaclass that is being extended (as opposed to
@@ -128,9 +129,9 @@ public class ExtensionPath extends AssociationPath {
 	 * @generated
 	 */
 	public static final Function<Extension, Class> getMetaclass = new Function<Extension, Class>() {
-		public Class apply(Extension s) {
-			return s.getMetaclass();
-		}
-	};
+    public Class apply(Extension s) {
+      return s.getMetaclass();
+    }
+  };
 
 }

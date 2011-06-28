@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.ActionInputPin;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +24,8 @@ public class ActionInputPinPath extends InputPinPath {
 	 * @generated
 	 */
 	private ActionInputPinPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The action used to provide values. 
@@ -32,10 +33,10 @@ public class ActionInputPinPath extends InputPinPath {
 	 * @generated
 	 */
 	public static final Function<ActionInputPin, Action> fromAction = new Function<ActionInputPin, Action>() {
-		public Action apply(ActionInputPin s) {
-			return s.getFromAction();
-		}
-	};
+    public Action apply(ActionInputPin s) {
+      return s.getFromAction();
+    }
+  };
 	
 	/**
 	 * The fromAction of an action input pin must have exactly one output pin.
@@ -43,13 +44,13 @@ public class ActionInputPinPath extends InputPinPath {
 	 * @see org.eclipse.uml2.uml.ActionInputPin#validateOneOutputPin(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActionInputPin> validateOneOutputPin(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActionInputPin>() {
-			public boolean apply(ActionInputPin s) {
-				return s.validateOneOutputPin(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActionInputPin> validateOneOutputPin(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActionInputPin>() {
+      public boolean apply(ActionInputPin s) {
+        return s.validateOneOutputPin(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The fromAction of an action input pin must only have action input pins as input pins.
@@ -57,13 +58,13 @@ public class ActionInputPinPath extends InputPinPath {
 	 * @see org.eclipse.uml2.uml.ActionInputPin#validateInputPin(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActionInputPin> validateInputPin(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActionInputPin>() {
-			public boolean apply(ActionInputPin s) {
-				return s.validateInputPin(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActionInputPin> validateInputPin(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActionInputPin>() {
+      public boolean apply(ActionInputPin s) {
+        return s.validateInputPin(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The fromAction of an action input pin cannot have control or data flows coming into
@@ -72,12 +73,12 @@ public class ActionInputPinPath extends InputPinPath {
 	 * @see org.eclipse.uml2.uml.ActionInputPin#validateNoControlOrDataFlow(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActionInputPin> validateNoControlOrDataFlow(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActionInputPin>() {
-			public boolean apply(ActionInputPin s) {
-				return s.validateNoControlOrDataFlow(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActionInputPin> validateNoControlOrDataFlow(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActionInputPin>() {
+      public boolean apply(ActionInputPin s) {
+        return s.validateNoControlOrDataFlow(diagnostics, context);
+      }
+    };
+  }
 
 }

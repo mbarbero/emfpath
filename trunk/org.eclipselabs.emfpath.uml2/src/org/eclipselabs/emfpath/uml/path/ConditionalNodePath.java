@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Clause;
 import org.eclipse.uml2.uml.ConditionalNode;
 import org.eclipse.uml2.uml.OutputPin;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,30 +26,30 @@ public class ConditionalNodePath extends StructuredActivityNodePath {
 	 * @generated
 	 */
 	private ConditionalNodePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * If true, the modeler asserts that at most one test will succeed. 
 	 * @see org.eclipse.uml2.uml.ConditionalNode#isDeterminate()
 	 * @generated
 	 */
-	public static final Predicate<ConditionalNode> isDeterminate = new Predicate<ConditionalNode>() {
-		public boolean apply(ConditionalNode s) {
-			return s.isDeterminate();
-		}
-	};
+	public static final ComposablePredicate<ConditionalNode> isDeterminate = new ComposablePredicate<ConditionalNode>() {
+    public boolean apply(ConditionalNode s) {
+      return s.isDeterminate();
+    }
+  };
 
 	/**
 	 * If true, the modeler asserts that at least one test will succeed. 
 	 * @see org.eclipse.uml2.uml.ConditionalNode#isAssured()
 	 * @generated
 	 */
-	public static final Predicate<ConditionalNode> isAssured = new Predicate<ConditionalNode>() {
-		public boolean apply(ConditionalNode s) {
-			return s.isAssured();
-		}
-	};
+	public static final ComposablePredicate<ConditionalNode> isAssured = new ComposablePredicate<ConditionalNode>() {
+    public boolean apply(ConditionalNode s) {
+      return s.isAssured();
+    }
+  };
 
 	/**
 	 * Set of clauses composing the conditional. 
@@ -56,10 +57,10 @@ public class ConditionalNodePath extends StructuredActivityNodePath {
 	 * @generated
 	 */
 	public static final Function<ConditionalNode, EList<Clause>> clause = new Function<ConditionalNode, EList<Clause>>() {
-		public EList<Clause> apply(ConditionalNode s) {
-			return s.getClauses();
-		}
-	};
+    public EList<Clause> apply(ConditionalNode s) {
+      return s.getClauses();
+    }
+  };
 
 	/**
 	 * A list of output pins that constitute the data flow outputs of the conditional. 
@@ -67,10 +68,10 @@ public class ConditionalNodePath extends StructuredActivityNodePath {
 	 * @generated
 	 */
 	public static final Function<ConditionalNode, EList<OutputPin>> result = new Function<ConditionalNode, EList<OutputPin>>() {
-		public EList<OutputPin> apply(ConditionalNode s) {
-			return s.getResults();
-		}
-	};
+    public EList<OutputPin> apply(ConditionalNode s) {
+      return s.getResults();
+    }
+  };
 	
 	/**
 	 * The result output pins have no incoming edges.
@@ -78,12 +79,12 @@ public class ConditionalNodePath extends StructuredActivityNodePath {
 	 * @see org.eclipse.uml2.uml.ConditionalNode#validateResultNoIncoming(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ConditionalNode> validateResultNoIncoming(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ConditionalNode>() {
-			public boolean apply(ConditionalNode s) {
-				return s.validateResultNoIncoming(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ConditionalNode> validateResultNoIncoming(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ConditionalNode>() {
+      public boolean apply(ConditionalNode s) {
+        return s.validateResultNoIncoming(diagnostics, context);
+      }
+    };
+  }
 
 }

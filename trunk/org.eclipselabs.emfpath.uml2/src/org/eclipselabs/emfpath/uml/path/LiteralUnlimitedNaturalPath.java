@@ -1,8 +1,8 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -18,8 +18,8 @@ public class LiteralUnlimitedNaturalPath extends LiteralSpecificationPath {
 	 * @generated
 	 */
 	private LiteralUnlimitedNaturalPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The specified UnlimitedNatural value. 
@@ -27,10 +27,10 @@ public class LiteralUnlimitedNaturalPath extends LiteralSpecificationPath {
 	 * @generated
 	 */
 	public static final Function<LiteralUnlimitedNatural, java.lang.Integer> value = new Function<LiteralUnlimitedNatural, java.lang.Integer>() {
-		public java.lang.Integer apply(LiteralUnlimitedNatural s) {
-			return s.getValue();
-		}
-	};
+    public java.lang.Integer apply(LiteralUnlimitedNatural s) {
+      return s.getValue();
+    }
+  };
 	
 	
 

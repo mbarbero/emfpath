@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.ClearStructuralFeatureAction;
 import org.eclipse.uml2.uml.OutputPin;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +24,8 @@ public class ClearStructuralFeatureActionPath extends StructuralFeatureActionPat
 	 * @generated
 	 */
 	private ClearStructuralFeatureActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Gives the output pin on which the result is put. 
@@ -32,10 +33,10 @@ public class ClearStructuralFeatureActionPath extends StructuralFeatureActionPat
 	 * @generated
 	 */
 	public static final Function<ClearStructuralFeatureAction, OutputPin> result = new Function<ClearStructuralFeatureAction, OutputPin>() {
-		public OutputPin apply(ClearStructuralFeatureAction s) {
-			return s.getResult();
-		}
-	};
+    public OutputPin apply(ClearStructuralFeatureAction s) {
+      return s.getResult();
+    }
+  };
 	
 	/**
 	 * The type of the result output pin is the same as the type of the inherited object
@@ -44,13 +45,13 @@ public class ClearStructuralFeatureActionPath extends StructuralFeatureActionPat
 	 * @see org.eclipse.uml2.uml.ClearStructuralFeatureAction#validateTypeOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ClearStructuralFeatureAction> validateTypeOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ClearStructuralFeatureAction>() {
-			public boolean apply(ClearStructuralFeatureAction s) {
-				return s.validateTypeOfResult(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ClearStructuralFeatureAction> validateTypeOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ClearStructuralFeatureAction>() {
+      public boolean apply(ClearStructuralFeatureAction s) {
+        return s.validateTypeOfResult(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The multiplicity of the result output pin must be 1..1.
@@ -59,12 +60,12 @@ public class ClearStructuralFeatureActionPath extends StructuralFeatureActionPat
 	 * @see org.eclipse.uml2.uml.ClearStructuralFeatureAction#validateMultiplicityOfResult(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ClearStructuralFeatureAction> validateMultiplicityOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ClearStructuralFeatureAction>() {
-			public boolean apply(ClearStructuralFeatureAction s) {
-				return s.validateMultiplicityOfResult(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ClearStructuralFeatureAction> validateMultiplicityOfResult(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ClearStructuralFeatureAction>() {
+      public boolean apply(ClearStructuralFeatureAction s) {
+        return s.validateMultiplicityOfResult(diagnostics, context);
+      }
+    };
+  }
 
 }

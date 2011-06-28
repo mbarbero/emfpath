@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Class;
@@ -17,6 +15,9 @@ import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Reception;
 import org.eclipse.uml2.uml.Trigger;
 import org.eclipse.uml2.uml.Type;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -42,8 +43,8 @@ public class ClassPath extends EncapsulatedClassifierPath {
 	 * @generated
 	 */
 	 ClassPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * References behavior specifications owned by a classifier. 
@@ -88,10 +89,10 @@ public class ClassPath extends EncapsulatedClassifierPath {
 	 * @generated
 	 */
 	public static final Function<Class, EList<Classifier>> nestedClassifier = new Function<Class, EList<Classifier>>() {
-		public EList<Classifier> apply(Class s) {
-			return s.getNestedClassifiers();
-		}
-	};
+    public EList<Classifier> apply(Class s) {
+      return s.getNestedClassifiers();
+    }
+  };
 
 	/**
 	 * The operations owned by the class. 
@@ -99,10 +100,10 @@ public class ClassPath extends EncapsulatedClassifierPath {
 	 * @generated
 	 */
 	public static final Function<Class, EList<Operation>> ownedOperation = new Function<Class, EList<Operation>>() {
-		public EList<Operation> apply(Class s) {
-			return s.getOwnedOperations();
-		}
-	};
+    public EList<Operation> apply(Class s) {
+      return s.getOwnedOperations();
+    }
+  };
 
 	/**
 	 * This gives the superclasses of a class. 
@@ -110,10 +111,10 @@ public class ClassPath extends EncapsulatedClassifierPath {
 	 * @generated
 	 */
 	public static final Function<Class, EList<Class>> superClass = new Function<Class, EList<Class>>() {
-		public EList<Class> apply(Class s) {
-			return s.getSuperClasses();
-		}
-	};
+    public EList<Class> apply(Class s) {
+      return s.getSuperClasses();
+    }
+  };
 
 	/**
 	 * Determines whether an object specified by this class is active or not. If true, then
@@ -122,11 +123,11 @@ public class ClassPath extends EncapsulatedClassifierPath {
 	 * @see org.eclipse.uml2.uml.Class#isActive()
 	 * @generated
 	 */
-	public static final Predicate<Class> isActive = new Predicate<Class>() {
-		public boolean apply(Class s) {
-			return s.isActive();
-		}
-	};
+	public static final ComposablePredicate<Class> isActive = new ComposablePredicate<Class>() {
+    public boolean apply(Class s) {
+      return s.isActive();
+    }
+  };
 
 	/**
 	 * Receptions that objects of this class are willing to accept. 
@@ -134,10 +135,10 @@ public class ClassPath extends EncapsulatedClassifierPath {
 	 * @generated
 	 */
 	public static final Function<Class, EList<Reception>> ownedReception = new Function<Class, EList<Reception>>() {
-		public EList<Reception> apply(Class s) {
-			return s.getOwnedReceptions();
-		}
-	};
+    public EList<Reception> apply(Class s) {
+      return s.getOwnedReceptions();
+    }
+  };
 
 	/**
 	 * References the Extensions that specify additional properties of the metaclass. The
@@ -146,10 +147,10 @@ public class ClassPath extends EncapsulatedClassifierPath {
 	 * @generated
 	 */
 	public static final Function<Class, EList<Extension>> extension = new Function<Class, EList<Extension>>() {
-		public EList<Extension> apply(Class s) {
-			return s.getExtensions();
-		}
-	};
+    public EList<Extension> apply(Class s) {
+      return s.getExtensions();
+    }
+  };
 	
 	/**
 	 * If a behavior is classifier behavior, it does not have a specification.
@@ -160,9 +161,9 @@ public class ClassPath extends EncapsulatedClassifierPath {
 	 * @see org.eclipse.uml2.uml.BehavioredClassifier#validateClassBehavior(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<BehavioredClassifier> validateClassBehavior(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return BehavioredClassifierPath.validateClassBehavior(diagnostics, context);
-	}
+	public static ComposablePredicate<BehavioredClassifier> validateClassBehavior(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return BehavioredClassifierPath.validateClassBehavior(diagnostics, context);
+  }
 
 	/**
 	 * Retrieves the interfaces on which this behaviored classifier has an interface realization
@@ -190,13 +191,13 @@ public class ClassPath extends EncapsulatedClassifierPath {
 	 * @see org.eclipse.uml2.uml.Class#validatePassiveClass(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Class> validatePassiveClass(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Class>() {
-			public boolean apply(Class s) {
-				return s.validatePassiveClass(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Class> validatePassiveClass(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Class>() {
+      public boolean apply(Class s) {
+        return s.validatePassiveClass(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -204,10 +205,10 @@ public class ClassPath extends EncapsulatedClassifierPath {
 	 * @generated
 	 */
 	public static final Function<Class, EList<Extension>> getExtensions = new Function<Class, EList<Extension>>() {
-		public EList<Extension> apply(Class s) {
-			return s.getExtensions();
-		}
-	};
+    public EList<Extension> apply(Class s) {
+      return s.getExtensions();
+    }
+  };
 
 	/**
 	 * Creates an operation with the specified name, parameter names, parameter types, and
@@ -216,22 +217,22 @@ public class ClassPath extends EncapsulatedClassifierPath {
 	 * @generated
 	 */
 	public static Function<Class, Operation> createOwnedOperation(final String name, final EList<String> parameterNames, final EList<Type> parameterTypes, final Type returnType) {
-		return new Function<Class, Operation>() {
-			public Operation apply(Class s) {
-				return s.createOwnedOperation(name, parameterNames, parameterTypes, returnType);
-			}
-		};
-	}
+    return new Function<Class, Operation>() {
+      public Operation apply(Class s) {
+        return s.createOwnedOperation(name, parameterNames, parameterTypes, returnType);
+      }
+    };
+  }
 
 	/**
 	 * Determines whether this class is a metaclass. 
 	 * @see org.eclipse.uml2.uml.Class#isMetaclass()
 	 * @generated
 	 */
-	public static final Predicate<Class> isMetaclass = new Predicate<Class>() {
-		public boolean apply(Class s) {
-			return s.isMetaclass();
-		}
-	};
+	public static final ComposablePredicate<Class> isMetaclass = new ComposablePredicate<Class>() {
+    public boolean apply(Class s) {
+      return s.isMetaclass();
+    }
+  };
 
 }

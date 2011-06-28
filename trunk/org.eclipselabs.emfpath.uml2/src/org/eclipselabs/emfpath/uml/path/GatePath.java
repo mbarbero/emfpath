@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.Gate;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -21,8 +21,8 @@ public class GatePath extends MessageEndPath {
 	 * @generated
 	 */
 	private GatePath() {
-		super();
-	}
+    super();
+  }
 
 	
 	
@@ -34,13 +34,13 @@ public class GatePath extends MessageEndPath {
 	 * @see org.eclipse.uml2.uml.Gate#validateMessagesActualGate(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Gate> validateMessagesActualGate(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Gate>() {
-			public boolean apply(Gate s) {
-				return s.validateMessagesActualGate(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Gate> validateMessagesActualGate(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Gate>() {
+      public boolean apply(Gate s) {
+        return s.validateMessagesActualGate(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The message leading to/from an (expression) Gate within a CombinedFragment must correspond
@@ -49,12 +49,12 @@ public class GatePath extends MessageEndPath {
 	 * @see org.eclipse.uml2.uml.Gate#validateMessagesCombinedFragment(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Gate> validateMessagesCombinedFragment(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Gate>() {
-			public boolean apply(Gate s) {
-				return s.validateMessagesCombinedFragment(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Gate> validateMessagesCombinedFragment(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Gate>() {
+      public boolean apply(Gate s) {
+        return s.validateMessagesCombinedFragment(diagnostics, context);
+      }
+    };
+  }
 
 }

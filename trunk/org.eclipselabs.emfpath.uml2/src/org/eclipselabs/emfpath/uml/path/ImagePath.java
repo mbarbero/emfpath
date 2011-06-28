@@ -1,8 +1,8 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.Image;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -18,8 +18,8 @@ public class ImagePath extends ElementPath {
 	 * @generated
 	 */
 	private ImagePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * This contains the serialization of the image according to the format. The value could
@@ -29,10 +29,10 @@ public class ImagePath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<Image, String> content = new Function<Image, String>() {
-		public String apply(Image s) {
-			return s.getContent();
-		}
-	};
+    public String apply(Image s) {
+      return s.getContent();
+    }
+  };
 
 	/**
 	 * This contains a location that can be used by a tool to locate the image as an alternative
@@ -41,10 +41,10 @@ public class ImagePath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<Image, String> location = new Function<Image, String>() {
-		public String apply(Image s) {
-			return s.getLocation();
-		}
-	};
+    public String apply(Image s) {
+      return s.getLocation();
+    }
+  };
 
 	/**
 	 * This indicates the format of the content - which is how the string content should
@@ -58,10 +58,10 @@ public class ImagePath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<Image, String> format = new Function<Image, String>() {
-		public String apply(Image s) {
-			return s.getFormat();
-		}
-	};
+    public String apply(Image s) {
+      return s.getFormat();
+    }
+  };
 	
 	
 

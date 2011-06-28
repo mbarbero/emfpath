@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.LinkEndDestructionData;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,19 +24,19 @@ public class LinkEndDestructionDataPath extends LinkEndDataPath {
 	 * @generated
 	 */
 	private LinkEndDestructionDataPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies whether to destroy duplicates of the value in nonunique association ends.
 	 * @see org.eclipse.uml2.uml.LinkEndDestructionData#isDestroyDuplicates()
 	 * @generated
 	 */
-	public static final Predicate<LinkEndDestructionData> isDestroyDuplicates = new Predicate<LinkEndDestructionData>() {
-		public boolean apply(LinkEndDestructionData s) {
-			return s.isDestroyDuplicates();
-		}
-	};
+	public static final ComposablePredicate<LinkEndDestructionData> isDestroyDuplicates = new ComposablePredicate<LinkEndDestructionData>() {
+    public boolean apply(LinkEndDestructionData s) {
+      return s.isDestroyDuplicates();
+    }
+  };
 
 	/**
 	 * Specifies the position of an existing link to be destroyed in ordered nonunique association
@@ -44,10 +45,10 @@ public class LinkEndDestructionDataPath extends LinkEndDataPath {
 	 * @generated
 	 */
 	public static final Function<LinkEndDestructionData, InputPin> destroyAt = new Function<LinkEndDestructionData, InputPin>() {
-		public InputPin apply(LinkEndDestructionData s) {
-			return s.getDestroyAt();
-		}
-	};
+    public InputPin apply(LinkEndDestructionData s) {
+      return s.getDestroyAt();
+    }
+  };
 	
 	/**
 	 * LinkEndDestructionData can only be end data for DestroyLinkAction or one of its specializations.
@@ -55,13 +56,13 @@ public class LinkEndDestructionDataPath extends LinkEndDataPath {
 	 * @see org.eclipse.uml2.uml.LinkEndDestructionData#validateDestroyLinkAction(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<LinkEndDestructionData> validateDestroyLinkAction(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<LinkEndDestructionData>() {
-			public boolean apply(LinkEndDestructionData s) {
-				return s.validateDestroyLinkAction(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<LinkEndDestructionData> validateDestroyLinkAction(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<LinkEndDestructionData>() {
+      public boolean apply(LinkEndDestructionData s) {
+        return s.validateDestroyLinkAction(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * LinkEndDestructionData for ordered nonunique association ends must have a single destroyAt
@@ -72,12 +73,12 @@ public class LinkEndDestructionDataPath extends LinkEndDataPath {
 	 * @see org.eclipse.uml2.uml.LinkEndDestructionData#validateUnlimitedNaturalAndMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<LinkEndDestructionData> validateUnlimitedNaturalAndMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<LinkEndDestructionData>() {
-			public boolean apply(LinkEndDestructionData s) {
-				return s.validateUnlimitedNaturalAndMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<LinkEndDestructionData> validateUnlimitedNaturalAndMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<LinkEndDestructionData>() {
+      public boolean apply(LinkEndDestructionData s) {
+        return s.validateUnlimitedNaturalAndMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 }

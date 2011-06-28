@@ -20,8 +20,8 @@ public class RealizationPath extends AbstractionPath {
 	 * @generated
 	 */
 	 RealizationPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

@@ -1,11 +1,11 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Signal;
 import org.eclipse.uml2.uml.Type;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +25,8 @@ public class SignalPath extends ClassifierPath {
 	 * @generated
 	 */
 	private SignalPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The attributes owned by the signal. 
@@ -34,10 +34,10 @@ public class SignalPath extends ClassifierPath {
 	 * @generated
 	 */
 	public static final Function<Signal, EList<Property>> ownedAttribute = new Function<Signal, EList<Property>>() {
-		public EList<Property> apply(Signal s) {
-			return s.getOwnedAttributes();
-		}
-	};
+    public EList<Property> apply(Signal s) {
+      return s.getOwnedAttributes();
+    }
+  };
 	
 	/**
 	 * Creates a property with the specified name, type, lower bound, and upper bound as
@@ -46,11 +46,11 @@ public class SignalPath extends ClassifierPath {
 	 * @generated
 	 */
 	public static Function<Signal, Property> createOwnedAttribute(final String name, final Type type, final int lower, final int upper) {
-		return new Function<Signal, Property>() {
-			public Property apply(Signal s) {
-				return s.createOwnedAttribute(name, type, lower, upper);
-			}
-		};
-	}
+    return new Function<Signal, Property>() {
+      public Property apply(Signal s) {
+        return s.createOwnedAttribute(name, type, lower, upper);
+      }
+    };
+  }
 
 }

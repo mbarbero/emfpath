@@ -18,8 +18,8 @@ public class DevicePath extends NodePath {
 	 * @generated
 	 */
 	private DevicePath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

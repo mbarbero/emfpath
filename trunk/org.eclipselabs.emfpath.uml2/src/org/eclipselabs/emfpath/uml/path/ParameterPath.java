@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.MultiplicityElement;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
@@ -13,6 +11,9 @@ import org.eclipse.uml2.uml.ParameterDirectionKind;
 import org.eclipse.uml2.uml.ParameterEffectKind;
 import org.eclipse.uml2.uml.ParameterSet;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -33,8 +34,8 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @generated
 	 */
 	private ParameterPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * For a multivalued multiplicity, this attribute specifies whether the values in an
@@ -44,7 +45,7 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isOrdered()
 	 * @generated
 	 */
-	public static final Predicate<MultiplicityElement> isOrdered = MultiplicityElementPath.isOrdered;
+	public static final ComposablePredicate<MultiplicityElement> isOrdered = MultiplicityElementPath.isOrdered;
 
 	/**
 	 * For a multivalued multiplicity, this attributes specifies whether the values in an
@@ -54,7 +55,7 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isUnique()
 	 * @generated
 	 */
-	public static final Predicate<MultiplicityElement> isUnique = MultiplicityElementPath.isUnique;
+	public static final ComposablePredicate<MultiplicityElement> isUnique = MultiplicityElementPath.isUnique;
 
 	/**
 	 * Specifies the upper bound of the multiplicity interval. 
@@ -98,10 +99,10 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static final Function<Parameter, EList<ParameterSet>> parameterSet = new Function<Parameter, EList<ParameterSet>>() {
-		public EList<ParameterSet> apply(Parameter s) {
-			return s.getParameterSets();
-		}
-	};
+    public EList<ParameterSet> apply(Parameter s) {
+      return s.getParameterSets();
+    }
+  };
 
 	/**
 	 * References the Operation owning this parameter. 
@@ -109,10 +110,10 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static final Function<Parameter, Operation> operation = new Function<Parameter, Operation>() {
-		public Operation apply(Parameter s) {
-			return s.getOperation();
-		}
-	};
+    public Operation apply(Parameter s) {
+      return s.getOperation();
+    }
+  };
 
 	/**
 	 * Indicates whether a parameter is being sent into or out of a behavioral element. 
@@ -120,10 +121,10 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static final Function<Parameter, ParameterDirectionKind> direction = new Function<Parameter, ParameterDirectionKind>() {
-		public ParameterDirectionKind apply(Parameter s) {
-			return s.getDirection();
-		}
-	};
+    public ParameterDirectionKind apply(Parameter s) {
+      return s.getDirection();
+    }
+  };
 
 	/**
 	 * Specifies a String that represents a value to be used when no argument is supplied
@@ -132,10 +133,10 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static final Function<Parameter, String> default_ = new Function<Parameter, String>() {
-		public String apply(Parameter s) {
-			return s.getDefault();
-		}
-	};
+    public String apply(Parameter s) {
+      return s.getDefault();
+    }
+  };
 
 	/**
 	 * Specifies a ValueSpecification that represents a value to be used when no argument
@@ -144,21 +145,21 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static final Function<Parameter, ValueSpecification> defaultValue = new Function<Parameter, ValueSpecification>() {
-		public ValueSpecification apply(Parameter s) {
-			return s.getDefaultValue();
-		}
-	};
+    public ValueSpecification apply(Parameter s) {
+      return s.getDefaultValue();
+    }
+  };
 
 	/**
 	 * Tells whether an output parameter may emit a value to the exclusion of the other outputs.
 	 * @see org.eclipse.uml2.uml.Parameter#isException()
 	 * @generated
 	 */
-	public static final Predicate<Parameter> isException = new Predicate<Parameter>() {
-		public boolean apply(Parameter s) {
-			return s.isException();
-		}
-	};
+	public static final ComposablePredicate<Parameter> isException = new ComposablePredicate<Parameter>() {
+    public boolean apply(Parameter s) {
+      return s.isException();
+    }
+  };
 
 	/**
 	 * Tells whether an input parameter may accept values while its behavior is executing,
@@ -166,11 +167,11 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.Parameter#isStream()
 	 * @generated
 	 */
-	public static final Predicate<Parameter> isStream = new Predicate<Parameter>() {
-		public boolean apply(Parameter s) {
-			return s.isStream();
-		}
-	};
+	public static final ComposablePredicate<Parameter> isStream = new ComposablePredicate<Parameter>() {
+    public boolean apply(Parameter s) {
+      return s.isStream();
+    }
+  };
 
 	/**
 	 * Specifies the effect that the owner of the parameter has on values passed in or out
@@ -179,10 +180,10 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static final Function<Parameter, ParameterEffectKind> effect = new Function<Parameter, ParameterEffectKind>() {
-		public ParameterEffectKind apply(Parameter s) {
-			return s.getEffect();
-		}
-	};
+    public ParameterEffectKind apply(Parameter s) {
+      return s.getEffect();
+    }
+  };
 	
 	/**
 	 * The lower bound must be a non-negative integer literal.
@@ -193,9 +194,9 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateLowerGe0(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateLowerGe0(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateLowerGe0(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateLowerGe0(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateLowerGe0(diagnostics, context);
+  }
 
 	/**
 	 * The upper bound must be greater than or equal to the lower bound.
@@ -206,9 +207,9 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateUpperGeLower(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateUpperGeLower(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateUpperGeLower(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateUpperGeLower(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateUpperGeLower(diagnostics, context);
+  }
 
 	/**
 	 * If a non-literal ValueSpecification is used for the lower or upper bound, then evaluating
@@ -219,9 +220,9 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationNoSideEffects(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateValueSpecificationNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateValueSpecificationNoSideEffects(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateValueSpecificationNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateValueSpecificationNoSideEffects(diagnostics, context);
+  }
 
 	/**
 	 * If a non-literal ValueSpecification is used for the lower or upper bound, then that
@@ -232,9 +233,9 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationConstant(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateValueSpecificationConstant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateValueSpecificationConstant(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateValueSpecificationConstant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateValueSpecificationConstant(diagnostics, context);
+  }
 
 	/**
 	 * The query isMultivalued() checks whether this multiplicity has an upper bound greater
@@ -246,7 +247,7 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isMultivalued()
 	 * @generated
 	 */
-	public static final Predicate<MultiplicityElement> isMultivalued = MultiplicityElementPath.isMultivalued;
+	public static final ComposablePredicate<MultiplicityElement> isMultivalued = MultiplicityElementPath.isMultivalued;
 
 	/**
 	 * The query includesCardinality() checks whether the specified cardinality is valid
@@ -259,9 +260,9 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesCardinality(int)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> includesCardinality(final int C) {
-		return MultiplicityElementPath.includesCardinality(C);
-	}
+	public static ComposablePredicate<MultiplicityElement> includesCardinality(final int C) {
+    return MultiplicityElementPath.includesCardinality(C);
+  }
 
 	/**
 	 * The query includesMultiplicity() checks whether this multiplicity includes all the
@@ -275,9 +276,9 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesMultiplicity(MultiplicityElement)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> includesMultiplicity(final MultiplicityElement M) {
-		return MultiplicityElementPath.includesMultiplicity(M);
-	}
+	public static ComposablePredicate<MultiplicityElement> includesMultiplicity(final MultiplicityElement M) {
+    return MultiplicityElementPath.includesMultiplicity(M);
+  }
 
 	/**
 	 * The query lowerBound() returns the lower bound of the multiplicity as an integer.
@@ -312,9 +313,9 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#compatibleWith(MultiplicityElement)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> compatibleWith(final MultiplicityElement other) {
-		return MultiplicityElementPath.compatibleWith(other);
-	}
+	public static ComposablePredicate<MultiplicityElement> compatibleWith(final MultiplicityElement other) {
+    return MultiplicityElementPath.compatibleWith(other);
+  }
 
 	/**
 	 * The operation is determines if the upper and lower bound of the ranges are the ones
@@ -325,9 +326,9 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#is(int, int)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> is(final int lowerbound, final int upperbound) {
-		return MultiplicityElementPath.is(lowerbound, upperbound);
-	}
+	public static ComposablePredicate<MultiplicityElement> is(final int lowerbound, final int upperbound) {
+    return MultiplicityElementPath.is(lowerbound, upperbound);
+  }
 
 	/**
 	 * A parameter may only be associated with a connector end within the context of a collaboration.
@@ -336,13 +337,13 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.Parameter#validateConnectorEnd(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Parameter> validateConnectorEnd(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Parameter>() {
-			public boolean apply(Parameter s) {
-				return s.validateConnectorEnd(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Parameter> validateConnectorEnd(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Parameter>() {
+      public boolean apply(Parameter s) {
+        return s.validateConnectorEnd(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A parameter cannot be a stream and exception at the same time.
@@ -350,13 +351,13 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.Parameter#validateStreamAndException(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Parameter> validateStreamAndException(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Parameter>() {
-			public boolean apply(Parameter s) {
-				return s.validateStreamAndException(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Parameter> validateStreamAndException(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Parameter>() {
+      public boolean apply(Parameter s) {
+        return s.validateStreamAndException(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * An input parameter cannot be an exception.
@@ -364,13 +365,13 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.Parameter#validateNotException(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Parameter> validateNotException(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Parameter>() {
-			public boolean apply(Parameter s) {
-				return s.validateNotException(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Parameter> validateNotException(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Parameter>() {
+      public boolean apply(Parameter s) {
+        return s.validateNotException(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Reentrant behaviors cannot have stream parameters.
@@ -378,13 +379,13 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.Parameter#validateReentrantBehaviors(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Parameter> validateReentrantBehaviors(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Parameter>() {
-			public boolean apply(Parameter s) {
-				return s.validateReentrantBehaviors(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Parameter> validateReentrantBehaviors(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Parameter>() {
+      public boolean apply(Parameter s) {
+        return s.validateReentrantBehaviors(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Only in and inout parameters may have a delete effect. Only out, inout, and return
@@ -393,13 +394,13 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.Parameter#validateInAndOut(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Parameter> validateInAndOut(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Parameter>() {
-			public boolean apply(Parameter s) {
-				return s.validateInAndOut(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Parameter> validateInAndOut(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Parameter>() {
+      public boolean apply(Parameter s) {
+        return s.validateInAndOut(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -407,21 +408,21 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static final Function<Parameter, String> getDefault = new Function<Parameter, String>() {
-		public String apply(Parameter s) {
-			return s.getDefault();
-		}
-	};
+    public String apply(Parameter s) {
+      return s.getDefault();
+    }
+  };
 
 	/**
 	 * 
 	 * @see org.eclipse.uml2.uml.Parameter#isSetDefault()
 	 * @generated
 	 */
-	public static final Predicate<Parameter> isSetDefault = new Predicate<Parameter>() {
-		public boolean apply(Parameter s) {
-			return s.isSetDefault();
-		}
-	};
+	public static final ComposablePredicate<Parameter> isSetDefault = new ComposablePredicate<Parameter>() {
+    public boolean apply(Parameter s) {
+      return s.isSetDefault();
+    }
+  };
 
 	/**
 	 * 
@@ -429,13 +430,13 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static Function<Parameter, Parameter> setDefault(final String newDefault) {
-		return new Function<Parameter, Parameter>() {
-			public Parameter apply(Parameter s) {
-				s.setDefault(newDefault);
-				return s;
-			}
-		};
-	}
+    return new Function<Parameter, Parameter>() {
+      public Parameter apply(Parameter s) {
+        s.setDefault(newDefault);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -443,11 +444,11 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static final Function<Parameter, Parameter> unsetDefault = new Function<Parameter, Parameter>() {
-		public Parameter apply(Parameter s) {
-			s.unsetDefault();
-			return s;
-		}
-	};
+    public Parameter apply(Parameter s) {
+      s.unsetDefault();
+      return s;
+    }
+  };
 
 	/**
 	 * Sets the default value for this parameter to the specified Boolean value. 
@@ -455,13 +456,13 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static Function<Parameter, Parameter> setBooleanDefaultValue(final boolean value) {
-		return new Function<Parameter, Parameter>() {
-			public Parameter apply(Parameter s) {
-				s.setBooleanDefaultValue(value);
-				return s;
-			}
-		};
-	}
+    return new Function<Parameter, Parameter>() {
+      public Parameter apply(Parameter s) {
+        s.setBooleanDefaultValue(value);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * Sets the default value for this parameter to the specified integer value. 
@@ -469,13 +470,13 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static Function<Parameter, Parameter> setIntegerDefaultValue(final int value) {
-		return new Function<Parameter, Parameter>() {
-			public Parameter apply(Parameter s) {
-				s.setIntegerDefaultValue(value);
-				return s;
-			}
-		};
-	}
+    return new Function<Parameter, Parameter>() {
+      public Parameter apply(Parameter s) {
+        s.setIntegerDefaultValue(value);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * Sets the default value for this parameter to the specified string value. 
@@ -483,13 +484,13 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static Function<Parameter, Parameter> setStringDefaultValue(final String value) {
-		return new Function<Parameter, Parameter>() {
-			public Parameter apply(Parameter s) {
-				s.setStringDefaultValue(value);
-				return s;
-			}
-		};
-	}
+    return new Function<Parameter, Parameter>() {
+      public Parameter apply(Parameter s) {
+        s.setStringDefaultValue(value);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * Sets the default value for this parameter to the specified unlimited natural value.
@@ -497,13 +498,13 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static Function<Parameter, Parameter> setUnlimitedNaturalDefaultValue(final int value) {
-		return new Function<Parameter, Parameter>() {
-			public Parameter apply(Parameter s) {
-				s.setUnlimitedNaturalDefaultValue(value);
-				return s;
-			}
-		};
-	}
+    return new Function<Parameter, Parameter>() {
+      public Parameter apply(Parameter s) {
+        s.setUnlimitedNaturalDefaultValue(value);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * Sets the default value for this parameter to the null value. 
@@ -511,10 +512,10 @@ public class ParameterPath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static final Function<Parameter, Parameter> setNullDefaultValue = new Function<Parameter, Parameter>() {
-		public Parameter apply(Parameter s) {
-			s.setNullDefaultValue();
-			return s;
-		}
-	};
+    public Parameter apply(Parameter s) {
+      s.setNullDefaultValue();
+      return s;
+    }
+  };
 
 }

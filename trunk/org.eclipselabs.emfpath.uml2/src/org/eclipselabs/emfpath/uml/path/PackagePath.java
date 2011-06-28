@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Enumeration;
@@ -23,6 +21,9 @@ import org.eclipse.uml2.uml.TemplateParameter;
 import org.eclipse.uml2.uml.TemplateSignature;
 import org.eclipse.uml2.uml.TemplateableElement;
 import org.eclipse.uml2.uml.Type;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -45,8 +46,8 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	 PackagePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The formal template parameter that owns this element. 
@@ -90,10 +91,10 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Package, EList<Type>> ownedType = new Function<Package, EList<Type>>() {
-		public EList<Type> apply(Package s) {
-			return s.getOwnedTypes();
-		}
-	};
+    public EList<Type> apply(Package s) {
+      return s.getOwnedTypes();
+    }
+  };
 
 	/**
 	 * References the PackageMerges that are owned by this Package. 
@@ -101,10 +102,10 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Package, EList<PackageMerge>> packageMerge = new Function<Package, EList<PackageMerge>>() {
-		public EList<PackageMerge> apply(Package s) {
-			return s.getPackageMerges();
-		}
-	};
+    public EList<PackageMerge> apply(Package s) {
+      return s.getPackageMerges();
+    }
+  };
 
 	/**
 	 * Specifies the packageable elements that are owned by this Package. 
@@ -112,10 +113,10 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Package, EList<PackageableElement>> packagedElement = new Function<Package, EList<PackageableElement>>() {
-		public EList<PackageableElement> apply(Package s) {
-			return s.getPackagedElements();
-		}
-	};
+    public EList<PackageableElement> apply(Package s) {
+      return s.getPackagedElements();
+    }
+  };
 
 	/**
 	 * References the packaged elements that are Packages. 
@@ -123,10 +124,10 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Package, EList<Package>> nestedPackage = new Function<Package, EList<Package>>() {
-		public EList<Package> apply(Package s) {
-			return s.getNestedPackages();
-		}
-	};
+    public EList<Package> apply(Package s) {
+      return s.getNestedPackages();
+    }
+  };
 
 	/**
 	 * References the Package that owns this Package. 
@@ -134,10 +135,10 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Package, Package> nestingPackage = new Function<Package, Package>() {
-		public Package apply(Package s) {
-			return s.getNestingPackage();
-		}
-	};
+    public Package apply(Package s) {
+      return s.getNestingPackage();
+    }
+  };
 
 	/**
 	 * References the ProfileApplications that indicate which profiles have been applied
@@ -146,10 +147,10 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Package, EList<ProfileApplication>> profileApplication = new Function<Package, EList<ProfileApplication>>() {
-		public EList<ProfileApplication> apply(Package s) {
-			return s.getProfileApplications();
-		}
-	};
+    public EList<ProfileApplication> apply(Package s) {
+      return s.getProfileApplications();
+    }
+  };
 	
 	/**
 	 * The query isCompatibleWith() determines if this parameterable element is compatible
@@ -163,9 +164,9 @@ public class PackagePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.ParameterableElement#isCompatibleWith(ParameterableElement)
 	 * @generated
 	 */
-	public static Predicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
-		return ParameterableElementPath.isCompatibleWith(p);
-	}
+	public static ComposablePredicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
+    return ParameterableElementPath.isCompatibleWith(p);
+  }
 
 	/**
 	 * The query parameterableElements() returns the set of elements that may be used as
@@ -189,7 +190,7 @@ public class PackagePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.TemplateableElement#isTemplate()
 	 * @generated
 	 */
-	public static final Predicate<TemplateableElement> isTemplate = TemplateableElementPath.isTemplate;
+	public static final ComposablePredicate<TemplateableElement> isTemplate = TemplateableElementPath.isTemplate;
 
 	/**
 	 * If an element that is owned by a package has visibility, it is public or private.
@@ -198,13 +199,13 @@ public class PackagePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Package#validateElementsPublicOrPrivate(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Package> validateElementsPublicOrPrivate(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Package>() {
-			public boolean apply(Package s) {
-				return s.validateElementsPublicOrPrivate(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Package> validateElementsPublicOrPrivate(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Package>() {
+      public boolean apply(Package s) {
+        return s.validateElementsPublicOrPrivate(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Creates a(n) (abstract) class with the specified name as an owned type of this package.
@@ -212,12 +213,12 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<Package, Class> createOwnedClass(final String name, final boolean isAbstract) {
-		return new Function<Package, Class>() {
-			public Class apply(Package s) {
-				return s.createOwnedClass(name, isAbstract);
-			}
-		};
-	}
+    return new Function<Package, Class>() {
+      public Class apply(Package s) {
+        return s.createOwnedClass(name, isAbstract);
+      }
+    };
+  }
 
 	/**
 	 * Creates a enumeration with the specified name as an owned type of this package. 
@@ -225,12 +226,12 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<Package, Enumeration> createOwnedEnumeration(final String name) {
-		return new Function<Package, Enumeration>() {
-			public Enumeration apply(Package s) {
-				return s.createOwnedEnumeration(name);
-			}
-		};
-	}
+    return new Function<Package, Enumeration>() {
+      public Enumeration apply(Package s) {
+        return s.createOwnedEnumeration(name);
+      }
+    };
+  }
 
 	/**
 	 * Creates a primitive type with the specified name as an owned type of this package.
@@ -238,12 +239,12 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<Package, PrimitiveType> createOwnedPrimitiveType(final String name) {
-		return new Function<Package, PrimitiveType>() {
-			public PrimitiveType apply(Package s) {
-				return s.createOwnedPrimitiveType(name);
-			}
-		};
-	}
+    return new Function<Package, PrimitiveType>() {
+      public PrimitiveType apply(Package s) {
+        return s.createOwnedPrimitiveType(name);
+      }
+    };
+  }
 
 	/**
 	 * Creates an interface with the specified name as an owned type of this package. 
@@ -251,25 +252,25 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<Package, Interface> createOwnedInterface(final String name) {
-		return new Function<Package, Interface>() {
-			public Interface apply(Package s) {
-				return s.createOwnedInterface(name);
-			}
-		};
-	}
+    return new Function<Package, Interface>() {
+      public Interface apply(Package s) {
+        return s.createOwnedInterface(name);
+      }
+    };
+  }
 
 	/**
 	 * Determines whether the specified profile is applied to this package. 
 	 * @see org.eclipse.uml2.uml.Package#isProfileApplied(Profile)
 	 * @generated
 	 */
-	public static Predicate<Package> isProfileApplied(final Profile profile) {
-		return new Predicate<Package>() {
-			public boolean apply(Package s) {
-				return s.isProfileApplied(profile);
-			}
-		};
-	}
+	public static ComposablePredicate<Package> isProfileApplied(final Profile profile) {
+    return new ComposablePredicate<Package>() {
+      public boolean apply(Package s) {
+        return s.isProfileApplied(profile);
+      }
+    };
+  }
 
 	/**
 	 * Applies the current definition of the specified profile to this package and automatically
@@ -281,12 +282,12 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<Package, EList<EObject>> applyProfile(final Profile profile) {
-		return new Function<Package, EList<EObject>>() {
-			public EList<EObject> apply(Package s) {
-				return s.applyProfile(profile);
-			}
-		};
-	}
+    return new Function<Package, EList<EObject>>() {
+      public EList<EObject> apply(Package s) {
+        return s.applyProfile(profile);
+      }
+    };
+  }
 
 	/**
 	 * Unapplies the specified profile from this package and automatically unapplies stereotypes
@@ -295,12 +296,12 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<Package, EList<EObject>> unapplyProfile(final Profile profile) {
-		return new Function<Package, EList<EObject>>() {
-			public EList<EObject> apply(Package s) {
-				return s.unapplyProfile(profile);
-			}
-		};
-	}
+    return new Function<Package, EList<EObject>>() {
+      public EList<EObject> apply(Package s) {
+        return s.unapplyProfile(profile);
+      }
+    };
+  }
 
 	/**
 	 * Retrieves the profiles that are applied to this package. 
@@ -308,10 +309,10 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Package, EList<Profile>> getAppliedProfiles = new Function<Package, EList<Profile>>() {
-		public EList<Profile> apply(Package s) {
-			return s.getAppliedProfiles();
-		}
-	};
+    public EList<Profile> apply(Package s) {
+      return s.getAppliedProfiles();
+    }
+  };
 
 	/**
 	 * Retrieves all the profiles that are applied to this package, including profiles applied
@@ -320,10 +321,10 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Package, EList<Profile>> getAllAppliedProfiles = new Function<Package, EList<Profile>>() {
-		public EList<Profile> apply(Package s) {
-			return s.getAllAppliedProfiles();
-		}
-	};
+    public EList<Profile> apply(Package s) {
+      return s.getAllAppliedProfiles();
+    }
+  };
 
 	/**
 	 * Retrieves the profile with the specified qualified name that is applied to this package,
@@ -332,12 +333,12 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<Package, Profile> getAppliedProfile(final String qualifiedName) {
-		return new Function<Package, Profile>() {
-			public Profile apply(Package s) {
-				return s.getAppliedProfile(qualifiedName);
-			}
-		};
-	}
+    return new Function<Package, Profile>() {
+      public Profile apply(Package s) {
+        return s.getAppliedProfile(qualifiedName);
+      }
+    };
+  }
 
 	/**
 	 * Retrieves the profile with the specified qualified name that is applied to this package
@@ -346,12 +347,12 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<Package, Profile> getAppliedProfile(final String qualifiedName, final boolean recurse) {
-		return new Function<Package, Profile>() {
-			public Profile apply(Package s) {
-				return s.getAppliedProfile(qualifiedName, recurse);
-			}
-		};
-	}
+    return new Function<Package, Profile>() {
+      public Profile apply(Package s) {
+        return s.getAppliedProfile(qualifiedName, recurse);
+      }
+    };
+  }
 
 	/**
 	 * Retrieves all the profile applications for this package, including profile applications
@@ -360,10 +361,10 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Package, EList<ProfileApplication>> getAllProfileApplications = new Function<Package, EList<ProfileApplication>>() {
-		public EList<ProfileApplication> apply(Package s) {
-			return s.getAllProfileApplications();
-		}
-	};
+    public EList<ProfileApplication> apply(Package s) {
+      return s.getAllProfileApplications();
+    }
+  };
 
 	/**
 	 * Retrieves the application of the specified profile to this package, or null if no
@@ -372,12 +373,12 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<Package, ProfileApplication> getProfileApplication(final Profile profile) {
-		return new Function<Package, ProfileApplication>() {
-			public ProfileApplication apply(Package s) {
-				return s.getProfileApplication(profile);
-			}
-		};
-	}
+    return new Function<Package, ProfileApplication>() {
+      public ProfileApplication apply(Package s) {
+        return s.getProfileApplication(profile);
+      }
+    };
+  }
 
 	/**
 	 * Retrieves the application of the specified profile to this package or any of its nesting
@@ -386,23 +387,23 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<Package, ProfileApplication> getProfileApplication(final Profile profile, final boolean recurse) {
-		return new Function<Package, ProfileApplication>() {
-			public ProfileApplication apply(Package s) {
-				return s.getProfileApplication(profile, recurse);
-			}
-		};
-	}
+    return new Function<Package, ProfileApplication>() {
+      public ProfileApplication apply(Package s) {
+        return s.getProfileApplication(profile, recurse);
+      }
+    };
+  }
 
 	/**
 	 * Determines whether this package is a model library. 
 	 * @see org.eclipse.uml2.uml.Package#isModelLibrary()
 	 * @generated
 	 */
-	public static final Predicate<Package> isModelLibrary = new Predicate<Package>() {
-		public boolean apply(Package s) {
-			return s.isModelLibrary();
-		}
-	};
+	public static final ComposablePredicate<Package> isModelLibrary = new ComposablePredicate<Package>() {
+    public boolean apply(Package s) {
+      return s.isModelLibrary();
+    }
+  };
 
 	/**
 	 * The query visibleMembers() defines which members of a Package can be accessed outside
@@ -412,10 +413,10 @@ public class PackagePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Package, EList<PackageableElement>> visibleMembers = new Function<Package, EList<PackageableElement>>() {
-		public EList<PackageableElement> apply(Package s) {
-			return s.visibleMembers();
-		}
-	};
+    public EList<PackageableElement> apply(Package s) {
+      return s.visibleMembers();
+    }
+  };
 
 	/**
 	 * The query makesVisible() defines whether a Package makes an element visible outside
@@ -429,12 +430,12 @@ public class PackagePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Package#makesVisible(NamedElement)
 	 * @generated
 	 */
-	public static Predicate<Package> makesVisible(final NamedElement el) {
-		return new Predicate<Package>() {
-			public boolean apply(Package s) {
-				return s.makesVisible(el);
-			}
-		};
-	}
+	public static ComposablePredicate<Package> makesVisible(final NamedElement el) {
+    return new ComposablePredicate<Package>() {
+      public boolean apply(Package s) {
+        return s.makesVisible(el);
+      }
+    };
+  }
 
 }

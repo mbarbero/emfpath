@@ -1,8 +1,8 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.LiteralInteger;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -18,8 +18,8 @@ public class LiteralIntegerPath extends LiteralSpecificationPath {
 	 * @generated
 	 */
 	private LiteralIntegerPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The specified Integer value. 
@@ -27,10 +27,10 @@ public class LiteralIntegerPath extends LiteralSpecificationPath {
 	 * @generated
 	 */
 	public static final Function<LiteralInteger, java.lang.Integer> value = new Function<LiteralInteger, java.lang.Integer>() {
-		public java.lang.Integer apply(LiteralInteger s) {
-			return s.getValue();
-		}
-	};
+    public java.lang.Integer apply(LiteralInteger s) {
+      return s.getValue();
+    }
+  };
 	
 	
 

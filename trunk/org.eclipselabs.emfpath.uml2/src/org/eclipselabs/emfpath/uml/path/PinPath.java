@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.MultiplicityElement;
 import org.eclipse.uml2.uml.Pin;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -26,8 +27,8 @@ public class PinPath extends ObjectNodePath {
 	 * @generated
 	 */
 	 PinPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * For a multivalued multiplicity, this attribute specifies whether the values in an
@@ -37,7 +38,7 @@ public class PinPath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isOrdered()
 	 * @generated
 	 */
-	public static final Predicate<MultiplicityElement> isOrdered = MultiplicityElementPath.isOrdered;
+	public static final ComposablePredicate<MultiplicityElement> isOrdered = MultiplicityElementPath.isOrdered;
 
 	/**
 	 * For a multivalued multiplicity, this attributes specifies whether the values in an
@@ -47,7 +48,7 @@ public class PinPath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isUnique()
 	 * @generated
 	 */
-	public static final Predicate<MultiplicityElement> isUnique = MultiplicityElementPath.isUnique;
+	public static final ComposablePredicate<MultiplicityElement> isUnique = MultiplicityElementPath.isUnique;
 
 	/**
 	 * Specifies the upper bound of the multiplicity interval. 
@@ -91,11 +92,11 @@ public class PinPath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.Pin#isControl()
 	 * @generated
 	 */
-	public static final Predicate<Pin> isControl = new Predicate<Pin>() {
-		public boolean apply(Pin s) {
-			return s.isControl();
-		}
-	};
+	public static final ComposablePredicate<Pin> isControl = new ComposablePredicate<Pin>() {
+    public boolean apply(Pin s) {
+      return s.isControl();
+    }
+  };
 	
 	/**
 	 * The lower bound must be a non-negative integer literal.
@@ -106,9 +107,9 @@ public class PinPath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateLowerGe0(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateLowerGe0(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateLowerGe0(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateLowerGe0(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateLowerGe0(diagnostics, context);
+  }
 
 	/**
 	 * The upper bound must be greater than or equal to the lower bound.
@@ -119,9 +120,9 @@ public class PinPath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateUpperGeLower(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateUpperGeLower(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateUpperGeLower(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateUpperGeLower(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateUpperGeLower(diagnostics, context);
+  }
 
 	/**
 	 * If a non-literal ValueSpecification is used for the lower or upper bound, then evaluating
@@ -132,9 +133,9 @@ public class PinPath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationNoSideEffects(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateValueSpecificationNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateValueSpecificationNoSideEffects(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateValueSpecificationNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateValueSpecificationNoSideEffects(diagnostics, context);
+  }
 
 	/**
 	 * If a non-literal ValueSpecification is used for the lower or upper bound, then that
@@ -145,9 +146,9 @@ public class PinPath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationConstant(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateValueSpecificationConstant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateValueSpecificationConstant(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateValueSpecificationConstant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateValueSpecificationConstant(diagnostics, context);
+  }
 
 	/**
 	 * The query isMultivalued() checks whether this multiplicity has an upper bound greater
@@ -159,7 +160,7 @@ public class PinPath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isMultivalued()
 	 * @generated
 	 */
-	public static final Predicate<MultiplicityElement> isMultivalued = MultiplicityElementPath.isMultivalued;
+	public static final ComposablePredicate<MultiplicityElement> isMultivalued = MultiplicityElementPath.isMultivalued;
 
 	/**
 	 * The query includesCardinality() checks whether the specified cardinality is valid
@@ -172,9 +173,9 @@ public class PinPath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesCardinality(int)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> includesCardinality(final int C) {
-		return MultiplicityElementPath.includesCardinality(C);
-	}
+	public static ComposablePredicate<MultiplicityElement> includesCardinality(final int C) {
+    return MultiplicityElementPath.includesCardinality(C);
+  }
 
 	/**
 	 * The query includesMultiplicity() checks whether this multiplicity includes all the
@@ -188,9 +189,9 @@ public class PinPath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesMultiplicity(MultiplicityElement)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> includesMultiplicity(final MultiplicityElement M) {
-		return MultiplicityElementPath.includesMultiplicity(M);
-	}
+	public static ComposablePredicate<MultiplicityElement> includesMultiplicity(final MultiplicityElement M) {
+    return MultiplicityElementPath.includesMultiplicity(M);
+  }
 
 	/**
 	 * The query lowerBound() returns the lower bound of the multiplicity as an integer.
@@ -225,9 +226,9 @@ public class PinPath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#compatibleWith(MultiplicityElement)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> compatibleWith(final MultiplicityElement other) {
-		return MultiplicityElementPath.compatibleWith(other);
-	}
+	public static ComposablePredicate<MultiplicityElement> compatibleWith(final MultiplicityElement other) {
+    return MultiplicityElementPath.compatibleWith(other);
+  }
 
 	/**
 	 * The operation is determines if the upper and lower bound of the ranges are the ones
@@ -238,9 +239,9 @@ public class PinPath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#is(int, int)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> is(final int lowerbound, final int upperbound) {
-		return MultiplicityElementPath.is(lowerbound, upperbound);
-	}
+	public static ComposablePredicate<MultiplicityElement> is(final int lowerbound, final int upperbound) {
+    return MultiplicityElementPath.is(lowerbound, upperbound);
+  }
 
 	/**
 	 * Control pins have a control type
@@ -248,12 +249,12 @@ public class PinPath extends ObjectNodePath {
 	 * @see org.eclipse.uml2.uml.Pin#validateControlPins(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Pin> validateControlPins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Pin>() {
-			public boolean apply(Pin s) {
-				return s.validateControlPins(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Pin> validateControlPins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Pin>() {
+      public boolean apply(Pin s) {
+        return s.validateControlPins(diagnostics, context);
+      }
+    };
+  }
 
 }

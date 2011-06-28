@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.ProtocolConformance;
 import org.eclipse.uml2.uml.ProtocolStateMachine;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -30,8 +31,8 @@ public class ProtocolStateMachinePath extends StateMachinePath {
 	 * @generated
 	 */
 	private ProtocolStateMachinePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Conformance between protocol state machines. 
@@ -39,10 +40,10 @@ public class ProtocolStateMachinePath extends StateMachinePath {
 	 * @generated
 	 */
 	public static final Function<ProtocolStateMachine, EList<ProtocolConformance>> conformance = new Function<ProtocolStateMachine, EList<ProtocolConformance>>() {
-		public EList<ProtocolConformance> apply(ProtocolStateMachine s) {
-			return s.getConformances();
-		}
-	};
+    public EList<ProtocolConformance> apply(ProtocolStateMachine s) {
+      return s.getConformances();
+    }
+  };
 	
 	/**
 	 * All transitions of a protocol state machine must be protocol transitions. (transitions
@@ -52,13 +53,13 @@ public class ProtocolStateMachinePath extends StateMachinePath {
 	 * @see org.eclipse.uml2.uml.ProtocolStateMachine#validateProtocolTransitions(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ProtocolStateMachine> validateProtocolTransitions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ProtocolStateMachine>() {
-			public boolean apply(ProtocolStateMachine s) {
-				return s.validateProtocolTransitions(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ProtocolStateMachine> validateProtocolTransitions(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ProtocolStateMachine>() {
+      public boolean apply(ProtocolStateMachine s) {
+        return s.validateProtocolTransitions(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The states of a protocol state machine cannot have entry, exit, or do activity actions.
@@ -70,13 +71,13 @@ public class ProtocolStateMachinePath extends StateMachinePath {
 	 * @see org.eclipse.uml2.uml.ProtocolStateMachine#validateEntryExitDo(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ProtocolStateMachine> validateEntryExitDo(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ProtocolStateMachine>() {
-			public boolean apply(ProtocolStateMachine s) {
-				return s.validateEntryExitDo(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ProtocolStateMachine> validateEntryExitDo(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ProtocolStateMachine>() {
+      public boolean apply(ProtocolStateMachine s) {
+        return s.validateEntryExitDo(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Protocol state machines cannot have deep or shallow history pseudostates.
@@ -88,13 +89,13 @@ public class ProtocolStateMachinePath extends StateMachinePath {
 	 * @see org.eclipse.uml2.uml.ProtocolStateMachine#validateDeepOrShallowHistory(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ProtocolStateMachine> validateDeepOrShallowHistory(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ProtocolStateMachine>() {
-			public boolean apply(ProtocolStateMachine s) {
-				return s.validateDeepOrShallowHistory(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ProtocolStateMachine> validateDeepOrShallowHistory(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ProtocolStateMachine>() {
+      public boolean apply(ProtocolStateMachine s) {
+        return s.validateDeepOrShallowHistory(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If two ports are connected, then the protocol state machine of the required interface
@@ -104,12 +105,12 @@ public class ProtocolStateMachinePath extends StateMachinePath {
 	 * @see org.eclipse.uml2.uml.ProtocolStateMachine#validatePortsConnected(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ProtocolStateMachine> validatePortsConnected(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ProtocolStateMachine>() {
-			public boolean apply(ProtocolStateMachine s) {
-				return s.validatePortsConnected(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ProtocolStateMachine> validatePortsConnected(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ProtocolStateMachine>() {
+      public boolean apply(ProtocolStateMachine s) {
+        return s.validatePortsConnected(diagnostics, context);
+      }
+    };
+  }
 
 }

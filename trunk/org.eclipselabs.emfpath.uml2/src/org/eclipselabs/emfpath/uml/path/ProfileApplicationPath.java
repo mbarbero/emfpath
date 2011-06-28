@@ -1,14 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -24,8 +24,8 @@ public class ProfileApplicationPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	private ProfileApplicationPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * References the Profiles that are applied to a Package through this ProfileApplication.
@@ -33,10 +33,10 @@ public class ProfileApplicationPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<ProfileApplication, Profile> appliedProfile = new Function<ProfileApplication, Profile>() {
-		public Profile apply(ProfileApplication s) {
-			return s.getAppliedProfile();
-		}
-	};
+    public Profile apply(ProfileApplication s) {
+      return s.getAppliedProfile();
+    }
+  };
 
 	/**
 	 * Specifies that the Profile filtering rules for the metaclasses of the referenced metamodel
@@ -44,11 +44,11 @@ public class ProfileApplicationPath extends DirectedRelationshipPath {
 	 * @see org.eclipse.uml2.uml.ProfileApplication#isStrict()
 	 * @generated
 	 */
-	public static final Predicate<ProfileApplication> isStrict = new Predicate<ProfileApplication>() {
-		public boolean apply(ProfileApplication s) {
-			return s.isStrict();
-		}
-	};
+	public static final ComposablePredicate<ProfileApplication> isStrict = new ComposablePredicate<ProfileApplication>() {
+    public boolean apply(ProfileApplication s) {
+      return s.isStrict();
+    }
+  };
 
 	/**
 	 * The package that owns the profile application. 
@@ -56,10 +56,10 @@ public class ProfileApplicationPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<ProfileApplication, Package> applyingPackage = new Function<ProfileApplication, Package>() {
-		public Package apply(ProfileApplication s) {
-			return s.getApplyingPackage();
-		}
-	};
+    public Package apply(ProfileApplication s) {
+      return s.getApplyingPackage();
+    }
+  };
 	
 	/**
 	 * Retrieves the definition (Ecore representation) of the profile associated with this
@@ -68,10 +68,10 @@ public class ProfileApplicationPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<ProfileApplication, EPackage> getAppliedDefinition = new Function<ProfileApplication, EPackage>() {
-		public EPackage apply(ProfileApplication s) {
-			return s.getAppliedDefinition();
-		}
-	};
+    public EPackage apply(ProfileApplication s) {
+      return s.getAppliedDefinition();
+    }
+  };
 
 	/**
 	 * Retrieves the definition (Ecore representation) of the specified named element in
@@ -80,11 +80,11 @@ public class ProfileApplicationPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static Function<ProfileApplication, ENamedElement> getAppliedDefinition(final NamedElement namedElement) {
-		return new Function<ProfileApplication, ENamedElement>() {
-			public ENamedElement apply(ProfileApplication s) {
-				return s.getAppliedDefinition(namedElement);
-			}
-		};
-	}
+    return new Function<ProfileApplication, ENamedElement>() {
+      public ENamedElement apply(ProfileApplication s) {
+        return s.getAppliedDefinition(namedElement);
+      }
+    };
+  }
 
 }

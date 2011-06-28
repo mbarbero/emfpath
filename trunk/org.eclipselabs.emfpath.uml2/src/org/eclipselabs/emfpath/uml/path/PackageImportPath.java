@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageImport;
 import org.eclipse.uml2.uml.VisibilityKind;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class PackageImportPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	private PackageImportPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies the visibility of the imported PackageableElements within the importing
@@ -38,10 +39,10 @@ public class PackageImportPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<PackageImport, VisibilityKind> visibility = new Function<PackageImport, VisibilityKind>() {
-		public VisibilityKind apply(PackageImport s) {
-			return s.getVisibility();
-		}
-	};
+    public VisibilityKind apply(PackageImport s) {
+      return s.getVisibility();
+    }
+  };
 
 	/**
 	 * Specifies the Package whose members are imported into a Namespace. 
@@ -49,10 +50,10 @@ public class PackageImportPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<PackageImport, Package> importedPackage = new Function<PackageImport, Package>() {
-		public Package apply(PackageImport s) {
-			return s.getImportedPackage();
-		}
-	};
+    public Package apply(PackageImport s) {
+      return s.getImportedPackage();
+    }
+  };
 
 	/**
 	 * Specifies the Namespace that imports the members from a Package. 
@@ -60,10 +61,10 @@ public class PackageImportPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<PackageImport, Namespace> importingNamespace = new Function<PackageImport, Namespace>() {
-		public Namespace apply(PackageImport s) {
-			return s.getImportingNamespace();
-		}
-	};
+    public Namespace apply(PackageImport s) {
+      return s.getImportingNamespace();
+    }
+  };
 	
 	/**
 	 * The visibility of a PackageImport is either public or private.
@@ -72,12 +73,12 @@ public class PackageImportPath extends DirectedRelationshipPath {
 	 * @see org.eclipse.uml2.uml.PackageImport#validatePublicOrPrivate(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<PackageImport> validatePublicOrPrivate(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<PackageImport>() {
-			public boolean apply(PackageImport s) {
-				return s.validatePublicOrPrivate(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<PackageImport> validatePublicOrPrivate(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<PackageImport>() {
+      public boolean apply(PackageImport s) {
+        return s.validatePublicOrPrivate(diagnostics, context);
+      }
+    };
+  }
 
 }

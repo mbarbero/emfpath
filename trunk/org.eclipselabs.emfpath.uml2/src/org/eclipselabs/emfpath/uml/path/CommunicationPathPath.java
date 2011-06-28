@@ -17,8 +17,8 @@ public class CommunicationPathPath extends AssociationPath {
 	 * @generated
 	 */
 	private CommunicationPathPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

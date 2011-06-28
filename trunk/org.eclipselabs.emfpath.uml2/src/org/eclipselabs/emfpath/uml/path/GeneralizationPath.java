@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.GeneralizationSet;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -29,8 +30,8 @@ public class GeneralizationPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	private GeneralizationPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Indicates whether the specific classifier can be used wherever the general classifier
@@ -39,11 +40,11 @@ public class GeneralizationPath extends DirectedRelationshipPath {
 	 * @see org.eclipse.uml2.uml.Generalization#isSubstitutable()
 	 * @generated
 	 */
-	public static final Predicate<Generalization> isSubstitutable = new Predicate<Generalization>() {
-		public boolean apply(Generalization s) {
-			return s.isSubstitutable();
-		}
-	};
+	public static final ComposablePredicate<Generalization> isSubstitutable = new ComposablePredicate<Generalization>() {
+    public boolean apply(Generalization s) {
+      return s.isSubstitutable();
+    }
+  };
 
 	/**
 	 * References the general classifier in the Generalization relationship. 
@@ -51,10 +52,10 @@ public class GeneralizationPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<Generalization, Classifier> general = new Function<Generalization, Classifier>() {
-		public Classifier apply(Generalization s) {
-			return s.getGeneral();
-		}
-	};
+    public Classifier apply(Generalization s) {
+      return s.getGeneral();
+    }
+  };
 
 	/**
 	 * Designates a set in which instances of Generalization is considered members. 
@@ -62,10 +63,10 @@ public class GeneralizationPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<Generalization, EList<GeneralizationSet>> generalizationSet = new Function<Generalization, EList<GeneralizationSet>>() {
-		public EList<GeneralizationSet> apply(Generalization s) {
-			return s.getGeneralizationSets();
-		}
-	};
+    public EList<GeneralizationSet> apply(Generalization s) {
+      return s.getGeneralizationSets();
+    }
+  };
 
 	/**
 	 * References the specializing classifier in the Generalization relationship. 
@@ -73,10 +74,10 @@ public class GeneralizationPath extends DirectedRelationshipPath {
 	 * @generated
 	 */
 	public static final Function<Generalization, Classifier> specific = new Function<Generalization, Classifier>() {
-		public Classifier apply(Generalization s) {
-			return s.getSpecific();
-		}
-	};
+    public Classifier apply(Generalization s) {
+      return s.getSpecific();
+    }
+  };
 	
 	/**
 	 * Every Generalization associated with a given GeneralizationSet must have the same
@@ -86,12 +87,12 @@ public class GeneralizationPath extends DirectedRelationshipPath {
 	 * @see org.eclipse.uml2.uml.Generalization#validateGeneralizationSameClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Generalization> validateGeneralizationSameClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Generalization>() {
-			public boolean apply(Generalization s) {
-				return s.validateGeneralizationSameClassifier(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Generalization> validateGeneralizationSameClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Generalization>() {
+      public boolean apply(Generalization s) {
+        return s.validateGeneralizationSameClassifier(diagnostics, context);
+      }
+    };
+  }
 
 }

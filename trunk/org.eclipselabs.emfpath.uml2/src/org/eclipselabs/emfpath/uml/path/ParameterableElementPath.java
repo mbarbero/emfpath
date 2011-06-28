@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import org.eclipse.uml2.uml.ParameterableElement;
 import org.eclipse.uml2.uml.TemplateParameter;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -21,8 +21,8 @@ public class ParameterableElementPath extends ElementPath {
 	 * @generated
 	 */
 	 ParameterableElementPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The formal template parameter that owns this element. 
@@ -30,10 +30,10 @@ public class ParameterableElementPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<ParameterableElement, TemplateParameter> owningTemplateParameter = new Function<ParameterableElement, TemplateParameter>() {
-		public TemplateParameter apply(ParameterableElement s) {
-			return s.getOwningTemplateParameter();
-		}
-	};
+    public TemplateParameter apply(ParameterableElement s) {
+      return s.getOwningTemplateParameter();
+    }
+  };
 
 	/**
 	 * The template parameter that exposes this element as a formal parameter. 
@@ -41,10 +41,10 @@ public class ParameterableElementPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<ParameterableElement, TemplateParameter> templateParameter = new Function<ParameterableElement, TemplateParameter>() {
-		public TemplateParameter apply(ParameterableElement s) {
-			return s.getTemplateParameter();
-		}
-	};
+    public TemplateParameter apply(ParameterableElement s) {
+      return s.getTemplateParameter();
+    }
+  };
 	
 	/**
 	 * The query isCompatibleWith() determines if this parameterable element is compatible
@@ -56,12 +56,12 @@ public class ParameterableElementPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.ParameterableElement#isCompatibleWith(ParameterableElement)
 	 * @generated
 	 */
-	public static Predicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
-		return new Predicate<ParameterableElement>() {
-			public boolean apply(ParameterableElement s) {
-				return s.isCompatibleWith(p);
-			}
-		};
-	}
+	public static ComposablePredicate<ParameterableElement> isCompatibleWith(final ParameterableElement p) {
+    return new ComposablePredicate<ParameterableElement>() {
+      public boolean apply(ParameterableElement s) {
+        return s.isCompatibleWith(p);
+      }
+    };
+  }
 
 }

@@ -1,8 +1,7 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Predicate;	
-
 import org.eclipse.uml2.uml.TimeConstraint;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -18,8 +17,8 @@ public class TimeConstraintPath extends IntervalConstraintPath {
 	 * @generated
 	 */
 	private TimeConstraintPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The value of firstEvent is related to constrainedElement. If firstEvent is true, then
@@ -29,11 +28,11 @@ public class TimeConstraintPath extends IntervalConstraintPath {
 	 * @see org.eclipse.uml2.uml.TimeConstraint#isFirstEvent()
 	 * @generated
 	 */
-	public static final Predicate<TimeConstraint> isFirstEvent = new Predicate<TimeConstraint>() {
-		public boolean apply(TimeConstraint s) {
-			return s.isFirstEvent();
-		}
-	};
+	public static final ComposablePredicate<TimeConstraint> isFirstEvent = new ComposablePredicate<TimeConstraint>() {
+    public boolean apply(TimeConstraint s) {
+      return s.isFirstEvent();
+    }
+  };
 	
 	
 

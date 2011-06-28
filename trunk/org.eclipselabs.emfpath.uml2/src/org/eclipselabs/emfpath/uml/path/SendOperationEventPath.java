@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.SendOperationEvent;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -19,8 +19,8 @@ public class SendOperationEventPath extends MessageEventPath {
 	 * @generated
 	 */
 	private SendOperationEventPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The operation associated with this event. 
@@ -28,10 +28,10 @@ public class SendOperationEventPath extends MessageEventPath {
 	 * @generated
 	 */
 	public static final Function<SendOperationEvent, Operation> operation = new Function<SendOperationEvent, Operation>() {
-		public Operation apply(SendOperationEvent s) {
-			return s.getOperation();
-		}
-	};
+    public Operation apply(SendOperationEvent s) {
+      return s.getOperation();
+    }
+  };
 	
 	
 

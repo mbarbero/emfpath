@@ -1,9 +1,7 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Activity;
@@ -11,6 +9,9 @@ import org.eclipse.uml2.uml.MultiplicityElement;
 import org.eclipse.uml2.uml.StructuredActivityNode;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.Variable;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -34,8 +35,8 @@ public class VariablePath extends ConnectableElementPath {
 	 * @generated
 	 */
 	private VariablePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * For a multivalued multiplicity, this attribute specifies whether the values in an
@@ -45,7 +46,7 @@ public class VariablePath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isOrdered()
 	 * @generated
 	 */
-	public static final Predicate<MultiplicityElement> isOrdered = MultiplicityElementPath.isOrdered;
+	public static final ComposablePredicate<MultiplicityElement> isOrdered = MultiplicityElementPath.isOrdered;
 
 	/**
 	 * For a multivalued multiplicity, this attributes specifies whether the values in an
@@ -55,7 +56,7 @@ public class VariablePath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isUnique()
 	 * @generated
 	 */
-	public static final Predicate<MultiplicityElement> isUnique = MultiplicityElementPath.isUnique;
+	public static final ComposablePredicate<MultiplicityElement> isUnique = MultiplicityElementPath.isUnique;
 
 	/**
 	 * Specifies the upper bound of the multiplicity interval. 
@@ -99,10 +100,10 @@ public class VariablePath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static final Function<Variable, StructuredActivityNode> scope = new Function<Variable, StructuredActivityNode>() {
-		public StructuredActivityNode apply(Variable s) {
-			return s.getScope();
-		}
-	};
+    public StructuredActivityNode apply(Variable s) {
+      return s.getScope();
+    }
+  };
 
 	/**
 	 * An activity that owns the variable. 
@@ -110,10 +111,10 @@ public class VariablePath extends ConnectableElementPath {
 	 * @generated
 	 */
 	public static final Function<Variable, Activity> activityScope = new Function<Variable, Activity>() {
-		public Activity apply(Variable s) {
-			return s.getActivityScope();
-		}
-	};
+    public Activity apply(Variable s) {
+      return s.getActivityScope();
+    }
+  };
 	
 	/**
 	 * The lower bound must be a non-negative integer literal.
@@ -124,9 +125,9 @@ public class VariablePath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateLowerGe0(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateLowerGe0(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateLowerGe0(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateLowerGe0(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateLowerGe0(diagnostics, context);
+  }
 
 	/**
 	 * The upper bound must be greater than or equal to the lower bound.
@@ -137,9 +138,9 @@ public class VariablePath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateUpperGeLower(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateUpperGeLower(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateUpperGeLower(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateUpperGeLower(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateUpperGeLower(diagnostics, context);
+  }
 
 	/**
 	 * If a non-literal ValueSpecification is used for the lower or upper bound, then evaluating
@@ -150,9 +151,9 @@ public class VariablePath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationNoSideEffects(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateValueSpecificationNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateValueSpecificationNoSideEffects(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateValueSpecificationNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateValueSpecificationNoSideEffects(diagnostics, context);
+  }
 
 	/**
 	 * If a non-literal ValueSpecification is used for the lower or upper bound, then that
@@ -163,9 +164,9 @@ public class VariablePath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationConstant(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateValueSpecificationConstant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return MultiplicityElementPath.validateValueSpecificationConstant(diagnostics, context);
-	}
+	public static ComposablePredicate<MultiplicityElement> validateValueSpecificationConstant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return MultiplicityElementPath.validateValueSpecificationConstant(diagnostics, context);
+  }
 
 	/**
 	 * The query isMultivalued() checks whether this multiplicity has an upper bound greater
@@ -177,7 +178,7 @@ public class VariablePath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isMultivalued()
 	 * @generated
 	 */
-	public static final Predicate<MultiplicityElement> isMultivalued = MultiplicityElementPath.isMultivalued;
+	public static final ComposablePredicate<MultiplicityElement> isMultivalued = MultiplicityElementPath.isMultivalued;
 
 	/**
 	 * The query includesCardinality() checks whether the specified cardinality is valid
@@ -190,9 +191,9 @@ public class VariablePath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesCardinality(int)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> includesCardinality(final int C) {
-		return MultiplicityElementPath.includesCardinality(C);
-	}
+	public static ComposablePredicate<MultiplicityElement> includesCardinality(final int C) {
+    return MultiplicityElementPath.includesCardinality(C);
+  }
 
 	/**
 	 * The query includesMultiplicity() checks whether this multiplicity includes all the
@@ -206,9 +207,9 @@ public class VariablePath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesMultiplicity(MultiplicityElement)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> includesMultiplicity(final MultiplicityElement M) {
-		return MultiplicityElementPath.includesMultiplicity(M);
-	}
+	public static ComposablePredicate<MultiplicityElement> includesMultiplicity(final MultiplicityElement M) {
+    return MultiplicityElementPath.includesMultiplicity(M);
+  }
 
 	/**
 	 * The query lowerBound() returns the lower bound of the multiplicity as an integer.
@@ -243,9 +244,9 @@ public class VariablePath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#compatibleWith(MultiplicityElement)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> compatibleWith(final MultiplicityElement other) {
-		return MultiplicityElementPath.compatibleWith(other);
-	}
+	public static ComposablePredicate<MultiplicityElement> compatibleWith(final MultiplicityElement other) {
+    return MultiplicityElementPath.compatibleWith(other);
+  }
 
 	/**
 	 * The operation is determines if the upper and lower bound of the ranges are the ones
@@ -256,9 +257,9 @@ public class VariablePath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#is(int, int)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> is(final int lowerbound, final int upperbound) {
-		return MultiplicityElementPath.is(lowerbound, upperbound);
-	}
+	public static ComposablePredicate<MultiplicityElement> is(final int lowerbound, final int upperbound) {
+    return MultiplicityElementPath.is(lowerbound, upperbound);
+  }
 
 	/**
 	 * A variable is owned by a StructuredNode or Activity, but not both.
@@ -266,13 +267,13 @@ public class VariablePath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.Variable#validateOwned(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Variable> validateOwned(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Variable>() {
-			public boolean apply(Variable s) {
-				return s.validateOwned(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Variable> validateOwned(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Variable>() {
+      public boolean apply(Variable s) {
+        return s.validateOwned(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The isAccessibleBy() operation is not defined in standard UML. Implementations should
@@ -282,12 +283,12 @@ public class VariablePath extends ConnectableElementPath {
 	 * @see org.eclipse.uml2.uml.Variable#isAccessibleBy(Action)
 	 * @generated
 	 */
-	public static Predicate<Variable> isAccessibleBy(final Action a) {
-		return new Predicate<Variable>() {
-			public boolean apply(Variable s) {
-				return s.isAccessibleBy(a);
-			}
-		};
-	}
+	public static ComposablePredicate<Variable> isAccessibleBy(final Action a) {
+    return new ComposablePredicate<Variable>() {
+      public boolean apply(Variable s) {
+        return s.isAccessibleBy(a);
+      }
+    };
+  }
 
 }

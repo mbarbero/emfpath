@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.PartDecomposition;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -21,8 +21,8 @@ public class PartDecompositionPath extends InteractionUsePath {
 	 * @generated
 	 */
 	private PartDecompositionPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	
@@ -33,13 +33,13 @@ public class PartDecompositionPath extends InteractionUsePath {
 	 * @see org.eclipse.uml2.uml.PartDecomposition#validatePartsOfInternalStructures(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<PartDecomposition> validatePartsOfInternalStructures(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<PartDecomposition>() {
-			public boolean apply(PartDecomposition s) {
-				return s.validatePartsOfInternalStructures(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<PartDecomposition> validatePartsOfInternalStructures(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<PartDecomposition>() {
+      public boolean apply(PartDecomposition s) {
+        return s.validatePartsOfInternalStructures(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Assume that within Interaction X, Lifeline L is of class C and decomposed to D. Within
@@ -59,13 +59,13 @@ public class PartDecompositionPath extends InteractionUsePath {
 	 * @see org.eclipse.uml2.uml.PartDecomposition#validateAssume(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<PartDecomposition> validateAssume(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<PartDecomposition>() {
-			public boolean apply(PartDecomposition s) {
-				return s.validateAssume(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<PartDecomposition> validateAssume(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<PartDecomposition>() {
+      public boolean apply(PartDecomposition s) {
+        return s.validateAssume(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Assume that within Interaction X, Lifeline L is of class C and decomposed to D. Assume
@@ -79,12 +79,12 @@ public class PartDecompositionPath extends InteractionUsePath {
 	 * @see org.eclipse.uml2.uml.PartDecomposition#validateCommutativityOfDecomposition(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<PartDecomposition> validateCommutativityOfDecomposition(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<PartDecomposition>() {
-			public boolean apply(PartDecomposition s) {
-				return s.validateCommutativityOfDecomposition(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<PartDecomposition> validateCommutativityOfDecomposition(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<PartDecomposition>() {
+      public boolean apply(PartDecomposition s) {
+        return s.validateCommutativityOfDecomposition(diagnostics, context);
+      }
+    };
+  }
 
 }

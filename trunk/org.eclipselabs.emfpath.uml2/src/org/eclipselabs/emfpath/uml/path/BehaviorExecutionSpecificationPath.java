@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class BehaviorExecutionSpecificationPath extends ExecutionSpecificationPa
 	 * @generated
 	 */
 	private BehaviorExecutionSpecificationPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Behavior whose execution is occurring. 
@@ -29,10 +29,10 @@ public class BehaviorExecutionSpecificationPath extends ExecutionSpecificationPa
 	 * @generated
 	 */
 	public static final Function<BehaviorExecutionSpecification, Behavior> behavior = new Function<BehaviorExecutionSpecification, Behavior>() {
-		public Behavior apply(BehaviorExecutionSpecification s) {
-			return s.getBehavior();
-		}
-	};
+    public Behavior apply(BehaviorExecutionSpecification s) {
+      return s.getBehavior();
+    }
+  };
 	
 	
 

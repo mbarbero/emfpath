@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.MultiplicityElement;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @generated
 	 */
 	 MultiplicityElementPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * For a multivalued multiplicity, this attribute specifies whether the values in an
@@ -34,11 +35,11 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isOrdered()
 	 * @generated
 	 */
-	public static final Predicate<MultiplicityElement> isOrdered = new Predicate<MultiplicityElement>() {
-		public boolean apply(MultiplicityElement s) {
-			return s.isOrdered();
-		}
-	};
+	public static final ComposablePredicate<MultiplicityElement> isOrdered = new ComposablePredicate<MultiplicityElement>() {
+    public boolean apply(MultiplicityElement s) {
+      return s.isOrdered();
+    }
+  };
 
 	/**
 	 * For a multivalued multiplicity, this attributes specifies whether the values in an
@@ -46,11 +47,11 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isUnique()
 	 * @generated
 	 */
-	public static final Predicate<MultiplicityElement> isUnique = new Predicate<MultiplicityElement>() {
-		public boolean apply(MultiplicityElement s) {
-			return s.isUnique();
-		}
-	};
+	public static final ComposablePredicate<MultiplicityElement> isUnique = new ComposablePredicate<MultiplicityElement>() {
+    public boolean apply(MultiplicityElement s) {
+      return s.isUnique();
+    }
+  };
 
 	/**
 	 * Specifies the upper bound of the multiplicity interval. 
@@ -58,10 +59,10 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, java.lang.Integer> upper = new Function<MultiplicityElement, java.lang.Integer>() {
-		public java.lang.Integer apply(MultiplicityElement s) {
-			return s.getUpper();
-		}
-	};
+    public java.lang.Integer apply(MultiplicityElement s) {
+      return s.getUpper();
+    }
+  };
 
 	/**
 	 * Specifies the lower bound of the multiplicity interval. 
@@ -69,10 +70,10 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, java.lang.Integer> lower = new Function<MultiplicityElement, java.lang.Integer>() {
-		public java.lang.Integer apply(MultiplicityElement s) {
-			return s.getLower();
-		}
-	};
+    public java.lang.Integer apply(MultiplicityElement s) {
+      return s.getLower();
+    }
+  };
 
 	/**
 	 * The specification of the upper bound for this multiplicity. 
@@ -80,10 +81,10 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, ValueSpecification> upperValue = new Function<MultiplicityElement, ValueSpecification>() {
-		public ValueSpecification apply(MultiplicityElement s) {
-			return s.getUpperValue();
-		}
-	};
+    public ValueSpecification apply(MultiplicityElement s) {
+      return s.getUpperValue();
+    }
+  };
 
 	/**
 	 * The specification of the lower bound for this multiplicity. 
@@ -91,10 +92,10 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, ValueSpecification> lowerValue = new Function<MultiplicityElement, ValueSpecification>() {
-		public ValueSpecification apply(MultiplicityElement s) {
-			return s.getLowerValue();
-		}
-	};
+    public ValueSpecification apply(MultiplicityElement s) {
+      return s.getLowerValue();
+    }
+  };
 	
 	/**
 	 * The lower bound must be a non-negative integer literal.
@@ -103,13 +104,13 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateLowerGe0(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateLowerGe0(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<MultiplicityElement>() {
-			public boolean apply(MultiplicityElement s) {
-				return s.validateLowerGe0(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<MultiplicityElement> validateLowerGe0(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<MultiplicityElement>() {
+      public boolean apply(MultiplicityElement s) {
+        return s.validateLowerGe0(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The upper bound must be greater than or equal to the lower bound.
@@ -118,13 +119,13 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateUpperGeLower(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateUpperGeLower(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<MultiplicityElement>() {
-			public boolean apply(MultiplicityElement s) {
-				return s.validateUpperGeLower(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<MultiplicityElement> validateUpperGeLower(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<MultiplicityElement>() {
+      public boolean apply(MultiplicityElement s) {
+        return s.validateUpperGeLower(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If a non-literal ValueSpecification is used for the lower or upper bound, then evaluating
@@ -133,13 +134,13 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationNoSideEffects(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateValueSpecificationNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<MultiplicityElement>() {
-			public boolean apply(MultiplicityElement s) {
-				return s.validateValueSpecificationNoSideEffects(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<MultiplicityElement> validateValueSpecificationNoSideEffects(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<MultiplicityElement>() {
+      public boolean apply(MultiplicityElement s) {
+        return s.validateValueSpecificationNoSideEffects(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If a non-literal ValueSpecification is used for the lower or upper bound, then that
@@ -148,13 +149,13 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#validateValueSpecificationConstant(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> validateValueSpecificationConstant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<MultiplicityElement>() {
-			public boolean apply(MultiplicityElement s) {
-				return s.validateValueSpecificationConstant(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<MultiplicityElement> validateValueSpecificationConstant(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<MultiplicityElement>() {
+      public boolean apply(MultiplicityElement s) {
+        return s.validateValueSpecificationConstant(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -162,13 +163,13 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @generated
 	 */
 	public static Function<MultiplicityElement, MultiplicityElement> setLower(final int newLower) {
-		return new Function<MultiplicityElement, MultiplicityElement>() {
-			public MultiplicityElement apply(MultiplicityElement s) {
-				s.setLower(newLower);
-				return s;
-			}
-		};
-	}
+    return new Function<MultiplicityElement, MultiplicityElement>() {
+      public MultiplicityElement apply(MultiplicityElement s) {
+        s.setLower(newLower);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * 
@@ -176,13 +177,13 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @generated
 	 */
 	public static Function<MultiplicityElement, MultiplicityElement> setUpper(final int newUpper) {
-		return new Function<MultiplicityElement, MultiplicityElement>() {
-			public MultiplicityElement apply(MultiplicityElement s) {
-				s.setUpper(newUpper);
-				return s;
-			}
-		};
-	}
+    return new Function<MultiplicityElement, MultiplicityElement>() {
+      public MultiplicityElement apply(MultiplicityElement s) {
+        s.setUpper(newUpper);
+        return s;
+      }
+    };
+  }
 
 	/**
 	 * The derived lower attribute must equal the lowerBound.
@@ -191,10 +192,10 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, java.lang.Integer> getLower = new Function<MultiplicityElement, java.lang.Integer>() {
-		public java.lang.Integer apply(MultiplicityElement s) {
-			return s.getLower();
-		}
-	};
+    public java.lang.Integer apply(MultiplicityElement s) {
+      return s.getLower();
+    }
+  };
 
 	/**
 	 * The derived upper attribute must equal the upperBound.
@@ -203,10 +204,10 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, java.lang.Integer> getUpper = new Function<MultiplicityElement, java.lang.Integer>() {
-		public java.lang.Integer apply(MultiplicityElement s) {
-			return s.getUpper();
-		}
-	};
+    public java.lang.Integer apply(MultiplicityElement s) {
+      return s.getUpper();
+    }
+  };
 
 	/**
 	 * The query isMultivalued() checks whether this multiplicity has an upper bound greater
@@ -216,11 +217,11 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#isMultivalued()
 	 * @generated
 	 */
-	public static final Predicate<MultiplicityElement> isMultivalued = new Predicate<MultiplicityElement>() {
-		public boolean apply(MultiplicityElement s) {
-			return s.isMultivalued();
-		}
-	};
+	public static final ComposablePredicate<MultiplicityElement> isMultivalued = new ComposablePredicate<MultiplicityElement>() {
+    public boolean apply(MultiplicityElement s) {
+      return s.isMultivalued();
+    }
+  };
 
 	/**
 	 * The query includesCardinality() checks whether the specified cardinality is valid
@@ -231,13 +232,13 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesCardinality(int)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> includesCardinality(final int C) {
-		return new Predicate<MultiplicityElement>() {
-			public boolean apply(MultiplicityElement s) {
-				return s.includesCardinality(C);
-			}
-		};
-	}
+	public static ComposablePredicate<MultiplicityElement> includesCardinality(final int C) {
+    return new ComposablePredicate<MultiplicityElement>() {
+      public boolean apply(MultiplicityElement s) {
+        return s.includesCardinality(C);
+      }
+    };
+  }
 
 	/**
 	 * The query includesMultiplicity() checks whether this multiplicity includes all the
@@ -249,13 +250,13 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#includesMultiplicity(MultiplicityElement)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> includesMultiplicity(final MultiplicityElement M) {
-		return new Predicate<MultiplicityElement>() {
-			public boolean apply(MultiplicityElement s) {
-				return s.includesMultiplicity(M);
-			}
-		};
-	}
+	public static ComposablePredicate<MultiplicityElement> includesMultiplicity(final MultiplicityElement M) {
+    return new ComposablePredicate<MultiplicityElement>() {
+      public boolean apply(MultiplicityElement s) {
+        return s.includesMultiplicity(M);
+      }
+    };
+  }
 
 	/**
 	 * The query lowerBound() returns the lower bound of the multiplicity as an integer.
@@ -265,10 +266,10 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, java.lang.Integer> lowerBound = new Function<MultiplicityElement, java.lang.Integer>() {
-		public java.lang.Integer apply(MultiplicityElement s) {
-			return s.lowerBound();
-		}
-	};
+    public java.lang.Integer apply(MultiplicityElement s) {
+      return s.lowerBound();
+    }
+  };
 
 	/**
 	 * The query upperBound() returns the upper bound of the multiplicity for a bounded multiplicity
@@ -279,10 +280,10 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<MultiplicityElement, java.lang.Integer> upperBound_ = new Function<MultiplicityElement, java.lang.Integer>() {
-		public java.lang.Integer apply(MultiplicityElement s) {
-			return s.upperBound();
-		}
-	};
+    public java.lang.Integer apply(MultiplicityElement s) {
+      return s.upperBound();
+    }
+  };
 
 	/**
 	 * The operation compatibleWith takes another multiplicity as input. It checks if one
@@ -292,13 +293,13 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#compatibleWith(MultiplicityElement)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> compatibleWith(final MultiplicityElement other) {
-		return new Predicate<MultiplicityElement>() {
-			public boolean apply(MultiplicityElement s) {
-				return s.compatibleWith(other);
-			}
-		};
-	}
+	public static ComposablePredicate<MultiplicityElement> compatibleWith(final MultiplicityElement other) {
+    return new ComposablePredicate<MultiplicityElement>() {
+      public boolean apply(MultiplicityElement s) {
+        return s.compatibleWith(other);
+      }
+    };
+  }
 
 	/**
 	 * The operation is determines if the upper and lower bound of the ranges are the ones
@@ -307,12 +308,12 @@ public class MultiplicityElementPath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.MultiplicityElement#is(int, int)
 	 * @generated
 	 */
-	public static Predicate<MultiplicityElement> is(final int lowerbound, final int upperbound) {
-		return new Predicate<MultiplicityElement>() {
-			public boolean apply(MultiplicityElement s) {
-				return s.is(lowerbound, upperbound);
-			}
-		};
-	}
+	public static ComposablePredicate<MultiplicityElement> is(final int lowerbound, final int upperbound) {
+    return new ComposablePredicate<MultiplicityElement>() {
+      public boolean apply(MultiplicityElement s) {
+        return s.is(lowerbound, upperbound);
+      }
+    };
+  }
 
 }

@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.DirectedRelationship;
 import org.eclipse.uml2.uml.Element;
@@ -13,6 +11,9 @@ import org.eclipse.uml2.uml.Extend;
 import org.eclipse.uml2.uml.ExtensionPoint;
 import org.eclipse.uml2.uml.Relationship;
 import org.eclipse.uml2.uml.UseCase;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -30,8 +31,8 @@ public class ExtendPath extends NamedElementPath {
 	 * @generated
 	 */
 	private ExtendPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Specifies the elements related by the Relationship. 
@@ -66,10 +67,10 @@ public class ExtendPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Extend, UseCase> extendedCase = new Function<Extend, UseCase>() {
-		public UseCase apply(Extend s) {
-			return s.getExtendedCase();
-		}
-	};
+    public UseCase apply(Extend s) {
+      return s.getExtendedCase();
+    }
+  };
 
 	/**
 	 * References the condition that must hold when the first extension point is reached
@@ -80,10 +81,10 @@ public class ExtendPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Extend, Constraint> condition = new Function<Extend, Constraint>() {
-		public Constraint apply(Extend s) {
-			return s.getCondition();
-		}
-	};
+    public Constraint apply(Extend s) {
+      return s.getCondition();
+    }
+  };
 
 	/**
 	 * An ordered list of extension points belonging to the extended use case, specifying
@@ -97,10 +98,10 @@ public class ExtendPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Extend, EList<ExtensionPoint>> extensionLocation = new Function<Extend, EList<ExtensionPoint>>() {
-		public EList<ExtensionPoint> apply(Extend s) {
-			return s.getExtensionLocations();
-		}
-	};
+    public EList<ExtensionPoint> apply(Extend s) {
+      return s.getExtensionLocations();
+    }
+  };
 
 	/**
 	 * References the use case that represents the extension and owns the extend relationship.
@@ -108,10 +109,10 @@ public class ExtendPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Extend, UseCase> extension = new Function<Extend, UseCase>() {
-		public UseCase apply(Extend s) {
-			return s.getExtension();
-		}
-	};
+    public UseCase apply(Extend s) {
+      return s.getExtension();
+    }
+  };
 	
 	/**
 	 * The extension points referenced by the extend relationship must belong to the use
@@ -122,12 +123,12 @@ public class ExtendPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.Extend#validateExtensionPoints(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Extend> validateExtensionPoints(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Extend>() {
-			public boolean apply(Extend s) {
-				return s.validateExtensionPoints(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Extend> validateExtensionPoints(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Extend>() {
+      public boolean apply(Extend s) {
+        return s.validateExtensionPoints(diagnostics, context);
+      }
+    };
+  }
 
 }

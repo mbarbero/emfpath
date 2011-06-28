@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.Actor;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -21,8 +21,8 @@ public class ActorPath extends BehavioredClassifierPath {
 	 * @generated
 	 */
 	private ActorPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	
@@ -40,13 +40,13 @@ public class ActorPath extends BehavioredClassifierPath {
 	 * @see org.eclipse.uml2.uml.Actor#validateAssociations(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Actor> validateAssociations(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Actor>() {
-			public boolean apply(Actor s) {
-				return s.validateAssociations(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Actor> validateAssociations(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Actor>() {
+      public boolean apply(Actor s) {
+        return s.validateAssociations(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * An actor must have a name.
@@ -54,12 +54,12 @@ public class ActorPath extends BehavioredClassifierPath {
 	 * @see org.eclipse.uml2.uml.Actor#validateMustHaveName(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Actor> validateMustHaveName(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Actor>() {
-			public boolean apply(Actor s) {
-				return s.validateMustHaveName(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Actor> validateMustHaveName(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Actor>() {
+      public boolean apply(Actor s) {
+        return s.validateMustHaveName(diagnostics, context);
+      }
+    };
+  }
 
 }

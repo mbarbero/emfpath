@@ -1,15 +1,16 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Gate;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionUse;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -28,8 +29,8 @@ public class InteractionUsePath extends InteractionFragmentPath {
 	 * @generated
 	 */
 	 InteractionUsePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Refers to the Interaction that defines its meaning 
@@ -37,10 +38,10 @@ public class InteractionUsePath extends InteractionFragmentPath {
 	 * @generated
 	 */
 	public static final Function<InteractionUse, Interaction> refersTo = new Function<InteractionUse, Interaction>() {
-		public Interaction apply(InteractionUse s) {
-			return s.getRefersTo();
-		}
-	};
+    public Interaction apply(InteractionUse s) {
+      return s.getRefersTo();
+    }
+  };
 
 	/**
 	 * The actual gates of the InteractionUse 
@@ -48,10 +49,10 @@ public class InteractionUsePath extends InteractionFragmentPath {
 	 * @generated
 	 */
 	public static final Function<InteractionUse, EList<Gate>> actualGate = new Function<InteractionUse, EList<Gate>>() {
-		public EList<Gate> apply(InteractionUse s) {
-			return s.getActualGates();
-		}
-	};
+    public EList<Gate> apply(InteractionUse s) {
+      return s.getActualGates();
+    }
+  };
 
 	/**
 	 * The actual arguments of the Interaction 
@@ -59,10 +60,10 @@ public class InteractionUsePath extends InteractionFragmentPath {
 	 * @generated
 	 */
 	public static final Function<InteractionUse, EList<Action>> argument = new Function<InteractionUse, EList<Action>>() {
-		public EList<Action> apply(InteractionUse s) {
-			return s.getArguments();
-		}
-	};
+    public EList<Action> apply(InteractionUse s) {
+      return s.getArguments();
+    }
+  };
 	
 	/**
 	 * Actual Gates of the InteractionUse must match Formal Gates of the referred Interaction.
@@ -71,13 +72,13 @@ public class InteractionUsePath extends InteractionFragmentPath {
 	 * @see org.eclipse.uml2.uml.InteractionUse#validateGatesMatch(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InteractionUse> validateGatesMatch(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InteractionUse>() {
-			public boolean apply(InteractionUse s) {
-				return s.validateGatesMatch(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InteractionUse> validateGatesMatch(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InteractionUse>() {
+      public boolean apply(InteractionUse s) {
+        return s.validateGatesMatch(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The InteractionUse must cover all Lifelines of the enclosing Interaction which appear
@@ -86,13 +87,13 @@ public class InteractionUsePath extends InteractionFragmentPath {
 	 * @see org.eclipse.uml2.uml.InteractionUse#validateAllLifelines(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InteractionUse> validateAllLifelines(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InteractionUse>() {
-			public boolean apply(InteractionUse s) {
-				return s.validateAllLifelines(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InteractionUse> validateAllLifelines(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InteractionUse>() {
+      public boolean apply(InteractionUse s) {
+        return s.validateAllLifelines(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The arguments of the InteractionUse must correspond to parameters of the referred
@@ -101,13 +102,13 @@ public class InteractionUsePath extends InteractionFragmentPath {
 	 * @see org.eclipse.uml2.uml.InteractionUse#validateArgumentsCorrespondToParameters(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InteractionUse> validateArgumentsCorrespondToParameters(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InteractionUse>() {
-			public boolean apply(InteractionUse s) {
-				return s.validateArgumentsCorrespondToParameters(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InteractionUse> validateArgumentsCorrespondToParameters(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InteractionUse>() {
+      public boolean apply(InteractionUse s) {
+        return s.validateArgumentsCorrespondToParameters(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The arguments must only be constants, parameters of the enclosing Interaction or attributes
@@ -116,12 +117,12 @@ public class InteractionUsePath extends InteractionFragmentPath {
 	 * @see org.eclipse.uml2.uml.InteractionUse#validateArgumentsAreConstants(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<InteractionUse> validateArgumentsAreConstants(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<InteractionUse>() {
-			public boolean apply(InteractionUse s) {
-				return s.validateArgumentsAreConstants(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<InteractionUse> validateArgumentsAreConstants(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<InteractionUse>() {
+      public boolean apply(InteractionUse s) {
+        return s.validateArgumentsAreConstants(diagnostics, context);
+      }
+    };
+  }
 
 }

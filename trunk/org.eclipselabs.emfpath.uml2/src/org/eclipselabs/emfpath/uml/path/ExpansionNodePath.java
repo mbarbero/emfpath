@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.ExpansionNode;
 import org.eclipse.uml2.uml.ExpansionRegion;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +23,8 @@ public class ExpansionNodePath extends ObjectNodePath {
 	 * @generated
 	 */
 	private ExpansionNodePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The expansion region for which the node is an output. 
@@ -32,10 +32,10 @@ public class ExpansionNodePath extends ObjectNodePath {
 	 * @generated
 	 */
 	public static final Function<ExpansionNode, ExpansionRegion> regionAsOutput = new Function<ExpansionNode, ExpansionRegion>() {
-		public ExpansionRegion apply(ExpansionNode s) {
-			return s.getRegionAsOutput();
-		}
-	};
+    public ExpansionRegion apply(ExpansionNode s) {
+      return s.getRegionAsOutput();
+    }
+  };
 
 	/**
 	 * The expansion region for which the node is an input. 
@@ -43,10 +43,10 @@ public class ExpansionNodePath extends ObjectNodePath {
 	 * @generated
 	 */
 	public static final Function<ExpansionNode, ExpansionRegion> regionAsInput = new Function<ExpansionNode, ExpansionRegion>() {
-		public ExpansionRegion apply(ExpansionNode s) {
-			return s.getRegionAsInput();
-		}
-	};
+    public ExpansionRegion apply(ExpansionNode s) {
+      return s.getRegionAsInput();
+    }
+  };
 	
 	
 

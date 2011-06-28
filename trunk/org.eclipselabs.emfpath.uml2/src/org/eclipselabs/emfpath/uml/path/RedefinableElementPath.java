@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.RedefinableElement;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class RedefinableElementPath extends NamedElementPath {
 	 * @generated
 	 */
 	 RedefinableElementPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Indicates whether it is possible to further specialize a RedefinableElement. If the
@@ -34,11 +35,11 @@ public class RedefinableElementPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isLeaf()
 	 * @generated
 	 */
-	public static final Predicate<RedefinableElement> isLeaf = new Predicate<RedefinableElement>() {
-		public boolean apply(RedefinableElement s) {
-			return s.isLeaf();
-		}
-	};
+	public static final ComposablePredicate<RedefinableElement> isLeaf = new ComposablePredicate<RedefinableElement>() {
+    public boolean apply(RedefinableElement s) {
+      return s.isLeaf();
+    }
+  };
 
 	/**
 	 * The redefinable element that is being redefined by this element. 
@@ -46,10 +47,10 @@ public class RedefinableElementPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<RedefinableElement, EList<RedefinableElement>> redefinedElement = new Function<RedefinableElement, EList<RedefinableElement>>() {
-		public EList<RedefinableElement> apply(RedefinableElement s) {
-			return s.getRedefinedElements();
-		}
-	};
+    public EList<RedefinableElement> apply(RedefinableElement s) {
+      return s.getRedefinedElements();
+    }
+  };
 
 	/**
 	 * References the contexts that this element may be redefined from. 
@@ -57,10 +58,10 @@ public class RedefinableElementPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<RedefinableElement, EList<Classifier>> redefinitionContext = new Function<RedefinableElement, EList<Classifier>>() {
-		public EList<Classifier> apply(RedefinableElement s) {
-			return s.getRedefinitionContexts();
-		}
-	};
+    public EList<Classifier> apply(RedefinableElement s) {
+      return s.getRedefinitionContexts();
+    }
+  };
 	
 	/**
 	 * At least one of the redefinition contexts of the redefining element must be a specialization
@@ -70,13 +71,13 @@ public class RedefinableElementPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionContextValid(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> validateRedefinitionContextValid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<RedefinableElement>() {
-			public boolean apply(RedefinableElement s) {
-				return s.validateRedefinitionContextValid(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<RedefinableElement> validateRedefinitionContextValid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<RedefinableElement>() {
+      public boolean apply(RedefinableElement s) {
+        return s.validateRedefinitionContextValid(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A redefining element must be consistent with each redefined element.
@@ -85,13 +86,13 @@ public class RedefinableElementPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionConsistent(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> validateRedefinitionConsistent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<RedefinableElement>() {
-			public boolean apply(RedefinableElement s) {
-				return s.validateRedefinitionConsistent(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<RedefinableElement> validateRedefinitionConsistent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<RedefinableElement>() {
+      public boolean apply(RedefinableElement s) {
+        return s.validateRedefinitionConsistent(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The query isConsistentWith() specifies, for any two RedefinableElements in a context
@@ -104,13 +105,13 @@ public class RedefinableElementPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isConsistentWith(RedefinableElement)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> isConsistentWith(final RedefinableElement redefinee) {
-		return new Predicate<RedefinableElement>() {
-			public boolean apply(RedefinableElement s) {
-				return s.isConsistentWith(redefinee);
-			}
-		};
-	}
+	public static ComposablePredicate<RedefinableElement> isConsistentWith(final RedefinableElement redefinee) {
+    return new ComposablePredicate<RedefinableElement>() {
+      public boolean apply(RedefinableElement s) {
+        return s.isConsistentWith(redefinee);
+      }
+    };
+  }
 
 	/**
 	 * The query isRedefinitionContextValid() specifies whether the redefinition contexts
@@ -123,12 +124,12 @@ public class RedefinableElementPath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isRedefinitionContextValid(RedefinableElement)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> isRedefinitionContextValid(final RedefinableElement redefined) {
-		return new Predicate<RedefinableElement>() {
-			public boolean apply(RedefinableElement s) {
-				return s.isRedefinitionContextValid(redefined);
-			}
-		};
-	}
+	public static ComposablePredicate<RedefinableElement> isRedefinitionContextValid(final RedefinableElement redefined) {
+    return new ComposablePredicate<RedefinableElement>() {
+      public boolean apply(RedefinableElement s) {
+        return s.isRedefinitionContextValid(redefined);
+      }
+    };
+  }
 
 }

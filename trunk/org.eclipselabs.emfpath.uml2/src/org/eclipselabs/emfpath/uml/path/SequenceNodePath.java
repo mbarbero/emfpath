@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.ExecutableNode;
 import org.eclipse.uml2.uml.SequenceNode;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class SequenceNodePath extends StructuredActivityNodePath {
 	 * @generated
 	 */
 	private SequenceNodePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * An ordered set of executable nodes. 
@@ -29,10 +29,10 @@ public class SequenceNodePath extends StructuredActivityNodePath {
 	 * @generated
 	 */
 	public static final Function<SequenceNode, EList<ExecutableNode>> executableNode = new Function<SequenceNode, EList<ExecutableNode>>() {
-		public EList<ExecutableNode> apply(SequenceNode s) {
-			return s.getExecutableNodes();
-		}
-	};
+    public EList<ExecutableNode> apply(SequenceNode s) {
+      return s.getExecutableNodes();
+    }
+  };
 	
 	
 

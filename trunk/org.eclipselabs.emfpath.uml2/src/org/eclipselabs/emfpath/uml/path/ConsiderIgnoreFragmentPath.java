@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.ConsiderIgnoreFragment;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -24,8 +25,8 @@ public class ConsiderIgnoreFragmentPath extends CombinedFragmentPath {
 	 * @generated
 	 */
 	private ConsiderIgnoreFragmentPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The set of messages that apply to this fragment 
@@ -33,10 +34,10 @@ public class ConsiderIgnoreFragmentPath extends CombinedFragmentPath {
 	 * @generated
 	 */
 	public static final Function<ConsiderIgnoreFragment, EList<NamedElement>> message = new Function<ConsiderIgnoreFragment, EList<NamedElement>>() {
-		public EList<NamedElement> apply(ConsiderIgnoreFragment s) {
-			return s.getMessages();
-		}
-	};
+    public EList<NamedElement> apply(ConsiderIgnoreFragment s) {
+      return s.getMessages();
+    }
+  };
 	
 	/**
 	 * The interaction operator of a ConsiderIgnoreFragment must be either 'consider' or
@@ -45,13 +46,13 @@ public class ConsiderIgnoreFragmentPath extends CombinedFragmentPath {
 	 * @see org.eclipse.uml2.uml.ConsiderIgnoreFragment#validateConsiderOrIgnore(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ConsiderIgnoreFragment> validateConsiderOrIgnore(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ConsiderIgnoreFragment>() {
-			public boolean apply(ConsiderIgnoreFragment s) {
-				return s.validateConsiderOrIgnore(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ConsiderIgnoreFragment> validateConsiderOrIgnore(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ConsiderIgnoreFragment>() {
+      public boolean apply(ConsiderIgnoreFragment s) {
+        return s.validateConsiderOrIgnore(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The NamedElements must be of a type of element that identifies a message (e.g., an
@@ -61,12 +62,12 @@ public class ConsiderIgnoreFragmentPath extends CombinedFragmentPath {
 	 * @see org.eclipse.uml2.uml.ConsiderIgnoreFragment#validateType(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ConsiderIgnoreFragment> validateType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ConsiderIgnoreFragment>() {
-			public boolean apply(ConsiderIgnoreFragment s) {
-				return s.validateType(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ConsiderIgnoreFragment> validateType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ConsiderIgnoreFragment>() {
+      public boolean apply(ConsiderIgnoreFragment s) {
+        return s.validateType(diagnostics, context);
+      }
+    };
+  }
 
 }

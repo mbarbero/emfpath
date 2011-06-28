@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.TypedElement;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -21,8 +21,8 @@ public class TypedElementPath extends NamedElementPath {
 	 * @generated
 	 */
 	 TypedElementPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * This information is derived from the return result for this Operation.
@@ -32,10 +32,10 @@ public class TypedElementPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<TypedElement, Type> type = new Function<TypedElement, Type>() {
-		public Type apply(TypedElement s) {
-			return s.getType();
-		}
-	};
+    public Type apply(TypedElement s) {
+      return s.getType();
+    }
+  };
 	
 	
 

@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.ExpansionKind;
 import org.eclipse.uml2.uml.ExpansionNode;
 import org.eclipse.uml2.uml.ExpansionRegion;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class ExpansionRegionPath extends StructuredActivityNodePath {
 	 * @generated
 	 */
 	private ExpansionRegionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The way in which the executions interact:
@@ -40,10 +41,10 @@ public class ExpansionRegionPath extends StructuredActivityNodePath {
 	 * @generated
 	 */
 	public static final Function<ExpansionRegion, ExpansionKind> mode = new Function<ExpansionRegion, ExpansionKind>() {
-		public ExpansionKind apply(ExpansionRegion s) {
-			return s.getMode();
-		}
-	};
+    public ExpansionKind apply(ExpansionRegion s) {
+      return s.getMode();
+    }
+  };
 
 	/**
 	 * An object node that holds a separate element of the input collection during each of
@@ -52,10 +53,10 @@ public class ExpansionRegionPath extends StructuredActivityNodePath {
 	 * @generated
 	 */
 	public static final Function<ExpansionRegion, EList<ExpansionNode>> inputElement = new Function<ExpansionRegion, EList<ExpansionNode>>() {
-		public EList<ExpansionNode> apply(ExpansionRegion s) {
-			return s.getInputElements();
-		}
-	};
+    public EList<ExpansionNode> apply(ExpansionRegion s) {
+      return s.getInputElements();
+    }
+  };
 
 	/**
 	 * An object node that accepts a separate element of the output collection during each
@@ -65,10 +66,10 @@ public class ExpansionRegionPath extends StructuredActivityNodePath {
 	 * @generated
 	 */
 	public static final Function<ExpansionRegion, EList<ExpansionNode>> outputElement = new Function<ExpansionRegion, EList<ExpansionNode>>() {
-		public EList<ExpansionNode> apply(ExpansionRegion s) {
-			return s.getOutputElements();
-		}
-	};
+    public EList<ExpansionNode> apply(ExpansionRegion s) {
+      return s.getOutputElements();
+    }
+  };
 	
 	/**
 	 * An ExpansionRegion must have one or more argument ExpansionNodes and zero or more
@@ -77,12 +78,12 @@ public class ExpansionRegionPath extends StructuredActivityNodePath {
 	 * @see org.eclipse.uml2.uml.ExpansionRegion#validateExpansionNodes(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ExpansionRegion> validateExpansionNodes(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ExpansionRegion>() {
-			public boolean apply(ExpansionRegion s) {
-				return s.validateExpansionNodes(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ExpansionRegion> validateExpansionNodes(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ExpansionRegion>() {
+      public boolean apply(ExpansionRegion s) {
+        return s.validateExpansionNodes(diagnostics, context);
+      }
+    };
+  }
 
 }

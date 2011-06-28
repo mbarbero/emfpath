@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.ActionExecutionSpecification;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +24,8 @@ public class ActionExecutionSpecificationPath extends ExecutionSpecificationPath
 	 * @generated
 	 */
 	private ActionExecutionSpecificationPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Action whose execution is occurring. 
@@ -32,10 +33,10 @@ public class ActionExecutionSpecificationPath extends ExecutionSpecificationPath
 	 * @generated
 	 */
 	public static final Function<ActionExecutionSpecification, Action> action = new Function<ActionExecutionSpecification, Action>() {
-		public Action apply(ActionExecutionSpecification s) {
-			return s.getAction();
-		}
-	};
+    public Action apply(ActionExecutionSpecification s) {
+      return s.getAction();
+    }
+  };
 	
 	/**
 	 * The Action referenced by the ActionExecutionSpecification, if any, must be owned by
@@ -44,12 +45,12 @@ public class ActionExecutionSpecificationPath extends ExecutionSpecificationPath
 	 * @see org.eclipse.uml2.uml.ActionExecutionSpecification#validateActionReferenced(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActionExecutionSpecification> validateActionReferenced(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActionExecutionSpecification>() {
-			public boolean apply(ActionExecutionSpecification s) {
-				return s.validateActionReferenced(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActionExecutionSpecification> validateActionReferenced(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActionExecutionSpecification>() {
+      public boolean apply(ActionExecutionSpecification s) {
+        return s.validateActionReferenced(diagnostics, context);
+      }
+    };
+  }
 
 }

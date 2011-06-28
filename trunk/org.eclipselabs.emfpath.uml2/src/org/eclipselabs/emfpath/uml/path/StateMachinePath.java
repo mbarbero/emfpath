@@ -1,16 +1,17 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.Pseudostate;
 import org.eclipse.uml2.uml.Region;
 import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.StateMachine;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -30,8 +31,8 @@ public class StateMachinePath extends BehaviorPath {
 	 * @generated
 	 */
 	 StateMachinePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The regions owned directly by the state machine. 
@@ -39,10 +40,10 @@ public class StateMachinePath extends BehaviorPath {
 	 * @generated
 	 */
 	public static final Function<StateMachine, EList<Region>> region = new Function<StateMachine, EList<Region>>() {
-		public EList<Region> apply(StateMachine s) {
-			return s.getRegions();
-		}
-	};
+    public EList<Region> apply(StateMachine s) {
+      return s.getRegions();
+    }
+  };
 
 	/**
 	 * References the submachine(s) in case of a submachine state. Multiple machines are
@@ -51,10 +52,10 @@ public class StateMachinePath extends BehaviorPath {
 	 * @generated
 	 */
 	public static final Function<StateMachine, EList<State>> submachineState = new Function<StateMachine, EList<State>>() {
-		public EList<State> apply(StateMachine s) {
-			return s.getSubmachineStates();
-		}
-	};
+    public EList<State> apply(StateMachine s) {
+      return s.getSubmachineStates();
+    }
+  };
 
 	/**
 	 * The connection points defined for this state machine. They represent the interface
@@ -63,10 +64,10 @@ public class StateMachinePath extends BehaviorPath {
 	 * @generated
 	 */
 	public static final Function<StateMachine, EList<Pseudostate>> connectionPoint = new Function<StateMachine, EList<Pseudostate>>() {
-		public EList<Pseudostate> apply(StateMachine s) {
-			return s.getConnectionPoints();
-		}
-	};
+    public EList<Pseudostate> apply(StateMachine s) {
+      return s.getConnectionPoints();
+    }
+  };
 
 	/**
 	 * The state machines of which this is an extension. 
@@ -74,10 +75,10 @@ public class StateMachinePath extends BehaviorPath {
 	 * @generated
 	 */
 	public static final Function<StateMachine, EList<StateMachine>> extendedStateMachine = new Function<StateMachine, EList<StateMachine>>() {
-		public EList<StateMachine> apply(StateMachine s) {
-			return s.getExtendedStateMachines();
-		}
-	};
+    public EList<StateMachine> apply(StateMachine s) {
+      return s.getExtendedStateMachines();
+    }
+  };
 	
 	/**
 	 * The classifier context of a state machine cannot be an interface.
@@ -86,13 +87,13 @@ public class StateMachinePath extends BehaviorPath {
 	 * @see org.eclipse.uml2.uml.StateMachine#validateClassifierContext(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<StateMachine> validateClassifierContext(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<StateMachine>() {
-			public boolean apply(StateMachine s) {
-				return s.validateClassifierContext(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<StateMachine> validateClassifierContext(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<StateMachine>() {
+      public boolean apply(StateMachine s) {
+        return s.validateClassifierContext(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The context classifier of the method state machine of a behavioral feature must be
@@ -102,13 +103,13 @@ public class StateMachinePath extends BehaviorPath {
 	 * @see org.eclipse.uml2.uml.StateMachine#validateContextClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<StateMachine> validateContextClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<StateMachine>() {
-			public boolean apply(StateMachine s) {
-				return s.validateContextClassifier(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<StateMachine> validateContextClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<StateMachine>() {
+      public boolean apply(StateMachine s) {
+        return s.validateContextClassifier(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The connection points of a state machine are pseudostates of kind entry point or exit
@@ -117,13 +118,13 @@ public class StateMachinePath extends BehaviorPath {
 	 * @see org.eclipse.uml2.uml.StateMachine#validateConnectionPoints(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<StateMachine> validateConnectionPoints(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<StateMachine>() {
-			public boolean apply(StateMachine s) {
-				return s.validateConnectionPoints(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<StateMachine> validateConnectionPoints(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<StateMachine>() {
+      public boolean apply(StateMachine s) {
+        return s.validateConnectionPoints(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A state machine as the method for a behavioral feature cannot have entry/exit connection
@@ -132,13 +133,13 @@ public class StateMachinePath extends BehaviorPath {
 	 * @see org.eclipse.uml2.uml.StateMachine#validateMethod(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<StateMachine> validateMethod(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<StateMachine>() {
-			public boolean apply(StateMachine s) {
-				return s.validateMethod(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<StateMachine> validateMethod(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<StateMachine>() {
+      public boolean apply(StateMachine s) {
+        return s.validateMethod(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The operation LCA(s1,s2) returns an orthogonal state or region which is the least
@@ -148,12 +149,12 @@ public class StateMachinePath extends BehaviorPath {
 	 * @generated
 	 */
 	public static Function<StateMachine, Namespace> LCA(final State s1, final State s2) {
-		return new Function<StateMachine, Namespace>() {
-			public Namespace apply(StateMachine s) {
-				return s.LCA(s1, s2);
-			}
-		};
-	}
+    return new Function<StateMachine, Namespace>() {
+      public Namespace apply(StateMachine s) {
+        return s.LCA(s1, s2);
+      }
+    };
+  }
 
 	/**
 	 * The query ancestor(s1, s2) checks whether s2 is an ancestor state of state s1. context
@@ -171,13 +172,13 @@ public class StateMachinePath extends BehaviorPath {
 	 * @see org.eclipse.uml2.uml.StateMachine#ancestor(State, State)
 	 * @generated
 	 */
-	public static Predicate<StateMachine> ancestor(final State s1, final State s2) {
-		return new Predicate<StateMachine>() {
-			public boolean apply(StateMachine s) {
-				return s.ancestor(s1, s2);
-			}
-		};
-	}
+	public static ComposablePredicate<StateMachine> ancestor(final State s1, final State s2) {
+    return new ComposablePredicate<StateMachine>() {
+      public boolean apply(StateMachine s) {
+        return s.ancestor(s1, s2);
+      }
+    };
+  }
 
 	/**
 	 * The query isRedefinitionContextValid() specifies whether the redefinition contexts
@@ -189,12 +190,12 @@ public class StateMachinePath extends BehaviorPath {
 	 * @see org.eclipse.uml2.uml.StateMachine#isRedefinitionContextValid(StateMachine)
 	 * @generated
 	 */
-	public static Predicate<StateMachine> isRedefinitionContextValid(final StateMachine redefined) {
-		return new Predicate<StateMachine>() {
-			public boolean apply(StateMachine s) {
-				return s.isRedefinitionContextValid(redefined);
-			}
-		};
-	}
+	public static ComposablePredicate<StateMachine> isRedefinitionContextValid(final StateMachine redefined) {
+    return new ComposablePredicate<StateMachine>() {
+      public boolean apply(StateMachine s) {
+        return s.isRedefinitionContextValid(redefined);
+      }
+    };
+  }
 
 }

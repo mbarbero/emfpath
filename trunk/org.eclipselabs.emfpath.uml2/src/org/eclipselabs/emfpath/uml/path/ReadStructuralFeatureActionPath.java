@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.ReadStructuralFeatureAction;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +24,8 @@ public class ReadStructuralFeatureActionPath extends StructuralFeatureActionPath
 	 * @generated
 	 */
 	private ReadStructuralFeatureActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Gives the output pin on which the result is put. 
@@ -32,10 +33,10 @@ public class ReadStructuralFeatureActionPath extends StructuralFeatureActionPath
 	 * @generated
 	 */
 	public static final Function<ReadStructuralFeatureAction, OutputPin> result = new Function<ReadStructuralFeatureAction, OutputPin>() {
-		public OutputPin apply(ReadStructuralFeatureAction s) {
-			return s.getResult();
-		}
-	};
+    public OutputPin apply(ReadStructuralFeatureAction s) {
+      return s.getResult();
+    }
+  };
 	
 	/**
 	 * The type and ordering of the result output pin are the same as the type and ordering
@@ -47,12 +48,12 @@ public class ReadStructuralFeatureActionPath extends StructuralFeatureActionPath
 	 * @see org.eclipse.uml2.uml.ReadStructuralFeatureAction#validateTypeAndOrdering(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ReadStructuralFeatureAction> validateTypeAndOrdering(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ReadStructuralFeatureAction>() {
-			public boolean apply(ReadStructuralFeatureAction s) {
-				return s.validateTypeAndOrdering(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ReadStructuralFeatureAction> validateTypeAndOrdering(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ReadStructuralFeatureAction>() {
+      public boolean apply(ReadStructuralFeatureAction s) {
+        return s.validateTypeAndOrdering(diagnostics, context);
+      }
+    };
+  }
 
 }

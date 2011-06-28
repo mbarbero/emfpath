@@ -1,11 +1,11 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.Deployment;
 import org.eclipse.uml2.uml.DeploymentTarget;
 import org.eclipse.uml2.uml.PackageableElement;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -21,8 +21,8 @@ public class DeploymentTargetPath extends NamedElementPath {
 	 * @generated
 	 */
 	 DeploymentTargetPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The set of Deployments for a DeploymentTarget. 
@@ -30,10 +30,10 @@ public class DeploymentTargetPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<DeploymentTarget, EList<Deployment>> deployment = new Function<DeploymentTarget, EList<Deployment>>() {
-		public EList<Deployment> apply(DeploymentTarget s) {
-			return s.getDeployments();
-		}
-	};
+    public EList<Deployment> apply(DeploymentTarget s) {
+      return s.getDeployments();
+    }
+  };
 
 	/**
 	 * The set of elements that are manifested in an Artifact that is involved in Deployment
@@ -42,10 +42,10 @@ public class DeploymentTargetPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<DeploymentTarget, EList<PackageableElement>> deployedElement = new Function<DeploymentTarget, EList<PackageableElement>>() {
-		public EList<PackageableElement> apply(DeploymentTarget s) {
-			return s.getDeployedElements();
-		}
-	};
+    public EList<PackageableElement> apply(DeploymentTarget s) {
+      return s.getDeployedElements();
+    }
+  };
 	
 	/**
 	 * result = ((self.deployment->collect(deployedArtifact))->collect(manifestation))->collect(utilizedElement)
@@ -53,9 +53,9 @@ public class DeploymentTargetPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<DeploymentTarget, EList<PackageableElement>> getDeployedElements = new Function<DeploymentTarget, EList<PackageableElement>>() {
-		public EList<PackageableElement> apply(DeploymentTarget s) {
-			return s.getDeployedElements();
-		}
-	};
+    public EList<PackageableElement> apply(DeploymentTarget s) {
+      return s.getDeployedElements();
+    }
+  };
 
 }

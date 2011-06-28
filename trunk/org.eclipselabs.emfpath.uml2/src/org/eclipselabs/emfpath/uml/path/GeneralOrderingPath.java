@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.GeneralOrdering;
 import org.eclipse.uml2.uml.OccurrenceSpecification;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -22,8 +22,8 @@ public class GeneralOrderingPath extends NamedElementPath {
 	 * @generated
 	 */
 	private GeneralOrderingPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The OccurrenceSpecification referenced comes before the OccurrenceSpecification referenced
@@ -32,10 +32,10 @@ public class GeneralOrderingPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<GeneralOrdering, OccurrenceSpecification> before = new Function<GeneralOrdering, OccurrenceSpecification>() {
-		public OccurrenceSpecification apply(GeneralOrdering s) {
-			return s.getBefore();
-		}
-	};
+    public OccurrenceSpecification apply(GeneralOrdering s) {
+      return s.getBefore();
+    }
+  };
 
 	/**
 	 * The OccurrenceSpecification referenced comes after the OccurrenceSpecification referenced
@@ -44,10 +44,10 @@ public class GeneralOrderingPath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<GeneralOrdering, OccurrenceSpecification> after = new Function<GeneralOrdering, OccurrenceSpecification>() {
-		public OccurrenceSpecification apply(GeneralOrdering s) {
-			return s.getAfter();
-		}
-	};
+    public OccurrenceSpecification apply(GeneralOrdering s) {
+      return s.getAfter();
+    }
+  };
 	
 	
 

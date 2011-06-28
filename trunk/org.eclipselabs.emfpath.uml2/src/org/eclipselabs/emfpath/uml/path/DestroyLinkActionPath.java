@@ -16,8 +16,8 @@ public class DestroyLinkActionPath extends WriteLinkActionPath {
 	 * @generated
 	 */
 	private DestroyLinkActionPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

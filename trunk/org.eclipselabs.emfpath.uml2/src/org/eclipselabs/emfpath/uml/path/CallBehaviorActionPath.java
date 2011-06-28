@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.CallBehaviorAction;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -28,8 +29,8 @@ public class CallBehaviorActionPath extends CallActionPath {
 	 * @generated
 	 */
 	private CallBehaviorActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The invoked behavior. It must be capable of accepting and returning control. 
@@ -37,10 +38,10 @@ public class CallBehaviorActionPath extends CallActionPath {
 	 * @generated
 	 */
 	public static final Function<CallBehaviorAction, Behavior> behavior = new Function<CallBehaviorAction, Behavior>() {
-		public Behavior apply(CallBehaviorAction s) {
-			return s.getBehavior();
-		}
-	};
+    public Behavior apply(CallBehaviorAction s) {
+      return s.getBehavior();
+    }
+  };
 	
 	/**
 	 * The number of argument pins and the number of parameters of the behavior of type in
@@ -49,13 +50,13 @@ public class CallBehaviorActionPath extends CallActionPath {
 	 * @see org.eclipse.uml2.uml.CallBehaviorAction#validateArgumentPinEqualParameter(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CallBehaviorAction> validateArgumentPinEqualParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CallBehaviorAction>() {
-			public boolean apply(CallBehaviorAction s) {
-				return s.validateArgumentPinEqualParameter(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CallBehaviorAction> validateArgumentPinEqualParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CallBehaviorAction>() {
+      public boolean apply(CallBehaviorAction s) {
+        return s.validateArgumentPinEqualParameter(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The number of result pins and the number of parameters of the behavior of type return,
@@ -64,12 +65,12 @@ public class CallBehaviorActionPath extends CallActionPath {
 	 * @see org.eclipse.uml2.uml.CallBehaviorAction#validateResultPinEqualParameter(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<CallBehaviorAction> validateResultPinEqualParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<CallBehaviorAction>() {
-			public boolean apply(CallBehaviorAction s) {
-				return s.validateResultPinEqualParameter(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<CallBehaviorAction> validateResultPinEqualParameter(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<CallBehaviorAction>() {
+      public boolean apply(CallBehaviorAction s) {
+        return s.validateResultPinEqualParameter(diagnostics, context);
+      }
+    };
+  }
 
 }

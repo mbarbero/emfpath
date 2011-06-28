@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.RedefinableElement;
 import org.eclipse.uml2.uml.Region;
@@ -13,6 +11,9 @@ import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.Vertex;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -29,8 +30,8 @@ public class RegionPath extends NamespacePath {
 	 * @generated
 	 */
 	private RegionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Indicates whether it is possible to further specialize a RedefinableElement. If the
@@ -40,7 +41,7 @@ public class RegionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isLeaf()
 	 * @generated
 	 */
-	public static final Predicate<RedefinableElement> isLeaf = RedefinableElementPath.isLeaf;
+	public static final ComposablePredicate<RedefinableElement> isLeaf = RedefinableElementPath.isLeaf;
 
 	/**
 	 * The redefinable element that is being redefined by this element. 
@@ -66,10 +67,10 @@ public class RegionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Region, EList<Vertex>> subvertex = new Function<Region, EList<Vertex>>() {
-		public EList<Vertex> apply(Region s) {
-			return s.getSubvertices();
-		}
-	};
+    public EList<Vertex> apply(Region s) {
+      return s.getSubvertices();
+    }
+  };
 
 	/**
 	 * The set of transitions owned by the region. Note that internal transitions are owned
@@ -78,10 +79,10 @@ public class RegionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Region, EList<Transition>> transition = new Function<Region, EList<Transition>>() {
-		public EList<Transition> apply(Region s) {
-			return s.getTransitions();
-		}
-	};
+    public EList<Transition> apply(Region s) {
+      return s.getTransitions();
+    }
+  };
 
 	/**
 	 * The State that owns the Region. If a Region is owned by a State, then it cannot also
@@ -90,10 +91,10 @@ public class RegionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Region, State> state = new Function<Region, State>() {
-		public State apply(Region s) {
-			return s.getState();
-		}
-	};
+    public State apply(Region s) {
+      return s.getState();
+    }
+  };
 
 	/**
 	 * The region of which this region is an extension. 
@@ -101,10 +102,10 @@ public class RegionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Region, Region> extendedRegion = new Function<Region, Region>() {
-		public Region apply(Region s) {
-			return s.getExtendedRegion();
-		}
-	};
+    public Region apply(Region s) {
+      return s.getExtendedRegion();
+    }
+  };
 
 	/**
 	 * The StateMachine that owns the Region. If a Region is owned by a StateMachine, then
@@ -113,10 +114,10 @@ public class RegionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Region, StateMachine> stateMachine = new Function<Region, StateMachine>() {
-		public StateMachine apply(Region s) {
-			return s.getStateMachine();
-		}
-	};
+    public StateMachine apply(Region s) {
+      return s.getStateMachine();
+    }
+  };
 	
 	/**
 	 * At least one of the redefinition contexts of the redefining element must be a specialization
@@ -128,9 +129,9 @@ public class RegionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionContextValid(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> validateRedefinitionContextValid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return RedefinableElementPath.validateRedefinitionContextValid(diagnostics, context);
-	}
+	public static ComposablePredicate<RedefinableElement> validateRedefinitionContextValid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return RedefinableElementPath.validateRedefinitionContextValid(diagnostics, context);
+  }
 
 	/**
 	 * A redefining element must be consistent with each redefined element.
@@ -141,9 +142,9 @@ public class RegionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionConsistent(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> validateRedefinitionConsistent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return RedefinableElementPath.validateRedefinitionConsistent(diagnostics, context);
-	}
+	public static ComposablePredicate<RedefinableElement> validateRedefinitionConsistent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return RedefinableElementPath.validateRedefinitionConsistent(diagnostics, context);
+  }
 
 	/**
 	 * The query isConsistentWith() specifies, for any two RedefinableElements in a context
@@ -158,9 +159,9 @@ public class RegionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isConsistentWith(RedefinableElement)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> isConsistentWith(final RedefinableElement redefinee) {
-		return RedefinableElementPath.isConsistentWith(redefinee);
-	}
+	public static ComposablePredicate<RedefinableElement> isConsistentWith(final RedefinableElement redefinee) {
+    return RedefinableElementPath.isConsistentWith(redefinee);
+  }
 
 	/**
 	 * The query isRedefinitionContextValid() specifies whether the redefinition contexts
@@ -175,9 +176,9 @@ public class RegionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isRedefinitionContextValid(RedefinableElement)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> isRedefinitionContextValid(final RedefinableElement redefined) {
-		return RedefinableElementPath.isRedefinitionContextValid(redefined);
-	}
+	public static ComposablePredicate<RedefinableElement> isRedefinitionContextValid(final RedefinableElement redefined) {
+    return RedefinableElementPath.isRedefinitionContextValid(redefined);
+  }
 
 	/**
 	 * A region can have at most one initial vertex
@@ -188,13 +189,13 @@ public class RegionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Region#validateInitialVertex(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Region> validateInitialVertex(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Region>() {
-			public boolean apply(Region s) {
-				return s.validateInitialVertex(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Region> validateInitialVertex(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Region>() {
+      public boolean apply(Region s) {
+        return s.validateInitialVertex(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A region can have at most one deep history vertex
@@ -205,13 +206,13 @@ public class RegionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Region#validateDeepHistoryVertex(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Region> validateDeepHistoryVertex(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Region>() {
-			public boolean apply(Region s) {
-				return s.validateDeepHistoryVertex(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Region> validateDeepHistoryVertex(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Region>() {
+      public boolean apply(Region s) {
+        return s.validateDeepHistoryVertex(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A region can have at most one shallow history vertex
@@ -222,13 +223,13 @@ public class RegionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Region#validateShallowHistoryVertex(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Region> validateShallowHistoryVertex(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Region>() {
-			public boolean apply(Region s) {
-				return s.validateShallowHistoryVertex(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Region> validateShallowHistoryVertex(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Region>() {
+      public boolean apply(Region s) {
+        return s.validateShallowHistoryVertex(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If a Region is owned by a StateMachine, then it cannot also be owned by a State and
@@ -238,13 +239,13 @@ public class RegionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Region#validateOwned(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Region> validateOwned(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Region>() {
-			public boolean apply(Region s) {
-				return s.validateOwned(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Region> validateOwned(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Region>() {
+      public boolean apply(Region s) {
+        return s.validateOwned(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The redefinition context of a region is the nearest containing statemachine
@@ -260,10 +261,10 @@ public class RegionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Region, Classifier> redefinitionContext_ = new Function<Region, Classifier>() {
-		public Classifier apply(Region s) {
-			return s.redefinitionContext();
-		}
-	};
+    public Classifier apply(Region s) {
+      return s.redefinitionContext();
+    }
+  };
 
 	/**
 	 * The query isRedefinitionContextValid() specifies whether the redefinition contexts
@@ -275,13 +276,13 @@ public class RegionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Region#isRedefinitionContextValid(Region)
 	 * @generated
 	 */
-	public static Predicate<Region> isRedefinitionContextValid(final Region redefined) {
-		return new Predicate<Region>() {
-			public boolean apply(Region s) {
-				return s.isRedefinitionContextValid(redefined);
-			}
-		};
-	}
+	public static ComposablePredicate<Region> isRedefinitionContextValid(final Region redefined) {
+    return new ComposablePredicate<Region>() {
+      public boolean apply(Region s) {
+        return s.isRedefinitionContextValid(redefined);
+      }
+    };
+  }
 
 	/**
 	 * The operation containingStateMachine() returns the sate machine in which this Region
@@ -296,10 +297,10 @@ public class RegionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Region, StateMachine> containingStateMachine = new Function<Region, StateMachine>() {
-		public StateMachine apply(Region s) {
-			return s.containingStateMachine();
-		}
-	};
+    public StateMachine apply(Region s) {
+      return s.containingStateMachine();
+    }
+  };
 
 	/**
 	 * The operation belongsToPSM () checks if the region belongs to a protocol state machine
@@ -313,10 +314,10 @@ public class RegionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Region#belongsToPSM()
 	 * @generated
 	 */
-	public static final Predicate<Region> belongsToPSM = new Predicate<Region>() {
-		public boolean apply(Region s) {
-			return s.belongsToPSM();
-		}
-	};
+	public static final ComposablePredicate<Region> belongsToPSM = new ComposablePredicate<Region>() {
+    public boolean apply(Region s) {
+      return s.belongsToPSM();
+    }
+  };
 
 }

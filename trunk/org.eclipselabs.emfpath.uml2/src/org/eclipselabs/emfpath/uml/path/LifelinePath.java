@@ -1,17 +1,18 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.PartDecomposition;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -29,8 +30,8 @@ public class LifelinePath extends NamedElementPath {
 	 * @generated
 	 */
 	private LifelinePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * References the ConnectableElement within the classifier that contains the enclosing
@@ -39,10 +40,10 @@ public class LifelinePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Lifeline, ConnectableElement> represents = new Function<Lifeline, ConnectableElement>() {
-		public ConnectableElement apply(Lifeline s) {
-			return s.getRepresents();
-		}
-	};
+    public ConnectableElement apply(Lifeline s) {
+      return s.getRepresents();
+    }
+  };
 
 	/**
 	 * References the Interaction enclosing this Lifeline. 
@@ -50,10 +51,10 @@ public class LifelinePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Lifeline, Interaction> interaction = new Function<Lifeline, Interaction>() {
-		public Interaction apply(Lifeline s) {
-			return s.getInteraction();
-		}
-	};
+    public Interaction apply(Lifeline s) {
+      return s.getInteraction();
+    }
+  };
 
 	/**
 	 * If the referenced ConnectableElement is multivalued, then this specifies the specific
@@ -62,10 +63,10 @@ public class LifelinePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Lifeline, ValueSpecification> selector = new Function<Lifeline, ValueSpecification>() {
-		public ValueSpecification apply(Lifeline s) {
-			return s.getSelector();
-		}
-	};
+    public ValueSpecification apply(Lifeline s) {
+      return s.getSelector();
+    }
+  };
 
 	/**
 	 * References the Interaction that represents the decomposition. 
@@ -73,10 +74,10 @@ public class LifelinePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Lifeline, PartDecomposition> decomposedAs = new Function<Lifeline, PartDecomposition>() {
-		public PartDecomposition apply(Lifeline s) {
-			return s.getDecomposedAs();
-		}
-	};
+    public PartDecomposition apply(Lifeline s) {
+      return s.getDecomposedAs();
+    }
+  };
 
 	/**
 	 * References the InteractionFragments in which this Lifeline takes part. 
@@ -84,10 +85,10 @@ public class LifelinePath extends NamedElementPath {
 	 * @generated
 	 */
 	public static final Function<Lifeline, EList<InteractionFragment>> coveredBy = new Function<Lifeline, EList<InteractionFragment>>() {
-		public EList<InteractionFragment> apply(Lifeline s) {
-			return s.getCoveredBys();
-		}
-	};
+    public EList<InteractionFragment> apply(Lifeline s) {
+      return s.getCoveredBys();
+    }
+  };
 	
 	/**
 	 * If two (or more) InteractionUses within one Interaction, refer to Interactions with
@@ -97,13 +98,13 @@ public class LifelinePath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.Lifeline#validateInteractionUsesShareLifeline(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Lifeline> validateInteractionUsesShareLifeline(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Lifeline>() {
-			public boolean apply(Lifeline s) {
-				return s.validateInteractionUsesShareLifeline(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Lifeline> validateInteractionUsesShareLifeline(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Lifeline>() {
+      public boolean apply(Lifeline s) {
+        return s.validateInteractionUsesShareLifeline(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The selector for a Lifeline must only be specified if the referenced Part is multivalued.
@@ -115,13 +116,13 @@ public class LifelinePath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.Lifeline#validateSelectorSpecified(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Lifeline> validateSelectorSpecified(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Lifeline>() {
-			public boolean apply(Lifeline s) {
-				return s.validateSelectorSpecified(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Lifeline> validateSelectorSpecified(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Lifeline>() {
+      public boolean apply(Lifeline s) {
+        return s.validateSelectorSpecified(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The classifier containing the referenced ConnectableElement must be the same classifier,
@@ -134,12 +135,12 @@ public class LifelinePath extends NamedElementPath {
 	 * @see org.eclipse.uml2.uml.Lifeline#validateSameClassifier(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Lifeline> validateSameClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Lifeline>() {
-			public boolean apply(Lifeline s) {
-				return s.validateSameClassifier(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Lifeline> validateSameClassifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Lifeline>() {
+      public boolean apply(Lifeline s) {
+        return s.validateSameClassifier(diagnostics, context);
+      }
+    };
+  }
 
 }

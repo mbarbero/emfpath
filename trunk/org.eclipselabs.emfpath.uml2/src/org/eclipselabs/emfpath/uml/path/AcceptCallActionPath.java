@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.AcceptCallAction;
 import org.eclipse.uml2.uml.OutputPin;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -27,8 +28,8 @@ public class AcceptCallActionPath extends AcceptEventActionPath {
 	 * @generated
 	 */
 	private AcceptCallActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Pin where a value is placed containing sufficient information to perform a subsequent
@@ -38,10 +39,10 @@ public class AcceptCallActionPath extends AcceptEventActionPath {
 	 * @generated
 	 */
 	public static final Function<AcceptCallAction, OutputPin> returnInformation = new Function<AcceptCallAction, OutputPin>() {
-		public OutputPin apply(AcceptCallAction s) {
-			return s.getReturnInformation();
-		}
-	};
+    public OutputPin apply(AcceptCallAction s) {
+      return s.getReturnInformation();
+    }
+  };
 	
 	/**
 	 * The result pins must match the in and inout parameters of the operation specified
@@ -50,13 +51,13 @@ public class AcceptCallActionPath extends AcceptEventActionPath {
 	 * @see org.eclipse.uml2.uml.AcceptCallAction#validateResultPins(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<AcceptCallAction> validateResultPins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<AcceptCallAction>() {
-			public boolean apply(AcceptCallAction s) {
-				return s.validateResultPins(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<AcceptCallAction> validateResultPins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<AcceptCallAction>() {
+      public boolean apply(AcceptCallAction s) {
+        return s.validateResultPins(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The trigger event must be a CallEvent.
@@ -64,13 +65,13 @@ public class AcceptCallActionPath extends AcceptEventActionPath {
 	 * @see org.eclipse.uml2.uml.AcceptCallAction#validateTriggerCallEvent(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<AcceptCallAction> validateTriggerCallEvent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<AcceptCallAction>() {
-			public boolean apply(AcceptCallAction s) {
-				return s.validateTriggerCallEvent(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<AcceptCallAction> validateTriggerCallEvent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<AcceptCallAction>() {
+      public boolean apply(AcceptCallAction s) {
+        return s.validateTriggerCallEvent(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * isUnmrashall must be true for an AcceptCallAction.
@@ -78,12 +79,12 @@ public class AcceptCallActionPath extends AcceptEventActionPath {
 	 * @see org.eclipse.uml2.uml.AcceptCallAction#validateUnmarshall(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<AcceptCallAction> validateUnmarshall(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<AcceptCallAction>() {
-			public boolean apply(AcceptCallAction s) {
-				return s.validateUnmarshall(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<AcceptCallAction> validateUnmarshall(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<AcceptCallAction>() {
+      public boolean apply(AcceptCallAction s) {
+        return s.validateUnmarshall(diagnostics, context);
+      }
+    };
+  }
 
 }

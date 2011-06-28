@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
@@ -16,6 +14,9 @@ import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.TransitionKind;
 import org.eclipse.uml2.uml.Trigger;
 import org.eclipse.uml2.uml.Vertex;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -34,8 +35,8 @@ public class TransitionPath extends NamespacePath {
 	 * @generated
 	 */
 	 TransitionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Indicates whether it is possible to further specialize a RedefinableElement. If the
@@ -45,7 +46,7 @@ public class TransitionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isLeaf()
 	 * @generated
 	 */
-	public static final Predicate<RedefinableElement> isLeaf = RedefinableElementPath.isLeaf;
+	public static final ComposablePredicate<RedefinableElement> isLeaf = RedefinableElementPath.isLeaf;
 
 	/**
 	 * The redefinable element that is being redefined by this element. 
@@ -71,10 +72,10 @@ public class TransitionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Transition, TransitionKind> kind = new Function<Transition, TransitionKind>() {
-		public TransitionKind apply(Transition s) {
-			return s.getKind();
-		}
-	};
+    public TransitionKind apply(Transition s) {
+      return s.getKind();
+    }
+  };
 
 	/**
 	 * Designates the region that owns this transition. 
@@ -82,10 +83,10 @@ public class TransitionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Transition, Region> container = new Function<Transition, Region>() {
-		public Region apply(Transition s) {
-			return s.getContainer();
-		}
-	};
+    public Region apply(Transition s) {
+      return s.getContainer();
+    }
+  };
 
 	/**
 	 * Designates the originating vertex (state or pseudostate) of the transition. 
@@ -93,10 +94,10 @@ public class TransitionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Transition, Vertex> source = new Function<Transition, Vertex>() {
-		public Vertex apply(Transition s) {
-			return s.getSource();
-		}
-	};
+    public Vertex apply(Transition s) {
+      return s.getSource();
+    }
+  };
 
 	/**
 	 * Designates the target vertex that is reached when the transition is taken. 
@@ -104,10 +105,10 @@ public class TransitionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Transition, Vertex> target = new Function<Transition, Vertex>() {
-		public Vertex apply(Transition s) {
-			return s.getTarget();
-		}
-	};
+    public Vertex apply(Transition s) {
+      return s.getTarget();
+    }
+  };
 
 	/**
 	 * The transition that is redefined by this transition. 
@@ -115,10 +116,10 @@ public class TransitionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Transition, Transition> redefinedTransition = new Function<Transition, Transition>() {
-		public Transition apply(Transition s) {
-			return s.getRedefinedTransition();
-		}
-	};
+    public Transition apply(Transition s) {
+      return s.getRedefinedTransition();
+    }
+  };
 
 	/**
 	 * A guard is a constraint that provides a fine-grained control over the firing of the
@@ -130,10 +131,10 @@ public class TransitionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Transition, Constraint> guard = new Function<Transition, Constraint>() {
-		public Constraint apply(Transition s) {
-			return s.getGuard();
-		}
-	};
+    public Constraint apply(Transition s) {
+      return s.getGuard();
+    }
+  };
 
 	/**
 	 * Specifies an optional behavior to be performed when the transition fires. 
@@ -141,10 +142,10 @@ public class TransitionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Transition, Behavior> effect = new Function<Transition, Behavior>() {
-		public Behavior apply(Transition s) {
-			return s.getEffect();
-		}
-	};
+    public Behavior apply(Transition s) {
+      return s.getEffect();
+    }
+  };
 
 	/**
 	 * Specifies the triggers that may fire the transition. 
@@ -152,10 +153,10 @@ public class TransitionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Transition, EList<Trigger>> trigger = new Function<Transition, EList<Trigger>>() {
-		public EList<Trigger> apply(Transition s) {
-			return s.getTriggers();
-		}
-	};
+    public EList<Trigger> apply(Transition s) {
+      return s.getTriggers();
+    }
+  };
 	
 	/**
 	 * At least one of the redefinition contexts of the redefining element must be a specialization
@@ -167,9 +168,9 @@ public class TransitionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionContextValid(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> validateRedefinitionContextValid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return RedefinableElementPath.validateRedefinitionContextValid(diagnostics, context);
-	}
+	public static ComposablePredicate<RedefinableElement> validateRedefinitionContextValid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return RedefinableElementPath.validateRedefinitionContextValid(diagnostics, context);
+  }
 
 	/**
 	 * A redefining element must be consistent with each redefined element.
@@ -180,9 +181,9 @@ public class TransitionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionConsistent(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> validateRedefinitionConsistent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return RedefinableElementPath.validateRedefinitionConsistent(diagnostics, context);
-	}
+	public static ComposablePredicate<RedefinableElement> validateRedefinitionConsistent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return RedefinableElementPath.validateRedefinitionConsistent(diagnostics, context);
+  }
 
 	/**
 	 * The query isConsistentWith() specifies, for any two RedefinableElements in a context
@@ -197,9 +198,9 @@ public class TransitionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isConsistentWith(RedefinableElement)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> isConsistentWith(final RedefinableElement redefinee) {
-		return RedefinableElementPath.isConsistentWith(redefinee);
-	}
+	public static ComposablePredicate<RedefinableElement> isConsistentWith(final RedefinableElement redefinee) {
+    return RedefinableElementPath.isConsistentWith(redefinee);
+  }
 
 	/**
 	 * The query isRedefinitionContextValid() specifies whether the redefinition contexts
@@ -214,9 +215,9 @@ public class TransitionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isRedefinitionContextValid(RedefinableElement)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> isRedefinitionContextValid(final RedefinableElement redefined) {
-		return RedefinableElementPath.isRedefinitionContextValid(redefined);
-	}
+	public static ComposablePredicate<RedefinableElement> isRedefinitionContextValid(final RedefinableElement redefined) {
+    return RedefinableElementPath.isRedefinitionContextValid(redefined);
+  }
 
 	/**
 	 * A fork segment must not have guards or triggers.
@@ -225,13 +226,13 @@ public class TransitionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Transition#validateForkSegmentGuards(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Transition> validateForkSegmentGuards(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Transition>() {
-			public boolean apply(Transition s) {
-				return s.validateForkSegmentGuards(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Transition> validateForkSegmentGuards(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Transition>() {
+      public boolean apply(Transition s) {
+        return s.validateForkSegmentGuards(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A join segment must not have guards or triggers.
@@ -240,13 +241,13 @@ public class TransitionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Transition#validateJoinSegmentGuards(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Transition> validateJoinSegmentGuards(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Transition>() {
-			public boolean apply(Transition s) {
-				return s.validateJoinSegmentGuards(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Transition> validateJoinSegmentGuards(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Transition>() {
+      public boolean apply(Transition s) {
+        return s.validateJoinSegmentGuards(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A fork segment must always target a state.
@@ -255,13 +256,13 @@ public class TransitionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Transition#validateForkSegmentState(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Transition> validateForkSegmentState(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Transition>() {
-			public boolean apply(Transition s) {
-				return s.validateForkSegmentState(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Transition> validateForkSegmentState(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Transition>() {
+      public boolean apply(Transition s) {
+        return s.validateForkSegmentState(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * A join segment must always originate from a state.
@@ -270,13 +271,13 @@ public class TransitionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Transition#validateJoinSegmentState(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Transition> validateJoinSegmentState(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Transition>() {
-			public boolean apply(Transition s) {
-				return s.validateJoinSegmentState(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Transition> validateJoinSegmentState(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Transition>() {
+      public boolean apply(Transition s) {
+        return s.validateJoinSegmentState(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Transitions outgoing pseudostates may not have a trigger.
@@ -285,13 +286,13 @@ public class TransitionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Transition#validateOutgoingPseudostates(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Transition> validateOutgoingPseudostates(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Transition>() {
-			public boolean apply(Transition s) {
-				return s.validateOutgoingPseudostates(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Transition> validateOutgoingPseudostates(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Transition>() {
+      public boolean apply(Transition s) {
+        return s.validateOutgoingPseudostates(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * An initial transition at the topmost level (region of a statemachine) either has no
@@ -308,13 +309,13 @@ public class TransitionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Transition#validateInitialTransition(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Transition> validateInitialTransition(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Transition>() {
-			public boolean apply(Transition s) {
-				return s.validateInitialTransition(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Transition> validateInitialTransition(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Transition>() {
+      public boolean apply(Transition s) {
+        return s.validateInitialTransition(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * In case of more than one trigger, the signatures of these must be compatible in case
@@ -324,13 +325,13 @@ public class TransitionPath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Transition#validateSignaturesCompatible(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Transition> validateSignaturesCompatible(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Transition>() {
-			public boolean apply(Transition s) {
-				return s.validateSignaturesCompatible(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Transition> validateSignaturesCompatible(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Transition>() {
+      public boolean apply(Transition s) {
+        return s.validateSignaturesCompatible(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The redefinition context of a transition is the nearest containing statemachine.
@@ -346,10 +347,10 @@ public class TransitionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Transition, Classifier> redefinitionContext_ = new Function<Transition, Classifier>() {
-		public Classifier apply(Transition s) {
-			return s.redefinitionContext();
-		}
-	};
+    public Classifier apply(Transition s) {
+      return s.redefinitionContext();
+    }
+  };
 
 	/**
 	 * The query containingStateMachine() returns the state machine that contains the transition
@@ -359,9 +360,9 @@ public class TransitionPath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<Transition, StateMachine> containingStateMachine = new Function<Transition, StateMachine>() {
-		public StateMachine apply(Transition s) {
-			return s.containingStateMachine();
-		}
-	};
+    public StateMachine apply(Transition s) {
+      return s.containingStateMachine();
+    }
+  };
 
 }

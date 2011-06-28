@@ -1,12 +1,13 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.DurationConstraint;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -22,8 +23,8 @@ public class DurationConstraintPath extends IntervalConstraintPath {
 	 * @generated
 	 */
 	private DurationConstraintPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The value of firstEvent[i] is related to constrainedElement[i] (where i is 1 or 2).
@@ -36,10 +37,10 @@ public class DurationConstraintPath extends IntervalConstraintPath {
 	 * @generated
 	 */
 	public static final Function<DurationConstraint, EList<java.lang.Boolean>> firstEvent = new Function<DurationConstraint, EList<java.lang.Boolean>>() {
-		public EList<java.lang.Boolean> apply(DurationConstraint s) {
-			return s.getFirstEvents();
-		}
-	};
+    public EList<java.lang.Boolean> apply(DurationConstraint s) {
+      return s.getFirstEvents();
+    }
+  };
 	
 	/**
 	 * The multiplicity of firstEvent must be 2 if the multiplicity of constrainedElement
@@ -50,12 +51,12 @@ public class DurationConstraintPath extends IntervalConstraintPath {
 	 * @see org.eclipse.uml2.uml.DurationConstraint#validateFirstEventMultiplicity(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<DurationConstraint> validateFirstEventMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<DurationConstraint>() {
-			public boolean apply(DurationConstraint s) {
-				return s.validateFirstEventMultiplicity(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<DurationConstraint> validateFirstEventMultiplicity(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<DurationConstraint>() {
+      public boolean apply(DurationConstraint s) {
+        return s.validateFirstEventMultiplicity(diagnostics, context);
+      }
+    };
+  }
 
 }

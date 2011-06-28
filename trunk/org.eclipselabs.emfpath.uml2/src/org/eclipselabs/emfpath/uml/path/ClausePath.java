@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Clause;
 import org.eclipse.uml2.uml.ExecutableNode;
 import org.eclipse.uml2.uml.OutputPin;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -26,8 +27,8 @@ public class ClausePath extends ElementPath {
 	 * @generated
 	 */
 	private ClausePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * A nested activity fragment with a designated output pin that specifies the result
@@ -36,10 +37,10 @@ public class ClausePath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<Clause, EList<ExecutableNode>> test = new Function<Clause, EList<ExecutableNode>>() {
-		public EList<ExecutableNode> apply(Clause s) {
-			return s.getTests();
-		}
-	};
+    public EList<ExecutableNode> apply(Clause s) {
+      return s.getTests();
+    }
+  };
 
 	/**
 	 * A nested activity fragment that is executed if the test evaluates to true and the
@@ -48,10 +49,10 @@ public class ClausePath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<Clause, EList<ExecutableNode>> body = new Function<Clause, EList<ExecutableNode>>() {
-		public EList<ExecutableNode> apply(Clause s) {
-			return s.getBodies();
-		}
-	};
+    public EList<ExecutableNode> apply(Clause s) {
+      return s.getBodies();
+    }
+  };
 
 	/**
 	 * A set of clauses whose tests must all evaluate false before the current clause can
@@ -60,10 +61,10 @@ public class ClausePath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<Clause, EList<Clause>> predecessorClause = new Function<Clause, EList<Clause>>() {
-		public EList<Clause> apply(Clause s) {
-			return s.getPredecessorClauses();
-		}
-	};
+    public EList<Clause> apply(Clause s) {
+      return s.getPredecessorClauses();
+    }
+  };
 
 	/**
 	 * A set of clauses which may not be tested unless the current clause tests false. 
@@ -71,10 +72,10 @@ public class ClausePath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<Clause, EList<Clause>> successorClause = new Function<Clause, EList<Clause>>() {
-		public EList<Clause> apply(Clause s) {
-			return s.getSuccessorClauses();
-		}
-	};
+    public EList<Clause> apply(Clause s) {
+      return s.getSuccessorClauses();
+    }
+  };
 
 	/**
 	 * An output pin within the test fragment the value of which is examined after execution
@@ -83,10 +84,10 @@ public class ClausePath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<Clause, OutputPin> decider = new Function<Clause, OutputPin>() {
-		public OutputPin apply(Clause s) {
-			return s.getDecider();
-		}
-	};
+    public OutputPin apply(Clause s) {
+      return s.getDecider();
+    }
+  };
 
 	/**
 	 * A list of output pins within the body fragment whose values are moved to the result
@@ -95,10 +96,10 @@ public class ClausePath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<Clause, EList<OutputPin>> bodyOutput = new Function<Clause, EList<OutputPin>>() {
-		public EList<OutputPin> apply(Clause s) {
-			return s.getBodyOutputs();
-		}
-	};
+    public EList<OutputPin> apply(Clause s) {
+      return s.getBodyOutputs();
+    }
+  };
 	
 	/**
 	 * The decider output pin must be for the test body or a node contained by the test body
@@ -107,13 +108,13 @@ public class ClausePath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.Clause#validateDeciderOutput(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Clause> validateDeciderOutput(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Clause>() {
-			public boolean apply(Clause s) {
-				return s.validateDeciderOutput(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Clause> validateDeciderOutput(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Clause>() {
+      public boolean apply(Clause s) {
+        return s.validateDeciderOutput(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The bodyOutput pins are output pins on actions in the body of the clause.
@@ -121,12 +122,12 @@ public class ClausePath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.Clause#validateBodyOutputPins(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<Clause> validateBodyOutputPins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<Clause>() {
-			public boolean apply(Clause s) {
-				return s.validateBodyOutputPins(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<Clause> validateBodyOutputPins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<Clause>() {
+      public boolean apply(Clause s) {
+        return s.validateBodyOutputPins(diagnostics, context);
+      }
+    };
+  }
 
 }

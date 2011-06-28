@@ -1,13 +1,14 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.QualifierValue;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -24,8 +25,8 @@ public class QualifierValuePath extends ElementPath {
 	 * @generated
 	 */
 	private QualifierValuePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Attribute representing the qualifier for which the value is to be specified. 
@@ -33,10 +34,10 @@ public class QualifierValuePath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<QualifierValue, Property> qualifier = new Function<QualifierValue, Property>() {
-		public Property apply(QualifierValue s) {
-			return s.getQualifier();
-		}
-	};
+    public Property apply(QualifierValue s) {
+      return s.getQualifier();
+    }
+  };
 
 	/**
 	 * Input pin from which the specified value for the qualifier is taken. 
@@ -44,10 +45,10 @@ public class QualifierValuePath extends ElementPath {
 	 * @generated
 	 */
 	public static final Function<QualifierValue, InputPin> value = new Function<QualifierValue, InputPin>() {
-		public InputPin apply(QualifierValue s) {
-			return s.getValue();
-		}
-	};
+    public InputPin apply(QualifierValue s) {
+      return s.getValue();
+    }
+  };
 	
 	/**
 	 * The qualifier attribute must be a qualifier of the association end of the link-end
@@ -56,13 +57,13 @@ public class QualifierValuePath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.QualifierValue#validateQualifierAttribute(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<QualifierValue> validateQualifierAttribute(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<QualifierValue>() {
-			public boolean apply(QualifierValue s) {
-				return s.validateQualifierAttribute(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<QualifierValue> validateQualifierAttribute(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<QualifierValue>() {
+      public boolean apply(QualifierValue s) {
+        return s.validateQualifierAttribute(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The type of the qualifier value input pin is the same as the type of the qualifier
@@ -71,13 +72,13 @@ public class QualifierValuePath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.QualifierValue#validateTypeOfQualifier(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<QualifierValue> validateTypeOfQualifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<QualifierValue>() {
-			public boolean apply(QualifierValue s) {
-				return s.validateTypeOfQualifier(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<QualifierValue> validateTypeOfQualifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<QualifierValue>() {
+      public boolean apply(QualifierValue s) {
+        return s.validateTypeOfQualifier(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The multiplicity of the qualifier value input pin is "1..1".
@@ -85,12 +86,12 @@ public class QualifierValuePath extends ElementPath {
 	 * @see org.eclipse.uml2.uml.QualifierValue#validateMultiplicityOfQualifier(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<QualifierValue> validateMultiplicityOfQualifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<QualifierValue>() {
-			public boolean apply(QualifierValue s) {
-				return s.validateMultiplicityOfQualifier(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<QualifierValue> validateMultiplicityOfQualifier(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<QualifierValue>() {
+      public boolean apply(QualifierValue s) {
+        return s.validateMultiplicityOfQualifier(diagnostics, context);
+      }
+    };
+  }
 
 }

@@ -17,8 +17,8 @@ public class DeployedArtifactPath extends NamedElementPath {
 	 * @generated
 	 */
 	 DeployedArtifactPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

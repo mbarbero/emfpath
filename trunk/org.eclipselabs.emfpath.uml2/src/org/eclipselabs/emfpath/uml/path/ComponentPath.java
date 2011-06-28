@@ -1,9 +1,6 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Component;
@@ -12,6 +9,9 @@ import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.PrimitiveType;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -32,8 +32,8 @@ public class ComponentPath extends ClassPath {
 	 * @generated
 	 */
 	private ComponentPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The kind of instantiation that applies to a Component. If false, the component is
@@ -45,11 +45,11 @@ public class ComponentPath extends ClassPath {
 	 * @see org.eclipse.uml2.uml.Component#isIndirectlyInstantiated()
 	 * @generated
 	 */
-	public static final Predicate<Component> isIndirectlyInstantiated = new Predicate<Component>() {
-		public boolean apply(Component s) {
-			return s.isIndirectlyInstantiated();
-		}
-	};
+	public static final ComposablePredicate<Component> isIndirectlyInstantiated = new ComposablePredicate<Component>() {
+    public boolean apply(Component s) {
+      return s.isIndirectlyInstantiated();
+    }
+  };
 
 	/**
 	 * The interfaces that the component requires from other components in its environment
@@ -60,10 +60,10 @@ public class ComponentPath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Component, EList<Interface>> required = new Function<Component, EList<Interface>>() {
-		public EList<Interface> apply(Component s) {
-			return s.getRequireds();
-		}
-	};
+    public EList<Interface> apply(Component s) {
+      return s.getRequireds();
+    }
+  };
 
 	/**
 	 * The interfaces that the component exposes to its environment. These interfaces may
@@ -73,10 +73,10 @@ public class ComponentPath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Component, EList<Interface>> provided = new Function<Component, EList<Interface>>() {
-		public EList<Interface> apply(Component s) {
-			return s.getProvideds();
-		}
-	};
+    public EList<Interface> apply(Component s) {
+      return s.getProvideds();
+    }
+  };
 
 	/**
 	 * The set of PackageableElements that a Component owns. In the namespace of a component,
@@ -87,10 +87,10 @@ public class ComponentPath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Component, EList<PackageableElement>> packagedElement = new Function<Component, EList<PackageableElement>>() {
-		public EList<PackageableElement> apply(Component s) {
-			return s.getPackagedElements();
-		}
-	};
+    public EList<PackageableElement> apply(Component s) {
+      return s.getPackagedElements();
+    }
+  };
 
 	/**
 	 * The set of Realizations owned by the Component. Realizations reference the Classifiers
@@ -99,10 +99,10 @@ public class ComponentPath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Component, EList<ComponentRealization>> realization = new Function<Component, EList<ComponentRealization>>() {
-		public EList<ComponentRealization> apply(Component s) {
-			return s.getRealizations();
-		}
-	};
+    public EList<ComponentRealization> apply(Component s) {
+      return s.getRealizations();
+    }
+  };
 	
 	/**
 	 * Creates a(n) (abstract) class with the specified name as a packaged element of this
@@ -111,12 +111,12 @@ public class ComponentPath extends ClassPath {
 	 * @generated
 	 */
 	public static Function<Component, Class> createOwnedClass(final String name, final boolean isAbstract) {
-		return new Function<Component, Class>() {
-			public Class apply(Component s) {
-				return s.createOwnedClass(name, isAbstract);
-			}
-		};
-	}
+    return new Function<Component, Class>() {
+      public Class apply(Component s) {
+        return s.createOwnedClass(name, isAbstract);
+      }
+    };
+  }
 
 	/**
 	 * Creates a enumeration with the specified name as a packaged element of this component.
@@ -124,12 +124,12 @@ public class ComponentPath extends ClassPath {
 	 * @generated
 	 */
 	public static Function<Component, Enumeration> createOwnedEnumeration(final String name) {
-		return new Function<Component, Enumeration>() {
-			public Enumeration apply(Component s) {
-				return s.createOwnedEnumeration(name);
-			}
-		};
-	}
+    return new Function<Component, Enumeration>() {
+      public Enumeration apply(Component s) {
+        return s.createOwnedEnumeration(name);
+      }
+    };
+  }
 
 	/**
 	 * Creates a primitive type with the specified name as a packaged element of this component.
@@ -137,12 +137,12 @@ public class ComponentPath extends ClassPath {
 	 * @generated
 	 */
 	public static Function<Component, PrimitiveType> createOwnedPrimitiveType(final String name) {
-		return new Function<Component, PrimitiveType>() {
-			public PrimitiveType apply(Component s) {
-				return s.createOwnedPrimitiveType(name);
-			}
-		};
-	}
+    return new Function<Component, PrimitiveType>() {
+      public PrimitiveType apply(Component s) {
+        return s.createOwnedPrimitiveType(name);
+      }
+    };
+  }
 
 	/**
 	 * Creates an interface with the specified name as a packaged element of this component.
@@ -150,12 +150,12 @@ public class ComponentPath extends ClassPath {
 	 * @generated
 	 */
 	public static Function<Component, Interface> createOwnedInterface(final String name) {
-		return new Function<Component, Interface>() {
-			public Interface apply(Component s) {
-				return s.createOwnedInterface(name);
-			}
-		};
-	}
+    return new Function<Component, Interface>() {
+      public Interface apply(Component s) {
+        return s.createOwnedInterface(name);
+      }
+    };
+  }
 
 	/**
 	 * Utility returning the set of realized interfaces of a component.
@@ -167,12 +167,12 @@ public class ComponentPath extends ClassPath {
 	 * @generated
 	 */
 	public static Function<Component, EList<Interface>> realizedInterfaces(final Classifier classifier) {
-		return new Function<Component, EList<Interface>>() {
-			public EList<Interface> apply(Component s) {
-				return s.realizedInterfaces(classifier);
-			}
-		};
-	}
+    return new Function<Component, EList<Interface>>() {
+      public EList<Interface> apply(Component s) {
+        return s.realizedInterfaces(classifier);
+      }
+    };
+  }
 
 	/**
 	 * Utility returning the set of used interfaces of a component.
@@ -184,12 +184,12 @@ public class ComponentPath extends ClassPath {
 	 * @generated
 	 */
 	public static Function<Component, EList<Interface>> usedInterfaces(final Classifier classifier) {
-		return new Function<Component, EList<Interface>>() {
-			public EList<Interface> apply(Component s) {
-				return s.usedInterfaces(classifier);
-			}
-		};
-	}
+    return new Function<Component, EList<Interface>>() {
+      public EList<Interface> apply(Component s) {
+        return s.usedInterfaces(classifier);
+      }
+    };
+  }
 
 	/**
 	 * result = let usingInterfaces : Set(Interface) = self.implementation->collect(impl|impl.contract),
@@ -209,10 +209,10 @@ public class ComponentPath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Component, EList<Interface>> getRequireds = new Function<Component, EList<Interface>>() {
-		public EList<Interface> apply(Component s) {
-			return s.getRequireds();
-		}
-	};
+    public EList<Interface> apply(Component s) {
+      return s.getRequireds();
+    }
+  };
 
 	/**
 	 * result = let implementedInterfaces : Set(Interface) = self.implementation->collect(impl|impl.contract),
@@ -232,9 +232,9 @@ public class ComponentPath extends ClassPath {
 	 * @generated
 	 */
 	public static final Function<Component, EList<Interface>> getProvideds = new Function<Component, EList<Interface>>() {
-		public EList<Interface> apply(Component s) {
-			return s.getProvideds();
-		}
-	};
+    public EList<Interface> apply(Component s) {
+      return s.getProvideds();
+    }
+  };
 
 }

@@ -17,8 +17,8 @@ public class ExecutionEnvironmentPath extends NodePath {
 	 * @generated
 	 */
 	private ExecutionEnvironmentPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

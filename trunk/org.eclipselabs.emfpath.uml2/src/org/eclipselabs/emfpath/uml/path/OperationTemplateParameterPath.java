@@ -16,8 +16,8 @@ public class OperationTemplateParameterPath extends TemplateParameterPath {
 	 * @generated
 	 */
 	private OperationTemplateParameterPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

@@ -1,14 +1,15 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.Trigger;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -25,8 +26,8 @@ public class AcceptEventActionPath extends ActionPath {
 	 * @generated
 	 */
 	 AcceptEventActionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Indicates whether there is a single output pin for the event, or multiple output pins
@@ -34,11 +35,11 @@ public class AcceptEventActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.AcceptEventAction#isUnmarshall()
 	 * @generated
 	 */
-	public static final Predicate<AcceptEventAction> isUnmarshall = new Predicate<AcceptEventAction>() {
-		public boolean apply(AcceptEventAction s) {
-			return s.isUnmarshall();
-		}
-	};
+	public static final ComposablePredicate<AcceptEventAction> isUnmarshall = new ComposablePredicate<AcceptEventAction>() {
+    public boolean apply(AcceptEventAction s) {
+      return s.isUnmarshall();
+    }
+  };
 
 	/**
 	 * Pins holding the received event objects or their attributes. Event objects may be
@@ -47,10 +48,10 @@ public class AcceptEventActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<AcceptEventAction, EList<OutputPin>> result = new Function<AcceptEventAction, EList<OutputPin>>() {
-		public EList<OutputPin> apply(AcceptEventAction s) {
-			return s.getResults();
-		}
-	};
+    public EList<OutputPin> apply(AcceptEventAction s) {
+      return s.getResults();
+    }
+  };
 
 	/**
 	 * The type of events accepted by the action, as specified by triggers. For triggers
@@ -60,10 +61,10 @@ public class AcceptEventActionPath extends ActionPath {
 	 * @generated
 	 */
 	public static final Function<AcceptEventAction, EList<Trigger>> trigger = new Function<AcceptEventAction, EList<Trigger>>() {
-		public EList<Trigger> apply(AcceptEventAction s) {
-			return s.getTriggers();
-		}
-	};
+    public EList<Trigger> apply(AcceptEventAction s) {
+      return s.getTriggers();
+    }
+  };
 	
 	/**
 	 * AcceptEventActions may have no input pins.
@@ -71,13 +72,13 @@ public class AcceptEventActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.AcceptEventAction#validateNoInputPins(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<AcceptEventAction> validateNoInputPins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<AcceptEventAction>() {
-			public boolean apply(AcceptEventAction s) {
-				return s.validateNoInputPins(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<AcceptEventAction> validateNoInputPins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<AcceptEventAction>() {
+      public boolean apply(AcceptEventAction s) {
+        return s.validateNoInputPins(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * There are no output pins if the trigger events are only ChangeEvents, or if they are
@@ -87,13 +88,13 @@ public class AcceptEventActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.AcceptEventAction#validateNoOutputPins(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<AcceptEventAction> validateNoOutputPins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<AcceptEventAction>() {
-			public boolean apply(AcceptEventAction s) {
-				return s.validateNoOutputPins(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<AcceptEventAction> validateNoOutputPins(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<AcceptEventAction>() {
+      public boolean apply(AcceptEventAction s) {
+        return s.validateNoOutputPins(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If the trigger events are all TimeEvents, there is exactly one output pin.
@@ -101,13 +102,13 @@ public class AcceptEventActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.AcceptEventAction#validateTriggerEvents(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<AcceptEventAction> validateTriggerEvents(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<AcceptEventAction>() {
-			public boolean apply(AcceptEventAction s) {
-				return s.validateTriggerEvents(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<AcceptEventAction> validateTriggerEvents(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<AcceptEventAction>() {
+      public boolean apply(AcceptEventAction s) {
+        return s.validateTriggerEvents(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * If isUnmarshall is true, there must be exactly one trigger for events of type SignalEvent.
@@ -119,12 +120,12 @@ public class AcceptEventActionPath extends ActionPath {
 	 * @see org.eclipse.uml2.uml.AcceptEventAction#validateUnmarshallSignalEvents(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<AcceptEventAction> validateUnmarshallSignalEvents(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<AcceptEventAction>() {
-			public boolean apply(AcceptEventAction s) {
-				return s.validateUnmarshallSignalEvents(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<AcceptEventAction> validateUnmarshallSignalEvents(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<AcceptEventAction>() {
+      public boolean apply(AcceptEventAction s) {
+        return s.validateUnmarshallSignalEvents(diagnostics, context);
+      }
+    };
+  }
 
 }

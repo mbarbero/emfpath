@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.FinalNode;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class FinalNodePath extends ControlNodePath {
 	 * @generated
 	 */
 	 FinalNodePath() {
-		super();
-	}
+    super();
+  }
 
 	
 	
@@ -31,12 +31,12 @@ public class FinalNodePath extends ControlNodePath {
 	 * @see org.eclipse.uml2.uml.FinalNode#validateNoOutgoingEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<FinalNode> validateNoOutgoingEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<FinalNode>() {
-			public boolean apply(FinalNode s) {
-				return s.validateNoOutgoingEdges(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<FinalNode> validateNoOutgoingEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<FinalNode>() {
+      public boolean apply(FinalNode s) {
+        return s.validateNoOutgoingEdges(diagnostics, context);
+      }
+    };
+  }
 
 }

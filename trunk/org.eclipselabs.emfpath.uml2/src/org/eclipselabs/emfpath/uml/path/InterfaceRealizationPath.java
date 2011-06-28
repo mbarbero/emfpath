@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.InterfaceRealization;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -22,8 +22,8 @@ public class InterfaceRealizationPath extends RealizationPath {
 	 * @generated
 	 */
 	private InterfaceRealizationPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * References the Interface specifying the conformance contract. 
@@ -31,10 +31,10 @@ public class InterfaceRealizationPath extends RealizationPath {
 	 * @generated
 	 */
 	public static final Function<InterfaceRealization, Interface> contract = new Function<InterfaceRealization, Interface>() {
-		public Interface apply(InterfaceRealization s) {
-			return s.getContract();
-		}
-	};
+    public Interface apply(InterfaceRealization s) {
+      return s.getContract();
+    }
+  };
 
 	/**
 	 * References the BehavioredClassifier that owns this Interfacerealization (i.e., the
@@ -43,10 +43,10 @@ public class InterfaceRealizationPath extends RealizationPath {
 	 * @generated
 	 */
 	public static final Function<InterfaceRealization, BehavioredClassifier> implementingClassifier = new Function<InterfaceRealization, BehavioredClassifier>() {
-		public BehavioredClassifier apply(InterfaceRealization s) {
-			return s.getImplementingClassifier();
-		}
-	};
+    public BehavioredClassifier apply(InterfaceRealization s) {
+      return s.getImplementingClassifier();
+    }
+  };
 	
 	
 

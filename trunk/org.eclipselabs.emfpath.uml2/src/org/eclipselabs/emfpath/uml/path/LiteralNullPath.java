@@ -16,8 +16,8 @@ public class LiteralNullPath extends LiteralSpecificationPath {
 	 * @generated
 	 */
 	private LiteralNullPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

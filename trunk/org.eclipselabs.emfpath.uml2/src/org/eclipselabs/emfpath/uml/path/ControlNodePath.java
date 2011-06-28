@@ -16,8 +16,8 @@ public class ControlNodePath extends ActivityNodePath {
 	 * @generated
 	 */
 	 ControlNodePath() {
-		super();
-	}
+    super();
+  }
 
 	
 	

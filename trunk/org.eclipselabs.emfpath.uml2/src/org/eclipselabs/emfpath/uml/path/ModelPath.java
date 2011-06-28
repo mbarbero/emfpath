@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-
 import org.eclipse.uml2.uml.Model;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -23,8 +23,8 @@ public class ModelPath extends PackagePath {
 	 * @generated
 	 */
 	private ModelPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * The name of the viewpoint that is expressed by a model (This name may refer to a profile
@@ -33,20 +33,20 @@ public class ModelPath extends PackagePath {
 	 * @generated
 	 */
 	public static final Function<Model, String> viewpoint = new Function<Model, String>() {
-		public String apply(Model s) {
-			return s.getViewpoint();
-		}
-	};
+    public String apply(Model s) {
+      return s.getViewpoint();
+    }
+  };
 	
 	/**
 	 * Determines whether this model is a metamodel. 
 	 * @see org.eclipse.uml2.uml.Model#isMetamodel()
 	 * @generated
 	 */
-	public static final Predicate<Model> isMetamodel = new Predicate<Model>() {
-		public boolean apply(Model s) {
-			return s.isMetamodel();
-		}
-	};
+	public static final ComposablePredicate<Model> isMetamodel = new ComposablePredicate<Model>() {
+    public boolean apply(Model s) {
+      return s.isMetamodel();
+    }
+  };
 
 }

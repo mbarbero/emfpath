@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.BehavioralFeature;
 import org.eclipse.uml2.uml.CallConcurrencyKind;
@@ -15,6 +13,9 @@ import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterSet;
 import org.eclipse.uml2.uml.RedefinableElement;
 import org.eclipse.uml2.uml.Type;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -36,8 +37,8 @@ public class BehavioralFeaturePath extends NamespacePath {
 	 * @generated
 	 */
 	 BehavioralFeaturePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Indicates whether it is possible to further specialize a RedefinableElement. If the
@@ -47,7 +48,7 @@ public class BehavioralFeaturePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isLeaf()
 	 * @generated
 	 */
-	public static final Predicate<RedefinableElement> isLeaf = RedefinableElementPath.isLeaf;
+	public static final ComposablePredicate<RedefinableElement> isLeaf = RedefinableElementPath.isLeaf;
 
 	/**
 	 * The redefinable element that is being redefined by this element. 
@@ -75,7 +76,7 @@ public class BehavioralFeaturePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.Feature#isStatic()
 	 * @generated
 	 */
-	public static final Predicate<Feature> isStatic = FeaturePath.isStatic;
+	public static final ComposablePredicate<Feature> isStatic = FeaturePath.isStatic;
 
 	/**
 	 * The Classifiers that have this Feature as a feature. 
@@ -92,10 +93,10 @@ public class BehavioralFeaturePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<BehavioralFeature, EList<Parameter>> ownedParameter = new Function<BehavioralFeature, EList<Parameter>>() {
-		public EList<Parameter> apply(BehavioralFeature s) {
-			return s.getOwnedParameters();
-		}
-	};
+    public EList<Parameter> apply(BehavioralFeature s) {
+      return s.getOwnedParameters();
+    }
+  };
 
 	/**
 	 * If true, then the behavioral feature does not have an implementation, and one must
@@ -104,11 +105,11 @@ public class BehavioralFeaturePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.BehavioralFeature#isAbstract()
 	 * @generated
 	 */
-	public static final Predicate<BehavioralFeature> isAbstract = new Predicate<BehavioralFeature>() {
-		public boolean apply(BehavioralFeature s) {
-			return s.isAbstract();
-		}
-	};
+	public static final ComposablePredicate<BehavioralFeature> isAbstract = new ComposablePredicate<BehavioralFeature>() {
+    public boolean apply(BehavioralFeature s) {
+      return s.isAbstract();
+    }
+  };
 
 	/**
 	 * A behavioral description that implements the behavioral feature. There may be at most
@@ -118,10 +119,10 @@ public class BehavioralFeaturePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<BehavioralFeature, EList<Behavior>> method = new Function<BehavioralFeature, EList<Behavior>>() {
-		public EList<Behavior> apply(BehavioralFeature s) {
-			return s.getMethods();
-		}
-	};
+    public EList<Behavior> apply(BehavioralFeature s) {
+      return s.getMethods();
+    }
+  };
 
 	/**
 	 * Specifies the semantics of concurrent calls to the same passive instance (i.e., an
@@ -131,10 +132,10 @@ public class BehavioralFeaturePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<BehavioralFeature, CallConcurrencyKind> concurrency = new Function<BehavioralFeature, CallConcurrencyKind>() {
-		public CallConcurrencyKind apply(BehavioralFeature s) {
-			return s.getConcurrency();
-		}
-	};
+    public CallConcurrencyKind apply(BehavioralFeature s) {
+      return s.getConcurrency();
+    }
+  };
 
 	/**
 	 * References the Types representing exceptions that may be raised during an invocation
@@ -144,10 +145,10 @@ public class BehavioralFeaturePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<BehavioralFeature, EList<Type>> raisedException = new Function<BehavioralFeature, EList<Type>>() {
-		public EList<Type> apply(BehavioralFeature s) {
-			return s.getRaisedExceptions();
-		}
-	};
+    public EList<Type> apply(BehavioralFeature s) {
+      return s.getRaisedExceptions();
+    }
+  };
 
 	/**
 	 * The ParameterSets owned by this BehavioralFeature. 
@@ -155,10 +156,10 @@ public class BehavioralFeaturePath extends NamespacePath {
 	 * @generated
 	 */
 	public static final Function<BehavioralFeature, EList<ParameterSet>> ownedParameterSet = new Function<BehavioralFeature, EList<ParameterSet>>() {
-		public EList<ParameterSet> apply(BehavioralFeature s) {
-			return s.getOwnedParameterSets();
-		}
-	};
+    public EList<ParameterSet> apply(BehavioralFeature s) {
+      return s.getOwnedParameterSets();
+    }
+  };
 	
 	/**
 	 * At least one of the redefinition contexts of the redefining element must be a specialization
@@ -170,9 +171,9 @@ public class BehavioralFeaturePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionContextValid(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> validateRedefinitionContextValid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return RedefinableElementPath.validateRedefinitionContextValid(diagnostics, context);
-	}
+	public static ComposablePredicate<RedefinableElement> validateRedefinitionContextValid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return RedefinableElementPath.validateRedefinitionContextValid(diagnostics, context);
+  }
 
 	/**
 	 * A redefining element must be consistent with each redefined element.
@@ -183,9 +184,9 @@ public class BehavioralFeaturePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#validateRedefinitionConsistent(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> validateRedefinitionConsistent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return RedefinableElementPath.validateRedefinitionConsistent(diagnostics, context);
-	}
+	public static ComposablePredicate<RedefinableElement> validateRedefinitionConsistent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return RedefinableElementPath.validateRedefinitionConsistent(diagnostics, context);
+  }
 
 	/**
 	 * The query isConsistentWith() specifies, for any two RedefinableElements in a context
@@ -200,9 +201,9 @@ public class BehavioralFeaturePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isConsistentWith(RedefinableElement)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> isConsistentWith(final RedefinableElement redefinee) {
-		return RedefinableElementPath.isConsistentWith(redefinee);
-	}
+	public static ComposablePredicate<RedefinableElement> isConsistentWith(final RedefinableElement redefinee) {
+    return RedefinableElementPath.isConsistentWith(redefinee);
+  }
 
 	/**
 	 * The query isRedefinitionContextValid() specifies whether the redefinition contexts
@@ -217,9 +218,9 @@ public class BehavioralFeaturePath extends NamespacePath {
 	 * @see org.eclipse.uml2.uml.RedefinableElement#isRedefinitionContextValid(RedefinableElement)
 	 * @generated
 	 */
-	public static Predicate<RedefinableElement> isRedefinitionContextValid(final RedefinableElement redefined) {
-		return RedefinableElementPath.isRedefinitionContextValid(redefined);
-	}
+	public static ComposablePredicate<RedefinableElement> isRedefinitionContextValid(final RedefinableElement redefined) {
+    return RedefinableElementPath.isRedefinitionContextValid(redefined);
+  }
 
 	/**
 	 * Creates a return result parameter with the specified name and type. 
@@ -227,11 +228,11 @@ public class BehavioralFeaturePath extends NamespacePath {
 	 * @generated
 	 */
 	public static Function<BehavioralFeature, Parameter> createReturnResult(final String name, final Type type) {
-		return new Function<BehavioralFeature, Parameter>() {
-			public Parameter apply(BehavioralFeature s) {
-				return s.createReturnResult(name, type);
-			}
-		};
-	}
+    return new Function<BehavioralFeature, Parameter>() {
+      public Parameter apply(BehavioralFeature s) {
+        return s.createReturnResult(name, type);
+      }
+    };
+  }
 
 }

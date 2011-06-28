@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.DestructionEvent;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class DestructionEventPath extends EventPath {
 	 * @generated
 	 */
 	private DestructionEventPath() {
-		super();
-	}
+    super();
+  }
 
 	
 	
@@ -32,12 +32,12 @@ public class DestructionEventPath extends EventPath {
 	 * @see org.eclipse.uml2.uml.DestructionEvent#validateNoOccurrenceSpecificationsBelow(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<DestructionEvent> validateNoOccurrenceSpecificationsBelow(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<DestructionEvent>() {
-			public boolean apply(DestructionEvent s) {
-				return s.validateNoOccurrenceSpecificationsBelow(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<DestructionEvent> validateNoOccurrenceSpecificationsBelow(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<DestructionEvent>() {
+      public boolean apply(DestructionEvent s) {
+        return s.validateNoOccurrenceSpecificationsBelow(diagnostics, context);
+      }
+    };
+  }
 
 }

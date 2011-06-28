@@ -1,9 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-
 import org.eclipse.uml2.uml.Abstraction;
 import org.eclipse.uml2.uml.OpaqueExpression;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -20,8 +20,8 @@ public class AbstractionPath extends DependencyPath {
 	 * @generated
 	 */
 	 AbstractionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * An composition of an Expression that states the abstraction relationship between the
@@ -33,10 +33,10 @@ public class AbstractionPath extends DependencyPath {
 	 * @generated
 	 */
 	public static final Function<Abstraction, OpaqueExpression> mapping = new Function<Abstraction, OpaqueExpression>() {
-		public OpaqueExpression apply(Abstraction s) {
-			return s.getMapping();
-		}
-	};
+    public OpaqueExpression apply(Abstraction s) {
+      return s.getMapping();
+    }
+  };
 	
 	
 

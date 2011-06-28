@@ -1,8 +1,6 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Gate;
 import org.eclipse.uml2.uml.GeneralOrdering;
@@ -11,6 +9,8 @@ import org.eclipse.uml2.uml.InteractionFragment;
 import org.eclipse.uml2.uml.InteractionOperand;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -27,8 +27,8 @@ public class InteractionPath extends BehaviorPath {
 	 * @generated
 	 */
 	private InteractionPath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * References the Lifelines that the InteractionFragment involves. 
@@ -72,10 +72,10 @@ public class InteractionPath extends BehaviorPath {
 	 * @generated
 	 */
 	public static final Function<Interaction, EList<Lifeline>> lifeline = new Function<Interaction, EList<Lifeline>>() {
-		public EList<Lifeline> apply(Interaction s) {
-			return s.getLifelines();
-		}
-	};
+    public EList<Lifeline> apply(Interaction s) {
+      return s.getLifelines();
+    }
+  };
 
 	/**
 	 * The ordered set of fragments in the Interaction. 
@@ -83,10 +83,10 @@ public class InteractionPath extends BehaviorPath {
 	 * @generated
 	 */
 	public static final Function<Interaction, EList<InteractionFragment>> fragment = new Function<Interaction, EList<InteractionFragment>>() {
-		public EList<InteractionFragment> apply(Interaction s) {
-			return s.getFragments();
-		}
-	};
+    public EList<InteractionFragment> apply(Interaction s) {
+      return s.getFragments();
+    }
+  };
 
 	/**
 	 * Actions owned by the Interaction. 
@@ -94,10 +94,10 @@ public class InteractionPath extends BehaviorPath {
 	 * @generated
 	 */
 	public static final Function<Interaction, EList<Action>> action = new Function<Interaction, EList<Action>>() {
-		public EList<Action> apply(Interaction s) {
-			return s.getActions();
-		}
-	};
+    public EList<Action> apply(Interaction s) {
+      return s.getActions();
+    }
+  };
 
 	/**
 	 * Specifies the gates that form the message interface between this Interaction and any
@@ -107,10 +107,10 @@ public class InteractionPath extends BehaviorPath {
 	 * @generated
 	 */
 	public static final Function<Interaction, EList<Gate>> formalGate = new Function<Interaction, EList<Gate>>() {
-		public EList<Gate> apply(Interaction s) {
-			return s.getFormalGates();
-		}
-	};
+    public EList<Gate> apply(Interaction s) {
+      return s.getFormalGates();
+    }
+  };
 
 	/**
 	 * The Messages contained in this Interaction. 
@@ -118,10 +118,10 @@ public class InteractionPath extends BehaviorPath {
 	 * @generated
 	 */
 	public static final Function<Interaction, EList<Message>> message = new Function<Interaction, EList<Message>>() {
-		public EList<Message> apply(Interaction s) {
-			return s.getMessages();
-		}
-	};
+    public EList<Message> apply(Interaction s) {
+      return s.getMessages();
+    }
+  };
 	
 	
 

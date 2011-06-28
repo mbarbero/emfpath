@@ -1,10 +1,10 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Predicate;	
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.uml2.uml.MergeNode;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -22,8 +22,8 @@ public class MergeNodePath extends ControlNodePath {
 	 * @generated
 	 */
 	private MergeNodePath() {
-		super();
-	}
+    super();
+  }
 
 	
 	
@@ -33,13 +33,13 @@ public class MergeNodePath extends ControlNodePath {
 	 * @see org.eclipse.uml2.uml.MergeNode#validateOneOutgoingEdge(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MergeNode> validateOneOutgoingEdge(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<MergeNode>() {
-			public boolean apply(MergeNode s) {
-				return s.validateOneOutgoingEdge(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<MergeNode> validateOneOutgoingEdge(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<MergeNode>() {
+      public boolean apply(MergeNode s) {
+        return s.validateOneOutgoingEdge(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * The edges coming into and out of a merge node must be either all object flows or all
@@ -48,12 +48,12 @@ public class MergeNodePath extends ControlNodePath {
 	 * @see org.eclipse.uml2.uml.MergeNode#validateEdges(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<MergeNode> validateEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<MergeNode>() {
-			public boolean apply(MergeNode s) {
-				return s.validateEdges(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<MergeNode> validateEdges(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<MergeNode>() {
+      public boolean apply(MergeNode s) {
+        return s.validateEdges(diagnostics, context);
+      }
+    };
+  }
 
 }

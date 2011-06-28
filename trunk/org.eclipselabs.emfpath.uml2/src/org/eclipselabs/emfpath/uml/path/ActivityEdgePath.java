@@ -1,11 +1,9 @@
 package org.eclipselabs.emfpath.uml.path;
 
-import com.google.common.base.Function;	
-import com.google.common.base.Predicate;	
-import org.eclipse.emf.common.util.EList;
-
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.ActivityGroup;
@@ -14,6 +12,9 @@ import org.eclipse.uml2.uml.ActivityPartition;
 import org.eclipse.uml2.uml.InterruptibleActivityRegion;
 import org.eclipse.uml2.uml.StructuredActivityNode;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.eclipselabs.emfpath.base.ComposablePredicate;
+
+import com.google.common.base.Function;
 
 /**
  * Set of {@link com.google.base.Function Function}s and {@link com.google.base.Predicate Predicate}s
@@ -31,8 +32,8 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	 ActivityEdgePath() {
-		super();
-	}
+    super();
+  }
 
 	/**
 	 * Node from which tokens are taken when they traverse the edge. 
@@ -40,10 +41,10 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	public static final Function<ActivityEdge, ActivityNode> source = new Function<ActivityEdge, ActivityNode>() {
-		public ActivityNode apply(ActivityEdge s) {
-			return s.getSource();
-		}
-	};
+    public ActivityNode apply(ActivityEdge s) {
+      return s.getSource();
+    }
+  };
 
 	/**
 	 * Node to which tokens are put when they traverse the edge. 
@@ -51,10 +52,10 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	public static final Function<ActivityEdge, ActivityNode> target = new Function<ActivityEdge, ActivityNode>() {
-		public ActivityNode apply(ActivityEdge s) {
-			return s.getTarget();
-		}
-	};
+    public ActivityNode apply(ActivityEdge s) {
+      return s.getTarget();
+    }
+  };
 
 	/**
 	 * Inherited edges replaced by this edge in a specialization of the activity. 
@@ -62,10 +63,10 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	public static final Function<ActivityEdge, EList<ActivityEdge>> redefinedEdge = new Function<ActivityEdge, EList<ActivityEdge>>() {
-		public EList<ActivityEdge> apply(ActivityEdge s) {
-			return s.getRedefinedEdges();
-		}
-	};
+    public EList<ActivityEdge> apply(ActivityEdge s) {
+      return s.getRedefinedEdges();
+    }
+  };
 
 	/**
 	 * Partitions containing the edge. 
@@ -73,10 +74,10 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	public static final Function<ActivityEdge, EList<ActivityPartition>> inPartition = new Function<ActivityEdge, EList<ActivityPartition>>() {
-		public EList<ActivityPartition> apply(ActivityEdge s) {
-			return s.getInPartitions();
-		}
-	};
+    public EList<ActivityPartition> apply(ActivityEdge s) {
+      return s.getInPartitions();
+    }
+  };
 
 	/**
 	 * Specification evaluated at runtime to determine if the edge can be traversed. 
@@ -84,10 +85,10 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	public static final Function<ActivityEdge, ValueSpecification> guard = new Function<ActivityEdge, ValueSpecification>() {
-		public ValueSpecification apply(ActivityEdge s) {
-			return s.getGuard();
-		}
-	};
+    public ValueSpecification apply(ActivityEdge s) {
+      return s.getGuard();
+    }
+  };
 
 	/**
 	 * The minimum number of tokens that must traverse the edge at the same time. 
@@ -95,10 +96,10 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	public static final Function<ActivityEdge, ValueSpecification> weight = new Function<ActivityEdge, ValueSpecification>() {
-		public ValueSpecification apply(ActivityEdge s) {
-			return s.getWeight();
-		}
-	};
+    public ValueSpecification apply(ActivityEdge s) {
+      return s.getWeight();
+    }
+  };
 
 	/**
 	 * Region that the edge can interrupt. 
@@ -106,10 +107,10 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	public static final Function<ActivityEdge, InterruptibleActivityRegion> interrupts = new Function<ActivityEdge, InterruptibleActivityRegion>() {
-		public InterruptibleActivityRegion apply(ActivityEdge s) {
-			return s.getInterrupts();
-		}
-	};
+    public InterruptibleActivityRegion apply(ActivityEdge s) {
+      return s.getInterrupts();
+    }
+  };
 
 	/**
 	 * Structured activity node containing the edge. 
@@ -117,10 +118,10 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	public static final Function<ActivityEdge, StructuredActivityNode> inStructuredNode = new Function<ActivityEdge, StructuredActivityNode>() {
-		public StructuredActivityNode apply(ActivityEdge s) {
-			return s.getInStructuredNode();
-		}
-	};
+    public StructuredActivityNode apply(ActivityEdge s) {
+      return s.getInStructuredNode();
+    }
+  };
 
 	/**
 	 * Groups containing the edge. 
@@ -128,10 +129,10 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	public static final Function<ActivityEdge, EList<ActivityGroup>> inGroup = new Function<ActivityEdge, EList<ActivityGroup>>() {
-		public EList<ActivityGroup> apply(ActivityEdge s) {
-			return s.getInGroups();
-		}
-	};
+    public EList<ActivityGroup> apply(ActivityEdge s) {
+      return s.getInGroups();
+    }
+  };
 
 	/**
 	 * Activity containing the edge. 
@@ -139,10 +140,10 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	 * @generated
 	 */
 	public static final Function<ActivityEdge, Activity> activity = new Function<ActivityEdge, Activity>() {
-		public Activity apply(ActivityEdge s) {
-			return s.getActivity();
-		}
-	};
+    public Activity apply(ActivityEdge s) {
+      return s.getActivity();
+    }
+  };
 	
 	/**
 	 * The source and target of an edge must be in the same activity as the edge.
@@ -150,13 +151,13 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	 * @see org.eclipse.uml2.uml.ActivityEdge#validateSourceAndTarget(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityEdge> validateSourceAndTarget(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActivityEdge>() {
-			public boolean apply(ActivityEdge s) {
-				return s.validateSourceAndTarget(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActivityEdge> validateSourceAndTarget(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActivityEdge>() {
+      public boolean apply(ActivityEdge s) {
+        return s.validateSourceAndTarget(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Activity edges may be owned only by activities or groups.
@@ -164,13 +165,13 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	 * @see org.eclipse.uml2.uml.ActivityEdge#validateOwned(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityEdge> validateOwned(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActivityEdge>() {
-			public boolean apply(ActivityEdge s) {
-				return s.validateOwned(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActivityEdge> validateOwned(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActivityEdge>() {
+      public boolean apply(ActivityEdge s) {
+        return s.validateOwned(diagnostics, context);
+      }
+    };
+  }
 
 	/**
 	 * Activity edges may be owned by at most one structured node.
@@ -178,12 +179,12 @@ public class ActivityEdgePath extends RedefinableElementPath {
 	 * @see org.eclipse.uml2.uml.ActivityEdge#validateStructuredNode(DiagnosticChain, Map)
 	 * @generated
 	 */
-	public static Predicate<ActivityEdge> validateStructuredNode(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		return new Predicate<ActivityEdge>() {
-			public boolean apply(ActivityEdge s) {
-				return s.validateStructuredNode(diagnostics, context);
-			}
-		};
-	}
+	public static ComposablePredicate<ActivityEdge> validateStructuredNode(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+    return new ComposablePredicate<ActivityEdge>() {
+      public boolean apply(ActivityEdge s) {
+        return s.validateStructuredNode(diagnostics, context);
+      }
+    };
+  }
 
 }
