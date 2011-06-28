@@ -12,7 +12,11 @@
 import com.google.common.base.Function;	
 [/if]
 [if (not (allGenFeatures()->select(gf : GenFeature | gf.willGeneratePredicate())->isEmpty() and allGenOperations()->select(go : GenOperation | go.willGeneratePredicate())->isEmpty()))]
-import com.google.common.base.Predicate;	
+	[if (getProperty('predicate.fullclassname').oclIsUndefined())]
+import com.google.common.base.Predicate;
+	[else]
+import [getProperty('predicate.fullclassname')/];
+	[/if]
 [/if]
 [if (not allGenOperations()->select(go : GenOperation | not go.ecoreOperation.eExceptions->isEmpty())->isEmpty())]
 import org.eclipse.emf.common.util.WrappedException;

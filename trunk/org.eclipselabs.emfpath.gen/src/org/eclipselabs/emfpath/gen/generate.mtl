@@ -45,7 +45,7 @@ public class [generatedClassName()/] [extendsDeclaration()/]{
  * @see [genClass.qualifiedJavaName()/]#[getterName()/]()
  * @generated
  */
-public static final Predicate<[genClass.javaName()/]> [predicateName()/] = new Predicate<[genClass.javaName()/]>() {
+public static final [predicateClassname()/]<[genClass.javaName()/]> [predicateName()/] = new [predicateClassname()/]<[genClass.javaName()/]>() {
 	public boolean apply([genClass.javaName()/] s) {
 		return s.[getterName()/]();
 	}
@@ -71,7 +71,7 @@ public static final Function<[genClass.javaName()/], [typeName().wrap()/]> [func
  * @see [genClass.qualifiedJavaName()/]#[operationName()/]()
  * @generated
  */
-public static final Predicate<[genClass.javaName()/]> [predicateName()/] = new Predicate<[genClass.javaName()/]>() {
+public static final [predicateClassname()/]<[genClass.javaName()/]> [predicateName()/] = new [predicateClassname()/]<[genClass.javaName()/]>() {
 	public boolean apply([genClass.javaName()/] s) {
 		return s.[operationName()/]();
 	}
@@ -125,8 +125,8 @@ public static final Function<[genClass.javaName()/], [typeName().wrap()/]> [func
  * @see [genClass.qualifiedJavaName()/]#[operationName()/]([genParameters.typeNameForDocumentation()->sep(', ')/])
  * @generated
  */
-public static Predicate<[genClass.javaName()/]> [predicateName()/]([genParameters.declaration()->sep(', ')/]) {
-	return new Predicate<[genClass.javaName()/]>() {
+public static [predicateClassname()/]<[genClass.javaName()/]> [predicateName()/]([genParameters.declaration()->sep(', ')/]) {
+	return new [predicateClassname()/]<[genClass.javaName()/]>() {
 		public boolean apply([genClass.javaName()/] s) {
 			[e.genBody()/]
 		}
@@ -157,7 +157,7 @@ public static Function<[genClass.javaName()/], [typeName().wrap()/]> [functionNa
  * @see [genClass.qualifiedJavaName()/]#[getterName()/]()
  * @generated
  */
-public static final Predicate<[genClass.javaName()/]> [predicateName()/] = [genClass.generatedClassName()/].[predicateName()/];
+public static final [predicateClassname()/]<[genClass.javaName()/]> [predicateName()/] = [genClass.generatedClassName()/].[predicateName()/];
 [/template]
 
 [template public gen(e : GenFeature, c : GenClass) ? (genClass <> c and not willGeneratePredicate()) post (trim())]
@@ -179,7 +179,7 @@ public static final Function<[genClass.javaName()/], [typeName().wrap()/]> [func
  * @see [genClass.qualifiedJavaName()/]#[operationName()/]()
  * @generated
  */
-public static final Predicate<[genClass.javaName()/]> [predicateName()/] = [genClass.generatedClassName()/].[predicateName()/];
+public static final [predicateClassname()/]<[genClass.javaName()/]> [predicateName()/] = [genClass.generatedClassName()/].[predicateName()/];
 [/template]
 
 [template public gen(e : GenOperation, c : GenClass) ? (genClass <> c and not willGeneratePredicate() and genParameters->size() = 0) post (trim())]
@@ -201,7 +201,7 @@ public static final Function<[genClass.javaName()/], [typeName().wrap()/]> [func
  * @see [genClass.qualifiedJavaName()/]#[operationName()/]([genParameters.typeNameForDocumentation()->sep(', ')/])
  * @generated
  */
-public static Predicate<[genClass.javaName()/]> [predicateName()/]([genParameters.declaration()->sep(', ')/]) {
+public static [predicateClassname()/]<[genClass.javaName()/]> [predicateName()/]([genParameters.declaration()->sep(', ')/]) {
 	return [genClass.generatedClassName()/].[predicateName()/]([genParameters.gen()->sep(', ')/]);
 }
 [/template]

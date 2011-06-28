@@ -101,6 +101,13 @@
 	[ecoreOperation.name/]
 [/template]
 
+[template public predicateClassname(e : OclAny) post (trim())]
+[if (getProperty('predicate.fullclassname').oclIsUndefined())]
+	Predicate
+[else]
+	[getProperty('predicate.fullclassname').substring(getProperty('predicate.fullclassname').lastIndex('.') + 1)/]
+[/if]
+[/template]
 
 [query public avoidObjectMethodsNameClash(e : String) : String =  
 	if (objectsMethods()->includes(e)) then
