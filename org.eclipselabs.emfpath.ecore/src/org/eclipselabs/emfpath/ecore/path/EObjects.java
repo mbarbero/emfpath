@@ -329,7 +329,8 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 
     public static Function<EObject, EObject> eAdd(final EStructuralFeature feature, final Object newValue) {
 	    return new Function<EObject, EObject>() {
-	      public EObject apply(EObject s) {
+	      @SuppressWarnings("unchecked")
+		public EObject apply(EObject s) {
 	    	  if (!feature.isMany()) {
 					throw new IllegalArgumentException(Messages.getString("EAdd.9", feature)); //$NON-NLS-1$
 				}
@@ -342,6 +343,7 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 	
 	public static Function<EObject, EObject> eAdd(final String featureName, final Object newValue) {
 		return new Function<EObject, EObject>() {
+			@SuppressWarnings("unchecked")
 			public EObject apply(EObject s) {
 				EClass eClass = s.eClass();
 				EStructuralFeature feature = getFeatureAndRedirectToRuntimeExceptions(featureName, eClass);
@@ -358,7 +360,8 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 	
 	public static Function<EObject, EObject> eAddAll(final EStructuralFeature feature, final Collection<?> newValues) {
 	    return new Function<EObject, EObject>() {
-	      public EObject apply(EObject s) {
+	      @SuppressWarnings("unchecked")
+		public EObject apply(EObject s) {
 	    	  if (!feature.isMany()) {
 					throw new IllegalArgumentException(Messages.getString("EAdd.9", feature)); //$NON-NLS-1$
 				}
@@ -371,6 +374,7 @@ public static EFunction<EObject, Object> eGet(final String featureName, final bo
 	
 	public static Function<EObject, EObject> eAddAll(final String featureName, final Collection<?> newValues) {
 		return new Function<EObject, EObject>() {
+			@SuppressWarnings("unchecked")
 			public EObject apply(EObject s) {
 				EClass eClass = s.eClass();
 				EStructuralFeature feature = getFeatureAndRedirectToRuntimeExceptions(featureName, eClass);
