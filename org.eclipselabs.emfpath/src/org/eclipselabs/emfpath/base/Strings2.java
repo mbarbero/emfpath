@@ -123,9 +123,16 @@ public final class Strings2 {
 	};
 
 	/**
-	 * @param minLength
-	 * @param padChar
-	 * @return
+	 * Returns a {@link Function} that pads the given input {@link String} with the behavior of
+	 * {@link Strings#padStart(String, int, char)}.
+	 * <p>
+	 * The returned {@link Function} throws {@link NullPointerException} if it is given a <code>null</code> String.
+	 * 
+	 * @param minLength the minimum length the resulting string must have. Can be zero or negative, in which case the
+	 *        input string is always returned by the function.
+	 * @param padChar the character to insert at the beginning of the result until the minimum length is reached.
+	 * @return the {@link Function} that pads.
+	 * @see Strings#padStart(String, int, char)
 	 */
 	public static Function<String, String> padStart(final int minLength, final char padChar) {
 		return new Function<String, String>() {
@@ -136,9 +143,16 @@ public final class Strings2 {
 	}
 
 	/**
-	 * @param minLength
-	 * @param padChar
-	 * @return
+	 * Returns a {@link Function} that pads the given input {@link String} with the behavior of
+	 * {@link Strings#padEnd(String, int, char)}.
+	 * <p>
+	 * The returned {@link Function} throws {@link NullPointerException} if it is given a <code>null</code> String.
+	 * 
+	 * @param minLength the minimum length the resulting string must have. Can be zero or negative, in which case the
+	 *        input string is always returned by the function.
+	 * @param padChar the character to insert at the beginning of the result until the minimum length is reached.
+	 * @return the {@link Function} that pads.
+	 * @see Strings#padEnd(String, int, char)
 	 */
 	public static Function<String, String> padEnd(final int minLength, final char padChar) {
 		return new Function<String, String>() {

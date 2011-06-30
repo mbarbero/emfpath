@@ -199,17 +199,10 @@ public abstract class ComposablePredicate<T> implements Predicate<T> {
 			return new WrappingPredicate<T>(p);
 		}
 
-		/**
-		 * @param delegator
-		 */
 		WrappingPredicate(Predicate<T> delegator) {
 			this.fDelegator = delegator;
 		}
 
-		/**
-		 * @return
-		 * @see com.google.common.collect.ForwardingObject#delegate()
-		 */
 		protected Predicate<T> delegate() {
 			return this.fDelegator;
 		}
