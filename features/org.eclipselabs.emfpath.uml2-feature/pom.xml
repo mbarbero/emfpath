@@ -18,9 +18,9 @@
 		<relativePath>../org.eclipselabs.emfpath.parent/pom.xml</relativePath>
 	</parent>
 
-  <artifactId>org.eclipselabs.emfpath-feature</artifactId>
+  <artifactId>org.eclipselabs.emfpath.uml2-feature</artifactId>
   <packaging>eclipse-feature</packaging>
 
-  <name>EMFPath Feature</name>
+  <name>EMFPath for UML2 Feature</name>
 
 </project>
