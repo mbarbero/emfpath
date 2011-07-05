@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipselabs.emfpath.uml2"
+      label="%featureName"
+      version="0.5.0.qualifier"
+      provider-name="%providerName">
+
+   <description url="http://code.google.com/a/eclipselabs.org/p/emfpath/">
+      %description
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://svn.codespot.com/a/eclipselabs.org/emfpath/trunk/repository/"/>
+      <discovery label="Google Guava" url="http://guava-osgi.googlecode.com/svn/trunk/repository/"/>
+   </url>
+
+   <plugin
+         id="org.eclipselabs.emfpath"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipselabs.emfpath.uml2"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
