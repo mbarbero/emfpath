@@ -15,8 +15,6 @@ import com.google.common.base.Equivalences;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 
-import javax.annotation.Nullable;
-
 /**
  * Set of utility methods to create {@link Predicate} from an {@link Equivalence} strategy.
  * 
@@ -37,7 +35,7 @@ public final class Equivalences2 {
 	 * @return a new {@link Predicate}.
 	 * @throws NullPointerException if the given <code>equivalenceStrategy</code> is null.
 	 */
-	public static <T> Predicate<T> equivalencePredicate(final Equivalence<? super T> equivalenceStrategy, @Nullable final T to) {
+	public static <T> Predicate<T> equivalencePredicate(final Equivalence<? super T> equivalenceStrategy, final T to) {
 		Preconditions.checkNotNull(equivalenceStrategy);
 		return new Predicate<T>() {
 			public boolean apply(T input) {
@@ -53,7 +51,7 @@ public final class Equivalences2 {
 	 * @param to the object to test the equality against.
 	 * @return a new {@link Predicate}.
 	 */
-	public static <T> Predicate<T> equalsTo(@Nullable final T to) {
+	public static <T> Predicate<T> equalsTo(final T to) {
 		return new Predicate<T>() {
 			public boolean apply(T input) {
 				return Equivalences.equals().equivalent(to, input);
@@ -68,7 +66,7 @@ public final class Equivalences2 {
 	 * @param to the object to test the equality against.
 	 * @return a new {@link Predicate}.
 	 */
-	public static <T> Predicate<T> sameIdentityAs(@Nullable final T to) {
+	public static <T> Predicate<T> sameIdentityAs(final T to) {
 		return new Predicate<T>() {
 			public boolean apply(T input) {
 				return Equivalences.identity().equivalent(to, input);

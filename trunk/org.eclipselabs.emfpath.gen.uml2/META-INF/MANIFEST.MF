@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Uml2 Module Runtime Plug-in
 Bundle-SymbolicName: org.eclipselabs.emfpath.gen.uml2;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: org.eclipselabs.emfpath.gen.uml2.Activator
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
@@ -10,5 +10,5 @@ Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Export-Package: org.eclipselabs.emfpath.gen.uml2
 Import-Package: org.eclipse.core.runtime;version="3.4.0",
- org.eclipselabs.emfpath.gen;version="0.4.0",
+ org.eclipselabs.emfpath.gen;version="0.5.0",
  org.osgi.framework;version="1.6.0"
