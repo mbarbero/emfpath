@@ -24,7 +24,7 @@
 
    <includes
          id="org.eclipselabs.emfpath.uml2"
-         version="0.0.0.qualifier"/>
+         version="0.0.0"/>
 
    <plugin
        id="org.eclipselabs.emfpath.source"

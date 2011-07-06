@@ -8,12 +8,16 @@ Bundle-Vendor: %Bundle-Vendor
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Import-Package: org.eclipse.core.resources,
+Import-Package: org.eclipse.acceleo.engine.service,
+ org.eclipse.core.resources,
  org.eclipse.core.runtime,
+ org.eclipse.core.runtime.jobs,
  org.eclipse.emf.common.util,
+ org.eclipse.emf.ecore,
  org.eclipse.jface.action,
  org.eclipse.jface.operation,
  org.eclipse.jface.viewers,
+ org.eclipse.swt.widgets,
  org.eclipse.ui,
  org.eclipse.ui.actions,
  org.eclipse.ui.plugin,

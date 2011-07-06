@@ -13,35 +13,45 @@
   <artifactId>org.eclipselabs.emfpath.gen</artifactId>
   <packaging>eclipse-plugin</packaging>
 
-  <build>
-      <plugins>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>exec-maven-plugin</artifactId>
-          <version>1.1.1</version>
-          <executions>
-            <execution>
-              <phase>compile</phase>
-              <goals>  
-                <goal>exec</goal>
-              </goals>
-              <configuration>
-                <!--
-                   Calls the AcceleoCompiler to launch the compilation.
-                -->
-                <executable>java</executable>
-                <arguments>
-                  <argument>-jar</argument>
-                  <argument>../org.eclipselabs.emfpath.build/acceleoCompiler.jar</argument>
-                  <commandlineArgs>${basedir}/src/</commandlineArgs>  <!-- The source folder -->
-                  <commandlineArgs>${basedir}/target/classes</commandlineArgs>  <!-- The output folder -->
-                  <commandlineArgs>true</commandlineArgs>  <!-- Indicates if we should use binary resources serializations -->
-                  <commandlineArgs>org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage</commandlineArgs>
-                </arguments>  
-              </configuration>  
-            </execution>  
-          </executions>  
-        </plugin>
-      </plugins>
-  </build>
+	<build>
+		<!-- workaround for https://issues.sonatype.org/browse/TYCHO-168 -->
+		<resources>
+			<resource>
+				<directory>src</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.1.1</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>  
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>java</executable>
+							<arguments>
+								<argument>-jar</argument>
+								<argument>../org.eclipselabs.emfpath.build/acceleoCompiler.jar</argument>
+								<commandlineArgs>${basedir}/src/</commandlineArgs>  <!-- The source folder -->
+								<commandlineArgs>${basedir}/target/classes</commandlineArgs>  <!-- The output folder -->
+								<commandlineArgs>true</commandlineArgs>  <!-- Indicates if we should use binary resources serializations -->
+								<commandlineArgs>org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage</commandlineArgs>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
