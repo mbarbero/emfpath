@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipselabs.emfpath.sdk.feature"
+      id="org.eclipselabs.emfpath.sdk"
       label="%featureName"
       version="0.5.0.qualifier"
       provider-name="%providerName">
@@ -24,7 +24,7 @@
 
    <includes
          id="org.eclipselabs.emfpath"
-         version="0.0.0.qualifier"/>
+         version="0.0.0"/>
 
    <plugin
          id="org.eclipselabs.emfpath.source"
