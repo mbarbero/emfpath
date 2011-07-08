@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description url="code.google.com/a/eclipselabs.org/p/emfpath/">
+      EMFPath
+   </description>
+   <feature url="features/org.eclipselabs.emfpath_0.0.0.qualifier.jar" id="org.eclipselabs.emfpath" version="0.0.0">
+      <category name="org.eclipselabs.emfpath"/>
+   </feature>
+   <feature url="features/org.eclipselabs.emfpath.sdk_0.0.0.qualifier.jar" id="org.eclipselabs.emfpath.sdk" version="0.0.0">
+      <category name="org.eclipselabs.emfpath"/>
+   </feature>
+   <feature url="features/org.eclipselabs.emfpath.gen_0.0.0.qualifier.jar" id="org.eclipselabs.emfpath.gen" version="0.0.0">
+      <category name="org.eclipselabs.emfpath"/>
+   </feature>
+   <feature url="features/org.eclipselabs.emfpath.uml2_0.0.0.qualifier.jar" id="org.eclipselabs.emfpath.uml2" version="0.0.0">
+      <category name="org.eclipselabs.emfpath"/>
+   </feature>
+   <feature url="features/org.eclipselabs.emfpath.uml2.sdk_0.0.0.qualifier.jar" id="org.eclipselabs.emfpath.uml2.sdk" version="0.0.0">
+      <category name="org.eclipselabs.emfpath"/>
+   </feature>
+   <category-def name="org.eclipselabs.emfpath" label="EMFPath update site"/>
+</site>
