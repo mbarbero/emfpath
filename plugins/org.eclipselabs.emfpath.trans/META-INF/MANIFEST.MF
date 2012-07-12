@@ -16,4 +16,16 @@ Import-Package: com.google.common.annotations;version="9.0.0",
  org.eclipse.emf.ecore.util,
  org.eclipselabs.emfpath.collect;version="0.5.0",
  org.eclipselabs.emfpath.ecore.path;version="0.5.0"
-Export-Package: org.eclipselabs.emfpath.trans;version="0.5.0"
+Export-Package: org.eclipselabs.emfpath.trans.engine;version="0.5.0",
+ org.eclipselabs.emfpath.trans.engine.declarative;version="0.5.0",
+ org.eclipselabs.emfpath.trans.engine.imperative;version="0.5.0",
+ org.eclipselabs.emfpath.trans.engine.muxdemux;version="0.5.0",
+ org.eclipselabs.emfpath.trans.engine.muxdemux.blocking;version="0.5.0",
+ org.eclipselabs.emfpath.trans.engine.muxdemux.lazy;version="0.5.0",
+ org.eclipselabs.emfpath.trans.engine.resolver;version="0.5.0",
+ org.eclipselabs.emfpath.trans.rules;version="0.5.0",
+ org.eclipselabs.emfpath.trans.rules.declarative;version="0.5.0",
+ org.eclipselabs.emfpath.trans.rules.declarative.impl;version="0.5.0",
+ org.eclipselabs.emfpath.trans.rules.imperative;version="0.5.0",
+ org.eclipselabs.emfpath.trans.rules.imperative.impl;version="0.5.0",
+ org.eclipselabs.emfpath.trans.rules.impl;version="0.5.0"
